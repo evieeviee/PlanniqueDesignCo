@@ -1,0 +1,1009 @@
+from pathlib import Path
+import shutil, zipfile
+
+src_logo = Path("/mnt/data/a8483816-614c-4d04-85ec-2b8b258126d5.png")
+site = Path("/mnt/data/plannique_site_v2")
+site.mkdir(exist_ok=True)
+shutil.copy(src_logo, site / "logo.png")
+
+html = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Plannique Design Co creates elegant, mobile-friendly websites for salons, cafés, clinics and growing local businesses.">
+<title>Plannique Design Co | Website Design for Local Businesses</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#f2eee7;
+  --paper2:#e9e1d7;
+  --white:#ffffff;
+  --ink:#2a2723;
+  --muted:#746d65;
+  --sage:#71806b;
+  --sage-dark:#56624f;
+  --warm:#b08a6b;
+  --line:#ddd3c7;
+  --green:#25d366;
+  --shadow:0 24px 70px rgba(55,44,34,.13);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"DM Sans",Arial,sans-serif;
+  background:linear-gradient(180deg,var(--paper),#faf8f4 34%,#fff);
+  color:var(--ink);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit}
+section{scroll-margin-top:90px}
+.wrap{width:min(1180px,calc(100% - 38px));margin:auto}
+.section{padding:100px 0}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:var(--sage-dark);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:11px;
+  font-weight:800;
+}
+.eyebrow:before{content:"";width:28px;height:1px;background:var(--sage)}
+.title{
+  margin-top:13px;
+  font-family:"Playfair Display",serif;
+  font-size:clamp(40px,5vw,64px);
+  line-height:1.06;
+}
+.copy{
+  margin-top:17px;
+  color:var(--muted);
+  max-width:760px;
+  font-size:17px;
+}
+
+/* NAV */
+.navbar{
+  position:fixed;
+  inset:0 0 auto;
+  z-index:1000;
+  background:rgba(242,238,231,.92);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(221,211,199,.9);
+}
+.nav{
+  height:86px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{width:185px;height:64px;object-fit:contain}
+.nav-links{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:700}
+.nav-links a:hover{color:var(--sage-dark)}
+.nav-cta{
+  padding:12px 18px;
+  border-radius:999px;
+  background:var(--ink);
+  color:#fff!important;
+}
+.menu-btn{
+  display:none;
+  border:0;
+  background:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  padding:145px 0 90px;
+  position:relative;
+  overflow:hidden;
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  width:540px;
+  height:540px;
+  border:1px solid rgba(113,128,107,.2);
+  border-radius:50%;
+  right:-190px;
+  top:-180px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.03fr .97fr;
+  gap:70px;
+  align-items:center;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.82);
+  border:1px solid var(--line);
+  color:var(--sage-dark);
+  font-size:13px;
+  font-weight:700;
+}
+.hero h1{
+  margin-top:24px;
+  font-family:"Playfair Display",serif;
+  font-size:clamp(52px,7vw,84px);
+  line-height:.98;
+}
+.hero h1 span{color:var(--sage-dark);font-style:italic}
+.hero p{
+  margin-top:22px;
+  max-width:700px;
+  color:var(--muted);
+  font-size:18px;
+}
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
+  margin-top:31px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:15px 22px;
+  border-radius:999px;
+  font-weight:800;
+  transition:.25s;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn-wa{background:var(--green);color:#fff;box-shadow:0 15px 34px rgba(37,211,102,.22)}
+.btn-light{background:#fff;border:1px solid var(--line)}
+.btn-dark{background:var(--ink);color:#fff}
+.hero-points{
+  margin-top:27px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:17px;
+  color:#766f67;
+  font-size:13px;
+  font-weight:700;
+}
+.visual{
+  position:relative;
+  min-height:620px;
+}
+.main-photo{
+  position:absolute;
+  top:0;
+  right:0;
+  width:83%;
+  height:560px;
+  border-radius:185px 185px 34px 34px;
+  background:
+    linear-gradient(to top,rgba(29,24,20,.58),transparent 55%),
+    url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=88") center/cover;
+  box-shadow:var(--shadow);
+}
+.logo-card{
+  position:absolute;
+  left:0;
+  bottom:24px;
+  width:250px;
+  padding:22px;
+  border-radius:22px;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 20px 52px rgba(50,40,32,.18);
+}
+.logo-card img{width:100%;height:120px;object-fit:contain}
+.proof-card{
+  position:absolute;
+  right:10px;
+  bottom:30px;
+  width:260px;
+  padding:22px;
+  border-radius:20px;
+  background:rgba(42,39,35,.9);
+  color:#fff;
+}
+.proof-card strong{
+  display:block;
+  font-family:"Playfair Display",serif;
+  font-size:28px;
+}
+.proof-card span{
+  display:block;
+  margin-top:8px;
+  color:#d9d2ca;
+  font-size:13px;
+}
+
+/* TRUST BAR */
+.trust-bar{margin-top:-42px;position:relative;z-index:5}
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  background:#fff;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.trust-item{
+  padding:25px;
+  text-align:center;
+  border-right:1px solid var(--line);
+}
+.trust-item:last-child{border-right:0}
+.trust-item strong{
+  display:block;
+  font-family:"Playfair Display",serif;
+  font-size:28px;
+  color:var(--sage-dark);
+}
+.trust-item span{font-size:13px;color:var(--muted)}
+
+/* VALUE */
+.value-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:65px;
+  align-items:center;
+}
+.value-image{
+  position:relative;
+  min-height:560px;
+}
+.value-image img{
+  position:absolute;
+  width:78%;
+  height:500px;
+  object-fit:cover;
+  border-radius:28px;
+}
+.value-image img:last-child{
+  width:46%;
+  height:265px;
+  right:0;
+  bottom:0;
+  border:10px solid var(--paper);
+}
+.checks{
+  margin-top:27px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.check{
+  padding:14px;
+  border-radius:15px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+.check strong{display:block}
+.check span{font-size:13px;color:var(--muted)}
+
+/* WHY TRUST */
+.trust-section{background:var(--ink);color:#fff}
+.trust-section .copy{color:#c8c1b9}
+.reason-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-top:38px;
+}
+.reason{
+  padding:25px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;
+}
+.reason span{font-size:28px}
+.reason h3{
+  margin-top:12px;
+  font-family:"Playfair Display",serif;
+  font-size:24px;
+}
+.reason p{margin-top:8px;color:#c8c1b9;font-size:14px}
+
+/* PACKAGES */
+.packages{background:linear-gradient(180deg,#fff,#f1ebe3)}
+.package-grid{
+  margin-top:45px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:21px;
+}
+.package{
+  padding:32px;
+  border-radius:25px;
+  background:#fff;
+  border:1px solid var(--line);
+  position:relative;
+  box-shadow:0 18px 52px rgba(64,51,40,.08);
+}
+.package.featured{
+  background:var(--ink);
+  color:#fff;
+  transform:translateY(-12px);
+}
+.package h3{
+  margin-top:11px;
+  font-family:"Playfair Display",serif;
+  font-size:33px;
+}
+.price{
+  margin-top:16px;
+  font-size:50px;
+  font-weight:800;
+}
+.price span{font-size:17px}
+.package-desc{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:14px;
+}
+.featured .package-desc{color:#c6bfb7}
+.package ul{
+  margin-top:23px;
+  display:grid;
+  gap:10px;
+}
+.package li{
+  list-style:none;
+  font-size:14px;
+}
+.package li:before{
+  content:"✓";
+  margin-right:9px;
+  color:var(--sage);
+  font-weight:900;
+}
+.package .btn{width:100%;margin-top:25px}
+.popular{
+  position:absolute;
+  top:16px;
+  right:16px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--warm);
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+}
+
+/* TRANSPARENCY */
+.transparent-grid{
+  margin-top:38px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.transparent-card{
+  padding:25px;
+  border-radius:20px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+.transparent-card h3{
+  font-family:"Playfair Display",serif;
+  font-size:25px;
+}
+.transparent-card p{margin-top:9px;color:var(--muted);font-size:14px}
+
+/* PORTFOLIO */
+.portfolio{background:var(--paper2)}
+.portfolio-grid{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:15px;
+}
+.work{
+  position:relative;
+  min-height:400px;
+  overflow:hidden;
+  border-radius:23px;
+}
+.work img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.4s;
+}
+.work:hover img{transform:scale(1.05)}
+.work-label{
+  position:absolute;
+  inset:auto 0 0;
+  padding:23px;
+  color:#fff;
+  background:linear-gradient(transparent,rgba(24,21,18,.9));
+}
+.work-label strong{
+  display:block;
+  font-family:"Playfair Display",serif;
+  font-size:24px;
+}
+.work-label span{font-size:13px;color:#ddd6ce}
+
+/* PROCESS */
+.process-grid{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:13px;
+}
+.step{
+  padding:22px;
+  border-radius:18px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+.step b{
+  font-family:"Playfair Display",serif;
+  font-size:38px;
+  color:var(--sage);
+}
+.step h3{margin-top:7px}
+.step p{margin-top:6px;color:var(--muted);font-size:13px}
+
+/* CONTENT CHECKLIST */
+.content-section{background:#f7f4ef}
+.content-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:start;
+}
+.content-list{
+  margin-top:25px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.content-item{
+  padding:14px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+}
+.content-note{
+  padding:30px;
+  border-radius:24px;
+  background:var(--ink);
+  color:#fff;
+}
+.content-note h3{
+  font-family:"Playfair Display",serif;
+  font-size:30px;
+}
+.content-note p{margin-top:12px;color:#c8c1b9}
+
+/* FAQ */
+.faq{
+  margin-top:35px;
+  display:grid;
+  gap:11px;
+}
+.faq details{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:18px;
+}
+.faq summary{cursor:pointer;font-weight:800}
+.faq p{margin-top:9px;color:var(--muted)}
+
+/* LEAD FORM */
+.lead{
+  background:
+    linear-gradient(rgba(39,35,31,.82),rgba(39,35,31,.82)),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85") center/cover;
+  color:#fff;
+}
+.lead-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:40px;
+  align-items:start;
+}
+.lead .copy{color:#ddd6cf}
+.form-card{
+  padding:28px;
+  border-radius:24px;
+  background:#fff;
+  color:var(--ink);
+}
+.form-card h3{
+  font-family:"Playfair Display",serif;
+  font-size:31px;
+}
+.form-grid{
+  margin-top:18px;
+  display:grid;
+  gap:12px;
+}
+.form-grid input,.form-grid select,.form-grid textarea{
+  width:100%;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#faf8f4;
+}
+.form-grid textarea{min-height:120px;resize:vertical}
+.form-note{margin-top:10px;color:var(--muted);font-size:12px}
+
+/* FOOTER */
+footer{
+  padding:48px 0 26px;
+  background:#1d1b18;
+  color:#bbb4ac;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr .8fr;
+  gap:35px;
+}
+.footer-grid img{width:210px;height:110px;object-fit:contain}
+.footer-grid h4{color:#fff}
+.footer-grid a{display:block;margin:8px 0}
+.footer-bottom{
+  margin-top:30px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:13px;
+}
+.float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:1001;
+  background:var(--green);
+  color:#fff;
+  padding:14px 18px;
+  border-radius:999px;
+  font-weight:800;
+  box-shadow:0 15px 35px rgba(37,211,102,.3);
+}
+
+@media(max-width:950px){
+  .nav-links{
+    position:absolute;
+    top:86px;
+    left:20px;
+    right:20px;
+    display:none;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:20px;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+  }
+  .nav-links.open{display:flex}
+  .menu-btn{display:block}
+  .hero-grid,.value-grid,.content-grid,.lead-grid{grid-template-columns:1fr}
+  .visual{min-height:620px}
+  .reason-grid,.package-grid,.transparent-grid{grid-template-columns:1fr 1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .portfolio-grid{grid-template-columns:1fr 1fr}
+  .work:first-child{grid-column:span 2}
+  .package.featured{transform:none}
+}
+
+@media(max-width:600px){
+  .wrap{width:min(100% - 28px,1180px)}
+  .section{padding:74px 0}
+  .logo{width:160px}
+  .hero{padding-top:120px}
+  .hero h1{font-size:50px}
+  .visual{min-height:530px}
+  .main-photo{width:94%;height:470px}
+  .logo-card{width:205px}
+  .proof-card{width:205px;right:4px}
+  .checks,.content-list{grid-template-columns:1fr}
+  .reason-grid,.package-grid,.transparent-grid,.process-grid,.portfolio-grid{grid-template-columns:1fr}
+  .work:first-child{grid-column:auto}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column}
+  .float{width:60px;height:60px;padding:0;display:grid;place-items:center;border-radius:50%;font-size:0}
+  .float:after{content:"💬";font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="wrap nav">
+    <a href="#home"><img class="logo" src="logo.png" alt="Plannique Design Co"></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#packages">Packages</a>
+      <a href="#portfolio">Our Style</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="https://wa.me/60123456789?text=Hi%2C%20I%20would%20like%20a%20free%20website%20quotation%20from%20Plannique%20Design%20Co." target="_blank">Get Free Quote</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="badge">✦ Websites built for real local businesses</div>
+      <h1>Make your business look more <span>trusted, established and ready.</span></h1>
+      <p>
+        Plannique Design Co creates elegant, mobile-friendly websites for salons,
+        cafés, clinics and local businesses that want customers to understand,
+        trust and contact them more easily.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-wa" href="https://wa.me/60123456789?text=Hi%2C%20I%20would%20like%20a%20free%20website%20quotation." target="_blank">💬 Get a Free Quote</a>
+        <a class="btn btn-light" href="#portfolio">See Our Design Style</a>
+      </div>
+
+      <div class="hero-points">
+        <span>✓ Mobile responsive</span>
+        <span>✓ WhatsApp integration</span>
+        <span>✓ Google Maps</span>
+        <span>✓ Clear package pricing</span>
+      </div>
+    </div>
+
+    <div class="visual">
+      <div class="main-photo"></div>
+      <div class="logo-card"><img src="logo.png" alt="Plannique Design Co"></div>
+      <div class="proof-card">
+        <strong>Your website should answer three things:</strong>
+        <span>Who you are, what you offer, and how customers can contact you.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="wrap trust-grid">
+    <div class="trust-item"><strong>3</strong><span>Clear packages</span></div>
+    <div class="trust-item"><strong>100%</strong><span>Responsive design</span></div>
+    <div class="trust-item"><strong>Direct</strong><span>WhatsApp enquiries</span></div>
+    <div class="trust-item"><strong>Transparent</strong><span>No confusing scope</span></div>
+  </div>
+</div>
+
+<section class="section" id="about">
+  <div class="wrap value-grid">
+    <div class="value-image">
+      <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=85" alt="Creative design workspace">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=700&q=85" alt="Planning session">
+    </div>
+
+    <div>
+      <div class="eyebrow">About Plannique</div>
+      <h2 class="title">A website should help your business feel more real</h2>
+      <p class="copy">
+        Many small businesses rely only on social media. A professional website
+        gives customers one clear place to view your services, promotions,
+        location, reviews and contact details.
+      </p>
+      <p class="copy">
+        We design with both appearance and customer action in mind.
+      </p>
+
+      <div class="checks">
+        <div class="check"><strong>Clear structure</strong><span>Customers can quickly understand your business.</span></div>
+        <div class="check"><strong>Professional visual style</strong><span>Your brand looks more established.</span></div>
+        <div class="check"><strong>Mobile-first design</strong><span>Built for how customers browse today.</span></div>
+        <div class="check"><strong>Simple enquiry path</strong><span>WhatsApp, map and form are easy to find.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section trust-section">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#cdd4ca">Why Choose Us</div>
+    <h2 class="title">Designed to feel trustworthy, not overcomplicated</h2>
+    <p class="copy">
+      We keep the process clear, the pricing understandable and the design focused
+      on what customers actually need.
+    </p>
+
+    <div class="reason-grid">
+      <div class="reason"><span>🧭</span><h3>Clear Direction</h3><p>We help organise the content and recommend the right package.</p></div>
+      <div class="reason"><span>📱</span><h3>Mobile First</h3><p>Every design is planned for phones before larger screens.</p></div>
+      <div class="reason"><span>💬</span><h3>Easy Contact</h3><p>WhatsApp buttons and contact options are placed where customers need them.</p></div>
+      <div class="reason"><span>🧾</span><h3>Transparent Scope</h3><p>You know what is included before the design work begins.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section packages" id="packages">
+  <div class="wrap">
+    <div class="eyebrow">Website Packages</div>
+    <h2 class="title">Choose the right level for your business</h2>
+    <p class="copy">Every package includes responsive design and WhatsApp integration.</p>
+
+    <div class="package-grid">
+      <article class="package">
+        <div class="eyebrow">Starter</div>
+        <h3>Simple Online Presence</h3>
+        <div class="price"><span>RM</span>499</div>
+        <p class="package-desc">For new and home-based businesses that need one professional page.</p>
+        <ul>
+          <li>One-page website</li>
+          <li>Mobile responsive</li>
+          <li>About and services</li>
+          <li>WhatsApp button</li>
+          <li>Google Maps</li>
+          <li>Basic gallery</li>
+          <li>One revision round</li>
+          <li>3–5 working days</li>
+        </ul>
+        <a class="btn btn-light" href="https://wa.me/60123456789?text=I%20am%20interested%20in%20the%20RM499%20Starter%20Package." target="_blank">Choose Starter</a>
+      </article>
+
+      <article class="package featured">
+        <div class="popular">MOST POPULAR</div>
+        <div class="eyebrow" style="color:#cbd2c7">Business</div>
+        <h3>Professional Business Website</h3>
+        <div class="price"><span>RM</span>999</div>
+        <p class="package-desc">For businesses that want better presentation and stronger enquiries.</p>
+        <ul>
+          <li>Custom one-page business website</li>
+          <li>Services and price presentation</li>
+          <li>Promotions and gallery</li>
+          <li>WhatsApp integration</li>
+          <li>Google Maps and Google Form</li>
+          <li>Testimonials and FAQ</li>
+          <li>Basic SEO setup</li>
+          <li>Three revision rounds</li>
+          <li>5–7 working days</li>
+        </ul>
+        <a class="btn btn-wa" href="https://wa.me/60123456789?text=I%20am%20interested%20in%20the%20RM999%20Business%20Package." target="_blank">Choose Business</a>
+      </article>
+
+      <article class="package">
+        <div class="eyebrow">Premium</div>
+        <h3>Complete Brand Website</h3>
+        <div class="price"><span>RM</span>1,499</div>
+        <p class="package-desc">For established businesses with richer content and stronger branding.</p>
+        <ul>
+          <li>Advanced website layout</li>
+          <li>Premium visual direction</li>
+          <li>Multiple service categories</li>
+          <li>Team or specialist profiles</li>
+          <li>Membership or promotions</li>
+          <li>Blog or article section</li>
+          <li>Analytics and basic SEO</li>
+          <li>Five revision rounds</li>
+          <li>Priority support</li>
+        </ul>
+        <a class="btn btn-dark" href="https://wa.me/60123456789?text=I%20am%20interested%20in%20the%20RM1499%20Premium%20Package." target="_blank">Choose Premium</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">Transparent From The Start</div>
+    <h2 class="title">What is included—and what is separate</h2>
+
+    <div class="transparent-grid">
+      <div class="transparent-card">
+        <h3>Included</h3>
+        <p>Website design, mobile responsiveness, WhatsApp integration and publishing support within the selected package.</p>
+      </div>
+      <div class="transparent-card">
+        <h3>Client Provides</h3>
+        <p>Business logo, service details, prices, photos, contact information and final content approval.</p>
+      </div>
+      <div class="transparent-card">
+        <h3>Quoted Separately</h3>
+        <p>Domain registration, paid hosting, professional copywriting, custom photography and paid booking systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="eyebrow">Our Design Style</div>
+    <h2 class="title">Graphic, practical and made to feel like a real business</h2>
+    <p class="copy">Each design can be adjusted to match the client’s brand and industry.</p>
+
+    <div class="portfolio-grid">
+      <div class="work">
+        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=85" alt="Beauty salon website">
+        <div class="work-label"><strong>Beauty & Hair Salon</strong><span>Services, promotions, gallery and booking</span></div>
+      </div>
+      <div class="work">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=85" alt="Cafe website">
+        <div class="work-label"><strong>Café & Lifestyle</strong><span>Menu, location and reservations</span></div>
+      </div>
+      <div class="work">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=85" alt="Clinic website">
+        <div class="work-label"><strong>Clinic & Wellness</strong><span>Treatments, specialists and enquiry form</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="eyebrow">Our Process</div>
+    <h2 class="title">Simple from enquiry to launch</h2>
+
+    <div class="process-grid">
+      <div class="step"><b>01</b><h3>Enquire</h3><p>Tell us about your business and preferred style.</p></div>
+      <div class="step"><b>02</b><h3>Send Content</h3><p>Share your logo, services, photos and contact details.</p></div>
+      <div class="step"><b>03</b><h3>Design</h3><p>We prepare the website based on the selected package.</p></div>
+      <div class="step"><b>04</b><h3>Review</h3><p>You review the draft and send revision feedback.</p></div>
+      <div class="step"><b>05</b><h3>Launch</h3><p>We publish the approved website and connect the domain.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section content-section">
+  <div class="wrap content-grid">
+    <div>
+      <div class="eyebrow">Before We Start</div>
+      <h2 class="title">What we need from you</h2>
+      <p class="copy">Having these materials ready helps the project move faster.</p>
+
+      <div class="content-list">
+        <div class="content-item">Business logo</div>
+        <div class="content-item">Business introduction</div>
+        <div class="content-item">Service list and prices</div>
+        <div class="content-item">Photos or gallery images</div>
+        <div class="content-item">WhatsApp number</div>
+        <div class="content-item">Address and opening hours</div>
+        <div class="content-item">Social media links</div>
+        <div class="content-item">Preferred colours or style</div>
+      </div>
+    </div>
+
+    <div class="content-note">
+      <h3>Not sure which package fits?</h3>
+      <p>Send us your business type, current social media page and what you want customers to do. We will recommend the most suitable option.</p>
+      <a class="btn btn-wa" style="margin-top:22px" href="https://wa.me/60123456789?text=Hi%2C%20I%20am%20not%20sure%20which%20website%20package%20fits%20my%20business." target="_blank">Ask on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="title">Questions before getting started</h2>
+
+    <div class="faq">
+      <details><summary>Do I need to buy a domain?</summary><p>Yes. The business should own its domain. We can help check availability and connect it.</p></details>
+      <details><summary>Will the website work on mobile?</summary><p>Yes. Every package includes responsive design for phones, tablets and desktop screens.</p></details>
+      <details><summary>Can I update the website later?</summary><p>Yes. Future changes and ongoing maintenance can be quoted separately.</p></details>
+      <details><summary>Can customers contact me through WhatsApp?</summary><p>Yes. We can include floating buttons and pre-filled enquiry messages.</p></details>
+      <details><summary>Is domain and hosting included?</summary><p>Domain and paid hosting are separate unless stated in the final quotation.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section lead">
+  <div class="wrap lead-grid">
+    <div>
+      <div class="eyebrow" style="color:#d3d9d0">Free Website Consultation</div>
+      <h2 class="title">Tell us about your business</h2>
+      <p class="copy">
+        Share a few details and we will recommend the most suitable package and
+        next step.
+      </p>
+      <div class="actions">
+        <a class="btn btn-wa" href="https://wa.me/60123456789?text=Hi%2C%20I%20would%20like%20a%20free%20website%20consultation." target="_blank">💬 WhatsApp Consultation</a>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h3>Quick Enquiry</h3>
+      <form class="form-grid" onsubmit="sendToWhatsApp(event)">
+        <input id="name" type="text" placeholder="Your name" required>
+        <input id="business" type="text" placeholder="Business name" required>
+        <select id="type" required>
+          <option value="">Select business type</option>
+          <option>Beauty / Salon</option>
+          <option>Café / Restaurant</option>
+          <option>Clinic / Wellness</option>
+          <option>Other Local Business</option>
+        </select>
+        <select id="package">
+          <option value="">Package you are considering</option>
+          <option>Starter RM499</option>
+          <option>Business RM999</option>
+          <option>Premium RM1,499</option>
+          <option>Not sure yet</option>
+        </select>
+        <textarea id="message" placeholder="Tell us what you need"></textarea>
+        <button class="btn btn-dark" type="submit">Send Enquiry to WhatsApp</button>
+      </form>
+      <div class="form-note">This form opens WhatsApp with your details. Replace the WhatsApp number before publishing.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="logo.png" alt="Plannique Design Co">
+        <p>Elegant, practical websites for growing local businesses.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#about">About</a>
+        <a href="#packages">Packages</a>
+        <a href="#portfolio">Our Style</a>
+        <a href="#process">Process</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="https://wa.me/60123456789">WhatsApp</a>
+        <a href="mailto:hello@plannique.com">Email</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Plannique Design Co.</span>
+      <span>Web Design • Landing Pages • Business Websites</span>
+    </div>
+  </div>
+</footer>
+
+<a class="float" href="https://wa.me/60123456789?text=Hi%2C%20I%20would%20like%20a%20free%20website%20quotation." target="_blank">💬 Free Quote</a>
+
+<script>
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
+menuBtn.addEventListener("click",()=>navLinks.classList.toggle("open"));
+document.querySelectorAll(".nav-links a").forEach(a=>a.addEventListener("click",()=>navLinks.classList.remove("open")));
+
+function sendToWhatsApp(event){
+  event.preventDefault();
+  const name=document.getElementById("name").value;
+  const business=document.getElementById("business").value;
+  const type=document.getElementById("type").value;
+  const packageName=document.getElementById("package").value || "Not selected";
+  const message=document.getElementById("message").value || "No additional message";
+  const text=`Hi, I would like a website consultation.%0A%0AName: ${encodeURIComponent(name)}%0ABusiness: ${encodeURIComponent(business)}%0ABusiness Type: ${encodeURIComponent(type)}%0APackage: ${encodeURIComponent(packageName)}%0AMessage: ${encodeURIComponent(message)}`;
+  window.open(`https://wa.me/60123456789?text=${text}`,"_blank");
+}
+</script>
+
+</body>
+</html>"""
+
+(site / "index.html").write_text(html, encoding="utf-8")
+
+zip_path = Path("/mnt/data/plannique_design_co_enhanced.zip")
+with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
+    z.write(site / "index.html", arcname="index.html")
+    z.write(site / "logo.png", arcname="logo.png")
+
+print(f"Created: {site / 'index.html'}")
+print(f"Created: {zip_path}")
