@@ -1,18 +1,4 @@
-from pathlib import Path
-import base64
-
-logo_candidates = [
-    Path("/mnt/data/a8483816-614c-4d04-85ec-2b8b258126d5.png"),
-    Path("/mnt/data/plannique_swipe_landing/logo.png"),
-    Path("/mnt/data/plannique_site/logo.png"),
-]
-logo_path = next((p for p in logo_candidates if p.exists()), None)
-if not logo_path:
-    raise FileNotFoundError("Plannique logo could not be found.")
-
-logo_data = "data:image/png;base64," + base64.b64encode(logo_path.read_bytes()).decode("ascii")
-
-html = r'''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -292,49 +278,252 @@ main{padding-top:86px}
 .preview-body h3{font-family:"Playfair Display",serif;font-size:25px}
 .preview-body p{margin-top:7px;color:var(--muted);font-size:14px}
 
-/* PORTFOLIO */
-.filter-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.filter-btn{
-  padding:10px 15px;
-  border-radius:999px;
+/* PORTFOLIO LIBRARY */
+.portfolio-toolbar{
+  margin-top:32px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.search-box{
+  flex:1;
+  min-width:250px;
+  max-width:440px;
+  position:relative;
+}
+.search-box span{
+  position:absolute;
+  left:16px;
+  top:50%;
+  transform:translateY(-50%);
+  pointer-events:none;
+}
+.search-box input{
+  width:100%;
+  padding:14px 16px 14px 46px;
   border:1px solid var(--line);
+  border-radius:999px;
   background:#fff;
+  outline:none;
+  transition:.2s;
+}
+.search-box input:focus{
+  border-color:var(--sage);
+  box-shadow:0 0 0 4px rgba(117,129,111,.12);
+}
+.portfolio-summary{
+  color:var(--muted);
+  font-size:14px;
   font-weight:700;
 }
-.filter-btn.active{background:var(--ink);color:#fff}
-.portfolio-grid{
-  margin-top:35px;
+.category-grid{
+  margin-top:34px;
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:21px;
+  gap:22px;
 }
-.project-card{
+.category-card{
+  position:relative;
+  min-height:370px;
+  border:0;
+  border-radius:26px;
+  overflow:hidden;
+  text-align:left;
+  color:#fff;
+  box-shadow:0 20px 55px rgba(45,35,28,.16);
+  isolation:isolate;
+}
+.category-card:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(24,21,18,.9) 5%,rgba(24,21,18,.18) 68%);
+  z-index:1;
+}
+.category-card img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.45s;
+}
+.category-card:hover img{transform:scale(1.06)}
+.category-card-content{
+  position:absolute;
+  inset:auto 0 0;
+  z-index:2;
+  padding:26px;
+}
+.category-icon{font-size:32px}
+.category-card h3{
+  margin-top:8px;
+  font-family:"Playfair Display",serif;
+  font-size:32px;
+  line-height:1.08;
+}
+.category-card p{
+  margin-top:8px;
+  color:#ddd6cf;
+  font-size:14px;
+}
+.category-meta{
+  margin-top:17px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+.design-count{
+  padding:7px 11px;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(9px);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.7px;
+  text-transform:uppercase;
+}
+.view-collection{font-size:13px;font-weight:800}
+.collection-view{display:none}
+.collection-view.active{display:block;animation:pageIn .35s ease}
+.category-view.hidden{display:none}
+.collection-header{
+  margin-top:30px;
+  padding:25px;
+  border-radius:23px;
+  background:#fff;
+  border:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  flex-wrap:wrap;
+}
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:0;
+  background:none;
+  color:var(--sage-dark);
+  font-weight:800;
+}
+.collection-title-row{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+.collection-title-row span{font-size:34px}
+.collection-title-row h2{
+  font-family:"Playfair Display",serif;
+  font-size:34px;
+  line-height:1.05;
+}
+.collection-title-row p{color:var(--muted);font-size:13px}
+.design-grid{
+  margin-top:27px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.design-card{
   overflow:hidden;
   border-radius:23px;
   background:#fff;
-  box-shadow:0 18px 48px rgba(60,48,37,.11);
+  border:1px solid var(--line);
+  box-shadow:0 16px 45px rgba(60,48,37,.1);
+  transition:.28s;
 }
-.project-image{height:285px;overflow:hidden;position:relative}
-.project-image img{width:100%;height:100%;object-fit:cover;transition:.4s}
-.project-card:hover img{transform:scale(1.05)}
-.project-type{
-  position:absolute;top:14px;left:14px;
-  padding:7px 11px;border-radius:999px;
-  background:rgba(255,255,255,.92);
-  font-size:11px;font-weight:800;
+.design-card:hover{transform:translateY(-6px);box-shadow:0 24px 58px rgba(60,48,37,.15)}
+.design-preview{
+  height:285px;
+  overflow:hidden;
+  position:relative;
+  background:#e7e1d8;
 }
-.project-body{padding:22px}
-.project-body h3{font-family:"Playfair Display",serif;font-size:27px}
-.project-body p{margin-top:7px;color:var(--muted);font-size:14px}
-.project-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
-.project-tags span{padding:6px 9px;border-radius:999px;background:#f3efe9;font-size:11px}
-.project-actions{display:flex;gap:10px;margin-top:18px}
-.small-btn{
-  flex:1;padding:11px 13px;border-radius:999px;
-  border:1px solid var(--line);background:#fff;
-  font-weight:800;text-align:center;
+.design-preview img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.45s;
 }
-.small-btn.primary{background:var(--ink);color:#fff}
+.design-card:hover .design-preview img{transform:scale(1.04)}
+.design-number{
+  position:absolute;
+  left:14px;
+  top:14px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.94);
+  color:var(--ink);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.7px;
+}
+.design-code{
+  position:absolute;
+  right:14px;
+  top:14px;
+  padding:8px 11px;
+  border-radius:999px;
+  background:rgba(42,39,35,.88);
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.8px;
+}
+.design-body{padding:22px}
+.design-body h3{
+  font-family:"Playfair Display",serif;
+  font-size:27px;
+}
+.design-body p{margin-top:7px;color:var(--muted);font-size:13px}
+.design-features{
+  margin-top:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+.design-features span{
+  padding:6px 9px;
+  border-radius:999px;
+  background:#f3efe9;
+  font-size:10px;
+  font-weight:700;
+}
+.design-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}
+.design-btn{
+  padding:12px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  text-align:center;
+  font-size:12px;
+  font-weight:900;
+}
+.design-btn.demo{background:var(--ink);color:#fff;border-color:var(--ink)}
+.design-btn.choose{background:#fff}
+.empty-state{
+  display:none;
+  margin-top:30px;
+  padding:45px 20px;
+  border:1px dashed var(--line);
+  border-radius:22px;
+  text-align:center;
+  color:var(--muted);
+}
+.portfolio-note{
+  margin-top:30px;
+  padding:18px 20px;
+  border-left:4px solid var(--sage);
+  background:#fff;
+  border-radius:0 15px 15px 0;
+  color:var(--muted);
+  font-size:13px;
+}
 
 /* PACKAGES */
 .package-grid{margin-top:42px;display:grid;grid-template-columns:repeat(3,1fr);gap:21px}
@@ -469,6 +658,8 @@ footer{padding:48px 0 26px;background:#1d1b18;color:#bbb4ac}
 .not-found h1{font-family:"Playfair Display",serif;font-size:70px}
 
 @media(max-width:950px){
+  .category-grid,.design-grid{grid-template-columns:1fr 1fr}
+
   .nav-links{
     position:absolute;top:86px;left:20px;right:20px;
     display:none;flex-direction:column;align-items:flex-start;
@@ -485,6 +676,10 @@ footer{padding:48px 0 26px;background:#1d1b18;color:#bbb4ac}
   .package.featured{transform:none}
 }
 @media(max-width:600px){
+  .category-grid,.design-grid{grid-template-columns:1fr}
+  .category-card{min-height:335px}
+  .design-actions{grid-template-columns:1fr}
+
   .wrap{width:min(100% - 28px,1180px)}
   .section{padding:72px 0}
   .logo{width:158px}
@@ -555,7 +750,7 @@ footer{padding:48px 0 26px;background:#1d1b18;color:#bbb4ac}
 
       <div class="visual">
         <div class="main-photo"></div>
-        <div class="logo-card"><img src="__LOGO__" alt="Plannique Design Co"></div>
+        <div class="logo-card"><img src="https://ricobr.ft-crm.com/media-api/serve/0f4dde75-8ce1-4c70-b072-6b988ba25aa9_Customizable_Daily_Planner_Template.png" alt="Plannique Design Co"></div>
         <div class="proof-card">
           <strong>Your business deserves more than social media.</strong>
           <span>Give customers one place to see your services, location and contact details.</span>
@@ -623,56 +818,70 @@ footer{padding:48px 0 26px;background:#1d1b18;color:#bbb4ac}
   <div class="page-hero">
     <div class="wrap page-hero-grid">
       <div>
-        <div class="eyebrow">Website Collection</div>
-        <h1>Browse designs by industry</h1>
-        <p>Choose a style you like, then customise it with your business name, colours, content and photographs.</p>
+        <div class="eyebrow">Website Design Library</div>
+        <h1>Choose your industry, then choose your design</h1>
+        <p>Every category includes 10 different landing page designs. Open any live demo and send us the design code you prefer.</p>
+        <div class="actions">
+          <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20help%20choosing%20a%20website%20design." target="_blank">💬 Help Me Choose</a>
+        </div>
       </div>
-      <div class="page-visual"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85" alt="Portfolio"></div>
+      <div class="page-visual"><img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1100&q=85" alt="Plannique website portfolio library"></div>
     </div>
   </div>
 
   <div class="section">
     <div class="wrap">
-      <div class="filter-row">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="beauty">Beauty</button>
-        <button class="filter-btn" data-filter="food">Food</button>
-        <button class="filter-btn" data-filter="health">Health</button>
-        <button class="filter-btn" data-filter="property">Property</button>
-        <button class="filter-btn" data-filter="automotive">Automotive</button>
-        <button class="filter-btn" data-filter="fitness">Fitness</button>
+      <div class="category-view" id="categoryView">
+        <div class="eyebrow">Browse Categories</div>
+        <h2 class="title">60 website designs across 6 industries</h2>
+        <p class="copy">Select a business category to explore its full collection. You do not need to know the design style—simply choose the design number you like most.</p>
+
+        <div class="portfolio-toolbar">
+          <div class="search-box">
+            <span>⌕</span>
+            <input id="categorySearch" type="search" placeholder="Search category, e.g. gym or café" aria-label="Search portfolio categories">
+          </div>
+          <div class="portfolio-summary" id="portfolioSummary">6 categories · 60 designs</div>
+        </div>
+
+        <div class="category-grid" id="categoryGrid"></div>
+        <div class="empty-state" id="categoryEmpty">No category found. Try another search word.</div>
+
+        <div class="portfolio-note">
+          <strong>Easy to update:</strong> Replace each sample screenshot and <code>demoUrl</code> inside the <code>portfolioData</code> section near the bottom of this HTML.
+        </div>
       </div>
 
-      <div class="portfolio-grid" id="portfolioGrid">
-        <article class="project-card" data-category="beauty">
-          <div class="project-image"><span class="project-type">Beauty</span><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85" alt="Beauty salon"></div>
-          <div class="project-body"><h3>Beauty & Hair Salon</h3><p>Promotions, service catalogue, stylists, gallery and WhatsApp booking.</p><div class="project-tags"><span>Promotions</span><span>Services</span><span>Booking</span></div><div class="project-actions"><a class="small-btn primary" href="#" onclick="demoNotice(event)">Live Demo</a><a class="small-btn" href="https://wa.me/60189079798?text=Hi%2C%20I%20like%20the%20Beauty%20Salon%20website%20design." target="_blank">Customise</a></div></div>
-        </article>
+      <div class="collection-view" id="collectionView">
+        <button class="back-btn" id="backToCategories">← Back to all categories</button>
 
-        <article class="project-card" data-category="food">
-          <div class="project-image"><span class="project-type">Food</span><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85" alt="Cafe"></div>
-          <div class="project-body"><h3>Café & Restaurant</h3><p>Menu, signature products, gallery, opening hours and reservations.</p><div class="project-tags"><span>Menu</span><span>Gallery</span><span>Reservation</span></div><div class="project-actions"><a class="small-btn primary" href="#" onclick="demoNotice(event)">Live Demo</a><a class="small-btn" href="https://wa.me/60189079798?text=Hi%2C%20I%20like%20the%20Cafe%20website%20design." target="_blank">Customise</a></div></div>
-        </article>
+        <div class="collection-header">
+          <div class="collection-title-row">
+            <span id="collectionIcon">✦</span>
+            <div>
+              <h2 id="collectionTitle">Category</h2>
+              <p id="collectionSubtitle">10 landing page designs available</p>
+            </div>
+          </div>
+          <div class="search-box">
+            <span>⌕</span>
+            <input id="designSearch" type="search" placeholder="Search Design 01 or code" aria-label="Search designs">
+          </div>
+        </div>
 
-        <article class="project-card" data-category="health">
-          <div class="project-image"><span class="project-type">Health</span><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85" alt="Dental clinic"></div>
-          <div class="project-body"><h3>Dental Clinic</h3><p>Treatments, dentist profiles, patient FAQs and appointment requests.</p><div class="project-tags"><span>Treatments</span><span>Doctors</span><span>Form</span></div><div class="project-actions"><a class="small-btn primary" href="#" onclick="demoNotice(event)">Live Demo</a><a class="small-btn" href="https://wa.me/60189079798?text=Hi%2C%20I%20like%20the%20Dental%20Clinic%20website%20design." target="_blank">Customise</a></div></div>
-        </article>
+        <div class="design-grid" id="designGrid"></div>
+        <div class="empty-state" id="designEmpty">No design found in this collection.</div>
+      </div>
+    </div>
+  </div>
 
-        <article class="project-card" data-category="property">
-          <div class="project-image"><span class="project-type">Property</span><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85" alt="Homestay"></div>
-          <div class="project-body"><h3>Homestay & Airbnb</h3><p>Rooms, facilities, attractions, gallery, map and booking enquiry.</p><div class="project-tags"><span>Rooms</span><span>Amenities</span><span>Booking</span></div><div class="project-actions"><a class="small-btn primary" href="#" onclick="demoNotice(event)">Live Demo</a><a class="small-btn" href="https://wa.me/60189079798?text=Hi%2C%20I%20like%20the%20Homestay%20website%20design." target="_blank">Customise</a></div></div>
-        </article>
-
-        <article class="project-card" data-category="automotive">
-          <div class="project-image"><span class="project-type">Automotive</span><img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85" alt="Car detailing"></div>
-          <div class="project-body"><h3>Car Detailing</h3><p>Packages, before-and-after results, protection services and booking.</p><div class="project-tags"><span>Results</span><span>Packages</span><span>WhatsApp</span></div><div class="project-actions"><a class="small-btn primary" href="#" onclick="demoNotice(event)">Live Demo</a><a class="small-btn" href="https://wa.me/60189079798?text=Hi%2C%20I%20like%20the%20Car%20Detailing%20website%20design." target="_blank">Customise</a></div></div>
-        </article>
-
-        <article class="project-card" data-category="fitness">
-          <div class="project-image"><span class="project-type">Fitness</span><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85" alt="Gym"></div>
-          <div class="project-body"><h3>Gym & Fitness</h3><p>Membership packages, classes, trainers and transformation stories.</p><div class="project-tags"><span>Membership</span><span>Classes</span><span>Trainers</span></div><div class="project-actions"><a class="small-btn primary" href="#" onclick="demoNotice(event)">Live Demo</a><a class="small-btn" href="https://wa.me/60189079798?text=Hi%2C%20I%20like%20the%20Gym%20website%20design." target="_blank">Customise</a></div></div>
-        </article>
+  <div class="cta">
+    <div class="wrap">
+      <h2>Found a design you like?</h2>
+      <p>Send us its design code. We will customise the logo, colours, content, photographs, contact details and functions for your business.</p>
+      <div class="actions">
+        <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20found%20a%20design%20from%20your%20portfolio%20and%20would%20like%20to%20customise%20it." target="_blank">💬 Customise a Design</a>
+        <button class="btn btn-light" data-route="packages">View Packages</button>
       </div>
     </div>
   </div>
@@ -1015,25 +1224,190 @@ window.addEventListener("popstate",()=>{
   showPage(currentRoute(),false);
 });
 
-/* Portfolio filters */
-const filterButtons=[...document.querySelectorAll(".filter-btn")];
-const projects=[...document.querySelectorAll(".project-card")];
+/* Portfolio library data
+   Replace screenshot and demoUrl values with your real portfolio links.
+   Each category is prepared with 10 numbered designs. */
+const portfolioData = [
+  {
+    key:"beauty", prefix:"BEA", icon:"💇", title:"Beauty & Hair Salon",
+    description:"Salon, spa, nail, hair and personal beauty businesses.",
+    cover:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=85",
+    images:[
+      "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=85"
+    ], features:["Services","Gallery","WhatsApp"]
+  },
+  {
+    key:"food", prefix:"CAF", icon:"☕", title:"Café & Restaurant",
+    description:"Cafés, restaurants, bakeries and food businesses.",
+    cover:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85",
+    images:[
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85"
+    ], features:["Menu","Gallery","Reservation"]
+  },
+  {
+    key:"health", prefix:"DEN", icon:"🦷", title:"Dental & Clinic",
+    description:"Dental clinics, aesthetic centres and wellness practices.",
+    cover:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=85",
+    images:[
+      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=85"
+    ], features:["Treatments","Doctors","Appointment"]
+  },
+  {
+    key:"property", prefix:"HOM", icon:"🏠", title:"Homestay & Airbnb",
+    description:"Homestays, Airbnb properties, boutique hotels and rentals.",
+    cover:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85",
+    images:[
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85"
+    ], features:["Rooms","Amenities","Booking"]
+  },
+  {
+    key:"automotive", prefix:"CAR", icon:"🚗", title:"Car Detailing",
+    description:"Detailing studios, car wash, workshops and automotive services.",
+    cover:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1000&q=85",
+    images:[
+      "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=900&q=85"
+    ], features:["Packages","Results","Booking"]
+  },
+  {
+    key:"fitness", prefix:"GYM", icon:"🏋️", title:"Gym & Fitness",
+    description:"Gyms, fitness studios, personal trainers and wellness clubs.",
+    cover:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85",
+    images:[
+      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=85"
+    ], features:["Membership","Classes","Trainers"]
+  }
+].map(category => ({
+  ...category,
+  designs:Array.from({length:10},(_,index)=>{
+    const number=String(index+1).padStart(2,"0");
+    return {
+      number,
+      code:`${category.prefix}-${String(index+1).padStart(3,"0")}`,
+      title:`Design ${number}`,
+      screenshot:category.images[index % category.images.length],
+      demoUrl:"#", // Replace # with the real live demo URL for this design
+      features:category.features
+    };
+  })
+}));
 
-filterButtons.forEach(button=>{
-  button.addEventListener("click",()=>{
-    filterButtons.forEach(item=>item.classList.remove("active"));
-    button.classList.add("active");
-    const filter=button.dataset.filter;
-    projects.forEach(project=>{
-      project.style.display=filter==="all" || project.dataset.category===filter ? "" : "none";
+const categoryView=document.getElementById("categoryView");
+const collectionView=document.getElementById("collectionView");
+const categoryGrid=document.getElementById("categoryGrid");
+const designGrid=document.getElementById("designGrid");
+const categorySearch=document.getElementById("categorySearch");
+const designSearch=document.getElementById("designSearch");
+const categoryEmpty=document.getElementById("categoryEmpty");
+const designEmpty=document.getElementById("designEmpty");
+const backToCategories=document.getElementById("backToCategories");
+let activeCategory=null;
+
+function renderCategories(query=""){
+  const term=query.trim().toLowerCase();
+  const filtered=portfolioData.filter(category =>
+    `${category.title} ${category.description} ${category.key}`.toLowerCase().includes(term)
+  );
+
+  categoryGrid.innerHTML=filtered.map(category=>`
+    <button class="category-card" type="button" data-category-key="${category.key}">
+      <img src="${category.cover}" alt="${category.title} portfolio collection">
+      <div class="category-card-content">
+        <div class="category-icon">${category.icon}</div>
+        <h3>${category.title}</h3>
+        <p>${category.description}</p>
+        <div class="category-meta">
+          <span class="design-count">10 Designs</span>
+          <span class="view-collection">View Collection →</span>
+        </div>
+      </div>
+    </button>
+  `).join("");
+
+  categoryEmpty.style.display=filtered.length ? "none" : "block";
+
+  categoryGrid.querySelectorAll("[data-category-key]").forEach(button=>{
+    button.addEventListener("click",()=>openCollection(button.dataset.categoryKey));
+  });
+}
+
+function openCollection(key){
+  activeCategory=portfolioData.find(category=>category.key===key);
+  if(!activeCategory) return;
+
+  document.getElementById("collectionIcon").textContent=activeCategory.icon;
+  document.getElementById("collectionTitle").textContent=activeCategory.title;
+  document.getElementById("collectionSubtitle").textContent="10 landing page designs available · Select by design number or code";
+  designSearch.value="";
+  renderDesigns();
+  categoryView.classList.add("hidden");
+  collectionView.classList.add("active");
+  window.scrollTo({top:document.querySelector('[data-page="portfolio"] .section').offsetTop-70,behavior:"smooth"});
+}
+
+function renderDesigns(query=""){
+  if(!activeCategory) return;
+  const term=query.trim().toLowerCase();
+  const designs=activeCategory.designs.filter(design=>
+    `${design.title} ${design.code}`.toLowerCase().includes(term)
+  );
+
+  designGrid.innerHTML=designs.map(design=>{
+    const message=`Hi, I like ${activeCategory.title} ${design.title} (${design.code}). I would like to customise this design for my business.`;
+    return `
+      <article class="design-card">
+        <div class="design-preview">
+          <img src="${design.screenshot}" alt="${activeCategory.title} ${design.title}">
+          <span class="design-number">${design.title}</span>
+          <span class="design-code">${design.code}</span>
+        </div>
+        <div class="design-body">
+          <h3>${design.title}</h3>
+          <p>Reference code: <strong>${design.code}</strong></p>
+          <div class="design-features">
+            ${design.features.map(feature=>`<span>✓ ${feature}</span>`).join("")}
+            <span>✓ Mobile Ready</span>
+          </div>
+          <div class="design-actions">
+            <a class="design-btn demo" href="${design.demoUrl}" target="_blank" rel="noopener" data-demo-link="${design.demoUrl}">View Live Demo</a>
+            <a class="design-btn choose" href="https://wa.me/60189079798?text=${encodeURIComponent(message)}" target="_blank">Use This Design</a>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join("");
+
+  designEmpty.style.display=designs.length ? "none" : "block";
+
+  designGrid.querySelectorAll('[data-demo-link="#"]').forEach(link=>{
+    link.addEventListener("click",event=>{
+      event.preventDefault();
+      alert("This is a sample slot. Replace its demoUrl in portfolioData with your real live landing page link.");
     });
   });
+}
+
+categorySearch.addEventListener("input",()=>renderCategories(categorySearch.value));
+designSearch.addEventListener("input",()=>renderDesigns(designSearch.value));
+backToCategories.addEventListener("click",()=>{
+  collectionView.classList.remove("active");
+  categoryView.classList.remove("hidden");
+  activeCategory=null;
+  window.scrollTo({top:document.querySelector('[data-page="portfolio"] .section').offsetTop-70,behavior:"smooth"});
 });
 
-function demoNotice(event){
-  event.preventDefault();
-  alert("Replace this placeholder with the URL of your live demo website.");
-}
+renderCategories();
 
 /* WhatsApp form */
 document.getElementById("enquiryForm").addEventListener("submit",event=>{
@@ -1074,10 +1448,4 @@ showPage(currentRoute(),false);
 </script>
 
 </body>
-</html>'''.replace("__LOGO__", logo_data)
-
-out = Path("/mnt/data/plannique_single_html_multipage.html")
-out.write_text(html, encoding="utf-8")
-
-print(f"Created: {out}")
-print(f"Size: {out.stat().st_size:,} bytes")
+</html>
