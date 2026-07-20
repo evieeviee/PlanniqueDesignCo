@@ -848,7 +848,7 @@ footer{padding:48px 0 26px;background:#1d1b18;color:#bbb4ac}
         <div class="empty-state" id="categoryEmpty">No category found. Try another search word.</div>
 
         <div class="portfolio-note">
-          <strong>Easy to update:</strong> Replace each sample screenshot and <code>demoUrl</code> inside the <code>portfolioData</code> section near the bottom of this HTML.
+          <strong>Easy to update:</strong> Search for <code>PASTE-YOUR-</code> near the bottom of this HTML. Replace each placeholder with the matching live landing page URL.
         </div>
       </div>
 
@@ -1232,76 +1232,531 @@ const portfolioData = [
     key:"beauty", prefix:"BEA", icon:"💇", title:"Beauty & Hair Salon",
     description:"Salon, spa, nail, hair and personal beauty businesses.",
     cover:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=85",
-    images:[
-      "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=85"
-    ], features:["Services","Gallery","WhatsApp"]
+    features:["Services", "Gallery", "WhatsApp"].map(String),
+    designs:[
+      {
+        number:"01",
+        code:"BEA-001",
+        title:"Design 01",
+        screenshot:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-BEA-001-LIVE-DEMO-URL-HERE",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"02",
+        code:"BEA-002",
+        title:"Design 02",
+        screenshot:"https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-BEA-002-LIVE-DEMO-URL-HERE",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"03",
+        code:"BEA-003",
+        title:"Design 03",
+        screenshot:"https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-BEA-003-LIVE-DEMO-URL-HERE",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"04",
+        code:"BEA-004",
+        title:"Design 04",
+        screenshot:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-BEA-004-LIVE-DEMO-URL-HERE",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"05",
+        code:"BEA-005",
+        title:"Design 05",
+        screenshot:"https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-BEA-005-LIVE-DEMO-URL-HERE",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"06",
+        code:"BEA-006",
+        title:"Design 06",
+        screenshot:"https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-BEA-006-LIVE-DEMO-URL-HERE",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"07",
+        code:"BEA-007",
+        title:"Design 07",
+        screenshot:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-BEA-007-LIVE-DEMO-URL-HERE",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"08",
+        code:"BEA-008",
+        title:"Design 08",
+        screenshot:"https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-BEA-008-LIVE-DEMO-URL-HERE",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"09",
+        code:"BEA-009",
+        title:"Design 09",
+        screenshot:"https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-BEA-009-LIVE-DEMO-URL-HERE",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"10",
+        code:"BEA-010",
+        title:"Design 10",
+        screenshot:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-BEA-010-LIVE-DEMO-URL-HERE",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      }
+    ]
   },
   {
     key:"food", prefix:"CAF", icon:"☕", title:"Café & Restaurant",
     description:"Cafés, restaurants, bakeries and food businesses.",
     cover:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85",
-    images:[
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85"
-    ], features:["Menu","Gallery","Reservation"]
+    features:["Menu", "Gallery", "Reservation"].map(String),
+    designs:[
+      {
+        number:"01",
+        code:"CAF-001",
+        title:"Design 01",
+        screenshot:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAF-001-LIVE-DEMO-URL-HERE",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"02",
+        code:"CAF-002",
+        title:"Design 02",
+        screenshot:"https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAF-002-LIVE-DEMO-URL-HERE",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"03",
+        code:"CAF-003",
+        title:"Design 03",
+        screenshot:"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAF-003-LIVE-DEMO-URL-HERE",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"04",
+        code:"CAF-004",
+        title:"Design 04",
+        screenshot:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAF-004-LIVE-DEMO-URL-HERE",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"05",
+        code:"CAF-005",
+        title:"Design 05",
+        screenshot:"https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAF-005-LIVE-DEMO-URL-HERE",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"06",
+        code:"CAF-006",
+        title:"Design 06",
+        screenshot:"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAF-006-LIVE-DEMO-URL-HERE",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"07",
+        code:"CAF-007",
+        title:"Design 07",
+        screenshot:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAF-007-LIVE-DEMO-URL-HERE",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"08",
+        code:"CAF-008",
+        title:"Design 08",
+        screenshot:"https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAF-008-LIVE-DEMO-URL-HERE",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"09",
+        code:"CAF-009",
+        title:"Design 09",
+        screenshot:"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAF-009-LIVE-DEMO-URL-HERE",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"10",
+        code:"CAF-010",
+        title:"Design 10",
+        screenshot:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAF-010-LIVE-DEMO-URL-HERE",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      }
+    ]
   },
   {
     key:"health", prefix:"DEN", icon:"🦷", title:"Dental & Clinic",
     description:"Dental clinics, aesthetic centres and wellness practices.",
     cover:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=85",
-    images:[
-      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=85"
-    ], features:["Treatments","Doctors","Appointment"]
+    features:["Treatments", "Doctors", "Appointment"].map(String),
+    designs:[
+      {
+        number:"01",
+        code:"DEN-001",
+        title:"Design 01",
+        screenshot:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-DEN-001-LIVE-DEMO-URL-HERE",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"02",
+        code:"DEN-002",
+        title:"Design 02",
+        screenshot:"https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-DEN-002-LIVE-DEMO-URL-HERE",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"03",
+        code:"DEN-003",
+        title:"Design 03",
+        screenshot:"https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-DEN-003-LIVE-DEMO-URL-HERE",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"04",
+        code:"DEN-004",
+        title:"Design 04",
+        screenshot:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-DEN-004-LIVE-DEMO-URL-HERE",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"05",
+        code:"DEN-005",
+        title:"Design 05",
+        screenshot:"https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-DEN-005-LIVE-DEMO-URL-HERE",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"06",
+        code:"DEN-006",
+        title:"Design 06",
+        screenshot:"https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-DEN-006-LIVE-DEMO-URL-HERE",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"07",
+        code:"DEN-007",
+        title:"Design 07",
+        screenshot:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-DEN-007-LIVE-DEMO-URL-HERE",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"08",
+        code:"DEN-008",
+        title:"Design 08",
+        screenshot:"https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-DEN-008-LIVE-DEMO-URL-HERE",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"09",
+        code:"DEN-009",
+        title:"Design 09",
+        screenshot:"https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-DEN-009-LIVE-DEMO-URL-HERE",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"10",
+        code:"DEN-010",
+        title:"Design 10",
+        screenshot:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-DEN-010-LIVE-DEMO-URL-HERE",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      }
+    ]
   },
   {
     key:"property", prefix:"HOM", icon:"🏠", title:"Homestay & Airbnb",
     description:"Homestays, Airbnb properties, boutique hotels and rentals.",
     cover:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85",
-    images:[
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85"
-    ], features:["Rooms","Amenities","Booking"]
+    features:["Rooms", "Amenities", "Booking"].map(String),
+    designs:[
+      {
+        number:"01",
+        code:"HOM-001",
+        title:"Design 01",
+        screenshot:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-HOM-001-LIVE-DEMO-URL-HERE",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"02",
+        code:"HOM-002",
+        title:"Design 02",
+        screenshot:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-HOM-002-LIVE-DEMO-URL-HERE",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"03",
+        code:"HOM-003",
+        title:"Design 03",
+        screenshot:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-HOM-003-LIVE-DEMO-URL-HERE",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"04",
+        code:"HOM-004",
+        title:"Design 04",
+        screenshot:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-HOM-004-LIVE-DEMO-URL-HERE",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"05",
+        code:"HOM-005",
+        title:"Design 05",
+        screenshot:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-HOM-005-LIVE-DEMO-URL-HERE",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"06",
+        code:"HOM-006",
+        title:"Design 06",
+        screenshot:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-HOM-006-LIVE-DEMO-URL-HERE",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"07",
+        code:"HOM-007",
+        title:"Design 07",
+        screenshot:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-HOM-007-LIVE-DEMO-URL-HERE",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"08",
+        code:"HOM-008",
+        title:"Design 08",
+        screenshot:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-HOM-008-LIVE-DEMO-URL-HERE",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"09",
+        code:"HOM-009",
+        title:"Design 09",
+        screenshot:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-HOM-009-LIVE-DEMO-URL-HERE",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"10",
+        code:"HOM-010",
+        title:"Design 10",
+        screenshot:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-HOM-010-LIVE-DEMO-URL-HERE",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      }
+    ]
   },
   {
     key:"automotive", prefix:"CAR", icon:"🚗", title:"Car Detailing",
     description:"Detailing studios, car wash, workshops and automotive services.",
     cover:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1000&q=85",
-    images:[
-      "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=900&q=85"
-    ], features:["Packages","Results","Booking"]
+    features:["Packages", "Results", "Booking"].map(String),
+    designs:[
+      {
+        number:"01",
+        code:"CAR-001",
+        title:"Design 01",
+        screenshot:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAR-001-LIVE-DEMO-URL-HERE",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"02",
+        code:"CAR-002",
+        title:"Design 02",
+        screenshot:"https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAR-002-LIVE-DEMO-URL-HERE",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"03",
+        code:"CAR-003",
+        title:"Design 03",
+        screenshot:"https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAR-003-LIVE-DEMO-URL-HERE",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"04",
+        code:"CAR-004",
+        title:"Design 04",
+        screenshot:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAR-004-LIVE-DEMO-URL-HERE",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"05",
+        code:"CAR-005",
+        title:"Design 05",
+        screenshot:"https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAR-005-LIVE-DEMO-URL-HERE",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"06",
+        code:"CAR-006",
+        title:"Design 06",
+        screenshot:"https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAR-006-LIVE-DEMO-URL-HERE",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"07",
+        code:"CAR-007",
+        title:"Design 07",
+        screenshot:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAR-007-LIVE-DEMO-URL-HERE",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"08",
+        code:"CAR-008",
+        title:"Design 08",
+        screenshot:"https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAR-008-LIVE-DEMO-URL-HERE",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"09",
+        code:"CAR-009",
+        title:"Design 09",
+        screenshot:"https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAR-009-LIVE-DEMO-URL-HERE",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"10",
+        code:"CAR-010",
+        title:"Design 10",
+        screenshot:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-CAR-010-LIVE-DEMO-URL-HERE",
+        features:["Packages", "Results", "Booking"].map(String)
+      }
+    ]
   },
   {
     key:"fitness", prefix:"GYM", icon:"🏋️", title:"Gym & Fitness",
     description:"Gyms, fitness studios, personal trainers and wellness clubs.",
     cover:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85",
-    images:[
-      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=85"
-    ], features:["Membership","Classes","Trainers"]
+    features:["Membership", "Classes", "Trainers"].map(String),
+    designs:[
+      {
+        number:"01",
+        code:"GYM-001",
+        title:"Design 01",
+        screenshot:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-GYM-001-LIVE-DEMO-URL-HERE",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"02",
+        code:"GYM-002",
+        title:"Design 02",
+        screenshot:"https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-GYM-002-LIVE-DEMO-URL-HERE",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"03",
+        code:"GYM-003",
+        title:"Design 03",
+        screenshot:"https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-GYM-003-LIVE-DEMO-URL-HERE",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"04",
+        code:"GYM-004",
+        title:"Design 04",
+        screenshot:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-GYM-004-LIVE-DEMO-URL-HERE",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"05",
+        code:"GYM-005",
+        title:"Design 05",
+        screenshot:"https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-GYM-005-LIVE-DEMO-URL-HERE",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"06",
+        code:"GYM-006",
+        title:"Design 06",
+        screenshot:"https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-GYM-006-LIVE-DEMO-URL-HERE",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"07",
+        code:"GYM-007",
+        title:"Design 07",
+        screenshot:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-GYM-007-LIVE-DEMO-URL-HERE",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"08",
+        code:"GYM-008",
+        title:"Design 08",
+        screenshot:"https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-GYM-008-LIVE-DEMO-URL-HERE",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"09",
+        code:"GYM-009",
+        title:"Design 09",
+        screenshot:"https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-GYM-009-LIVE-DEMO-URL-HERE",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"10",
+        code:"GYM-010",
+        title:"Design 10",
+        screenshot:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"PASTE-YOUR-GYM-010-LIVE-DEMO-URL-HERE",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      }
+    ]
   }
-].map(category => ({
-  ...category,
-  designs:Array.from({length:10},(_,index)=>{
-    const number=String(index+1).padStart(2,"0");
-    return {
-      number,
-      code:`${category.prefix}-${String(index+1).padStart(3,"0")}`,
-      title:`Design ${number}`,
-      screenshot:category.images[index % category.images.length],
-      demoUrl:"#", // Replace # with the real live demo URL for this design
-      features:category.features
-    };
-  })
-}));
+];
 
 const categoryView=document.getElementById("categoryView");
 const collectionView=document.getElementById("collectionView");
@@ -1390,10 +1845,10 @@ function renderDesigns(query=""){
 
   designEmpty.style.display=designs.length ? "none" : "block";
 
-  designGrid.querySelectorAll('[data-demo-link="#"]').forEach(link=>{
+  designGrid.querySelectorAll('[data-demo-link^="PASTE-YOUR-"]').forEach(link=>{
     link.addEventListener("click",event=>{
       event.preventDefault();
-      alert("This is a sample slot. Replace its demoUrl in portfolioData with your real live landing page link.");
+      alert("This design does not have a live URL yet. Search the HTML for this design code and replace the PASTE-YOUR... placeholder.");
     });
   });
 }
