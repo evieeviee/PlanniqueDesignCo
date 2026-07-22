@@ -1,0 +1,2070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Plannique Design Co creates customized business landing pages and multi-page websites with WhatsApp consultation, Google Maps and social media integration.">
+<title>Plannique Design Co</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#f1ede6;
+  --paper2:#e8e0d5;
+  --white:#fff;
+  --ink:#2a2723;
+  --muted:#756e66;
+  --sage:#75816f;
+  --sage-dark:#596352;
+  --warm:#b08a6c;
+  --line:#ddd2c5;
+  --green:#25d366;
+  --shadow:0 24px 70px rgba(56,45,34,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  font-family:"DM Sans",Arial,sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,var(--paper),#faf8f4 34%,#fff);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.wrap{width:min(1180px,calc(100% - 38px));margin:auto}
+.section{padding:95px 0}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:var(--sage-dark);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.eyebrow:before{content:"";width:28px;height:1px;background:var(--sage)}
+.title{
+  margin-top:13px;
+  font-family:"Playfair Display",serif;
+  font-size:clamp(40px,5vw,64px);
+  line-height:1.06;
+}
+.copy{
+  margin-top:17px;
+  max-width:760px;
+  color:var(--muted);
+  font-size:17px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:15px 22px;
+  border-radius:999px;
+  border:0;
+  font-weight:800;
+  transition:.25s;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn-wa{background:var(--green);color:#fff;box-shadow:0 15px 34px rgba(37,211,102,.22)}
+.btn-light{background:#fff;border:1px solid var(--line)}
+.btn-dark{background:var(--ink);color:#fff}
+.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:31px}
+
+/* NAV */
+.navbar{
+  position:fixed;
+  inset:0 0 auto;
+  z-index:1000;
+  background:rgba(241,237,230,.94);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(221,210,197,.9);
+}
+.nav{
+  height:86px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{width:185px;height:64px;object-fit:contain}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700}
+.nav-link{
+  border:0;
+  background:none;
+  color:var(--ink);
+  padding:9px 0;
+  position:relative;
+}
+.nav-link:after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:1px;
+  height:2px;
+  transform:scaleX(0);
+  background:var(--sage-dark);
+  transition:.25s;
+}
+.nav-link:hover,.nav-link.active{color:var(--sage-dark)}
+.nav-link.active:after{transform:scaleX(1)}
+.nav-cta{
+  padding:12px 18px;
+  border-radius:999px;
+  border:0;
+  background:var(--ink);
+  color:#fff;
+  font-weight:800;
+}
+.menu-btn{display:none;border:0;background:none;font-size:28px}
+
+/* APP PAGES */
+main{padding-top:86px}
+.page{
+  display:none;
+  min-height:calc(100vh - 86px);
+  animation:pageIn .38s ease;
+}
+.page.active{display:block}
+@keyframes pageIn{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:none}
+}
+.page-hero{
+  padding:90px 0 62px;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(117,129,111,.15),transparent 28%),
+    linear-gradient(135deg,var(--paper),#faf8f4);
+  border-bottom:1px solid var(--line);
+}
+.page-hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:55px;
+  align-items:center;
+}
+.page-hero h1{
+  margin-top:17px;
+  font-family:"Playfair Display",serif;
+  font-size:clamp(48px,6vw,76px);
+  line-height:1;
+}
+.page-hero p{margin-top:18px;color:var(--muted);font-size:18px}
+.page-visual{
+  height:370px;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.page-visual img{width:100%;height:100%;object-fit:cover}
+
+/* HOME */
+.home-hero{
+  min-height:calc(100vh - 86px);
+  padding:58px 0 82px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+.home-hero:before{
+  content:"";
+  position:absolute;
+  width:540px;height:540px;
+  border:1px solid rgba(117,129,111,.2);
+  border-radius:50%;
+  right:-190px;top:-180px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.03fr .97fr;
+  gap:70px;
+  align-items:center;
+}
+.badge{
+  display:inline-flex;
+  padding:9px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.84);
+  border:1px solid var(--line);
+  color:var(--sage-dark);
+  font-size:13px;
+  font-weight:700;
+}
+.home-hero h1{
+  margin-top:24px;
+  font-family:"Playfair Display",serif;
+  font-size:clamp(52px,7vw,84px);
+  line-height:.98;
+}
+.home-hero h1 span{color:var(--sage-dark);font-style:italic}
+.home-hero p{margin-top:22px;color:var(--muted);font-size:18px}
+.hero-points{margin-top:27px;display:flex;flex-wrap:wrap;gap:17px;color:#766f67;font-size:13px;font-weight:700}
+.visual{position:relative;min-height:620px}
+.main-photo{
+  position:absolute;top:0;right:0;
+  width:83%;height:560px;
+  border-radius:185px 185px 34px 34px;
+  background:
+    linear-gradient(to top,rgba(29,24,20,.55),transparent 55%),
+    url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=88") center/cover;
+  box-shadow:var(--shadow);
+}
+.logo-card{
+  position:absolute;left:0;bottom:24px;
+  width:250px;padding:22px;
+  border-radius:22px;
+  background:rgba(255,255,255,.95);
+  box-shadow:0 20px 52px rgba(50,40,32,.18);
+}
+.logo-card img{width:100%;height:120px;object-fit:contain}
+.proof-card{
+  position:absolute;right:10px;bottom:30px;
+  width:260px;padding:22px;
+  border-radius:20px;
+  background:rgba(42,39,35,.92);
+  color:#fff;
+}
+.proof-card strong{display:block;font-family:"Playfair Display",serif;font-size:28px}
+.proof-card span{display:block;margin-top:8px;color:#d9d2ca;font-size:13px}
+
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  background:#fff;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.trust-item{padding:25px;text-align:center;border-right:1px solid var(--line)}
+.trust-item:last-child{border-right:0}
+.trust-item strong{display:block;font-family:"Playfair Display",serif;font-size:28px;color:var(--sage-dark)}
+.trust-item span{font-size:13px;color:var(--muted)}
+
+.feature-grid,.preview-grid,.reason-grid{
+  margin-top:38px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.feature-card,.reason-card{
+  padding:26px;
+  border-radius:20px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+.feature-card span,.reason-card span{font-size:29px}
+.feature-card h3,.reason-card h3{
+  margin-top:12px;
+  font-family:"Playfair Display",serif;
+  font-size:25px;
+}
+.feature-card p,.reason-card p{margin-top:8px;color:var(--muted);font-size:14px}
+.preview-card{
+  overflow:hidden;
+  background:#fff;
+  border-radius:22px;
+  box-shadow:0 17px 44px rgba(56,45,34,.1);
+}
+.preview-card img{width:100%;height:240px;object-fit:cover}
+.preview-body{padding:21px}
+.preview-body h3{font-family:"Playfair Display",serif;font-size:25px}
+.preview-body p{margin-top:7px;color:var(--muted);font-size:14px}
+
+/* PORTFOLIO LIBRARY */
+.portfolio-toolbar{
+  margin-top:32px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.search-box{
+  flex:1;
+  min-width:250px;
+  max-width:440px;
+  position:relative;
+}
+.search-box span{
+  position:absolute;
+  left:16px;
+  top:50%;
+  transform:translateY(-50%);
+  pointer-events:none;
+}
+.search-box input{
+  width:100%;
+  padding:14px 16px 14px 46px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#fff;
+  outline:none;
+  transition:.2s;
+}
+.search-box input:focus{
+  border-color:var(--sage);
+  box-shadow:0 0 0 4px rgba(117,129,111,.12);
+}
+.portfolio-summary{
+  color:var(--muted);
+  font-size:14px;
+  font-weight:700;
+}
+.category-grid{
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.category-card{
+  position:relative;
+  min-height:370px;
+  border:0;
+  border-radius:26px;
+  overflow:hidden;
+  text-align:left;
+  color:#fff;
+  box-shadow:0 20px 55px rgba(45,35,28,.16);
+  isolation:isolate;
+}
+.category-card:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(24,21,18,.9) 5%,rgba(24,21,18,.18) 68%);
+  z-index:1;
+}
+.category-card img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.45s;
+}
+.category-card:hover img{transform:scale(1.06)}
+.category-card-content{
+  position:absolute;
+  inset:auto 0 0;
+  z-index:2;
+  padding:26px;
+}
+.category-icon{font-size:32px}
+.category-card h3{
+  margin-top:8px;
+  font-family:"Playfair Display",serif;
+  font-size:32px;
+  line-height:1.08;
+}
+.category-card p{
+  margin-top:8px;
+  color:#ddd6cf;
+  font-size:14px;
+}
+.category-meta{
+  margin-top:17px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+.design-count{
+  padding:7px 11px;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(9px);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.7px;
+  text-transform:uppercase;
+}
+.view-collection{font-size:13px;font-weight:800}
+.collection-view{display:none}
+.collection-view.active{display:block;animation:pageIn .35s ease}
+.category-view.hidden{display:none}
+.collection-header{
+  margin-top:30px;
+  padding:25px;
+  border-radius:23px;
+  background:#fff;
+  border:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  flex-wrap:wrap;
+}
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:0;
+  background:none;
+  color:var(--sage-dark);
+  font-weight:800;
+}
+.collection-title-row{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+.collection-title-row span{font-size:34px}
+.collection-title-row h2{
+  font-family:"Playfair Display",serif;
+  font-size:34px;
+  line-height:1.05;
+}
+.collection-title-row p{color:var(--muted);font-size:13px}
+.design-grid{
+  margin-top:27px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.design-card{
+  overflow:hidden;
+  border-radius:23px;
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:0 16px 45px rgba(60,48,37,.1);
+  transition:.28s;
+}
+.design-card:hover{transform:translateY(-6px);box-shadow:0 24px 58px rgba(60,48,37,.15)}
+.design-preview{
+  height:285px;
+  overflow:hidden;
+  position:relative;
+  background:#e7e1d8;
+}
+.design-preview img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.45s;
+}
+.design-card:hover .design-preview img{transform:scale(1.04)}
+.design-number{
+  position:absolute;
+  left:14px;
+  top:14px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.94);
+  color:var(--ink);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.7px;
+}
+.design-code{
+  position:absolute;
+  right:14px;
+  top:14px;
+  padding:8px 11px;
+  border-radius:999px;
+  background:rgba(42,39,35,.88);
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.8px;
+}
+.design-body{padding:22px}
+.design-body h3{
+  font-family:"Playfair Display",serif;
+  font-size:27px;
+}
+.design-body p{margin-top:7px;color:var(--muted);font-size:13px}
+.design-features{
+  margin-top:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+.design-features span{
+  padding:6px 9px;
+  border-radius:999px;
+  background:#f3efe9;
+  font-size:10px;
+  font-weight:700;
+}
+.design-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}
+.design-btn{
+  padding:12px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  text-align:center;
+  font-size:12px;
+  font-weight:900;
+}
+.design-btn.demo{background:var(--ink);color:#fff;border-color:var(--ink)}
+.design-btn.choose{background:#fff}
+.empty-state{
+  display:none;
+  margin-top:30px;
+  padding:45px 20px;
+  border:1px dashed var(--line);
+  border-radius:22px;
+  text-align:center;
+  color:var(--muted);
+}
+.portfolio-note{
+  margin-top:30px;
+  padding:18px 20px;
+  border-left:4px solid var(--sage);
+  background:#fff;
+  border-radius:0 15px 15px 0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* PACKAGES */
+.package-grid{margin-top:42px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;align-items:stretch}
+.package{
+  padding:32px;
+  border-radius:25px;
+  background:#fff;
+  border:1px solid var(--line);
+  position:relative;
+  box-shadow:0 18px 52px rgba(64,51,40,.08);
+}
+.package.featured{background:var(--ink);color:#fff;transform:translateY(-12px)}
+.package h3{margin-top:11px;font-family:"Playfair Display",serif;font-size:33px}
+.price{margin-top:16px;font-size:50px;font-weight:800}
+.price span{font-size:17px}
+.package-desc{margin-top:12px;color:var(--muted);font-size:14px}
+.featured .package-desc{color:#c6bfb7}
+.package ul{margin-top:23px;display:grid;gap:10px}
+.package li{list-style:none;font-size:14px}
+.package li:before{content:"✓";margin-right:9px;color:var(--sage);font-weight:900}
+.package .btn{width:100%;margin-top:25px}
+.popular{
+  position:absolute;top:16px;right:16px;
+  padding:6px 10px;border-radius:999px;
+  background:var(--warm);color:#fff;
+  font-size:10px;font-weight:800;
+}
+.compare-wrap{overflow-x:auto;margin-top:44px}
+.compare{width:100%;min-width:760px;border-collapse:collapse;background:#fff;box-shadow:0 18px 48px rgba(60,48,37,.08)}
+.compare th,.compare td{padding:16px;border-bottom:1px solid var(--line);text-align:center}
+.compare th:first-child,.compare td:first-child{text-align:left}
+.compare th{background:#f5f1eb}
+.checkmark{color:var(--sage-dark);font-weight:900}
+.dash{color:#aaa}
+
+.package-topline{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:18px;
+}
+.deposit-box{
+  margin-top:22px;
+  padding:17px;
+  border-radius:17px;
+  background:#f5f1eb;
+  border:1px solid var(--line);
+}
+.featured .deposit-box{
+  background:rgba(255,255,255,.07);
+  border-color:rgba(255,255,255,.14);
+}
+.deposit-box strong{
+  display:block;
+  font-size:18px;
+}
+.deposit-box span{
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font-size:12px;
+}
+.featured .deposit-box span{color:#c6bfb7}
+.package-actions{
+  margin-top:25px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.package-actions .btn{margin-top:0}
+.btn-outline-light{
+  color:#fff;
+  border:1px solid rgba(255,255,255,.35);
+  background:transparent;
+}
+.btn-outline-light:hover{background:rgba(255,255,255,.08)}
+.payment-note{
+  margin-top:25px;
+  padding:18px 20px;
+  border-radius:17px;
+  background:#fff;
+  border:1px solid var(--line);
+  color:var(--muted);
+  font-size:13px;
+}
+.payment-note strong{color:var(--ink)}
+.consult-strip{
+  margin-top:34px;
+  padding:28px;
+  border-radius:24px;
+  background:linear-gradient(135deg,#fff,#f3eee7);
+  border:1px solid var(--line);
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:25px;
+  align-items:center;
+}
+.consult-strip h3{
+  font-family:"Playfair Display",serif;
+  font-size:31px;
+  line-height:1.1;
+}
+.consult-strip p{margin-top:8px;color:var(--muted)}
+.process-grid.six{grid-template-columns:repeat(6,1fr)}
+@media(max-width:950px){
+  .package-grid{grid-template-columns:1fr}
+  .package-actions{grid-template-columns:1fr}
+  .consult-strip{grid-template-columns:1fr}
+  .process-grid.six{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .process-grid.six{grid-template-columns:1fr}
+}
+
+/* ABOUT */
+.about-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:65px;
+  align-items:center;
+}
+.about-image{position:relative;min-height:560px}
+.about-image img:first-child{
+  position:absolute;left:0;top:0;
+  width:78%;height:500px;
+  object-fit:cover;border-radius:28px;
+}
+.about-image img:last-child{
+  position:absolute;right:0;bottom:0;
+  width:47%;height:270px;
+  object-fit:cover;border:10px solid var(--paper);
+}
+.check-grid{margin-top:27px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.check{padding:14px;border-radius:15px;background:#fff;border:1px solid var(--line)}
+.check strong{display:block}
+.check span{font-size:13px;color:var(--muted)}
+.values{background:var(--ink);color:#fff}
+.values .copy{color:#c9c1b9}
+.values .reason-card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}
+.values .reason-card p{color:#c9c1b9}
+
+/* PROCESS */
+.process-grid{margin-top:40px;display:grid;grid-template-columns:repeat(5,1fr);gap:13px}
+.step{padding:22px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+.step b{font-family:"Playfair Display",serif;font-size:38px;color:var(--sage)}
+.step h3{margin-top:7px}
+.step p{margin-top:6px;color:var(--muted);font-size:13px}
+.content-list{margin-top:30px;display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.content-item{padding:18px;border-radius:17px;background:#fff;border:1px solid var(--line)}
+.content-item span{font-size:26px}
+.content-item h3{margin-top:9px;font-size:17px}
+.content-item p{margin-top:6px;color:var(--muted);font-size:13px}
+
+/* FAQ */
+.faq{margin-top:34px;display:grid;gap:11px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px}
+.faq summary{cursor:pointer;font-weight:800}
+.faq p{margin-top:9px;color:var(--muted)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px}
+.contact-info,.form-card{
+  padding:30px;border-radius:24px;background:#fff;
+  border:1px solid var(--line);box-shadow:0 18px 48px rgba(60,48,37,.08);
+}
+.contact-info h2,.form-card h2{font-family:"Playfair Display",serif;font-size:38px}
+.details{display:grid;gap:11px;margin-top:22px}
+.detail{padding:14px;border-radius:14px;background:#f5f1eb}
+.form-grid{margin-top:20px;display:grid;gap:12px}
+.form-grid input,.form-grid select,.form-grid textarea{
+  width:100%;padding:14px;border:1px solid var(--line);
+  border-radius:12px;background:#faf8f4;
+}
+.form-grid textarea{min-height:130px;resize:vertical}
+.form-note{margin-top:10px;color:var(--muted);font-size:12px}
+
+/* CTA + FOOTER */
+.cta{
+  padding:88px 0;
+  background:
+    linear-gradient(rgba(39,35,31,.82),rgba(39,35,31,.82)),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85") center/cover;
+  color:#fff;text-align:center;
+}
+.cta h2{font-family:"Playfair Display",serif;font-size:clamp(42px,6vw,70px);line-height:1.05}
+.cta p{max-width:700px;margin:18px auto 0;color:#ddd6cf;font-size:17px}
+.cta .actions{justify-content:center}
+
+footer{padding:48px 0 26px;background:#1d1b18;color:#bbb4ac}
+.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:35px}
+.footer-grid img{width:210px;height:110px;object-fit:contain}
+.footer-grid h4{color:#fff}
+.footer-grid button,.footer-grid a{
+  display:block;margin:8px 0;border:0;background:none;
+  color:#bbb4ac;text-align:left;cursor:pointer;
+}
+.footer-bottom{
+  margin-top:30px;padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  display:flex;justify-content:space-between;gap:20px;font-size:13px;
+}
+.float{
+  position:fixed;right:20px;bottom:20px;z-index:1001;
+  padding:14px 18px;border-radius:999px;
+  background:var(--green);color:#fff;font-weight:800;
+  box-shadow:0 15px 35px rgba(37,211,102,.3);
+}
+
+/* 404 */
+.not-found{text-align:center;padding:150px 20px}
+.not-found h1{font-family:"Playfair Display",serif;font-size:70px}
+
+@media(max-width:950px){
+  .category-grid,.design-grid{grid-template-columns:1fr 1fr}
+
+  .nav-links{
+    position:absolute;top:86px;left:20px;right:20px;
+    display:none;flex-direction:column;align-items:flex-start;
+    padding:20px;background:#fff;border-radius:18px;box-shadow:var(--shadow);
+  }
+  .nav-links.open{display:flex}
+  .menu-btn{display:block}
+  .hero-grid,.page-hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .visual{min-height:620px}
+  .feature-grid,.preview-grid,.reason-grid,.portfolio-grid,.package-grid{grid-template-columns:1fr 1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .content-list{grid-template-columns:1fr 1fr}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .package.featured{transform:none}
+}
+@media(max-width:600px){
+  .category-grid,.design-grid{grid-template-columns:1fr}
+  .category-card{min-height:335px}
+  .design-actions{grid-template-columns:1fr}
+
+  .wrap{width:min(100% - 28px,1180px)}
+  .section{padding:72px 0}
+  .logo{width:158px}
+  .home-hero h1,.page-hero h1{font-size:50px}
+  .visual{min-height:530px}
+  .main-photo{width:94%;height:470px}
+  .logo-card{width:205px}
+  .proof-card{width:205px;right:4px}
+  .feature-grid,.preview-grid,.reason-grid,.portfolio-grid,.package-grid,.process-grid,.content-list,.check-grid{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column}
+  .float{
+    width:60px;height:60px;padding:0;
+    display:grid;place-items:center;border-radius:50%;font-size:0;
+  }
+  .float:after{content:"💬";font-size:24px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="wrap nav">
+    <button class="nav-link" data-route="home" aria-label="Home">
+      <img class="logo" src="https://ricobr.ft-crm.com/media-api/serve/0f4dde75-8ce1-4c70-b072-6b988ba25aa9_Customizable_Daily_Planner_Template.png" alt="Plannique Design Co">
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <button class="nav-link" data-route="home">Home</button>
+      <button class="nav-link" data-route="portfolio">Portfolio</button>
+      <button class="nav-link" data-route="packages">Packages</button>
+      <button class="nav-link" data-route="about">About</button>
+      <button class="nav-link" data-route="process">Process</button>
+      <button class="nav-link" data-route="faq">FAQ</button>
+      <button class="nav-link" data-route="contact">Contact</button>
+      <button class="nav-cta" data-route="contact">Get Free Quote</button>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<main>
+
+<!-- HOME PAGE -->
+<section class="page active" data-page="home">
+  <div class="home-hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="badge">✦ Websites designed for real local businesses</div>
+        <h1>Make your business look more <span>trusted, established and ready.</span></h1>
+        <p>Choose a design you love, then work with us directly through WhatsApp. We customize the website with your logo, photos, business information, services, contact details and preferred style.</p>
+
+        <div class="actions">
+          <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20to%20discuss%20a%20customized%20website%20for%20my%20business." target="_blank">💬 Start a Free Consultation</a>
+          <button class="btn btn-light" data-route="portfolio">Browse Website Demos</button>
+        </div>
+
+        <div class="hero-points">
+          <span>✓ Mobile responsive</span>
+          <span>✓ WhatsApp integration</span>
+          <span>✓ Google Maps</span>
+          <span>✓ Personal WhatsApp consultation</span>
+        </div>
+      </div>
+
+      <div class="visual">
+        <div class="main-photo"></div>
+        <div class="logo-card"><img src="https://ricobr.ft-crm.com/media-api/serve/0f4dde75-8ce1-4c70-b072-6b988ba25aa9_Customizable_Daily_Planner_Template.png" alt="Plannique Design Co"></div>
+        <div class="proof-card">
+          <strong>Your business deserves more than social media.</strong>
+          <span>Give customers one place to see your services, location and contact details.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" style="margin-top:-42px;position:relative;z-index:3">
+    <div class="trust-grid">
+      <div class="trust-item"><strong>2</strong><span>Simple packages</span></div>
+      <div class="trust-item"><strong>100%</strong><span>Responsive design</span></div>
+      <div class="trust-item"><strong>Personal</strong><span>WhatsApp consultation</span></div>
+      <div class="trust-item"><strong>10%</strong><span>Deposit to begin</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="eyebrow">What We Create</div>
+      <h2 class="title">Websites built around what customers need</h2>
+      <div class="feature-grid">
+        <article class="feature-card"><span>💇</span><h3>Beauty & Salons</h3><p>Services, promotions, team profiles and appointment enquiries.</p></article>
+        <article class="feature-card"><span>☕</span><h3>Cafés & Restaurants</h3><p>Menus, signature products, opening hours and reservations.</p></article>
+        <article class="feature-card"><span>🦷</span><h3>Clinics & Wellness</h3><p>Treatments, specialists, frequently asked questions and forms.</p></article>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="background:var(--paper2)">
+    <div class="wrap">
+      <div class="eyebrow">Featured Designs</div>
+      <h2 class="title">Choose a style your customers will remember</h2>
+      <div class="preview-grid">
+        <article class="preview-card">
+          <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85" alt="Salon design">
+          <div class="preview-body"><h3>Beauty & Hair Salon</h3><p>Graphic promotions, service menu, gallery and WhatsApp booking.</p><button class="btn btn-light" data-route="portfolio" style="margin-top:16px">View Portfolio</button></div>
+        </article>
+        <article class="preview-card">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85" alt="Cafe design">
+          <div class="preview-body"><h3>Café & Lifestyle</h3><p>Food menu, visual gallery, location and reservation experience.</p><button class="btn btn-light" data-route="portfolio" style="margin-top:16px">View Portfolio</button></div>
+        </article>
+        <article class="preview-card">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85" alt="Clinic design">
+          <div class="preview-body"><h3>Clinic & Wellness</h3><p>Professional services, practitioner profiles and consultation forms.</p><button class="btn btn-light" data-route="portfolio" style="margin-top:16px">View Portfolio</button></div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div class="wrap">
+      <h2>Ready to build a stronger online presence?</h2>
+      <p>Choose a demo style or tell us what your business needs. We will recommend the most suitable package.</p>
+      <div class="actions">
+        <button class="btn btn-light" data-route="packages">View Packages</button>
+        <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20a%20free%20website%20quotation." target="_blank">💬 WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO PAGE -->
+<section class="page" data-page="portfolio">
+  <div class="page-hero">
+    <div class="wrap page-hero-grid">
+      <div>
+        <div class="eyebrow">Website Design Library</div>
+        <h1>Choose your industry, then choose your design</h1>
+        <p>Browse our design library, open any live demo, then send us the design code on WhatsApp. We will discuss the colours, sections, photos and business style you want before starting.</p>
+        <div class="actions">
+          <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20help%20choosing%20a%20website%20design." target="_blank">💬 Help Me Choose</a>
+        </div>
+      </div>
+      <div class="page-visual"><img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1100&q=85" alt="Plannique website portfolio library"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="category-view" id="categoryView">
+        <div class="eyebrow">Browse Categories</div>
+        <h2 class="title">60 website designs across 6 industries</h2>
+        <p class="copy">Select a business category to explore its full collection. You do not need to know the design style—simply choose the design number you like most.</p>
+
+        <div class="portfolio-toolbar">
+          <div class="search-box">
+            <span>⌕</span>
+            <input id="categorySearch" type="search" placeholder="Search category, e.g. gym or café" aria-label="Search portfolio categories">
+          </div>
+          <div class="portfolio-summary" id="portfolioSummary">6 categories · 60 designs</div>
+        </div>
+
+        <div class="category-grid" id="categoryGrid"></div>
+        <div class="empty-state" id="categoryEmpty">No category found. Try another search word.</div>
+
+        <div class="portfolio-note">
+          <strong>Easy to update:</strong> Search for <code>PASTE-YOUR-</code> near the bottom of this HTML. Replace each placeholder with the matching live landing page URL.
+        </div>
+      </div>
+
+      <div class="collection-view" id="collectionView">
+        <button class="back-btn" id="backToCategories">← Back to all categories</button>
+
+        <div class="collection-header">
+          <div class="collection-title-row">
+            <span id="collectionIcon">✦</span>
+            <div>
+              <h2 id="collectionTitle">Category</h2>
+              <p id="collectionSubtitle">10 landing page designs available</p>
+            </div>
+          </div>
+          <div class="search-box">
+            <span>⌕</span>
+            <input id="designSearch" type="search" placeholder="Search Design 01 or code" aria-label="Search designs">
+          </div>
+        </div>
+
+        <div class="design-grid" id="designGrid"></div>
+        <div class="empty-state" id="designEmpty">No design found in this collection.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div class="wrap">
+      <h2>Found a design you like?</h2>
+      <p>Send us its design code on WhatsApp. You can also share reference websites, screenshots, colours and ideas so we can understand the direction you want.</p>
+      <div class="actions">
+        <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20found%20a%20design%20from%20your%20portfolio%20and%20would%20like%20to%20customise%20it." target="_blank">💬 Customise a Design</a>
+        <button class="btn btn-light" data-route="packages">View Packages</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES PAGE -->
+<section class="page" data-page="packages">
+  <div class="page-hero">
+    <div class="wrap page-hero-grid">
+      <div>
+        <div class="eyebrow">Website Packages · USD</div>
+        <h1>Choose a package, then build it together with us</h1>
+        <p>Start with a one-page business landing page or choose a complete 3–5 page website. Contact us first for a free consultation, or reserve your project with a 10% deposit.</p>
+        <div class="actions">
+          <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20help%20choosing%20between%20the%20Starter%20and%20Premium%20website%20packages." target="_blank">💬 Ask Before You Choose</a>
+        </div>
+      </div>
+      <div class="page-visual"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=85" alt="Plannique website packages"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="package-grid">
+
+        <article class="package">
+          <div class="package-topline">
+            <div>
+              <div class="eyebrow">Starter</div>
+              <h3>Custom Landing Page</h3>
+            </div>
+          </div>
+
+          <div class="price"><span>USD</span> 89</div>
+          <p class="package-desc">For new, home-based and local businesses that need one professional place for customers to learn, trust and contact them.</p>
+
+          <ul>
+            <li>One customized scrolling landing page</li>
+            <li>Business introduction and services</li>
+            <li>WhatsApp enquiry or booking button</li>
+            <li>Google Maps integration</li>
+            <li>Social media links</li>
+            <li>Photo gallery or featured work</li>
+            <li>Mobile, tablet and desktop responsive</li>
+            <li>Basic SEO page structure</li>
+            <li>One revision round</li>
+            <li>Estimated 3–5 working days after complete content</li>
+          </ul>
+
+          <div class="deposit-box">
+            <strong>Reserve with USD 9</strong>
+            <span>10% project deposit. Remaining USD 80 is payable after approval and before final delivery or launch.</span>
+          </div>
+
+          <div class="package-actions">
+            <a class="btn btn-light" href="https://wa.me/60189079798?text=Hi%2C%20I%20am%20interested%20in%20the%20Starter%20Package%20at%20USD%2089.%20I%20would%20like%20to%20discuss%20my%20business%20and%20preferred%20design." target="_blank">💬 Discuss Starter</a>
+            <!-- Replace #STARTER-DEPOSIT-LINK with your Stripe Payment Link for USD 9 -->
+            <a class="btn btn-dark" href="#STARTER-DEPOSIT-LINK">Pay USD 9 Deposit</a>
+          </div>
+        </article>
+
+        <article class="package featured">
+          <div class="popular">MOST POPULAR</div>
+
+          <div class="package-topline">
+            <div>
+              <div class="eyebrow" style="color:#cbd2c7">Premium</div>
+              <h3>Complete Business Website</h3>
+            </div>
+          </div>
+
+          <div class="price"><span>USD</span> 259</div>
+          <p class="package-desc">For established or growing businesses that need a stronger brand presentation with separate pages and richer content.</p>
+
+          <ul>
+            <li>Three to five customized website pages</li>
+            <li>Premium homepage visual direction</li>
+            <li>About, services and contact pages</li>
+            <li>Gallery, portfolio or menu page</li>
+            <li>Testimonials and FAQ sections</li>
+            <li>WhatsApp enquiry or booking flow</li>
+            <li>Google Maps and social media integration</li>
+            <li>Contact form integration</li>
+            <li>Enhanced SEO-friendly structure</li>
+            <li>Three revision rounds</li>
+            <li>Estimated 7–10 working days after complete content</li>
+          </ul>
+
+          <div class="deposit-box">
+            <strong>Reserve with USD 26</strong>
+            <span>10% project deposit. Remaining USD 233 is payable after approval and before final delivery or launch.</span>
+          </div>
+
+          <div class="package-actions">
+            <a class="btn btn-outline-light" href="https://wa.me/60189079798?text=Hi%2C%20I%20am%20interested%20in%20the%20Premium%20Package%20at%20USD%20259.%20I%20would%20like%20to%20discuss%20my%20business%2C%20pages%20and%20preferred%20design." target="_blank">💬 Discuss Premium</a>
+            <!-- Replace #PREMIUM-DEPOSIT-LINK with your Stripe Payment Link for USD 26 -->
+            <a class="btn btn-wa" href="#PREMIUM-DEPOSIT-LINK">Pay USD 26 Deposit</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="payment-note">
+        <strong>Before paying:</strong> You are welcome to contact us on WhatsApp first. We will help confirm the package, project scope, preferred design and whether your requested functions are included. Domain registration, paid hosting, business email and paid third-party tools are not included unless stated in your quotation.
+      </div>
+
+      <div class="consult-strip">
+        <div>
+          <h3>Not sure which design or package fits your business?</h3>
+          <p>Send us your business type, Instagram page, current website or a few reference screenshots. We will guide you through the design direction on WhatsApp.</p>
+        </div>
+        <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20am%20not%20sure%20which%20design%20or%20package%20to%20choose.%20Can%20you%20help%20me%3F" target="_blank">💬 Get Design Guidance</a>
+      </div>
+
+      <div class="compare-wrap">
+        <table class="compare">
+          <thead>
+            <tr><th>Feature</th><th>Starter · USD 89</th><th>Premium · USD 259</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Customized design</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+            <tr><td>Responsive design</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+            <tr><td>WhatsApp integration</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+            <tr><td>Google Maps</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+            <tr><td>Social media links</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+            <tr><td>Pages</td><td>1 scrolling page</td><td>3–5 pages</td></tr>
+            <tr><td>Contact form</td><td>Optional add-on</td><td class="checkmark">✓</td></tr>
+            <tr><td>Testimonials & FAQ</td><td>Optional sections</td><td class="checkmark">✓</td></tr>
+            <tr><td>Revision rounds</td><td>1</td><td>3</td></tr>
+            <tr><td>10% deposit</td><td>USD 9</td><td>USD 26</td></tr>
+            <tr><td>Final balance</td><td>USD 80</td><td>USD 233</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT PAGE -->
+<section class="page" data-page="about">
+  <div class="page-hero">
+    <div class="wrap page-hero-grid">
+      <div>
+        <div class="eyebrow">About Plannique</div>
+        <h1>Design with purpose, not just decoration</h1>
+        <p>We create customized websites through a personal, collaborative process—so every business can clearly explain what it offers and make it easy for customers to get in touch.</p>
+      </div>
+      <div class="page-visual"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=85" alt="Plannique planning"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap about-grid">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=85" alt="Creative studio">
+        <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=700&q=85" alt="Workspace">
+      </div>
+      <div>
+        <div class="eyebrow">Our Approach</div>
+        <h2 class="title">A website should make the next step obvious</h2>
+        <p class="copy">Customers should immediately understand who you are, what you offer and how to contact you. Our layouts are planned around those three goals.</p>
+        <div class="check-grid">
+          <div class="check"><strong>Clear information</strong><span>No confusing navigation or unnecessary content.</span></div>
+          <div class="check"><strong>Strong visual direction</strong><span>A polished design suited to your business type.</span></div>
+          <div class="check"><strong>Mobile-first</strong><span>Designed for customers browsing from their phones.</span></div>
+          <div class="check"><strong>Simple communication</strong><span>Transparent packages and an understandable process.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section values">
+    <div class="wrap">
+      <div class="eyebrow" style="color:#ccd4c8">Our Values</div>
+      <h2 class="title">How we want clients to experience Plannique</h2>
+      <div class="reason-grid">
+        <article class="reason-card"><span>🧭</span><h3>Clear</h3><p>We explain the project scope and help organise the information.</p></article>
+        <article class="reason-card"><span>🌿</span><h3>Thoughtful</h3><p>Every visual element should support the brand and customer journey.</p></article>
+        <article class="reason-card"><span>🤝</span><h3>Supportive</h3><p>Clients receive guidance on content, structure and preparation.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS PAGE -->
+<section class="page" data-page="process">
+  <div class="page-hero">
+    <div class="wrap page-hero-grid">
+      <div>
+        <div class="eyebrow">Our Process</div>
+        <h1>A personal process from consultation to launch</h1>
+        <p>We use WhatsApp to understand your business, preferred design, colours, references and content before we begin building.</p>
+      </div>
+      <div class="page-visual"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85" alt="Project process"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="process-grid six">
+        <article class="step"><b>01</b><h3>Explore</h3><p>Browse the portfolio and note the design code or style you prefer.</p></article>
+        <article class="step"><b>02</b><h3>Consult</h3><p>Chat with us on WhatsApp and share your business, ideas and references.</p></article>
+        <article class="step"><b>03</b><h3>Reserve</h3><p>Confirm the scope and pay the 10% deposit to start the project.</p></article>
+        <article class="step"><b>04</b><h3>Prepare</h3><p>Send your logo, photos, services, contact details and brand direction.</p></article>
+        <article class="step"><b>05</b><h3>Review</h3><p>Open the private preview link and send consolidated revision feedback.</p></article>
+        <article class="step"><b>06</b><h3>Approve</h3><p>Pay the remaining balance, then receive or launch the completed website.</p></article>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="background:var(--paper2)">
+    <div class="wrap">
+      <div class="eyebrow">Prepare Your Content</div>
+      <h2 class="title">What we need before starting</h2>
+      <div class="content-list">
+        <article class="content-item"><span>🪶</span><h3>Logo</h3><p>A clear PNG, SVG or high-resolution image.</p></article>
+        <article class="content-item"><span>📝</span><h3>Introduction</h3><p>A short description of the business and its story.</p></article>
+        <article class="content-item"><span>🧾</span><h3>Services</h3><p>Service names, descriptions and pricing information.</p></article>
+        <article class="content-item"><span>📷</span><h3>Photographs</h3><p>Business, products, team or completed project images.</p></article>
+        <article class="content-item"><span>💬</span><h3>WhatsApp</h3><p>The contact number customers should use.</p></article>
+        <article class="content-item"><span>📍</span><h3>Location</h3><p>Address, operating hours and Google Maps listing.</p></article>
+        <article class="content-item"><span>📱</span><h3>Social Links</h3><p>Instagram, Facebook, TikTok or other social accounts.</p></article>
+        <article class="content-item"><span>🎨</span><h3>Brand Style</h3><p>Preferred colours, references and visual direction.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ PAGE -->
+<section class="page" data-page="faq">
+  <div class="page-hero">
+    <div class="wrap page-hero-grid">
+      <div>
+        <div class="eyebrow">Frequently Asked Questions</div>
+        <h1>Everything to know before starting</h1>
+        <p>Clear answers about content, domains, revisions, maintenance and project delivery.</p>
+      </div>
+      <div class="page-visual"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1000&q=85" alt="Questions"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="faq">
+        <details open><summary>Can I speak with you before paying?</summary><p>Yes. You can contact us on WhatsApp for a free consultation before choosing a package or paying a deposit.</p></details>
+        <details><summary>How does the 10% deposit work?</summary><p>The deposit reserves your project and allows us to begin after the scope and required content are confirmed. The remaining balance is payable after you approve the website and before final delivery, domain connection or public launch.</p></details>
+        <details><summary>Do I need to buy a domain?</summary><p>Yes. The business should own its domain name. Plannique can help check availability and connect it to the completed website.</p></details>
+        <details><summary>What content do I need to provide?</summary><p>Please provide the logo, business introduction, service information, prices, photographs, contact details, address and social media links.</p></details>
+        <details><summary>Will the website work on mobile phones?</summary><p>Yes. Every package includes responsive design for mobile, tablet and desktop screens.</p></details>
+        <details><summary>Can I update the website later?</summary><p>Yes. Future content changes and maintenance can be quoted separately.</p></details>
+        <details><summary>Are hosting and domain fees included?</summary><p>Paid domain registration, hosting subscriptions and third-party systems are separate unless specifically included in the quotation.</p></details>
+        <details><summary>Can a demo design be customised?</summary><p>Yes. The layout can be adapted using the client’s brand name, logo, colours, content, images and preferred functions.</p></details>
+        <details><summary>How do revisions work?</summary><p>The Starter package includes one revision round and Premium includes three. Please send consolidated feedback through WhatsApp so each revision round remains clear and organized.</p></details>
+        <details><summary>How quickly will the website be ready?</summary><p>Delivery depends on the selected package and how quickly complete content and feedback are provided.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT PAGE -->
+<section class="page" data-page="contact">
+  <div class="page-hero">
+    <div class="wrap page-hero-grid">
+      <div>
+        <div class="eyebrow">Free WhatsApp Consultation</div>
+        <h1>Tell us about your business</h1>
+        <p>Tell us about your business, share a portfolio design code or reference website, and explain the style you like. We will guide you before any payment is required.</p>
+      </div>
+      <div class="page-visual"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1000&q=85" alt="Contact Plannique"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap contact-grid">
+      <aside class="contact-info">
+        <h2>Contact Plannique</h2>
+        <p class="copy">The quickest way to discuss a project is through WhatsApp.</p>
+        <div class="details">
+          <div class="detail"><strong>💬 WhatsApp</strong><br>+60 18-907 9798</div>
+          <div class="detail"><strong>✉️ Email</strong><br>hello@plannique.com</div>
+          <div class="detail"><strong>🕒 Response Hours</strong><br>Monday–Saturday, 10 AM–7 PM</div>
+          <div class="detail"><strong>🌍 Service Area</strong><br>Worldwide remote projects</div>
+        </div>
+        <a class="btn btn-wa" style="width:100%;margin-top:20px" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20a%20free%20website%20consultation." target="_blank">💬 Start WhatsApp Consultation</a>
+      </aside>
+
+      <div class="form-card">
+        <h2>Quick Enquiry</h2>
+        <form class="form-grid" id="enquiryForm">
+          <input id="name" type="text" placeholder="Your name" required>
+          <input id="business" type="text" placeholder="Business name" required>
+          <select id="businessType" required>
+            <option value="">Select business type</option>
+            <option>Beauty / Salon</option>
+            <option>Café / Restaurant</option>
+            <option>Clinic / Wellness</option>
+            <option>Property / Homestay</option>
+            <option>Automotive</option>
+            <option>Fitness</option>
+            <option>Other</option>
+          </select>
+          <select id="package">
+            <option value="">Package you are considering</option>
+            <option>Starter · USD 89</option>
+            <option>Premium · USD 259</option>
+            <option>Not sure yet</option>
+          </select>
+          <input id="designReference" type="text" placeholder="Portfolio design code or reference website (optional)">
+          <textarea id="message" placeholder="Tell us what you need, the style you like, and any functions you want"></textarea>
+          <button class="btn btn-dark" type="submit">Send Enquiry to WhatsApp</button>
+        </form>
+        <div class="form-note">Replace the sample WhatsApp number before publishing.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOT FOUND -->
+<section class="page" data-page="not-found">
+  <div class="not-found">
+    <h1>Page not found</h1>
+    <p class="copy" style="margin-left:auto;margin-right:auto">The requested page does not exist.</p>
+    <button class="btn btn-dark" data-route="home" style="margin-top:22px">Return Home</button>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="https://ricobr.ft-crm.com/media-api/serve/0f4dde75-8ce1-4c70-b072-6b988ba25aa9_Customizable_Daily_Planner_Template.png" alt="Plannique Design Co">
+        <p>Customized landing pages and business websites created through personal WhatsApp consultation.</p>
+      </div>
+      <div>
+        <h4>Website</h4>
+        <button data-route="portfolio">Portfolio</button>
+        <button data-route="packages">Packages</button>
+        <button data-route="about">About</button>
+        <button data-route="process">Process</button>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <button data-route="faq">FAQ</button>
+        <button data-route="contact">Contact</button>
+        <a href="https://wa.me/60189079798" target="_blank">WhatsApp</a>
+        <a href="mailto:hello@plannique.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Plannique Design Co.</span>
+      <span>Custom Landing Pages • Business Websites • Worldwide Service</span>
+    </div>
+  </div>
+</footer>
+
+<a class="float" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20a%20free%20website%20quotation." target="_blank">💬 Free Quote</a>
+
+<script>
+const validRoutes=["home","portfolio","packages","about","process","faq","contact"];
+const pages=[...document.querySelectorAll("[data-page]")];
+const routeButtons=[...document.querySelectorAll("[data-route]")];
+const navLinks=[...document.querySelectorAll(".nav-links .nav-link")];
+const mobileNav=document.getElementById("navLinks");
+const menuBtn=document.getElementById("menuBtn");
+
+function currentRoute(){
+  const raw=location.hash.replace(/^#\/?/,"").split("?")[0].trim();
+  return raw || "home";
+}
+
+function showPage(route, updateHash=true){
+  const resolved=validRoutes.includes(route)?route:"not-found";
+
+  pages.forEach(page=>{
+    page.classList.toggle("active",page.dataset.page===resolved);
+  });
+
+  navLinks.forEach(link=>{
+    link.classList.toggle("active",link.dataset.route===route);
+  });
+
+  document.title=resolved==="home"
+    ?"Plannique Design Co"
+    :`${resolved.charAt(0).toUpperCase()+resolved.slice(1)} | Plannique Design Co`;
+
+  mobileNav.classList.remove("open");
+  window.scrollTo({top:0,behavior:"instant"});
+
+  if(updateHash && validRoutes.includes(route)){
+    const target=route==="home"?"#/":"#/"+route;
+    if(location.hash!==target) history.pushState({route},"",target);
+  }
+}
+
+routeButtons.forEach(button=>{
+  button.addEventListener("click",()=>{
+    showPage(button.dataset.route,true);
+  });
+});
+
+menuBtn.addEventListener("click",()=>{
+  mobileNav.classList.toggle("open");
+});
+
+window.addEventListener("hashchange",()=>{
+  showPage(currentRoute(),false);
+});
+
+window.addEventListener("popstate",()=>{
+  showPage(currentRoute(),false);
+});
+
+/* Portfolio library data
+   Replace screenshot and demoUrl values with your real portfolio links.
+   Each category is prepared with 10 numbered designs. */
+const portfolioData = [
+  {
+    key:"beauty", prefix:"BEA", icon:"💇", title:"Beauty & Hair Salon",
+    description:"Salon, spa, nail, hair and personal beauty businesses.",
+    cover:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=85",
+    features:["Services", "Gallery", "WhatsApp"].map(String),
+    designs:[
+      {
+        number:"01",
+        code:"BEA-001",
+        title:"Design 01",
+        screenshot:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/Beauty/starter1.html",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"02",
+        code:"BEA-002",
+        title:"Design 02",
+        screenshot:"https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/Beauty/starter4.html",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"03",
+        code:"BEA-003",
+        title:"Design 03",
+        screenshot:"https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/Beauty/premium.html",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"04",
+        code:"BEA-004",
+        title:"Design 04",
+        screenshot:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/Beauty/premium1.html",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"05",
+        code:"BEA-005",
+        title:"Design 05",
+        screenshot:"https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/Beauty/premium2.html",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"06",
+        code:"BEA-006",
+        title:"Design 06",
+        screenshot:"https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/Beauty/premium3.html",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"07",
+        code:"BEA-007",
+        title:"Design 07",
+        screenshot:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/Beauty/advance2.html",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"08",
+        code:"BEA-008",
+        title:"Design 08",
+        screenshot:"https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/Beauty/advance3.html",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"09",
+        code:"BEA-009",
+        title:"Design 09",
+        screenshot:"https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/Beauty/advance4.html",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      },
+      {
+        number:"10",
+        code:"BEA-010",
+        title:"Design 10",
+        screenshot:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/Beauty/advance5.html",
+        features:["Services", "Gallery", "WhatsApp"].map(String)
+      }
+    ]
+  },
+  {
+    key:"food", prefix:"CAF", icon:"☕", title:"Café & Restaurant",
+    description:"Cafés, restaurants, bakeries and food businesses.",
+    cover:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85",
+    features:["Menu", "Gallery", "Reservation"].map(String),
+    designs:[
+      {
+        number:"01",
+        code:"CAF-001",
+        title:"Design 01",
+        screenshot:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/cafe/advance.html",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"02",
+        code:"CAF-002",
+        title:"Design 02",
+        screenshot:"https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/cafe/advance1.html",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"03",
+        code:"CAF-003",
+        title:"Design 03",
+        screenshot:"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/cafe/advance2.html",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"04",
+        code:"CAF-004",
+        title:"Design 04",
+        screenshot:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/cafe/cyber-glassmorphism.html",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"05",
+        code:"CAF-005",
+        title:"Design 05",
+        screenshot:"https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/cafe/editorial-luxury.html",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"06",
+        code:"CAF-006",
+        title:"Design 06",
+        screenshot:"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/cafe/luxury-dining.html",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"07",
+        code:"CAF-007",
+        title:"Design 07",
+        screenshot:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/cafe/modern-cafe.html",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"08",
+        code:"CAF-008",
+        title:"Design 08",
+        screenshot:"https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/cafe/neo-brutalist.html",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"09",
+        code:"CAF-009",
+        title:"Design 09",
+        screenshot:"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/cafe/premium.html",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      },
+      {
+        number:"10",
+        code:"CAF-010",
+        title:"Design 10",
+        screenshot:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/cafe/starter.html",
+        features:["Menu", "Gallery", "Reservation"].map(String)
+      }
+    ]
+  },
+  {
+    key:"health", prefix:"DEN", icon:"🦷", title:"Dental & Clinic",
+    description:"Dental clinics, aesthetic centres and wellness practices.",
+    cover:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=85",
+    features:["Treatments", "Doctors", "Appointment"].map(String),
+    designs:[
+      {
+        number:"01",
+        code:"DEN-001",
+        title:"Design 01",
+        screenshot:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/dental/advance.html",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"02",
+        code:"DEN-002",
+        title:"Design 02",
+        screenshot:"https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/dental/advance1.html",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"03",
+        code:"DEN-003",
+        title:"Design 03",
+        screenshot:"https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/dental/advance2.html",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"04",
+        code:"DEN-004",
+        title:"Design 04",
+        screenshot:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/dental/apex-dental-lab.html",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"05",
+        code:"DEN-005",
+        title:"Design 05",
+        screenshot:"https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/dental/dental-matrix.html",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"06",
+        code:"DEN-006",
+        title:"Design 06",
+        screenshot:"https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/dental/lumina-dental-sanctuary.html",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"07",
+        code:"DEN-007",
+        title:"Design 07",
+        screenshot:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/dental/premium.html",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"08",
+        code:"DEN-008",
+        title:"Design 08",
+        screenshot:"https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/dental/starter.html",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"09",
+        code:"DEN-009",
+        title:"Design 09",
+        screenshot:"https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/dental/",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      },
+      {
+        number:"10",
+        code:"DEN-010",
+        title:"Design 10",
+        screenshot:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/dental/",
+        features:["Treatments", "Doctors", "Appointment"].map(String)
+      }
+    ]
+  },
+  {
+    key:"property", prefix:"HOM", icon:"🏠", title:"Homestay & Airbnb",
+    description:"Homestays, Airbnb properties, boutique hotels and rentals.",
+    cover:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85",
+    features:["Rooms", "Amenities", "Booking"].map(String),
+    designs:[
+      {
+        number:"01",
+        code:"HOM-001",
+        title:"Design 01",
+        screenshot:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/homestay/Japandi-editorial.html",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"02",
+        code:"HOM-002",
+        title:"Design 02",
+        screenshot:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/homestay/advance-portal.html",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"03",
+        code:"HOM-003",
+        title:"Design 03",
+        screenshot:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/homestay/premium.html",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"04",
+        code:"HOM-004",
+        title:"Design 04",
+        screenshot:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/homestay/starter-boho.html",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"05",
+        code:"HOM-005",
+        title:"Design 05",
+        screenshot:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/homestay/starter.html",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"06",
+        code:"HOM-006",
+        title:"Design 06",
+        screenshot:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/homestay/starter1.html",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"07",
+        code:"HOM-007",
+        title:"Design 07",
+        screenshot:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/homestay/tropical-resort.html",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"08",
+        code:"HOM-008",
+        title:"Design 08",
+        screenshot:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/homestay/urban-loft.html",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"09",
+        code:"HOM-009",
+        title:"Design 09",
+        screenshot:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/homestay/",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      },
+      {
+        number:"10",
+        code:"HOM-010",
+        title:"Design 10",
+        screenshot:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/homestay/",
+        features:["Rooms", "Amenities", "Booking"].map(String)
+      }
+    ]
+  },
+  {
+    key:"automotive", prefix:"CAR", icon:"🚗", title:"Car Detailing",
+    description:"Detailing studios, car wash, workshops and automotive services.",
+    cover:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1000&q=85",
+    features:["Packages", "Results", "Booking"].map(String),
+    designs:[
+      {
+        number:"01",
+        code:"CAR-001",
+        title:"Design 01",
+        screenshot:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/car-detailing/advance-dashboard-portal.html",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"02",
+        code:"CAR-002",
+        title:"Design 02",
+        screenshot:"https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/car-detailing/advance.html",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"03",
+        code:"CAR-003",
+        title:"Design 03",
+        screenshot:"https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/car-detailing/advance1.html",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"04",
+        code:"CAR-004",
+        title:"Design 04",
+        screenshot:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/car-detailing/editorial-graphic-detailing.html",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"05",
+        code:"CAR-005",
+        title:"Design 05",
+        screenshot:"https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/car-detailing/graphic-hud-detailing.html",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"06",
+        code:"CAR-006",
+        title:"Design 06",
+        screenshot:"https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/car-detailing/starter-light-detailing.html",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"07",
+        code:"CAR-007",
+        title:"Design 07",
+        screenshot:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/car-detailing/starter.html",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"08",
+        code:"CAR-008",
+        title:"Design 08",
+        screenshot:"https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/car-detailing/",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"09",
+        code:"CAR-009",
+        title:"Design 09",
+        screenshot:"https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/car-detailing/",
+        features:["Packages", "Results", "Booking"].map(String)
+      },
+      {
+        number:"10",
+        code:"CAR-010",
+        title:"Design 10",
+        screenshot:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/car-detailing/",
+        features:["Packages", "Results", "Booking"].map(String)
+      }
+    ]
+  },
+  {
+    key:"fitness", prefix:"GYM", icon:"🏋️", title:"Gym & Fitness",
+    description:"Gyms, fitness studios, personal trainers and wellness clubs.",
+    cover:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85",
+    features:["Membership", "Classes", "Trainers"].map(String),
+    designs:[
+      {
+        number:"01",
+        code:"GYM-001",
+        title:"Design 01",
+        screenshot:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/gym-fitness/ultimate-hyperfit-portal.html",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"02",
+        code:"GYM-002",
+        title:"Design 02",
+        screenshot:"https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/gym-fitness/starter-gym.html",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"03",
+        code:"GYM-003",
+        title:"Design 03",
+        screenshot:"https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/gym-fitness/starter-fitness.html",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"04",
+        code:"GYM-004",
+        title:"Design 04",
+        screenshot:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/gym-fitness/retro-synth-fitness.html",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"05",
+        code:"GYM-005",
+        title:"Design 05",
+        screenshot:"https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/gym-fitness/premium.html",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"06",
+        code:"GYM-006",
+        title:"Design 06",
+        screenshot:"https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/gym-fitness/japandi-wellness.html",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"07",
+        code:"GYM-007",
+        title:"Design 07",
+        screenshot:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/gym-fitness/glass-luxury-studio.html",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"08",
+        code:"GYM-008",
+        title:"Design 08",
+        screenshot:"https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/gym-fitness/cyber-bio-fitness.html",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"09",
+        code:"GYM-009",
+        title:"Design 09",
+        screenshot:"https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/gym-fitness/brutalist-industrial-gym.html",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      },
+      {
+        number:"10",
+        code:"GYM-010",
+        title:"Design 10",
+        screenshot:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
+        demoUrl:"https://evieeviee.github.io/gym-fitness/advance-fitness-portal.html",
+        features:["Membership", "Classes", "Trainers"].map(String)
+      }
+    ]
+  }
+];
+
+const categoryView=document.getElementById("categoryView");
+const collectionView=document.getElementById("collectionView");
+const categoryGrid=document.getElementById("categoryGrid");
+const designGrid=document.getElementById("designGrid");
+const categorySearch=document.getElementById("categorySearch");
+const designSearch=document.getElementById("designSearch");
+const categoryEmpty=document.getElementById("categoryEmpty");
+const designEmpty=document.getElementById("designEmpty");
+const backToCategories=document.getElementById("backToCategories");
+let activeCategory=null;
+
+function renderCategories(query=""){
+  const term=query.trim().toLowerCase();
+  const filtered=portfolioData.filter(category =>
+    `${category.title} ${category.description} ${category.key}`.toLowerCase().includes(term)
+  );
+
+  categoryGrid.innerHTML=filtered.map(category=>`
+    <button class="category-card" type="button" data-category-key="${category.key}">
+      <img src="${category.cover}" alt="${category.title} portfolio collection">
+      <div class="category-card-content">
+        <div class="category-icon">${category.icon}</div>
+        <h3>${category.title}</h3>
+        <p>${category.description}</p>
+        <div class="category-meta">
+          <span class="design-count">10 Designs</span>
+          <span class="view-collection">View Collection →</span>
+        </div>
+      </div>
+    </button>
+  `).join("");
+
+  categoryEmpty.style.display=filtered.length ? "none" : "block";
+
+  categoryGrid.querySelectorAll("[data-category-key]").forEach(button=>{
+    button.addEventListener("click",()=>openCollection(button.dataset.categoryKey));
+  });
+}
+
+function openCollection(key){
+  activeCategory=portfolioData.find(category=>category.key===key);
+  if(!activeCategory) return;
+
+  document.getElementById("collectionIcon").textContent=activeCategory.icon;
+  document.getElementById("collectionTitle").textContent=activeCategory.title;
+  document.getElementById("collectionSubtitle").textContent="10 landing page designs available · Select by design number or code";
+  designSearch.value="";
+  renderDesigns();
+  categoryView.classList.add("hidden");
+  collectionView.classList.add("active");
+  window.scrollTo({top:document.querySelector('[data-page="portfolio"] .section').offsetTop-70,behavior:"smooth"});
+}
+
+function renderDesigns(query=""){
+  if(!activeCategory) return;
+  const term=query.trim().toLowerCase();
+  const designs=activeCategory.designs.filter(design=>
+    `${design.title} ${design.code}`.toLowerCase().includes(term)
+  );
+
+  designGrid.innerHTML=designs.map(design=>{
+    const message=`Hi, I like ${activeCategory.title} ${design.title} (${design.code}). I would like to customise this design for my business.`;
+    return `
+      <article class="design-card">
+        <div class="design-preview">
+          <img src="${design.screenshot}" alt="${activeCategory.title} ${design.title}">
+          <span class="design-number">${design.title}</span>
+          <span class="design-code">${design.code}</span>
+        </div>
+        <div class="design-body">
+          <h3>${design.title}</h3>
+          <p>Reference code: <strong>${design.code}</strong></p>
+          <div class="design-features">
+            ${design.features.map(feature=>`<span>✓ ${feature}</span>`).join("")}
+            <span>✓ Mobile Ready</span>
+          </div>
+          <div class="design-actions">
+            <a class="design-btn demo" href="${design.demoUrl}" target="_blank" rel="noopener" data-demo-link="${design.demoUrl}">View Live Demo</a>
+            <a class="design-btn choose" href="https://wa.me/60189079798?text=${encodeURIComponent(message)}" target="_blank">Use This Design</a>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join("");
+
+  designEmpty.style.display=designs.length ? "none" : "block";
+
+  designGrid.querySelectorAll('[data-demo-link^="PASTE-YOUR-"]').forEach(link=>{
+    link.addEventListener("click",event=>{
+      event.preventDefault();
+      alert("This design does not have a live URL yet. Search the HTML for this design code and replace the PASTE-YOUR... placeholder.");
+    });
+  });
+}
+
+categorySearch.addEventListener("input",()=>renderCategories(categorySearch.value));
+designSearch.addEventListener("input",()=>renderDesigns(designSearch.value));
+backToCategories.addEventListener("click",()=>{
+  collectionView.classList.remove("active");
+  categoryView.classList.remove("hidden");
+  activeCategory=null;
+  window.scrollTo({top:document.querySelector('[data-page="portfolio"] .section').offsetTop-70,behavior:"smooth"});
+});
+
+renderCategories();
+
+/* WhatsApp form */
+document.getElementById("enquiryForm").addEventListener("submit",event=>{
+  event.preventDefault();
+
+  const name=document.getElementById("name").value.trim();
+  const business=document.getElementById("business").value.trim();
+  const businessType=document.getElementById("businessType").value;
+  const packageName=document.getElementById("package").value || "Not selected";
+  const designReference=document.getElementById("designReference").value.trim() || "Not provided";
+  const message=document.getElementById("message").value.trim() || "No additional message";
+
+ const text = `
+🌿 New Website Enquiry
+
+👤 Name:
+${name}
+
+🏢 Business:
+${business}
+
+📂 Industry:
+${businessType}
+
+📦 Interested Package:
+${packageName}
+
+🎨 Design / Reference:
+${designReference}
+
+📝 Requirements:
+${message}
+
+Sent from:
+www.plannique.com
+`;
+  window.open(`https://wa.me/60189079798?text=${encodeURIComponent(text)}`,"_blank");
+});
+
+
+/* Stripe deposit link placeholders */
+document.querySelectorAll('a[href^="#STARTER-DEPOSIT-LINK"],a[href^="#PREMIUM-DEPOSIT-LINK"]').forEach(link=>{
+  link.addEventListener("click",event=>{
+    event.preventDefault();
+    alert("Add your Stripe Payment Link here before publishing. Search this HTML for STARTER-DEPOSIT-LINK or PREMIUM-DEPOSIT-LINK.");
+  });
+});
+
+/* Initial route */
+showPage(currentRoute(),false);
+</script>
+
+</body>
+</html>
