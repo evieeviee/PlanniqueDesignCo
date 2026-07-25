@@ -698,6 +698,163 @@ footer{padding:48px 0 26px;background:#1d1b18;color:#bbb4ac}
   }
   .float:after{content:"💬";font-size:24px}
 }
+
+/* UPDATED TWO-PACKAGE LAYOUT */
+.package-grid-two{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  max-width:1100px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.addon-grid{
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+.addon-card{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:start;
+  gap:17px;
+  padding:23px;
+  border-radius:20px;
+  background:#fff;
+  border:1px solid var(--line);
+  box-shadow:0 14px 38px rgba(60,48,37,.07);
+}
+.addon-card>span{font-size:30px}
+.addon-card h3{
+  font-family:"Playfair Display",serif;
+  font-size:23px;
+}
+.addon-card p{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:13px;
+}
+.addon-card strong{
+  color:var(--sage-dark);
+  white-space:nowrap;
+}
+.domain-guide{
+  margin-top:50px;
+  padding:34px;
+  border-radius:26px;
+  background:linear-gradient(135deg,#fff,#eee8df);
+  border:1px solid var(--line);
+  box-shadow:0 18px 48px rgba(60,48,37,.08);
+}
+.domain-guide h2{
+  margin-top:10px;
+  font-family:"Playfair Display",serif;
+  font-size:40px;
+}
+.domain-guide p{margin-top:10px;color:var(--muted)}
+.domain-options{
+  margin-top:24px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:13px;
+}
+.domain-options div{
+  padding:18px;
+  border-radius:16px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+.domain-options strong{
+  display:block;
+  font-family:"Playfair Display",serif;
+  font-size:26px;
+  color:var(--sage-dark);
+}
+.domain-options span{
+  display:block;
+  margin-top:7px;
+  color:var(--muted);
+  font-size:13px;
+}
+.domain-note{
+  margin-top:18px;
+  padding:16px 18px;
+  border-radius:14px;
+  background:var(--ink);
+  color:#fff;
+  font-size:13px;
+}
+
+/* FULL-SCREEN PORTFOLIO PREVIEW */
+.collection-modal{
+  position:fixed;
+  inset:0;
+  z-index:3000;
+  display:none;
+  background:#111;
+}
+.collection-modal.open{display:flex;flex-direction:column}
+.collection-modal-bar{
+  min-height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:10px 16px;
+  background:#1d1b18;
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.collection-back{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  border:1px solid rgba(255,255,255,.22);
+  background:#fff;
+  color:#1d1b18;
+  padding:11px 16px;
+  border-radius:999px;
+  font-weight:900;
+}
+.collection-modal-title{
+  flex:1;
+  min-width:0;
+  font-weight:800;
+  text-align:center;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.collection-open{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid rgba(255,255,255,.22);
+  color:#fff;
+  padding:11px 15px;
+  border-radius:999px;
+  font-weight:800;
+}
+.collection-frame{
+  width:100%;
+  flex:1;
+  border:0;
+  background:#fff;
+}
+body.preview-open{overflow:hidden}
+
+@media(max-width:950px){
+  .package-grid-two{grid-template-columns:1fr}
+  .addon-grid{grid-template-columns:1fr}
+  .domain-options{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .addon-card{grid-template-columns:auto 1fr}
+  .addon-card strong{grid-column:2;white-space:normal}
+  .collection-modal-bar{padding:9px}
+  .collection-back,.collection-open{padding:10px 12px;font-size:12px}
+  .collection-modal-title{font-size:12px}
+}
+
 </style>
 </head>
 
@@ -761,7 +918,7 @@ footer{padding:48px 0 26px;background:#1d1b18;color:#bbb4ac}
 
   <div class="wrap" style="margin-top:-42px;position:relative;z-index:3">
     <div class="trust-grid">
-      <div class="trust-item"><strong>3</strong><span>Clear packages</span></div>
+      <div class="trust-item"><strong>2</strong><span>Clear packages</span></div>
       <div class="trust-item"><strong>100%</strong><span>Responsive design</span></div>
       <div class="trust-item"><strong>Direct</strong><span>WhatsApp enquiries</span></div>
       <div class="trust-item"><strong>Transparent</strong><span>Simple project scope</span></div>
@@ -818,69 +975,48 @@ footer{padding:48px 0 26px;background:#1d1b18;color:#bbb4ac}
   <div class="page-hero">
     <div class="wrap page-hero-grid">
       <div>
-        <div class="eyebrow">Website Design Library</div>
-        <h1>Choose your industry, then choose your design</h1>
-        <p>Every category includes 10 different landing page designs. Open any live demo and send us the design code you prefer.</p>
+        <div class="eyebrow">Website Collections</div>
+        <h1>Choose an industry, then explore its complete collection</h1>
+        <p>Each industry now has its own dedicated portfolio homepage with Essential and Signature website themes.</p>
         <div class="actions">
-          <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20help%20choosing%20a%20website%20design." target="_blank">💬 Help Me Choose</a>
+          <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20help%20choosing%20a%20website%20collection." target="_blank">💬 Help Me Choose</a>
         </div>
       </div>
-      <div class="page-visual"><img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1100&q=85" alt="Plannique website portfolio library"></div>
+      <div class="page-visual">
+        <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1100&q=85" alt="Plannique website portfolio collections">
+      </div>
     </div>
   </div>
 
   <div class="section">
     <div class="wrap">
-      <div class="category-view" id="categoryView">
-        <div class="eyebrow">Browse Categories</div>
-        <h2 class="title">60 website designs across 6 industries</h2>
-        <p class="copy">Select a business category to explore its full collection. You do not need to know the design style—simply choose the design number you like most.</p>
+      <div class="eyebrow">Browse Industries</div>
+      <h2 class="title">Explore every category collection</h2>
+      <p class="copy">Open a category to view all available Essential and Signature themes for that industry.</p>
 
-        <div class="portfolio-toolbar">
-          <div class="search-box">
-            <span>⌕</span>
-            <input id="categorySearch" type="search" placeholder="Search category, e.g. gym or café" aria-label="Search portfolio categories">
-          </div>
-          <div class="portfolio-summary" id="portfolioSummary">6 categories · 60 designs</div>
+      <div class="portfolio-toolbar">
+        <div class="search-box">
+          <span>⌕</span>
+          <input id="categorySearch" type="search" placeholder="Search industry, e.g. flower or dental" aria-label="Search portfolio categories">
         </div>
-
-        <div class="category-grid" id="categoryGrid"></div>
-        <div class="empty-state" id="categoryEmpty">No category found. Try another search word.</div>
-
-        <div class="portfolio-note">
-          <strong>Easy to update:</strong> Search for <code>PASTE-YOUR-</code> near the bottom of this HTML. Replace each placeholder with the matching live landing page URL.
-        </div>
+        <div class="portfolio-summary" id="portfolioSummary">8 industry collections</div>
       </div>
 
-      <div class="collection-view" id="collectionView">
-        <button class="back-btn" id="backToCategories">← Back to all categories</button>
+      <div class="category-grid" id="categoryGrid"></div>
+      <div class="empty-state" id="categoryEmpty">No category found. Try another search word.</div>
 
-        <div class="collection-header">
-          <div class="collection-title-row">
-            <span id="collectionIcon">✦</span>
-            <div>
-              <h2 id="collectionTitle">Category</h2>
-              <p id="collectionSubtitle">10 landing page designs available</p>
-            </div>
-          </div>
-          <div class="search-box">
-            <span>⌕</span>
-            <input id="designSearch" type="search" placeholder="Search Design 01 or code" aria-label="Search designs">
-          </div>
-        </div>
-
-        <div class="design-grid" id="designGrid"></div>
-        <div class="empty-state" id="designEmpty">No design found in this collection.</div>
+      <div class="portfolio-note">
+        <strong>Portfolio structure:</strong> This main website shows industries only. Each industry opens its own collection homepage where customers can preview and choose individual themes.
       </div>
     </div>
   </div>
 
   <div class="cta">
     <div class="wrap">
-      <h2>Found a design you like?</h2>
-      <p>Send us its design code. We will customise the logo, colours, content, photographs, contact details and functions for your business.</p>
+      <h2>Found the right industry?</h2>
+      <p>Open its collection, preview the available themes and send us the theme name you prefer.</p>
       <div class="actions">
-        <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20found%20a%20design%20from%20your%20portfolio%20and%20would%20like%20to%20customise%20it." target="_blank">💬 Customise a Design</a>
+        <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20found%20a%20website%20collection%20and%20would%20like%20to%20customise%20a%20theme." target="_blank">💬 Customise a Theme</a>
         <button class="btn btn-light" data-route="packages">View Packages</button>
       </div>
     </div>
@@ -893,57 +1029,140 @@ footer{padding:48px 0 26px;background:#1d1b18;color:#bbb4ac}
     <div class="wrap page-hero-grid">
       <div>
         <div class="eyebrow">Website Packages</div>
-        <h1>Choose the right level for your business</h1>
-        <p>Start with a simple presence or choose a richer website designed for an established brand.</p>
+        <h1>Two clear packages for different business needs</h1>
+        <p>Choose a focused one-page website or a more complete multi-page website with up to seven pages.</p>
       </div>
-      <div class="page-visual"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=85" alt="Packages"></div>
+      <div class="page-visual">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=85" alt="Plannique website packages">
+      </div>
     </div>
   </div>
 
   <div class="section">
     <div class="wrap">
-      <div class="package-grid">
+      <div class="package-grid package-grid-two">
         <article class="package">
-          <div class="eyebrow">Starter</div>
-          <h3>Simple Online Presence</h3>
+          <div class="eyebrow">Essential</div>
+          <h3>One-Page Website</h3>
           <div class="price"><span>RM</span>499</div>
-          <p class="package-desc">For new and home-based businesses.</p>
-          <ul><li>One-page website</li><li>About and services</li><li>WhatsApp button</li><li>Google Maps</li><li>Basic gallery</li><li>One revision</li><li>3–5 working days</li></ul>
-          <a class="btn btn-light" href="https://wa.me/60189079798?text=I%20am%20interested%20in%20the%20RM499%20Starter%20Package." target="_blank">Choose Starter</a>
+          <p class="package-desc">For smaller businesses that need a polished and affordable online presence.</p>
+          <ul>
+            <li>One complete scrolling page</li>
+            <li>Up to 7 website sections</li>
+            <li>One language</li>
+            <li>Mobile-responsive design</li>
+            <li>Business introduction</li>
+            <li>Services or products</li>
+            <li>Gallery or testimonials</li>
+            <li>WhatsApp enquiry button</li>
+            <li>Google Maps integration</li>
+            <li>One revision round</li>
+            <li>7 days minor support</li>
+          </ul>
+          <a class="btn btn-light" href="https://wa.me/60189079798?text=I%20am%20interested%20in%20the%20RM499%20Essential%20One-Page%20Website." target="_blank">Choose Essential</a>
         </article>
 
         <article class="package featured">
-          <div class="popular">MOST POPULAR</div>
-          <div class="eyebrow" style="color:#cbd2c7">Business</div>
-          <h3>Professional Business Website</h3>
-          <div class="price"><span>RM</span>999</div>
-          <p class="package-desc">For stronger presentation and more enquiries.</p>
-          <ul><li>Custom business website</li><li>Services and pricing</li><li>Promotions and gallery</li><li>Google Maps and Form</li><li>Testimonials and FAQ</li><li>Basic SEO</li><li>Three revisions</li><li>5–7 working days</li></ul>
-          <a class="btn btn-wa" href="https://wa.me/60189079798?text=I%20am%20interested%20in%20the%20RM999%20Business%20Package." target="_blank">Choose Business</a>
+          <div class="popular">MOST COMPLETE</div>
+          <div class="eyebrow" style="color:#cbd2c7">Signature</div>
+          <h3>Multi-Page Website</h3>
+          <div class="price"><span>RM</span>1,299</div>
+          <p class="package-desc">For established businesses that need more detailed content, stronger presentation and richer enquiry tools.</p>
+          <ul>
+            <li>Up to 7 page views</li>
+            <li>Premium visual direction</li>
+            <li>One language included</li>
+            <li>Desktop and mobile navigation</li>
+            <li>Detailed service or product pages</li>
+            <li>Team, specialist or business profiles</li>
+            <li>Gallery, testimonials and FAQ</li>
+            <li>WhatsApp enquiry flow</li>
+            <li>Smart enquiry form</li>
+            <li>Google Maps integration</li>
+            <li>Three revision rounds</li>
+            <li>3 months minor support</li>
+          </ul>
+          <a class="btn btn-wa" href="https://wa.me/60189079798?text=I%20am%20interested%20in%20the%20RM1299%20Signature%20Multi-Page%20Website." target="_blank">Choose Signature</a>
         </article>
+      </div>
 
-        <article class="package">
-          <div class="eyebrow">Premium</div>
-          <h3>Complete Brand Website</h3>
-          <div class="price"><span>RM</span>1,499</div>
-          <p class="package-desc">For established businesses with richer content.</p>
-          <ul><li>Advanced website layout</li><li>Premium visual direction</li><li>Multiple service categories</li><li>Team or specialist profiles</li><li>Membership or promotions</li><li>Blog or article section</li><li>Five revisions</li><li>Priority support</li></ul>
-          <a class="btn btn-dark" href="https://wa.me/60189079798?text=I%20am%20interested%20in%20the%20RM1499%20Premium%20Package." target="_blank">Choose Premium</a>
-        </article>
+      <div class="section" style="padding-bottom:0">
+        <div class="eyebrow">Optional Add-Ons</div>
+        <h2 class="title">Add only what your business needs</h2>
+        <p class="copy">Add-ons are quoted separately so the base package remains clear and affordable.</p>
+
+        <div class="addon-grid">
+          <article class="addon-card">
+            <span>🌐</span>
+            <div>
+              <h3>Additional Language</h3>
+              <p>Add one extra language within the same website, including a desktop and mobile language switcher.</p>
+            </div>
+            <strong>+ RM200</strong>
+          </article>
+
+          <article class="addon-card">
+            <span>✍️</span>
+            <div>
+              <h3>Translation Support</h3>
+              <p>Basic translation preparation when the client does not provide final translated content.</p>
+            </div>
+            <strong>Quoted separately</strong>
+          </article>
+
+          <article class="addon-card">
+            <span>📷</span>
+            <div>
+              <h3>Extra Content Setup</h3>
+              <p>Additional products, services, team profiles, galleries or page sections beyond the package scope.</p>
+            </div>
+            <strong>From RM80</strong>
+          </article>
+
+          <article class="addon-card">
+            <span>🛠️</span>
+            <div>
+              <h3>Future Updates</h3>
+              <p>Content edits, new promotions, new photos or structural changes after the support period.</p>
+            </div>
+            <strong>Quoted per request</strong>
+          </article>
+        </div>
+      </div>
+
+      <div class="domain-guide">
+        <div>
+          <div class="eyebrow">Domain Recommendation</div>
+          <h2>Let the client own the domain</h2>
+          <p>The business owner should register and pay for the domain using their own email and account. Plannique can help search, connect and configure it.</p>
+        </div>
+        <div class="domain-options">
+          <div><strong>.com</strong><span>Best default choice for most businesses and international reach.</span></div>
+          <div><strong>.my</strong><span>Good for a Malaysia-focused identity and shorter local branding.</span></div>
+          <div><strong>.com.my</strong><span>Suitable for Malaysian commercial businesses that prefer a traditional local business domain.</span></div>
+        </div>
+        <div class="domain-note">
+          <strong>Suggested commercial setup:</strong> Domain registration and yearly renewal are paid directly by the client. Plannique may include domain connection in both packages, while domain purchase itself is excluded.
+        </div>
       </div>
 
       <div class="compare-wrap">
         <table class="compare">
-          <thead><tr><th>Feature</th><th>Starter</th><th>Business</th><th>Premium</th></tr></thead>
+          <thead>
+            <tr><th>Feature</th><th>Essential</th><th>Signature</th></tr>
+          </thead>
           <tbody>
-            <tr><td>Responsive design</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-            <tr><td>WhatsApp integration</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-            <tr><td>Google Maps</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-            <tr><td>Google Form</td><td class="dash">—</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-            <tr><td>Testimonials & FAQ</td><td class="dash">—</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-            <tr><td>Team profiles</td><td class="dash">—</td><td>Optional</td><td class="checkmark">✓</td></tr>
-            <tr><td>Blog section</td><td class="dash">—</td><td class="dash">—</td><td class="checkmark">✓</td></tr>
-            <tr><td>Revision rounds</td><td>1</td><td>3</td><td>5</td></tr>
+            <tr><td>Website structure</td><td>One scrolling page</td><td>Up to 7 page views</td></tr>
+            <tr><td>Responsive design</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+            <tr><td>WhatsApp integration</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+            <tr><td>Google Maps</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
+            <tr><td>Smart enquiry form</td><td>Basic</td><td class="checkmark">✓</td></tr>
+            <tr><td>Detailed service pages</td><td class="dash">—</td><td class="checkmark">✓</td></tr>
+            <tr><td>Testimonials and FAQ</td><td>Optional sections</td><td class="checkmark">✓</td></tr>
+            <tr><td>Language included</td><td>1</td><td>1</td></tr>
+            <tr><td>Extra language</td><td>+ RM200</td><td>+ RM200</td></tr>
+            <tr><td>Revision rounds</td><td>1</td><td>3</td></tr>
+            <tr><td>Minor support</td><td>7 days</td><td>3 months</td></tr>
           </tbody>
         </table>
       </div>
@@ -1224,566 +1443,104 @@ window.addEventListener("popstate",()=>{
   showPage(currentRoute(),false);
 });
 
-/* Portfolio library data
-   Replace screenshot and demoUrl values with your real portfolio links.
-   Each category is prepared with 10 numbered designs. */
-const portfolioData = [
+/* Portfolio category gateway */
+const portfolioCategories = [
   {
-    key:"beauty", prefix:"BEA", icon:"💇", title:"Beauty & Hair Salon",
-    description:"Salon, spa, nail, hair and personal beauty businesses.",
-    cover:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=85",
-    features:["Services", "Gallery", "WhatsApp"].map(String),
-    designs:[
-      {
-        number:"01",
-        code:"BEA-001",
-        title:"Design 01",
-        screenshot:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/Beauty/starter1.html",
-        features:["Services", "Gallery", "WhatsApp"].map(String)
-      },
-      {
-        number:"02",
-        code:"BEA-002",
-        title:"Design 02",
-        screenshot:"https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/Beauty/starter4.html",
-        features:["Services", "Gallery", "WhatsApp"].map(String)
-      },
-      {
-        number:"03",
-        code:"BEA-003",
-        title:"Design 03",
-        screenshot:"https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/Beauty/premium.html",
-        features:["Services", "Gallery", "WhatsApp"].map(String)
-      },
-      {
-        number:"04",
-        code:"BEA-004",
-        title:"Design 04",
-        screenshot:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/Beauty/premium1.html",
-        features:["Services", "Gallery", "WhatsApp"].map(String)
-      },
-      {
-        number:"05",
-        code:"BEA-005",
-        title:"Design 05",
-        screenshot:"https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/Beauty/premium2.html",
-        features:["Services", "Gallery", "WhatsApp"].map(String)
-      },
-      {
-        number:"06",
-        code:"BEA-006",
-        title:"Design 06",
-        screenshot:"https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/Beauty/premium3.html",
-        features:["Services", "Gallery", "WhatsApp"].map(String)
-      },
-      {
-        number:"07",
-        code:"BEA-007",
-        title:"Design 07",
-        screenshot:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/Beauty/advance2.html",
-        features:["Services", "Gallery", "WhatsApp"].map(String)
-      },
-      {
-        number:"08",
-        code:"BEA-008",
-        title:"Design 08",
-        screenshot:"https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/Beauty/advance3.html",
-        features:["Services", "Gallery", "WhatsApp"].map(String)
-      },
-      {
-        number:"09",
-        code:"BEA-009",
-        title:"Design 09",
-        screenshot:"https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/Beauty/advance4.html",
-        features:["Services", "Gallery", "WhatsApp"].map(String)
-      },
-      {
-        number:"10",
-        code:"BEA-010",
-        title:"Design 10",
-        screenshot:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/Beauty/advance5.html",
-        features:["Services", "Gallery", "WhatsApp"].map(String)
-      }
-    ]
-  },
-  {
-    key:"food", prefix:"CAF", icon:"☕", title:"Café & Restaurant",
+    key:"cafe",
+    icon:"☕",
+    title:"Café & Restaurant",
     description:"Cafés, restaurants, bakeries and food businesses.",
-    cover:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85",
-    features:["Menu", "Gallery", "Reservation"].map(String),
-    designs:[
-      {
-        number:"01",
-        code:"CAF-001",
-        title:"Design 01",
-        screenshot:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/cafe/advance.html",
-        features:["Menu", "Gallery", "Reservation"].map(String)
-      },
-      {
-        number:"02",
-        code:"CAF-002",
-        title:"Design 02",
-        screenshot:"https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/cafe/advance1.html",
-        features:["Menu", "Gallery", "Reservation"].map(String)
-      },
-      {
-        number:"03",
-        code:"CAF-003",
-        title:"Design 03",
-        screenshot:"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/cafe/advance2.html",
-        features:["Menu", "Gallery", "Reservation"].map(String)
-      },
-      {
-        number:"04",
-        code:"CAF-004",
-        title:"Design 04",
-        screenshot:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/cafe/cyber-glassmorphism.html",
-        features:["Menu", "Gallery", "Reservation"].map(String)
-      },
-      {
-        number:"05",
-        code:"CAF-005",
-        title:"Design 05",
-        screenshot:"https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/cafe/editorial-luxury.html",
-        features:["Menu", "Gallery", "Reservation"].map(String)
-      },
-      {
-        number:"06",
-        code:"CAF-006",
-        title:"Design 06",
-        screenshot:"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/cafe/luxury-dining.html",
-        features:["Menu", "Gallery", "Reservation"].map(String)
-      },
-      {
-        number:"07",
-        code:"CAF-007",
-        title:"Design 07",
-        screenshot:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/cafe/modern-cafe.html",
-        features:["Menu", "Gallery", "Reservation"].map(String)
-      },
-      {
-        number:"08",
-        code:"CAF-008",
-        title:"Design 08",
-        screenshot:"https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/cafe/neo-brutalist.html",
-        features:["Menu", "Gallery", "Reservation"].map(String)
-      },
-      {
-        number:"09",
-        code:"CAF-009",
-        title:"Design 09",
-        screenshot:"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/cafe/premium.html",
-        features:["Menu", "Gallery", "Reservation"].map(String)
-      },
-      {
-        number:"10",
-        code:"CAF-010",
-        title:"Design 10",
-        screenshot:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/cafe/starter.html",
-        features:["Menu", "Gallery", "Reservation"].map(String)
-      }
-    ]
+    cover:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85",
+    url:"https://evieeviee.github.io/cafe/",
+    packages:"Essential + Signature"
   },
   {
-    key:"health", prefix:"DEN", icon:"🦷", title:"Dental & Clinic",
-    description:"Dental clinics, aesthetic centres and wellness practices.",
-    cover:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=85",
-    features:["Treatments", "Doctors", "Appointment"].map(String),
-    designs:[
-      {
-        number:"01",
-        code:"DEN-001",
-        title:"Design 01",
-        screenshot:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/dental/advance.html",
-        features:["Treatments", "Doctors", "Appointment"].map(String)
-      },
-      {
-        number:"02",
-        code:"DEN-002",
-        title:"Design 02",
-        screenshot:"https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/dental/advance1.html",
-        features:["Treatments", "Doctors", "Appointment"].map(String)
-      },
-      {
-        number:"03",
-        code:"DEN-003",
-        title:"Design 03",
-        screenshot:"https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/dental/advance2.html",
-        features:["Treatments", "Doctors", "Appointment"].map(String)
-      },
-      {
-        number:"04",
-        code:"DEN-004",
-        title:"Design 04",
-        screenshot:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/dental/apex-dental-lab.html",
-        features:["Treatments", "Doctors", "Appointment"].map(String)
-      },
-      {
-        number:"05",
-        code:"DEN-005",
-        title:"Design 05",
-        screenshot:"https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/dental/dental-matrix.html",
-        features:["Treatments", "Doctors", "Appointment"].map(String)
-      },
-      {
-        number:"06",
-        code:"DEN-006",
-        title:"Design 06",
-        screenshot:"https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/dental/lumina-dental-sanctuary.html",
-        features:["Treatments", "Doctors", "Appointment"].map(String)
-      },
-      {
-        number:"07",
-        code:"DEN-007",
-        title:"Design 07",
-        screenshot:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/dental/premium.html",
-        features:["Treatments", "Doctors", "Appointment"].map(String)
-      },
-      {
-        number:"08",
-        code:"DEN-008",
-        title:"Design 08",
-        screenshot:"https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/dental/starter.html",
-        features:["Treatments", "Doctors", "Appointment"].map(String)
-      },
-      {
-        number:"09",
-        code:"DEN-009",
-        title:"Design 09",
-        screenshot:"https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/dental/",
-        features:["Treatments", "Doctors", "Appointment"].map(String)
-      },
-      {
-        number:"10",
-        code:"DEN-010",
-        title:"Design 10",
-        screenshot:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/dental/",
-        features:["Treatments", "Doctors", "Appointment"].map(String)
-      }
-    ]
-  },
-  {
-    key:"property", prefix:"HOM", icon:"🏠", title:"Homestay & Airbnb",
-    description:"Homestays, Airbnb properties, boutique hotels and rentals.",
-    cover:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85",
-    features:["Rooms", "Amenities", "Booking"].map(String),
-    designs:[
-      {
-        number:"01",
-        code:"HOM-001",
-        title:"Design 01",
-        screenshot:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/homestay/Japandi-editorial.html",
-        features:["Rooms", "Amenities", "Booking"].map(String)
-      },
-      {
-        number:"02",
-        code:"HOM-002",
-        title:"Design 02",
-        screenshot:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/homestay/advance-portal.html",
-        features:["Rooms", "Amenities", "Booking"].map(String)
-      },
-      {
-        number:"03",
-        code:"HOM-003",
-        title:"Design 03",
-        screenshot:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/homestay/premium.html",
-        features:["Rooms", "Amenities", "Booking"].map(String)
-      },
-      {
-        number:"04",
-        code:"HOM-004",
-        title:"Design 04",
-        screenshot:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/homestay/starter-boho.html",
-        features:["Rooms", "Amenities", "Booking"].map(String)
-      },
-      {
-        number:"05",
-        code:"HOM-005",
-        title:"Design 05",
-        screenshot:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/homestay/starter.html",
-        features:["Rooms", "Amenities", "Booking"].map(String)
-      },
-      {
-        number:"06",
-        code:"HOM-006",
-        title:"Design 06",
-        screenshot:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/homestay/starter1.html",
-        features:["Rooms", "Amenities", "Booking"].map(String)
-      },
-      {
-        number:"07",
-        code:"HOM-007",
-        title:"Design 07",
-        screenshot:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/homestay/tropical-resort.html",
-        features:["Rooms", "Amenities", "Booking"].map(String)
-      },
-      {
-        number:"08",
-        code:"HOM-008",
-        title:"Design 08",
-        screenshot:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/homestay/urban-loft.html",
-        features:["Rooms", "Amenities", "Booking"].map(String)
-      },
-      {
-        number:"09",
-        code:"HOM-009",
-        title:"Design 09",
-        screenshot:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/homestay/",
-        features:["Rooms", "Amenities", "Booking"].map(String)
-      },
-      {
-        number:"10",
-        code:"HOM-010",
-        title:"Design 10",
-        screenshot:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/homestay/",
-        features:["Rooms", "Amenities", "Booking"].map(String)
-      }
-    ]
-  },
-  {
-    key:"automotive", prefix:"CAR", icon:"🚗", title:"Car Detailing",
+    key:"car-detailing",
+    icon:"🚗",
+    title:"Car Detailing",
     description:"Detailing studios, car wash, workshops and automotive services.",
-    cover:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1000&q=85",
-    features:["Packages", "Results", "Booking"].map(String),
-    designs:[
-      {
-        number:"01",
-        code:"CAR-001",
-        title:"Design 01",
-        screenshot:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/car-detailing/advance-dashboard-portal.html",
-        features:["Packages", "Results", "Booking"].map(String)
-      },
-      {
-        number:"02",
-        code:"CAR-002",
-        title:"Design 02",
-        screenshot:"https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/car-detailing/advance.html",
-        features:["Packages", "Results", "Booking"].map(String)
-      },
-      {
-        number:"03",
-        code:"CAR-003",
-        title:"Design 03",
-        screenshot:"https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/car-detailing/advance1.html",
-        features:["Packages", "Results", "Booking"].map(String)
-      },
-      {
-        number:"04",
-        code:"CAR-004",
-        title:"Design 04",
-        screenshot:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/car-detailing/editorial-graphic-detailing.html",
-        features:["Packages", "Results", "Booking"].map(String)
-      },
-      {
-        number:"05",
-        code:"CAR-005",
-        title:"Design 05",
-        screenshot:"https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/car-detailing/graphic-hud-detailing.html",
-        features:["Packages", "Results", "Booking"].map(String)
-      },
-      {
-        number:"06",
-        code:"CAR-006",
-        title:"Design 06",
-        screenshot:"https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/car-detailing/starter-light-detailing.html",
-        features:["Packages", "Results", "Booking"].map(String)
-      },
-      {
-        number:"07",
-        code:"CAR-007",
-        title:"Design 07",
-        screenshot:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/car-detailing/starter.html",
-        features:["Packages", "Results", "Booking"].map(String)
-      },
-      {
-        number:"08",
-        code:"CAR-008",
-        title:"Design 08",
-        screenshot:"https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/car-detailing/",
-        features:["Packages", "Results", "Booking"].map(String)
-      },
-      {
-        number:"09",
-        code:"CAR-009",
-        title:"Design 09",
-        screenshot:"https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/car-detailing/",
-        features:["Packages", "Results", "Booking"].map(String)
-      },
-      {
-        number:"10",
-        code:"CAR-010",
-        title:"Design 10",
-        screenshot:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/car-detailing/",
-        features:["Packages", "Results", "Booking"].map(String)
-      }
-    ]
+    cover:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=85",
+    url:"https://evieeviee.github.io/car-detailing/",
+    packages:"Essential + Signature"
   },
   {
-    key:"fitness", prefix:"GYM", icon:"🏋️", title:"Gym & Fitness",
+    key:"beauty",
+    icon:"💇",
+    title:"Beauty & Salon",
+    description:"Hair salons, beauty studios, nails, spa and personal care businesses.",
+    cover:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=85",
+    url:"https://evieeviee.github.io/Beauty/",
+    packages:"Essential + Signature"
+  },
+  {
+    key:"flower",
+    icon:"🌸",
+    title:"Flower & Blossom",
+    description:"Florists, flower boutiques, gifting studios and wedding floral brands.",
+    cover:"https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=85",
+    url:"https://evieeviee.github.io/flower/",
+    packages:"Essential + Signature"
+  },
+  {
+    key:"homestay",
+    icon:"🏠",
+    title:"Homestay & Airbnb",
+    description:"Homestays, Airbnb properties, boutique hotels and vacation rentals.",
+    cover:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85",
+    url:"https://evieeviee.github.io/homestay/",
+    packages:"Essential + Signature"
+  },
+  {
+    key:"gym-fitness",
+    icon:"🏋️",
+    title:"Gym & Fitness",
     description:"Gyms, fitness studios, personal trainers and wellness clubs.",
-    cover:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85",
-    features:["Membership", "Classes", "Trainers"].map(String),
-    designs:[
-      {
-        number:"01",
-        code:"GYM-001",
-        title:"Design 01",
-        screenshot:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/gym-fitness/ultimate-hyperfit-portal.html",
-        features:["Membership", "Classes", "Trainers"].map(String)
-      },
-      {
-        number:"02",
-        code:"GYM-002",
-        title:"Design 02",
-        screenshot:"https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/gym-fitness/starter-gym.html",
-        features:["Membership", "Classes", "Trainers"].map(String)
-      },
-      {
-        number:"03",
-        code:"GYM-003",
-        title:"Design 03",
-        screenshot:"https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/gym-fitness/starter-fitness.html",
-        features:["Membership", "Classes", "Trainers"].map(String)
-      },
-      {
-        number:"04",
-        code:"GYM-004",
-        title:"Design 04",
-        screenshot:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/gym-fitness/retro-synth-fitness.html",
-        features:["Membership", "Classes", "Trainers"].map(String)
-      },
-      {
-        number:"05",
-        code:"GYM-005",
-        title:"Design 05",
-        screenshot:"https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/gym-fitness/premium.html",
-        features:["Membership", "Classes", "Trainers"].map(String)
-      },
-      {
-        number:"06",
-        code:"GYM-006",
-        title:"Design 06",
-        screenshot:"https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/gym-fitness/japandi-wellness.html",
-        features:["Membership", "Classes", "Trainers"].map(String)
-      },
-      {
-        number:"07",
-        code:"GYM-007",
-        title:"Design 07",
-        screenshot:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/gym-fitness/glass-luxury-studio.html",
-        features:["Membership", "Classes", "Trainers"].map(String)
-      },
-      {
-        number:"08",
-        code:"GYM-008",
-        title:"Design 08",
-        screenshot:"https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/gym-fitness/cyber-bio-fitness.html",
-        features:["Membership", "Classes", "Trainers"].map(String)
-      },
-      {
-        number:"09",
-        code:"GYM-009",
-        title:"Design 09",
-        screenshot:"https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/gym-fitness/brutalist-industrial-gym.html",
-        features:["Membership", "Classes", "Trainers"].map(String)
-      },
-      {
-        number:"10",
-        code:"GYM-010",
-        title:"Design 10",
-        screenshot:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85",
-        demoUrl:"https://evieeviee.github.io/gym-fitness/advance-fitness-portal.html",
-        features:["Membership", "Classes", "Trainers"].map(String)
-      }
-    ]
+    cover:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=85",
+    url:"https://evieeviee.github.io/gym-fitness/",
+    packages:"Essential + Signature"
+  },
+  {
+    key:"dental",
+    icon:"🦷",
+    title:"Dental",
+    description:"Dental clinics, orthodontic practices and oral care centres.",
+    cover:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=85",
+    url:"https://evieeviee.github.io/dental/",
+    packages:"Essential + Signature"
+  },
+  {
+    key:"aesthetic",
+    icon:"✨",
+    title:"Aesthetic Clinic",
+    description:"Aesthetic clinics, skin centres, beauty medical and wellness practices.",
+    cover:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=85",
+    url:"https://evieeviee.github.io/aesthetic/",
+    packages:"Essential + Signature"
   }
 ];
 
-const categoryView=document.getElementById("categoryView");
-const collectionView=document.getElementById("collectionView");
 const categoryGrid=document.getElementById("categoryGrid");
-const designGrid=document.getElementById("designGrid");
 const categorySearch=document.getElementById("categorySearch");
-const designSearch=document.getElementById("designSearch");
 const categoryEmpty=document.getElementById("categoryEmpty");
-const designEmpty=document.getElementById("designEmpty");
-const backToCategories=document.getElementById("backToCategories");
-let activeCategory=null;
+const portfolioSummary=document.getElementById("portfolioSummary");
 
 function renderCategories(query=""){
   const term=query.trim().toLowerCase();
-  const filtered=portfolioData.filter(category =>
-    `${category.title} ${category.description} ${category.key}`.toLowerCase().includes(term)
+  const filtered=portfolioCategories.filter(category =>
+    `${category.title} ${category.description} ${category.key} ${category.packages}`
+      .toLowerCase()
+      .includes(term)
   );
 
   categoryGrid.innerHTML=filtered.map(category=>`
-    <button class="category-card" type="button" data-category-key="${category.key}">
-      <img src="${category.cover}" alt="${category.title} portfolio collection">
+    <button class="category-card" type="button" onclick="openCollectionPreview('${category.url}','${category.title.replace(/'/g,"&#39;")}')">
+      <img src="${category.cover}" alt="${category.title} website collection">
       <div class="category-card-content">
         <div class="category-icon">${category.icon}</div>
         <h3>${category.title}</h3>
         <p>${category.description}</p>
         <div class="category-meta">
-          <span class="design-count">10 Designs</span>
+          <span class="design-count">${category.packages}</span>
           <span class="view-collection">View Collection →</span>
         </div>
       </div>
@@ -1791,77 +1548,13 @@ function renderCategories(query=""){
   `).join("");
 
   categoryEmpty.style.display=filtered.length ? "none" : "block";
-
-  categoryGrid.querySelectorAll("[data-category-key]").forEach(button=>{
-    button.addEventListener("click",()=>openCollection(button.dataset.categoryKey));
-  });
-}
-
-function openCollection(key){
-  activeCategory=portfolioData.find(category=>category.key===key);
-  if(!activeCategory) return;
-
-  document.getElementById("collectionIcon").textContent=activeCategory.icon;
-  document.getElementById("collectionTitle").textContent=activeCategory.title;
-  document.getElementById("collectionSubtitle").textContent="10 landing page designs available · Select by design number or code";
-  designSearch.value="";
-  renderDesigns();
-  categoryView.classList.add("hidden");
-  collectionView.classList.add("active");
-  window.scrollTo({top:document.querySelector('[data-page="portfolio"] .section').offsetTop-70,behavior:"smooth"});
-}
-
-function renderDesigns(query=""){
-  if(!activeCategory) return;
-  const term=query.trim().toLowerCase();
-  const designs=activeCategory.designs.filter(design=>
-    `${design.title} ${design.code}`.toLowerCase().includes(term)
-  );
-
-  designGrid.innerHTML=designs.map(design=>{
-    const message=`Hi, I like ${activeCategory.title} ${design.title} (${design.code}). I would like to customise this design for my business.`;
-    return `
-      <article class="design-card">
-        <div class="design-preview">
-          <img src="${design.screenshot}" alt="${activeCategory.title} ${design.title}">
-          <span class="design-number">${design.title}</span>
-          <span class="design-code">${design.code}</span>
-        </div>
-        <div class="design-body">
-          <h3>${design.title}</h3>
-          <p>Reference code: <strong>${design.code}</strong></p>
-          <div class="design-features">
-            ${design.features.map(feature=>`<span>✓ ${feature}</span>`).join("")}
-            <span>✓ Mobile Ready</span>
-          </div>
-          <div class="design-actions">
-            <a class="design-btn demo" href="${design.demoUrl}" target="_blank" rel="noopener" data-demo-link="${design.demoUrl}">View Live Demo</a>
-            <a class="design-btn choose" href="https://wa.me/60189079798?text=${encodeURIComponent(message)}" target="_blank">Use This Design</a>
-          </div>
-        </div>
-      </article>
-    `;
-  }).join("");
-
-  designEmpty.style.display=designs.length ? "none" : "block";
-
-  designGrid.querySelectorAll('[data-demo-link^="PASTE-YOUR-"]').forEach(link=>{
-    link.addEventListener("click",event=>{
-      event.preventDefault();
-      alert("This design does not have a live URL yet. Search the HTML for this design code and replace the PASTE-YOUR... placeholder.");
-    });
-  });
+  portfolioSummary.textContent=
+    filtered.length===portfolioCategories.length
+      ? `${portfolioCategories.length} industry collections`
+      : `${filtered.length} matching collection${filtered.length===1 ? "" : "s"}`;
 }
 
 categorySearch.addEventListener("input",()=>renderCategories(categorySearch.value));
-designSearch.addEventListener("input",()=>renderDesigns(designSearch.value));
-backToCategories.addEventListener("click",()=>{
-  collectionView.classList.remove("active");
-  categoryView.classList.remove("hidden");
-  activeCategory=null;
-  window.scrollTo({top:document.querySelector('[data-page="portfolio"] .section').offsetTop-70,behavior:"smooth"});
-});
-
 renderCategories();
 
 /* WhatsApp form */
@@ -1898,9 +1591,43 @@ www.plannique.com
   window.open(`https://wa.me/60189079798?text=${encodeURIComponent(text)}`,"_blank");
 });
 
+
+/* Full-screen collection iframe preview */
+function openCollectionPreview(url,title){
+  const modal=document.getElementById("collectionModal");
+  document.getElementById("collectionModalTitle").textContent=title+" Collection";
+  document.getElementById("collectionFrame").src=url;
+  document.getElementById("collectionOpenNew").href=url;
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden","false");
+  document.body.classList.add("preview-open");
+}
+
+function closeCollectionPreview(){
+  const modal=document.getElementById("collectionModal");
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden","true");
+  document.getElementById("collectionFrame").src="about:blank";
+  document.body.classList.remove("preview-open");
+}
+
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape") closeCollectionPreview();
+});
+
 /* Initial route */
 showPage(currentRoute(),false);
 </script>
+
+
+<div class="collection-modal" id="collectionModal" aria-hidden="true">
+  <div class="collection-modal-bar">
+    <button class="collection-back" type="button" onclick="closeCollectionPreview()">← Back</button>
+    <div class="collection-modal-title" id="collectionModalTitle">Website Collection</div>
+    <a class="collection-open" id="collectionOpenNew" href="#" target="_blank" rel="noopener">Open Directly ↗</a>
+  </div>
+  <iframe class="collection-frame" id="collectionFrame" title="Industry website collection"></iframe>
+</div>
 
 </body>
 </html>
