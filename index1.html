@@ -1,1359 +1,1003 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Plannique Design Co creates elegant websites for salons, cafés, clinics and local businesses.">
-<title>Plannique Design Co</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plannique | Bespoke Web Design & High-Converting Digital Systems</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ==========================================
+       1. VARIABLES & CORE GRAPHICS
+       ========================================== */
+    :root {
+      --primary: #6366f1;
+      --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+      --whatsapp-green: #25D366;
+      --whatsapp-hover: #1da851;
+      --bg-dark: #090d16;
+      --card-bg: rgba(30, 41, 59, 0.6);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-glow: rgba(99, 102, 241, 0.25);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-<style>
-:root{
-  --paper:#f1ede6;
-  --paper2:#e8e0d5;
-  --white:#fff;
-  --ink:#2a2723;
-  --muted:#756e66;
-  --sage:#75816f;
-  --sage-dark:#596352;
-  --warm:#b08a6c;
-  --line:#ddd2c5;
-  --green:#25d366;
-  --shadow:0 24px 70px rgba(56,45,34,.14);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  min-height:100vh;
-  font-family:"DM Sans",Arial,sans-serif;
-  color:var(--ink);
-  background:linear-gradient(180deg,var(--paper),#faf8f4 34%,#fff);
-  line-height:1.65;
-  overflow-x:hidden;
-}
-a{text-decoration:none;color:inherit}
-img{display:block;max-width:100%}
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
-.wrap{width:min(1180px,calc(100% - 38px));margin:auto}
-.section{padding:95px 0}
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-  color:var(--sage-dark);
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-.eyebrow:before{content:"";width:28px;height:1px;background:var(--sage)}
-.title{
-  margin-top:13px;
-  font-family:"Playfair Display",serif;
-  font-size:clamp(40px,5vw,64px);
-  line-height:1.06;
-}
-.copy{
-  margin-top:17px;
-  max-width:760px;
-  color:var(--muted);
-  font-size:17px;
-}
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  padding:15px 22px;
-  border-radius:999px;
-  border:0;
-  font-weight:800;
-  transition:.25s;
-}
-.btn:hover{transform:translateY(-3px)}
-.btn-wa{background:var(--green);color:#fff;box-shadow:0 15px 34px rgba(37,211,102,.22)}
-.btn-light{background:#fff;border:1px solid var(--line)}
-.btn-dark{background:var(--ink);color:#fff}
-.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:31px}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
 
-/* NAV */
-.navbar{
-  position:fixed;
-  inset:0 0 auto;
-  z-index:1000;
-  background:rgba(241,237,230,.94);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(221,210,197,.9);
-}
-.nav{
-  height:86px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.logo{width:185px;height:64px;object-fit:contain}
-.nav-links{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700}
-.nav-link{
-  border:0;
-  background:none;
-  color:var(--ink);
-  padding:9px 0;
-  position:relative;
-}
-.nav-link:after{
-  content:"";
-  position:absolute;
-  left:0;right:0;bottom:1px;
-  height:2px;
-  transform:scaleX(0);
-  background:var(--sage-dark);
-  transition:.25s;
-}
-.nav-link:hover,.nav-link.active{color:var(--sage-dark)}
-.nav-link.active:after{transform:scaleX(1)}
-.nav-cta{
-  padding:12px 18px;
-  border-radius:999px;
-  border:0;
-  background:var(--ink);
-  color:#fff;
-  font-weight:800;
-}
-.menu-btn{display:none;border:0;background:none;font-size:28px}
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(168, 85, 247, 0.1) 0%, transparent 40%);
+    }
 
-/* APP PAGES */
-main{padding-top:86px}
-.page{
-  display:none;
-  min-height:calc(100vh - 86px);
-  animation:pageIn .38s ease;
-}
-.page.active{display:block}
-@keyframes pageIn{
-  from{opacity:0;transform:translateY(12px)}
-  to{opacity:1;transform:none}
-}
-.page-hero{
-  padding:90px 0 62px;
-  background:
-    radial-gradient(circle at 82% 18%,rgba(117,129,111,.15),transparent 28%),
-    linear-gradient(135deg,var(--paper),#faf8f4);
-  border-bottom:1px solid var(--line);
-}
-.page-hero-grid{
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:55px;
-  align-items:center;
-}
-.page-hero h1{
-  margin-top:17px;
-  font-family:"Playfair Display",serif;
-  font-size:clamp(48px,6vw,76px);
-  line-height:1;
-}
-.page-hero p{margin-top:18px;color:var(--muted);font-size:18px}
-.page-visual{
-  height:370px;
-  border-radius:28px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-}
-.page-visual img{width:100%;height:100%;object-fit:cover}
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; width: 100%; }
 
-/* HOME */
-.home-hero{
-  min-height:calc(100vh - 86px);
-  padding:58px 0 82px;
-  display:flex;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
-}
-.home-hero:before{
-  content:"";
-  position:absolute;
-  width:540px;height:540px;
-  border:1px solid rgba(117,129,111,.2);
-  border-radius:50%;
-  right:-190px;top:-180px;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.03fr .97fr;
-  gap:70px;
-  align-items:center;
-}
-.badge{
-  display:inline-flex;
-  padding:9px 14px;
-  border-radius:999px;
-  background:rgba(255,255,255,.84);
-  border:1px solid var(--line);
-  color:var(--sage-dark);
-  font-size:13px;
-  font-weight:700;
-}
-.home-hero h1{
-  margin-top:24px;
-  font-family:"Playfair Display",serif;
-  font-size:clamp(52px,7vw,84px);
-  line-height:.98;
-}
-.home-hero h1 span{color:var(--sage-dark);font-style:italic}
-.home-hero p{margin-top:22px;color:var(--muted);font-size:18px}
-.hero-points{margin-top:27px;display:flex;flex-wrap:wrap;gap:17px;color:#766f67;font-size:13px;font-weight:700}
-.visual{position:relative;min-height:620px}
-.main-photo{
-  position:absolute;top:0;right:0;
-  width:83%;height:560px;
-  border-radius:185px 185px 34px 34px;
-  background:
-    linear-gradient(to top,rgba(29,24,20,.55),transparent 55%),
-    url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=88") center/cover;
-  box-shadow:var(--shadow);
-}
-.logo-card{
-  position:absolute;left:0;bottom:24px;
-  width:250px;padding:22px;
-  border-radius:22px;
-  background:rgba(255,255,255,.95);
-  box-shadow:0 20px 52px rgba(50,40,32,.18);
-}
-.logo-card img{width:100%;height:120px;object-fit:contain}
-.proof-card{
-  position:absolute;right:10px;bottom:30px;
-  width:260px;padding:22px;
-  border-radius:20px;
-  background:rgba(42,39,35,.92);
-  color:#fff;
-}
-.proof-card strong{display:block;font-family:"Playfair Display",serif;font-size:28px}
-.proof-card span{display:block;margin-top:8px;color:#d9d2ca;font-size:13px}
+    /* ==========================================
+       2. BUTTONS & UTILITIES
+       ========================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
 
-.trust-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  background:#fff;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-}
-.trust-item{padding:25px;text-align:center;border-right:1px solid var(--line)}
-.trust-item:last-child{border-right:0}
-.trust-item strong{display:block;font-family:"Playfair Display",serif;font-size:28px;color:var(--sage-dark)}
-.trust-item span{font-size:13px;color:var(--muted)}
+    .btn-gradient {
+      background: var(--primary-gradient);
+      color: #fff;
+      box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.5);
+    }
 
-.feature-grid,.preview-grid,.reason-grid{
-  margin-top:38px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-.feature-card,.reason-card{
-  padding:26px;
-  border-radius:20px;
-  background:#fff;
-  border:1px solid var(--line);
-}
-.feature-card span,.reason-card span{font-size:29px}
-.feature-card h3,.reason-card h3{
-  margin-top:12px;
-  font-family:"Playfair Display",serif;
-  font-size:25px;
-}
-.feature-card p,.reason-card p{margin-top:8px;color:var(--muted);font-size:14px}
-.preview-card{
-  overflow:hidden;
-  background:#fff;
-  border-radius:22px;
-  box-shadow:0 17px 44px rgba(56,45,34,.1);
-}
-.preview-card img{width:100%;height:240px;object-fit:cover}
-.preview-body{padding:21px}
-.preview-body h3{font-family:"Playfair Display",serif;font-size:25px}
-.preview-body p{margin-top:7px;color:var(--muted);font-size:14px}
+    .btn-gradient:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px -5px rgba(168, 85, 247, 0.6);
+    }
 
-/* PORTFOLIO LIBRARY */
-.portfolio-toolbar{
-  margin-top:32px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  flex-wrap:wrap;
-}
-.search-box{
-  flex:1;
-  min-width:250px;
-  max-width:440px;
-  position:relative;
-}
-.search-box span{
-  position:absolute;
-  left:16px;
-  top:50%;
-  transform:translateY(-50%);
-  pointer-events:none;
-}
-.search-box input{
-  width:100%;
-  padding:14px 16px 14px 46px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  background:#fff;
-  outline:none;
-  transition:.2s;
-}
-.search-box input:focus{
-  border-color:var(--sage);
-  box-shadow:0 0 0 4px rgba(117,129,111,.12);
-}
-.portfolio-summary{
-  color:var(--muted);
-  font-size:14px;
-  font-weight:700;
-}
-.category-grid{
-  margin-top:34px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-.category-card{
-  position:relative;
-  min-height:370px;
-  border:0;
-  border-radius:26px;
-  overflow:hidden;
-  text-align:left;
-  color:#fff;
-  box-shadow:0 20px 55px rgba(45,35,28,.16);
-  isolation:isolate;
-}
-.category-card:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to top,rgba(24,21,18,.9) 5%,rgba(24,21,18,.18) 68%);
-  z-index:1;
-}
-.category-card img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.45s;
-}
-.category-card:hover img{transform:scale(1.06)}
-.category-card-content{
-  position:absolute;
-  inset:auto 0 0;
-  z-index:2;
-  padding:26px;
-}
-.category-icon{font-size:32px}
-.category-card h3{
-  margin-top:8px;
-  font-family:"Playfair Display",serif;
-  font-size:32px;
-  line-height:1.08;
-}
-.category-card p{
-  margin-top:8px;
-  color:#ddd6cf;
-  font-size:14px;
-}
-.category-meta{
-  margin-top:17px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-}
-.design-count{
-  padding:7px 11px;
-  border:1px solid rgba(255,255,255,.28);
-  border-radius:999px;
-  background:rgba(255,255,255,.12);
-  backdrop-filter:blur(9px);
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:.7px;
-  text-transform:uppercase;
-}
-.view-collection{font-size:13px;font-weight:800}
-.collection-view{display:none}
-.collection-view.active{display:block;animation:pageIn .35s ease}
-.category-view.hidden{display:none}
-.collection-header{
-  margin-top:30px;
-  padding:25px;
-  border-radius:23px;
-  background:#fff;
-  border:1px solid var(--line);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:22px;
-  flex-wrap:wrap;
-}
-.back-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  border:0;
-  background:none;
-  color:var(--sage-dark);
-  font-weight:800;
-}
-.collection-title-row{
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-.collection-title-row span{font-size:34px}
-.collection-title-row h2{
-  font-family:"Playfair Display",serif;
-  font-size:34px;
-  line-height:1.05;
-}
-.collection-title-row p{color:var(--muted);font-size:13px}
-.design-grid{
-  margin-top:27px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-.design-card{
-  overflow:hidden;
-  border-radius:23px;
-  background:#fff;
-  border:1px solid var(--line);
-  box-shadow:0 16px 45px rgba(60,48,37,.1);
-  transition:.28s;
-}
-.design-card:hover{transform:translateY(-6px);box-shadow:0 24px 58px rgba(60,48,37,.15)}
-.design-preview{
-  height:285px;
-  overflow:hidden;
-  position:relative;
-  background:#e7e1d8;
-}
-.design-preview img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.45s;
-}
-.design-card:hover .design-preview img{transform:scale(1.04)}
-.design-number{
-  position:absolute;
-  left:14px;
-  top:14px;
-  padding:8px 12px;
-  border-radius:999px;
-  background:rgba(255,255,255,.94);
-  color:var(--ink);
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:.7px;
-}
-.design-code{
-  position:absolute;
-  right:14px;
-  top:14px;
-  padding:8px 11px;
-  border-radius:999px;
-  background:rgba(42,39,35,.88);
-  color:#fff;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:.8px;
-}
-.design-body{padding:22px}
-.design-body h3{
-  font-family:"Playfair Display",serif;
-  font-size:27px;
-}
-.design-body p{margin-top:7px;color:var(--muted);font-size:13px}
-.design-features{
-  margin-top:14px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-}
-.design-features span{
-  padding:6px 9px;
-  border-radius:999px;
-  background:#f3efe9;
-  font-size:10px;
-  font-weight:700;
-}
-.design-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}
-.design-btn{
-  padding:12px 10px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  text-align:center;
-  font-size:12px;
-  font-weight:900;
-}
-.design-btn.demo{background:var(--ink);color:#fff;border-color:var(--ink)}
-.design-btn.choose{background:#fff}
-.empty-state{
-  display:none;
-  margin-top:30px;
-  padding:45px 20px;
-  border:1px dashed var(--line);
-  border-radius:22px;
-  text-align:center;
-  color:var(--muted);
-}
-.portfolio-note{
-  margin-top:30px;
-  padding:18px 20px;
-  border-left:4px solid var(--sage);
-  background:#fff;
-  border-radius:0 15px 15px 0;
-  color:var(--muted);
-  font-size:13px;
-}
+    .btn-whatsapp {
+      background: var(--whatsapp-green);
+      color: #fff;
+      box-shadow: 0 10px 20px -5px rgba(37, 211, 102, 0.4);
+    }
 
-/* PACKAGES */
-.package-grid{margin-top:42px;display:grid;grid-template-columns:repeat(3,1fr);gap:21px}
-.package{
-  padding:32px;
-  border-radius:25px;
-  background:#fff;
-  border:1px solid var(--line);
-  position:relative;
-  box-shadow:0 18px 52px rgba(64,51,40,.08);
-}
-.package.featured{background:var(--ink);color:#fff;transform:translateY(-12px)}
-.package h3{margin-top:11px;font-family:"Playfair Display",serif;font-size:33px}
-.price{margin-top:16px;font-size:50px;font-weight:800}
-.price span{font-size:17px}
-.package-desc{margin-top:12px;color:var(--muted);font-size:14px}
-.featured .package-desc{color:#c6bfb7}
-.package ul{margin-top:23px;display:grid;gap:10px}
-.package li{list-style:none;font-size:14px}
-.package li:before{content:"✓";margin-right:9px;color:var(--sage);font-weight:900}
-.package .btn{width:100%;margin-top:25px}
-.popular{
-  position:absolute;top:16px;right:16px;
-  padding:6px 10px;border-radius:999px;
-  background:var(--warm);color:#fff;
-  font-size:10px;font-weight:800;
-}
-.compare-wrap{overflow-x:auto;margin-top:44px}
-.compare{width:100%;min-width:760px;border-collapse:collapse;background:#fff;box-shadow:0 18px 48px rgba(60,48,37,.08)}
-.compare th,.compare td{padding:16px;border-bottom:1px solid var(--line);text-align:center}
-.compare th:first-child,.compare td:first-child{text-align:left}
-.compare th{background:#f5f1eb}
-.checkmark{color:var(--sage-dark);font-weight:900}
-.dash{color:#aaa}
+    .btn-whatsapp:hover {
+      background: var(--whatsapp-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px -5px rgba(37, 211, 102, 0.5);
+    }
 
-/* ABOUT */
-.about-grid{
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:65px;
-  align-items:center;
-}
-.about-image{position:relative;min-height:560px}
-.about-image img:first-child{
-  position:absolute;left:0;top:0;
-  width:78%;height:500px;
-  object-fit:cover;border-radius:28px;
-}
-.about-image img:last-child{
-  position:absolute;right:0;bottom:0;
-  width:47%;height:270px;
-  object-fit:cover;border:10px solid var(--paper);
-}
-.check-grid{margin-top:27px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.check{padding:14px;border-radius:15px;background:#fff;border:1px solid var(--line)}
-.check strong{display:block}
-.check span{font-size:13px;color:var(--muted)}
-.values{background:var(--ink);color:#fff}
-.values .copy{color:#c9c1b9}
-.values .reason-card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}
-.values .reason-card p{color:#c9c1b9}
+    .btn-glass {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px);
+    }
 
-/* PROCESS */
-.process-grid{margin-top:40px;display:grid;grid-template-columns:repeat(5,1fr);gap:13px}
-.step{padding:22px;border-radius:18px;background:#fff;border:1px solid var(--line)}
-.step b{font-family:"Playfair Display",serif;font-size:38px;color:var(--sage)}
-.step h3{margin-top:7px}
-.step p{margin-top:6px;color:var(--muted);font-size:13px}
-.content-list{margin-top:30px;display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
-.content-item{padding:18px;border-radius:17px;background:#fff;border:1px solid var(--line)}
-.content-item span{font-size:26px}
-.content-item h3{margin-top:9px;font-size:17px}
-.content-item p{margin-top:6px;color:var(--muted);font-size:13px}
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
 
-/* FAQ */
-.faq{margin-top:34px;display:grid;gap:11px}
-.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px}
-.faq summary{cursor:pointer;font-weight:800}
-.faq p{margin-top:9px;color:var(--muted)}
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1.25rem;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 9999px;
+      color: #818cf8;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.5rem;
+    }
 
-/* CONTACT */
-.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px}
-.contact-info,.form-card{
-  padding:30px;border-radius:24px;background:#fff;
-  border:1px solid var(--line);box-shadow:0 18px 48px rgba(60,48,37,.08);
-}
-.contact-info h2,.form-card h2{font-family:"Playfair Display",serif;font-size:38px}
-.details{display:grid;gap:11px;margin-top:22px}
-.detail{padding:14px;border-radius:14px;background:#f5f1eb}
-.form-grid{margin-top:20px;display:grid;gap:12px}
-.form-grid input,.form-grid select,.form-grid textarea{
-  width:100%;padding:14px;border:1px solid var(--line);
-  border-radius:12px;background:#faf8f4;
-}
-.form-grid textarea{min-height:130px;resize:vertical}
-.form-note{margin-top:10px;color:var(--muted);font-size:12px}
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
 
-/* CTA + FOOTER */
-.cta{
-  padding:88px 0;
-  background:
-    linear-gradient(rgba(39,35,31,.82),rgba(39,35,31,.82)),
-    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=85") center/cover;
-  color:#fff;text-align:center;
-}
-.cta h2{font-family:"Playfair Display",serif;font-size:clamp(42px,6vw,70px);line-height:1.05}
-.cta p{max-width:700px;margin:18px auto 0;color:#ddd6cf;font-size:17px}
-.cta .actions{justify-content:center}
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.75rem;
+    }
 
-footer{padding:48px 0 26px;background:#1d1b18;color:#bbb4ac}
-.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:35px}
-.footer-grid img{width:210px;height:110px;object-fit:contain}
-.footer-grid h4{color:#fff}
-.footer-grid button,.footer-grid a{
-  display:block;margin:8px 0;border:0;background:none;
-  color:#bbb4ac;text-align:left;cursor:pointer;
-}
-.footer-bottom{
-  margin-top:30px;padding-top:20px;
-  border-top:1px solid rgba(255,255,255,.1);
-  display:flex;justify-content:space-between;gap:20px;font-size:13px;
-}
-.float{
-  position:fixed;right:20px;bottom:20px;z-index:1001;
-  padding:14px 18px;border-radius:999px;
-  background:var(--green);color:#fff;font-weight:800;
-  box-shadow:0 15px 35px rgba(37,211,102,.3);
-}
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-/* 404 */
-.not-found{text-align:center;padding:150px 20px}
-.not-found h1{font-family:"Playfair Display",serif;font-size:70px}
+    /* ==========================================
+       3. NAVIGATION & ROUTING ARCHITECTURE
+       ========================================== */
+    header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--glass-border);
+    }
 
-@media(max-width:950px){
-  .category-grid,.design-grid{grid-template-columns:1fr 1fr}
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 85px;
+    }
 
-  .nav-links{
-    position:absolute;top:86px;left:20px;right:20px;
-    display:none;flex-direction:column;align-items:flex-start;
-    padding:20px;background:#fff;border-radius:18px;box-shadow:var(--shadow);
-  }
-  .nav-links.open{display:flex}
-  .menu-btn{display:block}
-  .hero-grid,.page-hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
-  .visual{min-height:620px}
-  .feature-grid,.preview-grid,.reason-grid,.portfolio-grid,.package-grid{grid-template-columns:1fr 1fr}
-  .process-grid{grid-template-columns:1fr 1fr}
-  .content-list{grid-template-columns:1fr 1fr}
-  .trust-grid{grid-template-columns:1fr 1fr}
-  .package.featured{transform:none}
-}
-@media(max-width:600px){
-  .category-grid,.design-grid{grid-template-columns:1fr}
-  .category-card{min-height:335px}
-  .design-actions{grid-template-columns:1fr}
+    .logo {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: pointer;
+    }
 
-  .wrap{width:min(100% - 28px,1180px)}
-  .section{padding:72px 0}
-  .logo{width:158px}
-  .home-hero h1,.page-hero h1{font-size:50px}
-  .visual{min-height:530px}
-  .main-photo{width:94%;height:470px}
-  .logo-card{width:205px}
-  .proof-card{width:205px;right:4px}
-  .feature-grid,.preview-grid,.reason-grid,.portfolio-grid,.package-grid,.process-grid,.content-list,.check-grid{grid-template-columns:1fr}
-  .trust-grid{grid-template-columns:1fr 1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column}
-  .float{
-    width:60px;height:60px;padding:0;
-    display:grid;place-items:center;border-radius:50%;font-size:0;
-  }
-  .float:after{content:"💬";font-size:24px}
-}
-</style>
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      cursor: pointer;
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+    }
+
+    .nav-links a:hover, .nav-links a.active-link {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* PAGE VIEW CONTAINERS (SPA CONTROLLER) */
+    .page-view {
+      display: none;
+      padding: 60px 0 100px;
+      animation: fadeIn 0.4s ease-in-out;
+      flex-grow: 1;
+    }
+
+    .page-view.active-page {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==========================================
+       4. HERO & HOME PAGE VIEW
+       ========================================== */
+    .hero {
+      text-align: center;
+      padding: 60px 0 80px;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3.8rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 span {
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .feature-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .highlight-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: left;
+      backdrop-filter: blur(10px);
+    }
+
+    .highlight-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: rgba(99, 102, 241, 0.15);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ==========================================
+       5. PORTFOLIO SHOWCASE PAGE
+       ========================================== */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 2rem;
+    }
+
+    .portfolio-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      border: 1px solid var(--glass-border);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(10px);
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    }
+
+    .card-thumb {
+      position: relative;
+      height: 230px;
+      overflow: hidden;
+    }
+
+    .card-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .portfolio-card:hover .card-thumb img { transform: scale(1.05); }
+
+    .card-tag {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 0.35rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      border: 1px solid var(--glass-border);
+    }
+
+    .card-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .card-description { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
+    .card-actions { display: flex; gap: 0.75rem; }
+    .card-actions .btn { flex: 1; justify-content: center; font-size: 0.85rem; padding: 0.75rem; }
+
+    /* ==========================================
+       6. PACKAGES & COMPARISON PAGE
+       ========================================== */
+    .pricing-table-wrapper {
+      overflow-x: auto;
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+    }
+
+    table.comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .comparison-table th, .comparison-table td {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .comparison-table th {
+      font-size: 1.15rem;
+      font-weight: 800;
+      background: rgba(15, 23, 42, 0.5);
+    }
+
+    .comparison-table tr:hover { background: rgba(255, 255, 255, 0.02); }
+    .icon-check { color: #10b981; font-size: 1.2rem; }
+    .icon-cross { color: #ef4444; font-size: 1.2rem; }
+
+    /* ESTIMATOR WIDGET */
+    .estimator-box {
+      margin-top: 3.5rem;
+      background: rgba(30, 41, 59, 0.4);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .estimator-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .form-group select {
+      width: 100%;
+      padding: 0.85rem;
+      border-radius: 10px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--glass-border);
+      color: var(--text-main);
+      outline: none;
+    }
+
+    /* ==========================================
+       7. ADD-ONS PAGE
+       ========================================== */
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .addon-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: var(--transition);
+    }
+
+    .addon-card:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .addon-icon {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    /* ==========================================
+       8. WORKFLOW & GUARANTEE PAGE
+       ========================================== */
+    .workflow-card {
+      background: rgba(30, 41, 59, 0.4);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      border-radius: 24px;
+      padding: 3.5rem 2rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .step-item {
+      padding: 1.75rem;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+    }
+
+    .step-num {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--primary-gradient);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; margin-bottom: 1rem;
+    }
+
+    /* FAQ ACCORDION */
+    .faq-container {
+      max-width: 800px;
+      margin: 3rem auto 0;
+    }
+
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 1.25rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      padding: 0 1.25rem 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      display: none;
+    }
+
+    .faq-item.active .faq-answer { display: block; }
+
+    /* ==========================================
+       9. LIVE PREVIEW MODAL
+       ========================================== */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(10px);
+      z-index: 2000;
+      display: none;
+      align-items: center; justify-content: center;
+      padding: 2rem;
+    }
+
+    .modal-overlay.active { display: flex; }
+
+    .modal-container {
+      background: var(--bg-dark);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      width: 100%; max-width: 1280px;
+      height: 88vh;
+      display: flex; flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8);
+    }
+
+    .modal-header {
+      padding: 1rem 1.5rem;
+      background: rgba(30, 41, 59, 0.8);
+      border-bottom: 1px solid var(--glass-border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+
+    .modal-iframe { width: 100%; height: 100%; border: none; background: #fff; }
+
+    /* ==========================================
+       10. FLOATING WHATSAPP BAR & FOOTER
+       ========================================== */
+    .floating-whatsapp-bar {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.75rem 1.25rem 0.75rem 1.5rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(37, 211, 102, 0.4);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      backdrop-filter: blur(12px);
+    }
+
+    footer {
+      border-top: 1px solid var(--glass-border);
+      padding: 3rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .nav-links { display: none; }
+      .floating-whatsapp-bar span { display: none; }
+    }
+  </style>
 </head>
-
 <body>
 
-<header class="navbar">
-  <div class="wrap nav">
-    <button class="nav-link" data-route="home" aria-label="Home">
-      <img class="logo" src="https://ricobr.ft-crm.com/media-api/serve/0f4dde75-8ce1-4c70-b072-6b988ba25aa9_Customizable_Daily_Planner_Template.png" alt="Plannique Design Co">
-    </button>
+  <!-- HEADER NAVIGATION -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo" onclick="switchPage('home')">Plannique.</div>
+        <ul class="nav-links">
+          <li><a onclick="switchPage('home')" id="nav-home" class="active-link">Home</a></li>
+          <li><a onclick="switchPage('portfolio')" id="nav-portfolio">Showcase</a></li>
+          <li><a onclick="switchPage('packages')" id="nav-packages">Packages & Fees</a></li>
+          <li><a onclick="switchPage('addons')" id="nav-addons">Add-Ons</a></li>
+          <li><a onclick="switchPage('workflow')" id="nav-workflow">Pay-Later Flow</a></li>
+        </ul>
+        <a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hi%20Plannique,%20I'd%20like%20a%20free%20consultation" target="_blank" class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+        </a>
+      </nav>
+    </div>
+  </header>
 
-    <nav class="nav-links" id="navLinks">
-      <button class="nav-link" data-route="home">Home</button>
-      <button class="nav-link" data-route="portfolio">Portfolio</button>
-      <button class="nav-link" data-route="packages">Packages</button>
-      <button class="nav-link" data-route="about">About</button>
-      <button class="nav-link" data-route="process">Process</button>
-      <button class="nav-link" data-route="faq">FAQ</button>
-      <button class="nav-link" data-route="contact">Contact</button>
-      <button class="nav-cta" data-route="contact">Get Free Quote</button>
-    </nav>
-
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-  </div>
-</header>
-
-<main>
-
-<!-- HOME PAGE -->
-<section class="page active" data-page="home">
-  <div class="home-hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="badge">✦ Websites designed for real local businesses</div>
-        <h1>Make your business look more <span>trusted, established and ready.</span></h1>
-        <p>Plannique Design Co creates elegant, mobile-friendly websites for salons, cafés, clinics and local businesses that want customers to understand, trust and contact them more easily.</p>
-
-        <div class="actions">
-          <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20a%20free%20website%20quotation." target="_blank">💬 Get a Free Quote</a>
-          <button class="btn btn-light" data-route="portfolio">Browse Website Demos</button>
+  <!-- ==========================================
+       PAGE 1: HOME PAGE VIEW
+       ========================================== -->
+  <main class="page-view active-page" id="page-home">
+    <div class="container">
+      <section class="hero">
+        <div class="badge-pill">
+          <i class="fa-solid fa-shield-halved"></i> Risk-Free Web Design
         </div>
-
-        <div class="hero-points">
-          <span>✓ Mobile responsive</span>
-          <span>✓ WhatsApp integration</span>
-          <span>✓ Google Maps</span>
-          <span>✓ Clear package pricing</span>
+        <h1>We Build Your Web Solution First.<br><span>You Pay Only Upon Final Approval.</span></h1>
+        <p>Convert more clients with bespoke web design tailored specifically for your industry. Start with zero upfront payments, consult on WhatsApp, and view your live working draft before paying a single cent.</p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hi%20Plannique,%20I%20want%20to%20start%20a%20Do-First-Pay-Later%20project!" target="_blank" class="btn btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Free Consultation on WhatsApp
+          </a>
+          <button onclick="switchPage('portfolio')" class="btn btn-glass">
+            <i class="fa-solid fa-compass"></i> Explore Industry Showcase
+          </button>
         </div>
-      </div>
+      </section>
 
-      <div class="visual">
-        <div class="main-photo"></div>
-        <div class="logo-card"><img src="https://ricobr.ft-crm.com/media-api/serve/0f4dde75-8ce1-4c70-b072-6b988ba25aa9_Customizable_Daily_Planner_Template.png" alt="Plannique Design Co"></div>
-        <div class="proof-card">
-          <strong>Your business deserves more than social media.</strong>
-          <span>Give customers one place to see your services, location and contact details.</span>
+      <div class="feature-highlights">
+        <div class="highlight-card">
+          <div class="highlight-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Ultra Fast Delivery</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">Receive your full interactive initial draft within 3 to 5 business days.</p>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrap" style="margin-top:-42px;position:relative;z-index:3">
-    <div class="trust-grid">
-      <div class="trust-item"><strong>2</strong><span>Clear packages</span></div>
-      <div class="trust-item"><strong>100%</strong><span>Responsive design</span></div>
-      <div class="trust-item"><strong>Direct</strong><span>WhatsApp enquiries</span></div>
-      <div class="trust-item"><strong>Transparent</strong><span>Simple project scope</span></div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="wrap">
-      <div class="eyebrow">What We Create</div>
-      <h2 class="title">Websites built around what customers need</h2>
-      <div class="feature-grid">
-        <article class="feature-card"><span>💇</span><h3>Beauty & Salons</h3><p>Services, promotions, team profiles and appointment enquiries.</p></article>
-        <article class="feature-card"><span>☕</span><h3>Cafés & Restaurants</h3><p>Menus, signature products, opening hours and reservations.</p></article>
-        <article class="feature-card"><span>🦷</span><h3>Clinics & Wellness</h3><p>Treatments, specialists, frequently asked questions and forms.</p></article>
-      </div>
-    </div>
-  </div>
-
-  <div class="section" style="background:var(--paper2)">
-    <div class="wrap">
-      <div class="eyebrow">Featured Designs</div>
-      <h2 class="title">Choose a style your customers will remember</h2>
-      <div class="preview-grid">
-        <article class="preview-card">
-          <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85" alt="Salon design">
-          <div class="preview-body"><h3>Beauty & Hair Salon</h3><p>Graphic promotions, service menu, gallery and WhatsApp booking.</p><button class="btn btn-light" data-route="portfolio" style="margin-top:16px">View Portfolio</button></div>
-        </article>
-        <article class="preview-card">
-          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85" alt="Cafe design">
-          <div class="preview-body"><h3>Café & Lifestyle</h3><p>Food menu, visual gallery, location and reservation experience.</p><button class="btn btn-light" data-route="portfolio" style="margin-top:16px">View Portfolio</button></div>
-        </article>
-        <article class="preview-card">
-          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85" alt="Clinic design">
-          <div class="preview-body"><h3>Clinic & Wellness</h3><p>Professional services, practitioner profiles and consultation forms.</p><button class="btn btn-light" data-route="portfolio" style="margin-top:16px">View Portfolio</button></div>
-        </article>
-      </div>
-    </div>
-  </div>
-
-  <div class="cta">
-    <div class="wrap">
-      <h2>Ready to build a stronger online presence?</h2>
-      <p>Choose a demo style or tell us what your business needs. We will recommend the most suitable package.</p>
-      <div class="actions">
-        <button class="btn btn-light" data-route="packages">View Packages</button>
-        <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20a%20free%20website%20quotation." target="_blank">💬 WhatsApp Us</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PORTFOLIO PAGE -->
-<section class="page" data-page="portfolio">
-  <div class="page-hero">
-    <div class="wrap page-hero-grid">
-      <div>
-        <div class="eyebrow">Website Collections</div>
-        <h1>Choose an industry, then explore its complete collection</h1>
-        <p>Each industry now has its own dedicated portfolio homepage with Essential and Signature website themes.</p>
-        <div class="actions">
-          <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20help%20choosing%20a%20website%20collection." target="_blank">💬 Help Me Choose</a>
+        <div class="highlight-card">
+          <div class="highlight-icon"><i class="fa-solid fa-handshake"></i></div>
+          <h3>Do First, Pay Later</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">Full protection for business owners. Inspect the complete live page before making payment.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <h3>Mobile-First Engineering</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">Pixel-perfect performance across smartphones, tablets, and desktop devices.</p>
         </div>
       </div>
-      <div class="page-visual">
-        <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1100&q=85" alt="Plannique website portfolio collections">
-      </div>
     </div>
-  </div>
+  </main>
 
-  <div class="section">
-    <div class="wrap">
-      <div class="eyebrow">Browse Industries</div>
-      <h2 class="title">Explore every category collection</h2>
-      <p class="copy">Open a category to view all available Essential and Signature themes for that industry.</p>
-
-      <div class="portfolio-toolbar">
-        <div class="search-box">
-          <span>⌕</span>
-          <input id="categorySearch" type="search" placeholder="Search industry, e.g. flower or dental" aria-label="Search portfolio categories">
-        </div>
-        <div class="portfolio-summary" id="portfolioSummary">8 industry collections</div>
+  <!-- ==========================================
+       PAGE 2: PORTFOLIO SHOWCASE PAGE VIEW
+       ========================================== -->
+  <main class="page-view" id="page-portfolio">
+    <div class="container">
+      <div class="section-title">
+        <div class="badge-pill">Interactive Showcase</div>
+        <h2>Pre-Engineered Live Repositories</h2>
+        <p>Explore live production templates optimized for high conversion rates.</p>
       </div>
 
-      <div class="category-grid" id="categoryGrid"></div>
-      <div class="empty-state" id="categoryEmpty">No category found. Try another search word.</div>
-
-      <div class="portfolio-note">
-        <strong>Portfolio structure:</strong> This main website shows industries only. Each industry opens its own collection homepage where customers can preview and choose individual themes.
-      </div>
+      <div class="portfolio-grid" id="portfolioGrid"></div>
     </div>
-  </div>
+  </main>
 
-  <div class="cta">
-    <div class="wrap">
-      <h2>Found the right industry?</h2>
-      <p>Open its collection, preview the available themes and send us the theme name you prefer.</p>
-      <div class="actions">
-        <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20found%20a%20website%20collection%20and%20would%20like%20to%20customise%20a%20theme." target="_blank">💬 Customise a Theme</a>
-        <button class="btn btn-light" data-route="packages">View Packages</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PACKAGES PAGE -->
-<section class="page" data-page="packages">
-  <div class="page-hero">
-    <div class="wrap page-hero-grid">
-      <div>
-        <div class="eyebrow">Website Packages</div>
-        <h1>Choose the right level for your business</h1>
-        <p>Start with a simple presence or choose a richer website designed for an established brand.</p>
-      </div>
-      <div class="page-visual"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=85" alt="Packages"></div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="wrap">
-      <div class="package-grid">
-        <article class="package">
-          <div class="eyebrow">Starter</div>
-          <h3>Simple Online Presence</h3>
-          <div class="price"><span>RM</span>499</div>
-          <p class="package-desc">For new and home-based businesses.</p>
-          <ul><li>One-page website</li><li>About and services</li><li>WhatsApp button</li><li>Google Maps</li><li>Basic gallery</li><li>One revision</li><li>3–5 working days</li></ul>
-          <a class="btn btn-light" href="https://wa.me/60189079798?text=I%20am%20interested%20in%20the%20RM499%20Starter%20Package." target="_blank">Choose Starter</a>
-        </article>
-
-        <article class="package featured">
-          <div class="popular">MOST POPULAR</div>
-          <div class="eyebrow" style="color:#cbd2c7">Business</div>
-          <h3>Professional Business Website</h3>
-          <div class="price"><span>RM</span>999</div>
-          <p class="package-desc">For stronger presentation and more enquiries.</p>
-          <ul><li>Custom business website</li><li>Services and pricing</li><li>Promotions and gallery</li><li>Google Maps and Form</li><li>Testimonials and FAQ</li><li>Basic SEO</li><li>Three revisions</li><li>5–7 working days</li></ul>
-          <a class="btn btn-wa" href="https://wa.me/60189079798?text=I%20am%20interested%20in%20the%20RM999%20Business%20Package." target="_blank">Choose Business</a>
-        </article>
-
-        <article class="package">
-          <div class="eyebrow">Premium</div>
-          <h3>Complete Brand Website</h3>
-          <div class="price"><span>RM</span>1,499</div>
-          <p class="package-desc">For established businesses with richer content.</p>
-          <ul><li>Advanced website layout</li><li>Premium visual direction</li><li>Multiple service categories</li><li>Team or specialist profiles</li><li>Membership or promotions</li><li>Blog or article section</li><li>Five revisions</li><li>Priority support</li></ul>
-          <a class="btn btn-dark" href="https://wa.me/60189079798?text=I%20am%20interested%20in%20the%20RM1499%20Premium%20Package." target="_blank">Choose Premium</a>
-        </article>
+  <!-- ==========================================
+       PAGE 3: PACKAGES & COMPARISON PAGE VIEW
+       ========================================== -->
+  <main class="page-view" id="page-packages">
+    <div class="container">
+      <div class="section-title">
+        <div class="badge-pill">Transparent Pricing</div>
+        <h2>Package Comparison</h2>
+        <p>Choose between our Essential single-page or Signature multi-page system.</p>
       </div>
 
-      <div class="compare-wrap">
-        <table class="compare">
-          <thead><tr><th>Feature</th><th>Starter</th><th>Business</th><th>Premium</th></tr></thead>
+      <div class="pricing-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature Comparison</th>
+              <th>Essential Tier (RM499)</th>
+              <th style="color: #a855f7;">Signature Tier (RM1,299)</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr><td>Responsive design</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-            <tr><td>WhatsApp integration</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-            <tr><td>Google Maps</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-            <tr><td>Google Form</td><td class="dash">—</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-            <tr><td>Testimonials & FAQ</td><td class="dash">—</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-            <tr><td>Team profiles</td><td class="dash">—</td><td>Optional</td><td class="checkmark">✓</td></tr>
-            <tr><td>Blog section</td><td class="dash">—</td><td class="dash">—</td><td class="checkmark">✓</td></tr>
-            <tr><td>Revision rounds</td><td>1</td><td>3</td><td>5</td></tr>
+            <tr>
+              <td><strong>Pages Included</strong></td>
+              <td><strong>1 High-Converting Landing Page</strong></td>
+              <td><strong>Up to 7 Custom Pages</strong></td>
+            </tr>
+            <tr>
+              <td>"Do First, Pay Later" Guarantee</td>
+              <td><i class="fa-solid fa-check icon-check"></i></td>
+              <td><i class="fa-solid fa-check icon-check"></i></td>
+            </tr>
+            <tr>
+              <td>Mobile & Tablet Responsive</td>
+              <td><i class="fa-solid fa-check icon-check"></i></td>
+              <td><i class="fa-solid fa-check icon-check"></i></td>
+            </tr>
+            <tr>
+              <td>WhatsApp Direct Integration</td>
+              <td><i class="fa-solid fa-check icon-check"></i></td>
+              <td><i class="fa-solid fa-check icon-check"></i></td>
+            </tr>
+            <tr>
+              <td>Custom Graphic Assets & Styling</td>
+              <td>Standard High Quality</td>
+              <td>Advanced Premium UI/UX Graphics</td>
+            </tr>
+            <tr>
+              <td>CMS Editing Access</td>
+              <td><i class="fa-solid fa-xmark icon-cross"></i></td>
+              <td><i class="fa-solid fa-check icon-check"></i></td>
+            </tr>
+            <tr>
+              <td>Online Booking / Appointment System</td>
+              <td><i class="fa-solid fa-xmark icon-cross"></i></td>
+              <td><i class="fa-solid fa-check icon-check"></i></td>
+            </tr>
+            <tr>
+              <td>Multi-Language Integration</td>
+              <td>Optional Add-On (+RM200)</td>
+              <td>Optional Add-On (+RM200)</td>
+            </tr>
           </tbody>
         </table>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ABOUT PAGE -->
-<section class="page" data-page="about">
-  <div class="page-hero">
-    <div class="wrap page-hero-grid">
-      <div>
-        <div class="eyebrow">About Plannique</div>
-        <h1>Design with purpose, not just decoration</h1>
-        <p>We create practical websites that help local businesses communicate clearly and appear more established.</p>
-      </div>
-      <div class="page-visual"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=85" alt="Plannique planning"></div>
-    </div>
-  </div>
+      <!-- PROJECT COST ESTIMATOR -->
+      <div class="estimator-box">
+        <h3 style="font-size: 1.5rem; text-align: center;"><i class="fa-solid fa-calculator"></i> Quick Fee Estimator</h3>
+        <p style="text-align: center; color: var(--text-muted);">Calculate your investment in RM before reaching out on WhatsApp</p>
+        
+        <div class="estimator-controls">
+          <div class="form-group">
+            <label>Select Base Package:</label>
+            <select id="est-package" onchange="calculateFee()">
+              <option value="499">Essential Package - 1 Page (RM499)</option>
+              <option value="1299" selected>Signature Package - Up to 7 Pages (RM1,299)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Include Add-On Service:</label>
+            <select id="est-addon" onchange="calculateFee()">
+              <option value="0">None</option>
+              <option value="200">Dual/Extra Language Add-On (+RM200)</option>
+              <option value="150">Local SEO Package (+RM150)</option>
+              <option value="250">WhatsApp Auto-Bot Integration (+RM250)</option>
+            </select>
+          </div>
+        </div>
 
-  <div class="section">
-    <div class="wrap about-grid">
-      <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=85" alt="Creative studio">
-        <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=700&q=85" alt="Workspace">
-      </div>
-      <div>
-        <div class="eyebrow">Our Approach</div>
-        <h2 class="title">A website should make the next step obvious</h2>
-        <p class="copy">Customers should immediately understand who you are, what you offer and how to contact you. Our layouts are planned around those three goals.</p>
-        <div class="check-grid">
-          <div class="check"><strong>Clear information</strong><span>No confusing navigation or unnecessary content.</span></div>
-          <div class="check"><strong>Strong visual direction</strong><span>A polished design suited to your business type.</span></div>
-          <div class="check"><strong>Mobile-first</strong><span>Designed for customers browsing from their phones.</span></div>
-          <div class="check"><strong>Simple communication</strong><span>Transparent packages and an understandable process.</span></div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <h4 style="font-size: 1.25rem;">Estimated Total: <span id="total-fee" style="color: #a855f7; font-size: 1.75rem;">RM1,299</span></h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Payment is due ONLY when you approve the final live result.</p>
+          <a id="estimator-wa-btn" href="#" target="_blank" class="btn btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Lock In Estimate on WhatsApp
+          </a>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
-  <div class="section values">
-    <div class="wrap">
-      <div class="eyebrow" style="color:#ccd4c8">Our Values</div>
-      <h2 class="title">How we want clients to experience Plannique</h2>
-      <div class="reason-grid">
-        <article class="reason-card"><span>🧭</span><h3>Clear</h3><p>We explain the project scope and help organise the information.</p></article>
-        <article class="reason-card"><span>🌿</span><h3>Thoughtful</h3><p>Every visual element should support the brand and customer journey.</p></article>
-        <article class="reason-card"><span>🤝</span><h3>Supportive</h3><p>Clients receive guidance on content, structure and preparation.</p></article>
+  <!-- ==========================================
+       PAGE 4: ADD-ONS PAGE VIEW
+       ========================================== -->
+  <main class="page-view" id="page-addons">
+    <div class="container">
+      <div class="section-title">
+        <div class="badge-pill">Value Enhancements</div>
+        <h2>Add-On Digital Services</h2>
+        <p>Amplify your new website with multi-language support, automated bots, and SEO.</p>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- PROCESS PAGE -->
-<section class="page" data-page="process">
-  <div class="page-hero">
-    <div class="wrap page-hero-grid">
-      <div>
-        <div class="eyebrow">Our Process</div>
-        <h1>Simple from first message to launch</h1>
-        <p>A clear process helps the project move faster and avoids unnecessary back-and-forth.</p>
-      </div>
-      <div class="page-visual"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85" alt="Project process"></div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="wrap">
-      <div class="process-grid">
-        <article class="step"><b>01</b><h3>Enquire</h3><p>Tell us about the business, objectives and preferred design style.</p></article>
-        <article class="step"><b>02</b><h3>Prepare</h3><p>Send the logo, service details, photographs and contact information.</p></article>
-        <article class="step"><b>03</b><h3>Design</h3><p>We build the first website version based on the selected package.</p></article>
-        <article class="step"><b>04</b><h3>Review</h3><p>You review the draft and submit consolidated revision feedback.</p></article>
-        <article class="step"><b>05</b><h3>Launch</h3><p>The approved website is connected to the domain and published.</p></article>
-      </div>
-    </div>
-  </div>
-
-  <div class="section" style="background:var(--paper2)">
-    <div class="wrap">
-      <div class="eyebrow">Prepare Your Content</div>
-      <h2 class="title">What we need before starting</h2>
-      <div class="content-list">
-        <article class="content-item"><span>🪶</span><h3>Logo</h3><p>A clear PNG, SVG or high-resolution image.</p></article>
-        <article class="content-item"><span>📝</span><h3>Introduction</h3><p>A short description of the business and its story.</p></article>
-        <article class="content-item"><span>🧾</span><h3>Services</h3><p>Service names, descriptions and pricing information.</p></article>
-        <article class="content-item"><span>📷</span><h3>Photographs</h3><p>Business, products, team or completed project images.</p></article>
-        <article class="content-item"><span>💬</span><h3>WhatsApp</h3><p>The contact number customers should use.</p></article>
-        <article class="content-item"><span>📍</span><h3>Location</h3><p>Address, operating hours and Google Maps listing.</p></article>
-        <article class="content-item"><span>📱</span><h3>Social Links</h3><p>Instagram, Facebook, TikTok or other social accounts.</p></article>
-        <article class="content-item"><span>🎨</span><h3>Brand Style</h3><p>Preferred colours, references and visual direction.</p></article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ PAGE -->
-<section class="page" data-page="faq">
-  <div class="page-hero">
-    <div class="wrap page-hero-grid">
-      <div>
-        <div class="eyebrow">Frequently Asked Questions</div>
-        <h1>Everything to know before starting</h1>
-        <p>Clear answers about content, domains, revisions, maintenance and project delivery.</p>
-      </div>
-      <div class="page-visual"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1000&q=85" alt="Questions"></div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="wrap">
-      <div class="faq">
-        <details open><summary>Do I need to buy a domain?</summary><p>Yes. The business should own its domain name. Plannique can help check availability and connect it to the completed website.</p></details>
-        <details><summary>What content do I need to provide?</summary><p>Please provide the logo, business introduction, service information, prices, photographs, contact details, address and social media links.</p></details>
-        <details><summary>Will the website work on mobile phones?</summary><p>Yes. Every package includes responsive design for mobile, tablet and desktop screens.</p></details>
-        <details><summary>Can I update the website later?</summary><p>Yes. Future content changes and maintenance can be quoted separately.</p></details>
-        <details><summary>Are hosting and domain fees included?</summary><p>Paid domain registration, hosting subscriptions and third-party systems are separate unless specifically included in the quotation.</p></details>
-        <details><summary>Can a demo design be customised?</summary><p>Yes. The layout can be adapted using the client’s brand name, logo, colours, content, images and preferred functions.</p></details>
-        <details><summary>How do revisions work?</summary><p>Revision rounds depend on the selected package. Clients should submit consolidated feedback for each round.</p></details>
-        <details><summary>How quickly will the website be ready?</summary><p>Delivery depends on the selected package and how quickly complete content and feedback are provided.</p></details>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT PAGE -->
-<section class="page" data-page="contact">
-  <div class="page-hero">
-    <div class="wrap page-hero-grid">
-      <div>
-        <div class="eyebrow">Free Website Consultation</div>
-        <h1>Tell us about your business</h1>
-        <p>Share your business type, preferred design and the features you need. We will recommend the most suitable package.</p>
-      </div>
-      <div class="page-visual"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1000&q=85" alt="Contact Plannique"></div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="wrap contact-grid">
-      <aside class="contact-info">
-        <h2>Contact Plannique</h2>
-        <p class="copy">The quickest way to discuss a project is through WhatsApp.</p>
-        <div class="details">
-          <div class="detail"><strong>💬 WhatsApp</strong><br>+60 18-907 9798</div>
-          <div class="detail"><strong>✉️ Email</strong><br>hello@plannique.com</div>
-          <div class="detail"><strong>🕒 Response Hours</strong><br>Monday–Saturday, 10 AM–7 PM</div>
-          <div class="detail"><strong>📍 Service Area</strong><br>Malaysia and remote projects</div>
+      <div class="addons-grid">
+        <div class="addon-card">
+          <div class="addon-icon"><i class="fa-solid fa-language"></i></div>
+          <h3>Dual / Multi-Language Support</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem;">Cater to wider audiences. Add a second or extra language toggle to your landing page (e.g. English + Malay / Chinese).</p>
+          <div style="margin-top: 1rem; font-weight: 700; color: #a855f7;">+RM200 / extra language</div>
         </div>
-        <a class="btn btn-wa" style="width:100%;margin-top:20px" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20a%20free%20website%20consultation." target="_blank">💬 Start WhatsApp Consultation</a>
-      </aside>
-
-      <div class="form-card">
-        <h2>Quick Enquiry</h2>
-        <form class="form-grid" id="enquiryForm">
-          <input id="name" type="text" placeholder="Your name" required>
-          <input id="business" type="text" placeholder="Business name" required>
-          <select id="businessType" required>
-            <option value="">Select business type</option>
-            <option>Beauty / Salon</option>
-            <option>Café / Restaurant</option>
-            <option>Clinic / Wellness</option>
-            <option>Property / Homestay</option>
-            <option>Automotive</option>
-            <option>Fitness</option>
-            <option>Other</option>
-          </select>
-          <select id="package">
-            <option value="">Package you are considering</option>
-            <option>Starter RM499</option>
-            <option>Business RM999</option>
-            <option>Premium RM1,499</option>
-            <option>Not sure yet</option>
-          </select>
-          <textarea id="message" placeholder="Tell us what you need"></textarea>
-          <button class="btn btn-dark" type="submit">Send Enquiry to WhatsApp</button>
-        </form>
-        <div class="form-note">Replace the sample WhatsApp number before publishing.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NOT FOUND -->
-<section class="page" data-page="not-found">
-  <div class="not-found">
-    <h1>Page not found</h1>
-    <p class="copy" style="margin-left:auto;margin-right:auto">The requested page does not exist.</p>
-    <button class="btn btn-dark" data-route="home" style="margin-top:22px">Return Home</button>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <img src="https://ricobr.ft-crm.com/media-api/serve/0f4dde75-8ce1-4c70-b072-6b988ba25aa9_Customizable_Daily_Planner_Template.png" alt="Plannique Design Co">
-        <p>Elegant, practical websites for growing local businesses.</p>
-      </div>
-      <div>
-        <h4>Website</h4>
-        <button data-route="portfolio">Portfolio</button>
-        <button data-route="packages">Packages</button>
-        <button data-route="about">About</button>
-        <button data-route="process">Process</button>
-      </div>
-      <div>
-        <h4>Support</h4>
-        <button data-route="faq">FAQ</button>
-        <button data-route="contact">Contact</button>
-        <a href="https://wa.me/60189079798" target="_blank">WhatsApp</a>
-        <a href="mailto:hello@plannique.com">Email</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Plannique Design Co.</span>
-      <span>Web Design • Landing Pages • Business Websites</span>
-    </div>
-  </div>
-</footer>
-
-<a class="float" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20a%20free%20website%20quotation." target="_blank">💬 Free Quote</a>
-
-<script>
-const validRoutes=["home","portfolio","packages","about","process","faq","contact"];
-const pages=[...document.querySelectorAll("[data-page]")];
-const routeButtons=[...document.querySelectorAll("[data-route]")];
-const navLinks=[...document.querySelectorAll(".nav-links .nav-link")];
-const mobileNav=document.getElementById("navLinks");
-const menuBtn=document.getElementById("menuBtn");
-
-function currentRoute(){
-  const raw=location.hash.replace(/^#\/?/,"").split("?")[0].trim();
-  return raw || "home";
-}
-
-function showPage(route, updateHash=true){
-  const resolved=validRoutes.includes(route)?route:"not-found";
-
-  pages.forEach(page=>{
-    page.classList.toggle("active",page.dataset.page===resolved);
-  });
-
-  navLinks.forEach(link=>{
-    link.classList.toggle("active",link.dataset.route===route);
-  });
-
-  document.title=resolved==="home"
-    ?"Plannique Design Co"
-    :`${resolved.charAt(0).toUpperCase()+resolved.slice(1)} | Plannique Design Co`;
-
-  mobileNav.classList.remove("open");
-  window.scrollTo({top:0,behavior:"instant"});
-
-  if(updateHash && validRoutes.includes(route)){
-    const target=route==="home"?"#/":"#/"+route;
-    if(location.hash!==target) history.pushState({route},"",target);
-  }
-}
-
-routeButtons.forEach(button=>{
-  button.addEventListener("click",()=>{
-    showPage(button.dataset.route,true);
-  });
-});
-
-menuBtn.addEventListener("click",()=>{
-  mobileNav.classList.toggle("open");
-});
-
-window.addEventListener("hashchange",()=>{
-  showPage(currentRoute(),false);
-});
-
-window.addEventListener("popstate",()=>{
-  showPage(currentRoute(),false);
-});
-
-/* Portfolio category gateway */
-const portfolioCategories = [
-  {
-    key:"cafe",
-    icon:"☕",
-    title:"Café & Restaurant",
-    description:"Cafés, restaurants, bakeries and food businesses.",
-    cover:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85",
-    url:"https://evieeviee.github.io/cafe/",
-    packages:"Essential + Signature"
-  },
-  {
-    key:"car-detailing",
-    icon:"🚗",
-    title:"Car Detailing",
-    description:"Detailing studios, car wash, workshops and automotive services.",
-    cover:"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=85",
-    url:"https://evieeviee.github.io/car-detailing/",
-    packages:"Essential + Signature"
-  },
-  {
-    key:"beauty",
-    icon:"💇",
-    title:"Beauty & Salon",
-    description:"Hair salons, beauty studios, nails, spa and personal care businesses.",
-    cover:"https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=85",
-    url:"https://evieeviee.github.io/Beauty/",
-    packages:"Essential + Signature"
-  },
-  {
-    key:"flower",
-    icon:"🌸",
-    title:"Flower & Blossom",
-    description:"Florists, flower boutiques, gifting studios and wedding floral brands.",
-    cover:"https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=85",
-    url:"https://evieeviee.github.io/flower/",
-    packages:"Essential + Signature"
-  },
-  {
-    key:"homestay",
-    icon:"🏠",
-    title:"Homestay & Airbnb",
-    description:"Homestays, Airbnb properties, boutique hotels and vacation rentals.",
-    cover:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85",
-    url:"https://evieeviee.github.io/homestay/",
-    packages:"Essential + Signature"
-  },
-  {
-    key:"gym-fitness",
-    icon:"🏋️",
-    title:"Gym & Fitness",
-    description:"Gyms, fitness studios, personal trainers and wellness clubs.",
-    cover:"https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=85",
-    url:"https://evieeviee.github.io/gym-fitness/",
-    packages:"Essential + Signature"
-  },
-  {
-    key:"dental",
-    icon:"🦷",
-    title:"Dental",
-    description:"Dental clinics, orthodontic practices and oral care centres.",
-    cover:"https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=85",
-    url:"https://evieeviee.github.io/dental/",
-    packages:"Essential + Signature"
-  },
-  {
-    key:"aesthetic",
-    icon:"✨",
-    title:"Aesthetic Clinic",
-    description:"Aesthetic clinics, skin centres, beauty medical and wellness practices.",
-    cover:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=85",
-    url:"https://evieeviee.github.io/aesthetic/",
-    packages:"Essential + Signature"
-  }
-];
-
-const categoryGrid=document.getElementById("categoryGrid");
-const categorySearch=document.getElementById("categorySearch");
-const categoryEmpty=document.getElementById("categoryEmpty");
-const portfolioSummary=document.getElementById("portfolioSummary");
-
-function renderCategories(query=""){
-  const term=query.trim().toLowerCase();
-  const filtered=portfolioCategories.filter(category =>
-    `${category.title} ${category.description} ${category.key} ${category.packages}`
-      .toLowerCase()
-      .includes(term)
-  );
-
-  categoryGrid.innerHTML=filtered.map(category=>`
-    <a class="category-card" href="${category.url}" target="_blank" rel="noopener">
-      <img src="${category.cover}" alt="${category.title} website collection">
-      <div class="category-card-content">
-        <div class="category-icon">${category.icon}</div>
-        <h3>${category.title}</h3>
-        <p>${category.description}</p>
-        <div class="category-meta">
-          <span class="design-count">${category.packages}</span>
-          <span class="view-collection">View Collection →</span>
+        <div class="addon-card">
+          <div class="addon-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h3>Local SEO Setup</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem;">Get indexed on Google Maps, configure Google Business Profile, and rank for local key terms.</p>
+          <div style="margin-top: 1rem; font-weight: 700; color: #a855f7;">+RM150</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon"><i class="fa-solid fa-robot"></i></div>
+          <h3>WhatsApp Auto-Bot Integration</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem;">Automate initial customer consultations and capture leads 24/7 directly within WhatsApp.</p>
+          <div style="margin-top: 1rem; font-weight: 700; color: #a855f7;">+RM250</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon"><i class="fa-solid fa-server"></i></div>
+          <h3>Domain & Care Plan</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem;">Managed high-speed cloud hosting, SSL certificates, quarterly maintenance, and automated backups.</p>
+          <div style="margin-top: 1rem; font-weight: 700; color: #a855f7;">+RM180 / year</div>
         </div>
       </div>
+    </div>
+  </main>
+
+  <!-- ==========================================
+       PAGE 5: WORKFLOW & GUARANTEE PAGE VIEW
+       ========================================== -->
+  <main class="page-view" id="page-workflow">
+    <div class="container">
+      <div class="workflow-card">
+        <div style="text-align: center;">
+          <div class="badge-pill">Guaranteed Workflow</div>
+          <h2>Our "Do First, Pay Later" Process</h2>
+          <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">No risk. No forced deposits before seeing real visual work.</p>
+        </div>
+
+        <div class="workflow-grid">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <h4>WhatsApp Consult</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Chat with us on WhatsApp to discuss your brand identity, preferences, and goals.</p>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <h4>Draft Creation</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Our team designs and constructs a fully interactive draft page for your brand.</p>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <h4>Review & Refine</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">We provide a private web link for you to test layouts, copy, and features on mobile & desktop.</p>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <h4>Approve & Launch</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Only when you are completely satisfied with the result do you pay and launch!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ ACCORDION -->
+      <div class="faq-container">
+        <h3 style="text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">Frequently Asked Questions</h3>
+        
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">Do I really pay RM0 until the draft is done? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Yes! We build a live working draft first. You review it, request adjustments, and only transfer payment when you approve the final product.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">How fast will my initial draft be ready? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Typical draft delivery takes 3 to 5 business days after our initial WhatsApp consultation.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">What if I need revisions on the draft? <i class="fa-solid fa-chevron-down"></i></div>
+          <div class="faq-answer">Revisions are included! We will fine-tune the design, fonts, imagery, and layout until it matches your vision.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FLOATING WHATSAPP QUICK CONSULT BAR -->
+  <div class="floating-whatsapp-bar">
+    <span>Ready to build? <strong>Zero risk guarantee!</strong></span>
+    <a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hi%20Plannique,%20I'd%20like%20a%20free%20consultation" target="_blank" class="btn btn-whatsapp">
+      <i class="fa-brands fa-whatsapp"></i> Chat Now
     </a>
-  `).join("");
+  </div>
 
-  categoryEmpty.style.display=filtered.length ? "none" : "block";
-  portfolioSummary.textContent=
-    filtered.length===portfolioCategories.length
-      ? `${portfolioCategories.length} industry collections`
-      : `${filtered.length} matching collection${filtered.length===1 ? "" : "s"}`;
-}
+  <!-- LIVE PREVIEW MODAL -->
+  <div class="modal-overlay" id="previewModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div style="font-weight: 700;" id="modalTitle"><i class="fa-solid fa-globe"></i> Preview</div>
+        <button onclick="closeModal()" style="background:none; border:none; color: var(--text-main); font-size: 1.25rem; cursor:pointer;">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <iframe class="modal-iframe" id="modalFrame" src=""></iframe>
+    </div>
+  </div>
 
-categorySearch.addEventListener("input",()=>renderCategories(categorySearch.value));
-renderCategories();
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="logo" onclick="switchPage('home')">Plannique.</div>
+      <p style="margin-top: 1rem;">© 2026 Plannique Design Studio. All rights reserved.</p>
+    </div>
+  </footer>
 
-/* WhatsApp form */
-document.getElementById("enquiryForm").addEventListener("submit",event=>{
-  event.preventDefault();
+  <!-- SCRIPT -->
+  <script>
+    // PORTFOLIO CONFIGURATION DATA
+    const portfolioData = [
+      {
+        key: "beauty",
+        prefix: "BEA",
+        icon: "💇‍♀️",
+        title: "Beauty & Hair Salon",
+        description: "Sophisticated visual hierarchy built for luxury beauty salons, aesthetic clinics, and boutique spa services.",
+        cover: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=85",
+        mainDemoUrl: "https://evieeviee.github.io/Beauty/"
+      },
+      {
+        key: "cafe",
+        prefix: "CAF",
+        icon: "☕",
+        title: "Café & Artisanal Bakery",
+        description: "Rich, appetizing digital menu and landing layout crafted for specialty coffee shops and bakeries.",
+        cover: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1000&q=85",
+        mainDemoUrl: "https://evieeviee.github.io/cafe/"
+      },
+      {
+        key: "dental",
+        prefix: "DEN",
+        icon: "🦷",
+        title: "Dental & Health Practice",
+        description: "Clean, high-trust digital presence designed to build patient confidence and streamline appointment bookings.",
+        cover: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=85",
+        mainDemoUrl: "https://evieeviee.github.io/dental/"
+      },
+      {
+        key: "car-detailing",
+        prefix: "CAR",
+        icon: "🚗",
+        title: "Car Detailing & Auto Care",
+        description: "Bold, modern dark-mode aesthetic showcase engineered for auto detailing and coating specialists.",
+        cover: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1000&q=85",
+        mainDemoUrl: "https://evieeviee.github.io/car-detailing/"
+      },
+      {
+        key: "gym-fitness",
+        prefix: "GYM",
+        icon: "🏋️‍♂️",
+        title: "Gym & Fitness Studio",
+        description: "High-energy layout focusing on membership conversions, class schedules, and trainer profiles.",
+        cover: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85",
+        mainDemoUrl: "https://evieeviee.github.io/gym-fitness/"
+      }
+    ];
 
-  const name=document.getElementById("name").value.trim();
-  const business=document.getElementById("business").value.trim();
-  const businessType=document.getElementById("businessType").value;
-  const packageName=document.getElementById("package").value || "Not selected";
-  const message=document.getElementById("message").value.trim() || "No additional message";
+    // SPA PAGE NAVIGATION CONTROLLER
+    function switchPage(pageId) {
+      document.querySelectorAll('.page-view').forEach(page => page.classList.remove('active-page'));
+      document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active-link'));
+      
+      const targetPage = document.getElementById(`page-${pageId}`);
+      const targetNav = document.getElementById(`nav-${pageId}`);
+      
+      if (targetPage) targetPage.classList.add('active-page');
+      if (targetNav) targetNav.classList.add('active-link');
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
- const text = `
-🌿 New Website Enquiry
+    // RENDER PORTFOLIO CARDS
+    function renderPortfolio() {
+      const grid = document.getElementById('portfolioGrid');
+      grid.innerHTML = portfolioData.map(item => `
+        <div class="portfolio-card">
+          <div class="card-thumb">
+            <span class="card-tag">${item.prefix} SYSTEM</span>
+            <img src="${item.cover}" alt="${item.title}">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">${item.icon} ${item.title}</h3>
+            <p class="card-description">${item.description}</p>
+            <div class="card-actions">
+              <button class="btn btn-glass" onclick="openModal('${item.mainDemoUrl}', '${item.title}')">
+                <i class="fa-solid fa-eye"></i> Quick View
+              </button>
+              <a href="${item.mainDemoUrl}" target="_blank" class="btn btn-gradient">
+                Live Site <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
 
-👤 Name:
-${name}
+    // CALCULATE ESTIMATED FEE & UPDATE WHATSAPP LINK
+    function calculateFee() {
+      const pkgFee = parseInt(document.getElementById('est-package').value);
+      const addonFee = parseInt(document.getElementById('est-addon').value);
+      const total = pkgFee + addonFee;
+      
+      document.getElementById('total-fee').innerText = `RM${total.toLocaleString()}`;
+      
+      const waBtn = document.getElementById('estimator-wa-btn');
+      const textMsg = encodeURIComponent(`Hi Plannique, I used your fee estimator for a total of RM${total}. I want to start a Do-First-Pay-Later project!`);
+      waBtn.href = `https://wa.me/YOUR_PHONE_NUMBER?text=${textMsg}`;
+    }
 
-🏢 Business:
-${business}
+    // FAQ TOGGLE
+    function toggleFaq(element) {
+      element.classList.toggle('active');
+    }
 
-📂 Industry:
-${businessType}
+    // MODAL FUNCTIONS
+    function openModal(url, title) {
+      document.getElementById('modalTitle').innerHTML = `<i class="fa-solid fa-globe"></i> ${title}`;
+      document.getElementById('modalFrame').src = url;
+      document.getElementById('previewModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
 
-📦 Interested Package:
-${packageName}
+    function closeModal() {
+      document.getElementById('previewModal').classList.remove('active');
+      document.getElementById('modalFrame').src = '';
+      document.body.style.overflow = 'auto';
+    }
 
-📝 Requirements:
-${message}
+    document.getElementById('previewModal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('previewModal')) closeModal();
+    });
 
-Sent from:
-www.plannique.com
-`;
-  window.open(`https://wa.me/60189079798?text=${encodeURIComponent(text)}`,"_blank");
-});
-
-/* Initial route */
-showPage(currentRoute(),false);
-</script>
-
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPortfolio();
+      calculateFee();
+    });
+  </script>
 </body>
 </html>
