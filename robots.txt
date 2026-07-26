@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://evieeviee.github.io/PlanniqueDesignCo/sitemap.xml
