@@ -3,8 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Plannique Design Co creates elegant websites for salons, cafés, clinics and local businesses.">
-<title>Plannique Design Co</title>
+<meta name="description" content="Plannique Design Co creates elegant, mobile-friendly websites for local businesses with a design-first, pay-after-approval process.">
+<meta name="keywords" content="web design Malaysia, landing page design, small business website, clinic website, salon website, cafe website, WhatsApp website, Plannique Design Co">
+<meta name="author" content="Plannique Design Co">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#f1ede6">
+<link rel="canonical" href="https://evieeviee.github.io/PlanniqueDesignCo/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Plannique Design Co">
+<meta property="og:title" content="Plannique Design Co | Websites for Growing Businesses">
+<meta property="og:description" content="Elegant, practical and mobile-friendly websites for clinics, salons, cafés, fitness brands, homestays and local businesses.">
+<meta property="og:url" content="https://evieeviee.github.io/PlanniqueDesignCo/">
+<meta property="og:image" content="https://ricobr.ft-crm.com/media-api/serve/0f4dde75-8ce1-4c70-b072-6b988ba25aa9_Customizable_Daily_Planner_Template.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Plannique Design Co | Websites for Growing Businesses">
+<meta name="twitter:description" content="Elegant, practical and mobile-friendly websites for local businesses.">
+<meta name="twitter:image" content="https://ricobr.ft-crm.com/media-api/serve/0f4dde75-8ce1-4c70-b072-6b988ba25aa9_Customizable_Daily_Planner_Template.png">
+<title>Plannique Design Co | Websites for Growing Businesses</title>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"Plannique Design Co",
+  "url":"https://evieeviee.github.io/PlanniqueDesignCo/",
+  "image":"https://ricobr.ft-crm.com/media-api/serve/0f4dde75-8ce1-4c70-b072-6b988ba25aa9_Customizable_Daily_Planner_Template.png",
+  "description":"Plannique Design Co creates elegant, mobile-friendly websites and landing pages for growing businesses.",
+  "email":"planniquedesignco@gmail.com",
+  "telephone":"+60168083598",
+  "areaServed":["Malaysia","Remote"],
+  "sameAs":[],
+  "priceRange":"RM499-RM1299"
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -587,7 +619,7 @@ main{padding-top:86px}
 .values .reason-card p{color:#c9c1b9}
 
 /* PROCESS */
-.process-grid{margin-top:40px;display:grid;grid-template-columns:repeat(5,1fr);gap:13px}
+.process-grid{margin-top:40px;display:grid;grid-template-columns:repeat(6,1fr);gap:13px}
 .step{padding:22px;border-radius:18px;background:#fff;border:1px solid var(--line)}
 .step b{font-family:"Playfair Display",serif;font-size:38px;color:var(--sage)}
 .step h3{margin-top:7px}
@@ -855,10 +887,79 @@ body.preview-open{overflow:hidden}
   .collection-modal-title{font-size:12px}
 }
 
+/* POLISH, MOTION & ACCESSIBILITY */
+.skip-link{position:fixed;left:16px;top:-70px;z-index:5000;background:#fff;color:var(--ink);padding:12px 16px;border-radius:999px;box-shadow:var(--shadow);font-weight:800}
+.skip-link:focus{top:16px}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 10% 20%,rgba(176,138,108,.08),transparent 24%),radial-gradient(circle at 90% 75%,rgba(117,129,111,.08),transparent 28%)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+.preview-card,.feature-card,.reason-card,.package,.addon-card,.category-card{will-change:transform}
+.preview-card:hover,.feature-card:hover,.reason-card:hover,.addon-card:hover{transform:translateY(-7px);box-shadow:0 24px 58px rgba(60,48,37,.14)}
+.main-photo{animation:heroFloat 7s ease-in-out infinite}
+.logo-card{animation:cardFloat 6s ease-in-out infinite}
+.proof-card{animation:cardFloat 6s ease-in-out infinite reverse}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.marquee-track{display:flex;width:max-content;gap:42px;padding:15px 0;animation:marquee 28s linear infinite;font-size:13px;font-weight:800;letter-spacing:.6px;color:var(--sage-dark);text-transform:uppercase}
+.marquee-track span:before{content:"✦";margin-right:42px;color:var(--warm)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.service-highlight{margin-top:35px;padding:28px;border-radius:24px;background:linear-gradient(135deg,var(--ink),#403b35);color:#fff;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+.service-highlight h3{font-family:"Playfair Display",serif;font-size:34px;line-height:1.1}
+.service-highlight p{margin-top:10px;color:#d9d2ca}
+.service-pills{display:flex;flex-wrap:wrap;gap:9px;justify-content:flex-end}
+.service-pills span{padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);font-size:12px;font-weight:800}
+@media(max-width:760px){.service-highlight{grid-template-columns:1fr}.service-pills{justify-content:flex-start}}
+
+/* DESIGN FIRST, PAY AFTER APPROVAL */
+.pay-promise{
+  margin-top:28px;
+  padding:22px 24px;
+  border-radius:22px;
+  background:linear-gradient(135deg,rgba(117,129,111,.13),rgba(255,255,255,.92));
+  border:1px solid rgba(117,129,111,.28);
+  box-shadow:0 16px 42px rgba(56,45,34,.08);
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:16px;
+  align-items:start;
+}
+.pay-promise-icon{
+  width:48px;height:48px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--sage-dark);color:#fff;font-size:22px;
+}
+.pay-promise h3{font-family:"Playfair Display",serif;font-size:27px;line-height:1.1}
+.pay-promise p{margin-top:7px;color:var(--muted);font-size:14px}
+.pay-promise strong{color:var(--sage-dark)}
+.payment-banner{
+  margin-bottom:36px;padding:31px;border-radius:26px;
+  background:linear-gradient(135deg,var(--sage-dark),#30372d);
+  color:#fff;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;
+  box-shadow:var(--shadow);
+}
+.payment-banner h2{font-family:"Playfair Display",serif;font-size:clamp(34px,4vw,50px);line-height:1.05}
+.payment-banner p{margin-top:12px;color:#e2e7df}
+.payment-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.payment-step{padding:16px;border-radius:16px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15)}
+.payment-step b{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#d5ddcf}
+.payment-step span{display:block;margin-top:5px;font-weight:800}
+.payment-note{margin-top:14px;font-size:12px;color:#d5ddcf}
+.package-payment{
+  margin-top:18px;padding:13px 14px;border-radius:14px;
+  background:#f3f6f1;border:1px solid #d8e0d4;
+  color:var(--sage-dark);font-size:13px;font-weight:800;
+}
+.featured .package-payment{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#fff}
+@media(max-width:850px){.payment-banner{grid-template-columns:1fr}.payment-steps{grid-template-columns:1fr}}
+@media(max-width:600px){.pay-promise{grid-template-columns:1fr}.pay-promise-icon{width:42px;height:42px}.payment-banner{padding:24px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
 </style>
 </head>
 
 <body>
+<a class="skip-link" href="#mainContent">Skip to content</a>
 
 <header class="navbar">
   <div class="wrap nav">
@@ -881,19 +982,19 @@ body.preview-open{overflow:hidden}
   </div>
 </header>
 
-<main>
+<main id="mainContent">
 
 <!-- HOME PAGE -->
 <section class="page active" data-page="home">
   <div class="home-hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="badge">✦ Websites designed for real local businesses</div>
+        <div class="badge">✦ Design first • Approve it • Then make full payment</div>
         <h1>Make your business look more <span>trusted, established and ready.</span></h1>
         <p>Plannique Design Co creates elegant, mobile-friendly websites for salons, cafés, clinics and local businesses that want customers to understand, trust and contact them more easily.</p>
 
         <div class="actions">
-          <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20a%20free%20website%20quotation." target="_blank">💬 Get a Free Quote</a>
+          <a class="btn btn-wa" href="https://wa.me/60168083598?text=Hi%2C%20I%20would%20like%20a%20free%20website%20quotation." target="_blank">💬 Get a Free Quote</a>
           <button class="btn btn-light" data-route="portfolio">Browse Website Demos</button>
         </div>
 
@@ -902,6 +1003,15 @@ body.preview-open{overflow:hidden}
           <span>✓ WhatsApp integration</span>
           <span>✓ Google Maps</span>
           <span>✓ Clear package pricing</span>
+          <span>✓ No upfront design payment</span>
+        </div>
+
+        <div class="pay-promise">
+          <div class="pay-promise-icon">✓</div>
+          <div>
+            <h3>See your website before you pay.</h3>
+            <p>We prepare the agreed website design for your review first. Once you are happy with the final preview and confirm the project, <strong>you make the full package payment before launch and handover.</strong></p>
+          </div>
         </div>
       </div>
 
@@ -921,7 +1031,14 @@ body.preview-open{overflow:hidden}
       <div class="trust-item"><strong>2</strong><span>Clear packages</span></div>
       <div class="trust-item"><strong>100%</strong><span>Responsive design</span></div>
       <div class="trust-item"><strong>Direct</strong><span>WhatsApp enquiries</span></div>
-      <div class="trust-item"><strong>Transparent</strong><span>Simple project scope</span></div>
+      <div class="trust-item"><strong>Pay Later</strong><span>After final preview approval</span></div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-label="Plannique services">
+    <div class="marquee-track">
+      <span>Website Design</span><span>Landing Pages</span><span>WhatsApp Integration</span><span>Mobile Responsive</span><span>Google Maps</span><span>Extra Languages</span><span>Banner Design</span><span>Search Console Setup</span><span>Design First, Pay After Approval</span>
+      <span>Website Design</span><span>Landing Pages</span><span>WhatsApp Integration</span><span>Mobile Responsive</span><span>Google Maps</span><span>Extra Languages</span><span>Banner Design</span><span>Search Console Setup</span><span>Design First, Pay After Approval</span>
     </div>
   </div>
 
@@ -933,6 +1050,10 @@ body.preview-open{overflow:hidden}
         <article class="feature-card"><span>💇</span><h3>Beauty & Salons</h3><p>Services, promotions, team profiles and appointment enquiries.</p></article>
         <article class="feature-card"><span>☕</span><h3>Cafés & Restaurants</h3><p>Menus, signature products, opening hours and reservations.</p></article>
         <article class="feature-card"><span>🦷</span><h3>Clinics & Wellness</h3><p>Treatments, specialists, frequently asked questions and forms.</p></article>
+      </div>
+      <div class="service-highlight">
+        <div><h3>More than a website — a ready-to-use business presence.</h3><p>Add practical extras such as another language, Search Console setup, launch banners, QR codes and future content updates.</p></div>
+        <div class="service-pills"><span>SEO-ready structure</span><span>WhatsApp enquiry flow</span><span>Launch graphics</span><span>Google setup support</span></div>
       </div>
     </div>
   </div>
@@ -961,10 +1082,10 @@ body.preview-open{overflow:hidden}
   <div class="cta">
     <div class="wrap">
       <h2>Ready to build a stronger online presence?</h2>
-      <p>Choose a demo style or tell us what your business needs. We will recommend the most suitable package.</p>
+      <p>Choose a demo style or tell us what your business needs. We will prepare the agreed design first, and you pay only after approving the final preview.</p>
       <div class="actions">
         <button class="btn btn-light" data-route="packages">View Packages</button>
-        <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20a%20free%20website%20quotation." target="_blank">💬 WhatsApp Us</a>
+        <a class="btn btn-wa" href="https://wa.me/60168083598?text=Hi%2C%20I%20would%20like%20a%20free%20website%20quotation." target="_blank">💬 WhatsApp Us</a>
       </div>
     </div>
   </div>
@@ -979,7 +1100,7 @@ body.preview-open{overflow:hidden}
         <h1>Choose an industry, then explore its complete collection</h1>
         <p>Each industry now has its own dedicated portfolio homepage with Essential and Signature website themes.</p>
         <div class="actions">
-          <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20help%20choosing%20a%20website%20collection." target="_blank">💬 Help Me Choose</a>
+          <a class="btn btn-wa" href="https://wa.me/60168083598?text=Hi%2C%20I%20would%20like%20help%20choosing%20a%20website%20collection." target="_blank">💬 Help Me Choose</a>
         </div>
       </div>
       <div class="page-visual">
@@ -1016,7 +1137,7 @@ body.preview-open{overflow:hidden}
       <h2>Found the right industry?</h2>
       <p>Open its collection, preview the available themes and send us the theme name you prefer.</p>
       <div class="actions">
-        <a class="btn btn-wa" href="https://wa.me/60189079798?text=Hi%2C%20I%20found%20a%20website%20collection%20and%20would%20like%20to%20customise%20a%20theme." target="_blank">💬 Customise a Theme</a>
+        <a class="btn btn-wa" href="https://wa.me/60168083598?text=Hi%2C%20I%20found%20a%20website%20collection%20and%20would%20like%20to%20customise%20a%20theme." target="_blank">💬 Customise a Theme</a>
         <button class="btn btn-light" data-route="packages">View Packages</button>
       </div>
     </div>
@@ -1030,7 +1151,7 @@ body.preview-open{overflow:hidden}
       <div>
         <div class="eyebrow">Website Packages</div>
         <h1>Two clear packages for different business needs</h1>
-        <p>Choose a focused one-page website or a more complete multi-page website with up to seven pages.</p>
+        <p>Choose a focused one-page website or a more complete multi-page website. We prepare the agreed design first, and full payment is made only after you approve the final preview.</p>
       </div>
       <div class="page-visual">
         <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=85" alt="Plannique website packages">
@@ -1040,6 +1161,20 @@ body.preview-open{overflow:hidden}
 
   <div class="section">
     <div class="wrap">
+      <div class="payment-banner">
+        <div>
+          <div class="eyebrow" style="color:#dbe4d7">Our Payment Promise</div>
+          <h2>Design first. Approve with confidence. Pay before launch.</h2>
+          <p>No upfront design payment is required for the standard package scope. You review the completed preview, request the included revisions, and make the full payment only after approving the final version.</p>
+          <div class="payment-note">Domain purchase, paid third-party tools and separately approved external costs may need to be paid directly by the client.</div>
+        </div>
+        <div class="payment-steps">
+          <div class="payment-step"><b>Step 01</b><span>Confirm scope & content</span></div>
+          <div class="payment-step"><b>Step 02</b><span>Review final preview</span></div>
+          <div class="payment-step"><b>Step 03</b><span>Pay, launch & handover</span></div>
+        </div>
+      </div>
+
       <div class="package-grid package-grid-two">
         <article class="package">
           <div class="eyebrow">Essential</div>
@@ -1059,7 +1194,8 @@ body.preview-open{overflow:hidden}
             <li>One revision round</li>
             <li>7 days minor support</li>
           </ul>
-          <a class="btn btn-light" href="https://wa.me/60189079798?text=I%20am%20interested%20in%20the%20RM499%20Essential%20One-Page%20Website." target="_blank">Choose Essential</a>
+          <div class="package-payment">No upfront design payment • Pay RM499 after final preview approval, before launch.</div>
+          <a class="btn btn-light" href="https://wa.me/60168083598?text=I%20am%20interested%20in%20the%20RM499%20Essential%20One-Page%20Website." target="_blank">Choose Essential</a>
         </article>
 
         <article class="package featured">
@@ -1082,7 +1218,8 @@ body.preview-open{overflow:hidden}
             <li>Three revision rounds</li>
             <li>3 months minor support</li>
           </ul>
-          <a class="btn btn-wa" href="https://wa.me/60189079798?text=I%20am%20interested%20in%20the%20RM1299%20Signature%20Multi-Page%20Website." target="_blank">Choose Signature</a>
+          <div class="package-payment">No upfront design payment • Pay RM1,299 after final preview approval, before launch.</div>
+          <a class="btn btn-wa" href="https://wa.me/60168083598?text=I%20am%20interested%20in%20the%20RM1299%20Signature%20Multi-Page%20Website." target="_blank">Choose Signature</a>
         </article>
       </div>
 
@@ -1092,41 +1229,14 @@ body.preview-open{overflow:hidden}
         <p class="copy">Add-ons are quoted separately so the base package remains clear and affordable.</p>
 
         <div class="addon-grid">
-          <article class="addon-card">
-            <span>🌐</span>
-            <div>
-              <h3>Additional Language</h3>
-              <p>Add one extra language within the same website, including a desktop and mobile language switcher.</p>
-            </div>
-            <strong>+ RM200</strong>
-          </article>
-
-          <article class="addon-card">
-            <span>✍️</span>
-            <div>
-              <h3>Translation Support</h3>
-              <p>Basic translation preparation when the client does not provide final translated content.</p>
-            </div>
-            <strong>Quoted separately</strong>
-          </article>
-
-          <article class="addon-card">
-            <span>📷</span>
-            <div>
-              <h3>Extra Content Setup</h3>
-              <p>Additional products, services, team profiles, galleries or page sections beyond the package scope.</p>
-            </div>
-            <strong>From RM80</strong>
-          </article>
-
-          <article class="addon-card">
-            <span>🛠️</span>
-            <div>
-              <h3>Future Updates</h3>
-              <p>Content edits, new promotions, new photos or structural changes after the support period.</p>
-            </div>
-            <strong>Quoted per request</strong>
-          </article>
+          <article class="addon-card"><span>🌐</span><div><h3>Additional Language</h3><p>Add one extra language with a desktop and mobile language switcher. Client-provided translation is recommended.</p></div><strong>+ RM200</strong></article>
+          <article class="addon-card"><span>🔎</span><div><h3>Google Search Console Setup</h3><p>Property verification, sitemap submission and basic indexing setup after the domain is connected.</p></div><strong>From RM120</strong></article>
+          <article class="addon-card"><span>🎨</span><div><h3>Banner Design</h3><p>One matching promotional, launch or social-media banner based on the website’s visual direction.</p></div><strong>From RM80</strong></article>
+          <article class="addon-card"><span>📊</span><div><h3>Website Analytics Setup</h3><p>Basic Google Analytics or Cloudflare Web Analytics installation to measure website visits.</p></div><strong>From RM100</strong></article>
+          <article class="addon-card"><span>📍</span><div><h3>Google Business Profile Support</h3><p>Basic guidance for profile details, website link, services, opening hours and location information.</p></div><strong>From RM100</strong></article>
+          <article class="addon-card"><span>🔗</span><div><h3>QR Code & Digital Contact Card</h3><p>A branded QR code linking to the website, WhatsApp, menu, booking page or social profile.</p></div><strong>From RM50</strong></article>
+          <article class="addon-card"><span>📷</span><div><h3>Extra Content Setup</h3><p>Additional products, services, profiles, galleries or website sections beyond the package scope.</p></div><strong>From RM80</strong></article>
+          <article class="addon-card"><span>🛠️</span><div><h3>Future Website Updates</h3><p>Content edits, new promotions, image changes or structural updates after the included support period.</p></div><strong>Quoted per request</strong></article>
         </div>
       </div>
 
@@ -1234,9 +1344,10 @@ body.preview-open{overflow:hidden}
       <div class="process-grid">
         <article class="step"><b>01</b><h3>Enquire</h3><p>Tell us about the business, objectives and preferred design style.</p></article>
         <article class="step"><b>02</b><h3>Prepare</h3><p>Send the logo, service details, photographs and contact information.</p></article>
-        <article class="step"><b>03</b><h3>Design</h3><p>We build the first website version based on the selected package.</p></article>
-        <article class="step"><b>04</b><h3>Review</h3><p>You review the draft and submit consolidated revision feedback.</p></article>
-        <article class="step"><b>05</b><h3>Launch</h3><p>The approved website is connected to the domain and published.</p></article>
+        <article class="step"><b>03</b><h3>Design</h3><p>We build the website preview based on the agreed package and content.</p></article>
+        <article class="step"><b>04</b><h3>Review</h3><p>You review the preview and submit consolidated feedback within the included revision rounds.</p></article>
+        <article class="step"><b>05</b><h3>Approve & Pay</h3><p>Once you approve the final preview, you make the full package payment.</p></article>
+        <article class="step"><b>06</b><h3>Launch</h3><p>After payment, the approved website is connected to the domain and handed over.</p></article>
       </div>
     </div>
   </div>
@@ -1275,7 +1386,10 @@ body.preview-open{overflow:hidden}
   <div class="section">
     <div class="wrap">
       <div class="faq">
-        <details open><summary>Do I need to buy a domain?</summary><p>Yes. The business should own its domain name. Plannique can help check availability and connect it to the completed website.</p></details>
+        <details open><summary>Do I need to pay before the website is designed?</summary><p>No upfront design payment is required for the standard package scope. After the project details and content are confirmed, Plannique prepares the website preview. You make the full package payment only after approving the final preview, and before the website is launched or handed over.</p></details>
+        <details><summary>What happens if I request changes?</summary><p>You may submit consolidated changes according to the revision rounds included in your package. Requests outside the confirmed scope, additional pages, new functions or major redesigns may be quoted separately before the extra work begins.</p></details>
+        <details><summary>Are there any costs that must be paid earlier?</summary><p>The website design package follows the design-first payment arrangement. However, domain registration, paid hosting, premium software, stock assets or other third-party purchases may need to be paid directly by the client when required.</p></details>
+        <details><summary>Do I need to buy a domain?</summary><p>Yes. The business should own its domain name. Plannique can help check availability and connect it to the completed website.</p></details>
         <details><summary>What content do I need to provide?</summary><p>Please provide the logo, business introduction, service information, prices, photographs, contact details, address and social media links.</p></details>
         <details><summary>Will the website work on mobile phones?</summary><p>Yes. Every package includes responsive design for mobile, tablet and desktop screens.</p></details>
         <details><summary>Can I update the website later?</summary><p>Yes. Future content changes and maintenance can be quoted separately.</p></details>
@@ -1295,7 +1409,7 @@ body.preview-open{overflow:hidden}
       <div>
         <div class="eyebrow">Free Website Consultation</div>
         <h1>Tell us about your business</h1>
-        <p>Share your business type, preferred design and the features you need. We will recommend the most suitable package.</p>
+        <p>Share your business type, preferred design and required features. We will confirm the scope, prepare your website preview, and you only make the full payment after approving the final version.</p>
       </div>
       <div class="page-visual"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1000&q=85" alt="Contact Plannique"></div>
     </div>
@@ -1305,14 +1419,15 @@ body.preview-open{overflow:hidden}
     <div class="wrap contact-grid">
       <aside class="contact-info">
         <h2>Contact Plannique</h2>
-        <p class="copy">The quickest way to discuss a project is through WhatsApp.</p>
+        <p class="copy">The quickest way to discuss a project is through WhatsApp. No upfront design payment is required for the standard package scope.</p>
         <div class="details">
-          <div class="detail"><strong>💬 WhatsApp</strong><br>+60 18-907 9798</div>
-          <div class="detail"><strong>✉️ Email</strong><br>hello@plannique.com</div>
+          <div class="detail"><strong>💬 WhatsApp</strong><br>+60 16-808 3598</div>
+          <div class="detail"><strong>✉️ Email</strong><br>planniquedesignco@gmail.com</div>
           <div class="detail"><strong>🕒 Response Hours</strong><br>Monday–Saturday, 10 AM–7 PM</div>
           <div class="detail"><strong>📍 Service Area</strong><br>Malaysia and remote projects</div>
+          <div class="detail"><strong>✓ Payment Arrangement</strong><br>Approve the final preview, then pay before launch</div>
         </div>
-        <a class="btn btn-wa" style="width:100%;margin-top:20px" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20a%20free%20website%20consultation." target="_blank">💬 Start WhatsApp Consultation</a>
+        <a class="btn btn-wa" style="width:100%;margin-top:20px" href="https://wa.me/60168083598?text=Hi%2C%20I%20would%20like%20a%20free%20website%20consultation." target="_blank">💬 Start WhatsApp Consultation</a>
       </aside>
 
       <div class="form-card">
@@ -1332,15 +1447,14 @@ body.preview-open{overflow:hidden}
           </select>
           <select id="package">
             <option value="">Package you are considering</option>
-            <option>Starter RM499</option>
-            <option>Business RM999</option>
-            <option>Premium RM1,499</option>
+            <option>Essential RM499</option>
+            <option>Signature RM1,299</option>
             <option>Not sure yet</option>
           </select>
           <textarea id="message" placeholder="Tell us what you need"></textarea>
           <button class="btn btn-dark" type="submit">Send Enquiry to WhatsApp</button>
         </form>
-        <div class="form-note">Replace the sample WhatsApp number before publishing.</div>
+        <div class="form-note">Your enquiry opens securely in WhatsApp so you can review it before sending.</div>
       </div>
     </div>
   </div>
@@ -1375,8 +1489,8 @@ body.preview-open{overflow:hidden}
         <h4>Support</h4>
         <button data-route="faq">FAQ</button>
         <button data-route="contact">Contact</button>
-        <a href="https://wa.me/60189079798" target="_blank">WhatsApp</a>
-        <a href="mailto:hello@plannique.com">Email</a>
+        <a href="https://wa.me/60168083598" target="_blank">WhatsApp</a>
+        <a href="mailto:planniquedesignco@gmail.com">Email</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1386,7 +1500,7 @@ body.preview-open{overflow:hidden}
   </div>
 </footer>
 
-<a class="float" href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20a%20free%20website%20quotation." target="_blank">💬 Free Quote</a>
+<a class="float" href="https://wa.me/60168083598?text=Hi%2C%20I%20would%20like%20a%20free%20website%20quotation." target="_blank">💬 Free Quote</a>
 
 <script>
 const validRoutes=["home","portfolio","packages","about","process","faq","contact"];
@@ -1395,6 +1509,18 @@ const routeButtons=[...document.querySelectorAll("[data-route]")];
 const navLinks=[...document.querySelectorAll(".nav-links .nav-link")];
 const mobileNav=document.getElementById("navLinks");
 const menuBtn=document.getElementById("menuBtn");
+
+const routeSEO={
+  home:{title:"Plannique Design Co | Websites for Growing Businesses",description:"Elegant, practical and mobile-friendly websites and landing pages for clinics, salons, cafes, fitness brands, homestays and local businesses."},
+  portfolio:{title:"Website Portfolio Collections | Plannique Design Co",description:"Explore Plannique website collections for dental, aesthetic, fitness, hospitality, beauty, automotive and food businesses."},
+  packages:{title:"Website Packages & Add-Ons | Plannique Design Co",description:"Compare Plannique Essential and Signature website packages, plus optional language, Search Console, banner and analytics services."},
+  about:{title:"About Plannique Design Co | Purposeful Web Design",description:"Learn how Plannique creates clear, polished and practical websites designed around customer trust and enquiries."},
+  process:{title:"Website Design Process | Plannique Design Co",description:"See the simple Plannique process from enquiry and content preparation to design, review and website launch."},
+  faq:{title:"Website Design FAQ | Plannique Design Co",description:"Answers about domains, content, revisions, mobile design, hosting, website updates and delivery."},
+  contact:{title:"Contact Plannique Design Co | Free Website Consultation",description:"Contact Plannique Design Co by WhatsApp or email for a free website consultation and package recommendation."}
+};
+function setMeta(selector,attribute,value){const el=document.querySelector(selector);if(el)el.setAttribute(attribute,value)}
+function updateSEO(route){const data=routeSEO[route]||routeSEO.home;document.title=data.title;setMeta('meta[name="description"]','content',data.description);setMeta('meta[property="og:title"]','content',data.title);setMeta('meta[property="og:description"]','content',data.description);setMeta('meta[name="twitter:title"]','content',data.title);setMeta('meta[name="twitter:description"]','content',data.description)}
 
 function currentRoute(){
   const raw=location.hash.replace(/^#\/?/,"").split("?")[0].trim();
@@ -1412,9 +1538,7 @@ function showPage(route, updateHash=true){
     link.classList.toggle("active",link.dataset.route===route);
   });
 
-  document.title=resolved==="home"
-    ?"Plannique Design Co"
-    :`${resolved.charAt(0).toUpperCase()+resolved.slice(1)} | Plannique Design Co`;
+  updateSEO(resolved==="not-found"?"home":resolved);
 
   mobileNav.classList.remove("open");
   window.scrollTo({top:0,behavior:"instant"});
@@ -1585,10 +1709,13 @@ ${packageName}
 📝 Requirements:
 ${message}
 
+Payment preference:
+Design first, full payment after final preview approval and before launch.
+
 Sent from:
 www.plannique.com
 `;
-  window.open(`https://wa.me/60189079798?text=${encodeURIComponent(text)}`,"_blank");
+  window.open(`https://wa.me/60168083598?text=${encodeURIComponent(text)}`,"_blank");
 });
 
 
@@ -1614,6 +1741,12 @@ function closeCollectionPreview(){
 document.addEventListener("keydown",event=>{
   if(event.key==="Escape") closeCollectionPreview();
 });
+
+/* Scroll reveal */
+const revealTargets=document.querySelectorAll('.feature-card,.preview-card,.category-card,.package,.addon-card,.reason-card,.step,.content-item,.contact-info,.form-card,.domain-guide');
+revealTargets.forEach(el=>el.classList.add('reveal'));
+const revealObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target)}})},{threshold:.12});
+revealTargets.forEach(el=>revealObserver.observe(el));
 
 /* Initial route */
 showPage(currentRoute(),false);
