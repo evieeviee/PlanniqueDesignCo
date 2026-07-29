@@ -1189,6 +1189,148 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
   .form-grid input,.form-grid select,.form-grid textarea{min-height:50px;font-size:16px}
 }
 
+
+/* =========================================================
+   ENHANCED CUSTOMER EXPERIENCE V2
+========================================================= */
+.logo-fallback::after{
+  content:"Plannique";
+  display:block;
+  font-family:"Playfair Display",serif;
+  font-size:22px;
+  font-weight:700;
+  color:var(--ink);
+}
+.nav-backdrop{
+  display:none;
+  position:fixed;
+  inset:86px 0 0;
+  z-index:998;
+  background:rgba(26,23,20,.36);
+  backdrop-filter:blur(3px);
+}
+.nav-backdrop.open{display:block}
+
+.quick-fit{
+  margin-top:28px;
+  padding:28px;
+  border-radius:26px;
+  border:1px solid var(--line);
+  background:linear-gradient(135deg,#fff,#f4efe8);
+  box-shadow:0 18px 48px rgba(56,45,34,.08);
+}
+.quick-fit-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.quick-fit h2{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(30px,4vw,46px);
+  line-height:1.05;
+}
+.quick-fit-head p{max-width:560px;color:var(--muted);font-size:14px}
+.fit-options{
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.fit-option{
+  position:relative;
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:#fff;
+  text-align:left;
+  transition:.24s ease;
+}
+.fit-option:hover,.fit-option.selected{
+  transform:translateY(-4px);
+  border-color:var(--sage);
+  box-shadow:0 20px 44px rgba(56,45,34,.11);
+}
+.fit-option.selected::after{
+  content:"Selected";
+  position:absolute;
+  right:14px;
+  top:14px;
+  padding:6px 9px;
+  border-radius:999px;
+  background:var(--sage-dark);
+  color:#fff;
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+.fit-option strong{display:block;font-family:"Playfair Display",serif;font-size:25px}
+.fit-option span{display:block;margin-top:7px;color:var(--muted);font-size:13px}
+.fit-result{
+  display:none;
+  margin-top:16px;
+  padding:18px;
+  border-radius:18px;
+  background:var(--ink);
+  color:#fff;
+}
+.fit-result.show{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.fit-result p{color:#d8d1c9;font-size:13px}
+.fit-result .btn{white-space:nowrap}
+
+.collection-loading{
+  position:absolute;
+  inset:68px 0 0;
+  z-index:2;
+  display:none;
+  place-items:center;
+  background:#fff;
+  color:var(--muted);
+  text-align:center;
+}
+.collection-loading.show{display:grid}
+.collection-loading b{
+  display:block;
+  width:38px;
+  height:38px;
+  margin:0 auto 12px;
+  border:3px solid #e2ddd6;
+  border-top-color:var(--sage-dark);
+  border-radius:50%;
+  animation:spin .8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.status-line{
+  margin-top:16px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+.status-line span{
+  padding:8px 11px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid var(--line);
+  color:var(--sage-dark);
+  font-size:11px;
+  font-weight:800;
+}
+
+@media(max-width:950px){
+  body.menu-open{overflow:hidden}
+  .nav-backdrop{inset:86px 0 0}
+}
+@media(max-width:600px){
+  .quick-fit{padding:20px}
+  .fit-options{grid-template-columns:1fr}
+  .fit-result.show{grid-template-columns:1fr}
+  .fit-result .btn{width:100%}
+  .collection-loading{inset:102px 0 0}
+  .nav-backdrop{inset:86px 0 0}
+}
+
 </style>
 </head>
 
@@ -1198,7 +1340,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
 <header class="navbar">
   <div class="wrap nav">
     <button class="nav-link" data-route="home" aria-label="Home">
-      <img class="logo" src="https://ricobr.ft-crm.com/media-api/serve/0f4dde75-8ce1-4c70-b072-6b988ba25aa9_Customizable_Daily_Planner_Template.png" alt="Plannique Design Co">
+      <img class="logo" src="https://ricobr.ft-crm.com/media-api/serve/0f4dde75-8ce1-4c70-b072-6b988ba25aa9_Customizable_Daily_Planner_Template.png" alt="Plannique Design Co" onerror="this.style.display='none';this.parentElement.classList.add('logo-fallback');">
     </button>
 
     <nav class="nav-links" id="navLinks">
@@ -1215,6 +1357,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
   </div>
 </header>
+<div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
 
 <main id="mainContent">
 
@@ -1238,6 +1381,12 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
           <span>✓ Google Maps</span>
           <span>✓ Clear package pricing</span>
           <span>✓ No upfront design payment</span>
+        </div>
+
+        <div class="status-line" aria-label="Service highlights">
+          <span>Malaysia & remote projects</span>
+          <span>Essential RM499</span>
+          <span>Signature RM1,299</span>
         </div>
 
         <div class="pay-promise">
@@ -1300,6 +1449,35 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
           <p>Share your business type and we will suggest the most suitable option.</p>
           <span>Get Free Advice →</span>
         </button>
+      </div>
+    </section>
+
+    <section class="quick-fit" aria-labelledby="quickFitTitle">
+      <div class="quick-fit-head">
+        <div>
+          <div class="eyebrow">Quick Package Guide</div>
+          <h2 id="quickFitTitle">Which package fits your business?</h2>
+        </div>
+        <p>Choose the option that sounds closest to your needs. This is only a guide—you can still ask us for a free recommendation.</p>
+      </div>
+
+      <div class="fit-options">
+        <button class="fit-option" type="button" data-fit="essential">
+          <strong>I need one clear website</strong>
+          <span>Best when you have a smaller service list and want customers to scroll, understand and contact you quickly.</span>
+        </button>
+        <button class="fit-option" type="button" data-fit="signature">
+          <strong>I need several pages or services</strong>
+          <span>Best when you have many treatments, rooms, specialists, menus, galleries or separate customer journeys.</span>
+        </button>
+      </div>
+
+      <div class="fit-result" id="fitResult" aria-live="polite">
+        <div>
+          <strong id="fitTitle">Recommended package</strong>
+          <p id="fitCopy"></p>
+        </div>
+        <button class="btn btn-light" type="button" data-route="packages">Compare Package Details</button>
       </div>
     </section>
   </div>
@@ -1714,6 +1892,9 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
             <option>Property / Homestay</option>
             <option>Automotive</option>
             <option>Fitness</option>
+            <option>Flower / Florist</option>
+            <option>Dental</option>
+            <option>Aesthetic Clinic</option>
             <option>Other</option>
           </select>
           <select id="package">
@@ -1820,7 +2001,7 @@ function showPage(route, updateHash=true){
   menuBtn.setAttribute("aria-expanded","false");
   menuBtn.textContent="☰";
   menuBtn.setAttribute("aria-label","Open menu");
-  window.scrollTo({top:0,behavior:"instant"});
+  window.scrollTo({top:0,behavior:"auto"});
 
   if(updateHash && validRoutes.includes(route)){
     const target=route==="home"?"#/":"#/"+route;
@@ -2005,7 +2186,7 @@ Payment preference:
 Design first, full payment after final preview approval and before launch.
 
 Sent from:
-www.plannique.com
+https://evieeviee.github.io/PlanniqueDesignCo/
 `;
   window.open(`https://wa.me/60168083598?text=${encodeURIComponent(text)}`,"_blank");
 });
@@ -2046,6 +2227,72 @@ revealTargets.forEach(el=>el.classList.add('reveal'));
 const revealObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target)}})},{threshold:.12});
 revealTargets.forEach(el=>revealObserver.observe(el));
 
+
+/* Quick package guide */
+const fitResult=document.getElementById("fitResult");
+const fitTitle=document.getElementById("fitTitle");
+const fitCopy=document.getElementById("fitCopy");
+document.querySelectorAll("[data-fit]").forEach(option=>{
+  option.addEventListener("click",()=>{
+    document.querySelectorAll("[data-fit]").forEach(item=>item.classList.toggle("selected",item===option));
+    const essential=option.dataset.fit==="essential";
+    fitTitle.textContent=essential?"Essential RM499 may suit you":"Signature RM1,299 may suit you";
+    fitCopy.textContent=essential
+      ? "A focused one-page website is usually enough when your main goal is to introduce the business, show key services and generate WhatsApp enquiries."
+      : "A multi-page website is usually better when customers need to explore several services, specialists, rooms, menus, galleries or detailed information.";
+    fitResult.classList.add("show");
+  });
+});
+
+/* Mobile navigation backdrop and scroll lock */
+const navBackdrop=document.getElementById("navBackdrop");
+function syncMobileMenuState(){
+  const open=mobileNav.classList.contains("open");
+  navBackdrop.classList.toggle("open",open);
+  navBackdrop.setAttribute("aria-hidden",String(!open));
+  document.body.classList.toggle("menu-open",open);
+}
+menuBtn.addEventListener("click",()=>requestAnimationFrame(syncMobileMenuState));
+navBackdrop.addEventListener("click",()=>{
+  mobileNav.classList.remove("open");
+  menuBtn.setAttribute("aria-expanded","false");
+  menuBtn.textContent="☰";
+  menuBtn.setAttribute("aria-label","Open menu");
+  syncMobileMenuState();
+});
+routeButtons.forEach(button=>button.addEventListener("click",syncMobileMenuState));
+
+/* Industry collection loading feedback */
+let collectionLoading=null;
+let collectionFrameElement=null;
+document.addEventListener("DOMContentLoaded",()=>{
+  collectionLoading=document.getElementById("collectionLoading");
+  collectionFrameElement=document.getElementById("collectionFrame");
+  if(collectionFrameElement){
+    collectionFrameElement.addEventListener("load",()=>{
+      if(collectionLoading) collectionLoading.classList.remove("show");
+    });
+  }
+});
+const originalOpenCollectionPreview=openCollectionPreview;
+openCollectionPreview=function(url,title){
+  if(!collectionLoading) collectionLoading=document.getElementById("collectionLoading");
+  if(collectionLoading) collectionLoading.classList.add("show");
+  originalOpenCollectionPreview(url,title);
+};
+const originalCloseCollectionPreview=closeCollectionPreview;
+closeCollectionPreview=function(){
+  if(!collectionLoading) collectionLoading=document.getElementById("collectionLoading");
+  if(collectionLoading) collectionLoading.classList.remove("show");
+  originalCloseCollectionPreview();
+};
+
+/* Image performance and layout stability */
+document.querySelectorAll("img").forEach((image,index)=>{
+  image.decoding="async";
+  if(index>1) image.loading="lazy";
+});
+
 /* Initial route */
 showPage(currentRoute(),false);
 </script>
@@ -2056,6 +2303,9 @@ showPage(currentRoute(),false);
     <button class="collection-back" type="button" onclick="closeCollectionPreview()">← Back</button>
     <div class="collection-modal-title" id="collectionModalTitle">Website Collection</div>
     <a class="collection-open" id="collectionOpenNew" href="#" target="_blank" rel="noopener">Open Directly ↗</a>
+  </div>
+  <div class="collection-loading" id="collectionLoading" aria-live="polite">
+    <div><b></b><span>Loading website collection…</span></div>
   </div>
   <iframe class="collection-frame" id="collectionFrame" title="Industry website collection"></iframe>
 </div>
