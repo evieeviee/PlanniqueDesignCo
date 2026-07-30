@@ -2,32 +2,46 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://evieeviee.github.io/PlanniqueDesignCo/</loc>
-</url>
+  <url>
+    <loc>https://planniquedesignco.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-<url>
-<loc>https://evieeviee.github.io/PlanniqueDesignCo/#/portfolio</loc>
-</url>
+  <url>
+    <loc>https://planniquedesignco.com/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-<loc>https://evieeviee.github.io/PlanniqueDesignCo/#/packages</loc>
-</url>
+  <url>
+    <loc>https://planniquedesignco.com/packages/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-<loc>https://evieeviee.github.io/PlanniqueDesignCo/#/about</loc>
-</url>
+  <url>
+    <loc>https://planniquedesignco.com/portfolio/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-<loc>https://evieeviee.github.io/PlanniqueDesignCo/#/process</loc>
-</url>
+  <url>
+    <loc>https://planniquedesignco.com/process/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
-<url>
-<loc>https://evieeviee.github.io/PlanniqueDesignCo/#/faq</loc>
-</url>
+  <url>
+    <loc>https://planniquedesignco.com/faq/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
-<url>
-<loc>https://evieeviee.github.io/PlanniqueDesignCo/#/contact</loc>
-</url>
+  <url>
+    <loc>https://planniquedesignco.com/contact/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
 </urlset>
