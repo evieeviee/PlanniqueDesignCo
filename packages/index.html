@@ -560,6 +560,9 @@ main{padding-top:86px}
 /* PACKAGES */
 .package-grid{margin-top:42px;display:grid;grid-template-columns:repeat(3,1fr);gap:21px}
 .package{
+  display:flex;
+  flex-direction:column;
+  height:100%;
   padding:32px;
   border-radius:25px;
   background:#fff;
@@ -573,10 +576,10 @@ main{padding-top:86px}
 .price span{font-size:17px}
 .package-desc{margin-top:12px;color:var(--muted);font-size:14px}
 .featured .package-desc{color:#c6bfb7}
-.package ul{margin-top:23px;display:grid;gap:10px}
+.package ul{margin-top:23px;margin-bottom:28px;display:grid;gap:10px}
 .package li{list-style:none;font-size:14px}
 .package li:before{content:"✓";margin-right:9px;color:var(--sage);font-weight:900}
-.package .btn{width:100%;margin-top:25px}
+.package .btn{width:100%;margin-top:auto}
 .popular{
   position:absolute;top:16px;right:16px;
   padding:6px 10px;border-radius:999px;
@@ -1332,6 +1335,105 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
 }
 
 
+/* INTERACTIVE ADD-ONS */
+.addon-card{
+  width:100%;
+  color:inherit;
+  text-align:left;
+  cursor:pointer;
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+  position:relative;
+  overflow:hidden;
+}
+.addon-card:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.72),transparent 70%);
+  transform:translateX(-120%);
+  transition:transform .65s ease;
+}
+.addon-card:hover:before{transform:translateX(120%)}
+.addon-card:hover{
+  transform:translateY(-7px) scale(1.01);
+  border-color:rgba(117,129,111,.55);
+  box-shadow:0 24px 58px rgba(60,48,37,.15);
+}
+.addon-card em{
+  display:block;
+  margin-top:10px;
+  color:var(--sage-dark);
+  font-size:11px;
+  font-style:normal;
+  font-weight:900;
+}
+.addon-modal{
+  position:fixed;
+  inset:0;
+  z-index:5000;
+  display:none;
+  place-items:center;
+  padding:20px;
+  background:rgba(27,24,21,.64);
+  backdrop-filter:blur(10px);
+}
+.addon-modal.open{display:grid;animation:modalFade .25s ease}
+.addon-modal-card{
+  width:min(620px,100%);
+  max-height:min(760px,90vh);
+  overflow:auto;
+  position:relative;
+  padding:34px;
+  border-radius:26px;
+  background:#fff;
+  box-shadow:0 30px 90px rgba(0,0,0,.28);
+  animation:modalUp .35s ease;
+}
+.addon-modal-close{
+  position:absolute;
+  top:16px;
+  right:16px;
+  width:42px;
+  height:42px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  background:#f6f2ec;
+  color:var(--ink);
+  font-size:22px;
+}
+.addon-modal-icon{font-size:38px}
+.addon-modal-card h2{
+  margin-top:12px;
+  padding-right:48px;
+  font-family:"Playfair Display",serif;
+  font-size:38px;
+  line-height:1.08;
+}
+.addon-modal-price{
+  display:inline-flex;
+  margin-top:14px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:#f1ede6;
+  color:var(--sage-dark);
+  font-weight:900;
+  font-size:13px;
+}
+.addon-modal-card p{margin-top:16px;color:var(--muted)}
+.addon-modal-list{margin-top:18px;display:grid;gap:10px}
+.addon-modal-list li{list-style:none;padding:12px 14px;border-radius:13px;background:#f8f5f0;font-size:14px}
+.addon-modal-list li:before{content:"✓";margin-right:9px;color:var(--sage-dark);font-weight:900}
+.addon-modal-note{margin-top:18px;padding:14px;border-left:4px solid var(--sage);background:#f4f6f2;color:var(--muted);font-size:13px}
+.addon-modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+@keyframes modalFade{from{opacity:0}to{opacity:1}}
+@keyframes modalUp{from{opacity:0;transform:translateY(22px) scale(.97)}to{opacity:1;transform:none}}
+body.modal-open{overflow:hidden}
+@media(max-width:600px){
+  .addon-modal-card{padding:26px 20px 22px;border-radius:22px}
+  .addon-modal-card h2{font-size:31px}
+  .addon-modal-actions{grid-template-columns:1fr}
+}
+
 /* Standalone page build */
 main{padding-top:86px}
 .page{display:block}
@@ -1401,7 +1503,6 @@ main{padding-top:86px}
 <li>One revision round</li>
 <li>7 days minor support</li>
 </ul>
-<div class="package-payment">No upfront design payment • Pay RM499 after final preview approval, before launch.</div>
 <a class="btn btn-light" href="https://wa.me/60168083598?text=I%20am%20interested%20in%20the%20RM499%20Essential%20One-Page%20Website." target="_blank">Choose Essential</a>
 </article>
 <article class="package featured">
@@ -1415,6 +1516,7 @@ main{padding-top:86px}
 <li>Up to 7 page views</li>
 <li>Premium visual direction</li>
 <li>One language included</li>
+<li>Additional language available (+RM400)</li>
 <li>Desktop and mobile navigation</li>
 <li>Detailed service or product pages</li>
 <li>Team, specialist or business profiles</li>
@@ -1425,7 +1527,6 @@ main{padding-top:86px}
 <li>Three revision rounds</li>
 <li>3 months minor support</li>
 </ul>
-<div class="package-payment">No upfront design payment • Pay RM1,299 after final preview approval, before launch.</div>
 <a class="btn btn-wa" href="https://wa.me/60168083598?text=I%20am%20interested%20in%20the%20RM1299%20Signature%20Multi-Page%20Website." target="_blank">Choose Signature</a>
 </article>
 </div>
@@ -1434,14 +1535,14 @@ main{padding-top:86px}
 <h2 class="title">Add only what your business needs</h2>
 <p class="copy">Add-ons are quoted separately so the base package remains clear and affordable.</p>
 <div class="addon-grid">
-<article class="addon-card"><span>🌐</span><div><h3>Additional Language</h3><p>Add one extra language with a desktop and mobile language switcher. Client-provided translation is recommended.</p></div><strong>From RM200</strong></article>
-<article class="addon-card"><span>🔎</span><div><h3>Google Search Console Setup</h3><p>Property verification, sitemap submission and basic indexing setup after the domain is connected.</p></div><strong>From RM120</strong></article>
-<article class="addon-card"><span>🎨</span><div><h3>Banner Design</h3><p>One matching promotional, launch or social-media banner based on the website’s visual direction.</p></div><strong>From RM80</strong></article>
-<article class="addon-card"><span>📊</span><div><h3>Website Analytics Setup</h3><p>Basic Google Analytics or Cloudflare Web Analytics installation to measure website visits.</p></div><strong>From RM100</strong></article>
-<article class="addon-card"><span>📍</span><div><h3>Google Business Profile Support</h3><p>Basic guidance for profile details, website link, services, opening hours and location information.</p></div><strong>From RM100</strong></article>
-<article class="addon-card"><span>🔗</span><div><h3>QR Code &amp; Digital Contact Card</h3><p>A branded QR code linking to the website, WhatsApp, menu, booking page or social profile.</p></div><strong>From RM50</strong></article>
-<article class="addon-card"><span>📷</span><div><h3>Extra Content Setup</h3><p>Additional products, services, profiles, galleries or website sections beyond the package scope.</p></div><strong>From RM80</strong></article>
-<article class="addon-card"><span>🛠️</span><div><h3>Future Website Updates</h3><p>Content edits, new promotions, image changes or structural updates after the included support period.</p></div><strong>Quoted per request</strong></article>
+<button class="addon-card" type="button" data-addon="language"><span>🌐</span><div><h3>Additional Language</h3><p>Add one extra language with a desktop and mobile language switcher.</p><em>Click for details →</em></div><strong>RM200 / RM400</strong></button>
+<button class="addon-card" type="button" data-addon="search"><span>🔎</span><div><h3>Search Console &amp; Sitemap</h3><p>Verification, sitemap submission and basic indexing support.</p><em>Click for details →</em></div><strong>From RM120</strong></button>
+<button class="addon-card" type="button" data-addon="banner"><span>🎨</span><div><h3>Promotional Banner Design</h3><p>One matching launch or social-media banner based on the website style.</p><em>Click for details →</em></div><strong>From RM80</strong></button>
+<button class="addon-card" type="button" data-addon="analytics"><span>📊</span><div><h3>Analytics &amp; Visitor Tracking</h3><p>Google Analytics 4 or Cloudflare Web Analytics installation and testing.</p><em>Click for details →</em></div><strong>From RM100</strong></button>
+<button class="addon-card" type="button" data-addon="business"><span>📍</span><div><h3>Google Business Profile Support</h3><p>Guidance for business details, services, hours, website and location.</p><em>Click for details →</em></div><strong>From RM100</strong></button>
+<button class="addon-card" type="button" data-addon="qr"><span>🔗</span><div><h3>Digital Contact Card &amp; QR Code</h3><p>A branded QR code linking to a contact page, WhatsApp, map or menu.</p><em>Click for details →</em></div><strong>From RM50</strong></button>
+<button class="addon-card" type="button" data-addon="content"><span>📷</span><div><h3>Extra Website Content</h3><p>Additional products, services, profiles, galleries or sections.</p><em>Click for details →</em></div><strong>From RM80</strong></button>
+<button class="addon-card" type="button" data-addon="updates"><span>🛠️</span><div><h3>Website Maintenance &amp; Updates</h3><p>Future content edits, promotions, image changes and improvements.</p><em>Click for details →</em></div><strong>Quoted per request</strong></button>
 </div>
 </div>
 <div class="domain-guide">
@@ -1469,7 +1570,7 @@ main{padding-top:86px}
 <tr><td>Responsive design</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
 <tr><td>WhatsApp integration</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
 <tr><td>Google Maps</td><td class="checkmark">✓</td><td class="checkmark">✓</td></tr>
-<tr><td>Smart enquiry form</td><td>Basic</td><td class="checkmark">✓</td></tr>
+<tr><td>Enquiry form</td><td>Basic contact form</td><td>Smart guided form</td></tr>
 <tr><td>Detailed service pages</td><td class="dash">—</td><td class="checkmark">✓</td></tr>
 <tr><td>Testimonials and FAQ</td><td>Optional sections</td><td class="checkmark">✓</td></tr>
 <tr><td>Language included</td><td>1</td><td>1</td></tr>
@@ -1483,6 +1584,21 @@ main{padding-top:86px}
 </div>
 </section>
 </main>
+<div class="addon-modal" id="addonModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="addonModalTitle">
+  <div class="addon-modal-card">
+    <button class="addon-modal-close" id="addonModalClose" type="button" aria-label="Close details">×</button>
+    <div class="addon-modal-icon" id="addonModalIcon">✨</div>
+    <h2 id="addonModalTitle">Add-on details</h2>
+    <div class="addon-modal-price" id="addonModalPrice"></div>
+    <p id="addonModalDescription"></p>
+    <ul class="addon-modal-list" id="addonModalList"></ul>
+    <div class="addon-modal-note" id="addonModalNote"></div>
+    <div class="addon-modal-actions">
+      <button class="btn btn-light" id="addonModalBack" type="button">Continue Browsing</button>
+      <a class="btn btn-wa" id="addonModalWhatsapp" href="#" target="_blank" rel="noopener">Ask on WhatsApp</a>
+    </div>
+  </div>
+</div>
 <footer>
   <div class="wrap">
     <div class="footer-grid">
@@ -1517,6 +1633,39 @@ main{padding-top:86px}
   <a href="https://wa.me/60168083598?text=Hi%2C%20I%20would%20like%20a%20free%20website%20quotation." target="_blank" rel="noopener">Free Quote</a>
 </div>
 
+
+<script>
+const addonData={
+  language:{icon:"🌐",title:"Additional Language",price:"RM200 Essential / RM400 Signature",description:"Add one extra language with a clear desktop and mobile language switcher.",items:["Essential: one-page translation setup","Signature: translation across up to 7 page views","Language switcher on desktop and mobile","SEO-friendly page language structure","Final translated wording supplied or approved by the client"],note:"The price difference reflects the larger amount of content and page setup required for Signature."},
+  search:{icon:"🔎",title:"Search Console & Sitemap Setup",price:"From RM120",description:"Connect the website to Google Search Console and help Google discover the site correctly.",items:["Verify the client-owned domain","Submit sitemap.xml","Check robots.txt accessibility","Request indexing for key pages","Confirm that Google can access the website"],note:"This supports indexing but does not guarantee a ranking position on Google."},
+  banner:{icon:"🎨",title:"Promotional Banner Design",price:"From RM80",description:"Create a matching promotional or launch graphic based on the website visual direction.",items:["One branded banner design","Website, social or launch format","Matching typography and colour direction","One standard revision","PNG or JPG final file"],note:"Additional sizes, campaigns or design variations can be quoted separately."},
+  analytics:{icon:"📊",title:"Analytics & Visitor Tracking",price:"From RM100",description:"Install and test website visitor tracking so the client can understand how the website is being used.",items:["Google Analytics 4 or Cloudflare Web Analytics","Tracking code installation","Live traffic verification","Basic page-view and device reporting","Client access or ownership setup"],note:"The analytics account should be created or owned by the client. Advanced event tracking and monthly reports are quoted separately."},
+  business:{icon:"📍",title:"Google Business Profile Support",price:"From RM100",description:"Help prepare or improve the client's Google Business Profile information.",items:["Business details and category guidance","Website, phone and opening hours review","Services and business description guidance","Location or service-area guidance","Profile completeness checklist"],note:"Profile approval and verification are controlled by Google and cannot be guaranteed."},
+  qr:{icon:"🔗",title:"Digital Contact Card & QR Code",price:"From RM50",description:"Create a branded QR code that sends customers directly to the most useful destination.",items:["QR code linked to website, WhatsApp, map, menu or booking page","Branded square PNG file","Print-friendly high-resolution version","Basic scan test on mobile","Optional simple digital contact-card page"],note:"A full custom contact-card page or several QR destinations may require an additional quote."},
+  content:{icon:"📷",title:"Extra Website Content",price:"From RM80",description:"Add content beyond the standard package scope.",items:["Additional product or service entry","Extra profile or team member","Additional gallery content","New content section","Layout adjustment for the added content"],note:"Final pricing depends on the number of items, pages and content supplied."},
+  updates:{icon:"🛠️",title:"Website Maintenance & Updates",price:"Quoted per request",description:"Keep the website current after the included support period.",items:["Text and price updates","Image or banner replacement","New promotion setup","Minor layout improvements","New page or section quotations"],note:"Requests are quoted based on scope. Hosting, domain renewal and third-party subscriptions remain client-owned costs."}
+};
+const addonModal=document.getElementById("addonModal");
+const addonModalClose=document.getElementById("addonModalClose");
+const addonModalBack=document.getElementById("addonModalBack");
+const addonModalWhatsapp=document.getElementById("addonModalWhatsapp");
+function closeAddonModal(){addonModal.classList.remove("open");addonModal.setAttribute("aria-hidden","true");document.body.classList.remove("modal-open")}
+document.querySelectorAll("[data-addon]").forEach(card=>card.addEventListener("click",()=>{
+  const item=addonData[card.dataset.addon];
+  document.getElementById("addonModalIcon").textContent=item.icon;
+  document.getElementById("addonModalTitle").textContent=item.title;
+  document.getElementById("addonModalPrice").textContent=item.price;
+  document.getElementById("addonModalDescription").textContent=item.description;
+  document.getElementById("addonModalList").innerHTML=item.items.map(text=>`<li>${text}</li>`).join("");
+  document.getElementById("addonModalNote").textContent=item.note;
+  addonModalWhatsapp.href="https://wa.me/60168083598?text="+encodeURIComponent(`Hi, I would like to know more about the ${item.title} add-on (${item.price}).`);
+  addonModal.classList.add("open");addonModal.setAttribute("aria-hidden","false");document.body.classList.add("modal-open");addonModalClose.focus();
+}));
+addonModalClose.addEventListener("click",closeAddonModal);
+addonModalBack.addEventListener("click",closeAddonModal);
+addonModal.addEventListener("click",e=>{if(e.target===addonModal)closeAddonModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&addonModal.classList.contains("open"))closeAddonModal()});
+</script>
 
 <script>
 const mobileNav=document.getElementById("navLinks");
