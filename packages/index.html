@@ -586,13 +586,34 @@ main{padding-top:86px}
   background:var(--warm);color:#fff;
   font-size:10px;font-weight:800;
 }
-.compare-wrap{overflow-x:auto;margin-top:44px}
-.compare{width:100%;min-width:760px;border-collapse:collapse;background:#fff;box-shadow:0 18px 48px rgba(60,48,37,.08)}
+.compare-wrap{margin-top:44px}
+.compare{width:100%;border-collapse:collapse;background:#fff;box-shadow:0 18px 48px rgba(60,48,37,.08)}
 .compare th,.compare td{padding:16px;border-bottom:1px solid var(--line);text-align:center}
 .compare th:first-child,.compare td:first-child{text-align:left}
 .compare th{background:#f5f1eb}
 .checkmark{color:var(--sage-dark);font-weight:900}
 .dash{color:#aaa}
+.mobile-compare{display:none}
+.mobile-compare-head{margin-bottom:16px}
+.mobile-compare-head h2{font-family:"Playfair Display",serif;font-size:32px;line-height:1.08}
+.mobile-compare-head p{margin-top:7px;color:var(--muted);font-size:13px}
+.mobile-compare-grid{display:grid;gap:12px}
+.mobile-compare-card{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 12px 32px rgba(60,48,37,.07)}
+.mobile-compare-feature{padding:14px 16px;background:#f5f1eb;font-weight:900;font-size:13px}
+.mobile-compare-values{display:grid;grid-template-columns:1fr 1fr}
+.mobile-compare-value{padding:15px 12px;text-align:center;min-width:0}
+.mobile-compare-value+ .mobile-compare-value{border-left:1px solid var(--line)}
+.mobile-compare-value b{display:block;font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--sage-dark)}
+.mobile-compare-value span{display:block;margin-top:6px;font-size:13px;line-height:1.4;overflow-wrap:anywhere}
+.mobile-compare-value.signature{background:#2a2723;color:#fff}
+.mobile-compare-value.signature b{color:#d7ded3}
+.mobile-compare-value .yes{font-size:20px;font-weight:900;color:var(--sage-dark)}
+.mobile-compare-value.signature .yes{color:#fff}
+.mobile-compare-note{margin-top:14px;padding:14px 16px;border-radius:14px;background:#f3f6f1;color:var(--sage-dark);font-size:12px;font-weight:800}
+@media(max-width:700px){
+  .compare-wrap{display:none}
+  .mobile-compare{display:block;margin-top:38px}
+}
 
 /* ABOUT */
 .about-grid{
@@ -1434,6 +1455,100 @@ body.modal-open{overflow:hidden}
   .addon-modal-actions{grid-template-columns:1fr}
 }
 
+
+/* MOBILE SWIPE PACKAGE COMPARISON */
+.mobile-package-switcher,
+.mobile-swipe-hint,
+.mobile-package-dots{display:none}
+
+@media(max-width:600px){
+  .mobile-package-switcher{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    position:relative;
+    z-index:1;
+    margin:0 0 12px;
+    padding:7px;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:rgba(255,255,255,.96);
+    box-shadow:0 14px 34px rgba(42,39,35,.12);
+    backdrop-filter:blur(14px);
+  }
+  .package-tab{
+    min-height:52px;
+    border:0;
+    border-radius:13px;
+    background:transparent;
+    color:var(--muted);
+    font-weight:900;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    transition:.22s ease;
+  }
+  .package-tab small{font-size:11px;font-weight:800;opacity:.82}
+  .package-tab.active{
+    background:var(--ink);
+    color:#fff;
+    box-shadow:0 10px 24px rgba(42,39,35,.18);
+  }
+  .mobile-swipe-hint{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    margin:0 0 12px;
+    color:var(--muted);
+    font-size:12px;
+    font-weight:800;
+  }
+  .mobile-swipe-hint span{font-size:16px;color:var(--sage-dark)}
+  .package-grid-two{
+    display:flex;
+    width:calc(100vw - 28px);
+    max-width:none;
+    gap:14px;
+    margin:0;
+    overflow-x:auto;
+    overflow-y:visible;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    padding:2px 0 12px;
+  }
+  .package-grid-two::-webkit-scrollbar{display:none}
+  .package-grid-two .package{
+    flex:0 0 100%;
+    min-width:100%;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+    padding:24px;
+    transform:none!important;
+  }
+  .package-grid-two .package.featured{transform:none!important}
+  .mobile-package-dots{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-top:2px;
+  }
+  .package-dot{
+    width:8px;
+    height:8px;
+    padding:0;
+    border:0;
+    border-radius:999px;
+    background:#cfc6bb;
+    transition:.22s ease;
+  }
+  .package-dot.active{width:24px;background:var(--sage-dark)}
+}
+
 /* Standalone page build */
 main{padding-top:86px}
 .page{display:block}
@@ -1483,8 +1598,17 @@ main{padding-top:86px}
 <div class="payment-step"><b>Step 03</b><span>Pay, launch &amp; handover</span></div>
 </div>
 </div>
-<div class="package-grid package-grid-two">
-<article class="package">
+<div class="mobile-package-switcher" aria-label="Choose a package">
+  <button class="package-tab active" type="button" data-package-slide="0" aria-pressed="true">
+    <span>Essential</span><small>RM499</small>
+  </button>
+  <button class="package-tab" type="button" data-package-slide="1" aria-pressed="false">
+    <span>Signature</span><small>RM1,299</small>
+  </button>
+</div>
+<div class="mobile-swipe-hint" aria-hidden="true">Swipe left or right to compare <span>↔</span></div>
+<div class="package-grid package-grid-two" id="packageCarousel">
+<article class="package" data-package-card="essential">
 <div class="eyebrow">Essential</div>
 <h3>One-Page Website</h3>
 <div class="price"><span>RM</span>499</div>
@@ -1505,7 +1629,7 @@ main{padding-top:86px}
 </ul>
 <a class="btn btn-light" href="https://wa.me/60168083598?text=I%20am%20interested%20in%20the%20RM499%20Essential%20One-Page%20Website." target="_blank">Choose Essential</a>
 </article>
-<article class="package featured">
+<article class="package featured" data-package-card="signature">
 <div class="popular">MOST COMPLETE</div>
 <div class="eyebrow" style="color:#cbd2c7">Signature</div>
 <h3>Multi-Page Website</h3>
@@ -1529,6 +1653,10 @@ main{padding-top:86px}
 </ul>
 <a class="btn btn-wa" href="https://wa.me/60168083598?text=I%20am%20interested%20in%20the%20RM1299%20Signature%20Multi-Page%20Website." target="_blank">Choose Signature</a>
 </article>
+</div>
+<div class="mobile-package-dots" aria-label="Package carousel position">
+  <button class="package-dot active" type="button" data-package-slide="0" aria-label="Show Essential package"></button>
+  <button class="package-dot" type="button" data-package-slide="1" aria-label="Show Signature package"></button>
 </div>
 <div class="section" style="padding-bottom:0">
 <div class="eyebrow">Optional Add-Ons</div>
@@ -1579,6 +1707,28 @@ main{padding-top:86px}
 <tr><td>Minor support</td><td>7 days</td><td>3 months</td></tr>
 </tbody>
 </table>
+</div>
+
+<div class="mobile-compare" aria-label="Mobile package comparison">
+  <div class="mobile-compare-head">
+    <div class="eyebrow">Quick Comparison</div>
+    <h2>Compare both packages without swiping</h2>
+    <p>Each feature shows Essential and Signature together, so customers can compare at a glance.</p>
+  </div>
+  <div class="mobile-compare-grid">
+    <article class="mobile-compare-card"><div class="mobile-compare-feature">Website structure</div><div class="mobile-compare-values"><div class="mobile-compare-value"><b>Essential</b><span>One scrolling page</span></div><div class="mobile-compare-value signature"><b>Signature</b><span>Up to 7 page views</span></div></div></article>
+    <article class="mobile-compare-card"><div class="mobile-compare-feature">Responsive design</div><div class="mobile-compare-values"><div class="mobile-compare-value"><b>Essential</b><span class="yes">✓</span></div><div class="mobile-compare-value signature"><b>Signature</b><span class="yes">✓</span></div></div></article>
+    <article class="mobile-compare-card"><div class="mobile-compare-feature">WhatsApp integration</div><div class="mobile-compare-values"><div class="mobile-compare-value"><b>Essential</b><span class="yes">✓</span></div><div class="mobile-compare-value signature"><b>Signature</b><span class="yes">✓</span></div></div></article>
+    <article class="mobile-compare-card"><div class="mobile-compare-feature">Google Maps</div><div class="mobile-compare-values"><div class="mobile-compare-value"><b>Essential</b><span class="yes">✓</span></div><div class="mobile-compare-value signature"><b>Signature</b><span class="yes">✓</span></div></div></article>
+    <article class="mobile-compare-card"><div class="mobile-compare-feature">Enquiry form</div><div class="mobile-compare-values"><div class="mobile-compare-value"><b>Essential</b><span>Basic contact form</span></div><div class="mobile-compare-value signature"><b>Signature</b><span>Smart guided form</span></div></div></article>
+    <article class="mobile-compare-card"><div class="mobile-compare-feature">Detailed service pages</div><div class="mobile-compare-values"><div class="mobile-compare-value"><b>Essential</b><span>—</span></div><div class="mobile-compare-value signature"><b>Signature</b><span class="yes">✓</span></div></div></article>
+    <article class="mobile-compare-card"><div class="mobile-compare-feature">Testimonials and FAQ</div><div class="mobile-compare-values"><div class="mobile-compare-value"><b>Essential</b><span>Optional sections</span></div><div class="mobile-compare-value signature"><b>Signature</b><span class="yes">✓</span></div></div></article>
+    <article class="mobile-compare-card"><div class="mobile-compare-feature">Language included</div><div class="mobile-compare-values"><div class="mobile-compare-value"><b>Essential</b><span>1 language</span></div><div class="mobile-compare-value signature"><b>Signature</b><span>1 language</span></div></div></article>
+    <article class="mobile-compare-card"><div class="mobile-compare-feature">Extra language</div><div class="mobile-compare-values"><div class="mobile-compare-value"><b>Essential</b><span>+ RM200</span></div><div class="mobile-compare-value signature"><b>Signature</b><span>+ RM400</span></div></div></article>
+    <article class="mobile-compare-card"><div class="mobile-compare-feature">Revision rounds</div><div class="mobile-compare-values"><div class="mobile-compare-value"><b>Essential</b><span>1 round</span></div><div class="mobile-compare-value signature"><b>Signature</b><span>3 rounds</span></div></div></article>
+    <article class="mobile-compare-card"><div class="mobile-compare-feature">Minor support</div><div class="mobile-compare-values"><div class="mobile-compare-value"><b>Essential</b><span>7 days</span></div><div class="mobile-compare-value signature"><b>Signature</b><span>3 months</span></div></div></article>
+  </div>
+  <div class="mobile-compare-note">Tip: Signature is the better fit when the business needs several services, richer content or a more guided enquiry journey.</div>
 </div>
 </div>
 </div>
@@ -1684,6 +1834,49 @@ menuBtn.addEventListener("click",()=>setMenu(!mobileNav.classList.contains("open
 navBackdrop.addEventListener("click",()=>setMenu(false));
 document.addEventListener("keydown",e=>{if(e.key==="Escape")setMenu(false)});
 window.addEventListener("resize",()=>{if(window.innerWidth>950)setMenu(false)});
+
+
+const packageCarousel=document.getElementById("packageCarousel");
+const packageSlideControls=document.querySelectorAll("[data-package-slide]");
+const packageTabs=document.querySelectorAll(".package-tab");
+const packageDots=document.querySelectorAll(".package-dot");
+
+function setActivePackage(index){
+  packageTabs.forEach((tab,i)=>{
+    const active=i===index;
+    tab.classList.toggle("active",active);
+    tab.setAttribute("aria-pressed",String(active));
+  });
+  packageDots.forEach((dot,i)=>dot.classList.toggle("active",i===index));
+}
+
+function goToPackage(index){
+  if(!packageCarousel) return;
+  const card=packageCarousel.querySelectorAll(".package")[index];
+  if(card) packageCarousel.scrollTo({left:card.offsetLeft-packageCarousel.offsetLeft,behavior:"smooth"});
+  setActivePackage(index);
+}
+
+packageSlideControls.forEach(control=>control.addEventListener("click",()=>goToPackage(Number(control.dataset.packageSlide))));
+
+if(packageCarousel){
+  let packageScrollTimer;
+  packageCarousel.addEventListener("scroll",()=>{
+    clearTimeout(packageScrollTimer);
+    packageScrollTimer=setTimeout(()=>{
+      if(window.innerWidth>600) return;
+      const cards=[...packageCarousel.querySelectorAll(".package")];
+      const carouselLeft=packageCarousel.getBoundingClientRect().left;
+      let closestIndex=0;
+      let closestDistance=Infinity;
+      cards.forEach((card,index)=>{
+        const distance=Math.abs(card.getBoundingClientRect().left-carouselLeft);
+        if(distance<closestDistance){closestDistance=distance;closestIndex=index;}
+      });
+      setActivePackage(closestIndex);
+    },80);
+  },{passive:true});
+}
 
 const revealTargets=document.querySelectorAll('.feature-card,.preview-card,.category-card,.package,.addon-card,.reason-card,.step,.content-item,.contact-info,.form-card,.domain-guide');
 revealTargets.forEach(el=>el.classList.add('reveal'));
