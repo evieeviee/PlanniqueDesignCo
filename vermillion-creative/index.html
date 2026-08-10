@@ -2212,108 +2212,11 @@ const SUPABASE_ANON_KEY =
     "sb_publishable_RdpgmL_GjE-UUSfR5FWXGg_9hkHGi0t";
 
 
-let db = null;
+const db = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+);
 
-if(
-    SUPABASE_URL !== "https://vmlsyvsexnjwvutslaeg.supabase.co" &&
-    SUPABASE_ANON_KEY !== "sb_publishable_RdpgmL_GjE-UUSfR5FWXGg_9hkHGi0t"
-){
-    db = supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_ANON_KEY
-    );
-}
-
-
-/* =========================================================
-   DEMO DATA
-   Used automatically before Supabase is connected.
-========================================================= */
-
-const demoShoots = [
-
-    {
-        id:"demo-1",
-
-        title:"Ancient Rome",
-
-        event_date:"2026-08-29",
-
-        location:"Tamarind Square, Cyberjaya",
-
-        duration:"2 Hours",
-
-        availability:"Limited Spaces",
-
-        description:
-        "Travel into the final days of the Roman Empire through a curated photography experience shaped around classical architecture, elegant styling and cinematic golden-hour light.",
-
-        image_url:
-        "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=90",
-
-        whatsapp_url:
-        "https://wa.me/60168083598?text=Hi%2C%20I%27m%20interested%20in%20the%20Ancient%20Rome%20shoot.",
-
-        is_active:true,
-
-        sort_order:1
-    },
-
-    {
-        id:"demo-2",
-
-        title:"Colonial Era",
-
-        event_date:"2026-09-12",
-
-        location:"Zhongshan Building, Kuala Lumpur",
-
-        duration:"2 Hours",
-
-        availability:"Open",
-
-        description:
-        "A timeless editorial concept inspired by British Malaya — heritage architecture, vintage styling and nostalgic storytelling designed for expressive portrait photography.",
-
-        image_url:
-        "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1200&q=90",
-
-        whatsapp_url:
-        "https://wa.me/60168083598?text=Hi%2C%20I%27m%20interested%20in%20the%20Colonial%20Era%20shoot.",
-
-        is_active:true,
-
-        sort_order:2
-    },
-
-    {
-        id:"demo-3",
-
-        title:"Tokyo After Dark",
-
-        event_date:"2026-10-03",
-
-        location:"Kuala Lumpur",
-
-        duration:"2 Hours",
-
-        availability:"Coming Soon",
-
-        description:
-        "Neon streets, cinematic shadows and contemporary Japanese-inspired styling come together in an atmospheric urban photography experience.",
-
-        image_url:
-        "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&q=90",
-
-        whatsapp_url:
-        "https://wa.me/60168083598?text=Hi%2C%20I%27m%20interested%20in%20Tokyo%20After%20Dark.",
-
-        is_active:true,
-
-        sort_order:3
-    }
-
-];
 
 
 /* =========================================================
@@ -2339,16 +2242,6 @@ const AUTOPLAY_DELAY = 5000;
 
 async function loadShoots(){
 
-    if(!db){
-
-        shoots = demoShoots;
-
-        renderShoots();
-
-        return;
-    }
-
-
     try{
 
         const {data,error} =
@@ -2359,27 +2252,26 @@ async function loadShoots(){
             .order("sort_order",{ascending:true})
             .order("event_date",{ascending:true});
 
-
         if(error){
             throw error;
         }
 
-
         shoots = data || [];
+
+        console.log("Loaded shoots:", shoots);
 
         renderShoots();
 
     }
     catch(error){
 
-        console.error(error);
+        console.error("Supabase load error:", error);
 
-        shoots = demoShoots;
+        shoots = [];
 
         renderShoots();
 
     }
-
 }
 
 
