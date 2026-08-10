@@ -194,11 +194,12 @@ footer{border-top:1px solid var(--line);padding:45px 0 100px}
 .modal-actions{margin-top:30px}
 
 @media(max-width:900px){
-  .behind-grid{grid-template-columns:1fr;gap:38px}
-  .behind-copy{position:static}
-  .storyboard{grid-template-columns:1fr 1fr}
-  .storyboard-large{grid-column:1 / -1;grid-row:auto;min-height:390px}
-  .storyboard-card{min-height:220px}
+  .behind-grid{grid-template-columns:1fr;gap:34px}
+  .behind-copy{position:static;max-width:720px}
+  .storyboard{grid-template-columns:1fr 1fr;gap:12px}
+  .storyboard-large{grid-column:1 / -1;grid-row:auto;min-height:360px}
+  .storyboard-card{min-height:210px}
+  .behind-note{max-width:720px}
 }
 
 @media(max-width:900px){
@@ -295,14 +296,143 @@ footer{border-top:1px solid var(--line);padding:45px 0 100px}
 }
 
 @media(max-width:560px){
-  .behind-grid{gap:28px}
-  .behind-note{grid-template-columns:28px 1fr;padding:15px 0}
-  .behind-note p{font-size:10px;line-height:1.6}
-  .storyboard{grid-template-columns:1fr;gap:10px}
-  .storyboard-large{grid-column:auto;min-height:320px}
-  .storyboard-card{min-height:210px}
-  .storyboard-caption{left:14px;right:14px;bottom:14px}
-  .storyboard-caption strong{font-size:18px}
+  .behind-frame{
+    padding-top:58px;
+    padding-bottom:58px;
+    background:
+      radial-gradient(circle at 85% 12%,rgba(205,167,91,.08),transparent 24%),
+      #0b0b0a
+  }
+
+  .behind-grid{
+    grid-template-columns:1fr;
+    gap:26px
+  }
+
+  .behind-copy{
+    position:static
+  }
+
+  .behind-copy .section-title{
+    font-size:32px;
+    line-height:1.02;
+    max-width:320px
+  }
+
+  .behind-copy .section-text{
+    font-size:12px;
+    line-height:1.65;
+    margin-top:15px;
+    max-width:94%
+  }
+
+  /* Turn the three explanations into compact premium info cards */
+  .behind-note{
+    position:relative;
+    display:grid;
+    grid-template-columns:34px 1fr;
+    gap:12px;
+    padding:14px 14px 14px 12px;
+    margin-top:9px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;
+    background:
+      linear-gradient(135deg,rgba(241,214,145,.035),transparent 45%),
+      #0e0e0d
+  }
+
+  .behind-note:first-of-type{
+    margin-top:22px;
+    border-top:1px solid rgba(255,255,255,.08)
+  }
+
+  .behind-note span{
+    width:28px;
+    height:28px;
+    display:grid;
+    place-items:center;
+    border:1px solid rgba(241,214,145,.38);
+    border-radius:50%;
+    padding:0;
+    font-size:8px;
+    color:var(--gold2);
+    background:#0a0a09
+  }
+
+  .behind-note p{
+    font-size:10px;
+    line-height:1.55;
+    color:#a39e95;
+    align-self:center
+  }
+
+  /* Mobile storyboard becomes one hero image + two compact horizontal cards */
+  .storyboard{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px
+  }
+
+  .storyboard-large{
+    grid-column:auto;
+    grid-row:auto;
+    min-height:300px;
+    border-radius:14px
+  }
+
+  .storyboard-card:not(.storyboard-large){
+    min-height:118px;
+    display:grid;
+    grid-template-columns:42% 58%;
+    border-radius:12px
+  }
+
+  .storyboard-card:not(.storyboard-large) img{
+    position:relative;
+    inset:auto;
+    width:100%;
+    height:118px;
+    object-fit:cover
+  }
+
+  .storyboard-card:not(.storyboard-large):after{
+    display:none
+  }
+
+  .storyboard-card:not(.storyboard-large) .storyboard-caption{
+    position:relative;
+    left:auto;
+    right:auto;
+    bottom:auto;
+    padding:14px 14px 12px;
+    background:
+      linear-gradient(135deg,rgba(241,214,145,.035),transparent 48%),
+      #0d0d0c;
+    display:flex;
+    flex-direction:column;
+    justify-content:center
+  }
+
+  .storyboard-caption{
+    left:14px;
+    right:14px;
+    bottom:14px
+  }
+
+  .storyboard-caption small{
+    font-size:7px;
+    letter-spacing:.12em;
+    margin-bottom:5px
+  }
+
+  .storyboard-caption strong{
+    font-size:17px;
+    line-height:1.15
+  }
+
+  .storyboard-large .storyboard-caption strong{
+    font-size:20px
+  }
 }
 
 @media(max-width:560px){
@@ -848,6 +978,175 @@ footer{border-top:1px solid var(--line);padding:45px 0 100px}
 }
 
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important;transform:none!important}}
+
+/* =========================================================
+   FINAL MOBILE OVERRIDE — BEHIND THE FRAME
+   Clean single-column editorial layout
+   ========================================================= */
+@media (max-width:560px){
+  .behind-frame{
+    overflow:hidden !important;
+  }
+
+  .behind-frame .container{
+    width:calc(100% - 24px) !important;
+    max-width:none !important;
+  }
+
+  .behind-grid{
+    display:block !important;
+    width:100% !important;
+  }
+
+  .behind-copy{
+    width:100% !important;
+    max-width:none !important;
+    position:static !important;
+    margin:0 0 24px !important;
+  }
+
+  .behind-copy .eyebrow{
+    margin-bottom:12px !important;
+  }
+
+  .behind-copy .section-title{
+    width:100% !important;
+    max-width:100% !important;
+    font-size:31px !important;
+    line-height:1.03 !important;
+    margin:0 !important;
+  }
+
+  .behind-copy .section-text{
+    width:100% !important;
+    max-width:100% !important;
+    font-size:12px !important;
+    line-height:1.6 !important;
+    margin:14px 0 20px !important;
+  }
+
+  .behind-note,
+  .behind-note:first-of-type{
+    display:flex !important;
+    align-items:flex-start !important;
+    gap:11px !important;
+    width:100% !important;
+    max-width:none !important;
+    margin:8px 0 0 !important;
+    padding:13px !important;
+    border:1px solid rgba(255,255,255,.08) !important;
+    border-radius:11px !important;
+    background:#0f0f0e !important;
+  }
+
+  .behind-note span{
+    flex:0 0 26px !important;
+    width:26px !important;
+    height:26px !important;
+    border-radius:50% !important;
+    display:grid !important;
+    place-items:center !important;
+    padding:0 !important;
+    margin:0 !important;
+    font-size:8px !important;
+  }
+
+  .behind-note p{
+    flex:1 !important;
+    min-width:0 !important;
+    margin:1px 0 0 !important;
+    font-size:10px !important;
+    line-height:1.55 !important;
+  }
+
+  /* Completely remove desktop mosaic behavior on phone */
+  .storyboard,
+  .storyboard.reveal-stagger{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:12px !important;
+    width:100% !important;
+    max-width:100% !important;
+    transform:none !important;
+    overflow:visible !important;
+  }
+
+  .storyboard-card,
+  .storyboard-card:not(.storyboard-large),
+  .storyboard-large{
+    display:block !important;
+    position:relative !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    height:auto !important;
+    min-height:0 !important;
+    aspect-ratio:16/10 !important;
+    grid-column:auto !important;
+    grid-row:auto !important;
+    border-radius:13px !important;
+    overflow:hidden !important;
+    margin:0 !important;
+  }
+
+  .storyboard-card img,
+  .storyboard-card:not(.storyboard-large) img,
+  .storyboard-large img{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    object-fit:cover !important;
+    transform:none !important;
+  }
+
+  .storyboard-card:after,
+  .storyboard-card:not(.storyboard-large):after{
+    display:block !important;
+    content:"" !important;
+    position:absolute !important;
+    inset:0 !important;
+    background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,.08) 62%) !important;
+  }
+
+  .storyboard-caption,
+  .storyboard-card:not(.storyboard-large) .storyboard-caption{
+    position:absolute !important;
+    left:14px !important;
+    right:14px !important;
+    bottom:14px !important;
+    top:auto !important;
+    padding:0 !important;
+    background:none !important;
+    display:block !important;
+    z-index:3 !important;
+  }
+
+  .storyboard-caption small{
+    display:block !important;
+    font-size:7px !important;
+    line-height:1.2 !important;
+    letter-spacing:.14em !important;
+    margin-bottom:5px !important;
+  }
+
+  .storyboard-caption strong,
+  .storyboard-large .storyboard-caption strong{
+    display:block !important;
+    font-size:19px !important;
+    line-height:1.1 !important;
+    max-width:90% !important;
+  }
+
+  /* Keep animation subtle and stop horizontal shifts */
+  .storyboard.reveal-stagger > *,
+  .storyboard.reveal-stagger.in-view > *{
+    transform:none !important;
+  }
+}
+
 </style>
 </head>
 <body><div class="gold-orb" aria-hidden="true"></div>
