@@ -463,10 +463,239 @@ footer{border-top:1px solid var(--line);padding:45px 0 100px}
   .footer-small{font-size:9px}
   .whatsapp{width:52px;height:52px;bottom:16px;right:16px;font-size:21px}
 }
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* =========================
+   CINEMATIC PHOTOGRAPHY MOTION
+   ========================= */
+.reveal{
+  opacity:0;
+  transform:translateY(26px);
+  transition:
+    opacity .8s ease,
+    transform .8s cubic-bezier(.22,.61,.36,1);
+  will-change:opacity,transform
+}
+.reveal.in-view{
+  opacity:1;
+  transform:none
+}
+.reveal-stagger > *{
+  opacity:0;
+  transform:translateY(22px);
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.22,.61,.36,1)
+}
+.reveal-stagger.in-view > *{
+  opacity:1;
+  transform:none
+}
+.reveal-stagger.in-view > *:nth-child(1){transition-delay:.04s}
+.reveal-stagger.in-view > *:nth-child(2){transition-delay:.14s}
+.reveal-stagger.in-view > *:nth-child(3){transition-delay:.24s}
+.reveal-stagger.in-view > *:nth-child(4){transition-delay:.34s}
+.reveal-stagger.in-view > *:nth-child(5){transition-delay:.44s}
+
+.hero-bg{
+  transform:scale(1.03);
+  animation:heroKenBurns 18s ease-in-out infinite alternate;
+  will-change:transform
+}
+@keyframes heroKenBurns{
+  from{transform:scale(1.03) translate3d(0,0,0)}
+  to{transform:scale(1.085) translate3d(-1.2%,.7%,0)}
+}
+.hero-content .hero-kicker,
+.hero-content h1,
+.hero-content .hero-description,
+.hero-content .hero-actions{
+  opacity:0;
+  transform:translateY(18px);
+  animation:heroEnter .9s cubic-bezier(.22,.61,.36,1) forwards
+}
+.hero-content .hero-kicker{animation-delay:.12s}
+.hero-content h1{animation-delay:.26s}
+.hero-content .hero-description{animation-delay:.42s}
+.hero-content .hero-actions{animation-delay:.58s}
+@keyframes heroEnter{
+  to{opacity:1;transform:none}
+}
+
+/* gold line draw */
+.eyebrow:before{
+  transform-origin:left center;
+  transform:scaleX(.2);
+  opacity:.5;
+  transition:transform .8s ease,opacity .8s ease
+}
+.in-view .eyebrow:before,
+.eyebrow.in-view:before{
+  transform:scaleX(1);
+  opacity:1
+}
+
+/* photographic image reveal */
+.about-image{
+  overflow:hidden;
+  position:relative
+}
+.about-image:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#0d0d0c;
+  transform:translateY(0);
+  transition:transform 1.15s cubic-bezier(.22,.61,.36,1)
+}
+.about-image img{
+  transform:scale(1.08);
+  transition:transform 1.4s cubic-bezier(.22,.61,.36,1)
+}
+.about-image.in-view:after{transform:translateY(-102%)}
+.about-image.in-view img{transform:scale(1)}
+
+/* active event cinematic movement */
+.shoot-image img{
+  transform:scale(1.01);
+  transition:transform 1.4s cubic-bezier(.22,.61,.36,1),filter .6s ease
+}
+.shoot-card:hover .shoot-image img,
+.shoot-card.is-active .shoot-image img{
+  transform:scale(1.055)
+}
+.shoot-card{
+  transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease
+}
+.shoot-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(241,214,145,.26)
+}
+
+/* subtle camera viewfinder corners */
+.shoot-card:before,
+.shoot-card:after{
+  content:"";
+  position:absolute;
+  z-index:4;
+  pointer-events:none;
+  width:28px;height:28px;
+  opacity:0;
+  transition:opacity .3s ease,transform .35s ease
+}
+.shoot-card:before{
+  top:12px;left:12px;
+  border-top:1px solid rgba(241,214,145,.85);
+  border-left:1px solid rgba(241,214,145,.85);
+  transform:translate(-5px,-5px)
+}
+.shoot-card:after{
+  right:12px;bottom:12px;
+  border-right:1px solid rgba(241,214,145,.85);
+  border-bottom:1px solid rgba(241,214,145,.85);
+  transform:translate(5px,5px)
+}
+.shoot-card:hover:before,
+.shoot-card:hover:after,
+.shoot-card.is-active:before,
+.shoot-card.is-active:after{
+  opacity:.8;
+  transform:none
+}
+
+/* Past cards feel like gallery prints */
+.past-card{
+  position:relative;
+  transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease
+}
+.past-card:hover{
+  transform:translateY(-5px) rotate(-.15deg);
+  box-shadow:0 18px 45px rgba(0,0,0,.22)
+}
+.past-card img{
+  transition:transform 1s ease,filter .5s ease
+}
+.past-card:hover img{
+  transform:scale(1.035);
+  filter:contrast(1.02) saturate(1.03)
+}
+
+/* process line animation */
+.process-wrap{
+  --timeline-progress:0%;
+}
+.process-wrap:after{
+  content:"";
+  position:absolute;
+  pointer-events:none
+}
+@media(min-width:561px){
+  .process-wrap{position:relative}
+  .process-wrap:after{
+    left:0;top:0;height:1px;width:var(--timeline-progress);
+    background:linear-gradient(90deg,var(--gold2),rgba(241,214,145,.16));
+    transition:width .9s ease
+  }
+}
+@media(max-width:560px){
+  .process-wrap:after{
+    left:20px;top:22px;width:1px;height:var(--timeline-progress);
+    background:linear-gradient(var(--gold2),rgba(241,214,145,.08));
+    transition:height 1s ease;
+    opacity:.95
+  }
+  .process-wrap:before{opacity:.25}
+}
+
+/* service card light sweep */
+.service{
+  position:relative;
+  overflow:hidden
+}
+.service:after{
+  content:"";
+  position:absolute;
+  top:-40%;left:-30%;
+  width:26%;height:180%;
+  background:linear-gradient(90deg,transparent,rgba(241,214,145,.08),transparent);
+  transform:rotate(15deg) translateX(-260%);
+  transition:transform 1s ease
+}
+.service:hover:after{transform:rotate(15deg) translateX(520%)}
+
+/* modal entrance */
+.modal.active .modal-image{
+  animation:modalImageIn .65s cubic-bezier(.22,.61,.36,1) both
+}
+.modal.active .modal-info{
+  animation:modalInfoIn .55s .08s cubic-bezier(.22,.61,.36,1) both
+}
+@keyframes modalImageIn{
+  from{opacity:0;transform:scale(1.025)}
+  to{opacity:1;transform:none}
+}
+@keyframes modalInfoIn{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:none}
+}
+
+/* subtle floating gold ambience */
+.section-title{
+  text-wrap:balance
+}
+.gold-orb{
+  position:fixed;
+  width:230px;height:230px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(205,167,91,.06),transparent 68%);
+  pointer-events:none;
+  z-index:-1;
+  filter:blur(4px)
+}
+
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important;transform:none!important}}
 </style>
 </head>
-<body>
+<body><div class="gold-orb" aria-hidden="true"></div>
 <header class="header" id="header">
   <div class="container nav">
     <a href="#" class="brand">
@@ -479,6 +708,7 @@ footer{border-top:1px solid var(--line);padding:45px 0 100px}
       <a href="#past">Past Experiences</a>
       <a href="#about">About</a>
       <a href="#services">What We Create</a>
+      <a href="#process">Process</a>
       <a href="#contact" class="nav-cta">Collaborate</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span></button>
@@ -507,7 +737,7 @@ footer{border-top:1px solid var(--line);padding:45px 0 100px}
   </div>
 </section>
 
-<section class="section" id="upcoming">
+<section class="section reveal" id="upcoming">
   <div class="container">
     <div class="experience-head">
       <div><div class="eyebrow">Upcoming Experiences</div><h2 class="section-title">Step into<br>the next story.</h2></div>
@@ -518,7 +748,7 @@ footer{border-top:1px solid var(--line);padding:45px 0 100px}
   </div>
 </section>
 
-<section class="section past-section" id="past">
+<section class="section past-section reveal" id="past">
   <div class="container">
     <div class="eyebrow">Past Experiences</div>
     <h2 class="section-title">A few stories<br>we've already lived.</h2>
@@ -527,9 +757,9 @@ footer{border-top:1px solid var(--line);padding:45px 0 100px}
   </div>
 </section>
 
-<section class="section about" id="about">
+<section class="section about reveal" id="about">
   <div class="container about-grid">
-    <div class="about-image"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=88" alt="Creative photography"></div>
+    <div class="about-image reveal"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1000&q=88" alt="Creative photography"></div>
     <div><div class="eyebrow">About Vermillion</div><h2 class="section-title">We don't just<br>take photos.</h2>
       <p class="section-text">Vermillion creates environments where photographers can focus on what they love most — making remarkable images.</p>
       <p class="section-text">From concept development and distinctive locations to models, styling direction and shoot-day coordination, we turn a creative idea into an experience people remember.</p>
@@ -538,9 +768,9 @@ footer{border-top:1px solid var(--line);padding:45px 0 100px}
   </div>
 </section>
 
-<section class="section" id="services">
+<section class="section reveal" id="services">
   <div class="container"><div class="eyebrow">What We Create</div><h2 class="section-title">From imagination<br>to shoot day.</h2>
-    <div class="service-grid">
+    <div class="service-grid reveal-stagger">
       <div class="service"><span class="service-number">01</span><div class="service-icon">✦</div><h3>Creative Concepts</h3><p>Distinctive themes, visual direction and story-driven shoot concepts designed to inspire.</p></div>
       <div class="service"><span class="service-number">02</span><div class="service-icon">⌖</div><h3>Locations</h3><p>Carefully selected environments chosen to complement the story and photographic direction.</p></div>
       <div class="service"><span class="service-number">03</span><div class="service-icon">◇</div><h3>Styling & Talent</h3><p>Models, visual references, wardrobe guidance, props and styling direction.</p></div>
@@ -549,9 +779,9 @@ footer{border-top:1px solid var(--line);padding:45px 0 100px}
   </div>
 </section>
 
-<section class="section" id="process">
+<section class="section reveal" id="process">
   <div class="container"><div class="eyebrow">The Experience</div><h2 class="section-title">How a Vermillion<br>shoot comes alive.</h2>
-    <div class="process-wrap">
+    <div class="process-wrap reveal-stagger">
       <div class="process-item"><span class="num">01</span><h4>Concept</h4><p>A visual world and narrative are created.</p></div>
       <div class="process-item"><span class="num">02</span><h4>Location</h4><p>The environment is selected around the story.</p></div>
       <div class="process-item"><span class="num">03</span><h4>Planning</h4><p>Talent, styling, props and shooting flow are prepared.</p></div>
@@ -561,9 +791,9 @@ footer{border-top:1px solid var(--line);padding:45px 0 100px}
   </div>
 </section>
 
-<section class="section for-who">
+<section class="section for-who reveal">
   <div class="container for-grid"><div><div class="eyebrow">Creative Community</div><h2 class="section-title">Made for people<br>who create.</h2></div>
-    <div class="for-cards">
+    <div class="for-cards reveal-stagger">
       <div class="for-card"><h4>Photographers</h4><p>Join curated shooting experiences without having to organise every detail yourself.</p></div>
       <div class="for-card"><h4>Models</h4><p>Collaborate on expressive concepts and build distinctive portfolio work.</p></div>
       <div class="for-card"><h4>Venues</h4><p>Turn unique spaces into memorable creative environments.</p></div>
@@ -572,7 +802,7 @@ footer{border-top:1px solid var(--line);padding:45px 0 100px}
   </div>
 </section>
 
-<section class="section cta" id="contact">
+<section class="section cta reveal" id="contact">
   <div class="container"><div class="cta-inner"><div class="eyebrow" style="justify-content:center">Let's Create Together</div><h2>Have an idea<br>worth bringing to life?</h2>
     <p>Whether you're a photographer, model, venue owner or creative collaborator — we'd love to hear from you.</p>
     <a href="https://wa.me/60168083598?text=Hi%20Vermillion%2C%20I%27d%20like%20to%20enquire%20about%20a%20photoshoot." target="_blank" class="btn btn-primary">Enquire via WhatsApp →</a>
@@ -674,7 +904,7 @@ function updateSlider(){
   const cards=document.querySelectorAll("#shootTrack .shoot-card"),track=document.getElementById("shootTrack");if(!cards.length)return;
   const gap=window.innerWidth<=900?12:18,cardWidth=cards[0].getBoundingClientRect().width,maxIndex=Math.max(0,upcomingShoots.length-visibleCount());
   currentSlide=Math.min(currentSlide,maxIndex);track.style.transform=`translateX(-${currentSlide*(cardWidth+gap)}px)`;
-  document.querySelectorAll(".slider-dot").forEach((d,i)=>d.classList.toggle("active",i===currentSlide));
+  document.querySelectorAll(".slider-dot").forEach((d,i)=>d.classList.toggle("active",i===currentSlide));updateActiveShootCard();
 }
 function nextSlide(){if(!upcomingShoots.length)return;const max=window.innerWidth<=900?upcomingShoots.length-1:Math.max(0,upcomingShoots.length-3);currentSlide=currentSlide>=max?0:currentSlide+1;updateSlider()}
 function prevSlide(){if(!upcomingShoots.length)return;const max=window.innerWidth<=900?upcomingShoots.length-1:Math.max(0,upcomingShoots.length-3);currentSlide=currentSlide<=0?max:currentSlide-1;updateSlider()}
@@ -771,6 +1001,79 @@ function safe(v=""){
     .replaceAll('"',"&quot;")
     .replaceAll("'","&#039;");
 }
+
+/* =========================
+   Motion / Cinematic Effects
+   ========================= */
+const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function initRevealAnimations(){
+  if(reduceMotion){
+    document.querySelectorAll(".reveal,.reveal-stagger").forEach(el=>el.classList.add("in-view"));
+    return;
+  }
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("in-view");
+        io.unobserve(entry.target);
+      }
+    });
+  },{threshold:.13,rootMargin:"0px 0px -7% 0px"});
+  document.querySelectorAll(".reveal,.reveal-stagger").forEach(el=>io.observe(el));
+}
+
+function initHeroParallax(){
+  if(reduceMotion || window.innerWidth<901)return;
+  const hero=document.querySelector(".hero");
+  const bg=document.querySelector(".hero-bg");
+  if(!hero||!bg)return;
+  window.addEventListener("scroll",()=>{
+    const r=hero.getBoundingClientRect();
+    if(r.bottom>0 && r.top<window.innerHeight){
+      const y=Math.max(-70,Math.min(70,-r.top*.08));
+      bg.style.marginTop=`${y}px`;
+    }
+  },{passive:true});
+}
+
+function initAmbientPointer(){
+  if(reduceMotion || window.innerWidth<901)return;
+  const orb=document.querySelector(".gold-orb");
+  if(!orb)return;
+  window.addEventListener("pointermove",e=>{
+    orb.style.left=(e.clientX-115)+"px";
+    orb.style.top=(e.clientY-115)+"px";
+  },{passive:true});
+}
+
+function updateActiveShootCard(){
+  document.querySelectorAll("#shootTrack .shoot-card").forEach((card,i)=>{
+    card.classList.toggle("is-active",i===currentSlide);
+  });
+}
+
+function initProcessProgress(){
+  const wrap=document.querySelector(".process-wrap");
+  if(!wrap || reduceMotion)return;
+  const update=()=>{
+    const rect=wrap.getBoundingClientRect();
+    const vh=window.innerHeight;
+    const progress=Math.max(0,Math.min(1,(vh-rect.top)/(vh+rect.height*.45)));
+    wrap.style.setProperty("--timeline-progress",(progress*100).toFixed(1)+"%");
+  };
+  update();
+  window.addEventListener("scroll",update,{passive:true});
+  window.addEventListener("resize",update);
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  initRevealAnimations();
+  initHeroParallax();
+  initAmbientPointer();
+  initProcessProgress();
+});
+
 loadShoots();
 </script>
 </body>
