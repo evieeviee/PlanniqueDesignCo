@@ -157,21 +157,193 @@ footer{border-top:1px solid var(--line);padding:45px 0 100px}
 .modal-actions{margin-top:30px}
 @media(max-width:900px){
   .container{width:min(100% - 28px,1180px)}
-  .nav-links{position:fixed;inset:0;background:#090909;display:flex;flex-direction:column;justify-content:center;gap:30px;transform:translateX(100%);transition:.35s}
-  .nav-links.active{transform:none}.nav-links a{font-family:"Italiana",serif;font-size:32px}.menu-btn{display:block;position:relative;z-index:3}
-  .hero-content{width:min(100% - 28px,1180px);padding-bottom:60px}.strip-inner{grid-template-columns:1fr 1fr}
-  .strip-item:nth-child(2){border-right:0}.strip-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .slider-controls{display:none}.slider-shell{overflow:visible;width:calc(100vw - 14px)}.slider-track{gap:12px}.shoot-card{flex:0 0 calc(100vw - 48px)}
-  .past-grid{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr;gap:60px}.service-grid{grid-template-columns:1fr 1fr}
-  .process-wrap{grid-template-columns:1fr 1fr}.for-grid{grid-template-columns:1fr}.modal-shell{grid-template-columns:1fr}
-  .modal-image{min-height:auto}.modal-image img{min-height:auto;height:auto;max-height:70vh}.modal-info{padding:55px 22px 70px}
-  .modal-close{position:fixed;top:20px;right:20px;background:rgba(0,0,0,.7);z-index:5}.footer-grid{flex-direction:column;align-items:flex-start}
+  .header{padding:12px 0}
+  .nav{min-height:48px}
+  .brand{gap:10px;min-width:0}
+  .brand-name{min-width:0}
+  .brand-name strong{font-size:18px;letter-spacing:.09em;white-space:nowrap}
+  .brand-name small{font-size:7px;letter-spacing:.13em;white-space:nowrap}
+  .brand-mark{width:40px;height:40px;font-size:24px;flex:0 0 auto}
+
+  /* Compact mobile navigation instead of oversized full-screen typography */
+  .nav-links{
+    position:fixed;
+    inset:0;
+    z-index:2;
+    background:rgba(8,8,8,.985);
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:stretch;
+    gap:0;
+    padding:104px 24px 34px;
+    transform:translateX(100%);
+    transition:.35s;
+    overflow-y:auto
+  }
+  .nav-links.active{transform:none}
+  .nav-links a{
+    width:100%;
+    font-family:"DM Sans",sans-serif;
+    font-size:15px;
+    font-weight:600;
+    line-height:1.2;
+    letter-spacing:.01em;
+    padding:17px 2px;
+    border-bottom:1px solid rgba(255,255,255,.09);
+    color:#e9e4da
+  }
+  .nav-links .nav-cta{
+    margin-top:18px;
+    border:1px solid rgba(205,167,91,.55);
+    border-radius:999px;
+    padding:14px 18px;
+    text-align:center;
+    font-size:13px
+  }
+  .menu-btn{display:block;position:relative;z-index:4;width:40px;height:40px;flex:0 0 auto}
+
+  .hero-content{width:min(100% - 28px,1180px);padding:150px 0 58px}
+  .hero h1{font-size:clamp(52px,11vw,82px);line-height:.86}
+  .hero-description{font-size:15px;line-height:1.65;margin-top:26px}
+  .hero-kicker{font-size:9px;line-height:1.5;letter-spacing:.19em;margin-bottom:18px}
+
+  .section{padding:78px 0}
+  .section-title{font-size:clamp(38px,7vw,56px);line-height:1}
+  .section-text{font-size:14px;line-height:1.7}
+  .eyebrow{font-size:9px;letter-spacing:.17em}
+
+  .strip-inner{grid-template-columns:1fr 1fr}
+  .strip-item{padding:20px 14px}
+  .strip-item strong{font-size:22px}
+  .strip-item small{font-size:8px}
+  .strip-item:nth-child(2){border-right:0}
+  .strip-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
+
+  .slider-controls{display:none}
+  .slider-shell{overflow:visible;width:calc(100vw - 14px)}
+  .slider-track{gap:12px}
+  .shoot-card{flex:0 0 calc(100vw - 48px)}
+  .shoot-title{font-size:30px}
+  .shoot-content{padding:22px}
+  .shoot-location{font-size:11px}
+
+  .past-grid{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr;gap:50px}
+  .service-grid{grid-template-columns:1fr 1fr}
+  .process-wrap{grid-template-columns:1fr 1fr}
+  .for-grid{grid-template-columns:1fr}
+
+  .service{min-height:225px;padding:22px}
+  .service h3{font-size:24px}
+  .for-card h4{font-size:24px}
+
+  .modal-shell{grid-template-columns:1fr}
+  .modal-image{min-height:auto}
+  .modal-image img{min-height:auto;height:auto;max-height:58vh}
+  .modal-info{padding:44px 22px 64px}
+  .modal-title{font-size:clamp(38px,8vw,54px);line-height:1}
+  .modal-close{position:fixed;top:18px;right:18px;width:42px;height:42px;background:rgba(0,0,0,.78);z-index:5}
+  .footer-grid{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:560px){
-  .section{padding:72px 0}.brand-mark{width:40px;height:40px;font-size:25px}.brand-name strong{font-size:17px}
-  .hero-bg{background:linear-gradient(to top,#080808 2%,rgba(0,0,0,.3) 60%),linear-gradient(to right,rgba(0,0,0,.7),rgba(0,0,0,.15)),url("https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1100&q=85") 63% center/cover}
-  .hero-actions{display:grid;grid-template-columns:1fr 1fr}.btn{padding:0 14px;min-height:50px;font-size:11px}
-  .past-grid{grid-template-columns:1fr}.service-grid{grid-template-columns:1fr}.process-wrap{grid-template-columns:1fr}.process-item+.process-item{padding-left:0}.for-cards{grid-template-columns:1fr}.modal-meta{grid-template-columns:1fr}
+  .container{width:min(100% - 24px,1180px)}
+  .header{padding:10px 0}
+  .brand-mark{width:36px;height:36px;font-size:21px}
+  .brand-name strong{font-size:15px;letter-spacing:.08em}
+  .brand-name small{font-size:6px;letter-spacing:.1em;max-width:190px;overflow:hidden;text-overflow:ellipsis}
+  .menu-btn{width:38px;height:38px}
+  .menu-btn span{width:20px}
+
+  .nav-links{padding:88px 18px 26px}
+  .nav-links a{
+    font-size:13px;
+    padding:14px 2px
+  }
+  .nav-links .nav-cta{
+    font-size:12px;
+    padding:13px 16px;
+    margin-top:16px
+  }
+
+  .section{padding:62px 0}
+  .section-title{font-size:34px;line-height:1.04}
+  .section-text{font-size:13px;margin-top:16px}
+  .eyebrow{font-size:8px;margin-bottom:13px;gap:9px}
+  .eyebrow:before{width:22px}
+
+  .hero{min-height:92svh}
+  .hero-content{padding:125px 0 46px;width:min(100% - 24px,1180px)}
+  .hero-bg{
+    background:
+      linear-gradient(to top,#080808 2%,rgba(0,0,0,.32) 62%),
+      linear-gradient(to right,rgba(0,0,0,.72),rgba(0,0,0,.13)),
+      url("https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1100&q=85") 63% center/cover
+  }
+  .hero-kicker{font-size:8px;letter-spacing:.15em;margin-bottom:14px}
+  .hero h1{font-size:44px;line-height:.9;letter-spacing:-.025em}
+  .hero h1 span{font-size:.72em;margin-top:10px}
+  .hero-description{font-size:13px;line-height:1.6;margin-top:20px;max-width:92%}
+  .hero-actions{display:grid;grid-template-columns:1fr;gap:9px;margin-top:24px}
+  .btn{padding:0 14px;min-height:46px;font-size:10px}
+
+  .strip-item{padding:16px 8px}
+  .strip-item strong{font-size:19px}
+  .strip-item small{font-size:7px;letter-spacing:.1em}
+
+  .experience-head{margin-bottom:26px}
+  .shoot-card{flex:0 0 calc(100vw - 38px)}
+  .shoot-content{padding:18px}
+  .shoot-title{font-size:26px}
+  .shoot-date{font-size:8px}
+  .shoot-location{font-size:10px}
+  .shoot-more{font-size:9px;margin-top:15px;padding-top:12px}
+  .shoot-status{font-size:8px;padding:7px 9px;top:14px;left:14px}
+  .slider-bottom{margin-top:16px}
+  .swipe-hint{font-size:8px;letter-spacing:.11em}
+
+  .past-grid{grid-template-columns:1fr;gap:14px;margin-top:28px}
+  .past-info{padding:15px}
+  .past-info h3{font-size:24px}
+  .past-info p{font-size:10px}
+
+  .about-grid{gap:34px}
+  .signature{font-size:23px;margin-top:24px}
+
+  .service-grid{grid-template-columns:1fr;margin-top:34px}
+  .service{min-height:auto;padding:20px}
+  .service-icon{margin-top:26px;font-size:24px}
+  .service h3{font-size:22px;margin-top:12px}
+  .service p{font-size:11px}
+
+  .process-wrap{grid-template-columns:1fr;margin-top:34px}
+  .process-item{min-height:auto;padding:18px 0}
+  .process-item+.process-item{padding-left:0}
+  .process-item h4{font-size:21px;margin-top:14px}
+  .process-item p{font-size:10px}
+
+  .for-cards{grid-template-columns:1fr}
+  .for-card{min-height:auto;padding:20px}
+  .for-card h4{font-size:22px}
+  .for-card p{font-size:11px}
+
+  .cta-inner{padding:56px 16px}
+  .cta h2{font-size:34px;line-height:1.05}
+  .cta p{font-size:13px;line-height:1.6;margin:16px auto 24px}
+
+  .modal-image img{max-height:46vh}
+  .modal-info{padding:34px 18px 54px}
+  .modal-label{font-size:8px}
+  .modal-title{font-size:34px;margin-top:10px}
+  .modal-meta{grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;padding:16px 0}
+  .meta-item strong{font-size:11px}
+  .modal-description{font-size:12px;line-height:1.65}
+  .modal-actions{margin-top:22px}
+  .modal-actions .btn{width:100%}
+
+  .footer-socials a{width:40px;height:40px}
+  .footer-small{font-size:9px}
+  .whatsapp{width:52px;height:52px;bottom:16px;right:16px;font-size:21px}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
