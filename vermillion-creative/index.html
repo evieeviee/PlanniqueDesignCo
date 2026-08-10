@@ -1147,6 +1147,170 @@ footer{border-top:1px solid var(--line);padding:45px 0 100px}
   }
 }
 
+
+/* =========================================================
+   FINAL MOBILE UX FIXES
+   ========================================================= */
+html,body{
+  max-width:100%;
+  overflow-x:hidden;
+  overscroll-behavior-x:none;
+}
+body{position:relative}
+img,video,svg,canvas{max-width:100%}
+.container,.hero-content,.slider-shell,.slider-track,.storyboard,.service-grid,.for-cards{
+  min-width:0;
+}
+@media(max-width:900px){
+  .header{
+    padding:10px 0;
+    background:rgba(7,7,7,.92);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.08)
+  }
+
+  .nav-links{
+    position:fixed !important;
+    top:0 !important;
+    right:0 !important;
+    bottom:0 !important;
+    left:auto !important;
+    width:min(86vw,340px) !important;
+    height:100dvh !important;
+    padding:92px 20px 28px !important;
+    background:#0a0a0a !important;
+    transform:translateX(102%) !important;
+    transition:.3s ease !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    box-shadow:-20px 0 50px rgba(0,0,0,.35) !important;
+    justify-content:flex-start !important;
+    align-items:stretch !important;
+    gap:0 !important
+  }
+  .nav-links.active{transform:translateX(0) !important}
+
+  .nav-links:before{
+    content:"NAVIGATION";
+    display:block;
+    color:#6f6b64;
+    font-size:8px;
+    letter-spacing:.2em;
+    font-weight:700;
+    margin:0 0 12px;
+  }
+
+  .nav-links a{
+    display:flex !important;
+    align-items:center;
+    min-height:46px;
+    width:100%;
+    padding:0 2px !important;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    font-family:"DM Sans",sans-serif !important;
+    font-size:13px !important;
+    line-height:1.2 !important;
+    font-weight:600 !important;
+    white-space:normal !important;
+  }
+
+  .nav-links a:after{
+    content:"";
+    margin-left:auto;
+    width:6px;height:6px;
+    border-top:1px solid rgba(241,214,145,.55);
+    border-right:1px solid rgba(241,214,145,.55);
+    transform:rotate(45deg);
+  }
+
+  .nav-links .nav-cta{
+    display:flex !important;
+    justify-content:center !important;
+    margin-top:16px !important;
+    min-height:44px;
+    border:1px solid rgba(205,167,91,.55) !important;
+    border-radius:999px !important;
+    padding:0 16px !important;
+  }
+  .nav-links .nav-cta:after{display:none}
+
+  body.menu-open:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:98;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(3px);
+  }
+
+  .nav-links{z-index:99 !important}
+  .menu-btn{z-index:101 !important}
+
+  /* Slider must stay inside the viewport */
+  .slider-shell{
+    overflow:hidden !important;
+    width:100% !important;
+    max-width:100% !important;
+  }
+  .slider-track{
+    width:100% !important;
+    max-width:100% !important;
+  }
+  .shoot-card{
+    flex:0 0 100% !important;
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .storyboard,
+  .behind-grid,
+  .about-grid,
+  .for-grid,
+  .service-grid,
+  .past-grid{
+    width:100% !important;
+    max-width:100% !important;
+  }
+}
+
+@media(max-width:560px){
+  .brand-name strong{font-size:14px !important}
+  .brand-name small{font-size:6px !important;max-width:170px !important}
+  .nav-links{width:min(88vw,320px) !important;padding-top:82px !important}
+  .nav-links a{font-size:12.5px !important;min-height:44px}
+  .nav-links .nav-cta{font-size:12px !important}
+
+  .slider-shell{margin:0 !important}
+  .shoot-card{border-radius:8px}
+}
+
+
+.modal-note{
+  margin:0 0 18px;
+  padding:12px 14px;
+  border:1px solid rgba(241,214,145,.18);
+  border-radius:7px;
+  background:rgba(241,214,145,.05);
+  color:#d6c79e;
+  font-size:11px;
+  line-height:1.55
+}
+@media(max-width:560px){
+  .modal-meta{
+    grid-template-columns:1fr 1fr !important;
+  }
+  .meta-item{
+    min-width:0;
+  }
+  .meta-item strong{
+    word-break:break-word;
+  }
+  .modal-note{
+    font-size:10px;
+    padding:10px 12px;
+  }
+}
+
 </style>
 </head>
 <body><div class="gold-orb" aria-hidden="true"></div>
@@ -1328,11 +1492,36 @@ footer{border-top:1px solid var(--line);padding:45px 0 100px}
 </footer>
 <a class="whatsapp" href="https://wa.me/60168083598" target="_blank" aria-label="WhatsApp">✆</a>
 
-<div class="modal" id="eventModal"><div class="modal-shell"><div class="modal-image"><img id="modalImage" src="" alt=""></div><div class="modal-info"><button class="modal-close" id="modalClose">✕</button><div class="modal-label">Curated Photography Experience</div><h2 class="modal-title" id="modalTitle"></h2><div class="modal-meta"><div class="meta-item"><small>Date</small><strong id="modalDate"></strong></div><div class="meta-item"><small>Location</small><strong id="modalLocation"></strong></div><div class="meta-item"><small>Duration</small><strong id="modalDuration"></strong></div><div class="meta-item"><small>Availability</small><strong id="modalAvailability"></strong></div></div><p class="modal-description" id="modalDescription"></p><div class="modal-actions" id="modalActions">
-  <a id="modalWhatsApp" target="_blank" rel="noopener" class="btn btn-primary">
-    Enquire About This Shoot →
-  </a>
-</div></div></div></div>
+<div class="modal" id="eventModal">
+  <div class="modal-shell">
+    <div class="modal-image"><img id="modalImage" src="" alt=""></div>
+    <div class="modal-info">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-label">Curated Photography Experience</div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+
+      <div class="modal-meta">
+        <div class="meta-item"><small>Date</small><strong id="modalDate"></strong></div>
+        <div class="meta-item"><small>Shoot Time</small><strong id="modalTime"></strong></div>
+        <div class="meta-item"><small>Duration</small><strong id="modalDuration"></strong></div>
+        <div class="meta-item"><small>Location</small><strong id="modalLocation"></strong></div>
+        <div class="meta-item"><small>Capacity</small><strong id="modalCapacity"></strong></div>
+        <div class="meta-item"><small>Availability</small><strong id="modalAvailability"></strong></div>
+        <div class="meta-item"><small>Theme / Style</small><strong id="modalTheme"></strong></div>
+        <div class="meta-item"><small>Participation Fee</small><strong id="modalFee"></strong></div>
+      </div>
+
+      <div class="modal-note hidden" id="modalEnquiryNote"></div>
+      <p class="modal-description" id="modalDescription"></p>
+
+      <div class="modal-actions" id="modalActions">
+        <a id="modalWhatsApp" target="_blank" rel="noopener" class="btn btn-primary">
+          Enquire About This Shoot →
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 const SUPABASE_URL = "https://vmlsyvsexnjwvutslaeg.supabase.co";
@@ -1348,7 +1537,7 @@ async function loadShoots(){
     if(error) throw error;
     const now=startOfToday();
     const all=data||[];
-    upcomingShoots=all.filter(x=>toDate(x.event_date)>=now).sort((a,b)=>(a.sort_order||0)-(b.sort_order||0)||toDate(a.event_date)-toDate(b.event_date));
+    upcomingShoots=all.filter(x=>toDate(x.event_date)>=now).sort((a,b)=>toDate(a.event_date)-toDate(b.event_date));
     pastShoots=all.filter(x=>toDate(x.event_date)<now).sort((a,b)=>toDate(b.event_date)-toDate(a.event_date)).slice(0,3);
     renderUpcoming();
     renderPast();
@@ -1402,37 +1591,63 @@ function openShoot(shoot){
   document.getElementById("modalImage").src = shoot.image_url || "";
   document.getElementById("modalTitle").textContent = shoot.title || "";
   document.getElementById("modalDate").textContent = formatDate(shoot.event_date);
-  document.getElementById("modalLocation").textContent = shoot.location || "To be announced";
+  document.getElementById("modalTime").textContent = shoot.shoot_time || "To be announced";
   document.getElementById("modalDuration").textContent = shoot.duration || "To be announced";
-  document.getElementById("modalAvailability").textContent = isPast
-    ? "Completed"
-    : (shoot.availability || "Open");
-  document.getElementById("modalDescription").textContent = shoot.description || "";
+  document.getElementById("modalLocation").textContent = shoot.location || "To be announced";
+  document.getElementById("modalCapacity").textContent = shoot.capacity || "To be announced";
+  document.getElementById("modalAvailability").textContent = isPast ? "Completed" : (shoot.availability || "Open");
+  document.getElementById("modalTheme").textContent = shoot.theme || "—";
+  document.getElementById("modalFee").textContent = shoot.participation_fee || "To be announced";
+
+  const note = document.getElementById("modalEnquiryNote");
+  if(!isPast && shoot.enquiry_note){
+    note.textContent = shoot.enquiry_note;
+    note.classList.remove("hidden");
+  }else{
+    note.textContent = "";
+    note.classList.add("hidden");
+  }
+
+  const descriptionEl = document.getElementById("modalDescription");
+  if(isPast){
+    descriptionEl.style.display = "none";
+    descriptionEl.textContent = "";
+  }else{
+    descriptionEl.style.display = "";
+    descriptionEl.textContent = shoot.description || "";
+  }
 
   const modalActions = document.getElementById("modalActions");
   const whatsappBtn = document.getElementById("modalWhatsApp");
 
   if(isPast){
-    // Past experiences are portfolio only — no enquiry button.
     modalActions.style.display = "none";
   }else{
     modalActions.style.display = "";
 
     const eventName = shoot.title || "this photography experience";
     const eventDate = formatDate(shoot.event_date);
+    const time = shoot.shoot_time || "TBA";
     const location = shoot.location || "TBA";
+    const capacity = shoot.capacity || "TBA";
+    const availability = shoot.availability || "Open";
+    const theme = shoot.theme || "TBA";
+    const fee = shoot.participation_fee || "TBA";
 
     const message =
 `Hi Vermillion, I'm interested in the "${eventName}" photography experience.
 
 Event: ${eventName}
 Date: ${eventDate}
+Time: ${time}
 Location: ${location}
+Theme: ${theme}
+Capacity: ${capacity}
+Availability: ${availability}
+Participation Fee: ${fee}
 
-May I know more about the availability and how to join?`;
+May I know more about how to join?`;
 
-    // If admin has entered a wa.me link, keep its phone number but generate
-    // a proper event-specific message automatically.
     const phone = getWhatsAppPhone(shoot.whatsapp_url) || "60168083598";
     whatsappBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     whatsappBtn.textContent = `Enquire About ${eventName} →`;
@@ -1446,9 +1661,22 @@ function closeModal(){document.getElementById("eventModal").classList.remove("ac
 document.getElementById("modalClose").onclick=closeModal;document.getElementById("eventModal").onclick=e=>{if(e.target.id==="eventModal")closeModal()};
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
 const menuBtn=document.getElementById("menuBtn"),navLinks=document.getElementById("navLinks");
-menuBtn.onclick=()=>{navLinks.classList.toggle("active");document.body.classList.toggle("menu-open")};
+menuBtn.onclick=()=>{
+  const open=!navLinks.classList.contains("active");
+  navLinks.classList.toggle("active",open);
+  document.body.classList.toggle("menu-open",open);
+  menuBtn.setAttribute("aria-expanded",String(open));
+};
 navLinks.querySelectorAll("a").forEach(a=>a.onclick=()=>{navLinks.classList.remove("active");document.body.classList.remove("menu-open")});
-window.addEventListener("scroll",()=>document.getElementById("header").classList.toggle("scrolled",window.scrollY>30));window.addEventListener("resize",updateSlider);
+window.addEventListener("scroll",()=>document.getElementById("header").classList.toggle("scrolled",window.scrollY>30));
+window.addEventListener("resize",()=>{
+  updateSlider();
+  if(window.innerWidth>900){
+    navLinks.classList.remove("active");
+    document.body.classList.remove("menu-open");
+    menuBtn.setAttribute("aria-expanded","false");
+  }
+});
 function startOfToday(){
   const d=new Date();
   d.setHours(0,0,0,0);
