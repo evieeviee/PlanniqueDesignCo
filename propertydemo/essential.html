@@ -59,7 +59,7 @@ button{cursor:pointer}
 .brand-mark{width:44px;height:44px;display:grid;place-items:center;border-radius:14px;background:var(--teal);color:white;font-size:.82rem;font-weight:800;letter-spacing:.08em}
 .brand strong{display:block;font-size:1rem;line-height:1}.brand small{display:block;margin-top:4px;font-size:.53rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .nav-links{display:flex;align-items:center;gap:22px}.nav-links a{font-size:.78rem;font-weight:700}.menu{display:none;width:44px;height:44px;border-radius:14px;border:1px solid var(--line);background:var(--paper);position:relative;z-index:1002}
-.mobile{position:fixed;z-index:1001;inset:0;background:var(--bg);display:grid;place-items:center;opacity:0;visibility:hidden;transition:.3s;padding:95px 25px 35px}.mobile.open{opacity:1;visibility:visible}.mobile nav{display:grid;gap:14px;text-align:center}.mobile a{font-family:"Marcellus",serif;font-size:2rem}
+.mobile{position:fixed;z-index:1001;inset:0;background:rgba(31,43,42,.38);backdrop-filter:blur(7px);opacity:0;visibility:hidden;transition:.28s}.mobile.open{opacity:1;visibility:visible}.mobile-panel{position:absolute;top:0;right:0;width:min(88%,380px);height:100%;background:var(--paper);padding:24px 22px 32px;box-shadow:-20px 0 55px rgba(31,43,42,.18);transform:translateX(100%);transition:.32s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column}.mobile.open .mobile-panel{transform:translateX(0)}.mobile-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--line)}.mobile-head strong{font-size:.82rem;letter-spacing:.08em}.mobile-close{width:44px;height:44px;border-radius:14px;border:1px solid var(--line);background:var(--bg);font-size:1.1rem;display:grid;place-items:center}.mobile nav{display:grid;gap:4px;text-align:left;margin-top:20px}.mobile nav a{font-family:"DM Sans",sans-serif;font-size:1rem;font-weight:700;padding:14px 4px;border-bottom:1px solid var(--line)}.mobile nav .btn{margin-top:16px;width:100%}.mobile-back{margin-top:auto;padding-top:18px}.mobile-back button{width:100%}
 .hero{padding:128px 0 48px;min-height:92svh;display:grid;align-items:center;position:relative;overflow:hidden}
 .hero:before{content:"";position:absolute;right:-180px;top:70px;width:480px;height:480px;border-radius:50%;background:rgba(217,185,141,.22);filter:blur(2px)}
 .hero:after{content:"";position:absolute;left:-200px;bottom:-180px;width:420px;height:420px;border-radius:50%;background:rgba(31,91,87,.08)}
@@ -102,7 +102,7 @@ button{cursor:pointer}
     <button class="menu" aria-label="Open menu">☰</button>
   </div>
 </header>
-<div class="mobile"><nav><a href="#services">How I Help</a><a href="#properties">Featured</a><a href="#process">Approach</a><a href="#areas">Areas</a><a href="#contact">Contact</a><button class="btn btn-teal" data-popup="general">WhatsApp Enquiry</button></nav></div>
+<div class="mobile" aria-hidden="true"><div class="mobile-panel" role="dialog" aria-modal="true" aria-label="Mobile navigation"><div class="mobile-head"><strong>MENU</strong><button class="mobile-close" aria-label="Close menu">✕</button></div><nav><a href="#services">How I Help</a><a href="#properties">Featured</a><a href="#process">Approach</a><a href="#areas">Areas</a><a href="#contact">Contact</a><button class="btn btn-teal" data-popup="general">WhatsApp Enquiry</button></nav><div class="mobile-back"><button class="btn btn-line mobile-close-bottom">← Back to page</button></div></div></div>
 
 <main id="top">
 <section class="hero">
@@ -260,7 +260,14 @@ modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('
 mSubmit.onclick=()=>{const f=FORMS[activeForm],vals={};f.f.forEach(([id])=>vals[id]=document.querySelector('#f_'+id)?.value.trim()||'Not provided');const msg=`Hi Plannique Property, I would like to make a ${f.k.toLowerCase()}.\n\n`+Object.entries(vals).map(([k,v])=>`${k}: ${v}`).join('\n');window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,'_blank')};
 function propertyEnquiry(name,price){const msg=`Hi Plannique Property, I am interested in this sample listing:\n\n${name}\n${price}\n\nPlease share more details. Thank you.`;window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,'_blank')}
 quickSend.onclick=()=>{const msg=`Hi Plannique Property, here is my property requirement:\n\nName: ${qName.value||'Not provided'}\nI want to: ${qGoal.value}\nProperty type: ${qType.value}\nBudget: ${qBudget.value}\nPreferred area: ${qArea.value||'Not provided'}\nAdditional requirement: ${qNotes.value||'Not provided'}\n\nPlease advise suitable options. Thank you.`;window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,'_blank')};
-const menu=document.querySelector('.menu'),mobile=document.querySelector('.mobile');menu.onclick=()=>{mobile.classList.toggle('open');document.body.classList.toggle('lock')};document.querySelectorAll('.mobile a').forEach(a=>a.onclick=()=>{mobile.classList.remove('open');document.body.classList.remove('lock')});
+const menu=document.querySelector('.menu'),mobile=document.querySelector('.mobile'),mobileClose=document.querySelector('.mobile-close'),mobileCloseBottom=document.querySelector('.mobile-close-bottom');
+function openMobileMenu(){mobile.classList.add('open');mobile.setAttribute('aria-hidden','false');document.body.classList.add('lock');menu.setAttribute('aria-label','Close menu');menu.textContent='✕'}
+function closeMobileMenu(){mobile.classList.remove('open');mobile.setAttribute('aria-hidden','true');document.body.classList.remove('lock');menu.setAttribute('aria-label','Open menu');menu.textContent='☰'}
+menu.onclick=()=>mobile.classList.contains('open')?closeMobileMenu():openMobileMenu();
+mobileClose.onclick=closeMobileMenu;mobileCloseBottom.onclick=closeMobileMenu;
+mobile.addEventListener('click',e=>{if(e.target===mobile)closeMobileMenu()});
+document.querySelectorAll('.mobile a').forEach(a=>a.onclick=closeMobileMenu);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mobile.classList.contains('open'))closeMobileMenu()});
 const header=document.querySelector('#header');function updateHeader(){header.classList.toggle('scrolled',scrollY>20)}updateHeader();addEventListener('scroll',updateHeader,{passive:true});
 const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 </script>
