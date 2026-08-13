@@ -714,6 +714,20 @@
       transform: scale(1.06);
     }
 
+    .exp-card:focus-visible {
+      outline: 3px solid var(--sand-light);
+      outline-offset: 4px;
+    }
+
+    .exp-card .arrow-btn {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .exp-card:active .arrow-btn {
+      transform: scale(.94);
+    }
+
     .exp-info {
       position: absolute;
       z-index: 2;
@@ -1473,6 +1487,13 @@
       color: var(--forest);
     }
 
+    .footer-social a[aria-disabled="true"],
+    .social-card a[aria-disabled="true"] {
+      opacity: .48;
+      cursor: default;
+      pointer-events: none;
+    }
+
     .footer-bottom {
       display: flex;
       justify-content: space-between;
@@ -2109,6 +2130,7 @@
       <button
         class="mobile-toggle"
         id="mobileToggle"
+        type="button"
         aria-label="Open navigation"
       >
         ☰
@@ -2540,6 +2562,7 @@
 
         <button
           class="trip-tab active"
+          type="button"
           data-trip="family"
         >
           Family Escape
@@ -2547,6 +2570,7 @@
 
         <button
           class="trip-tab"
+          type="button"
           data-trip="friends"
         >
           Friends Getaway
@@ -2554,6 +2578,7 @@
 
         <button
           class="trip-tab"
+          type="button"
           data-trip="group"
         >
           Group Adventure
@@ -2561,6 +2586,7 @@
 
         <button
           class="trip-tab"
+          type="button"
           data-trip="custom"
         >
           Custom Trip
@@ -2624,6 +2650,7 @@
             <button
               class="outline-btn"
               id="openItinerary"
+              type="button"
             >
               Sample Experience
             </button>
@@ -2676,7 +2703,8 @@
         -->
         <a
           href="#"
-          onclick="return false;"
+          aria-disabled="true"
+          title="Social link to be added"
         >
           @bluqar.houseboat ↗
         </a>
@@ -2789,7 +2817,7 @@
 
         <div class="faq-item">
 
-          <button class="faq-question">
+          <button class="faq-question" type="button">
             Where is Bluqar Houseboat located?
             <span class="faq-plus">+</span>
           </button>
@@ -2808,7 +2836,7 @@
 
         <div class="faq-item">
 
-          <button class="faq-question">
+          <button class="faq-question" type="button">
             What type of trips are available?
             <span class="faq-plus">+</span>
           </button>
@@ -2827,7 +2855,7 @@
 
         <div class="faq-item">
 
-          <button class="faq-question">
+          <button class="faq-question" type="button">
             How many people can join?
             <span class="faq-plus">+</span>
           </button>
@@ -2845,7 +2873,7 @@
 
         <div class="faq-item">
 
-          <button class="faq-question">
+          <button class="faq-question" type="button">
             Are meals and activities included?
             <span class="faq-plus">+</span>
           </button>
@@ -2864,7 +2892,7 @@
 
         <div class="faq-item">
 
-          <button class="faq-question">
+          <button class="faq-question" type="button">
             How do I check available dates?
             <span class="faq-plus">+</span>
           </button>
@@ -3046,7 +3074,8 @@
 
           <a
             href="#"
-            onclick="return false;"
+            aria-disabled="true"
+            title="Social link to be added"
             aria-label="TikTok"
           >
             TT
@@ -3054,7 +3083,8 @@
 
           <a
             href="#"
-            onclick="return false;"
+            aria-disabled="true"
+            title="Social link to be added"
             aria-label="Facebook"
           >
             FB
@@ -3062,7 +3092,8 @@
 
           <a
             href="#"
-            onclick="return false;"
+            aria-disabled="true"
+            title="Social link to be added"
             aria-label="Instagram"
           >
             IG
@@ -3131,6 +3162,7 @@
       <button
         class="modal-close"
         id="closeItinerary"
+        type="button"
         aria-label="Close"
       >
         ×
@@ -3218,14 +3250,33 @@
       nav.classList.toggle("scrolled", window.scrollY > 40);
     });
 
-    mobileToggle.addEventListener("click", () => {
-      mobileMenu.classList.toggle("open");
+    function setMobileMenu(open) {
+      mobileMenu.classList.toggle("open", open);
+      mobileToggle.setAttribute("aria-expanded", String(open));
+      mobileToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+      mobileToggle.textContent = open ? "✕" : "☰";
+    }
+
+    mobileToggle.setAttribute("aria-expanded", "false");
+    mobileToggle.setAttribute("aria-controls", "mobileMenu");
+
+    mobileToggle.addEventListener("click", event => {
+      event.stopPropagation();
+      setMobileMenu(!mobileMenu.classList.contains("open"));
     });
 
     document.querySelectorAll(".mobile-menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.remove("open");
-      });
+      link.addEventListener("click", () => setMobileMenu(false));
+    });
+
+    document.addEventListener("click", event => {
+      if (
+        mobileMenu.classList.contains("open") &&
+        !mobileMenu.contains(event.target) &&
+        !mobileToggle.contains(event.target)
+      ) {
+        setMobileMenu(false);
+      }
     });
 
 
@@ -3249,6 +3300,49 @@
       revealObserver.observe(el);
     });
 
+
+    /* EXPERIENCE SERVICE CARDS */
+
+    const serviceCardTypes = [
+      "Large Houseboat Stay",
+      "Boat Service / Transfer",
+      "Houseboat + Boat Exploration",
+      "Private / Group Boat Charter"
+    ];
+
+    document.querySelectorAll(".exp-card").forEach((card, index) => {
+      const serviceType = serviceCardTypes[index] || "Not Sure Yet";
+      const heading = card.querySelector("h3")?.textContent.trim() || serviceType;
+
+      card.setAttribute("role", "button");
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("aria-label", `${heading} — enquire about this service`);
+
+      const activateService = () => {
+        const tripType = document.getElementById("tripType");
+        if (tripType) {
+          const option = [...tripType.options].find(opt => opt.textContent.trim() === serviceType);
+          if (option) tripType.value = option.value;
+        }
+
+        const enquiry = document.getElementById("enquire");
+        if (enquiry) {
+          enquiry.scrollIntoView({ behavior: "smooth", block: "start" });
+          window.setTimeout(() => {
+            const firstField = document.getElementById("guestName");
+            if (firstField) firstField.focus({ preventScroll: true });
+          }, 550);
+        }
+      };
+
+      card.addEventListener("click", activateService);
+      card.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          activateService();
+        }
+      });
+    });
 
     /* TRIP SELECTOR */
 
@@ -3423,6 +3517,7 @@
     document.addEventListener("keydown", event => {
       if (event.key === "Escape") {
         closeModal();
+        setMobileMenu(false);
       }
     });
 
