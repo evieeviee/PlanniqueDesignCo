@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Plannique Property | Property Agent Landing Page Demo</title>
+<meta name="description" content="A professional one-page property agent website demo by Plannique Property, designed for buyers, owners and investors across Kuala Lumpur and Klang Valley.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#f6f3ec">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Plannique Property | Property Agent Demo">
+<meta property="og:description" content="A modern one-page property agent landing page for buyers, owners and investors.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=88">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f3ec;
+  --paper:#fffdf8;
+  --ink:#1f2b2a;
+  --muted:#6e7774;
+  --teal:#1f5b57;
+  --teal2:#2d7770;
+  --sand:#d9b98d;
+  --sand-soft:#eadcc7;
+  --coral:#c97e68;
+  --line:rgba(31,43,42,.11);
+  --shadow:0 24px 70px rgba(34,49,47,.11);
+  --radius:28px;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden}
+body.lock{overflow:hidden}
+img{width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(calc(100% - 32px),var(--max));margin:auto}
+.display,h1,h2,h3{font-family:"Marcellus",serif;font-weight:400}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--teal)}
+.eyebrow:before{content:"";width:28px;height:1px;background:currentColor}
+.title{font-size:clamp(2.8rem,6vw,5.5rem);line-height:.96;letter-spacing:-.04em}
+.lead{margin-top:18px;color:var(--muted);max-width:700px;font-size:1rem}
+.section{padding:100px 0}
+.white{background:var(--paper)}
+.btn{min-height:50px;padding:12px 20px;border-radius:999px;border:1px solid transparent;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-size:.84rem;font-weight:800;transition:.25s}
+.btn:hover{transform:translateY(-2px)}
+.btn-teal{background:var(--teal);color:white;box-shadow:0 12px 30px rgba(31,91,87,.2)}
+.btn-light{background:white;color:var(--ink)}
+.btn-line{border-color:var(--line);background:transparent}
+.btn-coral{background:var(--coral);color:white}
+.header{position:fixed;z-index:1000;top:0;left:0;width:100%;transition:.3s}
+.header.scrolled{background:rgba(246,243,236,.94);backdrop-filter:blur(16px);box-shadow:0 12px 35px rgba(31,43,42,.08)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;position:relative;z-index:1002}
+.brand-mark{width:44px;height:44px;display:grid;place-items:center;border-radius:14px;background:var(--teal);color:white;font-size:.82rem;font-weight:800;letter-spacing:.08em}
+.brand strong{display:block;font-size:1rem;line-height:1}.brand small{display:block;margin-top:4px;font-size:.53rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.nav-links{display:flex;align-items:center;gap:22px}.nav-links a{font-size:.78rem;font-weight:700}.menu{display:none;width:44px;height:44px;border-radius:14px;border:1px solid var(--line);background:var(--paper);position:relative;z-index:1002}
+.mobile{position:fixed;z-index:1001;inset:0;background:var(--bg);display:grid;place-items:center;opacity:0;visibility:hidden;transition:.3s;padding:95px 25px 35px}.mobile.open{opacity:1;visibility:visible}.mobile nav{display:grid;gap:14px;text-align:center}.mobile a{font-family:"Marcellus",serif;font-size:2rem}
+.hero{padding:128px 0 48px;min-height:92svh;display:grid;align-items:center;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-180px;top:70px;width:480px;height:480px;border-radius:50%;background:rgba(217,185,141,.22);filter:blur(2px)}
+.hero:after{content:"";position:absolute;left:-200px;bottom:-180px;width:420px;height:420px;border-radius:50%;background:rgba(31,91,87,.08)}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:66px;align-items:center;position:relative;z-index:2}
+.hero-copy h1{font-size:clamp(4rem,8vw,7rem);line-height:.86;letter-spacing:-.055em;max-width:760px}.hero-copy h1 span{color:var(--teal)}
+.hero-copy p{margin-top:24px;max-width:610px;color:var(--muted);font-size:1.03rem}
+.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:30px}
+.hero-visual{position:relative;min-height:600px}
+.hero-main{position:absolute;right:0;top:0;width:82%;height:80%;object-fit:cover;border-radius:210px 210px 28px 28px;box-shadow:var(--shadow)}
+.hero-small{position:absolute;left:0;bottom:0;width:46%;height:260px;object-fit:cover;border-radius:24px;border:8px solid var(--bg);box-shadow:var(--shadow)}
+.hero-note{position:absolute;right:0;bottom:18px;width:270px;background:rgba(255,253,248,.96);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--shadow);backdrop-filter:blur(12px)}
+.hero-note b{display:block;font-size:1rem}.hero-note span{display:block;color:var(--muted);font-size:.75rem;margin-top:4px}.hero-note .dot{width:9px;height:9px;border-radius:50%;background:var(--coral);display:inline-block;margin-right:8px}
+.quick-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;position:relative;z-index:3}.quick{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:20px}.quick b{display:block;font-size:1rem}.quick span{display:block;margin-top:5px;font-size:.75rem;color:var(--muted)}
+.help-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}.help-card{background:white;border:1px solid var(--line);border-radius:24px;padding:28px;min-height:260px;position:relative;overflow:hidden;transition:.3s}.help-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.help-card .num{font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--coral)}.help-card h3{font-size:2rem;line-height:1.05;margin-top:30px}.help-card p{font-size:.86rem;color:var(--muted);margin-top:10px}.help-card:after{content:"";position:absolute;right:-58px;bottom:-65px;width:160px;height:160px;border:1px solid rgba(31,91,87,.14);border-radius:50%}
+.featured-head{display:flex;align-items:end;justify-content:space-between;gap:30px}.featured-head .lead{max-width:520px}
+.property-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr;gap:18px;margin-top:44px}.property-card{background:var(--paper);border:1px solid var(--line);border-radius:26px;overflow:hidden;box-shadow:0 14px 40px rgba(31,43,42,.07);transition:.3s}.property-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.property-card img{height:240px;object-fit:cover}.property-card.feature img{height:430px}.property-body{padding:22px}.tag{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);font-weight:800}.property-card h3{font-size:1.7rem;line-height:1.05;margin-top:8px}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;color:var(--muted);font-size:.74rem}.price{font-size:1.1rem;font-weight:800;margin-top:16px}.property-card .actions{margin-top:18px}
+.finder{margin-top:26px;background:var(--teal);color:white;border-radius:28px;padding:30px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;overflow:hidden;position:relative}.finder:after{content:"";position:absolute;right:-80px;top:-90px;width:260px;height:260px;border-radius:50%;border:1px solid rgba(255,255,255,.16)}.finder h3{font-size:2.3rem}.finder p{color:rgba(255,255,255,.72);font-size:.86rem;margin-top:8px}.finder .btn{justify-self:end}
+.process-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}.process-panel{background:var(--sand-soft);border-radius:30px;padding:34px;position:sticky;top:110px}.process-panel h3{font-size:2.3rem}.process-panel p{color:#6d6254;margin-top:12px}.steps{display:grid;gap:0}.step{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:24px 0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.step-num{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--paper);border:1px solid var(--line);font-size:.75rem;font-weight:800}.step h3{font-size:1.7rem}.step p{color:var(--muted);font-size:.84rem;margin-top:6px}
+.areas{display:flex;flex-wrap:wrap;gap:10px;margin-top:35px}.pill{padding:11px 16px;border-radius:999px;background:white;border:1px solid var(--line);font-size:.77rem;font-weight:700}
+.enquiry{background:var(--ink);color:white;border-radius:34px;padding:42px;display:grid;grid-template-columns:.82fr 1.18fr;gap:40px;align-items:center;position:relative;overflow:hidden}.enquiry:after{content:"";position:absolute;left:-100px;bottom:-120px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.035)}.enquiry-copy{position:relative;z-index:2}.enquiry-copy h2{font-size:clamp(2.8rem,5vw,4.8rem);line-height:.95}.enquiry-copy p{margin-top:16px;color:rgba(255,255,255,.64)}
+.form{background:#f8f4ed;border-radius:24px;padding:24px;position:relative;z-index:2;color:var(--ink)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.72rem;font-weight:800}.field input,.field select,.field textarea{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:13px;background:white}.field textarea{min-height:100px;resize:vertical}
+.footer{padding:55px 0 95px}.footer-grid{display:flex;align-items:end;justify-content:space-between;gap:30px;padding-top:24px;border-top:1px solid var(--line)}.footer p{color:var(--muted);font-size:.78rem;max-width:520px}.social{display:flex;gap:8px;flex-wrap:wrap}.social a{padding:9px 12px;border:1px solid var(--line);border-radius:999px;font-size:.72rem;font-weight:800}
+.float-wa{position:fixed;z-index:900;right:18px;bottom:18px;padding:13px 17px;border-radius:999px;background:#1e8a51;color:white;font-size:.78rem;font-weight:800;box-shadow:0 16px 40px rgba(25,119,69,.25)}
+.modal{position:fixed;z-index:3000;inset:0;background:rgba(19,30,29,.7);backdrop-filter:blur(10px);display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:.25s}.modal.open{opacity:1;visibility:visible}.modal-box{width:min(100%,700px);max-height:90vh;overflow:auto;background:var(--paper);border-radius:26px;padding:28px;position:relative}.close{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:white}.modal-box h3{font-size:2.4rem}.reveal{opacity:0;transform:translateY(26px);transition:.7s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:980px){.nav-links{display:none}.menu{display:grid;place-items:center}.hero-grid,.finder,.process-wrap,.enquiry{grid-template-columns:1fr}.hero-visual{min-height:520px}.quick-strip,.help-grid{grid-template-columns:1fr 1fr}.property-grid{grid-template-columns:1fr 1fr}.property-card.feature{grid-column:1/-1}.finder .btn{justify-self:start}.process-panel{position:relative;top:auto}.featured-head{align-items:start;flex-direction:column}.footer-grid{align-items:start;flex-direction:column}}
+@media(max-width:650px){body{padding-bottom:72px}.container{width:min(calc(100% - 22px),var(--max))}.section{padding:78px 0}.hero{padding-top:110px;min-height:auto}.hero-copy h1{font-size:3.75rem}.hero-grid{gap:40px}.hero-visual{min-height:430px}.hero-main{width:88%;height:76%;border-radius:150px 150px 24px 24px}.hero-small{width:48%;height:190px;border-width:6px}.hero-note{width:220px;padding:16px}.quick-strip,.help-grid,.property-grid,.form-grid{grid-template-columns:1fr}.property-card.feature{grid-column:auto}.property-card.feature img,.property-card img{height:250px}.finder,.enquiry{padding:26px}.actions{display:grid}.actions .btn{width:100%}.field.full{grid-column:auto}.float-wa{left:12px;right:12px;text-align:center}.footer{padding-bottom:40px}}
+</style>
+</head>
+<body>
+<header class="header" id="header">
+  <div class="container nav">
+    <a class="brand" href="#top"><span class="brand-mark">PP</span><span><strong>PLANNIQUE PROPERTY</strong><small>Property Advisory Demo</small></span></a>
+    <nav class="nav-links">
+      <a href="#services">How I Help</a><a href="#properties">Featured</a><a href="#process">Approach</a><a href="#areas">Areas</a><a href="#contact">Contact</a>
+      <button class="btn btn-teal" data-popup="general">WhatsApp Enquiry</button>
+    </nav>
+    <button class="menu" aria-label="Open menu">☰</button>
+  </div>
+</header>
+<div class="mobile"><nav><a href="#services">How I Help</a><a href="#properties">Featured</a><a href="#process">Approach</a><a href="#areas">Areas</a><a href="#contact">Contact</a><button class="btn btn-teal" data-popup="general">WhatsApp Enquiry</button></nav></div>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">Kuala Lumpur · Klang Valley</span>
+      <h1>Property guidance that feels <span>simple.</span></h1>
+      <p>Whether you're looking to buy, rent, invest, sell or lease out a property, start with a clear conversation and a more focused property search.</p>
+      <div class="actions">
+        <a class="btn btn-teal" href="#properties">View Featured Properties</a>
+        <button class="btn btn-line" data-popup="general">Tell Me What You Need</button>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <img class="hero-main" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=88" alt="Modern property exterior">
+      <img class="hero-small" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=88" alt="Modern property interior">
+      <div class="hero-note"><b><span class="dot"></span>New enquiry welcome</b><span>Buy · Rent · Sell · Invest</span></div>
+    </div>
+  </div>
+  <div class="container quick-strip">
+    <div class="quick"><b>Requirement-led search</b><span>Start with budget, area and property type.</span></div>
+    <div class="quick"><b>Direct WhatsApp enquiry</b><span>Fast and convenient for mobile visitors.</span></div>
+    <div class="quick"><b>Personal property support</b><span>Clear communication from enquiry to viewing.</span></div>
+  </div>
+</section>
+
+<section class="section white" id="services">
+  <div class="container">
+    <span class="eyebrow">How I Can Help</span>
+    <h2 class="title">Start with what you actually need.</h2>
+    <div class="help-grid">
+      <article class="help-card reveal"><span class="num">01 / BUY & RENT</span><h3>Looking for a property?</h3><p>Share your preferred area, budget, property type and timeline so suitable options can be shortlisted.</p><div class="actions"><button class="btn btn-teal" data-popup="buyer">Send Requirement</button></div></article>
+      <article class="help-card reveal"><span class="num">02 / INVEST</span><h3>Exploring investment?</h3><p>Discuss your budget, preferred asset type and investment goal before browsing random listings.</p><div class="actions"><button class="btn btn-line" data-popup="invest">Discuss Investment</button></div></article>
+      <article class="help-card reveal"><span class="num">03 / OWNER</span><h3>Have a property to market?</h3><p>Share your property details if you're considering selling or renting it out and want to discuss the next step.</p><div class="actions"><button class="btn btn-coral" data-popup="owner">Share My Property</button></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="properties">
+  <div class="container">
+    <div class="featured-head"><div><span class="eyebrow">Featured Opportunities</span><h2 class="title">A few properties worth exploring.</h2></div><p class="lead">For an Essential one-page site, a focused selection feels more intentional than trying to look like a large property portal.</p></div>
+    <div class="property-grid">
+      <article class="property-card feature reveal"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=88" alt="Modern city residence"><div class="property-body"><span class="tag">Residential · For Sale</span><h3>Modern City Residence — Kuala Lumpur</h3><div class="meta"><span>3 Bed</span><span>2 Bath</span><span>1,250 sqft</span></div><div class="price">From RM980,000</div><div class="actions"><button class="btn btn-teal" onclick="propertyEnquiry('Modern City Residence — Kuala Lumpur','From RM980,000')">Enquire Property</button></div></div></article>
+      <article class="property-card reveal"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=88" alt="Modern condominium"><div class="property-body"><span class="tag">Residential · New Project</span><h3>Contemporary Residence — Petaling Jaya</h3><div class="meta"><span>2–3 Bed</span><span>City Access</span></div><div class="price">From RM650,000</div><div class="actions"><button class="btn btn-line" onclick="propertyEnquiry('Contemporary Residence — Petaling Jaya','From RM650,000')">View Interest</button></div></div></article>
+      <article class="property-card reveal"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=88" alt="Commercial property"><div class="property-body"><span class="tag">Commercial · Opportunity</span><h3>Business Space — Klang Valley</h3><div class="meta"><span>Commercial</span><span>Strategic Location</span></div><div class="price">Price on enquiry</div><div class="actions"><button class="btn btn-line" onclick="propertyEnquiry('Business Space — Klang Valley','Price on enquiry')">View Interest</button></div></div></article>
+    </div>
+    <div class="finder reveal"><div><h3>Looking for something else?</h3><p>Send your preferred location, budget and property type. A good property search starts with a better brief.</p></div><button class="btn btn-light" data-popup="buyer">Send My Requirement →</button></div>
+  </div>
+</section>
+
+<section class="section white" id="process">
+  <div class="container process-wrap">
+    <aside class="process-panel reveal"><span class="eyebrow">A Simple Approach</span><h3>Property should feel personal, not complicated.</h3><p>This section works especially well for a newer agent because it sells the service approach instead of relying on awards, years of experience or large transaction numbers.</p></aside>
+    <div class="steps">
+      <div class="step reveal"><div class="step-num">01</div><div><h3>Understand</h3><p>Start with your budget, preferred location, property type, purpose and timeline.</p></div></div>
+      <div class="step reveal"><div class="step-num">02</div><div><h3>Shortlist</h3><p>Focus on properties that are more relevant to your requirement instead of browsing endlessly.</p></div></div>
+      <div class="step reveal"><div class="step-num">03</div><div><h3>Connect</h3><p>Arrange questions, viewing requests and next steps conveniently through WhatsApp.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="areas">
+  <div class="container">
+    <span class="eyebrow">Coverage & Property Types</span><h2 class="title">Flexible enough to grow with the business.</h2><p class="lead">The actual locations and categories can be customised based on the agent's focus.</p>
+    <div class="areas reveal"><span class="pill">Kuala Lumpur</span><span class="pill">Petaling Jaya</span><span class="pill">Subang Jaya</span><span class="pill">Shah Alam</span><span class="pill">Puchong</span><span class="pill">Klang Valley</span><span class="pill">Residential</span><span class="pill">Commercial</span><span class="pill">New Projects</span><span class="pill">Investment</span></div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container enquiry reveal">
+    <div class="enquiry-copy"><span class="eyebrow" style="color:var(--sand)">Quick Property Enquiry</span><h2>Tell us what you're looking for.</h2><p>Complete the short form and send your property requirement directly through WhatsApp.</p></div>
+    <div class="form">
+      <div class="form-grid">
+        <div class="field"><label>Your Name</label><input id="qName" placeholder="Full name"></div>
+        <div class="field"><label>I Want To</label><select id="qGoal"><option>Buy</option><option>Rent</option><option>Sell</option><option>Rent Out</option><option>Invest</option></select></div>
+        <div class="field"><label>Property Type</label><select id="qType"><option>Residential</option><option>Commercial</option><option>New Project</option><option>Land</option><option>Not Sure Yet</option></select></div>
+        <div class="field"><label>Budget</label><select id="qBudget"><option>Below RM500K</option><option>RM500K–RM1M</option><option>RM1M–RM3M</option><option>RM3M+</option><option>Not decided yet</option></select></div>
+        <div class="field full"><label>Preferred Area</label><input id="qArea" placeholder="e.g. Mont Kiara, PJ, Shah Alam"></div>
+        <div class="field full"><label>Additional Requirement</label><textarea id="qNotes" placeholder="Bedrooms, size, purpose, move-in timeline, preferred project, etc."></textarea></div>
+      </div>
+      <button class="btn btn-teal" style="width:100%;margin-top:16px" id="quickSend">Send Requirement via WhatsApp</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer"><div class="container footer-grid"><div><a class="brand" href="#top"><span class="brand-mark">PP</span><span><strong>PLANNIQUE PROPERTY</strong><small>Property Advisory Demo</small></span></a><p style="margin-top:14px">Demo website concept for a property agent. Property names, pricing and images shown here are sample presentation content and can be replaced with actual listings and branding.</p></div><div class="social"><a href="#">Instagram</a><a href="#">Facebook</a><a href="https://wa.me/60168083598" target="_blank">WhatsApp</a></div></div></footer>
+<a class="float-wa" href="https://wa.me/60168083598?text=Hi%20Plannique%20Property,%20I%20would%20like%20to%20make%20a%20property%20enquiry." target="_blank">WhatsApp Property Enquiry</a>
+
+<div class="modal" id="modal"><div class="modal-box"><button class="close" id="closeModal">✕</button><span class="eyebrow" id="mKicker">Property Enquiry</span><h3 id="mTitle">Tell us what you need.</h3><p class="lead" id="mLead"></p><div class="form-grid" id="mFields"></div><button class="btn btn-teal" id="mSubmit" style="width:100%;margin-top:18px">Send via WhatsApp</button></div></div>
+
+<script>
+const WHATSAPP='60168083598';
+const modal=document.querySelector('#modal');
+let activeForm='general';
+const FORMS={
+  general:{k:'Property Enquiry',t:'Tell us what you need.',l:'Share a few details first so the enquiry starts with the right context.',f:[['name','Name','text','Full name'],['goal','I want to','select',['Buy','Rent','Sell','Rent out','Invest']],['type','Property type','select',['Residential','Commercial','New Project','Land','Not sure yet']],['budget','Budget / expected price','text','e.g. RM500K–RM1M'],['area','Preferred area','text','e.g. PJ, KL, Shah Alam'],['notes','Details','textarea','Tell us more about your requirement']]},
+  buyer:{k:'Buyer / Tenant Requirement',t:'What are you looking for?',l:'A clearer requirement makes shortlisting faster and more useful.',f:[['name','Name','text','Full name'],['purpose','Purpose','select',['Buy for own stay','Rent','Business use','Open to options']],['type','Property type','select',['Residential','Commercial','New Project','Land']],['budget','Budget','text','e.g. RM800K'],['area','Preferred area','text','Area / city'],['notes','Requirements','textarea','Bedrooms, size, move-in timeline, etc.']]},
+  invest:{k:'Investment Enquiry',t:'Tell us your investment goal.',l:'Share your preferred budget and type of opportunity.',f:[['name','Name','text','Full name'],['budget','Investment budget','text','e.g. RM1M–RM2M'],['type','Property type','select',['Residential','Commercial','New Project','Land','Open to options']],['area','Preferred area','text','Area / city'],['goal','Main goal','select',['Rental income','Capital appreciation','Own use + investment','Still exploring']],['notes','Additional details','textarea','Any yield target, tenure preference or project type']]},
+  owner:{k:'Property Owner Enquiry',t:'Tell us about your property.',l:'Share the basic details if you are considering selling or renting it out.',f:[['name','Name','text','Full name'],['purpose','I want to','select',['Sell','Rent out','Discuss options']],['property','Property / project','text','Property name'],['area','Location','text','Area / city'],['expected','Expected price / rent','text','Optional'],['notes','Property details','textarea','Size, condition, tenure, occupancy, etc.']]}
+};
+function fieldHtml([id,label,type,opts]){if(type==='select')return `<div class="field"><label>${label}</label><select id="f_${id}"><option value="">Select</option>${opts.map(o=>`<option>${o}</option>`).join('')}</select></div>`;if(type==='textarea')return `<div class="field full"><label>${label}</label><textarea id="f_${id}" placeholder="${opts}"></textarea></div>`;return `<div class="field"><label>${label}</label><input id="f_${id}" type="${type}" placeholder="${opts}"></div>`}
+function openModal(type){activeForm=type;const f=FORMS[type];mKicker.textContent=f.k;mTitle.textContent=f.t;mLead.textContent=f.l;mFields.innerHTML=f.f.map(fieldHtml).join('');modal.classList.add('open');document.body.classList.add('lock')}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-popup]');if(b)openModal(b.dataset.popup)});
+closeModal.onclick=()=>{modal.classList.remove('open');document.body.classList.remove('lock')};
+modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('open');document.body.classList.remove('lock')}});
+mSubmit.onclick=()=>{const f=FORMS[activeForm],vals={};f.f.forEach(([id])=>vals[id]=document.querySelector('#f_'+id)?.value.trim()||'Not provided');const msg=`Hi Plannique Property, I would like to make a ${f.k.toLowerCase()}.\n\n`+Object.entries(vals).map(([k,v])=>`${k}: ${v}`).join('\n');window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,'_blank')};
+function propertyEnquiry(name,price){const msg=`Hi Plannique Property, I am interested in this sample listing:\n\n${name}\n${price}\n\nPlease share more details. Thank you.`;window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,'_blank')}
+quickSend.onclick=()=>{const msg=`Hi Plannique Property, here is my property requirement:\n\nName: ${qName.value||'Not provided'}\nI want to: ${qGoal.value}\nProperty type: ${qType.value}\nBudget: ${qBudget.value}\nPreferred area: ${qArea.value||'Not provided'}\nAdditional requirement: ${qNotes.value||'Not provided'}\n\nPlease advise suitable options. Thank you.`;window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,'_blank')};
+const menu=document.querySelector('.menu'),mobile=document.querySelector('.mobile');menu.onclick=()=>{mobile.classList.toggle('open');document.body.classList.toggle('lock')};document.querySelectorAll('.mobile a').forEach(a=>a.onclick=()=>{mobile.classList.remove('open');document.body.classList.remove('lock')});
+const header=document.querySelector('#header');function updateHeader(){header.classList.toggle('scrolled',scrollY>20)}updateHeader();addEventListener('scroll',updateHeader,{passive:true});
+const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
