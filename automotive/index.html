@@ -537,6 +537,49 @@
 @media (prefers-reduced-motion: reduce){
   .hero-slide{transition:none;transform:none}
 }
+
+/* Mobile interaction refinements */
+.hero-dots,.hero-dot,.modal-back{display:none!important}
+
+/* The showroom itself moves horizontally only.
+   Vertical page scroll remains available outside the rail. */
+.cars{
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+  overscroll-behavior-x:contain;
+  overscroll-behavior-y:none;
+  touch-action:pan-x;
+  -webkit-overflow-scrolling:touch;
+  align-items:stretch;
+}
+.showroom-clip{
+  overflow-x:hidden!important;
+  overflow-y:hidden!important;
+}
+.car-card{
+  height:auto;
+  align-self:stretch;
+}
+
+/* Prevent accidental vertical dragging / selection inside swipeable cards */
+@media(max-width:700px){
+  .cars{
+    touch-action:pan-x!important;
+    overflow-y:hidden!important;
+    scroll-snap-type:x mandatory;
+  }
+  .car-card{
+    user-select:none;
+    -webkit-user-select:none;
+  }
+  .modal-actions{
+    grid-template-columns:1fr!important;
+  }
+}
+
+.modal-actions{grid-template-columns:1fr!important}
+.modal-actions .btn{width:100%!important}
+#backToCars{display:none!important}
 </style>
 </head>
 <body>
@@ -585,7 +628,7 @@
 </div>
 </div>
 <div class="scroll-cue">Scroll to explore <i class="fa-solid fa-arrow-right-long"></i></div>
-<div aria-label="Hero slideshow" class="hero-dots"><button aria-label="Show hero image 1" class="hero-dot active" data-slide="0" type="button"></button><button aria-label="Show hero image 2" class="hero-dot" data-slide="1" type="button"></button><button aria-label="Show hero image 3" class="hero-dot" data-slide="2" type="button"></button><button aria-label="Show hero image 4" class="hero-dot" data-slide="3" type="button"></button></div></header>
+</header>
 <div class="benefits">
 <div class="container benefit-grid">
 <div class="benefit reveal"><i class="fa-solid fa-car-side"></i><div><strong>Latest Models</strong><span>Browse popular Perodua choices in one place.</span></div></div>
@@ -835,7 +878,6 @@
 </div>
 <!-- CAR DETAIL MODAL -->
 <div aria-modal="true" class="modal" id="carModal" role="dialog">
-<button class="modal-back" id="modalBack"><i class="fa-solid fa-arrow-left"></i> Back</button>
 <div class="modal-card">
 <button aria-label="Close" class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
 <div class="modal-grid">
@@ -851,7 +893,7 @@
             Interested in this model? Ask about current availability, promotions, financing options and the next step through WhatsApp.
           </p>
 <div class="modal-buttons">
-<button class="btn btn-outline" id="modalBackCars" type="button"><i class="fa-solid fa-arrow-left"></i> Back to Cars</button>
+
 <a class="btn btn-wa" id="modalWa" target="_blank"><i class="fa-brands fa-whatsapp"></i> Enquire Now</a>
 </div>
 </div>
@@ -1037,7 +1079,6 @@
 <script>
 (function(){
   const slides = Array.from(document.querySelectorAll('.hero-slide'));
-  const dots = Array.from(document.querySelectorAll('.hero-dot'));
   if(slides.length < 2) return;
 
   let index = 0;
@@ -1046,8 +1087,7 @@
 
   function showSlide(next){
     index = (next + slides.length) % slides.length;
-    slides.forEach((s,i)=>s.classList.toggle('active', i===index));
-    dots.forEach((d,i)=>d.classList.toggle('active', i===index));
+    slides.forEach((slide,i)=>slide.classList.toggle('active', i===index));
   }
 
   function startHeroSlider(){
@@ -1055,19 +1095,37 @@
     heroSlideTimer = setInterval(()=>showSlide(index+1), interval);
   }
 
-  dots.forEach((dot,i)=>{
-    dot.addEventListener('click',()=>{
-      showSlide(i);
-      startHeroSlider();
-    });
-  });
-
   document.addEventListener('visibilitychange',()=>{
     if(document.hidden) clearInterval(heroSlideTimer);
     else startHeroSlider();
   });
 
   startHeroSlider();
+})();
+</script><script>
+(function(){
+  const rail = document.getElementById('carRail') || document.getElementById('cars');
+  if(!rail) return;
+
+  let startX = 0, startY = 0;
+
+  rail.addEventListener('touchstart', e=>{
+    if(!e.touches || !e.touches[0]) return;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  }, {passive:true});
+
+  rail.addEventListener('touchmove', e=>{
+    if(!e.touches || !e.touches[0]) return;
+    const dx = Math.abs(e.touches[0].clientX - startX);
+    const dy = Math.abs(e.touches[0].clientY - startY);
+
+    /* Once the gesture is clearly horizontal, keep it with the carousel.
+       Vertical page scrolling is handled outside this swipe rail. */
+    if(dx > dy && dx > 6){
+      e.stopPropagation();
+    }
+  }, {passive:true});
 })();
 </script></body>
 </html>
