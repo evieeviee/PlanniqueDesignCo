@@ -220,7 +220,7 @@
       width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;
       display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:.25s var(--ease)
     }
-    .finder-option:hover,.finder-option.active{border-color:var(--red);background:var(--softred);transform:translateX(5px)}
+    .finder-option.active{border-color:var(--red);background:var(--softred);transform:translateX(5px)}
     .finder-left{display:flex;align-items:center;gap:15px}
     .finder-icon{width:44px;height:44px;border-radius:14px;background:#f2f3f4;display:grid;place-items:center}
     .finder-option.active .finder-icon{background:var(--red);color:#fff}
@@ -580,6 +580,45 @@
 .modal-actions{grid-template-columns:1fr!important}
 .modal-actions .btn{width:100%!important}
 #backToCars{display:none!important}
+
+/* Finder: avoid sticky mobile :hover making the first card look re-selected */
+@media (hover:hover) and (pointer:fine){
+  .finder-option:hover{
+    border-color:var(--red);
+    background:var(--softred);
+    transform:translateX(5px);
+  }
+}
+@media (hover:none), (pointer:coarse){
+  .finder-option:hover{
+    border-color:var(--line);
+    background:#fff;
+    transform:none;
+  }
+  .finder-option.active,
+  .finder-option.active:hover{
+    border-color:var(--red)!important;
+    background:var(--softred)!important;
+    transform:none!important;
+  }
+}
+
+/* Final Finder selection fix */
+.finder-option{cursor:pointer}
+.finder-option.active{
+  border-color:var(--red)!important;
+  background:var(--softred)!important;
+}
+.finder-option:not(.active){
+  border-color:var(--line)!important;
+  background:#fff!important;
+}
+@media (hover:hover) and (pointer:fine){
+  .finder-option:not(.active):hover{
+    border-color:var(--red)!important;
+    background:var(--softred)!important;
+  }
+}
 </style>
 </head>
 <body>
@@ -618,12 +657,6 @@
 <a class="btn btn-glass" href="https://wa.me/60168083598?text=Hi%2C%20I%27m%20looking%20for%20a%20Perodua.%20Can%20you%20assist%20me%3F" target="_blank">
 <i class="fa-brands fa-whatsapp"></i> WhatsApp Sales Advisor
           </a>
-</div>
-<div class="hero-stats reveal delay3">
-<div class="hero-stat"><strong>New Perodua</strong><span>Popular models</span></div>
-<div class="hero-stat"><strong>Loan Assistance</strong><span>Simple guidance</span></div>
-<div class="hero-stat"><strong>Trade-In</strong><span>Enquiry welcome</span></div>
-<div class="hero-stat"><strong>Delivery Support</strong><span>From booking to handover</span></div>
 </div>
 </div>
 </div>
@@ -893,7 +926,6 @@
             Interested in this model? Ask about current availability, promotions, financing options and the next step through WhatsApp.
           </p>
 <div class="modal-buttons">
-
 <a class="btn btn-wa" id="modalWa" target="_blank"><i class="fa-brands fa-whatsapp"></i> Enquire Now</a>
 </div>
 </div>
@@ -986,21 +1018,36 @@
   });
 
   modalClose.addEventListener('click', closeModal);
-  document.getElementById('modalBack').addEventListener('click', closeModal);
-  document.getElementById('modalBackCars').addEventListener('click', closeModal);
+  
+  
   modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
   document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
 
 
   // Finder
-  const finderOptions = document.querySelectorAll('.finder-option');
+  const finderOptions = Array.from(document.querySelectorAll('.finder-option'));
   const finderWhatsApp = document.getElementById('finderWhatsApp');
-  finderOptions.forEach(btn => {
-    btn.addEventListener('click', () => {
-      finderOptions.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const choice = btn.dataset.choice;
-      finderWhatsApp.href = `https://wa.me/60168083598?text=${encodeURIComponent(`Hi, ${choice}. Can you recommend a suitable Perodua model and share the financing information?`)}`;
+
+  function selectFinderOption(btn){
+    finderOptions.forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-pressed','false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-pressed','true');
+
+    const choice = btn.dataset.choice || '';
+    finderWhatsApp.href = `https://wa.me/60168083598?text=${encodeURIComponent(
+      `Hi, ${choice}. Can you recommend a suitable Perodua model and share the financing information?`
+    )}`;
+  }
+
+  finderOptions.forEach((btn,index) => {
+    btn.type = 'button';
+    btn.setAttribute('aria-pressed', index === 0 ? 'true' : 'false');
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      selectFinderOption(this);
     });
   });
 
@@ -1126,6 +1173,50 @@
       e.stopPropagation();
     }
   }, {passive:true});
+})();
+</script><script>
+(function(){
+  function initFinder(){
+    const options = Array.from(document.querySelectorAll('.finder-option'));
+    const wa = document.getElementById('finderWhatsApp');
+    if(!options.length || !wa) return;
+
+    function choose(option){
+      options.forEach(item=>{
+        item.classList.remove('active');
+        item.setAttribute('aria-pressed','false');
+      });
+      option.classList.add('active');
+      option.setAttribute('aria-pressed','true');
+
+      const choice = option.getAttribute('data-choice') || '';
+      wa.href = 'https://wa.me/60168083598?text=' + encodeURIComponent(
+        'Hi, ' + choice + '. Can you recommend a suitable Perodua model and share the financing information?'
+      );
+    }
+
+    options.forEach((option,index)=>{
+      option.setAttribute('type','button');
+      option.setAttribute('aria-pressed', option.classList.contains('active') ? 'true' : 'false');
+
+      option.onclick = function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        choose(this);
+      };
+
+      option.addEventListener('touchend', function(e){
+        e.preventDefault();
+        choose(this);
+      }, {passive:false});
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initFinder);
+  } else {
+    initFinder();
+  }
 })();
 </script></body>
 </html>
