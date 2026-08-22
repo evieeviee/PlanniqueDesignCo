@@ -15,7 +15,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=League+Spartan:wght@500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
   <style>
@@ -671,6 +671,288 @@
       .brand-logo{
         height:28px;
         max-width:155px;
+      }
+    }
+
+  
+    /* V9 HAIRKUNST BRAND TYPOGRAPHY */
+    :root{
+      --brand-display:"League Spartan","DM Sans",Arial,sans-serif;
+    }
+
+    /* Use Hairkunst-like bold geometric type for small brand statements / CTA labels,
+       while keeping the editorial serif for luxury section headlines. */
+    .eyebrow,
+    .btn,
+    .nav-link,
+    .service-filter,
+    .service-actions button,
+    .whatsapp-btn,
+    .outlet-btn,
+    .mobile-book a,
+    .hero-stat span,
+    .stat span,
+    .step-label,
+    .person-meta p,
+    .footer-col h4{
+      font-family:var(--brand-display);
+      font-weight:700;
+    }
+
+    /* Slightly stronger brand treatment in selected content titles */
+    .service-card h3,
+    .result h3{
+      font-family:var(--brand-display);
+      font-weight:700;
+      letter-spacing:-.035em;
+    }
+
+    /* HERO CTA VISIBILITY */
+    .hero-actions .btn{
+      border-color:rgba(255,255,255,.88);
+      background:rgba(12,10,8,.62);
+      color:#fff;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      box-shadow:0 8px 24px rgba(0,0,0,.16);
+    }
+
+    .hero-actions .btn:first-child{
+      background:#f7f0e7;
+      color:#171511;
+      border-color:#f7f0e7;
+      box-shadow:0 10px 28px rgba(0,0,0,.22);
+    }
+
+    .hero-actions .btn:hover{
+      background:#fff;
+      color:#171511;
+      border-color:#fff;
+    }
+
+    .hero-actions .btn:first-child:hover{
+      background:#171511;
+      color:#fff;
+      border-color:#171511;
+    }
+
+    /* add a very subtle readable base behind the hero text block */
+    .hero-grid > div:first-child{
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-grid > div:first-child:before{
+      content:"";
+      position:absolute;
+      z-index:-1;
+      left:-28px;
+      top:-24px;
+      width:min(680px,calc(100% + 52px));
+      height:calc(100% + 48px);
+      border-radius:26px;
+      background:linear-gradient(
+        90deg,
+        rgba(10,8,7,.40) 0%,
+        rgba(10,8,7,.24) 60%,
+        rgba(10,8,7,0) 100%
+      );
+      pointer-events:none;
+    }
+
+    @media(max-width:900px){
+      .hero-grid > div:first-child:before{
+        left:-14px;
+        top:-16px;
+        width:calc(100% + 28px);
+        height:calc(100% + 32px);
+        border-radius:20px;
+        background:linear-gradient(
+          180deg,
+          rgba(10,8,7,.34),
+          rgba(10,8,7,.20)
+        );
+      }
+
+      .hero-actions{
+        gap:9px;
+      }
+
+      .hero-actions .btn{
+        min-height:46px;
+        font-size:.67rem;
+      }
+    }
+
+  
+    /* V10 HAIRKUNST VISUAL IDENTITY REFINEMENT */
+    :root{
+      --hk-magenta:#9a147d;
+      --hk-magenta-deep:#781063;
+      --hk-blush:#f4e8ef;
+      --hk-display:"Montserrat","DM Sans",Arial,sans-serif;
+    }
+
+    /*
+      Hairkunst's social artwork uses a heavy, uppercase, geometric display treatment.
+      We echo that in brand-facing UI while retaining the serif for the premium editorial narrative.
+    */
+    .eyebrow,
+    .service-card h3,
+    .result h3,
+    .service-price,
+    .service-filter,
+    .person-meta p,
+    .outlet small,
+    .hero-stat span{
+      font-family:var(--hk-display);
+    }
+
+    .service-card h3{
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:-.045em;
+      line-height:.95;
+      color:#f5eee6;
+    }
+    .service-card:hover h3{color:var(--hk-magenta)}
+
+    .service-price{
+      color:#d979bd;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.02em;
+    }
+    .service-card:hover .service-price{color:var(--hk-magenta)}
+
+    .service-icon{
+      color:#e5a2d1;
+      border-color:rgba(213,114,183,.38);
+    }
+    .service-card:hover .service-icon{
+      color:var(--hk-magenta);
+      background:var(--hk-blush);
+      border-color:rgba(154,20,125,.18);
+    }
+
+    .service-filter.active,
+    .service-filter:hover{
+      background:var(--hk-magenta);
+      color:#fff;
+      border-color:var(--hk-magenta);
+    }
+
+    .service-card:hover .service-actions button.primary{
+      background:var(--hk-magenta);
+      color:#fff;
+      border-color:var(--hk-magenta);
+    }
+
+    .manifesto .big-copy em{
+      color:var(--hk-magenta);
+    }
+
+    .eyebrow{
+      font-weight:800;
+      letter-spacing:.12em;
+    }
+
+    /* Use magenta as a deliberate accent rather than turning the whole site purple. */
+    .experience .eyebrow,
+    .hijabi .eyebrow,
+    .outlets .eyebrow{
+      color:#d68abc;
+    }
+
+    .outlet:hover h3{
+      color:var(--hk-magenta);
+    }
+
+    .outlet-btn.primary{
+      background:#f2e5ed;
+      color:var(--hk-magenta-deep);
+      border-color:#f2e5ed;
+      font-weight:800;
+    }
+    .outlet:hover .outlet-btn.primary{
+      background:var(--hk-magenta);
+      color:#fff;
+      border-color:var(--hk-magenta);
+    }
+
+    .choice.active,.choice:hover,
+    .addon-chip.active{
+      background:var(--hk-magenta);
+      border-color:var(--hk-magenta);
+      color:#fff;
+    }
+
+    .whatsapp-btn{
+      background:var(--hk-magenta-deep);
+    }
+
+    /* Main navigation stays understated, but gains a branded hover state. */
+    .nav-link{
+      position:relative;
+      font-family:var(--hk-display);
+      font-weight:700;
+      font-size:.7rem;
+    }
+    .nav-link:after{
+      content:"";
+      position:absolute;
+      left:0;right:100%;bottom:-7px;
+      height:2px;background:var(--hk-magenta);
+      transition:.22s ease;
+    }
+    .nav-link:hover{color:var(--hk-magenta)}
+    .nav-link:hover:after{right:0}
+
+    /* Primary header booking CTA now carries Hairkunst's own accent. */
+    .header .nav-right .btn{
+      background:var(--hk-magenta);
+      border-color:var(--hk-magenta);
+      color:#fff;
+      font-family:var(--hk-display);
+      font-weight:800;
+    }
+    .header .nav-right .btn:hover{
+      background:var(--hk-magenta-deep);
+      border-color:var(--hk-magenta-deep);
+      color:#fff;
+    }
+
+    /* Hero remains elegant rather than becoming an Instagram tile. */
+    .hero-actions .btn{
+      font-family:var(--hk-display);
+      font-weight:800;
+    }
+    .hero-actions .btn:first-child{
+      background:var(--hk-magenta);
+      border-color:var(--hk-magenta);
+      color:#fff;
+    }
+    .hero-actions .btn:first-child:hover{
+      background:#fff;
+      border-color:#fff;
+      color:var(--hk-magenta-deep);
+    }
+
+    @media(max-width:900px){
+      .service-card h3{
+        font-size:1.75rem;
+        line-height:1;
+      }
+      .mobile-menu a{
+        font-family:var(--hk-display);
+        font-size:1.38rem;
+        font-weight:800;
+        text-transform:uppercase;
+        letter-spacing:-.025em;
+      }
+      .mobile-book a:first-child{
+        background:var(--hk-magenta);
+        border-color:var(--hk-magenta);
       }
     }
 
