@@ -1059,6 +1059,43 @@
       }
     }
 
+  
+    /* V12 SINGLE-PIECE REAL ARROW ICON */
+    .arrow-icon{
+      display:inline-block;
+      width:13px;
+      height:13px;
+      flex:0 0 13px;
+      margin-left:7px;
+      vertical-align:-1px;
+      overflow:visible;
+    }
+    .arrow-icon:before,
+    .arrow-icon:after{
+      content:none!important;
+      display:none!important;
+    }
+    .arrow-icon path{
+      vector-effect:non-scaling-stroke;
+    }
+
+    .btn,
+    .outlet-btn,
+    .mobile-book a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    @media(max-width:900px){
+      .arrow-icon{
+        width:12px;
+        height:12px;
+        flex-basis:12px;
+        margin-left:6px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1083,7 +1120,9 @@
       <div class="nav-right">
         <a class="nav-link" href="#hijabis">Hijabis Luxe</a>
         <a class="nav-link" href="#outlets">Outlets</a>
-        <a class="btn" href="#outlets">Book now <span class="arrow-icon" aria-hidden="true"></span></a>
+        <a class="btn" href="#outlets">Book now <svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+  <path d="M4 12L12 4M6.5 4H12V9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a>
       </div>
 
       <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
@@ -1113,7 +1152,9 @@
               Every Hairkunst experience begins with you.
             </p>
             <div class="hero-actions">
-              <a class="btn light" href="#outlets">Book an appointment <span class="arrow-icon" aria-hidden="true"></span></a>
+              <a class="btn light" href="#outlets">Book an appointment <svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+  <path d="M4 12L12 4M6.5 4H12V9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a>
               <a class="btn light" href="#story">Discover Hairkunst</a>
             </div>
             <div class="hero-stats" aria-label="Hairkunst highlights">
@@ -1142,7 +1183,9 @@
               Good hair should never feel generic. We approach every cut, colour and treatment by first
               understanding texture, lifestyle, face shape and the way you want to feel when you leave.
             </p>
-            <a href="#services" class="btn" style="margin-top:18px">Explore services <span class="arrow-icon" aria-hidden="true"></span></a>
+            <a href="#services" class="btn" style="margin-top:18px">Explore services <svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+  <path d="M4 12L12 4M6.5 4H12V9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a>
           </div>
           <div class="reveal">
             <p class="big-copy">
@@ -1331,7 +1374,9 @@
           <div class="micro"><span>Vegan / eco-conscious options</span><span>03</span></div>
           <div class="micro"><span>Muslimah-friendly environments</span><span>04</span></div>
         </div>
-        <a class="btn" href="#outlets" style="align-self:flex-start">Find your salon <span class="arrow-icon" aria-hidden="true"></span></a>
+        <a class="btn" href="#outlets" style="align-self:flex-start">Find your salon <svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+  <path d="M4 12L12 4M6.5 4H12V9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a>
       </div>
     </section>
 <section class="hijabi" id="hijabis">
@@ -1349,7 +1394,9 @@
             <div class="hijabi-point">Hair &amp; scalp care rituals</div>
             <div class="hijabi-point">Vegan product options</div>
           </div>
-          <a class="btn light" href="#outlets" style="align-self:flex-start">Explore Hijabis locations <span class="arrow-icon" aria-hidden="true"></span></a>
+          <a class="btn light" href="#outlets" style="align-self:flex-start">Explore Hijabis locations <svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+  <path d="M4 12L12 4M6.5 4H12V9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a>
         </div>
         <div class="hijabi-image" role="img" aria-label="Hairkunst Hijabis Luxe private salon room"></div>
       </div>
@@ -1453,7 +1500,9 @@
           <div class="score">5.0</div>
           <div class="stars">★★★★★</div>
           <p class="muted">Current rating shown on Hairkunst Premium Salon's Fresha profile at the time this demo was prepared.</p>
-          <a class="btn" href="https://www.fresha.com/a/hairkunst-premium-salon-petaling-jaya-the-curve-jalan-pju-7-2-m8urh65k" target="_blank" rel="noopener">View verified reviews <span class="arrow-icon" aria-hidden="true"></span></a>
+          <a class="btn" href="https://www.fresha.com/a/hairkunst-premium-salon-petaling-jaya-the-curve-jalan-pju-7-2-m8urh65k" target="_blank" rel="noopener">View verified reviews <svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+  <path d="M4 12L12 4M6.5 4H12V9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a>
         </div>
 
         <div class="reveal">
@@ -1657,8 +1706,12 @@
 
         <div class="footer-col">
           <h4>Connect</h4>
-          <a href="https://hairkunst.my/" target="_blank" rel="noopener">Website <span class="arrow-icon" aria-hidden="true"></span></a>
-          <a href="#outlets">Booking Platforms <span class="arrow-icon" aria-hidden="true"></span></a>
+          <a href="https://hairkunst.my/" target="_blank" rel="noopener">Website <svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+  <path d="M4 12L12 4M6.5 4H12V9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a>
+          <a href="#outlets">Booking Platforms <svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+  <path d="M4 12L12 4M6.5 4H12V9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a>
           <div class="social-row" aria-label="Hairkunst social media">
             <a class="social-link" href="https://www.instagram.com/hairkunst/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a class="social-link" href="https://www.facebook.com/Hairkunst/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
