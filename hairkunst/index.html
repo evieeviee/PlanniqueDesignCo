@@ -36,17 +36,34 @@
     }
 
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    html{
+      scroll-behavior:smooth;
+      width:100%;
+      max-width:100%;
+      overflow-x:hidden;
+    }
     body{
       margin:0;
       font-family:var(--sans);
       color:var(--ink);
       background:var(--paper);
+      width:100%;
+      max-width:100%;
       overflow-x:hidden;
       -webkit-font-smoothing:antialiased;
     }
     body.menu-open{overflow:hidden}
     img{max-width:100%;display:block}
+
+    main,section,header,footer,.container,.hero,.nav,.mobile-menu,
+    .service-grid,.outlet-grid,.team-grid,.story-grid,.finder-grid,
+    .manifesto-grid,.reviews-grid,.footer-top{
+      max-width:100%;
+    }
+    img,svg,video,iframe{max-width:100%}
+    .hero-grid,.experience-head,.stories-head,.outlet-grid,.team-grid,.footer-top{min-width:0}
+    .hero-grid>*,.experience-head>*,.stories-head>*,.outlet-grid>*,.team-grid>*,.footer-top>*{min-width:0}
+
     a{color:inherit;text-decoration:none}
     button,input,select,textarea{font:inherit}
     button{cursor:pointer}
@@ -124,7 +141,10 @@
 
     /* HERO */
     .hero{
-      position:relative;min-height:100svh;color:white;display:flex;align-items:flex-end;
+      position:relative;
+      min-height:760px;
+      height:min(86svh,860px);
+      color:white;display:flex;align-items:flex-end;
       background:#171411;isolation:isolate;
     }
     .hero:before{
@@ -135,13 +155,45 @@
       transform:scale(1.02);
     }
     .hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,10,8,.36),transparent 62%)}
-    .hero-content{padding:170px 0 66px;width:100%}
+    .hero-content{padding:145px 0 48px;width:100%}
     .hero-grid{display:grid;grid-template-columns:1.25fr .65fr;gap:50px;align-items:end}
-    .hero h1{font-size:clamp(4.4rem,10vw,9.4rem);margin:16px 0 26px;max-width:920px}
+    .hero h1{font-size:clamp(3.8rem,7.1vw,7.25rem);margin:14px 0 20px;max-width:760px}
     .hero-copy{max-width:460px;line-height:1.75;color:rgba(255,255,255,.82);font-size:.96rem}
     .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      width:min(610px,100%);
+      margin-top:26px;
+      border-top:1px solid rgba(255,255,255,.28);
+      border-bottom:1px solid rgba(255,255,255,.18);
+    }
+    .hero-stat{
+      padding:16px 18px 14px 0;
+      border-right:1px solid rgba(255,255,255,.18);
+    }
+    .hero-stat:not(:first-child){padding-left:18px}
+    .hero-stat:last-child{border-right:0}
+    .hero-stat strong{
+      display:block;
+      font-family:var(--serif);
+      font-weight:400;
+      font-size:clamp(1.7rem,2.4vw,2.55rem);
+      line-height:1;
+    }
+    .hero-stat span{
+      display:block;
+      margin-top:7px;
+      font-size:.59rem;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.68);
+      line-height:1.4;
+    }
+
     .hero-note{justify-self:end;max-width:260px;border-left:1px solid rgba(255,255,255,.35);padding-left:22px;font-size:.78rem;line-height:1.7;color:rgba(255,255,255,.72)}
-    .hero-bottom{margin-top:92px;display:flex;justify-content:space-between;align-items:center;color:rgba(255,255,255,.66);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em}
+    .hero-bottom{margin-top:34px;display:flex;justify-content:space-between;align-items:center;color:rgba(255,255,255,.66);font-size:.68rem;text-transform:uppercase;letter-spacing:.12em}
     .scroll-mark{display:flex;align-items:center;gap:10px}.scroll-mark i{width:52px;height:1px;background:currentColor}
 
     /* MANIFESTO */
@@ -399,6 +451,25 @@
     .reveal.visible{opacity:1;transform:none}
 
     @media(max-width:900px){
+
+      html,body{overflow-x:hidden;width:100%;max-width:100%}
+      .container{width:calc(100% - 28px);max-width:100%}
+      .hero{
+        height:auto;
+        min-height:100svh;
+      }
+      .hero-content{padding:122px 0 34px}
+      .hero-grid{width:100%;overflow:hidden}
+      .hero-stats{width:100%;margin-top:22px}
+      .hero-stat{padding:13px 8px 12px 0}
+      .hero-stat:not(:first-child){padding-left:10px}
+      .hero-stat strong{font-size:1.65rem}
+      .hero-stat span{font-size:.52rem;letter-spacing:.08em}
+      .service-toolbar{overflow-x:auto;max-width:100%;padding-bottom:4px;scrollbar-width:none}
+      .service-toolbar::-webkit-scrollbar{display:none}
+      .service-filter{flex:0 0 auto}
+      .outlet,.service-card,.person,.story-card{max-width:100%;overflow:hidden}
+      .outlet-btn,.btn,.choice,.service-actions button{max-width:100%}
       .container{width:min(100% - 30px,1180px)}
       .section{padding:82px 0}
       .nav{min-height:62px;grid-template-columns:auto 1fr auto}
@@ -407,9 +478,9 @@
       .menu-btn{display:block;justify-self:end}
       .hero-grid,.manifesto-grid,.finder-grid,.hijabi-grid,.reviews-grid,.stories-head{grid-template-columns:1fr}
       .hero-content{padding:145px 0 42px}
-      .hero h1{font-size:clamp(3.4rem,14vw,5.4rem)}
+      .hero h1{font-size:clamp(3.15rem,13.5vw,4.9rem);max-width:100%}
       .hero-note{display:none}
-      .hero-bottom{margin-top:68px}
+      .hero-bottom{margin-top:28px;gap:14px;flex-wrap:wrap}
       .manifesto-grid{gap:45px}.manifesto-copy{padding-top:0}
       .stat-row{margin-top:50px}
       .experience-head{display:block}
@@ -443,6 +514,11 @@
     }
 
     @media(max-width:560px){
+      .hero-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .hero-stat strong{font-size:1.45rem}
+      .hero-stat span{font-size:.48rem;letter-spacing:.06em}
+      .hero-copy{max-width:100%}
+      .hero-actions{width:100%}
       .section-title{font-size:3.45rem}
       .hero h1{font-size:3.65rem}
       .hero-copy{font-size:.88rem}
@@ -536,6 +612,11 @@
               <a class="btn light" href="#outlets">Book an appointment <span class="arrow">↗</span></a>
               <a class="btn light" href="#story">Discover Hairkunst</a>
             </div>
+            <div class="hero-stats" aria-label="Hairkunst highlights">
+              <div class="hero-stat"><strong>2007</strong><span>Our story began</span></div>
+              <div class="hero-stat"><strong>200K+</strong><span>Client visits*</span></div>
+              <div class="hero-stat"><strong>3</strong><span>Premium salon concepts</span></div>
+            </div>
           </div>
           <div class="hero-note">
             Premium hair experiences across Klang Valley, designed around precision, comfort and individuality.
@@ -566,12 +647,6 @@
               The result should still feel like <em>you.</em>
             </p>
           </div>
-        </div>
-
-        <div class="stat-row reveal">
-          <div class="stat"><strong>2007</strong><span>Our story began</span></div>
-          <div class="stat"><strong>200K+</strong><span>Client visits*</span></div>
-          <div class="stat"><strong>3</strong><span>Premium salon concepts</span></div>
         </div>
       </div>
     </section>
