@@ -141,6 +141,27 @@ p{line-height:1.75;color:var(--muted)}
  .slide img{height:260px}.copybox{padding:26px 22px}.cta{padding:68px 0}.footgrid{grid-template-columns:1fr}.drawerPanel{padding:38px 24px}.drawer h2{font-size:34px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* Home training visual spacing fix */
+#page-home .section .two{align-items:center}
+#page-home .media{min-height:0;height:420px}
+#page-home .media img{height:100%;object-fit:cover}
+@media(max-width:900px){#page-home .media{height:320px}}
+@media(max-width:560px){#page-home .media{height:250px}}
+
+
+/* Contact hyperlink placement */
+#page-contact .list a{
+  display:inline-block;
+  margin-top:4px;
+  color:var(--ink);
+  font-size:15px;
+  word-break:break-word;
+  border-bottom:1px solid transparent;
+  transition:.2s
+}
+#page-contact .list a:hover{color:var(--orange);border-bottom-color:var(--orange)}
+
 </style>
 </head>
 <body>
@@ -230,7 +251,7 @@ p{line-height:1.75;color:var(--muted)}
 </section>
 
 <section class="page" id="page-contact">
-  <section class="pageHero"><div class="wrap two"><div><div class="eyebrow">Contact ADtriomphe</div><h1>Let’s talk about your people priorities.</h1><p>Whether you are planning a training programme, reviewing HR processes or looking for outsourced support, start with a conversation.</p><div class="list"><div><b>Call / WhatsApp</b><span>+60 14-960 7981</span></div><div><b>Email</b><span>training@adtriomphe.com</span></div><div><b>Instagram</b><span>@adtriomphe</span></div></div></div><div class="card"><div class="eyebrow">Quick Enquiry</div><h2 style="font-size:38px">How can we help?</h2><p>Choose the area closest to your current need.</p><div style="display:grid;gap:12px"><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20corporate%20training." target="_blank" class="btn primary">Corporate Training →</a><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20HR%20consultancy%20or%20outsourcing." target="_blank" class="btn">HR Consultancy / Outsource →</a><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20ER%20%2F%20IR%20advisory." target="_blank" class="btn">ER / IR Advisory →</a><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20payroll%20support." target="_blank" class="btn">Payroll Support →</a></div></div></div></section>
+  <section class="pageHero"><div class="wrap two"><div><div class="eyebrow">Contact ADtriomphe</div><h1>Let’s talk about your people priorities.</h1><p>Whether you are planning a training programme, reviewing HR processes or looking for outsourced support, start with a conversation.</p><div class="list"><div><b>Call / WhatsApp</b><a href="https://wa.me/60149607981" target="_blank" rel="noopener">+60 14-960 7981</a></div><div><b>Email</b><a href="mailto:training@adtriomphe.com">training@adtriomphe.com</a></div><div><b>Instagram</b><a href="https://www.instagram.com/adtriomphe/" target="_blank" rel="noopener">@adtriomphe</a></div></div></div><div class="card"><div class="eyebrow">Quick Enquiry</div><h2 style="font-size:38px">How can we help?</h2><p>Choose the area closest to your current need.</p><div style="display:grid;gap:12px"><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20corporate%20training." target="_blank" class="btn primary">Corporate Training →</a><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20HR%20consultancy%20or%20outsourcing." target="_blank" class="btn">HR Consultancy / Outsource →</a><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20ER%20%2F%20IR%20advisory." target="_blank" class="btn">ER / IR Advisory →</a><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20payroll%20support." target="_blank" class="btn">Payroll Support →</a></div></div></div></section>
 </section>
 
 <section class="cta"><div class="wrap ctaGrid reveal"><div><div class="eyebrow" style="color:#fff5d6">Start a Conversation</div><h2>Let’s build stronger people practices.</h2><p>Tell us what your organisation needs. ADtriomphe can recommend the right training, advisory or HR support approach.</p></div><div><a class="btn" style="border-color:white;color:white" href="https://wa.me/60149607981" target="_blank">Chat on WhatsApp →</a></div></div></section>
@@ -243,7 +264,7 @@ p{line-height:1.75;color:var(--muted)}
 </div>
 
 <div class="drawer" id="drawer">
-  <div class="drawerPanel"><button class="close" id="closeDrawer">×</button><div class="eyebrow" id="dTag">Solution</div><h2 id="dTitle">Training & Coaching</h2><p id="dText"></p><ul id="dList"></ul><button class="btn primary" data-page="contact">Discuss This Solution →</button></div>
+  <div class="drawerPanel"><button class="close" id="closeDrawer">×</button><div class="eyebrow" id="dTag">Solution</div><h2 id="dTitle">Training & Coaching</h2><p id="dText"></p><ul id="dList"></ul><a class="btn primary" id="drawerWhatsapp" href="#" target="_blank" rel="noopener">Discuss This Solution →</a></div>
 </div>
 
 <script>
@@ -277,13 +298,13 @@ function initReveal(){
 initReveal();
 
 const serviceData={
- training:{tag:"People Development",title:"Training & Coaching",text:"Build capability through practical learning experiences connected directly to workplace performance.",list:["Customized in-house corporate training","Leadership and manager development","HR for Non-HR Professionals","Communication and workplace skills","Interactive case studies and practical exercises","Public and HRD Corp claimable programmes where applicable"]},
- consultancy:{tag:"HR Solutions",title:"HR Consultancy & Outsource",text:"Flexible HR expertise for organisations that need structure, guidance and operational support.",list:["HR policies and procedures","HR documentation","Outsourced HR support","People-process improvement","Management guidance","Operational HR support"]},
- advisory:{tag:"Employee Relations",title:"ER / IR Advisory",text:"Structured support for sensitive employee and industrial relations matters.",list:["Employee relations guidance","Industrial relations support","Performance management matters","Disciplinary processes","Workplace conflict","Manager guidance"]},
- payroll:{tag:"HR Operations",title:"Payroll Management",text:"Dependable payroll support designed to reduce administrative burden and improve monthly processing.",list:["Payroll processing support","Monthly payroll administration","Employee data coordination","Payroll workflow support","Confidential processing","Operational coordination"]}
+ training:{tag:"People Development",title:"Training & Coaching",wa:"Hi ADtriomphe, I would like to enquire about Training & Coaching.",text:"Build capability through practical learning experiences connected directly to workplace performance.",list:["Customized in-house corporate training","Leadership and manager development","HR for Non-HR Professionals","Communication and workplace skills","Interactive case studies and practical exercises","Public and HRD Corp claimable programmes where applicable"]},
+ consultancy:{tag:"HR Solutions",title:"HR Consultancy & Outsource",wa:"Hi ADtriomphe, I would like to enquire about HR Consultancy & Outsource.",text:"Flexible HR expertise for organisations that need structure, guidance and operational support.",list:["HR policies and procedures","HR documentation","Outsourced HR support","People-process improvement","Management guidance","Operational HR support"]},
+ advisory:{tag:"Employee Relations",title:"ER / IR Advisory",wa:"Hi ADtriomphe, I would like to enquire about ER / IR Advisory.",text:"Structured support for sensitive employee and industrial relations matters.",list:["Employee relations guidance","Industrial relations support","Performance management matters","Disciplinary processes","Workplace conflict","Manager guidance"]},
+ payroll:{tag:"HR Operations",title:"Payroll Management",wa:"Hi ADtriomphe, I would like to enquire about Payroll Management.",text:"Dependable payroll support designed to reduce administrative burden and improve monthly processing.",list:["Payroll processing support","Monthly payroll administration","Employee data coordination","Payroll workflow support","Confidential processing","Operational coordination"]}
 };
 const drawer=document.getElementById("drawer");
-document.querySelectorAll("[data-service]").forEach(x=>x.onclick=()=>{const d=serviceData[x.dataset.service];dTag.textContent=d.tag;dTitle.textContent=d.title;dText.textContent=d.text;dList.innerHTML=d.list.map(v=>`<li>${v}</li>`).join("");drawer.classList.add("open")});
+document.querySelectorAll("[data-service]").forEach(x=>x.onclick=()=>{const d=serviceData[x.dataset.service];dTag.textContent=d.tag;dTitle.textContent=d.title;dText.textContent=d.text;dList.innerHTML=d.list.map(v=>`<li>${v}</li>`).join("");drawerWhatsapp.href="https://wa.me/60149607981?text="+encodeURIComponent(d.wa);drawer.classList.add("open")});
 closeDrawer.onclick=()=>drawer.classList.remove("open");drawer.onclick=e=>{if(e.target===drawer)drawer.classList.remove("open")};
 
 document.querySelectorAll("[data-carousel]").forEach(root=>{
