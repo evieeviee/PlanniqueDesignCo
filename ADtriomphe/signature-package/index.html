@@ -163,6 +163,45 @@ p{line-height:1.75;color:var(--muted)}
 #page-contact .list a:hover{color:var(--orange);border-bottom-color:var(--orange)}
 
 </style>
+
+<style>
+/* Training page: remove oversized mobile gap between workshop image and copy */
+@media(max-width:900px){
+  #page-training .section.soft .two{
+    gap:32px;
+    align-items:start;
+  }
+  #page-training .section.soft .media{
+    min-height:0;
+    height:360px;
+  }
+  #page-training .section.soft .media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+}
+@media(max-width:560px){
+  #page-training .section.soft{
+    padding:54px 0 62px;
+  }
+  #page-training .section.soft .two{
+    gap:24px;
+  }
+  #page-training .section.soft .media{
+    height:242px;
+    border-radius:18px;
+  }
+  #page-training .section.soft .eyebrow{
+    margin-top:0;
+  }
+  #page-training .section.soft h2{
+    margin-top:8px;
+    margin-bottom:20px;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="preloader" id="preloader"><div class="preInner"><div class="preRing"></div><img class="preLogo" id="preLogo" alt="ADtriomphe Asia"><div class="preLine"></div><div class="preText">People · Performance · Progress</div></div></div>
