@@ -293,6 +293,67 @@ footer{padding:26px 0 42px;color:#7c736a;font-size:13px} .footerIn{display:flex;
 }
 </style>
 
+
+<style>
+/* Global mobile content alignment refinement */
+@media(max-width:900px){
+  section > .container,
+  section > .wrap,
+  .about .container,
+  .services .container,
+  .feature .container,
+  .instagram .container,
+  .contact .container{
+    width:calc(100% - 36px) !important;
+    max-width:720px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+}
+
+@media(max-width:520px){
+  section > .container,
+  section > .wrap,
+  .about .container,
+  .services .container,
+  .feature .container,
+  .instagram .container,
+  .contact .container{
+    width:calc(100% - 32px) !important;
+    max-width:100% !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  /* About section specifically */
+  .aboutGrid > div,
+  .aboutGrid > article,
+  .aboutGrid > section{
+    min-width:0;
+  }
+
+  .about .eyebrow,
+  #about .eyebrow{
+    padding-left:2px;
+  }
+
+  .about h2,
+  #about h2{
+    font-size:34px !important;
+    line-height:1.06 !important;
+    letter-spacing:-.035em !important;
+    margin-top:12px !important;
+    margin-bottom:22px !important;
+    max-width:100% !important;
+  }
+
+  .about p,
+  #about p{
+    max-width:100% !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="mobileHeader">
