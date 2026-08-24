@@ -1,252 +1,298 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ADtriomphe Asia | HR Advisory & People Development</title>
-<meta name="description" content="ADtriomphe Asia provides corporate training, HR consultancy & outsourcing, ER/IR advisory and payroll management solutions in Malaysia.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ADtriomphe Asia | Signature Demo</title>
+<meta name="description" content="ADtriomphe Asia signature website demo — corporate training, HR consultancy, ER/IR advisory and payroll management.">
 <style>
 :root{
-  --ink:#0b1b2a;--ink2:#10283a;--cream:#f6f2e9;--paper:#fffdf8;
-  --gold:#e6b82e;--orange:#ef5b2a;--line:rgba(11,27,42,.14);--muted:#66717b;
+  --navy:#071827;--navy2:#0e293c;--ink:#15222d;--paper:#fbfaf7;--cream:#f2eee6;
+  --orange:#ef5b2a;--gold:#e4bd43;--line:rgba(21,34,45,.12);--muted:#69747d;--white:#fff;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;overflow-x:hidden}
-body.modal-open{overflow:hidden}a{text-decoration:none;color:inherit}button{font:inherit}
-img{max-width:100%;display:block}.serif{font-family:"Playfair Display",serif}
-.wrap{width:min(1180px,calc(100% - 48px));margin:auto}
-.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--orange)}
-h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:"Playfair Display",serif;font-weight:500}
-h1{font-size:clamp(48px,6.4vw,92px);line-height:.94;letter-spacing:-.045em;margin-bottom:26px}
-h2{font-size:clamp(38px,4.8vw,68px);line-height:1.02;letter-spacing:-.035em}
-p{line-height:1.75}.muted{color:var(--muted)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:15px 22px;border:1px solid var(--ink);border-radius:999px;font-weight:700;font-size:14px;transition:.3s;cursor:pointer;background:transparent}
-.btn:hover{background:var(--ink);color:white;transform:translateY(-2px)}.btn.primary{background:var(--orange);border-color:var(--orange);color:#fff}.btn.primary:hover{background:#d94b1d}
-.arrow{font-size:19px;transition:.25s}.btn:hover .arrow{transform:translateX(4px)}
-/* nav */
-.nav{height:86px;position:fixed;inset:0 0 auto;z-index:100;background:rgba(255,253,248,.88);backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:.3s}
-.nav.scrolled{height:72px;border-color:var(--line);box-shadow:0 10px 35px rgba(11,27,42,.05)}
-.navin{height:100%;display:flex;align-items:center;justify-content:space-between}.logo{width:205px}.logo img{width:100%;height:auto}
-.links{display:flex;align-items:center;gap:28px;font-size:13px;font-weight:700}.links a{position:relative}.links a:after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:var(--orange);transition:.25s}.links a:hover:after{right:0}
-.menu{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:white;align-items:center;justify-content:center}
-.mobile-nav{display:none}
-/* hero */
-.hero{min-height:100svh;padding:140px 0 70px;background:linear-gradient(120deg,var(--paper) 0 55%,var(--cream) 55%);position:relative}
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:70px;align-items:center}
-.hero-copy{padding-top:35px}.hero-copy p{font-size:17px;max-width:590px;color:#4e5a64;margin-bottom:32px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero-note{margin-top:45px;display:flex;gap:28px;align-items:center;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
-.hero-note span{display:flex;align-items:center;gap:9px}.dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
-.hero-visual{position:relative;height:650px}.hero-img{height:100%;width:86%;margin-left:auto;object-fit:cover;border-radius:170px 170px 18px 18px;filter:saturate(.82)}
-.hero-badge{position:absolute;left:0;bottom:52px;width:185px;height:185px;border-radius:50%;background:var(--ink);color:white;display:grid;place-items:center;text-align:center;padding:25px;animation:float 4s ease-in-out infinite}
-.hero-badge b{font-family:"Playfair Display";font-size:23px;font-weight:500}.hero-badge small{display:block;color:#d7c168;margin-top:6px}
-@keyframes float{50%{transform:translateY(-12px)}}.sun{position:absolute;width:120px;height:120px;border-radius:50%;background:var(--gold);right:-35px;top:55px;opacity:.88;mix-blend-mode:multiply}
-/* intro */
-.intro{padding:125px 0}.intro-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:100px}.intro h2{max-width:720px}.intro-copy{padding-top:45px}.intro-copy p:first-child{font-size:20px;color:var(--ink)}
-.signals{display:grid;grid-template-columns:repeat(3,1fr);margin-top:55px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.signal{padding:24px 18px 24px 0}.signal+ .signal{padding-left:25px;border-left:1px solid var(--line)}.signal b{display:block;font-size:15px}.signal small{color:var(--muted)}
-/* services */
-.services{background:var(--ink);color:#fff;padding:115px 0}.services .eyebrow{color:#ffc22e}.services-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:55px}.services-head h2{max-width:650px;margin:0}.services-head p{max-width:370px;color:#b8c2cb;margin:0}
-.service-row{display:grid;grid-template-columns:90px 1.2fr 1fr 50px;gap:25px;align-items:center;padding:35px 5px;border-top:1px solid rgba(255,255,255,.17);cursor:pointer;transition:.35s}
-.service-row:last-child{border-bottom:1px solid rgba(255,255,255,.17)}.service-row:hover{background:rgba(255,255,255,.04);padding-left:20px;padding-right:20px}.num{font-size:12px;letter-spacing:.15em;color:#c7d3dc}.service-row h3{font-size:clamp(30px,3vw,48px);margin:0}.service-row p{color:#c1ccd5;margin:0;font-size:14px}.service-row .go{color:#ffc400;font-size:28px;transition:.25s}.service-row:hover .go{transform:translateX(7px)}
-/* feature */
-.feature{padding:120px 0;background:var(--cream)}.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.feature-image{position:relative}.feature-image img{height:620px;width:100%;object-fit:cover;border-radius:10px}.feature-card{position:absolute;right:-35px;bottom:35px;background:var(--paper);padding:28px;width:245px;box-shadow:0 20px 50px rgba(11,27,42,.12)}.feature-card b{font-family:"Playfair Display";font-size:22px;display:block}.ticks{display:grid;gap:12px;margin:28px 0 35px}.tick{display:flex;gap:12px;align-items:flex-start}.tick i{font-style:normal;color:var(--orange);font-weight:700}
-/* event slider */
-.events{padding:120px 0}.events-top{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:45px}.events-top h2{margin:0}.slider{overflow:hidden}.track{display:flex;transition:transform .65s cubic-bezier(.22,.61,.36,1)}
-.slide{min-width:100%;display:grid;grid-template-columns:1.05fr .95fr;min-height:540px;background:var(--ink);color:#fff}
-.slide-img{position:relative;overflow:hidden}.slide-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.82)}.slide-img:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,rgba(11,27,42,.28))}
-.slide-copy{padding:70px;display:flex;flex-direction:column;justify-content:center}.slide-copy .tag{color:#ffc72c;text-transform:uppercase;font-size:11px;letter-spacing:.16em;font-weight:700}.slide-copy h3{font-size:clamp(38px,4vw,60px);line-height:1.02;margin:18px 0}.slide-copy p{color:#c6d0d8}.event-meta{display:flex;gap:20px;flex-wrap:wrap;margin:12px 0 30px;font-size:13px}.event-meta b{color:#fff}
-.dots{display:flex;justify-content:center;gap:9px;margin-top:25px}.dots button{width:8px;height:8px;border:0;border-radius:50%;background:#c8c8c8;padding:0;cursor:pointer;transition:.25s}.dots button.active{width:28px;border-radius:10px;background:var(--orange)}
-/* insights */
-.insights{padding:115px 0;background:#f0ede6}.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:45px}.insight{background:var(--paper);padding:34px;min-height:310px;display:flex;flex-direction:column;transition:.3s}.insight:hover{transform:translateY(-6px);box-shadow:0 18px 50px rgba(11,27,42,.08)}.insight .index{color:var(--orange);font-size:12px}.insight h3{font-size:29px;margin:45px 0 15px}.insight p{font-size:14px;color:var(--muted)}.insight a{margin-top:auto;font-weight:700;font-size:13px}
-/* contact */
-.contact{padding:120px 0;background:var(--orange);color:#fff;position:relative;overflow:hidden}.contact:after{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(255,255,255,.25);border-radius:50%;right:-140px;top:-120px;box-shadow:0 0 0 80px rgba(255,255,255,.035),0 0 0 160px rgba(255,255,255,.025)}
-.contact-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:80px;align-items:end}.contact h2{font-size:clamp(45px,6vw,82px);margin-bottom:25px}.contact p{max-width:580px;color:#fff3ed}.contact .btn{border-color:white;color:white}.contact-details{display:grid;gap:18px;font-size:15px}.contact-details small{display:block;text-transform:uppercase;letter-spacing:.13em;font-size:10px;opacity:.75;margin-bottom:4px}
-/* footer */
-footer{background:#07131e;color:#d9e0e5;padding:48px 0 28px}.foot{display:grid;grid-template-columns:1fr auto;gap:35px;align-items:start}.foot-logo{width:190px;filter:brightness(0) invert(1);opacity:.95}.foot p{font-size:13px;color:#8e9aa4;max-width:430px;margin:18px 0}.socials{display:flex;gap:10px;justify-content:flex-end}.social{width:42px;height:42px;border:1px solid #34414c;border-radius:50%;display:grid;place-items:center;transition:.25s}.social:hover{background:#fff;color:#07131e}.social svg{width:18px;height:18px;fill:currentColor}.copyright{border-top:1px solid #27343e;margin-top:35px;padding-top:24px;font-size:11px;color:#71808c;display:flex;justify-content:space-between;gap:20px}
-/* modal */
-.modal{position:fixed;inset:0;background:rgba(4,13,21,.72);backdrop-filter:blur(10px);z-index:300;display:flex;align-items:center;justify-content:center;padding:22px;opacity:0;visibility:hidden;transition:.3s}.modal.open{opacity:1;visibility:visible}
-.modal-box{width:min(820px,100%);max-height:88vh;overflow:auto;background:var(--paper);position:relative;transform:translateY(22px) scale(.98);transition:.35s;border-radius:6px}.modal.open .modal-box{transform:none}
-.modal-close{position:absolute;right:20px;top:20px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--paper);font-size:22px;cursor:pointer;z-index:2}.modal-inner{display:grid;grid-template-columns:.78fr 1.22fr}.modal-side{background:var(--cream);padding:55px 38px}.modal-side .big-num{font-family:"Playfair Display";font-size:80px;color:var(--orange);line-height:1}.modal-content{padding:58px}.modal-content h3{font-size:42px;margin:12px 0 20px}.modal-content ul{padding-left:20px;line-height:1.8;color:#53606a}.modal-content .btn{margin-top:18px}
-/* reveal */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}.reveal.on{opacity:1;transform:none}
+*{box-sizing:border-box}
+html,body{margin:0;max-width:100%;overflow-x:hidden}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink)}
+body.menu-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font:inherit}
+.wrap{width:min(1180px,calc(100% - 44px));margin:auto}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.04em;margin-top:0}
+h1{font-size:clamp(52px,6vw,88px);line-height:.96}
+h2{font-size:clamp(38px,4.5vw,64px);line-height:1.03}
+h3{font-size:28px}
+p{line-height:1.75;color:var(--muted)}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:800;color:var(--orange)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;border-radius:999px;border:1px solid var(--ink);font-size:13px;font-weight:800;transition:.25s;cursor:pointer;background:transparent}
+.btn:hover{transform:translateY(-2px);background:var(--ink);color:#fff}
+.btn.primary{background:var(--orange);border-color:var(--orange);color:#fff}
+.btn.primary:hover{background:#d94a1d}
+.small{font-size:12px}
+.muted{color:var(--muted)}
+/* loader */
+.preloader{position:fixed;inset:0;z-index:1000;background:var(--paper);display:grid;place-items:center;transition:.7s}
+.preloader.hide{opacity:0;visibility:hidden}
+.preInner{text-align:center;position:relative}
+.preLogo{width:min(300px,68vw);margin:auto;animation:logoIn .8s ease both}
+.preLine{height:2px;width:0;margin:22px auto;background:linear-gradient(90deg,var(--orange),var(--gold));animation:lineIn 1s .35s ease forwards}
+.preText{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:#7d878f;opacity:0;animation:fadeIn .5s .7s forwards}
+.preRing{position:absolute;width:250px;height:250px;border:1px solid rgba(228,189,67,.25);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);animation:ring 1.8s ease-out both}
+@keyframes logoIn{from{opacity:0;transform:scale(.96) translateY(8px)}to{opacity:1;transform:none}}
+@keyframes lineIn{to{width:190px}}
+@keyframes fadeIn{to{opacity:1}}
+@keyframes ring{0%{opacity:0;transform:translate(-50%,-50%) scale(.6)}30%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) scale(1.6)}}
+/* header */
+.topbar{position:fixed;top:0;left:0;right:0;height:78px;z-index:200;background:rgba(251,250,247,.9);backdrop-filter:blur(18px);border-bottom:1px solid rgba(21,34,45,.08)}
+.topin{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{width:190px}
+.nav{display:flex;align-items:center;gap:23px;font-size:12px;font-weight:800}
+.nav button{border:0;background:none;cursor:pointer;padding:10px 0;color:var(--ink);opacity:.7}
+.nav button:hover,.nav button.active{opacity:1;color:var(--orange)}
+.menuBtn{display:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer}
+.mobileNav{display:none}
+/* demo pages */
+.demoShell{padding-top:78px;min-height:100vh}
+.page{display:none;opacity:0;transform:translateY(16px)}
+.page.active{display:block;animation:pageIn .55s ease forwards}
+@keyframes pageIn{to{opacity:1;transform:none}}
+.pageCurtain{position:fixed;inset:0;z-index:500;background:var(--navy);transform:translateY(100%);pointer-events:none}
+.pageCurtain.run{animation:curtain .8s cubic-bezier(.7,0,.2,1)}
+@keyframes curtain{0%{transform:translateY(100%)}45%{transform:translateY(0)}100%{transform:translateY(-100%)}}
+.pageHero{padding:95px 0 70px;position:relative;overflow:hidden}
+.pageHero.dark{background:var(--navy);color:#fff}
+.pageHero.dark p{color:#bdc8d0}
+.pageHero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(228,189,67,.2);border-radius:50%;right:-170px;top:-150px;box-shadow:0 0 0 70px rgba(228,189,67,.035),0 0 0 140px rgba(228,189,67,.02)}
+.heroGrid,.two{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+.heroImg{height:560px;border-radius:180px 24px 24px 24px;overflow:hidden;position:relative}
+.heroImg img{width:100%;height:100%;object-fit:cover}
+.heroImg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,24,39,.25))}
+.heroActions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.statrow{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:38px}
+.stat{padding:24px 20px}
+.stat+.stat{border-left:1px solid var(--line)}
+.stat b{font-family:Georgia,serif;font-size:27px;display:block}
+.stat span{font-size:11px;color:var(--muted)}
+.section{padding:105px 0}
+.soft{background:var(--cream)}
+.dark{background:var(--navy);color:#fff}
+.dark p{color:#b8c4cc}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:#fff;border:1px solid var(--line);padding:30px;border-radius:18px;transition:.3s}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(7,24,39,.08)}
+.dark .card{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.12)}
+.card .num{font-size:11px;letter-spacing:.16em;color:var(--orange);font-weight:800}
+.media{min-height:500px;border-radius:22px;overflow:hidden}
+.media img{width:100%;height:100%;object-fit:cover}
+.list{display:grid;gap:14px;margin-top:24px}
+.list div{padding:16px 0;border-bottom:1px solid var(--line)}
+.list b{display:block;margin-bottom:4px}
+.tile{display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:center;padding:28px 0;border-top:1px solid rgba(255,255,255,.16);cursor:pointer;transition:.25s}
+.tile:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+.tile h3{font-size:38px;margin:0}
+.tile:hover{padding-left:14px;color:var(--gold)}
+.tile span:last-child{font-size:24px}
+.carousel{overflow:hidden}
+.track{display:flex;transition:transform .65s cubic-bezier(.22,.61,.36,1)}
+.slide{min-width:100%;display:grid;grid-template-columns:1fr 1fr;background:var(--navy);color:#fff}
+.slide img{width:100%;height:520px;object-fit:cover}
+.copybox{padding:60px;display:flex;flex-direction:column;justify-content:center}
+.copybox p{color:#bdc8d0}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:20px}
+.dots button{width:8px;height:8px;border:0;border-radius:99px;background:#c7c7c7;padding:0}
+.dots button.active{width:28px;background:var(--orange)}
+.cta{padding:90px 0;background:linear-gradient(120deg,#ef5b2a,#f2a71f);color:#fff}
+.ctaGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:end}
+.cta p{color:#fff3eb}
+.footer{background:#05121c;color:#d6dfe5;padding:46px 0 28px}
+.footgrid{display:grid;grid-template-columns:1fr auto;gap:30px}
+.footlogo{width:180px}
+.footer p{max-width:500px;font-size:13px;color:#8998a4}
+.socials{display:flex;gap:10px}
+.social{width:42px;height:42px;border:1px solid #33434f;border-radius:50%;display:grid;place-items:center}
+.social svg{width:18px;height:18px;fill:currentColor}
+.copy{border-top:1px solid #263641;margin-top:34px;padding-top:22px;font-size:11px;color:#6d7d88}
+/* service drawer */
+.drawer{position:fixed;inset:0;z-index:400;background:rgba(3,11,18,.7);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:.3s}
+.drawer.open{opacity:1;visibility:visible}
+.drawerPanel{position:absolute;right:0;top:0;bottom:0;width:min(560px,100%);background:var(--paper);padding:54px;transform:translateX(100%);transition:.4s cubic-bezier(.22,.61,.36,1);overflow:auto}
+.drawer.open .drawerPanel{transform:none}
+.close{position:absolute;right:24px;top:24px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer}
+.drawer h2{font-size:46px}
+.drawer ul{padding-left:18px;line-height:1.85;color:#56616b}
+.reveal{opacity:0;transform:translateY(24px);transition:.7s}
+.reveal.on{opacity:1;transform:none}
+.pageTabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.pageTabs button{border:1px solid var(--line);background:#fff;padding:10px 14px;border-radius:999px;cursor:pointer;font-size:12px;font-weight:800}
+.pageTabs button:hover{border-color:var(--orange);color:var(--orange)}
 @media(max-width:900px){
- .wrap{width:min(100% - 32px,1180px)}.links{display:none}.menu{display:flex}.mobile-nav{position:fixed;z-index:99;top:72px;left:16px;right:16px;background:var(--paper);border:1px solid var(--line);padding:18px;box-shadow:0 18px 40px rgba(11,27,42,.1);border-radius:8px}.mobile-nav.open{display:grid}.mobile-nav a{padding:12px 5px;border-bottom:1px solid var(--line);font-weight:700;font-size:14px}
- .hero{padding-top:115px;background:var(--paper)}.hero-grid,.intro-grid,.feature-grid,.contact-grid{grid-template-columns:1fr;gap:45px}.hero-visual{height:520px}.hero-img{width:92%}.hero-badge{width:145px;height:145px;bottom:25px}.sun{right:-10px}
- .intro{padding:85px 0}.intro-copy{padding-top:0}.services{padding:85px 0}.services-head{display:block}.services-head p{margin-top:20px}.service-row{grid-template-columns:45px 1fr 35px;padding:26px 0}.service-row p{grid-column:2/4;margin-top:5px}.service-row h3{font-size:31px}.feature{padding:85px 0}.feature-image img{height:480px}.feature-card{right:15px}
- .events,.insights{padding:85px 0}.slide{grid-template-columns:1fr}.slide-img{height:350px}.slide-copy{padding:38px}.insight-grid{grid-template-columns:1fr}.contact{padding:85px 0}.foot{grid-template-columns:1fr}.socials{justify-content:flex-start}
- .modal-inner{grid-template-columns:1fr}.modal-side{padding:28px 32px}.modal-side .big-num{font-size:48px}.modal-content{padding:34px 30px}.modal-content h3{font-size:32px}
+ .topbar{height:70px}.brand{width:160px}.nav{display:none}.menuBtn{display:block}.demoShell{padding-top:70px}
+ .mobileNav{position:fixed;z-index:190;top:70px;left:14px;right:14px;background:var(--paper);border:1px solid var(--line);box-shadow:0 20px 50px rgba(7,24,39,.12);padding:14px;border-radius:14px}
+ .mobileNav.open{display:grid}.mobileNav button{background:none;border:0;padding:12px;text-align:left;font-weight:800;border-bottom:1px solid var(--line)}
+ .heroGrid,.two,.ctaGrid{grid-template-columns:1fr}.three,.four{grid-template-columns:1fr 1fr}.pageHero{padding:75px 0 55px}.heroImg{height:450px}
+ .slide{grid-template-columns:1fr}.slide img{height:330px}.copybox{padding:36px}.tile{grid-template-columns:42px 1fr auto}.tile h3{font-size:30px}
 }
 @media(max-width:560px){
- .nav{height:70px}.logo{width:166px}.hero{min-height:auto;padding:105px 0 55px}.hero-copy{padding-top:0}
- h1{font-size:43px;line-height:1}.hero-copy p{font-size:15px}.hero-actions{display:grid}.btn{width:100%;padding:14px 18px}.hero-note{gap:14px;flex-wrap:wrap;font-size:10px;margin-top:30px}
- .hero-visual{height:410px}.hero-img{width:94%;border-radius:100px 100px 10px 10px}.hero-badge{width:120px;height:120px;padding:15px}.hero-badge b{font-size:17px}.sun{width:80px;height:80px}
- h2{font-size:36px}.intro,.services,.feature,.events,.insights,.contact{padding:68px 0}.signals{grid-template-columns:1fr}.signal+.signal{padding-left:0;border-left:0;border-top:1px solid var(--line)}
- .service-row{grid-template-columns:35px 1fr 25px;gap:10px}.service-row h3{font-size:27px}.service-row p{font-size:13px;line-height:1.55}.service-row:hover{padding-left:0;padding-right:0}
- .feature-image img{height:390px}.feature-card{position:relative;right:auto;bottom:auto;width:calc(100% - 28px);margin:-45px auto 0}.events-top{display:block}.events-top p{margin-top:15px}.slide-img{height:270px}.slide-copy{padding:30px 24px}.slide-copy h3{font-size:34px}.event-meta{display:grid;gap:7px}
- .insight h3{font-size:26px}.contact h2{font-size:43px}.copyright{display:block}.copyright span{display:block;margin-top:8px}
+ .wrap{width:calc(100% - 28px)}h1{font-size:43px}h2{font-size:35px}.section{padding:68px 0}.three,.four{grid-template-columns:1fr}
+ .heroImg{height:360px;border-radius:100px 18px 18px 18px}.heroActions{display:grid}.btn{width:100%}
+ .statrow{grid-template-columns:1fr}.stat+.stat{border-left:0;border-top:1px solid var(--line)}
+ .tile{grid-template-columns:30px 1fr 24px;gap:10px}.tile h3{font-size:26px}
+ .slide img{height:260px}.copybox{padding:26px 22px}.cta{padding:68px 0}.footgrid{grid-template-columns:1fr}.drawerPanel{padding:38px 24px}.drawer h2{font-size:34px}
 }
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-
-/* premium logo intro */
-.preloader{position:fixed;inset:0;z-index:9999;background:#fffdf8;display:grid;place-items:center;transition:opacity .75s ease,visibility .75s ease}
-.preloader.hide{opacity:0;visibility:hidden;pointer-events:none}
-.preloader-inner{text-align:center;position:relative}
-.preloader-logo{width:min(310px,68vw);opacity:0;transform:translateY(10px) scale(.96);animation:logoIn .8s cubic-bezier(.22,.61,.36,1) .12s forwards}
-.preloader-line{width:0;height:2px;margin:24px auto 0;background:linear-gradient(90deg,#ef3124,#ff7a1a,#f4c526);animation:lineIn 1.05s ease .5s forwards}
-.preloader-copy{margin-top:13px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#78828a;opacity:0;animation:fadeIn .55s ease .75s forwards}
-.preloader:after{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(230,184,46,.22);border-radius:50%;animation:ring 1.7s ease-out .1s both}
-@keyframes logoIn{to{opacity:1;transform:none}}
-@keyframes lineIn{to{width:min(210px,45vw)}}
-@keyframes fadeIn{to{opacity:1}}
-@keyframes ring{0%{transform:scale(.55);opacity:0}35%{opacity:1}100%{transform:scale(1.55);opacity:0}}
-body.loading{overflow:hidden}
-@media(max-width:560px){.preloader-logo{width:min(245px,70vw)}.preloader-copy{font-size:9px}}
-@media(prefers-reduced-motion:reduce){.preloader-logo,.preloader-line,.preloader-copy{opacity:1;transform:none;animation:none}.preloader-line{width:180px}.preloader:after{display:none}}
-
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
-<body class="loading">
-<div class="preloader" id="preloader" aria-label="Loading ADtriomphe Asia"><div class="preloader-inner"><img class="preloader-logo" data-logo alt="ADtriomphe Asia"><div class="preloader-line"></div><div class="preloader-copy">People · Performance · Progress</div></div></div>
-<header class="nav" id="nav">
- <div class="wrap navin">
-  <a class="logo" href="#home" aria-label="ADtriomphe Asia home"><img src="https://dummyimage.com/520x120/fffdf8/fffdf8.png" data-logo alt="ADtriomphe Asia"></a>
-  <nav class="links"><a href="#about">About</a><a href="#services">Solutions</a><a href="#training">Training</a><a href="#programmes">Programmes</a><a href="#insights">Insights</a><a href="#contact" class="btn primary">Talk to Us</a></nav>
-  <button class="menu" id="menu" aria-label="Open menu">☰</button>
- </div>
+<body>
+<div class="preloader" id="preloader"><div class="preInner"><div class="preRing"></div><img class="preLogo" id="preLogo" alt="ADtriomphe Asia"><div class="preLine"></div><div class="preText">People · Performance · Progress</div></div></div>
+<div class="pageCurtain" id="pageCurtain"></div>
+
+<header class="topbar">
+  <div class="wrap topin">
+    <button style="border:0;background:none;padding:0;cursor:pointer" data-page="home"><img class="brand" id="brandLogo" alt="ADtriomphe Asia"></button>
+    <nav class="nav">
+      <button data-page="home" class="active">Home</button>
+      <button data-page="about">About</button>
+      <button data-page="services">Solutions</button>
+      <button data-page="training">Training</button>
+      <button data-page="programmes">Programmes</button>
+      <button data-page="insights">Insights</button>
+      <button data-page="contact">Contact</button>
+    </nav>
+    <button class="menuBtn" id="menuBtn">☰</button>
+  </div>
 </header>
-<div class="mobile-nav" id="mobileNav"><a href="#about">About</a><a href="#services">Solutions</a><a href="#training">Training</a><a href="#programmes">Programmes</a><a href="#insights">Insights</a><a href="#contact">Contact</a></div>
 
-<main>
-<section class="hero" id="home">
- <div class="wrap hero-grid">
-  <div class="hero-copy reveal">
-   <div class="eyebrow">HR Advisory · People Development · Malaysia</div>
-   <h1>Better people.<br><span style="color:var(--orange)">Stronger</span> organisations.</h1>
-   <p>Practical HR solutions and people development designed around the realities of your organisation — from leadership and training to advisory, outsourcing and payroll support.</p>
-   <div class="hero-actions"><a href="#services" class="btn primary">Explore Our Solutions <span class="arrow">→</span></a><a href="#contact" class="btn">Discuss Your Needs</a></div>
-   <div class="hero-note"><span><i class="dot"></i>HRD Corp Claimable Training</span><span><i class="dot"></i>Public & In-House</span></div>
-  </div>
-  <div class="hero-visual reveal">
-   <img class="hero-img" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85" alt="Professional team discussion">
-   <div class="sun"></div><div class="hero-badge"><div><b>One Partner.</b><small>Complete HR support</small></div></div>
-  </div>
- </div>
+<div class="mobileNav" id="mobileNav">
+  <button data-page="home">Home</button><button data-page="about">About</button><button data-page="services">Solutions</button>
+  <button data-page="training">Training</button><button data-page="programmes">Programmes</button><button data-page="insights">Insights</button><button data-page="contact">Contact</button>
+</div>
+
+<div class="demoShell">
+
+<section class="page active" id="page-home">
+  <section class="pageHero">
+    <div class="wrap heroGrid">
+      <div class="reveal">
+        <div class="eyebrow">HR Advisory · Training · Malaysia</div>
+        <h1>Better people.<br><span style="color:var(--orange)">Stronger organisations.</span></h1>
+        <p style="font-size:18px;max-width:650px">ADtriomphe Asia supports organisations through corporate training, HR advisory, outsourcing, employee relations guidance and payroll solutions designed for real workplace needs.</p>
+        <div class="heroActions"><button class="btn primary" data-page="services">Explore Our Solutions →</button><button class="btn" data-page="programmes">View Programmes</button></div>
+        <div class="statrow"><div class="stat"><b>HRD Corp</b><span>Claimable programmes</span></div><div class="stat"><b>In-House</b><span>Tailored learning</span></div><div class="stat"><b>Practical</b><span>Workplace-ready support</span></div></div>
+      </div>
+      <div class="heroImg reveal"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85" alt="Professional HR discussion"></div>
+    </div>
+  </section>
+  <section class="section dark"><div class="wrap"><div class="eyebrow">Our Expertise</div><h2>One partner. Four core solutions.</h2>
+    <div style="margin-top:35px">
+      <div class="tile" data-service="training"><span>01</span><h3>Training & Coaching</h3><span>→</span></div>
+      <div class="tile" data-service="consultancy"><span>02</span><h3>HR Consultancy & Outsource</h3><span>→</span></div>
+      <div class="tile" data-service="advisory"><span>03</span><h3>ER / IR Advisory</h3><span>→</span></div>
+      <div class="tile" data-service="payroll"><span>04</span><h3>Payroll Management</h3><span>→</span></div>
+    </div>
+  </div></section>
+  <section class="section"><div class="wrap two"><div class="media reveal"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&q=85" alt="Corporate training"></div><div class="reveal"><div class="eyebrow">People Development</div><h2>Build capability, not just attendance.</h2><p>From practical HR knowledge for managers to leadership development and customised in-house programmes, the focus is on learning people can apply immediately at work.</p><button class="btn" data-page="training">Discover Training →</button></div></div></section>
 </section>
 
-<section class="intro" id="about">
- <div class="wrap intro-grid reveal">
-  <div><div class="eyebrow">About ADtriomphe Asia</div><h2>HR expertise that moves people and business forward.</h2></div>
-  <div class="intro-copy">
-   <p>ADtriomphe Asia is a professional HR advisory and people development company focused on helping organisations build capable leaders, stronger teams and practical people practices.</p>
-   <p class="muted">We work alongside businesses that need more than theory — combining practical learning, professional HR guidance and solutions that can be applied in the workplace.</p>
-   <div class="signals"><div class="signal"><b>Practical</b><small>Workplace-ready learning</small></div><div class="signal"><b>Tailored</b><small>Built around your needs</small></div><div class="signal"><b>Professional</b><small>HR expertise & guidance</small></div></div>
-  </div>
- </div>
+<section class="page" id="page-about">
+  <section class="pageHero dark"><div class="wrap two"><div><div class="eyebrow">About ADtriomphe Asia</div><h1>Practical HR expertise for growing organisations.</h1><p>ADtriomphe Asia is positioned around people development, professional HR guidance and practical workplace solutions.</p></div><div class="heroImg"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=85" alt="HR consultants meeting"></div></div></section>
+  <section class="section"><div class="wrap two"><div><div class="eyebrow">What We Believe</div><h2>People solutions should make business easier.</h2></div><div><p>Strong HR practices create clarity for managers, confidence for employees and stronger foundations for growth. ADtriomphe combines professional guidance with practical execution so organisations can move from policy to real workplace impact.</p><div class="list"><div><b>Practical</b><span>Focused on real workplace application.</span></div><div><b>Tailored</b><span>Designed around the organisation, not a generic template.</span></div><div><b>Professional</b><span>Structured HR guidance with business context.</span></div></div></div></div></section>
+  <section class="section soft"><div class="wrap"><div class="eyebrow">How We Work</div><h2>Advisory + capability + execution.</h2><div class="three"><div class="card"><span class="num">01</span><h3>Understand</h3><p>Clarify the organisation’s challenges, people priorities and business context.</p></div><div class="card"><span class="num">02</span><h3>Design</h3><p>Shape the right training, HR process or support model around those needs.</p></div><div class="card"><span class="num">03</span><h3>Apply</h3><p>Translate recommendations into practical actions, learning and ongoing support.</p></div></div></div></section>
 </section>
 
-<section class="services" id="services">
- <div class="wrap">
-  <div class="services-head reveal"><div><div class="eyebrow">Our Expertise</div><h2>One partner.<br>Four core solutions.</h2></div><p>Click any solution to explore the scope, typical support areas and how ADtriomphe can help.</p></div>
-  <div class="reveal">
-   <div class="service-row" data-service="training" role="button" tabindex="0"><div class="num">01</div><h3>Training & Coaching</h3><p>Customized in-house learning, leadership programmes and practical skills development aligned to business goals.</p><div class="go">→</div></div>
-   <div class="service-row" data-service="consultancy" role="button" tabindex="0"><div class="num">02</div><h3>HR Consultancy & Outsource</h3><p>Flexible HR support for organisations that need structure, expertise and professional guidance without growing a full internal team.</p><div class="go">→</div></div>
-   <div class="service-row" data-service="advisory" role="button" tabindex="0"><div class="num">03</div><h3>ER / IR Advisory</h3><p>Professional employee and industrial relations guidance to help businesses manage workplace matters fairly and confidently.</p><div class="go">→</div></div>
-   <div class="service-row" data-service="payroll" role="button" tabindex="0"><div class="num">04</div><h3>Payroll Management</h3><p>Reliable payroll support that reduces administrative burden and helps teams stay focused on running the business.</p><div class="go">→</div></div>
-  </div>
- </div>
+<section class="page" id="page-services">
+  <section class="pageHero"><div class="wrap"><div class="eyebrow">HR Solutions</div><h1>One partner.<br>Four core solutions.</h1><p style="max-width:700px">A flexible mix of people development, HR advisory, operational support and workplace relations guidance.</p></div></section>
+  <section class="section dark"><div class="wrap two"><div><div class="eyebrow">01 · People Development</div><h2>Training & Coaching</h2><p>Customised in-house learning, leadership development and practical skills programmes aligned to business goals.</p></div><div class="card"><h3>Typical areas</h3><p>Leadership · Manager development · HR for Non-HR · Communication · Workplace skills · Team capability</p></div></div></section>
+  <section class="section"><div class="wrap two"><div class="card"><h3>Typical areas</h3><p>Policies · HR documentation · Process improvement · Outsourced HR support · People operations · Management guidance</p></div><div><div class="eyebrow">02 · HR Solutions</div><h2>HR Consultancy & Outsource</h2><p>Flexible access to HR expertise for organisations that need structure and professional support without building a large internal HR function.</p></div></div></section>
+  <section class="section soft"><div class="wrap two"><div><div class="eyebrow">03 · Workplace Relations</div><h2>ER / IR Advisory</h2><p>Structured support for employee and industrial relations matters, helping organisations approach sensitive situations fairly and confidently.</p></div><div class="card"><h3>Typical areas</h3><p>Employee relations · Performance matters · Disciplinary processes · Workplace issues · Manager guidance · IR support</p></div></div></section>
+  <section class="section dark"><div class="wrap two"><div class="card"><h3>Typical areas</h3><p>Payroll processing support · Monthly payroll administration · Employee data · Payroll coordination · Confidential operations</p></div><div><div class="eyebrow">04 · HR Operations</div><h2>Payroll Management</h2><p>Reliable payroll support that reduces administrative burden and helps businesses maintain a more dependable monthly process.</p></div></div></section>
 </section>
 
-<section class="feature" id="training">
- <div class="wrap feature-grid">
-  <div class="feature-image reveal"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=85" alt="Corporate training session"><div class="feature-card"><b>Learning that works at work.</b><span class="muted" style="font-size:13px">Practical. Interactive. Relevant.</span></div></div>
-  <div class="reveal"><div class="eyebrow">Training & People Development</div><h2>Build capability, not just attendance.</h2><p class="muted">From essential HR knowledge for managers to leadership development and customized in-house programmes, ADtriomphe focuses on learning that participants can bring back into their day-to-day roles.</p>
-   <div class="ticks"><div class="tick"><i>✓</i><div><b>Customized In-House Programmes</b><br><span class="muted">Aligned to your team, challenges and business objectives.</span></div></div><div class="tick"><i>✓</i><div><b>Leadership & Manager Development</b><br><span class="muted">Strengthen confidence, communication and people leadership.</span></div></div><div class="tick"><i>✓</i><div><b>Practical HR Skills</b><br><span class="muted">Real scenarios, discussions and immediately applicable frameworks.</span></div></div></div>
-   <a href="#programmes" class="btn">View Featured Programmes <span class="arrow">→</span></a>
-  </div>
- </div>
+<section class="page" id="page-training">
+  <section class="pageHero dark"><div class="wrap heroGrid"><div><div class="eyebrow">Training & Coaching</div><h1>Learning that works at work.</h1><p>Practical, interactive programmes for managers, leaders and teams — designed to improve capability, confidence and workplace performance.</p></div><div class="heroImg"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&q=85" alt="Corporate training"></div></div></section>
+  <section class="section"><div class="wrap"><div class="eyebrow">Programme Areas</div><h2>Capability built around real responsibilities.</h2><div class="four"><div class="card"><span class="num">01</span><h3>Leadership</h3><p>Leadership mindset, communication, decision-making and team direction.</p></div><div class="card"><span class="num">02</span><h3>Managers</h3><p>People management skills for supervisors and managers.</p></div><div class="card"><span class="num">03</span><h3>HR Skills</h3><p>Practical HR knowledge for non-HR professionals.</p></div><div class="card"><span class="num">04</span><h3>In-House</h3><p>Customised programmes aligned to organisation-specific goals.</p></div></div></div></section>
+  <section class="section soft"><div class="wrap two"><div class="media"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=85" alt="Interactive workshop"></div><div><div class="eyebrow">Learning Approach</div><h2>Practical. Interactive. Relevant.</h2><div class="list"><div><b>Real-world scenarios</b><span>Use cases that reflect actual manager and workplace situations.</span></div><div><b>Discussion-led learning</b><span>Participants learn through reflection, discussion and application.</span></div><div><b>Workplace transfer</b><span>Designed so learning can be used after the session, not just during it.</span></div></div></div></div></section>
 </section>
 
-<section class="events" id="programmes">
- <div class="wrap">
-  <div class="events-top reveal"><div><div class="eyebrow">Programmes & Highlights</div><h2>Develop what matters next.</h2></div><p class="muted" style="max-width:420px">Selected programmes and capability areas. Current schedules can be confirmed directly with the ADtriomphe team.</p></div>
-  <div class="slider reveal">
-   <div class="track" id="track">
-    <article class="slide"><div class="slide-img"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85" alt="Managers in training"></div><div class="slide-copy"><span class="tag">Upcoming · Public Programme</span><h3>HR for Non-HR Professionals</h3><p>Essential HR skills for managers, supervisors and team leaders who manage people without being HR specialists.</p><div class="event-meta"><span><b>28–29 Sept 2026</b></span><span>9AM–5PM</span><span>Shah Alam</span></div><a href="#contact" class="btn" style="border-color:#fff;color:#fff">Enquire About This Programme →</a></div></article>
-    <article class="slide"><div class="slide-img"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=85" alt="Leadership workshop"></div><div class="slide-copy"><span class="tag">Leadership Development</span><h3>LEAD 360</h3><p>A holistic leadership experience focused on the mindset, skills and habits that help leaders create impact with clarity, confidence and purpose.</p><div class="event-meta"><span><b>Corporate / In-House Enquiries</b></span></div><a href="#contact" class="btn" style="border-color:#fff;color:#fff">Discuss Leadership Training →</a></div></article>
-    <article class="slide"><div class="slide-img"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=85" alt="Hiring strategy workshop"></div><div class="slide-copy"><span class="tag">HR Capability</span><h3>Strategic Hiring Practices</h3><p>Practical recruitment strategies, stronger interviewing practices and smarter decision frameworks for identifying and retaining the right talent.</p><div class="event-meta"><span><b>Ask about the next session</b></span></div><a href="#contact" class="btn" style="border-color:#fff;color:#fff">Request Programme Details →</a></div></article>
-   </div>
-  </div>
-  <div class="dots" id="dots"><button class="active" aria-label="Slide 1"></button><button aria-label="Slide 2"></button><button aria-label="Slide 3"></button></div>
- </div>
+<section class="page" id="page-programmes">
+  <section class="pageHero"><div class="wrap"><div class="eyebrow">Programmes & Highlights</div><h1>Develop what matters next.</h1><p style="max-width:690px">Selected programme themes and upcoming sessions. Swipe or use the dots below.</p></div></section>
+  <section class="section"><div class="wrap"><div class="carousel" data-carousel><div class="track">
+    <article class="slide"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=85" alt=""><div class="copybox"><div class="eyebrow">Upcoming · Public Programme</div><h2>HR for Non-HR Professionals</h2><p>Essential HR skills for managers, supervisors and team leaders who manage people without being HR specialists.</p><p><b>28–29 Sept 2026 · 9AM–5PM · Shah Alam</b></p><button class="btn" style="border-color:#fff;color:#fff" data-page="contact">Enquire →</button></div></article>
+    <article class="slide"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=85" alt=""><div class="copybox"><div class="eyebrow">Leadership Development</div><h2>LEAD 360</h2><p>Leadership development focused on the mindset, habits and communication needed to create stronger impact.</p><button class="btn" style="border-color:#fff;color:#fff" data-page="contact">Discuss In-House Training →</button></div></article>
+    <article class="slide"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=85" alt=""><div class="copybox"><div class="eyebrow">HR Capability</div><h2>Strategic Hiring Practices</h2><p>Practical recruitment and interviewing practices to help managers make stronger hiring decisions.</p><button class="btn" style="border-color:#fff;color:#fff" data-page="contact">Request Details →</button></div></article>
+  </div><div class="dots"><button class="active"></button><button></button><button></button></div></div></div></section>
 </section>
 
-<section class="insights" id="insights">
- <div class="wrap reveal"><div class="eyebrow">Beyond Training</div><h2>Practical support across the employee journey.</h2>
-  <div class="insight-grid">
-   <article class="insight"><span class="index">01 · PEOPLE PRACTICES</span><h3>Build stronger HR foundations.</h3><p>Policies, processes and HR guidance should support the business — not create more complexity.</p><a href="#services">Explore HR Consultancy →</a></article>
-   <article class="insight"><span class="index">02 · WORKPLACE RELATIONS</span><h3>Handle people matters with confidence.</h3><p>Professional ER/IR guidance helps organisations approach sensitive workplace matters with structure and care.</p><a href="#services">Explore ER / IR Advisory →</a></article>
-   <article class="insight"><span class="index">03 · OPERATIONS</span><h3>Make HR administration easier.</h3><p>Reliable outsourced HR and payroll support can free internal teams to focus on higher-value priorities.</p><a href="#services">Explore Payroll Support →</a></article>
-  </div>
- </div>
+<section class="page" id="page-insights">
+  <section class="pageHero dark"><div class="wrap"><div class="eyebrow">HR Insights</div><h1>Practical thinking for better people practices.</h1><p style="max-width:700px">Short guidance themes that reflect the questions managers and growing organisations face in day-to-day people management.</p></div></section>
+  <section class="section"><div class="wrap three"><article class="card"><span class="num">PEOPLE PRACTICES</span><h3>Build stronger HR foundations.</h3><p>Policies and processes should create clarity, consistency and confidence — not extra complexity.</p></article><article class="card"><span class="num">MANAGEMENT</span><h3>Equip managers to lead people well.</h3><p>Managers need practical HR knowledge, communication skills and confidence to handle people matters.</p></article><article class="card"><span class="num">WORKPLACE RELATIONS</span><h3>Handle sensitive matters carefully.</h3><p>Structured ER/IR practices help organisations manage issues with fairness and professionalism.</p></article></div></section>
+  <section class="section soft"><div class="wrap two"><div><div class="eyebrow">Latest Updates</div><h2>Follow ADtriomphe on Instagram.</h2><p>For upcoming programmes, learning highlights and recent HR content, visit the company’s Instagram profile.</p><a href="https://www.instagram.com/adtriomphe/" target="_blank" class="btn primary">View Instagram ↗</a></div><div class="media"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=85" alt="Professional HR discussion"></div></div></section>
 </section>
 
-<section class="contact" id="contact">
- <div class="wrap contact-grid reveal"><div><div class="eyebrow" style="color:#fff3d0">Start a Conversation</div><h2>Let’s develop your people.</h2><p>Tell us what your organisation is working towards. ADtriomphe can recommend a training, advisory or HR support approach that fits your needs.</p><a class="btn" href="https://wa.me/60149607981" target="_blank" rel="noopener">Chat on WhatsApp <span class="arrow">→</span></a></div>
- <div class="contact-details"><div><small>Call / WhatsApp</small><b>+60 14-960 7981</b></div><div><small>Email</small><b>training@adtriomphe.com</b></div><div><small>Solutions</small><b>Training · HR Advisory · Outsourcing · Payroll</b></div></div></div>
+<section class="page" id="page-contact">
+  <section class="pageHero"><div class="wrap two"><div><div class="eyebrow">Contact ADtriomphe</div><h1>Let’s talk about your people priorities.</h1><p>Whether you are planning a training programme, reviewing HR processes or looking for outsourced support, start with a conversation.</p><div class="list"><div><b>Call / WhatsApp</b><span>+60 14-960 7981</span></div><div><b>Email</b><span>training@adtriomphe.com</span></div><div><b>Instagram</b><span>@adtriomphe</span></div></div></div><div class="card"><div class="eyebrow">Quick Enquiry</div><h2 style="font-size:38px">How can we help?</h2><p>Choose the area closest to your current need.</p><div style="display:grid;gap:12px"><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20corporate%20training." target="_blank" class="btn primary">Corporate Training →</a><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20HR%20consultancy%20or%20outsourcing." target="_blank" class="btn">HR Consultancy / Outsource →</a><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20ER%20%2F%20IR%20advisory." target="_blank" class="btn">ER / IR Advisory →</a><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20payroll%20support." target="_blank" class="btn">Payroll Support →</a></div></div></div></section>
 </section>
-</main>
 
-<footer>
- <div class="wrap"><div class="foot"><div><div class="foot-logo"><span style="font-family:'DM Sans';font-size:24px;font-weight:700;letter-spacing:-1px">ADtriomphe</span></div><p>Professional HR advisory and people development solutions for organisations that want stronger people practices and capable teams.</p></div>
- <div class="socials">
-  <a class="social" href="https://www.instagram.com/adtriomphe/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg></a>
-  <a class="social" href="mailto:training@adtriomphe.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7H4zm16 10V9.85l-8 5-8-5V17h16z"/></svg></a>
-  <a class="social" href="https://wa.me/60149607981" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-1.4-.7-2.3-1.3-3.2-2.9-.2-.3.2-.3.6-1.1.1-.2 0-.4 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.2-.1-.4-.2-.9-.3z"/></svg></a>
- </div></div><div class="copyright"><span>© 2026 ADtriomphe Asia. All rights reserved.</span><span>Corporate Training · HR Consultancy · ER/IR Advisory · Payroll</span></div></div>
-</footer>
+<section class="cta"><div class="wrap ctaGrid reveal"><div><div class="eyebrow" style="color:#fff5d6">Start a Conversation</div><h2>Let’s build stronger people practices.</h2><p>Tell us what your organisation needs. ADtriomphe can recommend the right training, advisory or HR support approach.</p></div><div><a class="btn" style="border-color:white;color:white" href="https://wa.me/60149607981" target="_blank">Chat on WhatsApp →</a></div></div></section>
 
-<div class="modal" id="modal" aria-hidden="true"><div class="modal-box"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div class="modal-inner"><div class="modal-side"><div class="eyebrow">ADtriomphe Solution</div><div class="big-num" id="mNum">01</div><p class="muted">Practical support designed around your organisation.</p></div><div class="modal-content"><div class="eyebrow" id="mTag">People Development</div><h3 id="mTitle">Training & Coaching</h3><p id="mText"></p><ul id="mList"></ul><a href="#contact" class="btn primary" id="mCta">Discuss This Solution →</a></div></div></div></div>
+<footer class="footer"><div class="wrap"><div class="footgrid"><div><img class="footlogo" id="footLogo" alt="ADtriomphe Asia"><p>Corporate training, HR advisory, HR outsourcing, ER/IR guidance and payroll support for organisations in Malaysia.</p></div><div class="socials">
+<a class="social" href="https://www.instagram.com/adtriomphe/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg></a>
+<a class="social" href="mailto:training@adtriomphe.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7H4zm16 10V9.85l-8 5-8-5V17h16z"/></svg></a>
+</div></div><div class="copy">© 2026 ADtriomphe Asia · Signature Website Demo</div></div></footer>
+
+</div>
+
+<div class="drawer" id="drawer">
+  <div class="drawerPanel"><button class="close" id="closeDrawer">×</button><div class="eyebrow" id="dTag">Solution</div><h2 id="dTitle">Training & Coaching</h2><p id="dText"></p><ul id="dList"></ul><button class="btn primary" data-page="contact">Discuss This Solution →</button></div>
+</div>
 
 <script>
-// Replace this value with the client's transparent logo file if desired.
-const embeddedLogo = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120"><defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#f12c23"/><stop offset=".55" stop-color="#ff6b21"/><stop offset="1" stop-color="#f5b72e"/></linearGradient></defs><text x="8" y="82" font-family="Arial,sans-serif" font-size="66" font-weight="700" fill="url(#g)">AD</text><path d="M128 79V57a35 35 0 0 1 70 0v22h-18V57a17 17 0 0 0-34 0v22z" fill="#ffd900"/><text x="195" y="82" font-family="Arial,sans-serif" font-size="66" font-weight="700" fill="url(#g)">triomphe</text></svg>`);
-document.querySelectorAll("[data-logo]").forEach(i=>i.src=embeddedLogo);
+const logoSvg = "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120"><defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#f12c23"/><stop offset=".55" stop-color="#ff6b21"/><stop offset="1" stop-color="#f5b72e"/></linearGradient></defs><text x="8" y="82" font-family="Arial,sans-serif" font-size="66" font-weight="700" fill="url(#g)">AD</text><path d="M128 79V57a35 35 0 0 1 70 0v22h-18V57a17 17 0 0 0-34 0v22z" fill="#ffd900"/><text x="195" y="82" font-family="Arial,sans-serif" font-size="66" font-weight="700" fill="url(#g)">triomphe</text></svg>`);
+[preLogo,brandLogo,footLogo].forEach(x=>x.src=logoSvg);
+window.addEventListener("load",()=>setTimeout(()=>preloader.classList.add("hide"),1150));
 
-const data={
- training:{num:"01",tag:"People Development",title:"Training & Coaching",text:"Build capability through practical, engaging learning experiences that connect directly to workplace performance.",list:["Customized in-house corporate training","Leadership and manager development","HR for Non-HR Professionals","Communication, people management and workplace skills","Interactive case studies and real-world scenarios","Public and HRD Corp claimable programmes where applicable"]},
- consultancy:{num:"02",tag:"HR Solutions",title:"HR Consultancy & Outsource",text:"Access professional HR expertise with a flexible support model that can complement or strengthen your internal resources.",list:["HR policies, procedures and documentation","HR operational support and advisory","Outsourced HR support for growing businesses","People-process review and improvement","Practical guidance for managers and business leaders","Support tailored to organisational requirements"]},
- advisory:{num:"03",tag:"Employee Relations",title:"ER / IR Advisory",text:"Navigate employee and industrial relations matters with a structured, professional and business-aware approach.",list:["Employee relations guidance","Industrial relations advisory support","Performance and disciplinary process guidance","Workplace conflict and issue management","Manager support for sensitive people matters","Practical documentation and process guidance"]},
- payroll:{num:"04",tag:"HR Operations",title:"Payroll Management",text:"Reduce payroll administration and create a more dependable monthly process with professional operational support.",list:["Payroll processing support","Payroll administration and coordination","Employee data and monthly payroll inputs","Statutory-process coordination where applicable","Structured payroll workflow support","Confidential and dependable administration"]}
-};
-const modal=document.getElementById("modal"), close=document.getElementById("modalClose");
-function openModal(key){const d=data[key];mNum.textContent=d.num;mTag.textContent=d.tag;mTitle.textContent=d.title;mText.textContent=d.text;mList.innerHTML=d.list.map(x=>`<li>${x}</li>`).join("");modal.classList.add("open");document.body.classList.add("modal-open");modal.setAttribute("aria-hidden","false")}
-function shut(){modal.classList.remove("open");document.body.classList.remove("modal-open");modal.setAttribute("aria-hidden","true")}
-document.querySelectorAll(".service-row").forEach(r=>{r.onclick=()=>openModal(r.dataset.service);r.onkeydown=e=>{if(e.key==="Enter"||e.key===" ")openModal(r.dataset.service)}});close.onclick=shut;modal.onclick=e=>{if(e.target===modal)shut()};document.addEventListener("keydown",e=>{if(e.key==="Escape")shut()});mCta.onclick=shut;
-
-const nav=document.getElementById("nav");addEventListener("scroll",()=>nav.classList.toggle("scrolled",scrollY>20));
-menu.onclick=()=>mobileNav.classList.toggle("open");mobileNav.querySelectorAll("a").forEach(a=>a.onclick=()=>mobileNav.classList.remove("open"));
-
-const reveals=document.querySelectorAll(".reveal");const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("on")}),{threshold:.12});reveals.forEach(x=>io.observe(x));
-
-const track=document.getElementById("track"), dots=[...document.querySelectorAll("#dots button")];let idx=0,timer;
-function go(n){idx=n;track.style.transform=`translateX(-${n*100}%)`;dots.forEach((d,i)=>d.classList.toggle("active",i===n))}
-dots.forEach((d,i)=>d.onclick=()=>{go(i);restart()});function restart(){clearInterval(timer);timer=setInterval(()=>go((idx+1)%dots.length),6500)}restart();
-let sx=0;track.addEventListener("touchstart",e=>sx=e.touches[0].clientX,{passive:true});track.addEventListener("touchend",e=>{let dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>45){go(dx<0?Math.min(idx+1,dots.length-1):Math.max(idx-1,0));restart()}},{passive:true});
-
-const preloader=document.getElementById("preloader");
-function finishIntro(){
-  if(!preloader || preloader.classList.contains("hide")) return;
+const curtain=document.getElementById("pageCurtain");
+const pageButtons=[...document.querySelectorAll("[data-page]")];
+function switchPage(name){
+  if(document.getElementById("page-"+name)?.classList.contains("active")) return;
+  curtain.classList.remove("run"); void curtain.offsetWidth; curtain.classList.add("run");
   setTimeout(()=>{
-    preloader.classList.add("hide");
-    document.body.classList.remove("loading");
-  },1450);
+    document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+    document.getElementById("page-"+name)?.classList.add("active");
+    document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===name));
+    mobileNav.classList.remove("open"); document.body.classList.remove("menu-open");
+    window.scrollTo({top:0,behavior:"instant"});
+    setTimeout(initReveal,60);
+  },350);
 }
-if(document.readyState==="complete") finishIntro();
-else window.addEventListener("load",finishIntro);
-setTimeout(finishIntro,2600);
+pageButtons.forEach(b=>b.addEventListener("click",e=>{ if(b.tagName==="BUTTON"){e.preventDefault();switchPage(b.dataset.page)} }));
+menuBtn.onclick=()=>{mobileNav.classList.toggle("open");document.body.classList.toggle("menu-open",mobileNav.classList.contains("open"))};
 
+let io;
+function initReveal(){
+  if(io)io.disconnect();
+  io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("on")}),{threshold:.12});
+  document.querySelectorAll(".page.active .reveal,.cta .reveal").forEach(x=>io.observe(x));
+}
+initReveal();
+
+const serviceData={
+ training:{tag:"People Development",title:"Training & Coaching",text:"Build capability through practical learning experiences connected directly to workplace performance.",list:["Customized in-house corporate training","Leadership and manager development","HR for Non-HR Professionals","Communication and workplace skills","Interactive case studies and practical exercises","Public and HRD Corp claimable programmes where applicable"]},
+ consultancy:{tag:"HR Solutions",title:"HR Consultancy & Outsource",text:"Flexible HR expertise for organisations that need structure, guidance and operational support.",list:["HR policies and procedures","HR documentation","Outsourced HR support","People-process improvement","Management guidance","Operational HR support"]},
+ advisory:{tag:"Employee Relations",title:"ER / IR Advisory",text:"Structured support for sensitive employee and industrial relations matters.",list:["Employee relations guidance","Industrial relations support","Performance management matters","Disciplinary processes","Workplace conflict","Manager guidance"]},
+ payroll:{tag:"HR Operations",title:"Payroll Management",text:"Dependable payroll support designed to reduce administrative burden and improve monthly processing.",list:["Payroll processing support","Monthly payroll administration","Employee data coordination","Payroll workflow support","Confidential processing","Operational coordination"]}
+};
+const drawer=document.getElementById("drawer");
+document.querySelectorAll("[data-service]").forEach(x=>x.onclick=()=>{const d=serviceData[x.dataset.service];dTag.textContent=d.tag;dTitle.textContent=d.title;dText.textContent=d.text;dList.innerHTML=d.list.map(v=>`<li>${v}</li>`).join("");drawer.classList.add("open")});
+closeDrawer.onclick=()=>drawer.classList.remove("open");drawer.onclick=e=>{if(e.target===drawer)drawer.classList.remove("open")};
+
+document.querySelectorAll("[data-carousel]").forEach(root=>{
+ const track=root.querySelector(".track"),dots=[...root.querySelectorAll(".dots button")];let i=0,timer;
+ function go(n){i=n;track.style.transform=`translateX(-${n*100}%)`;dots.forEach((d,x)=>d.classList.toggle("active",x===n))}
+ dots.forEach((d,x)=>d.onclick=()=>{go(x);restart()});
+ function restart(){clearInterval(timer);timer=setInterval(()=>go((i+1)%dots.length),6000)} restart();
+ let sx=0;track.addEventListener("touchstart",e=>sx=e.touches[0].clientX,{passive:true});track.addEventListener("touchend",e=>{let dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>45){go(dx<0?Math.min(i+1,dots.length-1):Math.max(i-1,0));restart()}},{passive:true});
+});
 </script>
 </body>
 </html>
