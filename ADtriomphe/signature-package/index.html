@@ -202,6 +202,44 @@ p{line-height:1.75;color:var(--muted)}
 }
 </style>
 
+
+<style>
+/* Insights page: remove oversized mobile gap below Latest Updates image */
+@media(max-width:900px){
+  #page-insights .section.soft .two{
+    gap:32px;
+    align-items:start;
+  }
+  #page-insights .section.soft .media{
+    min-height:0;
+    height:360px;
+  }
+  #page-insights .section.soft .media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+}
+@media(max-width:560px){
+  #page-insights .section.soft{
+    padding:54px 0 62px;
+  }
+  #page-insights .section.soft .two{
+    gap:26px;
+  }
+  #page-insights .section.soft .media{
+    min-height:0;
+    height:230px;
+    border-radius:18px;
+    margin:0;
+  }
+  #page-insights .section.soft .media img{
+    height:100%;
+    object-fit:cover;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="preloader" id="preloader"><div class="preInner"><div class="preRing"></div><img class="preLogo" id="preLogo" alt="ADtriomphe Asia"><div class="preLine"></div><div class="preText">People · Performance · Progress</div></div></div>
