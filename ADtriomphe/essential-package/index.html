@@ -113,7 +113,186 @@ footer{padding:26px 0 42px;color:#7c736a;font-size:13px} .footerIn{display:flex;
   .marquee{overflow-x:auto;-webkit-overflow-scrolling:touch}
 }
 
+
+/* --- Mobile/desktop spacing refinement: keep hero content away from screen edges --- */
+.hero .container{
+  position:relative;
+}
+@media(max-width:900px){
+  .hero{
+    padding-top:42px;
+    padding-bottom:44px;
+  }
+  .hero .container{
+    width:min(100% - 36px,1180px);
+    margin-inline:auto;
+  }
+  .heroGrid{
+    gap:30px;
+  }
+  .heroGrid > div:first-child{
+    width:100%;
+    max-width:680px;
+    margin-inline:auto;
+  }
+  .eyebrow{
+    font-size:11px;
+    line-height:1.5;
+    letter-spacing:.16em;
+    padding-right:4px;
+  }
+  h1{
+    font-size:clamp(40px,11vw,56px);
+    line-height:1;
+    letter-spacing:-.04em;
+    margin:18px 0 22px;
+    max-width:100%;
+  }
+  .lead{
+    font-size:15px;
+    line-height:1.65;
+    max-width:100%;
+  }
+  .heroActions{
+    width:100%;
+  }
+  .stats{
+    width:100%;
+    margin-top:30px;
+  }
+  .visual{
+    width:100%;
+    max-width:680px;
+    margin-inline:auto;
+  }
+}
+@media(max-width:520px){
+  body{
+    background:var(--cream);
+  }
+  .mobileHeaderIn{
+    width:calc(100% - 28px);
+    margin-inline:auto;
+  }
+  .hero{
+    padding-top:32px;
+    padding-bottom:34px;
+  }
+  .hero .container{
+    width:calc(100% - 32px);
+    max-width:100%;
+    margin-inline:auto;
+  }
+  .heroGrid > div:first-child{
+    padding-inline:2px;
+  }
+  .eyebrow{
+    gap:8px;
+    font-size:10px;
+    letter-spacing:.14em;
+    white-space:normal;
+  }
+  .eyebrow:before{
+    width:26px;
+    flex:0 0 26px;
+  }
+  h1{
+    font-size:40px;
+    line-height:1.02;
+    margin-top:16px;
+    margin-bottom:20px;
+  }
+  .lead{
+    font-size:15px;
+    line-height:1.7;
+  }
+  .heroActions{
+    display:block;
+    margin-top:24px;
+  }
+  .heroActions .btn{
+    width:100%;
+  }
+  .stats{
+    grid-template-columns:1fr;
+    margin-top:30px;
+    border-top:1px solid #d8d1c8;
+  }
+  .stat{
+    padding:16px 8px;
+    border-top:0;
+    border-bottom:1px solid #d8d1c8;
+  }
+  .stat b{
+    font-size:15px;
+  }
+  .stat span{
+    font-size:11px;
+    line-height:1.45;
+  }
+  .visual{
+    min-height:350px;
+    margin-top:6px;
+  }
+  .frame.main{
+    left:0;
+    right:14px;
+    top:0;
+    bottom:42px;
+    border-radius:72px 18px 18px 18px;
+  }
+  .frame.small{
+    right:0;
+    width:40%;
+    height:32%;
+  }
+  .badge{
+    right:0;
+    top:12px;
+  }
+}
+
 </style>
+
+<style>
+.whatsapp-float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#25D366;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 28px rgba(0,0,0,.22);
+  z-index:9999;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.whatsapp-float:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 14px 32px rgba(0,0,0,.28);
+}
+.whatsapp-float svg{
+  width:31px;
+  height:31px;
+}
+@media(max-width:520px){
+  .whatsapp-float{
+    right:16px;
+    bottom:16px;
+    width:54px;
+    height:54px;
+  }
+  .whatsapp-float svg{
+    width:29px;
+    height:29px;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="mobileHeader">
@@ -131,4 +310,17 @@ footer{padding:26px 0 42px;color:#7c736a;font-size:13px} .footerIn{display:flex;
 <section class="contact" id="contact"><div class="container contactBox"><div><div class="kicker" style="color:#6e2d14">Start a Conversation</div><h2>Build a stronger people strategy.</h2></div><div class="contactInfo"><small>Corporate training • HR advisory • HR outsourcing</small><a href="tel:+60149607981">+60 14-960 7981</a><a href="mailto:training@adtriomphe.com">training@adtriomphe.com</a><a href="https://www.instagram.com/adtriomphe/" target="_blank" rel="noopener">@adtriomphe on Instagram ↗</a></div></div></section>
 </main>
 <footer><div class="container footerIn"><span>© 2026 ADtriomphe Asia. All rights reserved.</span><span>HR Advisory • Training • Leadership • People Development</span></div></footer>
+
+<!-- Floating WhatsApp Button -->
+<a class="whatsapp-float"
+   href="https://wa.me/60123456789?text=Hi%20ADtriomphe%20Asia%2C%20I%27d%20like%20to%20enquire%20about%20your%20services."
+   target="_blank"
+   rel="noopener"
+   aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path fill="currentColor" d="M19.11 17.21c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.26s.98 2.62 1.11 2.8c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.55.57.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32z"/>
+    <path fill="currentColor" d="M16.03 3.2c-7.05 0-12.78 5.69-12.78 12.69 0 2.47.72 4.88 2.08 6.94L3.12 29.2l6.55-2.15a12.83 12.83 0 0 0 6.35 1.69h.01c7.05 0 12.78-5.69 12.78-12.69S23.08 3.2 16.03 3.2zm0 23.4h-.01a10.68 10.68 0 0 1-5.45-1.49l-.39-.23-3.89 1.28 1.3-3.78-.25-.39a10.5 10.5 0 0 1-1.64-5.64c0-5.85 4.77-10.61 10.63-10.61 2.84 0 5.51 1.1 7.52 3.1a10.5 10.5 0 0 1 3.11 7.5c0 5.85-4.77 10.61-10.63 10.61z"/>
+  </svg>
+</a>
+
 </body></html>
