@@ -638,7 +638,7 @@ footer .brand-copy{
   }
   .product-category-toggle{
     display:flex;
-    padding:15px 16px;
+    padding:15px 22px;
     font:600 16px/1.3 Manrope,sans-serif;
     cursor:pointer;
   }
@@ -650,7 +650,9 @@ footer .brand-copy{
     border-bottom:1.5px solid #222;
     transform:rotate(45deg) translateY(-2px);
     transition:transform .22s ease;
-    margin-right:3px;
+    margin-right:2px;
+    margin-left:18px;
+    flex:0 0 auto;
   }
   .product-category-toggle[aria-expanded="true"] .product-category-chevron{
     transform:rotate(225deg) translate(-2px,-2px);
@@ -668,6 +670,140 @@ footer .brand-copy{
     color:#333 !important;
   }
 }
+</style>
+
+<style>
+
+/* ===== V16 dropdown alignment / flow fixes ===== */
+
+/* Desktop Products / Services dropdowns: compact and anchored to their own nav item */
+@media (min-width:1001px){
+  .site-header .nav-item > .dropdown{
+    left:50% !important;
+    right:auto !important;
+    top:77px !important;
+    width:300px !important;
+    min-width:300px !important;
+    max-width:340px !important;
+    padding:10px !important;
+    transform:translate(-50%,8px) !important;
+    white-space:normal !important;
+  }
+
+  .site-header .nav-item > .dropdown.wide{
+    width:340px !important;
+    min-width:340px !important;
+    max-width:340px !important;
+  }
+
+  .site-header .nav-item:hover > .dropdown{
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:translate(-50%,0) !important;
+  }
+
+  .site-header .dropdown button{
+    display:block !important;
+    width:100% !important;
+    padding:13px 14px !important;
+    margin:0 !important;
+    text-align:left !important;
+    white-space:normal !important;
+    line-height:1.45 !important;
+  }
+}
+
+/* Mobile Product Categories dropdown */
+@media (max-width:700px){
+  #page-products .lobby-layout{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:28px !important;
+  }
+
+  #page-products .product-category-panel{
+    position:relative !important;
+    top:auto !important;
+    width:100% !important;
+    margin:0 !important;
+    align-self:stretch !important;
+    overflow:hidden !important;
+    border:1px solid var(--line) !important;
+    background:#fff !important;
+  }
+
+  /* move text + arrow inward from both side borders */
+  #page-products .lobby-sidebar .product-category-toggle{
+    width:100% !important;
+    min-height:54px !important;
+    padding:0 24px !important;
+    margin:0 !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:18px !important;
+    border:0 !important;
+    background:#fff !important;
+    font:600 15px/1.3 Manrope,sans-serif !important;
+  }
+
+  #page-products .product-category-toggle > span:first-child{
+    padding-left:2px !important;
+  }
+
+  #page-products .product-category-chevron{
+    margin:0 2px 0 16px !important;
+    flex:0 0 9px !important;
+  }
+
+  /* Keep list in normal document flow so product cards move down when opened */
+  #page-products .product-category-list{
+    display:block !important;
+    position:static !important;
+    width:100% !important;
+    max-height:0 !important;
+    overflow:hidden !important;
+    padding:0 18px !important;
+    margin:0 !important;
+    border-top:0 solid var(--line) !important;
+    opacity:0 !important;
+    transition:
+      max-height .32s ease,
+      padding .32s ease,
+      opacity .22s ease,
+      border-width .22s ease !important;
+    animation:none !important;
+  }
+
+  #page-products .product-category-panel.open .product-category-list{
+    max-height:430px !important;
+    padding:7px 18px 9px !important;
+    border-top-width:1px !important;
+    opacity:1 !important;
+  }
+
+  #page-products .product-category-list button{
+    width:100% !important;
+    padding:14px 12px !important;
+    margin:0 !important;
+    font-size:14px !important;
+    line-height:1.4 !important;
+    border:0 !important;
+    border-bottom:1px solid #d7d7d3 !important;
+    background:#fff !important;
+    color:#333 !important;
+  }
+
+  #page-products .product-category-list button:last-child{
+    border-bottom:0 !important;
+  }
+
+  #page-products .lobby-grid{
+    width:100% !important;
+    margin:0 !important;
+  }
+}
+
 </style>
 </head>
 <body class="locked preloading">
