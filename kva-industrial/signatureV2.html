@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KVA Industrial Supply | Smoke Control & Ventilation Specialist Malaysia</title>
+<meta name="description" content="KVA Industrial Supply provides smoke curtain systems, smoke ventilators, actuators, glass baffles, customized steel structures, maintenance and professional engineer calculation services in Malaysia.">
+<meta name="theme-color" content="#f7f7f7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --soft:#f5f5f4;
+  --soft2:#ededeb;
+  --ink:#202224;
+  --muted:#6f7478;
+  --line:#dedfdf;
+  --dark:#2b2d2f;
+  --accent:#f0a11a;
+  --max:1240px;
+  --shadow:0 18px 55px rgba(28,31,33,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:Inter,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden}
+body.locked{overflow:hidden}
+a{text-decoration:none;color:inherit}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+img{display:block;width:100%}
+.container{width:min(calc(100% - 52px),var(--max));margin:auto}
+.section{padding:96px 0}
+.section-sm{padding:68px 0}
+.kicker{font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#777b7e}
+.kicker:before{content:"";display:inline-block;width:27px;height:1px;background:#a8abad;margin-right:10px;vertical-align:middle}
+.section-title{margin-top:14px;font-family:Manrope,sans-serif;font-size:clamp(34px,4.4vw,58px);line-height:1.06;letter-spacing:-2.4px;font-weight:600}
+.section-copy{margin-top:16px;max-width:670px;color:var(--muted);font-size:14px}.center{text-align:center}.center .section-copy{margin-left:auto;margin-right:auto}
+
+/* PRELOADER */
+.preloader{position:fixed;inset:0;z-index:99999;display:grid;place-items:center;background:#f4f4f2;transition:.65s ease}
+.preloader.hide{opacity:0;visibility:hidden}
+.loader-wrap{text-align:center;padding:28px}
+.loader-brand{font-family:Manrope,sans-serif;font-size:clamp(29px,4vw,46px);font-weight:700;letter-spacing:-1.5px;color:#26282a}
+.loader-brand span{color:var(--accent)}
+.loader-slogan{margin-top:12px;font-size:10px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:#767a7d}
+.loader-line{width:250px;height:2px;background:#d8d8d5;margin:24px auto 0;overflow:hidden}
+.loader-line i{display:block;width:45%;height:100%;background:#4f5255;animation:loadbar 1.35s ease-in-out infinite}
+@keyframes loadbar{0%{transform:translateX(-115%)}100%{transform:translateX(260%)}}
+
+/* HEADER */
+.site-header{position:fixed;inset:0 0 auto 0;z-index:1200;background:rgba(255,255,255,.96);border-bottom:1px solid rgba(20,20,20,.08);backdrop-filter:blur(16px)}
+.navbar{height:78px;display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:12px;border:0;background:none;text-align:left;min-width:225px}
+.brand-mark{width:34px;height:34px;display:grid;place-items:center;background:#2e3032;color:#fff;font-family:Manrope,sans-serif;font-size:11px;font-weight:700}
+.brand-copy strong{display:block;font-family:Manrope,sans-serif;font-size:15px;letter-spacing:.3px}
+.brand-copy span{display:block;margin-top:1px;font-size:8px;color:#888c8f;letter-spacing:1.1px;text-transform:uppercase}
+.navigation{display:flex;align-items:center;justify-content:flex-end;gap:2px;list-style:none;margin-left:auto;height:100%}
+.nav-item{position:relative;height:100%;display:flex;align-items:center}
+.nav-btn{height:100%;padding:0 15px;border:0;background:none;color:#4f5356;font-size:12px;font-weight:600;display:flex;align-items:center;gap:7px}
+.nav-btn:hover,.nav-btn.active{color:#111}
+.chev{width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-3px}
+.dropdown{position:absolute;top:72px;left:0;min-width:270px;padding:10px;background:#fff;border:1px solid #e2e2e0;box-shadow:0 16px 45px rgba(15,18,20,.12);opacity:0;visibility:hidden;transform:translateY(8px);transition:.22s}
+.dropdown.wide{min-width:330px}
+.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:none}
+.dropdown button{width:100%;padding:12px 13px;border:0;background:none;text-align:left;color:#55595c;font-size:12px;border-bottom:1px solid #efefed}
+.dropdown button:last-child{border-bottom:0}.dropdown button:hover{background:#f5f5f3;color:#111}
+.nav-cta{min-height:42px;padding:0 17px;border:1px solid #2e3032;background:#2e3032;color:#fff;font-size:11px;font-weight:700}
+.mobile-menu{display:none;width:42px;height:42px;margin-left:auto;border:1px solid #d9d9d6;background:#fff;position:relative}
+.mobile-menu span,.mobile-menu:before,.mobile-menu:after{content:"";position:absolute;left:11px;width:18px;height:1.5px;background:#2f3133}.mobile-menu:before{top:14px}.mobile-menu span{top:20px}.mobile-menu:after{top:26px}
+
+/* PAGE */
+.page{display:none;min-height:100vh}.page.active{display:block;animation:fade .45s ease}@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* HERO */
+.home-hero{padding-top:78px;min-height:760px;display:grid;grid-template-columns:1.03fr .97fr;background:#f4f4f2}
+.hero-copy{display:flex;align-items:center;padding:76px max(26px,calc((100vw - var(--max))/2)) 70px}
+.hero-inner{max-width:620px}
+.hero-overline{font-size:11px;text-transform:uppercase;letter-spacing:1.9px;color:#7a7e81;font-weight:700}
+.home-hero h1{margin-top:20px;font-family:Manrope,sans-serif;font-size:clamp(49px,6.6vw,87px);line-height:.99;letter-spacing:-4.6px;font-weight:600;color:#252729}
+.home-hero h1 span{color:#777b7e}
+.home-hero p{margin-top:24px;max-width:560px;color:#6e7376;font-size:15px}
+.hero-actions{margin-top:30px;display:flex;gap:10px;flex-wrap:wrap}
+.btn{min-height:47px;padding:0 19px;border:1px solid #303234;background:#303234;color:#fff;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:.25s}
+.btn:hover{transform:translateY(-2px)}.btn-light{background:transparent;color:#303234;border-color:#bfc1c1}.btn-accent{background:var(--accent);color:#111;border-color:var(--accent)}
+.arrow{width:16px;height:12px;position:relative}.arrow:before{content:"";position:absolute;left:0;top:5px;width:14px;height:1px;background:currentColor}.arrow:after{content:"";position:absolute;right:0;top:2px;width:6px;height:6px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.hero-image{position:relative;min-height:682px;overflow:hidden}.hero-image img{position:absolute;inset:0;height:100%;object-fit:cover;filter:brightness(1.14) saturate(.92)}
+.hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(244,244,242,.10),transparent 26%)}
+.hero-caption{position:absolute;z-index:2;left:28px;bottom:28px;background:rgba(255,255,255,.92);padding:15px 18px;max-width:280px;border-left:3px solid #494c4e;box-shadow:var(--shadow)}
+.hero-caption strong{display:block;font-family:Manrope,sans-serif;font-size:13px}.hero-caption span{display:block;margin-top:3px;color:#777b7e;font-size:10px}
+
+/* FEATURE STRIP */
+.feature-strip{border-bottom:1px solid var(--line);background:#fff}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr)}.feature{padding:26px 22px;border-left:1px solid var(--line)}.feature:last-child{border-right:1px solid var(--line)}.feature small{display:block;color:#909396;font-size:9px;letter-spacing:1.1px;text-transform:uppercase}.feature strong{display:block;margin-top:6px;font-family:Manrope,sans-serif;font-size:14px}
+
+/* GENERAL LAYOUT */
+.split{display:grid;grid-template-columns:.95fr 1.05fr;gap:74px;align-items:center}.split-image{min-height:500px;position:relative;overflow:hidden;background:#eee}.split-image img{position:absolute;inset:0;height:100%;object-fit:cover;filter:brightness(1.1)}.split-content p{margin-top:16px;color:var(--muted);font-size:14px}.split-content .btn{margin-top:24px}
+.product-section{background:#f6f6f4}.product-layout{margin-top:42px;display:grid;grid-template-columns:330px 1fr;border-top:1px solid var(--line)}.product-tabs{border-right:1px solid var(--line)}.product-tab{width:100%;padding:18px 8px;border:0;border-bottom:1px solid var(--line);background:transparent;text-align:left;color:#777b7e;font-size:13px;font-weight:600;display:flex;justify-content:space-between}.product-tab.active{color:#181a1c;background:#fff;padding-left:18px}.product-view{display:grid;grid-template-columns:.92fr 1.08fr;min-height:460px;background:#fff}.product-copy{padding:50px 45px;display:flex;flex-direction:column;justify-content:center}.product-copy small{font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:#8b8f92}.product-copy h3{margin-top:8px;font-family:Manrope,sans-serif;font-size:31px;line-height:1.08}.product-copy p{margin-top:13px;color:var(--muted);font-size:13px}.product-copy .mini{margin-top:17px;display:grid;gap:7px}.product-copy .mini div{font-size:11px;padding:8px 0;border-bottom:1px solid #ececea}.product-media{min-height:460px;overflow:hidden}.product-media img{height:100%;object-fit:cover;filter:brightness(1.16) saturate(.9)}
+
+.services-grid{margin-top:42px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.service-card{background:#f6f6f4;border:1px solid #e3e3e0;padding:33px;transition:.25s}.service-card:hover{transform:translateY(-4px);box-shadow:0 18px 42px rgba(30,32,34,.08)}.service-card span{font-size:10px;color:#85898c;letter-spacing:1.1px;text-transform:uppercase}.service-card h3{margin-top:8px;font-family:Manrope,sans-serif;font-size:24px}.service-card p{margin-top:8px;color:var(--muted);font-size:13px}.service-card button{margin-top:17px;border:0;background:none;font-size:11px;font-weight:700;color:#3d4042;display:flex;gap:8px;align-items:center}
+
+.project-grid{margin-top:42px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.project{min-height:330px;position:relative;overflow:hidden;background:#ddd}.project:first-child{grid-column:span 2;min-height:440px}.project img{position:absolute;inset:0;height:100%;object-fit:cover;filter:brightness(1.12)}.project:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,22,24,.78),transparent 62%)}.project-content{position:absolute;z-index:2;left:22px;right:22px;bottom:20px;color:#fff}.project-content small{font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.72)}.project-content h3{margin-top:4px;font-family:Manrope,sans-serif;font-size:22px}.project-content p{margin-top:3px;font-size:10px;color:rgba(255,255,255,.72)}
+
+.address-band{background:#2f3133;color:#fff}.address-layout{padding:31px 0;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px;align-items:center}.address-layout small{display:block;color:#aeb1b3;font-size:9px;text-transform:uppercase;letter-spacing:1.2px}.address-layout strong{display:block;margin-top:5px;font-size:13px;line-height:1.5}.address-link{justify-self:end;color:#fff;border-bottom:1px solid rgba(255,255,255,.4);font-size:11px;font-weight:700;padding-bottom:3px}
+
+/* INTERNAL HERO */
+.page-hero{padding-top:78px;min-height:500px;display:grid;grid-template-columns:1.02fr .98fr;background:#f3f3f1}.page-hero-copy{display:flex;align-items:center;padding:70px max(26px,calc((100vw - var(--max))/2))}.breadcrumb{font-size:9px;color:#929598;text-transform:uppercase;letter-spacing:1.2px}.breadcrumb button{border:0;background:none;color:#6d7174;font-size:inherit}.page-hero h1{margin-top:18px;font-family:Manrope,sans-serif;font-size:clamp(40px,5.5vw,70px);line-height:1;letter-spacing:-3px;font-weight:600}.page-hero p{margin-top:18px;max-width:560px;color:var(--muted);font-size:13px}.page-hero-img{min-height:422px}.page-hero-img img{height:100%;object-fit:cover;filter:brightness(1.15)}
+
+.solution-list{display:grid;gap:22px}.solution-row{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:#fff}.solution-row:nth-child(even) .solution-image{order:2}.solution-image{min-height:390px}.solution-image img{height:100%;object-fit:cover;filter:brightness(1.14)}.solution-content{padding:45px;display:flex;flex-direction:column;justify-content:center}.solution-content small{font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:#8b8e91}.solution-content h2{margin-top:8px;font-family:Manrope,sans-serif;font-size:30px}.solution-content p{margin-top:10px;color:var(--muted);font-size:13px}.mini-list{margin-top:17px;display:grid;grid-template-columns:1fr 1fr;gap:8px}.mini-list div{padding:9px 11px;background:#f5f5f3;font-size:10px}.solution-content .btn{width:max-content;margin-top:20px}
+
+.info-grid{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.info-card{border:1px solid var(--line);padding:28px;background:#fff}.info-card small{font-size:9px;color:#96999b}.info-card h3{margin-top:8px;font-family:Manrope,sans-serif;font-size:19px}.info-card p{margin-top:7px;color:var(--muted);font-size:12px}
+
+.contact-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px}.contact-list{margin-top:26px}.contact-item{padding:14px 0;border-bottom:1px solid var(--line)}.contact-item small{display:block;font-size:9px;color:#8b8e91;text-transform:uppercase;letter-spacing:1px}.contact-item strong{display:block;margin-top:4px;font-size:13px}.form-card{padding:34px;background:#f5f5f3;border:1px solid #e4e4e1}.form-card h3{font-family:Manrope,sans-serif;font-size:22px}.form-card>p{margin-top:6px;color:var(--muted);font-size:12px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.field{margin-top:10px}.field input,.field select,.field textarea,.drawer input,.drawer select,.drawer textarea{width:100%;padding:13px;border:1px solid #d8d8d5;background:#fff;outline:none;font-size:12px}.field textarea{min-height:120px;resize:vertical}.submit{width:100%;margin-top:12px;min-height:47px;border:0;background:#303234;color:#fff;font-size:11px;font-weight:700}
+
+/* CTA */
+.cta{background:#eeeeeb}.cta-layout{padding:64px 0;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}.cta h2{font-family:Manrope,sans-serif;font-size:clamp(30px,4vw,50px);line-height:1.07;letter-spacing:-2px;font-weight:600}.cta p{margin-top:9px;color:#6d7174;font-size:12px}
+
+/* FOOTER */
+footer{background:#252729;color:#fff;padding:54px 0 20px}.footer-grid{display:grid;grid-template-columns:1.35fr .7fr .8fr 1fr;gap:38px}.footer-about{margin-top:14px;max-width:350px;color:#aeb1b3;font-size:11px}.footer-col h4{font-size:11px;margin-bottom:13px}.footer-col button,.footer-col a{display:block;margin:0 0 8px;border:0;background:none;color:#aeb1b3;font-size:10px}.footer-col button:hover,.footer-col a:hover{color:#fff}.footer-bottom{margin-top:34px;padding-top:17px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:20px;color:#85898c;font-size:9px}
+
+/* WHATSAPP */
+.whatsapp{position:fixed;right:18px;bottom:18px;z-index:900;width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:#25d366;box-shadow:0 12px 28px rgba(0,0,0,.18)}.whatsapp svg{width:26px;height:26px;fill:#fff}
+
+/* DRAWER / MODAL */
+.drawer-overlay,.modal{position:fixed;inset:0;background:rgba(20,22,24,.58);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:.25s}.drawer-overlay{z-index:4000}.drawer-overlay.show,.modal.show{opacity:1;visibility:visible}.drawer{position:fixed;right:0;top:0;z-index:4100;width:min(430px,100%);height:100vh;background:#fff;padding:30px;overflow:auto;transform:translateX(100%);transition:.35s}.drawer.show{transform:none}.drawer-close,.modal-close{width:36px;height:36px;border:1px solid #ddd;background:#f5f5f3;font-size:18px}.drawer-close{position:absolute;right:20px;top:20px}.drawer-heading{padding-top:30px}.drawer-heading small{font-size:9px;color:#898d90;text-transform:uppercase;letter-spacing:1.2px}.drawer-heading h3{margin-top:7px;font-family:Manrope,sans-serif;font-size:27px}.drawer-heading p{margin-top:7px;color:var(--muted);font-size:12px}.drawer form{margin-top:22px}.drawer label{display:block;margin:12px 0 5px;color:#777b7e;font-size:9px;text-transform:uppercase;letter-spacing:.8px}.drawer textarea{min-height:95px}.drawer-submit{width:100%;min-height:47px;margin-top:13px;border:0;background:#303234;color:#fff;font-size:11px;font-weight:700}
+.modal{z-index:5000;display:grid;place-items:center;padding:20px}.modal-box{width:min(680px,100%);max-height:86vh;overflow:auto;background:#fff;padding:32px;transform:translateY(20px);transition:.25s}.modal.show .modal-box{transform:none}.modal-close{float:right}.modal-label{font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:#85898c}.modal-box h3{margin-top:8px;font-family:Manrope,sans-serif;font-size:28px}.modal-text{margin-top:10px;color:var(--muted);font-size:12px}.modal-grid{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:8px}.modal-detail{padding:12px;background:#f5f5f3}.modal-detail span{display:block;color:#929598;font-size:8px;text-transform:uppercase;letter-spacing:.8px}.modal-detail strong{display:block;margin-top:3px;font-size:11px}.modal-action{margin-top:18px;display:inline-flex;padding:11px 16px;background:#303234;color:#fff;font-size:10px;font-weight:700}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .navigation,.nav-cta{display:none}.mobile-menu{display:block}.navbar{height:70px}.home-hero,.page-hero{grid-template-columns:1fr}.hero-image{min-height:470px}.page-hero-img{min-height:330px}.home-hero{padding-top:70px}.page-hero{padding-top:70px}.product-layout{grid-template-columns:1fr}.product-tabs{display:grid;grid-template-columns:repeat(2,1fr);border-right:0}.product-tab{border-right:1px solid var(--line)}.split,.contact-layout{grid-template-columns:1fr}.project-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}.address-layout{grid-template-columns:1fr 1fr}.address-link{justify-self:start}.mobile-nav-panel{display:none;position:absolute;top:70px;left:18px;right:18px;background:#fff;border:1px solid #dededb;box-shadow:0 18px 45px rgba(20,22,24,.12);padding:8px}.mobile-nav-panel.show{display:block}.mobile-nav-panel button{width:100%;text-align:left;padding:12px;border:0;border-bottom:1px solid #ececea;background:#fff;font-size:12px}.mobile-nav-panel .mobile-group{background:#f4f4f2;font-weight:700}.mobile-nav-panel .sub{padding-left:25px;color:#666}
+}
+@media(min-width:1001px){.mobile-nav-panel{display:none!important}}
+@media(max-width:700px){
+  .container{width:min(calc(100% - 30px),var(--max))}.section{padding:70px 0}.section-sm{padding:52px 0}.brand-copy strong{font-size:12px}.brand-copy span{font-size:7px}.brand-mark{width:30px;height:30px}.home-hero h1{font-size:clamp(42px,13vw,58px);letter-spacing:-2.8px}.hero-copy{padding:58px 18px 45px}.home-hero p{font-size:12px}.hero-image{min-height:380px}.feature-grid{grid-template-columns:1fr 1fr}.feature{padding:18px 14px}.feature strong{font-size:11px}.split{gap:36px}.split-image{min-height:340px}.section-title{font-size:clamp(31px,10vw,43px);letter-spacing:-1.8px}.section-copy,.split-content p{font-size:12px}.product-tabs{grid-template-columns:1fr}.product-view{grid-template-columns:1fr}.product-copy{padding:28px 20px}.product-copy h3{font-size:24px}.product-media{min-height:280px}.services-grid,.info-grid{grid-template-columns:1fr}.project-grid{grid-template-columns:1fr}.project:first-child{grid-column:auto;min-height:340px}.project{min-height:300px}.address-layout{grid-template-columns:1fr}.page-hero-copy{padding:48px 18px}.page-hero h1{font-size:clamp(37px,11vw,50px);letter-spacing:-2px}.solution-row{grid-template-columns:1fr}.solution-row:nth-child(even) .solution-image{order:0}.solution-image{min-height:280px}.solution-content{padding:26px 20px}.mini-list{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.cta-layout{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}.modal{align-items:end;padding:0}.modal-box{border-radius:0;max-height:82vh;padding:24px 18px}.modal-grid{grid-template-columns:1fr}.whatsapp{width:49px;height:49px;right:14px;bottom:14px}
+}
+</style>
+</head>
+<body class="locked">
+
+<div class="preloader" id="preloader">
+  <div class="loader-wrap">
+    <div class="loader-brand">KVA <span>INDUSTRIAL</span></div>
+    <div class="loader-slogan">Smoke Curtain · Ventilator · Actuator</div>
+    <div class="loader-line"><i></i></div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container navbar">
+    <button class="brand" onclick="openPage('home')">
+      <div class="brand-mark">KVA</div>
+      <div class="brand-copy"><strong>KVA INDUSTRIAL</strong><span>Smoke Control Specialist</span></div>
+    </button>
+
+    <ul class="navigation">
+      <li class="nav-item"><button class="nav-btn" data-page-link="home" onclick="openPage('home')">Home</button></li>
+      <li class="nav-item"><button class="nav-btn" data-page-link="about" onclick="openPage('about')">About</button></li>
+      <li class="nav-item">
+        <button class="nav-btn">Products <span class="chev"></span></button>
+        <div class="dropdown wide">
+          <button onclick="openProductPage('automatic')">Smoke Curtain — Automatic</button>
+          <button onclick="openProductPage('fixed')">Smoke Curtain — Fixed</button>
+          <button onclick="openProductPage('ventilator')">Ventilator — Roof / Wall</button>
+          <button onclick="openProductPage('actuator')">Actuator</button>
+          <button onclick="openProductPage('glass')">Glass Baffles</button>
+          <button onclick="openProductPage('steel')">Customized Steel Structure Design</button>
+        </div>
+      </li>
+      <li class="nav-item">
+        <button class="nav-btn">Services <span class="chev"></span></button>
+        <div class="dropdown">
+          <button onclick="openServicePage('maintenance')">Smoke Curtain Maintenance</button>
+          <button onclick="openServicePage('pe')">Professional Engineer Calculation</button>
+        </div>
+      </li>
+      <li class="nav-item"><button class="nav-btn" data-page-link="projects" onclick="openPage('projects')">Projects</button></li>
+      <li class="nav-item"><button class="nav-btn" data-page-link="contact" onclick="openPage('contact')">Contact</button></li>
+    </ul>
+    <button class="nav-cta" onclick="openDrawer()">Discuss a Project</button>
+    <button class="mobile-menu" id="mobileMenu" aria-label="Open Menu"><span></span></button>
+    <div class="mobile-nav-panel" id="mobileNav">
+      <button onclick="openPage('home')">Home</button>
+      <button onclick="openPage('about')">About</button>
+      <button class="mobile-group" type="button">Products</button>
+      <button class="sub" onclick="openProductPage('automatic')">Automatic Smoke Curtain</button>
+      <button class="sub" onclick="openProductPage('fixed')">Fixed Smoke Curtain</button>
+      <button class="sub" onclick="openProductPage('ventilator')">Roof / Wall Ventilator</button>
+      <button class="sub" onclick="openProductPage('actuator')">Actuator</button>
+      <button class="sub" onclick="openProductPage('glass')">Glass Baffles</button>
+      <button class="sub" onclick="openProductPage('steel')">Customized Steel Structure</button>
+      <button class="mobile-group" type="button">Services</button>
+      <button class="sub" onclick="openServicePage('maintenance')">Smoke Curtain Maintenance</button>
+      <button class="sub" onclick="openServicePage('pe')">Professional Engineer Calculation</button>
+      <button onclick="openPage('projects')">Projects</button>
+      <button onclick="openPage('contact')">Contact</button>
+    </div>
+  </div>
+</header>
+
+<!-- HOME -->
+<main class="page active" id="page-home">
+  <section class="home-hero">
+    <div class="hero-copy">
+      <div class="hero-inner">
+        <div class="hero-overline">Smoke Control & Ventilation Specialist · Malaysia</div>
+        <h1>Engineering<br><span>safer spaces.</span></h1>
+        <p>KVA Industrial Supply provides specialist smoke curtain, ventilation and engineering solutions for commercial and industrial developments throughout Malaysia.</p>
+        <div class="hero-actions">
+          <button class="btn" onclick="openProductPage('automatic')">Explore Products <span class="arrow"></span></button>
+          <button class="btn btn-light" onclick="openDrawer()">Request Consultation</button>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1800&q=95" alt="Modern commercial building smoke control engineering">
+      <div class="hero-caption"><strong>Smoke Control. Engineered Simply.</strong><span>Automatic & fixed smoke curtain · roof & wall ventilation · actuator systems</span></div>
+    </div>
+  </section>
+
+  <section class="feature-strip">
+    <div class="container feature-grid">
+      <div class="feature"><small>01</small><strong>Smoke Curtain</strong></div>
+      <div class="feature"><small>02</small><strong>Ventilator</strong></div>
+      <div class="feature"><small>03</small><strong>Actuator</strong></div>
+      <div class="feature"><small>04</small><strong>Engineering Support</strong></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="split-image"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=95" alt="Engineering installation team"></div>
+      <div class="split-content">
+        <div class="kicker">About KVA</div>
+        <h2 class="section-title">Focused expertise.<br>Reliable execution.</h2>
+        <p>KVA Industrial Supply was established in 2019 as a smoke control specialist contractor providing supply and installation, maintenance and rectification services.</p>
+        <p>Our work supports industrial, distribution, manufacturing, shopping mall and commercial projects throughout Malaysia.</p>
+        <button class="btn btn-light" onclick="openPage('about')">About KVA <span class="arrow"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section product-section">
+    <div class="container">
+      <div class="kicker">Our Products</div>
+      <h2 class="section-title">Core smoke control<br>product range.</h2>
+      <p class="section-copy">A simplified product presentation inspired by the clean reference layout preferred by the customer, with the technical image kept visually bright and prominent.</p>
+      <div class="product-layout">
+        <div class="product-tabs" id="productTabs"></div>
+        <div class="product-view">
+          <div class="product-copy">
+            <small id="homeProductNo">Product 01</small>
+            <h3 id="homeProductTitle">Automatic Smoke Curtain</h3>
+            <p id="homeProductText"></p>
+            <div class="mini" id="homeProductMini"></div>
+            <button class="btn btn-light" style="margin-top:22px;width:max-content" id="homeProductBtn">View Product <span class="arrow"></span></button>
+          </div>
+          <div class="product-media"><img id="homeProductImage" src="" alt="KVA product"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="center">
+        <div class="kicker">Professional Services</div>
+        <h2 class="section-title">Support beyond<br>product supply.</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card"><span>Service 01</span><h3>Smoke Curtain Maintenance</h3><p>Inspection, servicing, rectification recommendations and ongoing maintenance support for smoke curtain systems.</p><button onclick="openServicePage('maintenance')">View service <span class="arrow"></span></button></div>
+        <div class="service-card"><span>Service 02</span><h3>Professional Engineer Calculation</h3><p>Engineering calculation and technical support for project-specific smoke control and ventilation requirements.</p><button onclick="openServicePage('pe')">View service <span class="arrow"></span></button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section product-section">
+    <div class="container">
+      <div class="center"><div class="kicker">Selected References</div><h2 class="section-title">Project experience.</h2><p class="section-copy">Selected developments listed in KVA Industrial Supply's current project references.</p></div>
+      <div class="project-grid">
+        <div class="project" onclick="openProject('avenue')"><img src="https://images.unsplash.com/photo-1567449303078-57ad995bd17a?auto=format&fit=crop&w=1500&q=95" alt="Avenue K Mall"><div class="project-content"><small>Commercial / Retail</small><h3>Avenue K Mall</h3><p>Kuala Lumpur</p></div></div>
+        <div class="project" onclick="openProject('gateway')"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=95" alt="KL Gateway Mall"><div class="project-content"><small>Project Reference</small><h3>KL Gateway Mall</h3><p>Malaysia</p></div></div>
+        <div class="project" onclick="openProject('melawati')"><img src="https://images.unsplash.com/photo-1524230572899-a752b3835840?auto=format&fit=crop&w=1200&q=95" alt="Melawati Mall"><div class="project-content"><small>Project Reference</small><h3>Melawati Mall</h3><p>Malaysia</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="address-band">
+    <div class="container address-layout">
+      <div><small>Head Office / Correspondence Address</small><strong>37, Jalan Kemuning, Telok Gadong,<br>41100 Klang, Selangor, Malaysia</strong></div>
+      <div><small>Contact</small><strong>+60 12-270 2200<br>calvin.kvais@hotmail.com</strong></div>
+      <a class="address-link" target="_blank" href="https://www.google.com/maps/search/?api=1&query=37%20Jalan%20Kemuning%20Telok%20Gadong%2041100%20Klang%20Selangor">Open in Google Maps</a>
+    </div>
+  </section>
+
+  <section class="cta"><div class="container cta-layout"><div><h2>Planning a smoke control or ventilation project?</h2><p>Speak with KVA Industrial Supply about your technical requirements.</p></div><button class="btn" onclick="openDrawer()">Discuss Your Project <span class="arrow"></span></button></div></section>
+</main>
+
+<!-- ABOUT -->
+<main class="page" id="page-about">
+  <section class="page-hero"><div class="page-hero-copy"><div><div class="breadcrumb"><button onclick="openPage('home')">Home</button> / About</div><h1>Specialist experience.<br>Practical engineering.</h1><p>KVA Industrial Supply focuses on smoke control systems, project engineering, installation, maintenance and rectification.</p></div></div><div class="page-hero-img"><img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1500&q=95" alt="KVA engineering specialist"></div></section>
+  <section class="section"><div class="container split"><div class="split-image"><img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1400&q=95" alt="Industrial engineering"></div><div class="split-content"><div class="kicker">Company Profile</div><h2 class="section-title">Built around safety,<br>quality and service.</h2><p>KVA Industrial Supply was established in 2019 and specialises in smoke control systems and related engineering services.</p><p>The company provides supply and installation, maintenance and rectification services for industrial, distribution, manufacturing, shopping mall and commercial developments throughout Malaysia.</p><p>KVA aims to build long-term customer relationships through practical technical support, responsive service and reliable project execution.</p></div></div></section>
+  <section class="section product-section"><div class="container"><div class="center"><div class="kicker">Our Approach</div><h2 class="section-title">Understand. Engineer.<br>Deliver. Support.</h2></div><div class="info-grid"><div class="info-card"><small>01</small><h3>Understand</h3><p>Study site requirements, system needs and project constraints.</p></div><div class="info-card"><small>02</small><h3>Engineer</h3><p>Develop a suitable smoke control or ventilation solution.</p></div><div class="info-card"><small>03</small><h3>Support</h3><p>Provide maintenance and technical assistance after installation.</p></div></div></div></section>
+  <section class="cta"><div class="container cta-layout"><div><h2>Explore KVA's product range.</h2><p>Smoke curtain, ventilation, actuator and customized engineering solutions.</p></div><button class="btn" onclick="openProductPage('automatic')">View Products <span class="arrow"></span></button></div></section>
+</main>
+
+<!-- PRODUCTS -->
+<main class="page" id="page-products">
+  <section class="page-hero"><div class="page-hero-copy"><div><div class="breadcrumb"><button onclick="openPage('home')">Home</button> / Products</div><h1 id="productHeroTitle">Automatic Smoke Curtain</h1><p id="productHeroText"></p></div></div><div class="page-hero-img"><img id="productHeroImage" src="" alt="KVA product"></div></section>
+  <section class="section"><div class="container solution-list" id="productDetail"></div></section>
+  <section class="cta"><div class="container cta-layout"><div><h2>Need product advice for your project?</h2><p>Send KVA your application, project stage and location.</p></div><button class="btn" onclick="openDrawer()">Request Consultation <span class="arrow"></span></button></div></section>
+</main>
+
+<!-- SERVICES -->
+<main class="page" id="page-services">
+  <section class="page-hero"><div class="page-hero-copy"><div><div class="breadcrumb"><button onclick="openPage('home')">Home</button> / Services</div><h1 id="serviceHeroTitle">Smoke Curtain Maintenance</h1><p id="serviceHeroText"></p></div></div><div class="page-hero-img"><img id="serviceHeroImage" src="" alt="KVA service"></div></section>
+  <section class="section"><div class="container split"><div class="split-image"><img id="serviceBodyImage" src="" alt="KVA technical service"></div><div class="split-content"><div class="kicker">Professional Service</div><h2 class="section-title" id="serviceBodyTitle"></h2><p id="serviceBodyText"></p><div class="info-grid" style="grid-template-columns:1fr 1fr;margin-top:26px" id="servicePoints"></div><button class="btn btn-light" onclick="openDrawer()">Request Service <span class="arrow"></span></button></div></div></section>
+</main>
+
+<!-- PROJECTS -->
+<main class="page" id="page-projects">
+  <section class="page-hero"><div class="page-hero-copy"><div><div class="breadcrumb"><button onclick="openPage('home')">Home</button> / Projects</div><h1>Selected project<br>references.</h1><p>Commercial and retail developments listed in KVA Industrial Supply's current project portfolio.</p></div></div><div class="page-hero-img"><img src="https://images.unsplash.com/photo-1567449303078-57ad995bd17a?auto=format&fit=crop&w=1500&q=95" alt="Commercial development"></div></section>
+  <section class="section"><div class="container"><div class="project-grid">
+    <div class="project" onclick="openProject('avenue')"><img src="https://images.unsplash.com/photo-1567449303078-57ad995bd17a?auto=format&fit=crop&w=1500&q=95" alt="Avenue K Mall"><div class="project-content"><small>Commercial / Retail</small><h3>Avenue K Mall</h3><p>Kuala Lumpur</p></div></div>
+    <div class="project" onclick="openProject('gateway')"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=95" alt="KL Gateway Mall"><div class="project-content"><small>Project Reference</small><h3>KL Gateway Mall</h3></div></div>
+    <div class="project" onclick="openProject('melawati')"><img src="https://images.unsplash.com/photo-1524230572899-a752b3835840?auto=format&fit=crop&w=1200&q=95" alt="Melawati Mall"><div class="project-content"><small>Project Reference</small><h3>Melawati Mall</h3></div></div>
+    <div class="project" onclick="openProject('damen')"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=95" alt="Damen USJ Mall"><div class="project-content"><small>Project Reference</small><h3>Damen USJ Mall</h3></div></div>
+    <div class="project" onclick="openProject('aeon')"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=95" alt="AEON Mall Kulai Jaya"><div class="project-content"><small>Project Reference</small><h3>AEON Mall Kulai Jaya</h3><p>Johor, Malaysia</p></div></div>
+  </div></div></section>
+  <section class="cta"><div class="container cta-layout"><div><h2>Have a similar development?</h2><p>Discuss your smoke control or ventilation requirement with KVA.</p></div><button class="btn" onclick="openDrawer()">Start an Enquiry <span class="arrow"></span></button></div></section>
+</main>
+
+<!-- CONTACT -->
+<main class="page" id="page-contact">
+  <section class="page-hero"><div class="page-hero-copy"><div><div class="breadcrumb"><button onclick="openPage('home')">Home</button> / Contact</div><h1>Let's discuss<br>your project.</h1><p>Contact KVA Industrial Supply for product, engineering, maintenance or professional calculation enquiries.</p></div></div><div class="page-hero-img"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1500&q=95" alt="KVA contact office"></div></section>
+  <section class="section"><div class="container contact-layout"><div><div class="kicker">Contact KVA</div><h2 class="section-title">Project support<br>starts here.</h2><p class="section-copy">Share your requirement and KVA can follow up through WhatsApp.</p><div class="contact-list"><div class="contact-item"><small>Phone</small><strong><a href="tel:+60122702200">+60 12-270 2200</a></strong></div><div class="contact-item"><small>Email</small><strong><a href="mailto:calvin.kvais@hotmail.com">calvin.kvais@hotmail.com</a></strong></div><div class="contact-item"><small>Address</small><strong>37, Jalan Kemuning, Telok Gadong,<br>41100 Klang, Selangor, Malaysia</strong></div><div class="contact-item"><small>Google Maps</small><strong><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=37%20Jalan%20Kemuning%20Telok%20Gadong%2041100%20Klang%20Selangor">Get Directions</a></strong></div></div></div><div class="form-card"><h3>Request a Consultation</h3><p>Complete the form and your enquiry will open directly in WhatsApp.</p><form id="contactForm"><div class="form-grid"><div class="field"><input id="contactName" required placeholder="Your Name"></div><div class="field"><input id="contactCompany" placeholder="Company"></div></div><div class="form-grid"><div class="field"><input id="contactPhone" placeholder="Phone Number"></div><div class="field"><select id="contactService"><option value="">Select Product / Service</option><option>Automatic Smoke Curtain</option><option>Fixed Smoke Curtain</option><option>Roof / Wall Ventilator</option><option>Actuator</option><option>Glass Baffles</option><option>Customized Steel Structure Design</option><option>Smoke Curtain Maintenance</option><option>Professional Engineer Calculation</option></select></div></div><div class="field"><textarea id="contactMessage" placeholder="Tell us about your project or requirements..."></textarea></div><button class="submit" type="submit">Send Enquiry via WhatsApp</button></form></div></div></section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><button class="brand" onclick="openPage('home')"><div class="brand-mark">KVA</div><div class="brand-copy"><strong style="color:#fff">KVA INDUSTRIAL</strong><span>Smoke Control Specialist</span></div></button><p class="footer-about">Smoke curtain, ventilation, actuator, glass baffle and engineering solutions for commercial and industrial projects in Malaysia.</p></div>
+      <div class="footer-col"><h4>Company</h4><button onclick="openPage('about')">About</button><button onclick="openPage('projects')">Projects</button><button onclick="openPage('contact')">Contact</button></div>
+      <div class="footer-col"><h4>Products</h4><button onclick="openProductPage('automatic')">Smoke Curtain</button><button onclick="openProductPage('ventilator')">Ventilator</button><button onclick="openProductPage('actuator')">Actuator</button><button onclick="openProductPage('glass')">Glass Baffles</button></div>
+      <div class="footer-col"><h4>Get In Touch</h4><a href="tel:+60122702200">+60 12-270 2200</a><a href="mailto:calvin.kvais@hotmail.com">Email KVA</a><a target="_blank" href="https://wa.me/60122702200">WhatsApp</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=37%20Jalan%20Kemuning%20Telok%20Gadong%2041100%20Klang%20Selangor">37, Jalan Kemuning, Telok Gadong</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> KVA Industrial Supply. All Rights Reserved.</span><span>Smoke Control · Ventilation · Engineering</span></div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/60122702200?text=Hi%20KVA%20Industrial%20Supply,%20I%20would%20like%20to%20enquire%20about%20your%20products%20or%20services." target="_blank" aria-label="WhatsApp KVA"><svg viewBox="0 0 32 32"><path d="M19.11 17.22c-.26-.13-1.52-.75-1.75-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.19-.56.06-.26-.13-1.09-.4-2.08-1.29-.77-.69-1.29-1.54-1.44-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.92-.21-.5-.43-.43-.58-.44h-.5c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.15s.92 2.49 1.05 2.66c.13.17 1.81 2.76 4.38 3.87.61.26 1.09.42 1.46.54.61.19 1.17.17 1.61.1.49-.07 1.52-.62 1.73-1.22.21-.6.21-1.12.15-1.22-.06-.11-.24-.17-.5-.3z"/><path d="M16.01 3C8.83 3 3 8.71 3 15.75c0 2.25.6 4.45 1.73 6.38L3 28.5l6.58-1.68a13.12 13.12 0 006.42 1.66h.01c7.17 0 13-5.71 13-12.75C29.01 8.71 23.18 3 16.01 3zm0 23.33h-.01a10.9 10.9 0 01-5.56-1.51l-.4-.23-3.9 1 1.04-3.73-.26-.39a10.51 10.51 0 01-1.68-5.72c0-5.85 4.83-10.6 10.77-10.6 5.94 0 10.77 4.75 10.77 10.6 0 5.84-4.83 10.58-10.77 10.58z"/></svg></a>
+
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+<aside class="drawer" id="drawer"><button class="drawer-close" onclick="closeDrawer()">×</button><div class="drawer-heading"><small>Project Enquiry</small><h3>Tell us what you need.</h3><p>Your details will be prepared and sent through WhatsApp.</p></div><form id="drawerForm"><label>Name</label><input id="drawerName" required placeholder="Your Name"><label>Company</label><input id="drawerCompany" placeholder="Company Name"><label>Product / Service</label><select id="drawerService"><option>Automatic Smoke Curtain</option><option>Fixed Smoke Curtain</option><option>Roof / Wall Ventilator</option><option>Actuator</option><option>Glass Baffles</option><option>Customized Steel Structure Design</option><option>Smoke Curtain Maintenance</option><option>Professional Engineer Calculation</option><option>General Consultation</option></select><label>Project Location</label><input id="drawerLocation" placeholder="Example: Kuala Lumpur"><label>Project Stage</label><select id="drawerStage"><option>Planning Stage</option><option>Tender / Quotation Stage</option><option>Construction Stage</option><option>Existing Building</option><option>Maintenance Requirement</option></select><label>Requirements</label><textarea id="drawerMessage" placeholder="Tell us more about your project..."></textarea><button class="drawer-submit" type="submit">Send via WhatsApp</button></form></aside>
+
+<div class="modal" id="modal"><div class="modal-box"><button class="modal-close" onclick="closeModal()">×</button><div class="modal-label" id="modalLabel">Project Reference</div><h3 id="modalTitle">Project</h3><p class="modal-text" id="modalText"></p><div class="modal-grid" id="modalGrid"></div><a class="modal-action" id="modalCTA" target="_blank">Request Consultation</a></div></div>
+
+<script>
+const whatsappNumber='60122702200';
+const productData={
+  automatic:{title:'Automatic Smoke Curtain',short:'Automatic smoke curtain systems designed for controlled deployment as part of a building smoke management strategy.',image:'https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1600&q=95',points:['Automatic deployment','Commercial applications','Industrial applications','Supply & installation'],details:'KVA provides automatic smoke curtain solutions with project-specific supply, installation, maintenance and rectification support.'},
+  fixed:{title:'Fixed Smoke Curtain',short:'Fixed smoke curtain systems for suitable applications where a permanent smoke barrier configuration is required.',image:'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=95',points:['Fixed barrier configuration','Project-specific sizing','Commercial applications','Industrial applications'],details:'Fixed smoke curtain solutions can be configured around project requirements and coordinated with the building smoke control strategy.'},
+  ventilator:{title:'Smoke Ventilator — Roof / Wall',short:'Customized roof and wall smoke ventilators engineered to support natural smoke exhaust and ventilation requirements.',image:'https://images.unsplash.com/photo-1531053326607-9d349096d887?auto=format&fit=crop&w=1600&q=95',points:['Roof application','Wall application','Customized dimensions','Project engineering support'],details:'KVA supplies customized smoke ventilator systems for roof, wall and combined applications, with engineering support around the required opening and actuator arrangement.'},
+  actuator:{title:'Actuator',short:'Electric actuator solutions used to operate smoke ventilation and related opening systems.',image:'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=95',points:['Electric operation','System integration','Project selection','Technical support'],details:'Actuator selection is coordinated with the ventilator or opening requirement so the operating method suits the intended smoke control function.'},
+  glass:{title:'Glass Baffles',short:'Glass smoke baffles provide a transparent architectural solution for smoke containment in suitable building applications.',image:'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=95',points:['Transparent smoke barrier','Architectural integration','Commercial buildings','Customized installation'],details:'Glass baffles can be integrated into suitable building environments where smoke containment is required while maintaining a clean architectural appearance.'},
+  steel:{title:'Customized Steel Structure Design',short:'Project-specific steel structure design and fabrication support for smoke control and ventilation installations.',image:'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=95',points:['Customized support frame','Engineering coordination','Fabrication requirements','Installation planning'],details:'KVA can support customized steel structure requirements used to mount, support or integrate project smoke control and ventilation systems.'}
+};
+const serviceData={
+  maintenance:{title:'Smoke Curtain Maintenance',hero:'Keep smoke curtain systems maintained, inspected and ready for continued operation.',image:'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=95',bodyTitle:'Structured smoke curtain maintenance support.',body:'Maintenance support can include condition inspection, operational checks, servicing, rectification recommendations and follow-up technical support.',points:[['Inspection','Assess visible condition and operating status.'],['Maintenance','Carry out scheduled service requirements.'],['Rectification','Identify issues requiring corrective work.'],['Reporting','Provide findings and technical recommendations.']]},
+  pe:{title:'Professional Engineer Calculation',hero:'Professional engineering calculation support for project-specific smoke control and ventilation requirements.',image:'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=95',bodyTitle:'Engineering calculations aligned to the project.',body:'KVA provides professional engineer calculation support where project documentation or technical verification is required for smoke control and ventilation related works.',points:[['Review','Understand project drawings and requirements.'],['Calculation','Prepare relevant engineering calculations.'],['Coordination','Coordinate technical inputs with project requirements.'],['Documentation','Support the required engineering submission process.']]}
+};
+const projects={
+ avenue:{title:'Avenue K Mall',text:'Avenue K Mall is listed as one of KVA Industrial Supply\'s selected project references.',details:[['Development','Commercial / Retail'],['Location','Kuala Lumpur'],['Portfolio','Selected Project'],['Reference','KVA Company Profile']]},
+ gateway:{title:'KL Gateway Mall',text:'KL Gateway Mall is listed among KVA Industrial Supply\'s project references.',details:[['Development','Commercial / Retail'],['Region','Malaysia'],['Portfolio','Selected Project'],['Reference','KVA Company Profile']]},
+ melawati:{title:'Melawati Mall',text:'Melawati Mall is included in KVA Industrial Supply\'s project reference portfolio.',details:[['Development','Commercial / Retail'],['Region','Malaysia'],['Portfolio','Selected Project'],['Reference','KVA Company Profile']]},
+ damen:{title:'Damen USJ Mall',text:'Damen USJ Mall is listed among KVA Industrial Supply\'s selected project references.',details:[['Development','Commercial / Retail'],['Region','Malaysia'],['Portfolio','Selected Project'],['Reference','KVA Company Profile']]},
+ aeon:{title:'AEON Mall Kulai Jaya',text:'AEON Mall Kulai Jaya is included among KVA Industrial Supply\'s project references.',details:[['Development','Commercial / Retail'],['Region','Johor, Malaysia'],['Portfolio','Selected Project'],['Reference','KVA Company Profile']]}
+};
+const pages=document.querySelectorAll('.page');
+function closeMobile(){document.getElementById('mobileNav').classList.remove('show')}
+function openPage(name){pages.forEach(p=>p.classList.remove('active'));const p=document.getElementById('page-'+name);if(p)p.classList.add('active');document.querySelectorAll('[data-page-link]').forEach(b=>b.classList.toggle('active',b.dataset.pageLink===name));closeMobile();history.replaceState(null,'','#'+name);window.scrollTo({top:0,behavior:'smooth'});}
+function buildHomeTabs(){const tabs=document.getElementById('productTabs');Object.entries(productData).forEach(([key,p],i)=>{const b=document.createElement('button');b.className='product-tab'+(i===0?' active':'');b.innerHTML='<span>'+p.title+'</span><span>→</span>';b.onclick=()=>selectHomeProduct(key,b);tabs.appendChild(b)});selectHomeProduct('automatic',tabs.children[0]);}
+function selectHomeProduct(key,btn){const p=productData[key];document.querySelectorAll('.product-tab').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');document.getElementById('homeProductNo').textContent='KVA Product';document.getElementById('homeProductTitle').textContent=p.title;document.getElementById('homeProductText').textContent=p.short;document.getElementById('homeProductMini').innerHTML=p.points.map(x=>'<div>'+x+'</div>').join('');document.getElementById('homeProductImage').src=p.image;document.getElementById('homeProductImage').alt=p.title;document.getElementById('homeProductBtn').onclick=()=>openProductPage(key)}
+function openProductPage(key){const p=productData[key];document.getElementById('productHeroTitle').textContent=p.title;document.getElementById('productHeroText').textContent=p.short;document.getElementById('productHeroImage').src=p.image;document.getElementById('productHeroImage').alt=p.title;document.getElementById('productDetail').innerHTML='<div class="solution-row"><div class="solution-image"><img src="'+p.image+'" alt="'+p.title+'"></div><div class="solution-content"><small>KVA Product</small><h2>'+p.title+'</h2><p>'+p.details+'</p><div class="mini-list">'+p.points.map(x=>'<div>'+x+'</div>').join('')+'</div><button class="btn btn-light" onclick="openDrawer(\''+p.title.replace(/'/g,"\\'")+'\')">Enquire About This Product <span class="arrow"></span></button></div></div>';openPage('products')}
+function openServicePage(key){const s=serviceData[key];document.getElementById('serviceHeroTitle').textContent=s.title;document.getElementById('serviceHeroText').textContent=s.hero;document.getElementById('serviceHeroImage').src=s.image;document.getElementById('serviceBodyImage').src=s.image;document.getElementById('serviceBodyTitle').textContent=s.bodyTitle;document.getElementById('serviceBodyText').textContent=s.body;document.getElementById('servicePoints').innerHTML=s.points.map((x,i)=>'<div class="info-card"><small>0'+(i+1)+'</small><h3>'+x[0]+'</h3><p>'+x[1]+'</p></div>').join('');openPage('services')}
+function openDrawer(service){document.getElementById('drawer').classList.add('show');document.getElementById('drawerOverlay').classList.add('show');document.body.classList.add('locked');if(service){const sel=document.getElementById('drawerService');[...sel.options].forEach(o=>{if(o.text.toLowerCase().includes(service.toLowerCase())||service.toLowerCase().includes(o.text.toLowerCase()))sel.value=o.value})}}
+function closeDrawer(){document.getElementById('drawer').classList.remove('show');document.getElementById('drawerOverlay').classList.remove('show');document.body.classList.remove('locked')}
+function openProject(key){const p=projects[key];document.getElementById('modalTitle').textContent=p.title;document.getElementById('modalText').textContent=p.text;document.getElementById('modalGrid').innerHTML=p.details.map(x=>'<div class="modal-detail"><span>'+x[0]+'</span><strong>'+x[1]+'</strong></div>').join('');document.getElementById('modalCTA').href='https://wa.me/'+whatsappNumber+'?text='+encodeURIComponent('Hi KVA Industrial Supply, I would like to enquire about a project similar to '+p.title+'.');document.getElementById('modal').classList.add('show');document.body.classList.add('locked')}
+function closeModal(){document.getElementById('modal').classList.remove('show');document.body.classList.remove('locked')}
+document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')closeModal()};
+document.getElementById('mobileMenu').onclick=()=>document.getElementById('mobileNav').classList.toggle('show');
+document.getElementById('contactForm').onsubmit=e=>{e.preventDefault();const text=`Hi KVA Industrial Supply,\n\nI would like to enquire about your products / services.\n\nName: ${document.getElementById('contactName').value}\nCompany: ${document.getElementById('contactCompany').value||'-'}\nPhone: ${document.getElementById('contactPhone').value||'-'}\nProduct / Service: ${document.getElementById('contactService').value||'General Enquiry'}\n\nRequirement:\n${document.getElementById('contactMessage').value||'-'}\n\nThank you.`;window.open('https://wa.me/'+whatsappNumber+'?text='+encodeURIComponent(text),'_blank')};
+document.getElementById('drawerForm').onsubmit=e=>{e.preventDefault();const text=`Hi KVA Industrial Supply,\n\nI would like to discuss a project.\n\nName: ${document.getElementById('drawerName').value}\nCompany: ${document.getElementById('drawerCompany').value||'-'}\nProduct / Service: ${document.getElementById('drawerService').value}\nProject Location: ${document.getElementById('drawerLocation').value||'-'}\nProject Stage: ${document.getElementById('drawerStage').value}\n\nRequirements:\n${document.getElementById('drawerMessage').value||'-'}\n\nThank you.`;window.open('https://wa.me/'+whatsappNumber+'?text='+encodeURIComponent(text),'_blank')};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDrawer();closeModal();closeMobile()}});
+window.addEventListener('load',()=>{buildHomeTabs();document.getElementById('year').textContent=new Date().getFullYear();const hash=location.hash.replace('#','');if(['home','about','projects','contact'].includes(hash))openPage(hash);setTimeout(()=>{document.getElementById('preloader').classList.add('hide');document.body.classList.remove('locked')},1250)});
+</script>
+</body>
+</html>
