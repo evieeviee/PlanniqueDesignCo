@@ -1113,6 +1113,36 @@ body{background:var(--satin)}
   [data-page="home"] .page-hero p{color:rgba(255,255,255,.96)}
 }
 
+
+/* V12 — REAL MOBILE NAV ICONS (NO iOS EMOJI GLYPHS) */
+.mobile-menu .mobile-nav-arrow{
+  width:28px;height:28px;
+  flex:0 0 28px;
+  display:grid!important;
+  place-items:center;
+  border:1px solid rgba(98,36,36,.24);
+  border-radius:50%;
+  color:var(--velvet);
+  background:transparent;
+  font-family:inherit!important;
+}
+.mobile-menu .mobile-nav-arrow svg{
+  width:14px;height:14px;
+  display:block;
+}
+.mobile-menu a:hover .mobile-nav-arrow,
+.mobile-menu a:focus-visible .mobile-nav-arrow{
+  background:var(--velvet);
+  color:#fff;
+  border-color:var(--velvet);
+}
+@media(max-width:700px){
+  .mobile-menu .mobile-nav-arrow{
+    width:27px;height:27px;flex-basis:27px;
+  }
+  .mobile-menu .mobile-nav-arrow svg{width:13px;height:13px}
+}
+
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -1145,11 +1175,11 @@ body{background:var(--satin)}
 </header>
 
 <div class="mobile-menu">
-  <a href="#home" data-route="home"><span>Home</span><span>↗</span></a>
-  <a href="#suites" data-route="suites"><span>Suites & Facilities</span><span>↗</span></a>
-  <a href="#location" data-route="location"><span>Location & Things to Do</span><span>↗</span></a>
-  <a href="#terms" data-route="terms"><span>Booking & T&Cs</span><span>↗</span></a>
-  <a href="#faq" data-route="faq"><span>FAQ & Contact</span><span>↗</span></a>
+  <a href="#home" data-route="home"><span>Home</span><span class="mobile-nav-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+  <a href="#suites" data-route="suites"><span>Suites & Facilities</span><span class="mobile-nav-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+  <a href="#location" data-route="location"><span>Location & Things to Do</span><span class="mobile-nav-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+  <a href="#terms" data-route="terms"><span>Booking & T&Cs</span><span class="mobile-nav-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+  <a href="#faq" data-route="faq"><span>FAQ & Contact</span><span class="mobile-nav-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
   <a class="btn btn-primary mobile-book" href="#book" data-route="book">Book Now</a>
 </div>
 
