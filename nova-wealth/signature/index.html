@@ -249,11 +249,60 @@
     /* FOOTER */
     footer{background:#0a0b0d;color:#fff}
     .footer-top{padding:44px 0;border-top:1px solid #23262c}
-    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px}
+    .footer-grid{
+      display:grid;
+      grid-template-columns:minmax(280px,1.35fr) minmax(150px,.8fr) minmax(170px,.9fr) minmax(220px,1fr);
+      gap:48px;
+      align-items:start;
+    }
     .footer-logo{width:92px;height:68px;object-fit:cover;border-radius:12px;margin-bottom:16px}
     .footer-brand p{color:#aeb3bd;line-height:1.7;font-size:13px;max-width:310px}
-    .footer-col h4{font-size:14px;margin-bottom:15px}
-    .footer-links{display:grid;gap:9px;color:#b9bec6;font-size:13px}
+    .footer-col{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      text-align:left;
+    }
+    .footer-col h4{
+      width:100%;
+      font-size:14px;
+      margin:0 0 15px;
+      color:#fff;
+      text-align:left;
+    }
+    .footer-links{
+      width:100%;
+      display:grid;
+      gap:10px;
+      color:#b9bec6;
+      font-size:13px;
+      justify-items:start;
+      text-align:left;
+    }
+    .footer-links .nav-link{
+      width:auto;
+      min-height:auto;
+      padding:0;
+      margin:0;
+      border:0;
+      border-radius:0;
+      background:transparent !important;
+      color:#b9bec6;
+      font-size:13px;
+      font-weight:500;
+      text-align:left;
+      justify-self:start;
+    }
+    .footer-links .nav-link:hover{
+      color:#fff;
+      background:transparent !important;
+      transform:none;
+    }
+    .footer-links a,
+    .footer-links span{
+      display:block;
+      text-align:left;
+    }
     .socials{display:flex;gap:9px;margin-top:14px}
     .social{width:42px;height:42px;border:1px solid #33363d;border-radius:50%;display:grid;place-items:center;transition:.2s}
     .social:hover{background:#fff;color:var(--red);transform:translateY(-2px)}
@@ -316,7 +365,28 @@
       .page-hero h1{font-size:44px}
       .about-panel{padding:28px}
       .about-panel h2{font-size:34px}
-      .footer-grid{grid-template-columns:1fr}
+      .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
+      .footer-col,
+      .footer-col h4,
+      .footer-links,
+      .footer-links .nav-link,
+      .footer-links a,
+      .footer-links span{
+        text-align:left;
+        justify-items:start;
+        justify-self:start;
+        align-items:flex-start;
+      }
+      .footer-links .nav-link{
+        width:auto;
+        padding:0;
+        background:transparent !important;
+        color:#b9bec6;
+        min-height:auto;
+      }
       .map-wrap iframe{min-height:380px}
       .loader-logo-wrap{width:124px;height:124px}
       .loader-logo{width:122px;height:122px}
