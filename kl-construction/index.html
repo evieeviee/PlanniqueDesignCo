@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -3064,6 +3066,75 @@ header.site-header,
     opacity:1 !important;
     -webkit-text-fill-color:#312923 !important;
   }
+}
+
+
+
+/* ===== LATEST NEWS - added 2026-09 ===== */
+.latest-news-section{background:#f5f2ec;padding:100px 0 110px;overflow:hidden}
+.latest-news-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:34px}
+.latest-news-head .section-title{margin:0}
+.latest-news-intro{max-width:570px;color:#66707a;font-size:.98rem}
+.news-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-bottom:46px}
+.news-card{position:relative;border:0;background:#111;border-radius:22px;overflow:hidden;cursor:pointer;text-align:left;box-shadow:0 18px 45px rgba(15,23,32,.11);isolation:isolate}
+.news-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s ease,filter .35s ease;background:#d9d5ce}
+.news-feature-card{height:390px}
+.news-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(5,7,9,.17) 56%,rgba(5,7,9,.88) 100%);z-index:1;pointer-events:none}
+.news-card:hover img{transform:scale(1.035);filter:saturate(1.03) contrast(1.02)}
+.news-card-copy{position:absolute;z-index:2;left:26px;right:26px;bottom:24px;color:#fff}
+.news-card-copy h3{font-family:"Montserrat",sans-serif;font-size:clamp(1.18rem,2vw,1.65rem);line-height:1.2;margin:0;max-width:92%}
+.news-view{position:absolute;z-index:3;top:18px;right:18px;display:flex;align-items:center;gap:7px;background:rgba(15,18,20,.72);backdrop-filter:blur(9px);color:#fff;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 12px;font-size:.76rem;font-weight:800;letter-spacing:.03em}
+.news-view svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8}
+.news-more-row{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:0 0 18px}
+.news-more-row h3{font-family:"Montserrat",sans-serif;font-size:1.45rem;margin:0}
+.news-arrows{display:flex;gap:10px}
+.news-arrow{width:46px;height:46px;border-radius:50%;border:1px solid rgba(15,23,32,.12);background:#fff;cursor:pointer;font-size:1.25rem;transition:.22s ease}
+.news-arrow:hover{background:#111;color:#fff;transform:translateY(-2px)}
+.news-small-viewport{overflow:hidden}
+.news-small-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:2px 2px 16px;scrollbar-width:none}
+.news-small-track::-webkit-scrollbar{display:none}
+.news-small-card{flex:0 0 calc((100% - 36px)/3);height:285px;scroll-snap-align:start;border-radius:19px}
+.news-small-card .news-card-copy{left:20px;right:20px;bottom:18px}
+.news-small-card .news-card-copy h3{font-size:1.03rem;line-height:1.22}
+.news-small-card .news-view{top:13px;right:13px;padding:7px 10px;font-size:.72rem}
+.news-modal{position:fixed;inset:0;z-index:5000;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(4,6,8,.82);backdrop-filter:blur(10px)}
+.news-modal.open{display:flex}
+.news-modal-panel{width:min(900px,96vw);max-height:90vh;overflow:auto;background:#fff;border-radius:24px;box-shadow:0 30px 80px rgba(0,0,0,.34)}
+.news-modal-image{height:330px;position:relative;background:#ddd}
+.news-modal-image img{width:100%;height:100%;object-fit:cover}
+.news-modal-close{position:absolute;right:18px;top:18px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.55);color:#fff;font-size:1.5rem;cursor:pointer;backdrop-filter:blur(8px)}
+.news-modal-body{padding:34px 38px 42px}
+.news-modal-body h3{font-family:"Montserrat",sans-serif;font-size:clamp(1.7rem,3vw,2.45rem);line-height:1.12;margin:0 0 18px;color:#151515}
+.news-modal-meta{display:flex;align-items:center;gap:8px;color:#8a6a34;font-weight:800;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px}
+.news-modal-body p{color:#56606a;margin:0 0 18px;line-height:1.82;font-size:.98rem}
+body.news-modal-lock{overflow:hidden}
+
+/* keep the detailed project presentation consistent on desktop */
+@media(min-width:801px){
+  .detail-list .detail{display:grid !important;grid-template-columns:1fr 1fr !important;align-items:stretch !important}
+  .detail-list .detail .detail-img{grid-column:1 !important;grid-row:1 !important;min-height:390px !important;display:block !important;overflow:hidden !important}
+  .detail-list .detail .detail-copy{grid-column:2 !important;grid-row:1 !important}
+  .detail-list .detail .detail-img img{display:block !important;width:100% !important;height:100% !important;min-height:390px !important;object-fit:cover !important;opacity:1 !important;visibility:visible !important}
+}
+
+@media(max-width:800px){
+  .latest-news-section{padding:70px 0 78px}
+  .latest-news-head{display:block;margin-bottom:24px}
+  .latest-news-intro{margin-top:12px}
+  .news-feature-grid{grid-template-columns:1fr;gap:16px;margin-bottom:34px}
+  .news-feature-card{height:305px}
+  .news-feature-grid .news-feature-card:nth-child(n+3){height:270px}
+  .news-more-row h3{font-size:1.28rem}
+  .news-arrow{width:42px;height:42px}
+  /* 2.5 cards visible, like the supplied mobile reference */
+  .news-small-card{flex:0 0 calc((100vw - 62px)/2.5);height:255px}
+  .news-small-track{gap:12px;margin-right:calc((100vw - min(1180px,calc(100vw - 44px)))/-2);padding-right:24px}
+  .news-small-card .news-card-copy h3{font-size:.92rem}
+  .news-small-card .news-card-copy{left:15px;right:15px;bottom:15px}
+  .news-modal{padding:10px}
+  .news-modal-panel{border-radius:18px}
+  .news-modal-image{height:230px}
+  .news-modal-body{padding:24px 20px 30px}
 }
 
 </style>
@@ -6215,7 +6286,7 @@ header.site-header .nav > *{
             <div class="project-track" id="projectTrack">
 
               <a class="project-card" href="#project-1">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=82" alt="Modern commercial building project">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=92" alt="Modern commercial building project">
                 <div class="project-info">
                   <div class="project-no">Project 01</div>
                   <h3>Commercial Development</h3>
@@ -6224,7 +6295,7 @@ header.site-header .nav > *{
               </a>
 
               <a class="project-card" href="#project-2">
-                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=82" alt="Construction site project">
+                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=92" alt="Construction site project">
                 <div class="project-info">
                   <div class="project-no">Project 02</div>
                   <h3>Structural Construction</h3>
@@ -6233,7 +6304,7 @@ header.site-header .nav > *{
               </a>
 
               <a class="project-card" href="#project-3">
-                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=82" alt="Large construction project">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1800&q=92" alt="Large construction project">
                 <div class="project-info">
                   <div class="project-no">Project 03</div>
                   <h3>Industrial Works</h3>
@@ -6242,7 +6313,7 @@ header.site-header .nav > *{
               </a>
 
               <a class="project-card" href="#project-4">
-                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=82" alt="Office renovation project">
+                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=92" alt="Office renovation project">
                 <div class="project-info">
                   <div class="project-no">Project 04</div>
                   <h3>Office Interior Fit-Out</h3>
@@ -6251,7 +6322,7 @@ header.site-header .nav > *{
               </a>
 
               <a class="project-card" href="#project-5">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=82" alt="Residential construction project">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=92" alt="Residential construction project">
                 <div class="project-info">
                   <div class="project-no">Project 05</div>
                   <h3>Residential Build</h3>
@@ -6260,7 +6331,7 @@ header.site-header .nav > *{
               </a>
 
               <a class="project-card" href="#project-6">
-                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=82" alt="Construction workers on site">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=92" alt="Construction workers on site">
                 <div class="project-info">
                   <div class="project-no">Project 06</div>
                   <h3>Site & Civil Works</h3>
@@ -6284,27 +6355,27 @@ header.site-header .nav > *{
 
         <div class="mobile-projects">
           <a class="mobile-project reveal" href="#project-1">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=82" alt="Commercial development">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=92" alt="Commercial development">
             <div class="project-info"><div class="project-no">Project 01</div><h3>Commercial Development</h3><p>Kuala Lumpur</p></div>
           </a>
           <a class="mobile-project reveal" href="#project-2">
-            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=82" alt="Structural construction">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=92" alt="Structural construction">
             <div class="project-info"><div class="project-no">Project 02</div><h3>Structural Construction</h3><p>Selangor</p></div>
           </a>
           <a class="mobile-project reveal" href="#project-3">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=82" alt="Industrial works">
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=92" alt="Industrial works">
             <div class="project-info"><div class="project-no">Project 03</div><h3>Industrial Works</h3><p>Klang Valley</p></div>
           </a>
           <a class="mobile-project reveal" href="#project-4">
-            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=82" alt="Office fit out">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=92" alt="Office fit out">
             <div class="project-info"><div class="project-no">Project 04</div><h3>Office Interior Fit-Out</h3><p>Kuala Lumpur</p></div>
           </a>
           <a class="mobile-project reveal" href="#project-5">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=82" alt="Residential build">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=92" alt="Residential build">
             <div class="project-info"><div class="project-no">Project 05</div><h3>Residential Build</h3><p>Petaling Jaya</p></div>
           </a>
           <a class="mobile-project reveal" href="#project-6">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=82" alt="Civil works">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=92" alt="Civil works">
             <div class="project-info"><div class="project-no">Project 06</div><h3>Site & Civil Works</h3><p>Selangor</p></div>
           </a>
         </div>
@@ -6312,27 +6383,27 @@ header.site-header .nav > *{
         <div class="mobile-projects-wrap reveal">
           <div class="mobile-carousel" id="mobileProjectCarousel">
             <a class="mobile-project" href="#project-1">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=82" alt="Commercial development">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=92" alt="Commercial development">
             <div class="project-info"><div class="project-no">Project 01</div><h3>Commercial Development</h3><p>Kuala Lumpur</p></div>
           </a>
 <a class="mobile-project" href="#project-2">
-            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1000&q=82" alt="Structural construction">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=92" alt="Structural construction">
             <div class="project-info"><div class="project-no">Project 02</div><h3>Structural Construction</h3><p>Selangor</p></div>
           </a>
 <a class="mobile-project" href="#project-3">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=82" alt="Industrial works">
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=92" alt="Industrial works">
             <div class="project-info"><div class="project-no">Project 03</div><h3>Industrial Works</h3><p>Klang Valley</p></div>
           </a>
 <a class="mobile-project" href="#project-4">
-            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=82" alt="Office fit out">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=92" alt="Office fit out">
             <div class="project-info"><div class="project-no">Project 04</div><h3>Office Interior Fit-Out</h3><p>Kuala Lumpur</p></div>
           </a>
 <a class="mobile-project" href="#project-5">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=82" alt="Residential build">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=92" alt="Residential build">
             <div class="project-info"><div class="project-no">Project 05</div><h3>Residential Build</h3><p>Petaling Jaya</p></div>
           </a>
 <a class="mobile-project" href="#project-6">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=82" alt="Civil works">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=92" alt="Civil works">
             <div class="project-info"><div class="project-no">Project 06</div><h3>Site & Civil Works</h3><p>Selangor</p></div>
           </a>
           </div>
@@ -6449,7 +6520,7 @@ header.site-header .nav > *{
         <div class="detail-list">
           <article class="detail reveal" id="project-1">
             <div class="detail-img">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1500&q=84" alt="Commercial development project">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=94" alt="Commercial development project">
             </div>
             <div class="detail-copy">
               <div class="detail-tag">Project 01 · Commercial</div>
@@ -6460,7 +6531,7 @@ header.site-header .nav > *{
 
           <article class="detail reveal" id="project-2">
             <div class="detail-img">
-              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1500&q=84" alt="Structural construction project">
+              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=94" alt="Structural construction project">
             </div>
             <div class="detail-copy">
               <div class="detail-tag">Project 02 · Structural</div>
@@ -6471,7 +6542,7 @@ header.site-header .nav > *{
 
           <article class="detail reveal" id="project-3">
             <div class="detail-img">
-              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1500&q=84" alt="Industrial construction project">
+              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2000&q=94" alt="Industrial construction project">
             </div>
             <div class="detail-copy">
               <div class="detail-tag">Project 03 · Industrial</div>
@@ -6482,7 +6553,7 @@ header.site-header .nav > *{
 
           <article class="detail reveal" id="project-4">
             <div class="detail-img">
-              <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1500&q=84" alt="Office interior project">
+              <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2000&q=94" alt="Office interior project">
             </div>
             <div class="detail-copy">
               <div class="detail-tag">Project 04 · Fit-Out</div>
@@ -6493,7 +6564,7 @@ header.site-header .nav > *{
 
           <article class="detail reveal" id="project-5">
             <div class="detail-img">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1500&q=84" alt="Residential project">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=94" alt="Residential project">
             </div>
             <div class="detail-copy">
               <div class="detail-tag">Project 05 · Residential</div>
@@ -6504,7 +6575,7 @@ header.site-header .nav > *{
 
           <article class="detail reveal" id="project-6">
             <div class="detail-img">
-              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1500&q=84" alt="Site civil works project">
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2000&q=94" alt="Site civil works project">
             </div>
             <div class="detail-copy">
               <div class="detail-tag">Project 06 · Civil</div>
@@ -6515,6 +6586,47 @@ header.site-header .nav > *{
         </div>
       </div>
     </section>
+
+    <!-- LATEST NEWS -->
+    <section class="latest-news-section" id="latest-news">
+      <div class="container">
+        <div class="latest-news-head reveal">
+          <div>
+            <div class="section-kicker">Latest News</div>
+            <h2 class="section-title">Project updates &<br>industry insights.</h2>
+          </div>
+          <p class="latest-news-intro">A closer look at construction progress, coordination, quality, workplace delivery and practical site considerations.</p>
+        </div>
+
+        <div class="news-feature-grid reveal" id="newsFeatureGrid"></div>
+
+        <div class="news-more-row reveal">
+          <h3>More News &amp; Updates</h3>
+          <div class="news-arrows">
+            <button class="news-arrow" id="newsPrev" type="button" aria-label="Previous news">←</button>
+            <button class="news-arrow" id="newsNext" type="button" aria-label="Next news">→</button>
+          </div>
+        </div>
+        <div class="news-small-viewport reveal">
+          <div class="news-small-track" id="newsSmallTrack"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="news-modal" id="newsModal" aria-hidden="true">
+      <div class="news-modal-panel" role="dialog" aria-modal="true" aria-labelledby="newsModalTitle">
+        <div class="news-modal-image">
+          <img id="newsModalImg" alt="">
+          <button class="news-modal-close" id="newsModalClose" type="button" aria-label="Close">×</button>
+        </div>
+        <div class="news-modal-body">
+          <div class="news-modal-meta" id="newsModalMeta"></div>
+          <h3 id="newsModalTitle"></h3>
+          <div id="newsModalArticle"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- CONTACT + LOCATION -->
     <section class="contact-section" id="contact">
       <div class="container">
@@ -6798,6 +6910,79 @@ header.site-header .nav > *{
       <path fill="currentColor" d="M16.02 3.2c-7.08 0-12.83 5.75-12.83 12.83 0 2.26.59 4.47 1.7 6.41L3.1 28.99l6.7-1.76a12.77 12.77 0 0 0 6.21 1.58h.01c7.07 0 12.82-5.75 12.82-12.83 0-3.43-1.33-6.65-3.75-9.08a12.75 12.75 0 0 0-9.07-3.7Zm0 23.44h-.01a10.62 10.62 0 0 1-5.41-1.48l-.39-.23-3.98 1.04 1.06-3.88-.25-.4a10.62 10.62 0 0 1-1.63-5.66c0-5.86 4.77-10.63 10.63-10.63 2.84 0 5.5 1.11 7.51 3.11a10.56 10.56 0 0 1 3.11 7.52c-.01 5.85-4.78 10.61-10.64 10.61Z"/>
     </svg>
   </a>
+
+
+<script>
+(function(){
+  const eyeIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.7"></circle></svg>';
+  const news = [
+    {id:'commercial-milestone',title:'Commercial Development Reaches a Key Coordination Milestone',views:331,img:'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=92'},
+    {id:'structural-progress',title:'Structural Works Move Forward with Safety and Quality in Focus',views:242,img:'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=92'},
+    {id:'industrial-progress',title:'Industrial Site Progress Shows Strong Coordination Across Trades',views:200,img:'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1800&q=92'},
+    {id:'office-fitout',title:'Office Fit-Out Takes Shape Through Careful Planning and Finishing',views:218,img:'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=92'},
+    {id:'material-checks',title:'Material Checks Help Protect Build Quality on Site',views:187,img:'https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=1600&q=92'},
+    {id:'residential-detail',title:'Residential Build Focuses on Practical Details and Lasting Quality',views:164,img:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=92'},
+    {id:'civil-access',title:'Site and Civil Works Improve Access and Project Readiness',views:153,img:'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=92'},
+    {id:'site-team',title:'Clear Site Communication Keeps Multiple Workstreams Moving',views:146,img:'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=92'},
+    {id:'planning-review',title:'Planning Reviews Help Teams Identify Issues Before Site Work Begins',views:139,img:'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=92'},
+    {id:'handover-quality',title:'Final Quality Reviews Support a Smoother Project Handover',views:128,img:'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=92'}
+  ];
+
+  const articleParagraphs = [
+    'Every construction project reaches points where good coordination becomes just as important as physical progress. At this stage, the work is not only about completing visible items; it is also about making sure information, sequencing, access, safety requirements and workmanship standards continue to align. For KLConstruction, that means reviewing what has been completed, what is coming next and whether any interface between trades needs to be resolved before it affects the programme.',
+    'A structured review normally begins with the latest drawings, site conditions and the work sequence. Teams compare planned activities against actual progress, verify access requirements and identify areas where one trade may affect another. This is especially important around structural openings, M&E routes, finishes, temporary works and handover zones. Resolving those items early helps reduce unnecessary rework and keeps the next phase more predictable.',
+    'Quality checks form another important part of the process. Rather than waiting until the end of a project, inspections are more useful when they are carried out throughout the work. Materials can be checked before installation, completed areas can be reviewed before they are covered, and workmanship can be assessed against the agreed details. This approach helps the team correct small issues while they are still easy to manage.',
+    'Safety and housekeeping also remain part of day-to-day delivery. Clear access routes, organised material storage and well-planned work areas make the site easier to manage and reduce unnecessary disruption between teams. When several work activities are happening at the same time, communication becomes particularly important. Short coordination discussions and clear responsibilities help everyone understand what can proceed safely and what must wait.',
+    'Good project delivery is therefore a combination of planning, technical coordination and consistent follow-through. Visible progress matters, but the quality of the decisions behind that progress matters just as much. By keeping information current and reviewing the work in manageable stages, the project team can maintain better control over quality, programme and site conditions.',
+    'The objective is straightforward: complete each stage with enough clarity that the next team can begin without avoidable uncertainty. That discipline supports a smoother construction process and a stronger final result. As the project continues, the same checks are repeated at the appropriate stages so that quality, safety and coordination remain part of the work from early construction through final handover.'
+  ];
+
+  const feature = document.getElementById('newsFeatureGrid');
+  const track = document.getElementById('newsSmallTrack');
+  const modal = document.getElementById('newsModal');
+  if(!feature || !track || !modal) return;
+
+  function countFor(item){
+    const added = localStorage.getItem('klc_news_seen_'+item.id)==='1' ? 1 : 0;
+    return item.views + added;
+  }
+  function card(item,small){
+    const b=document.createElement('button');
+    b.type='button';
+    b.className='news-card '+(small?'news-small-card':'news-feature-card');
+    b.dataset.news=item.id;
+    b.innerHTML='<img src="'+item.img+'" alt="'+item.title.replace(/"/g,'&quot;')+'" loading="lazy" decoding="async" referrerpolicy="no-referrer">'+
+      '<span class="news-view" data-view="'+item.id+'">'+eyeIcon+'<span>'+countFor(item)+'</span></span>'+
+      '<span class="news-card-copy"><h3>'+item.title+'</h3></span>';
+    b.addEventListener('click',()=>openNews(item));
+    return b;
+  }
+  news.slice(0,4).forEach(n=>feature.appendChild(card(n,false)));
+  news.slice(4).forEach(n=>track.appendChild(card(n,true)));
+
+  function updateViews(item){
+    const key='klc_news_seen_'+item.id;
+    if(localStorage.getItem(key)!=='1') localStorage.setItem(key,'1');
+    document.querySelectorAll('[data-view="'+item.id+'"] span').forEach(el=>el.textContent=countFor(item));
+    return countFor(item);
+  }
+  function openNews(item){
+    const v=updateViews(item);
+    document.getElementById('newsModalImg').src=item.img;
+    document.getElementById('newsModalImg').alt=item.title;
+    document.getElementById('newsModalTitle').textContent=item.title;
+    document.getElementById('newsModalMeta').innerHTML=eyeIcon+' '+v+' views';
+    document.getElementById('newsModalArticle').innerHTML=articleParagraphs.map((p,i)=>'<p>'+(i===0?'<strong>'+item.title+'.</strong> ':'')+p+'</p>').join('');
+    modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('news-modal-lock');
+  }
+  function closeNews(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('news-modal-lock')}
+  document.getElementById('newsModalClose').addEventListener('click',closeNews);
+  modal.addEventListener('click',e=>{if(e.target===modal)closeNews()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeNews()});
+  document.getElementById('newsPrev').addEventListener('click',()=>track.scrollBy({left:-Math.max(260,track.clientWidth*.72),behavior:'smooth'}));
+  document.getElementById('newsNext').addEventListener('click',()=>track.scrollBy({left:Math.max(260,track.clientWidth*.72),behavior:'smooth'}));
+})();
+</script>
 
 </body>
 </html>
