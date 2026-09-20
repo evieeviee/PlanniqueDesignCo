@@ -6595,7 +6595,6 @@ header.site-header .nav > *{
             <div class="section-kicker">Latest News</div>
             <h2 class="section-title">Project updates &<br>industry insights.</h2>
           </div>
-          <p class="latest-news-intro">A closer look at construction progress, coordination, quality, workplace delivery and practical site considerations.</p>
         </div>
 
         <div class="news-feature-grid reveal" id="newsFeatureGrid"></div>
@@ -6971,7 +6970,7 @@ header.site-header .nav > *{
     document.getElementById('newsModalImg').src=item.img;
     document.getElementById('newsModalImg').alt=item.title;
     document.getElementById('newsModalTitle').textContent=item.title;
-    document.getElementById('newsModalMeta').innerHTML=eyeIcon+' '+v+' views';
+    document.getElementById('newsModalMeta').textContent=v+' views';
     document.getElementById('newsModalArticle').innerHTML=articleParagraphs.map((p,i)=>'<p>'+(i===0?'<strong>'+item.title+'.</strong> ':'')+p+'</p>').join('');
     modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('news-modal-lock');
   }
