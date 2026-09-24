@@ -285,12 +285,6 @@
   .gallery-caption{font-size:10px!important;top:11px!important;max-width:62vw!important}
 }
 </style>
-<link rel="preload" as="image" href="assets/sham-nadzirah-logo.webp" type="image/webp" fetchpriority="high">
-
-<link rel="preload" as="image" href="assets/sham-nadzirah-logo.webp" type="image/webp" fetchpriority="high">
-<link rel="preload" as="image" href="assets/hidangan.jpg" fetchpriority="high">
-<link rel="preload" as="image" href="assets/vip.jpg" fetchpriority="high">
-
 <style id="contact-real-icons">
 .contact-item .icon{
   width:40px;
@@ -322,12 +316,31 @@
 }
 </style>
 
+<link rel="preload" as="image" href="./assets/sham-nadzirah-logo.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="./assets/hidangan.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="./assets/vip.jpg" fetchpriority="high">
+
+
+<style id="image-load-reliability">
+.gallery-category > img,
+.store-photo > img,
+.photo > img,
+.header-logo > img,
+.foot > img{
+  display:block;
+}
+.gallery-category[hidden]{display:none!important}
+.gallery-category > img{
+  background:#e9e1d6;
+}
+</style>
+
 </head>
 <body>
 <header class="top-header">
   <div class="wrap header-inner">
     <a class="header-logo" href="#home" aria-label="Sham Nadzirah Enterprise">
-      <img src="assets/sham-nadzirah-logo.webp" alt="Sham Nadzirah Enterprise" fetchpriority="high" decoding="async" width="165" height="154" fetchpriority="high" decoding="async">
+      <img src="./assets/sham-nadzirah-logo.webp" alt="Sham Nadzirah Enterprise" fetchpriority="high" decoding="async" width="165" height="154" fetchpriority="high" decoding="async">
       <span class="header-steam" aria-hidden="true"><i></i><i></i><i></i></span>
     </a>
     <div class="header-brandnote">Katering · Kanopi · Pulau Pinang</div>
@@ -336,8 +349,47 @@
 <main>
 <section class="hero" id="home"><div class="wrap hero-grid"><div class="hero-copy reveal"><h1>Majlis lebih mudah, <span>hidangan lebih menyelerakan.</span></h1><p>Daripada majlis keluarga hingga kenduri berskala besar, pilih pakej katering, set buffet, dome VIP, lauk pengantin dan keperluan kanopi dalam satu tempat.</p><div class="hero-actions"><a class="cta" href="#packages">Lihat Pakej</a><a class="btn-ghost" href="#contact">Buat Pertanyaan</a></div><div class="hero-badges"><div class="badge"><b>200–1,000+ tetamu</b><span>Pilihan mengikut saiz majlis</span></div><div class="badge"><b>Katering + Kanopi</b><span>Makanan dan persiapan majlis</span></div><div class="badge"><b>WhatsApp Terus</b><span>Mudah untuk semak pakej dan tempahan</span></div></div></div></section>
 
-<section class="section gallery-showcase" id="gallery"><div class="gallery-orb gallery-orb-a"></div><div class="gallery-orb gallery-orb-b"></div><div class="wrap gallery-wrap"><div class="gallery-heading reveal"><div class="eyebrow">Galeri</div><h2>Hidangan & VIP</h2></div><div class="gallery-view-tabs reveal" id="galleryViewTabs"><button class="gallery-view-tab active" data-gallery-view="all">Semua</button><button class="gallery-view-tab" data-gallery-view="food">Hidangan</button><button class="gallery-view-tab" data-gallery-view="vip">VIP</button></div><div class="gallery-categories reveal" id="galleryCategories"></div></div></section>
-<section class="store-section" id="tentang"><div class="wrap store-grid"><div class="store-copy reveal"><div class="eyebrow">Di Sebalik Setiap Majlis</div><h2>Dari dapur kami, ke majlis anda.</h2><p>Sham Nadzirah Enterprise menyediakan katering, kanopi dan keperluan majlis dari Pulau Pinang untuk pelbagai saiz acara. Kedai dan operasi kami menjadi pusat persediaan sebelum setiap tempahan dibawa ke lokasi majlis.</p><div class="store-points"><span class="store-point">Katering</span><span class="store-point">Kanopi</span><span class="store-point">Dome VIP</span><span class="store-point">Lauk Pengantin</span></div><a class="cta" href="#contact">Hubungi Kami</a></div><div class="store-photo reveal"><img src="assets/store.jpg" alt="Premis Sham Nadzirah Enterprise" loading="lazy" decoding="async"><span class="store-badge">Sham Nadzirah Enterprise · Pulau Pinang</span></div></div></section>
+<section class="section gallery-showcase" id="gallery">
+  <div class="gallery-orb gallery-orb-a"></div>
+  <div class="gallery-orb gallery-orb-b"></div>
+  <div class="wrap gallery-wrap">
+    <div class="gallery-heading reveal">
+      <div class="eyebrow">Galeri</div>
+      <h2>Hidangan & VIP</h2>
+    </div>
+
+    <div class="gallery-view-tabs reveal" id="galleryViewTabs">
+      <button class="gallery-view-tab active" data-gallery-view="all" type="button">Semua</button>
+      <button class="gallery-view-tab" data-gallery-view="food" type="button">Hidangan</button>
+      <button class="gallery-view-tab" data-gallery-view="vip" type="button">VIP</button>
+    </div>
+
+    <div class="gallery-categories reveal" id="galleryCategories">
+      <article class="gallery-category float-a" data-gallery-category="0" data-gallery-key="food"
+        tabindex="0" role="button" aria-label="Buka koleksi Hidangan">
+        <img src="./assets/hidangan.jpg" alt="Hidangan" loading="eager" fetchpriority="high" decoding="async">
+        <span class="gallery-open-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+            <path d="M7 17 17 7M9 7h8v8"/>
+          </svg>
+        </span>
+        <div class="gallery-category-content"><h3>Hidangan</h3></div>
+      </article>
+
+      <article class="gallery-category float-b" data-gallery-category="1" data-gallery-key="vip"
+        tabindex="0" role="button" aria-label="Buka koleksi VIP">
+        <img src="./assets/vip.jpg" alt="VIP" loading="eager" fetchpriority="high" decoding="async">
+        <span class="gallery-open-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+            <path d="M7 17 17 7M9 7h8v8"/>
+          </svg>
+        </span>
+        <div class="gallery-category-content"><h3>VIP</h3></div>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="store-section" id="tentang"><div class="wrap store-grid"><div class="store-copy reveal"><div class="eyebrow">Di Sebalik Setiap Majlis</div><h2>Dari dapur kami, ke majlis anda.</h2><p>Sham Nadzirah Enterprise menyediakan katering, kanopi dan keperluan majlis dari Pulau Pinang untuk pelbagai saiz acara. Kedai dan operasi kami menjadi pusat persediaan sebelum setiap tempahan dibawa ke lokasi majlis.</p><div class="store-points"><span class="store-point">Katering</span><span class="store-point">Kanopi</span><span class="store-point">Dome VIP</span><span class="store-point">Lauk Pengantin</span></div><a class="cta" href="#contact">Hubungi Kami</a></div><div class="store-photo reveal"><img src="./assets/store.jpg" alt="Premis Sham Nadzirah Enterprise" loading="lazy" decoding="async"><span class="store-badge">Sham Nadzirah Enterprise · Pulau Pinang</span></div></div></section>
 
 
 <section class="section" id="packages"><div class="wrap"><div class="section-head packages-head reveal"><div><div class="eyebrow">Pakej Katering</div><h2>Pilih ikut jumlah tetamu dan bajet.</h2></div><p>Tekan pada mana-mana pakej untuk melihat menu dan perkara yang disertakan.</p></div><div class="filters reveal"><button class="filter active" data-filter="all">Semua Pakej</button><button class="filter" data-filter="200-400">200–400 tetamu</button><button class="filter" data-filter="500-600">500–600 tetamu</button><button class="filter" data-filter="1000">1,000+ tetamu</button></div><div class="pkg-grid">
@@ -355,7 +407,7 @@
 
 <section class="section"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">Sajian & Susun Atur</div><h2>Bukan sekadar makanan.</h2></div><p>Gabungkan hidangan utama dengan penyediaan buffet, dome VIP dan lauk khas pengantin mengikut keperluan majlis.</p></div><div class="feature-strip"><div class="feature reveal"><i>01</i><h3>Set Buffet</h3><p>Susunan buffet yang kemas dan mudah diakses tetamu, sesuai untuk kenduri rumah, dewan dan majlis korporat.</p></div><div class="feature reveal"><i>02</i><h3>Dome VIP</h3><p>Hidangan dome khas untuk meja VIP bagi memastikan sajian lebih teratur dan eksklusif.</p></div><div class="feature reveal"><i>03</i><h3>Lauk Pengantin</h3><p>Hidangan khas meja beradap yang boleh diselaraskan bersama pakej majlis pilihan anda.</p></div></div></div></section>
 
-<section class="section canopy" id="canopy"><div class="wrap split"><div class="photo reveal"><img src="assets/kanopi-peralatan.jpg" alt="Kanopi dan susun atur majlis" loading="lazy" decoding="async"></div><div class="reveal"><div class="eyebrow">Kanopi & Peralatan</div><h2>Persiapan majlis yang lebih lengkap.</h2><p>Sewaan kanopi Arabian 18x18 disediakan bersama pilihan meja, kerusi, kipas, lampu serta warna alas meja dan scallop kanopi.</p><div class="mini-list"><div class="mini"><i>1</i><div><b>Kanopi Arabian 18x18</b><span>Sesuai untuk majlis rumah dan luar</span></div></div><div class="mini"><i>2</i><div><b>Meja & kerusi</b><span>Meja bulat, meja petak dan tempat duduk tetamu</span></div></div><div class="mini"><i>3</i><div><b>Lampu & kipas</b><span>Disertakan dalam pakej sewaan terpilih</span></div></div></div><div style="margin-top:18px"><a class="cta" href="#contact">Tanya Tentang Kanopi</a></div></div></div></section>
+<section class="section canopy" id="canopy"><div class="wrap split"><div class="photo reveal"><img src="./assets/kanopi-peralatan.jpg" alt="Kanopi dan susun atur majlis" loading="lazy" decoding="async"></div><div class="reveal"><div class="eyebrow">Kanopi & Peralatan</div><h2>Persiapan majlis yang lebih lengkap.</h2><p>Sewaan kanopi Arabian 18x18 disediakan bersama pilihan meja, kerusi, kipas, lampu serta warna alas meja dan scallop kanopi.</p><div class="mini-list"><div class="mini"><i>1</i><div><b>Kanopi Arabian 18x18</b><span>Sesuai untuk majlis rumah dan luar</span></div></div><div class="mini"><i>2</i><div><b>Meja & kerusi</b><span>Meja bulat, meja petak dan tempat duduk tetamu</span></div></div><div class="mini"><i>3</i><div><b>Lampu & kipas</b><span>Disertakan dalam pakej sewaan terpilih</span></div></div></div><div style="margin-top:18px"><a class="cta" href="#contact">Tanya Tentang Kanopi</a></div></div></div></section>
 
 
 
@@ -364,7 +416,7 @@
 <section class="section" id="contact"><div class="wrap"><div class="section-head contact-head reveal"><div><div class="eyebrow">Hubungi & Pertanyaan</div><h2>Sedia untuk merancang majlis anda?</h2></div><p>Hubungi kami terus atau hantar maklumat majlis melalui WhatsApp.</p></div><div class="contact-grid"><div class="contact-card reveal"><h3>Hubungi & Media Sosial</h3><a class="contact-item" href="tel:+60174568422"><span class="icon icon-outline" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg></span><div><b>Cik Insyirah</b><span>017-456 8422</span></div></a><a class="contact-item" href="tel:+60174110885"><span class="icon icon-outline" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg></span><div><b>En. Sham</b><span>017-411 0885</span></div></a><a class="contact-item" href="https://www.tiktok.com/@shamnadzirah.cate" target="_blank" rel="noopener"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.5 3c.4 2 1.6 3.2 3.5 3.7v3a8.1 8.1 0 0 1-3.5-1v6.1a5.4 5.4 0 1 1-4.7-5.4v3a2.5 2.5 0 1 0 1.7 2.4V3h3z"/></svg></span><div><b>TikTok</b><span>@shamnadzirah.cate</span></div></a><a class="contact-item" href="https://www.instagram.com/shamnadzirahcatering/" target="_blank" rel="noopener"><span class="icon icon-outline" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span><div><b>Instagram</b><span>@shamnadzirahcatering</span></div></a><a class="contact-item" href="https://www.facebook.com/sncaterer/" target="_blank" rel="noopener"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13.6 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5H17V4.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.5V14h2.8v8h3.3z"/></svg></span><div><b>Facebook</b><span>Sham Nadzirah Catering</span></div></a><a class="contact-item" href="https://www.google.com/maps/search/?api=1&query=NO+7,+JALAN+SUNGAI+DURI+TAMAN+SERULING+EMAS,+Sungai+Bakap,+14200+Sungai+Jawi,+Pulau+Pinang" target="_blank" rel="noopener"><span class="icon icon-outline" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Lokasi</b><span>NO 7, JALAN SUNGAI DURI TAMAN SERULING EMAS, Sungai Bakap, 14200 Sungai Jawi, Pulau Pinang</span></div></a><div class="location-box"><b>Waktu operasi</b><br>Isnin, Selasa, Khamis & Jumaat · 9:00 pagi – 6:00 petang<br>Rabu, Sabtu & Ahad · Tutup</div></div><form class="form-card reveal" id="enquiryForm"><h3>Pertanyaan Pantas</h3><p>Kongsikan butiran majlis anda dan kami akan sambung perbualan melalui WhatsApp.</p><div class="form-grid"><div class="field"><label>Nama anda</label><input id="name" placeholder="Nama" required></div><div class="field"><label>Nombor telefon</label><input id="phone" placeholder="01X-XXXXXXX" required></div><div class="field full"><label>Mesej</label><textarea id="message" placeholder="Nyatakan tarikh majlis, jumlah tetamu, lokasi dan pakej yang diminati"></textarea></div></div><button class="cta submit" type="submit">Hantar melalui WhatsApp</button></form></div></div></section>
 </main>
 <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true"><button class="gallery-close" id="galleryClose" type="button" aria-label="Tutup">×</button><button class="gallery-nav prev" id="galleryPrev" type="button" aria-label="Foto sebelumnya">‹</button><div class="gallery-caption" id="galleryCaption"></div><div class="gallery-lightbox-stage"><img id="galleryLightboxImage" src="" alt="Paparan galeri"></div><button class="gallery-nav next" id="galleryNext" type="button" aria-label="Foto seterusnya">›</button><div class="gallery-thumbs" id="galleryThumbs" aria-label="Pilihan foto"></div><div class="gallery-progress" id="galleryProgress" aria-hidden="true"><span></span></div></div>
-<footer><div class="wrap foot"><img src="assets/sham-nadzirah-logo.webp" alt="Sham Nadzirah Enterprise" fetchpriority="high" decoding="async" width="110" loading="lazy" decoding="async"><p>Sham Nadzirah Enterprise · Pulau Pinang<br>Katering · Kanopi · Keperluan Majlis</p></div></footer>
+<footer><div class="wrap foot"><img src="./assets/sham-nadzirah-logo.webp" alt="Sham Nadzirah Enterprise" fetchpriority="high" decoding="async" width="110" loading="lazy" decoding="async"><p>Sham Nadzirah Enterprise · Pulau Pinang<br>Katering · Kanopi · Keperluan Majlis</p></div></footer>
 <a class="wa" href="https://wa.me/60174568422" target="_blank" rel="noopener" aria-label="WhatsApp Sham Nadzirah"><svg viewBox="0 0 32 32"><path d="M19.11 17.2c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.26s.97 2.62 1.11 2.8c.14.18 1.91 2.91 4.62 4.08.65.28 1.15.45 1.54.57.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32zM16.03 3.2c-7.04 0-12.76 5.73-12.76 12.77 0 2.25.59 4.45 1.71 6.39L3.16 29l6.8-1.78a12.72 12.72 0 0 0 6.06 1.54h.01c7.04 0 12.77-5.73 12.77-12.77 0-3.41-1.33-6.62-3.75-9.03A12.67 12.67 0 0 0 16.03 3.2zm0 23.4h-.01a10.57 10.57 0 0 1-5.39-1.48l-.39-.23-4.03 1.06 1.08-3.93-.25-.4a10.57 10.57 0 0 1-1.62-5.65c0-5.85 4.76-10.61 10.62-10.61a10.54 10.54 0 0 1 7.5 3.11 10.55 10.55 0 0 1 3.1 7.51c-.01 5.85-4.77 10.62-10.61 10.62z"/></svg></a>
 <script>
 const foodItems=[
@@ -393,7 +445,7 @@ function numberedPaths(slug,max){
   for(const ext of exts) paths.push(`assets/food/${slug}.${ext}`);
   for(let i=1;i<=max;i++){
     const n=String(i).padStart(2,'0');
-    for(const ext of exts) paths.push(`assets/food/${slug}-${n}.${ext}`);
+    for(const ext of exts) paths.push(`./assets/food/${slug}-${n}.${ext}`);
   }
   return paths;
 }
@@ -415,23 +467,26 @@ const genericFoodPaths=[
   ...numberedPaths('hidangan',30)
 ];
 const namedFoodPaths=foodItems.flatMap(item=>numberedPaths(item.slug,REGULAR_MAX_PHOTOS));
-const vipPaths=Array.from({length:30},(_,i)=>['jpg','jpeg','png','webp'].map(ext=>`assets/food/vip-majlis-${String(i+1).padStart(2,'0')}.${ext}`)).flat();
+const vipPaths=Array.from({length:30},(_,i)=>['jpg','jpeg','png','webp'].map(ext=>`./assets/food/vip-majlis-${String(i+1).padStart(2,'0')}.${ext}`)).flat();
 
 async function buildGallery(){
-  // Thumbnail covers are fixed assets so the gallery appears instantly.
   galleryCollections=[
-    {key:'food',title:'Hidangan',items:null,cover:'assets/hidangan.jpg',coverCandidates:['assets/hidangan.jpg'],klass:'float-a'},
-    {key:'vip',title:'VIP',items:null,cover:'assets/vip.jpg',coverCandidates:['assets/vip.jpg'],klass:'float-b'}
+    {key:'food',title:'Hidangan',items:null,cover:'./assets/hidangan.jpg',coverCandidates:['./assets/hidangan.jpg'],klass:'float-a'},
+    {key:'vip',title:'VIP',items:null,cover:'./assets/vip.jpg',coverCandidates:['./assets/vip.jpg'],klass:'float-b'}
   ];
+
+  galleryCategories.querySelectorAll('.gallery-category').forEach(card=>{
+    const open=()=>openCollection(Number(card.dataset.galleryCategory));
+    card.addEventListener('click',open);
+    card.addEventListener('keydown',e=>{
+      if(e.key==='Enter'||e.key===' '){
+        e.preventDefault();
+        open();
+      }
+    });
+  });
+
   renderGalleryCategories('all');
-
-  // Warm the first real gallery images immediately so opening feels instant.
-  ['assets/food/jelatah-01.jpg','assets/food/vip-majlis-01.jpg'].forEach(src=>{const img=new Image();img.decoding='async';img.src=src});
-
-  // Discover the rest quietly when the browser is idle, not after the user clicks.
-  const warmCollections=()=>galleryCollections.forEach(c=>ensureCollectionLoaded(c));
-  if('requestIdleCallback' in window) requestIdleCallback(warmCollections,{timeout:1800});
-  else setTimeout(warmCollections,700);
 }
 
 async function ensureCollectionLoaded(c){
@@ -460,30 +515,15 @@ async function ensureCollectionLoaded(c){
   return c.items||[];
 }
 
-function attachCoverFallbacks(){
-  galleryCategories.querySelectorAll('.gallery-category').forEach(card=>{
-    const idx=Number(card.dataset.galleryCategory);
-    const c=galleryCollections[idx];
-    const img=card.querySelector('img');
-    if(!c||!img)return;
-    let pos=Math.max(0,c.coverCandidates.indexOf(img.getAttribute('src')));
-    img.addEventListener('load',()=>{c.cover=img.getAttribute('src');card.classList.remove('no-photo')});
-    img.addEventListener('error',()=>{
-      pos+=1;
-      if(pos<c.coverCandidates.length){img.src=c.coverCandidates[pos];return;}
-      img.remove();
-      card.classList.add('no-photo');
-    });
-  });
-}
+function attachCoverFallbacks(){ /* static covers: no fallback needed */ }
 
 function renderGalleryCategories(view='all'){
- const list=galleryCollections.filter(c=>view==='all'||c.key===view);
- galleryCategories.classList.toggle('is-single',list.length===1);
- galleryCategories.innerHTML=list.map(c=>{const realIndex=galleryCollections.indexOf(c);return `<article class="gallery-category ${c.klass}" data-gallery-category="${realIndex}" tabindex="0" role="button" aria-label="Buka koleksi ${c.title}"><img src="${c.cover}" alt="${c.title}" loading="eager" fetchpriority="high" decoding="async"><span class="gallery-open-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 17 17 7M9 7h8v8"/></svg></span><div class="gallery-category-content"><h3>${c.title}</h3></div></article>`}).join('');
- attachCoverFallbacks();
- galleryCategories.querySelectorAll('.gallery-category').forEach(card=>{const open=()=>openCollection(Number(card.dataset.galleryCategory));card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
- setupGalleryFloat();
+  const cards=[...galleryCategories.querySelectorAll('.gallery-category')];
+  cards.forEach(card=>{
+    card.hidden=!(view==='all'||card.dataset.galleryKey===view);
+  });
+  galleryCategories.classList.toggle('is-single',view!=='all');
+  setupGalleryFloat();
 }
 document.querySelectorAll('.gallery-view-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.gallery-view-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderGalleryCategories(btn.dataset.galleryView)}));
 async function openCollection(i){
