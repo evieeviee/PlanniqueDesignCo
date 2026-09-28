@@ -594,7 +594,13 @@
       .hero-side p{font-size:.94rem}
       .actions{display:grid}
       .btn{width:100%}
-      .banner-wrap img{aspect-ratio:4/3;object-fit:cover;object-position:center}
+      .banner-wrap img{
+        width:100%;
+        height:auto;
+        aspect-ratio:auto;
+        object-fit:contain;
+        object-position:center;
+      }
       .banner-caption{
         position:static;
         max-width:none;
