@@ -282,9 +282,32 @@
       line-height:1.6;
     }
     .service-arrow{
-      color:#e4c7d1;
-      font-size:1.1rem;
-      transition:.25s ease;
+      width:18px;
+      height:18px;
+      position:relative;
+      flex:0 0 18px;
+      transition:transform .25s ease;
+    }
+    .service-arrow::before{
+      content:"";
+      position:absolute;
+      width:10px;
+      height:10px;
+      top:1px;
+      right:1px;
+      border-top:1.5px solid #e4c7d1;
+      border-right:1.5px solid #e4c7d1;
+    }
+    .service-arrow::after{
+      content:"";
+      position:absolute;
+      width:14px;
+      height:1.5px;
+      background:#e4c7d1;
+      transform:rotate(-45deg);
+      transform-origin:right center;
+      right:1px;
+      top:2px;
     }
     .service-row:hover .service-arrow{transform:translate(3px,-3px)}
 
@@ -669,7 +692,7 @@
           data-points="Semakan lekapan dan posisi penyusuan|Perbincangan rutin penyusuan harian|Panduan mengikut cabaran semasa ibu|Cadangan langkah susulan yang praktikal">
           <div class="service-no">01</div>
           <div><h3>Konsultasi Penyusuan di Rumah</h3><p>Panduan lekapan, posisi penyusuan, rutin penyusuan dan cabaran penyusuan secara bersemuka.</p></div>
-          <div class="service-arrow">↗</div>
+          <div class="service-arrow" aria-hidden="true"></div>
         </button>
 
         <button class="service-row" type="button" data-r
@@ -679,7 +702,7 @@
           data-points="Semakan keadaan dan simptom semasa|Panduan rutin penyusuan atau pengepaman|Langkah untuk meningkatkan keselesaan|Panduan bila perlu mendapatkan rawatan perubatan">
           <div class="service-no">02</div>
           <div><h3>Pengurusan Bengkak Susu</h3><p>Sokongan untuk ibu yang mengalami rasa tegang, tidak selesa atau bengkak pada payudara.</p></div>
-          <div class="service-arrow">↗</div>
+          <div class="service-arrow" aria-hidden="true"></div>
         </button>
 
         <button class="service-row" type="button" data-r
@@ -689,7 +712,7 @@
           data-points="Semakan simptom dan rutin penyusuan|Panduan penyusuan atau pengepaman yang lebih sesuai|Langkah untuk mengurangkan ketidakselesaan|Panduan tanda amaran yang memerlukan pemeriksaan lanjut">
           <div class="service-no">03</div>
           <div><h3>Sokongan Saluran Susu Tersumbat</h3><p>Panduan berkaitan saluran susu tersumbat dan langkah seterusnya untuk rutin penyusuan atau pengepaman.</p></div>
-          <div class="service-arrow">↗</div>
+          <div class="service-arrow" aria-hidden="true"></div>
         </button>
 
         <button class="service-row" type="button" data-r
@@ -699,7 +722,7 @@
           data-points="Semakan saiz corong pam|Panduan kedudukan semasa mengepam|Cadangan untuk mengurangkan geseran atau ketidakselesaan|Panduan rutin pengepaman yang lebih teratur">
           <div class="service-no">04</div>
           <div><h3>Pemadanan Corong Pam</h3><p>Semakan kesesuaian corong pam bagi membantu pengalaman mengepam yang lebih selesa dan teratur.</p></div>
-          <div class="service-arrow">↗</div>
+          <div class="service-arrow" aria-hidden="true"></div>
         </button>
 
         <button class="service-row" type="button" data-r
@@ -709,7 +732,7 @@
           data-points="Memahami isyarat dan keperluan bayi|Panduan asas rutin tidur awal|Pendekatan menenangkan bayi|Sokongan untuk ibu bapa memahami corak normal bayi 0–3 bulan">
           <div class="service-no">05</div>
           <div><h3>Tangisan & Tidur Bayi 0–3 Bulan</h3><p>Panduan memahami isyarat bayi, tangisan, rutin awal dan tidur dalam fasa bayi baru lahir.</p></div>
-          <div class="service-arrow">↗</div>
+          <div class="service-arrow" aria-hidden="true"></div>
         </button>
 
         <button class="service-row" type="button" data-r
@@ -719,7 +742,7 @@
           data-points="Perbincangan melalui sesi dalam talian|Semakan isu penyusuan berdasarkan maklumat yang dikongsi|Panduan praktikal untuk diamalkan di rumah|Cadangan langkah susulan berdasarkan keperluan">
           <div class="service-no">06</div>
           <div><h3>Konsultasi Dalam Talian</h3><p>Konsultasi untuk ibu yang memerlukan panduan tetapi tidak dapat membuat lawatan bersemuka.</p></div>
-          <div class="service-arrow">↗</div>
+          <div class="service-arrow" aria-hidden="true"></div>
         </button>
       </div>
     </div>
