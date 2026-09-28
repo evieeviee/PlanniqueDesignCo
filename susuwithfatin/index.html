@@ -126,6 +126,37 @@
     }
     .primary{background:var(--wine);color:#fff}
     .primary:hover{background:#3b2431;transform:translateY(-3px)}
+
+    /* CSS-drawn CTA arrow: prevents iPhone Safari from rendering ↗ as emoji */
+    .cta-arrow{
+      width:15px;
+      height:15px;
+      position:relative;
+      display:inline-block;
+      flex:0 0 15px;
+      margin-left:2px;
+    }
+    .cta-arrow::before{
+      content:"";
+      position:absolute;
+      width:8px;
+      height:8px;
+      top:1px;
+      right:1px;
+      border-top:1.5px solid currentColor;
+      border-right:1.5px solid currentColor;
+    }
+    .cta-arrow::after{
+      content:"";
+      position:absolute;
+      width:11px;
+      height:1.5px;
+      right:1px;
+      top:2px;
+      background:currentColor;
+      transform:rotate(-45deg);
+      transform-origin:right center;
+    }
     .secondary{border-color:var(--wine);color:var(--wine);background:transparent}
     .secondary:hover{background:var(--wine);color:#fff;transform:translateY(-3px)}
 
@@ -620,7 +651,7 @@
             Sokongan profesional dan berempati untuk ibu yang memerlukan panduan penyusuan, pengurusan bengkak susu, saluran susu tersumbat, pemadanan corong pam serta sokongan bayi 0–3 bulan.
           </p>
           <div class="actions">
-            <a class="btn primary" href="https://wa.me/601157746733?text=Hai%20Fatin%2C%20saya%20ingin%20bertanya%20tentang%20konsultasi%20penyusuan." target="_blank" rel="noopener">Tempah Konsultasi ↗</a>
+            <a class="btn primary" href="https://wa.me/601157746733?text=Hai%20Fatin%2C%20saya%20ingin%20bertanya%20tentang%20konsultasi%20penyusuan." target="_blank" rel="noopener">Tempah Konsultasi <span class="cta-arrow" aria-hidden="true"></span></a>
             <a class="btn secondary" href="#perkhidmatan">Lihat Perkhidmatan</a>
           </div>
         </div>
@@ -778,7 +809,7 @@
           <h2>Perlukan bantuan dengan penyusuan atau pengepaman?</h2>
           <p>Hubungi Fatin melalui WhatsApp untuk berkongsi situasi anda dan semak ketersediaan sesi konsultasi.</p>
         </div>
-        <a class="btn primary" href="https://wa.me/601157746733?text=Hai%20Fatin%2C%20saya%20ingin%20bertanya%20tentang%20konsultasi%20penyusuan." target="_blank" rel="noopener">WhatsApp Fatin ↗</a>
+        <a class="btn primary" href="https://wa.me/601157746733?text=Hai%20Fatin%2C%20saya%20ingin%20bertanya%20tentang%20konsultasi%20penyusuan." target="_blank" rel="noopener">WhatsApp Fatin <span class="cta-arrow" aria-hidden="true"></span></a>
       </div>
     </div>
   </section>
@@ -835,7 +866,7 @@
     </div>
 
     <div class="modal-action">
-      <a class="btn primary" href="https://wa.me/601157746733?text=Hai%20Fatin%2C%20saya%20ingin%20bertanya%20tentang%20konsultasi%20penyusuan." target="_blank" rel="noopener">Tanya Fatin melalui WhatsApp ↗</a>
+      <a class="btn primary" href="https://wa.me/601157746733?text=Hai%20Fatin%2C%20saya%20ingin%20bertanya%20tentang%20konsultasi%20penyusuan." target="_blank" rel="noopener">Tanya Fatin melalui WhatsApp <span class="cta-arrow" aria-hidden="true"></span></a>
     </div>
   </div>
 </div>
