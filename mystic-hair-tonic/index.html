@@ -1598,7 +1598,7 @@ footer{padding:24px 0!important}
 }
 
 
-/* ===== v19 ingredient Focus / Key editorial treatment ===== */
+/* ===== v19 ingredient Fokus / Utama editorial treatment ===== */
 .ingredient-meta{
   margin-top:16px!important;
   padding:14px 0 0!important;
@@ -1892,106 +1892,952 @@ footer{padding:24px 0!important}
 }
 
 
-/* ===== thumbnail-first + responsive image sizing ===== */
-.product-card .gallery{
-  height:340px!important;
-  min-height:340px!important;
-  overflow:hidden!important;
-  background:linear-gradient(180deg,#f8e9c5 0%,#efd5a2 100%)!important;
+/* =========================================================
+   V24 — MODERN HERITAGE / EDITORIAL APOTHECARY REDESIGN
+   Same warm gold / parchment / espresso palette,
+   but flatter, cleaner and more premium.
+   ========================================================= */
+
+:root{
+  --v24-paper:#f3dfb7;
+  --v24-paper-2:#ead09b;
+  --v24-cream:#fff7e5;
+  --v24-ink:#3a2517;
+  --v24-brown:#6d4424;
+  --v24-gold:#bf8a3e;
+  --v24-line:rgba(64,39,18,.14);
 }
-.product-card .gallery-slide{
-  position:absolute!important;
-  inset:0!important;
+
+/* calmer page background */
+body{
+  background:
+    linear-gradient(180deg,#d4a15b 0%,#e8c98f 18%,#f0dbae 44%,#e6c487 73%,#d09a54 100%)!important;
+}
+body::after{opacity:.028!important}
+
+/* header becomes compact and editorial */
+.topbar{
+  background:rgba(247,231,197,.96)!important;
+  box-shadow:0 4px 18px rgba(51,29,6,.06)!important;
+}
+.header-title{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-weight:600!important;
+  letter-spacing:0!important;
+}
+.header-company{letter-spacing:.18em!important}
+
+/* hero: image-first, no extra decoration */
+.hero{background:#e2bd78!important}
+.hero-picture,
+.hero-picture img{display:block!important;width:100%!important}
+
+/* trust strip becomes one continuous information rail */
+.trust-strip{
+  background:rgba(250,235,203,.86)!important;
+  padding:0!important;
+}
+.trust-grid{
+  display:grid!important;
+  grid-template-columns:repeat(4,1fr)!important;
+  gap:0!important;
+}
+.trust-card{
+  min-height:86px;
+  padding:18px 22px!important;
+  border-radius:0!important;
+  background:transparent!important;
+}
+.trust-card:not(:last-child){border-right:1px solid var(--v24-line)!important}
+.trust-icon{
+  width:28px!important;height:28px!important;
+  border-radius:0!important;background:transparent!important;
+}
+.trust-card strong{font-size:.82rem!important}
+.trust-card span{font-size:.68rem!important}
+
+/* section rhythm */
+section{padding:72px 0!important}
+.section-head{max-width:680px!important;margin-bottom:30px!important}
+.section-head h2{font-weight:520!important;letter-spacing:-.035em!important}
+.section-head p{font-size:.96rem!important}
+
+/* finder */
+.formula-finder{
+  padding:82px 0 54px!important;
+}
+.finder-shell{
+  display:grid;
+  grid-template-columns:.88fr 1.12fr;
+  min-height:560px;
+  background:rgba(250,236,205,.78);
+  border:1px solid var(--v24-line);
+  box-shadow:0 24px 60px rgba(55,31,6,.10);
+}
+.finder-copy{
+  padding:52px 48px;
+  border-right:1px solid var(--v24-line);
+}
+.finder-copy h2{
+  font-size:clamp(2.2rem,4vw,4rem);
+  font-weight:500;
+  color:var(--v24-ink);
+  line-height:1.02;
+  letter-spacing:-.045em;
+  max-width:520px;
+}
+.finder-copy>p{max-width:500px}
+.finder-options{
+  margin-top:34px;
+  display:grid;
+  gap:0;
+  border-top:1px solid var(--v24-line);
+}
+.finder-option{
+  width:100%;
+  display:grid;
+  grid-template-columns:42px 1fr;
+  gap:14px;
+  align-items:center;
+  text-align:left;
+  padding:16px 0;
+  border:0;
+  border-bottom:1px solid var(--v24-line);
+  background:transparent;
+  color:#76583d;
+  cursor:pointer;
+  transition:.25s ease;
+}
+.finder-option>span{
+  font-size:.66rem;
+  letter-spacing:.12em;
+  color:#a1743e;
+}
+.finder-option strong{
+  display:block;
+  font-size:.95rem;
+  font-weight:650;
+  color:#5c422e;
+}
+.finder-option small{
+  display:block;
+  margin-top:3px;
+  font-size:.72rem;
+  color:#917358;
+}
+.finder-option:hover,
+.finder-option.active{
+  padding-left:10px;
+}
+.finder-option.active strong{color:var(--v24-ink)}
+.finder-option.active>span{color:#693e1f;font-weight:900}
+
+.finder-preview{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(220px,.62fr);
+  align-items:end;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 45% 38%,rgba(255,249,231,.90),rgba(230,194,128,.42) 47%,transparent 70%);
+}
+.finder-number{
+  position:absolute;
+  right:20px;
+  top:12px;
+  font-family:Georgia,serif;
+  font-size:8rem;
+  line-height:1;
+  color:rgba(81,49,21,.05);
+  pointer-events:none;
+}
+.finder-preview-art{
+  align-self:stretch;
+  display:grid;
+  place-items:center;
+  padding:42px 18px 28px 34px;
+}
+.finder-preview-art img{
+  max-height:430px;
+  max-width:88%;
+  object-fit:contain;
+  filter:drop-shadow(0 24px 20px rgba(56,30,4,.16));
+  transition:opacity .25s ease,transform .35s ease;
+}
+.finder-preview-copy{
+  padding:40px 42px 42px 14px;
+  align-self:end;
+}
+.finder-preview-copy small{
+  display:block;
+  margin-bottom:8px;
+  font-size:.66rem;
+  font-weight:850;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:#94632e;
+}
+.finder-preview-copy h3{
+  font-size:1.45rem;
+  color:var(--v24-ink);
+}
+.finder-preview-copy p{font-size:.88rem}
+.finder-link{
+  margin-top:10px;
+  padding:0 0 5px;
+  border:0;
+  border-bottom:1px solid #6c4524;
+  background:transparent;
+  color:#4a2e1b;
+  font-weight:800;
+  cursor:pointer;
+}
+.finder-link span{margin-left:7px;transition:.2s ease}
+.finder-link:hover span{margin-left:12px}
+
+/* products: flatter editorial cards */
+#products{padding-top:62px!important}
+.product-grid{
+  gap:18px!important;
+}
+.product-card{
+  border-radius:8px!important;
+  border:1px solid rgba(63,38,17,.11)!important;
+  background:rgba(249,235,205,.82)!important;
+  box-shadow:0 14px 36px rgba(54,31,6,.08)!important;
+}
+.product-card:hover{
+  transform:translateY(-4px)!important;
+  box-shadow:0 22px 44px rgba(54,31,6,.12)!important;
+}
+.gallery{
+  border-radius:0!important;
+  background:
+    linear-gradient(180deg,rgba(255,248,229,.93),rgba(234,202,145,.62))!important;
+}
+.product-body{
+  border-top:1px solid var(--v24-line);
+}
+.product-actions{
+  grid-template-columns:1fr 46px!important;
+}
+.product-actions .btn-primary{
+  border-radius:6px!important;
+  box-shadow:none!important;
+}
+.details-btn{
+  border-radius:6px!important;
+}
+
+/* Ingredients: more editorial, less card-like */
+.ingredient-grid{
+  gap:18px!important;
+}
+.ingredient-card{
+  border-radius:6px!important;
+  box-shadow:none!important;
+  background:rgba(249,235,205,.56)!important;
+  border:1px solid rgba(65,40,18,.10)!important;
+}
+.ingredient-image{
+  border-radius:3px!important;
+}
+.ingredient-meta{
+  grid-template-columns:1fr 1fr!important;
+  border-top:1px solid var(--v24-line)!important;
+}
+
+/* brand story */
+.brand-story{
+  padding:58px 0!important;
+}
+.brand-story-grid{
+  display:grid;
+  grid-template-columns:90px 1fr .58fr;
+  gap:42px;
+  align-items:start;
+  padding:44px 0;
+  border-top:1px solid rgba(65,40,18,.18);
+  border-bottom:1px solid rgba(65,40,18,.18);
+}
+.brand-story-mark{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding-top:8px;
+}
+.heritage-line{height:1px;flex:1;background:#8f6337}
+.brand-story-mark span{
+  font-size:.68rem;
+  font-weight:850;
+  letter-spacing:.15em;
+  color:#81562c;
+}
+.brand-story-copy h2{
+  max-width:700px;
+  font-size:clamp(2rem,3.5vw,3.25rem);
+  font-weight:500;
+  line-height:1.04;
+  color:#3d2919;
+}
+.brand-story-copy p{
+  max-width:700px;
+  font-size:.94rem;
+}
+.brand-story-points{
+  display:grid;
+  gap:0;
+  border-top:1px solid var(--v24-line);
+}
+.brand-story-points div{
+  display:grid;
+  grid-template-columns:34px 1fr;
+  gap:12px;
+  padding:14px 0;
+  border-bottom:1px solid var(--v24-line);
+}
+.brand-story-points b{
+  color:#a07139;
+  font-size:.68rem;
+}
+.brand-story-points span{
+  color:#4b3322;
+  font-size:.86rem;
+  font-weight:650;
+}
+
+/* Results / steps: reduce card-on-card feeling */
+.results-shell,
+.steps-wrap{
+  border-radius:8px!important;
+  background:rgba(249,235,205,.58)!important;
+  box-shadow:none!important;
+}
+.before-card{
+  border-radius:4px!important;
+}
+.step-card{
+  border-radius:5px!important;
+  box-shadow:none!important;
+}
+.step-no{
+  border-radius:4px!important;
+}
+.progress-dot{
+  border-radius:4px!important;
+}
+
+/* faq becomes flat accordion */
+.faq{gap:0!important;border-top:1px solid var(--v24-line)}
+.faq-item{
+  border-radius:0!important;
+  border:0!important;
+  border-bottom:1px solid var(--v24-line)!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+/* CTA: strong but restrained */
+.cta-box{
+  border-radius:8px!important;
+  background:linear-gradient(135deg,#3c2415,#684123)!important;
+}
+
+/* modal: cleaner luxury */
+.modal-card{
+  border-radius:8px!important;
+}
+.close-modal{
+  border-radius:6px!important;
+}
+
+/* mobile */
+@media(max-width:760px){
+  section{padding:50px 0!important}
+  .formula-finder{padding-top:52px!important}
+  .finder-shell{
+    grid-template-columns:1fr;
+    min-height:0;
+  }
+  .finder-copy{
+    padding:30px 22px 22px;
+    border-right:0;
+    border-bottom:1px solid var(--v24-line);
+  }
+  .finder-copy h2{font-size:2.2rem}
+  .finder-options{
+    grid-template-columns:1fr 1fr;
+    margin-top:24px;
+  }
+  .finder-option{
+    grid-template-columns:28px 1fr;
+    padding:12px 8px 12px 0;
+  }
+  .finder-option:nth-child(odd){border-right:1px solid var(--v24-line)}
+  .finder-preview{
+    grid-template-columns:1fr;
+  }
+  .finder-preview-art{
+    min-height:300px;
+    padding:24px;
+  }
+  .finder-preview-art img{
+    max-height:270px;
+    max-width:76%;
+  }
+  .finder-preview-copy{
+    padding:0 22px 28px;
+  }
+  .finder-number{font-size:5rem}
+
+  .trust-grid{grid-template-columns:1fr 1fr!important}
+  .trust-card{
+    min-height:92px;
+    padding:14px 12px!important;
+  }
+
+  .brand-story-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:30px 0;
+  }
+  .brand-story-mark{width:90px}
+  .brand-story-points{
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    border-top:0;
+  }
+  .brand-story-points div{
+    grid-template-columns:1fr;
+    gap:4px;
+    border:0;
+    border-top:1px solid var(--v24-line);
+  }
+
+  .product-card{
+    border-radius:8px!important;
+  }
+  .product-actions .btn,
+  .details-btn{
+    border-radius:6px!important;
+  }
+
+  .ingredient-card{
+    border-radius:6px!important;
+  }
+}
+
+
+/* ===== V25 PRODUCT THUMBNAIL / FULL-IMAGE FIX ===== */
+.gallery{
+  height:360px!important;
+  min-height:360px!important;
+  padding:22px!important;
   display:flex!important;
   align-items:center!important;
   justify-content:center!important;
-  padding:18px 26px 28px!important;
   overflow:hidden!important;
 }
-.product-card .gallery-slide img{
-  display:block!important;
-  width:auto!important;
-  height:auto!important;
-  max-width:90%!important;
-  max-height:90%!important;
-  object-fit:contain!important;
-  object-position:center!important;
-  margin:auto!important;
-  padding:0!important;
-  transform:none!important;
-}
-.product-card .gallery-slide img.is-landscape{
+.gallery-stage{
   width:100%!important;
-  height:auto!important;
-  max-width:100%!important;
-  max-height:86%!important;
+  height:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
 }
-.product-card .gallery-slide img.is-portrait{
-  width:auto!important;
-  height:auto!important;
-  max-width:76%!important;
-  max-height:92%!important;
-}
-
-/* thumbnails should use the frame comfortably */
-.product-card .gallery-slide:first-child img{
-  width:100%!important;
-  height:auto!important;
-  max-width:100%!important;
-  max-height:88%!important;
-  object-fit:contain!important;
-}
-
-/* popup also always shows complete image */
-.modal-art img{
+.gallery img,
+.gallery-stage img,
+.product-image{
   width:100%!important;
   height:100%!important;
   max-width:100%!important;
   max-height:100%!important;
   object-fit:contain!important;
   object-position:center!important;
-  padding:18px!important;
+  display:block!important;
+  margin:auto!important;
+  transform:none!important;
+}
+.gallery.landscape img,
+.gallery-stage.landscape img{
+  width:100%!important;
+  max-width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+}
+.gallery-nav{
+  z-index:5!important;
 }
 
-@media(max-width:640px){
-  .product-card .gallery{
-    height:285px!important;
-    min-height:285px!important;
-    max-height:285px!important;
-  }
-  .product-card .gallery-slide{
-    padding:12px 18px 22px!important;
-  }
-  .product-card .gallery-slide img.is-landscape,
-  .product-card .gallery-slide:first-child img{
-    width:100%!important;
-    max-width:100%!important;
-    max-height:82%!important;
-  }
-  .product-card .gallery-slide img.is-portrait{
-    max-width:68%!important;
-    max-height:92%!important;
-  }
+/* popup product media also shows the entire selected image */
+.modal-media,
+.modal-image-wrap{
+  overflow:hidden!important;
+}
+.modal-media img,
+.modal-image-wrap img,
+#modalImage{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
 
-  .modal-art{
-    padding:10px!important;
+@media (max-width:760px){
+  .gallery{
+    height:310px!important;
+    min-height:310px!important;
+    padding:16px 18px!important;
   }
-  .modal-art img{
+  .gallery img,
+  .gallery-stage img,
+  .product-image{
     width:100%!important;
     height:100%!important;
-    max-width:100%!important;
-    max-height:100%!important;
-    padding:10px!important;
     object-fit:contain!important;
   }
 }
+@media (max-width:430px){
+  .gallery{
+    height:285px!important;
+    min-height:285px!important;
+    padding:14px 16px!important;
+  }
+}
 
-/* keep other content images balanced too */
-.ingredient-image img,
-.step-media img,
-.before-card img,
-.hero-picture img{
+
+
+/* ===== V26 interaction clarity + balanced product media ===== */
+/* Formula finder: clearly tappable without adding clutter */
+.finder-option{
+  position:relative!important;
+  padding-right:42px!important;
+  cursor:pointer!important;
+  -webkit-tap-highlight-color:transparent;
+}
+.finder-option::after{
+  content:'›';
+  position:absolute;
+  right:8px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:1.45rem;
+  line-height:1;
+  color:rgba(81,49,21,.42);
+  transition:transform .22s ease,color .22s ease,opacity .22s ease;
+}
+.finder-option:hover::after,
+.finder-option.active::after{
+  color:#5a351c;
+  transform:translate(4px,-50%);
+}
+.finder-option.active{
+  background:linear-gradient(90deg,rgba(191,138,62,.10),transparent 82%)!important;
+}
+.finder-option.active::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:20%;
+  bottom:20%;
+  width:3px;
+  background:#9d6a32;
+}
+.finder-option:active{
+  background:rgba(191,138,62,.12)!important;
+}
+.finder-preview{
+  cursor:pointer;
+}
+.finder-preview::after{
+  content:'View';
+  position:absolute;
+  right:18px;
+  bottom:18px;
+  padding:7px 10px;
+  font-size:.62rem;
+  font-weight:850;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#5c3b22;
+  background:rgba(255,247,229,.78);
+  border:1px solid rgba(74,45,19,.12);
+  pointer-events:none;
+  opacity:.86;
+}
+
+/* Product cards: make images substantially larger while always showing the full artwork */
+.product-card .gallery{
+  height:390px!important;
+  min-height:390px!important;
+  padding:0!important;
+}
+.product-card .gallery-slide{
+  padding:18px 28px 34px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.product-card .gallery-slide img{
+  width:auto!important;
+  height:auto!important;
+  max-width:86%!important;
+  max-height:92%!important;
+  object-fit:contain!important;
   object-position:center!important;
+  transform:none!important;
+}
+.product-card .gallery-slide img.is-landscape{
+  width:94%!important;
+  max-width:94%!important;
+  max-height:84%!important;
+}
+.product-card .gallery-slide img.is-portrait{
+  max-width:76%!important;
+  max-height:94%!important;
+}
+
+@media(max-width:760px){
+  .finder-options{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:0!important;
+    border-top:1px solid var(--v24-line)!important;
+  }
+  .finder-option{
+    min-height:62px;
+    grid-template-columns:34px 1fr!important;
+    padding:13px 42px 13px 8px!important;
+    border-right:0!important;
+    border-bottom:1px solid var(--v24-line)!important;
+  }
+  .finder-option:nth-child(odd){border-right:0!important}
+  .finder-option strong{font-size:.90rem!important}
+  .finder-option small{font-size:.68rem!important}
+  .finder-option::after{right:12px;font-size:1.35rem}
+  .finder-preview::after{
+    content:'Tekan untuk lihat';
+    right:12px;
+    bottom:12px;
+    font-size:.56rem;
+    padding:6px 8px;
+  }
+  .finder-preview-art{min-height:270px!important;padding:20px 20px 14px!important}
+  .finder-preview-art img{max-height:245px!important;max-width:80%!important}
+
+  .product-card .gallery{
+    height:330px!important;
+    min-height:330px!important;
+    max-height:330px!important;
+  }
+  .product-card .gallery-slide{
+    padding:14px 20px 30px!important;
+  }
+  .product-card .gallery-slide img{
+    max-width:88%!important;
+    max-height:92%!important;
+  }
+  .product-card .gallery-slide img.is-landscape{
+    width:96%!important;
+    max-width:96%!important;
+    max-height:84%!important;
+  }
+  .product-card .gallery-slide img.is-portrait{
+    max-width:78%!important;
+    max-height:94%!important;
+  }
+}
+
+@media(max-width:430px){
+  .product-card .gallery{
+    height:305px!important;
+    min-height:305px!important;
+    max-height:305px!important;
+  }
+  .product-card .gallery-slide{padding:12px 16px 28px!important}
+}
+
+
+/* ===== V27 thumbnail-first sizing ===== */
+.product-card .gallery-slide:first-child img{
+  width:min(94%, 360px)!important;
+  height:auto!important;
+  max-width:94%!important;
+  max-height:86%!important;
+  object-fit:contain!important;
+}
+.finder-preview-art img{
+  width:min(92%, 520px)!important;
+  height:auto!important;
+  max-width:92%!important;
+  max-height:440px!important;
+  object-fit:contain!important;
+}
+@media(max-width:760px){
+  .product-card .gallery-slide:first-child img{
+    width:92%!important;
+    max-width:92%!important;
+    max-height:82%!important;
+  }
+  .finder-preview-art img{
+    width:92%!important;
+    max-width:92%!important;
+    max-height:280px!important;
+  }
+}
+
+
+/* ===== V28 BM + image sizing ===== */
+
+/* Finder preview: always show the COMPLETE thumbnail image */
+.finder-preview-art{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:28px!important;
+  min-height:500px!important;
+}
+.finder-preview-art img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:96%!important;
+  max-height:460px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  margin:auto!important;
+  filter:drop-shadow(0 18px 24px rgba(59,34,8,.14));
+}
+
+/* Product cards: use more of the available frame while keeping full image */
+.product-card .gallery{
+  height:390px!important;
+  min-height:390px!important;
+}
+.product-card .gallery-slide{
+  padding:18px 20px 28px!important;
+}
+.product-card .gallery-slide img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:94%!important;
+  max-height:94%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  margin:auto!important;
+}
+/* Landscape thumbnail/lifestyle images should fill width much more */
+.product-card .gallery-slide:first-child img,
+.product-card .gallery-slide img.is-landscape{
+  width:94%!important;
+  height:auto!important;
+  max-width:94%!important;
+  max-height:88%!important;
+}
+
+/* Ad-inspired highlight section */
+.ad-style-highlight{
+  padding:54px 0!important;
+}
+.ad-style-panel{
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  border:1px solid rgba(76,47,20,.13);
+  background:
+    radial-gradient(circle at 86% 18%,rgba(255,246,220,.85),transparent 33%),
+    linear-gradient(135deg,#f6e4ba,#e8c17a);
+  box-shadow:0 24px 58px rgba(63,37,8,.10);
+  overflow:hidden;
+}
+.ad-style-copy{
+  padding:48px 48px 42px;
+}
+.ad-style-copy h2{
+  margin-top:8px;
+  max-width:760px;
+  font-size:clamp(2.15rem,4vw,4.1rem);
+  font-weight:600;
+  line-height:.98;
+  letter-spacing:-.045em;
+  color:#3a2517;
+}
+.ad-style-copy h2 span{
+  color:#9a5d1e;
+}
+.ad-style-copy>p{
+  max-width:700px;
+  margin-top:20px;
+  color:#72573d;
+  font-size:.96rem;
+}
+.ad-benefit-list{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  border-top:1px solid rgba(74,45,18,.14);
+}
+.ad-benefit-list>div{
+  display:grid;
+  grid-template-columns:34px 1fr;
+  column-gap:12px;
+  padding:16px 16px 16px 0;
+  border-bottom:1px solid rgba(74,45,18,.12);
+}
+.ad-benefit-list>div:nth-child(odd){
+  border-right:1px solid rgba(74,45,18,.12);
+  padding-right:22px;
+}
+.ad-benefit-list>div:nth-child(even){
+  padding-left:22px;
+}
+.ad-benefit-list span{
+  grid-row:1/3;
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  background:#4f6b3d;
+  color:#fff7e4;
+  border-radius:4px;
+  font-weight:900;
+}
+.ad-benefit-list strong{
+  color:#40291a;
+  font-size:.9rem;
+}
+.ad-benefit-list small{
+  margin-top:3px;
+  color:#806246;
+  font-size:.73rem;
+  line-height:1.45;
+}
+
+.ad-style-visual{
+  padding:48px 36px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:rgba(89,53,21,.94);
+  color:#f8e6bd;
+}
+.ad-mini-title{
+  font-size:.7rem;
+  font-weight:850;
+  letter-spacing:.18em;
+  color:#e7bd70;
+  margin-bottom:18px;
+}
+.ad-formula-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:rgba(255,255,255,.12);
+}
+.ad-formula-grid button{
+  min-height:138px;
+  padding:20px;
+  text-align:left;
+  border:0;
+  background:#4a2c19;
+  color:#f6e3bd;
+  cursor:pointer;
+  transition:.25s ease;
+}
+.ad-formula-grid button:hover{
+  background:#654025;
+}
+.ad-formula-grid b{
+  display:block;
+  font-size:.65rem;
+  color:#d9a95e;
+  margin-bottom:20px;
+}
+.ad-formula-grid span{
+  display:block;
+  font-size:1rem;
+  font-weight:800;
+}
+.ad-formula-grid small{
+  display:block;
+  margin-top:4px;
+  color:#ceb28f;
+}
+.ad-style-foot{
+  margin-top:16px;
+  font-size:.72rem;
+  color:#cdb18d;
+}
+
+/* Ensure hero images show full width / full image */
+.hero-picture,
+.hero-picture img{
+  display:block!important;
+  width:100%!important;
+}
+.hero-picture img{
+  height:auto!important;
+  object-fit:contain!important;
+}
+
+@media(max-width:760px){
+  .finder-preview-art{
+    min-height:360px!important;
+    padding:16px!important;
+  }
+  .finder-preview-art img{
+    width:100%!important;
+    max-width:100%!important;
+    max-height:340px!important;
+  }
+
+  .product-card .gallery{
+    height:320px!important;
+    min-height:320px!important;
+    max-height:320px!important;
+  }
+  .product-card .gallery-slide{
+    padding:12px 16px 22px!important;
+  }
+  .product-card .gallery-slide img{
+    max-width:92%!important;
+    max-height:92%!important;
+  }
+  .product-card .gallery-slide:first-child img,
+  .product-card .gallery-slide img.is-landscape{
+    width:96%!important;
+    max-width:96%!important;
+    max-height:88%!important;
+  }
+
+  .ad-style-panel{
+    grid-template-columns:1fr;
+  }
+  .ad-style-copy{
+    padding:30px 22px 26px;
+  }
+  .ad-style-copy h2{
+    font-size:2.3rem;
+  }
+  .ad-benefit-list{
+    grid-template-columns:1fr;
+  }
+  .ad-benefit-list>div,
+  .ad-benefit-list>div:nth-child(odd),
+  .ad-benefit-list>div:nth-child(even){
+    border-right:0;
+    padding:14px 0;
+  }
+  .ad-style-visual{
+    padding:28px 22px;
+  }
+  .ad-formula-grid button{
+    min-height:112px;
+    padding:16px;
+  }
 }
 
 </style>
@@ -2011,12 +2857,12 @@ footer{padding:24px 0!important}
 
       <div class="header-copy">
         <div class="header-title">Mystic Hair Tonic</div>
-        <div class="header-company">Mystic Care Sdn Bhd</div>
+        <div class="header-company">By Aurora Bewellness Centre</div>
       </div>
     </div>
 
     <div class="actions">
-      <button class="icon-btn" id="openCart" aria-label="Open cart">
+      <button class="icon-btn" id="openCart" aria-label="Buka troli">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
           <path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L21 7H7"/>
           <circle cx="10" cy="20" r="1.1"/>
@@ -2032,7 +2878,7 @@ footer{padding:24px 0!important}
   <div class="hero-media">
     <picture class="hero-picture">
   <source media="(max-width: 640px)" srcset="assets/hero-banner-mobile.png">
-  <img src="assets/hero-banner.png" alt="Mystic Hair Tonic collection">
+  <img src="assets/hero-banner.png" alt="Koleksi Mystic Hair Tonic">
 </picture>
     <div class="hero-overlay"></div>
     </div>
@@ -2046,7 +2892,7 @@ footer{padding:24px 0!important}
           <path d="M12 21c5-3 8-7 8-12-4 0-7-2-8-5-1 3-4 5-8 5 0 5 3 9 8 12z"/>
         </svg>
       </div>
-      <div><strong>Gentle care</strong><span>For everyday scalp routines</span></div>
+      <div><strong>Penjagaan lembut</strong><span>Untuk rutin penjagaan kulit kepala harian</span></div>
     </div>
 
     <div class="trust-card">
@@ -2056,7 +2902,7 @@ footer{padding:24px 0!important}
           <path d="M9 3h6"/>
         </svg>
       </div>
-      <div><strong>4 formulas</strong><span>Different hair-care focuses</span></div>
+      <div><strong>4 formula</strong><span>Fokus penjagaan rambut yang berbeza</span></div>
     </div>
 
     <div class="trust-card">
@@ -2065,7 +2911,7 @@ footer{padding:24px 0!important}
           <path d="M5 12l4 4L19 6"/>
         </svg>
       </div>
-      <div><strong>Simple routine</strong><span>Spray, massage, continue</span></div>
+      <div><strong>Rutin mudah</strong><span>Sembur, urut dan teruskan rutin</span></div>
     </div>
 
     <div class="trust-card">
@@ -2074,40 +2920,84 @@ footer{padding:24px 0!important}
           <path d="M12 3l1.7 4.6L18 9.3l-4.3 1.7L12 15.6 10.3 11 6 9.3l4.3-1.7L12 3z"/>
         </svg>
       </div>
-      <div><strong>Hair-focused care</strong><span>Moisture, roots, scalp, shine</span></div>
+      <div><strong>Penjagaan khusus rambut</strong><span>Kelembapan, akar, kulit kepala dan kilauan</span></div>
     </div>
   </div>
 </div>
+
+
+<section class="formula-finder" id="formulaFinder">
+  <div class="container">
+    <div class="finder-shell">
+      <div class="finder-copy">
+        <div class="kicker">Cari Formula Anda</div>
+        <h2>Mulakan dengan keperluan rambut anda.</h2>
+        <p>Pilih keperluan utama anda dan kami akan paparkan tonik yang sesuai dengan fokus penjagaan tersebut.</p>
+
+        <div class="finder-options" role="tablist" aria-label="Keperluan rambut">
+          <button type="button" class="finder-option active" data-find="amino" aria-label="Pilih formula Amino Peptide">
+            <span>01</span>
+            <div><strong>Kesegaran kulit kepala</strong><small>Amino Peptide</small></div>
+          </button>
+          <button type="button" class="finder-option" data-find="ginseng" aria-label="Pilih formula Ginseng">
+            <span>02</span>
+            <div><strong>Penjagaan akar rambut</strong><small>Ginseng</small></div>
+          </button>
+          <button type="button" class="finder-option" data-find="yogurt" aria-label="Pilih formula Yogurt">
+            <span>03</span>
+            <div><strong>Kelembapan & kilauan</strong><small>Yogurt</small></div>
+          </button>
+          <button type="button" class="finder-option" data-find="protein" aria-label="Pilih formula Protein Terhidrolisis">
+            <span>04</span>
+            <div><strong>Kelemumur & kekuatan</strong><small>Protein Terhidrolisis</small></div>
+          </button>
+        </div>
+      </div>
+
+      <div class="finder-preview" id="finderPreview" role="button" tabindex="0" aria-label="Lihat formula yang dipilih">
+        <div class="finder-number">01</div>
+        <div class="finder-preview-art">
+          <img id="finderImage" src="assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=28" alt="Amino Peptide Hair Tonic">
+        </div>
+        <div class="finder-preview-copy">
+          <small id="finderEyebrow">Rambut & Kulit Kepala Sihat</small>
+          <h3 id="finderTitle">Amino Peptide Hair Tonic</h3>
+          <p id="finderText">Penjagaan berasaskan asid amino untuk membantu rambut dan kulit kepala kelihatan lebih sihat.</p>
+          <button class="finder-link" id="finderView">Lihat formula ini <span>→</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="products">
   <span class="floating-leaf leaf-a"></span>
   <div class="container">
     <div class="section-head" data-reveal>
-      <div class="kicker">Our Products</div>
-      <h2>Four targeted formulas</h2>
-      <p>Choose the formula that best matches your scalp and hair-care preference.</p>
+      <div class="kicker">Produk Kami</div>
+      <h2>Empat formula mengikut keperluan</h2>
+      <p>Pilih formula yang paling sesuai dengan keperluan kulit kepala dan rutin penjagaan rambut anda.</p>
     </div>
 
     <div class="product-shell">
-      <button class="product-carousel-btn prev" id="productPrev" type="button" aria-label="Previous products">←</button>
+      <button class="product-carousel-btn prev" id="productPrev" type="button" aria-label="Produk sebelumnya">←</button>
       <div class="product-grid" id="productTrack">
 
       <article class="product-card" data-id="amino" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Amino-Peptide%20Hair-Tonic-thumbnail.png" alt="Amino Peptide Hair Tonic thumbnail"></div>
-            <div class="gallery-slide"><img src="assets/Amino-Peptide%20Hair-Tonic.png?v=18" alt="Amino Peptide Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Amino-Peptide%20Hair-Tonic-2.png?v=18" alt="Amino Peptide Hair Tonic image 2"></div>
+            <div class="gallery-slide active"><img src="assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=28" alt="Imej utama Amino Peptide Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Amino-Peptide%20Hair-Tonic-2.png?v=28" alt="Imej kedua Amino Peptide Hair Tonic"></div>
           </div>
           
         </div>
         <div class="product-body">
-          <small>Healthy Hair / Scalp</small>
+          <small>Rambut & Kulit Kepala Sihat</small>
           <h3>Amino Peptide Hair Tonic</h3>
-          <p>Healthy hair and scalp care with a rich blending of amino acids.</p>
+          <p>Penjagaan rambut dan kulit kepala dengan campuran asid amino.</p>
           <div class="product-actions">
-            <button class="btn btn-primary" data-details="amino">View Details</button>
-            <button class="btn details-btn" data-add="amino" aria-label="Add Amino Peptide Hair Tonic to cart">+</button>
+            <button class="btn btn-primary" data-details="amino">Lihat Butiran</button>
+            <button class="btn details-btn" data-add="amino" aria-label="Tambah Amino Peptide Hair Tonic ke troli">+</button>
           </div>
         </div>
       </article>
@@ -2115,19 +3005,18 @@ footer{padding:24px 0!important}
       <article class="product-card" data-id="ginseng" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Ginseng-Hair-Tonic-thumbnail.png" alt="Ginseng Hair Tonic thumbnail"></div>
-            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic.png?v=18" alt="Ginseng Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-2.png?v=18" alt="Ginseng Hair Tonic image 2"></div>
+            <div class="gallery-slide active"><img src="assets/Ginseng-Hair-Tonic-thumbnail.png?v=28" alt="Imej utama Ginseng Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-2.png?v=28" alt="Imej kedua Ginseng Hair Tonic"></div>
           </div>
           
         </div>
         <div class="product-body">
-          <small>Promote Hair Growth</small>
+          <small>Penjagaan Akar Rambut</small>
           <h3>Ginseng Hair Tonic</h3>
-          <p>Panax Ginseng Extract-focused care for hair roots and a healthy-looking scalp.</p>
+          <p>Penjagaan berfokuskan Ekstrak Panax Ginseng untuk akar rambut dan kulit kepala yang kelihatan sihat.</p>
           <div class="product-actions">
-            <button class="btn btn-primary" data-details="ginseng">View Details</button>
-            <button class="btn details-btn" data-add="ginseng" aria-label="Add Ginseng Hair Tonic to cart">+</button>
+            <button class="btn btn-primary" data-details="ginseng">Lihat Butiran</button>
+            <button class="btn details-btn" data-add="ginseng" aria-label="Tambah Ginseng Hair Tonic ke troli">+</button>
           </div>
         </div>
       </article>
@@ -2135,19 +3024,18 @@ footer{padding:24px 0!important}
       <article class="product-card" data-id="yogurt" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Yogurt-Hair-Tonic-thumbnail.png" alt="Yogurt Hair Tonic thumbnail"></div>
-            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic.png?v=18" alt="Yogurt Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-2.png?v=18" alt="Yogurt Hair Tonic image 2"></div>
+            <div class="gallery-slide active"><img src="assets/Yogurt-Hair-Tonic-thumbnail.png?v=28" alt="Imej utama Yogurt Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-2.png?v=28" alt="Imej kedua Yogurt Hair Tonic"></div>
           </div>
           
         </div>
         <div class="product-body">
-          <small>Extra Moisture & Shine</small>
+          <small>Kelembapan & Kilauan</small>
           <h3>Yogurt Hair Tonic</h3>
-          <p>Moisture-focused care for the scalp and softer, smoother, shinier-looking hair.</p>
+          <p>Penjagaan berfokuskan kelembapan untuk kulit kepala serta rambut yang terasa lebih lembut, licin dan kelihatan berkilau.</p>
           <div class="product-actions">
-            <button class="btn btn-primary" data-details="yogurt">View Details</button>
-            <button class="btn details-btn" data-add="yogurt" aria-label="Add Yogurt Hair Tonic to cart">+</button>
+            <button class="btn btn-primary" data-details="yogurt">Lihat Butiran</button>
+            <button class="btn details-btn" data-add="yogurt" aria-label="Tambah Yogurt Hair Tonic ke troli">+</button>
           </div>
         </div>
       </article>
@@ -2155,27 +3043,57 @@ footer{padding:24px 0!important}
       <article class="product-card" data-id="protein" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png" alt="Hydrolyzed Protein Hair Tonic thumbnail"></div>
-            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic.png?v=18" alt="Hydrolyzed Protein Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=18" alt="Hydrolyzed Protein Hair Tonic image 2"></div>
+            <div class="gallery-slide active"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=28" alt="Imej utama Protein Terhidrolisis Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=28" alt="Imej kedua Protein Terhidrolisis Hair Tonic"></div>
           </div>
           
         </div>
         <div class="product-body">
-          <small>Dandruff & Root Care</small>
-          <h3>Hydrolyzed Protein Hair Tonic</h3>
-          <p>Soluble protein-focused care for nourishment, hair roots and scalp freshness.</p>
+          <small>Kelemumur & Penjagaan Akar</small>
+          <h3>Protein Terhidrolisis Hair Tonic</h3>
+          <p>Penjagaan berasaskan protein larut untuk nutrisi rambut, akar dan kesegaran kulit kepala.</p>
           <div class="product-actions">
-            <button class="btn btn-primary" data-details="protein">View Details</button>
-            <button class="btn details-btn" data-add="protein" aria-label="Add Hydrolyzed Protein Hair Tonic to cart">+</button>
+            <button class="btn btn-primary" data-details="protein">Lihat Butiran</button>
+            <button class="btn details-btn" data-add="protein" aria-label="Tambah Protein Terhidrolisis Hair Tonic ke troli">+</button>
           </div>
         </div>
       </article>
 
       </div>
-      <button class="product-carousel-btn next" id="productNext" type="button" aria-label="Next products">→</button>
+      <button class="product-carousel-btn next" id="productNext" type="button" aria-label="Produk seterusnya">→</button>
     </div>
     <div class="mobile-carousel-dots" id="mobileCarouselDots"></div>
+  </div>
+</section>
+
+
+<section class="ad-style-highlight">
+  <div class="container">
+    <div class="ad-style-panel" data-reveal>
+      <div class="ad-style-copy">
+        <div class="kicker">PENJAGAAN RAMBUT LEBIH TERARAH</div>
+        <h2>Kenal pasti keperluan rambut.<br><span>Pilih formula yang sesuai.</span></h2>
+        <p>Direka dengan gaya komunikasi yang lebih jelas seperti iklan penjagaan rambut moden, tetapi masih mengekalkan identiti Mystic yang elegan dan dipercayai.</p>
+
+        <div class="ad-benefit-list">
+          <div><span>✓</span><strong>4 formula berbeza</strong><small>Ikut fokus rambut dan kulit kepala</small></div>
+          <div><span>✓</span><strong>Mudah digunakan</strong><small>Sembur terus dan urut perlahan</small></div>
+          <div><span>✓</span><strong>Penjagaan harian</strong><small>Sesuai dimasukkan dalam rutin selepas syampu</small></div>
+          <div><span>✓</span><strong>Pilihan lebih jelas</strong><small>Ginseng, Yogurt, Amino Peptide atau Hydrolyzed Protein</small></div>
+        </div>
+      </div>
+
+      <div class="ad-style-visual">
+        <div class="ad-mini-title">PILIH IKUT KEPERLUAN ANDA</div>
+        <div class="ad-formula-grid">
+          <button type="button" data-jump-product="ginseng"><b>01</b><span>Akar Rambut</span><small>Ginseng</small></button>
+          <button type="button" data-jump-product="yogurt"><b>02</b><span>Kelembapan</span><small>Yogurt</small></button>
+          <button type="button" data-jump-product="amino"><b>03</b><span>Kulit Kepala</span><small>Amino Peptide</small></button>
+          <button type="button" data-jump-product="protein"><b>04</b><span>Kelemumur</span><small>Hydrolyzed Protein</small></button>
+        </div>
+        <div class="ad-style-foot">Tekan pilihan untuk terus ke produk.</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -2183,39 +3101,62 @@ footer{padding:24px 0!important}
   <span class="floating-leaf leaf-b"></span>
   <div class="container">
     <div class="section-head" data-reveal>
-      <div class="kicker">Key Ingredients</div>
-      <h2>Botanical and care-focused ingredients</h2>
-      <p>A closer look at the ingredient direction behind each formula.</p>
+      <div class="kicker">Bahan Utama</div>
+      <h2>Bahan botani dan penjagaan terpilih</h2>
+      <p>Kenali bahan utama yang digunakan mengikut fokus setiap formula.</p>
     </div>
 
     <div class="ingredient-grid">
       <article class="ingredient-card" data-reveal>
-        <div class="ingredient-image"><img src="assets/ginseng-ingredients.png" alt="Ginseng ingredients"></div>
-        <h3>Ginseng Extract</h3>
-        <p>Panax Ginseng with Ginsenoside for root-focused care, scalp vitality and healthier, fuller-looking hair.</p>
-        <div class="ingredient-meta"><b>Focus</b><span>Hair roots · scalp · volume</span><b>Key</b><span>Panax Ginseng · Ginsenoside</span></div>
+        <div class="ingredient-image"><img src="assets/ginseng-ingredients.png" alt="Bahan Ginseng"></div>
+        <h3>Ekstrak Ginseng</h3>
+        <p>Panax Ginseng dengan Ginsenoside untuk penjagaan akar, kesegaran kulit kepala dan rambut yang kelihatan lebih penuh serta terurus.</p>
+        <div class="ingredient-meta"><b>Fokus</b><span>Penjagaan akar rambut · scalp · volume</span><b>Utama</b><span>Panax Ginseng · Ginsenoside</span></div>
       </article>
 
       <article class="ingredient-card" data-reveal>
-        <div class="ingredient-image"><img src="assets/yogurt-ingredients.png" alt="Yogurt ingredients"></div>
-        <h3>Yogurt Extract</h3>
-        <p>Moisture-rich care with calcium, phosphorus, zinc, iron and vitamins for softer, smoother, shinier-looking hair.</p>
-        <div class="ingredient-meta"><b>Focus</b><span>Moisture · softness · shine</span><b>Key</b><span>Calcium · Zinc · Vitamins</span></div>
+        <div class="ingredient-image"><img src="assets/yogurt-ingredients.png" alt="Bahan Yogurt"></div>
+        <h3>Ekstrak Yogurt</h3>
+        <p>Penjagaan kaya kelembapan dengan kalsium, fosforus, zink, zat besi dan vitamin untuk rambut yang terasa lebih lembut, licin dan kelihatan berkilau.</p>
+        <div class="ingredient-meta"><b>Fokus</b><span>Kelembapan · kelembutan · kilauan</span><b>Utama</b><span>Calcium · Zinc · Vitamins</span></div>
       </article>
 
       <article class="ingredient-card" data-reveal>
-        <div class="ingredient-image"><img src="assets/amino-ingredients.png" alt="Amino peptide ingredients"></div>
-        <h3>Amino Peptides</h3>
-        <p>A blend of 15 amino acids designed for scalp care, melanin support and stronger, thicker-looking hair.</p>
-        <div class="ingredient-meta"><b>Focus</b><span>Scalp · strength · thickness</span><b>Key</b><span>15 amino acids · Peptides</span></div>
+        <div class="ingredient-image"><img src="assets/amino-ingredients.png" alt="Bahan Amino Peptide"></div>
+        <h3>Amino Peptide</h3>
+        <p>Campuran 15 jenis asid amino untuk penjagaan kulit kepala dan rambut yang kelihatan lebih kuat serta tebal.</p>
+        <div class="ingredient-meta"><b>Fokus</b><span>Kulit kepala · kekuatan · ketebalan</span><b>Utama</b><span>15 amino acids · Peptides</span></div>
       </article>
 
       <article class="ingredient-card" data-reveal>
-        <div class="ingredient-image"><img src="assets/hydrolyzed-ingredients.png" alt="Hydrolyzed protein ingredients"></div>
-        <h3>Hydrolyzed Protein</h3>
-        <p>Natural Soy protein with Zizyphus Joazeiro Bark Extract for nourishment, stronger roots and dandruff-focused scalp care.</p>
-        <div class="ingredient-meta"><b>Focus</b><span>Roots · scalp freshness · lustre</span><b>Key</b><span>Soy Protein · Joazeiro Bark</span></div>
+        <div class="ingredient-image"><img src="assets/hydrolyzed-ingredients.png" alt="Bahan Protein Terhidrolisis"></div>
+        <h3>Protein Terhidrolisis</h3>
+        <p>Protein Soya dengan Ekstrak Kulit Zizyphus Joazeiro untuk nutrisi, penjagaan akar dan kulit kepala yang mudah berkelemumur.</p>
+        <div class="ingredient-meta"><b>Fokus</b><span>Akar · kesegaran kulit kepala · kilauan</span><b>Utama</b><span>Soy Protein · Joazeiro Bark</span></div>
       </article>
+    </div>
+  </div>
+</section>
+
+
+<section class="brand-story">
+  <div class="container">
+    <div class="brand-story-grid">
+      <div class="brand-story-mark">
+        <div class="heritage-line"></div>
+        <span>01</span>
+        <div class="heritage-line"></div>
+      </div>
+      <div class="brand-story-copy">
+        <div class="kicker">Pendekatan Mystic</div>
+        <h2>Inspirasi tradisional untuk rutin penjagaan moden.</h2>
+        <p>Identiti botani klasik Mystic diterapkan melalui tona hangat, elemen warisan dan gaya semula jadi, sambil mengekalkan pengalaman produk yang kemas, moden dan mudah digunakan.</p>
+      </div>
+      <div class="brand-story-points">
+        <div><b>01</b><span>Formula mengikut keperluan</span></div>
+        <div><b>02</b><span>Rutin harian yang mudah</span></div>
+        <div><b>03</b><span>Penjagaan bermula dari kulit kepala</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -2225,23 +3166,23 @@ footer{padding:24px 0!important}
     <div class="results-shell ornament-shell" data-reveal>
       <div class="results-top">
         <div class="results-copy">
-          <div class="kicker">Before & After</div>
-          <h2>See the difference clearly</h2>
-          <p>View the supplied comparison images comfortably.</p>
-          <div class="results-note">Individual results may vary.</div>
+          <div class="kicker">Sebelum & Selepas</div>
+          <h2>Lihat perbezaan dengan lebih jelas</h2>
+          <p>Lihat imej perbandingan yang disediakan dengan mudah.</p>
+          <div class="results-note">Hasil setiap individu mungkin berbeza.</div>
         </div>
 
         <div class="before-track" id="beforeTrack">
           <div class="before-card">
-            <img src="assets/before-after-1.jpeg" alt="Before and after comparison 1">
+            <img src="assets/before-after-1.jpeg" alt="Perbandingan sebelum dan selepas 1">
             
           </div>
           <div class="before-card">
-            <img src="assets/before-after-2.jpeg" alt="Before and after comparison 2">
+            <img src="assets/before-after-2.jpeg" alt="Perbandingan sebelum dan selepas 2">
             
           </div>
           <div class="before-card">
-            <img src="assets/before-after-3.jpeg" alt="Before and after comparison 3">
+            <img src="assets/before-after-3.jpeg" alt="Perbandingan sebelum dan selepas 3">
             
           </div>
         </div>
@@ -2253,60 +3194,60 @@ footer{padding:24px 0!important}
 <section id="how">
   <div class="container">
     <div class="section-head" data-reveal>
-      <div class="kicker">How to Use</div>
-      <h2>3 simple steps</h2>
-      <p>A quick routine designed to stay clean, clear and easy to follow.</p>
+      <div class="kicker">Cara Penggunaan</div>
+      <h2>3 langkah mudah</h2>
+      <p>Rutin ringkas yang mudah difahami dan senang diamalkan.</p>
     </div>
 
     <div class="steps-wrap ornament-shell" data-reveal>
       <div class="steps-progress">
         <div class="progress-item active" data-step-progress="0">
-          <div class="progress-dot">1</div><span>Towel Dry</span>
+          <div class="progress-dot">1</div><span>Keringkan Rambut</span>
         </div>
         <div class="progress-item" data-step-progress="1">
-          <div class="progress-dot">2</div><span>Apply Tonic</span>
+          <div class="progress-dot">2</div><span>Sembur Tonik</span>
         </div>
         <div class="progress-item" data-step-progress="2">
-          <div class="progress-dot">3</div><span>Massage</span>
+          <div class="progress-dot">3</div><span>Urut</span>
         </div>
       </div>
 
       <div class="steps-grid" id="stepsTrack">
         <article class="step-card">
-          <div class="step-media"><img src="assets/step-1.png" alt="Step 1 towel dry hair"></div>
+          <div class="step-media"><img src="assets/step-1.png" alt="Langkah 1 keringkan rambut dengan tuala"></div>
           <div class="step-content">
             <div class="step-meta">
               <div class="step-no">1</div>
-              <div><h3>Towel dry</h3><p>After shampooing, gently towel dry your hair.</p></div>
+              <div><h3>Keringkan rambut</h3><p>Selepas syampu, keringkan rambut secara perlahan menggunakan tuala.</p></div>
             </div>
           </div>
         </article>
 
         <article class="step-card">
-          <div class="step-media"><img src="assets/step-2.png" alt="Step 2 apply tonic"></div>
+          <div class="step-media"><img src="assets/step-2.png" alt="Langkah 2 sembur tonik"></div>
           <div class="step-content">
             <div class="step-meta">
               <div class="step-no">2</div>
-              <div><h3>Apply tonic</h3><p>Spray the tonic directly onto the scalp.</p></div>
+              <div><h3>Sembur tonik</h3><p>Semburkan tonik terus pada kulit kepala.</p></div>
             </div>
           </div>
         </article>
 
         <article class="step-card">
-          <div class="step-media"><img src="assets/step-3.png" alt="Step 3 massage scalp gently"></div>
+          <div class="step-media"><img src="assets/step-3.png" alt="Langkah 3 urut kulit kepala dengan lembut"></div>
           <div class="step-content">
             <div class="step-meta">
               <div class="step-no">3</div>
-              <div><h3>Massage gently</h3><p>Massage for around 1–3 minutes to help spread the tonic evenly.</p></div>
+              <div><h3>Urut gently</h3><p>Urut for around 1–3 minutes to help spread the tonic evenly.</p></div>
             </div>
           </div>
         </article>
       </div>
 
       <div class="step-mobile-controls">
-        <button class="step-arrow" id="stepPrev" aria-label="Previous step">←</button>
-        <div class="step-hint" id="stepHint">Step 1 of 3</div>
-        <button class="step-arrow" id="stepNext" aria-label="Next step">→</button>
+        <button class="step-arrow" id="stepPrev" aria-label="Langkah sebelumnya">←</button>
+        <div class="step-hint" id="stepHint">Langkah 1 daripada 3</div>
+        <button class="step-arrow" id="stepNext" aria-label="Langkah seterusnya">→</button>
       </div>
     </div>
   </div>
@@ -2315,30 +3256,30 @@ footer{padding:24px 0!important}
 <section>
   <div class="container">
     <div class="section-head" data-reveal>
-      <div class="kicker">Good to Know</div>
-      <h2>Common questions</h2>
-      <p>Quick answers before you choose your tonic.</p>
+      <div class="kicker">Info Penting</div>
+      <h2>Soalan lazim</h2>
+      <p>Jawapan ringkas sebelum anda memilih tonik.</p>
     </div>
 
     <div class="faq" data-reveal>
       <div class="faq-item">
-        <button class="faq-q"><span>Which formula should I choose?</span><span>+</span></button>
-        <div class="faq-a"><p>Choose Ginseng for root-focused care, Yogurt for moisture and shine, Amino Peptide for healthy hair/scalp care, and Hydrolyzed Protein for protein-focused nourishment and dandruff/root care.</p></div>
+        <button class="faq-q"><span>Formula mana yang sesuai untuk saya?</span><span>+</span></button>
+        <div class="faq-a"><p>Choose Ginseng for root-focused care, Yogurt for moisture and shine, Amino Peptide for healthy hair/scalp care, and Protein Terhidrolisis for protein-focused nourishment and dandruff/root care.</p></div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q"><span>How do I use the tonic?</span><span>+</span></button>
-        <div class="faq-a"><p>After shampooing, towel dry your hair, spray the tonic onto the scalp, then massage gently for about 1–3 minutes.</p></div>
+        <button class="faq-q"><span>Bagaimana cara menggunakan tonik?</span><span>+</span></button>
+        <div class="faq-a"><p>Selepas syampu, keringkan rambut dengan tuala, semburkan tonik pada kulit kepala, kemudian urut perlahan selama kira-kira 1–3 minit.</p></div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q"><span>Can I add more than one tonic to my order?</span><span>+</span></button>
-        <div class="faq-a"><p>Yes. Add any combination to the cart and the complete order list will be prepared for WhatsApp confirmation.</p></div>
+        <button class="faq-q"><span>Bolehkah saya membeli lebih daripada satu jenis tonik?</span><span>+</span></button>
+        <div class="faq-a"><p>Boleh. Tambah mana-mana kombinasi ke dalam troli dan senarai pesanan lengkap akan disediakan untuk pengesahan melalui WhatsApp.</p></div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q"><span>How do I confirm price and availability?</span><span>+</span></button>
-        <div class="faq-a"><p>Use the cart and continue to WhatsApp. Milly can confirm the latest price, stock and order details.</p></div>
+        <button class="faq-q"><span>Bagaimana saya menyemak harga dan stok?</span><span>+</span></button>
+        <div class="faq-a"><p>Gunakan troli dan teruskan ke WhatsApp untuk mengesahkan harga terkini, stok dan butiran pesanan.</p></div>
       </div>
     </div>
   </div>
@@ -2348,11 +3289,11 @@ footer{padding:24px 0!important}
   <div class="container">
     <div class="cta-box" data-reveal>
       <div>
-        <div class="kicker" style="color:#e5c171">Ready to Order</div>
-        <h2>Choose your tonic and confirm on WhatsApp</h2>
-        <p>Add your preferred formulas to the cart, adjust the quantity, then send the complete order list to Milly.</p>
+        <div class="kicker" style="color:#e5c171">Sedia Untuk Membuat Pesanan</div>
+        <h2>Pilih tonik anda dan sahkan melalui WhatsApp</h2>
+        <p>Tambah formula pilihan anda ke dalam troli, laraskan kuantiti dan hantar senarai pesanan lengkap melalui WhatsApp.</p>
       </div>
-      <button class="btn" onclick="openCart()">Open Cart</button>
+      <button class="btn" onclick="openCart()">Buka Troli</button>
     </div>
   </div>
 </section>
@@ -2403,23 +3344,23 @@ footer{padding:24px 0!important}
 
 <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
   <div class="cart-head">
-    <h3>Your Cart</h3>
-    <button class="close-cart" id="closeCart" aria-label="Close cart">×</button>
+    <h3>Troli Anda</h3>
+    <button class="close-cart" id="closeCart" aria-label="Tutup cart">×</button>
   </div>
   <div class="cart-items" id="cartItems"></div>
   <div class="cart-foot">
     <p>Price and availability can be confirmed with Milly before payment.</p>
-    <button class="btn btn-primary" id="checkoutWhatsapp">Continue to WhatsApp</button>
+    <button class="btn btn-primary" id="checkoutWhatsapp">Teruskan ke WhatsApp</button>
   </div>
 </aside>
 
 <div class="modal" id="productModal" aria-hidden="true">
   <div class="modal-card">
-    <button class="close-modal" id="closeModal" aria-label="Close product details">×</button>
+    <button class="close-modal" id="closeModal" aria-label="Tutup product details">×</button>
     <div class="modal-art">
-      <button class="modal-image-arrow prev" id="modalImagePrev" type="button" aria-label="Previous product image">←</button>
+      <button class="modal-image-arrow prev" id="modalImagePrev" type="button" aria-label="Imej produk sebelumnya">←</button>
       <img id="modalImg" src="" alt="">
-      <button class="modal-image-arrow next" id="modalImageNext" type="button" aria-label="Next product image">→</button>
+      <button class="modal-image-arrow next" id="modalImageNext" type="button" aria-label="Imej produk seterusnya">→</button>
       <div class="modal-image-dashes" id="modalImageDashes"></div>
     </div>
 
@@ -2431,7 +3372,7 @@ footer{padding:24px 0!important}
       <div class="ingredient-list" id="modalIngredients"></div>
       <div class="detail-grid" id="modalDetails"></div>
 
-      <button class="btn btn-primary" id="modalAddCart">Add to Cart</button>
+      <button class="btn btn-primary" id="modalAddCart">Tambah ke Troli</button>
     </div>
   </div>
 </div>
@@ -2506,14 +3447,14 @@ classifyProductGalleryImages();
 })();
 
 
-const fallbackImage='assets/Amino-Peptide%20Hair-Tonic.png?v=18';
+const fallbackImage='assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=28';
 const products={
   ginseng:{
     name:'Ginseng Hair Tonic',
-    img:'assets/Ginseng-Hair-Tonic-thumbnail.png',
+    img:'assets/Ginseng-Hair-Tonic-thumbnail.png?v=28',
     kicker:'Promote hair growth & prevent hair loss',
-    desc:'Ginseng Hair Tonic is empowered with Panax Ginseng Extract, an herbal extract rich in Ginsenoside. The supplied product material states that the active compound supports the hair root, stimulates hair cells and promotes hair growth, while daily usage is beneficial for a healthy, volumized hair look and preventing hair loss.',
-    ingredients:['Panax Ginseng Extract','Ginsenoside','Botanical extracts'],
+    desc:'Ginseng Hair Tonic is empowered with Panax Ekstrak Ginseng, an herbal extract rich in Ginsenoside. The supplied product material states that the active compound supports the hair root, stimulates hair cells and promotes hair growth, while daily usage is beneficial for a healthy, volumized hair look and preventing hair loss.',
+    ingredients:['Panax Ekstrak Ginseng','Ginsenoside','Botanical extracts'],
     details:[
       ['🌱','Hair root care','Supports the hair root and healthy-looking scalp'],
       ['🧬','Hair cell support','Positioned to stimulate hair cells'],
@@ -2523,10 +3464,10 @@ const products={
   },
   yogurt:{
     name:'Yogurt Hair Tonic',
-    img:'assets/Yogurt-Hair-Tonic-thumbnail.png',
+    img:'assets/Yogurt-Hair-Tonic-thumbnail.png?v=28',
     kicker:'Extra moisture & shining hair',
-    desc:'Yogurt Hair Tonic is formulated from Yogurt extract. The supplied product material highlights calcium, phosphorus, zinc, iron and various vitamins to support the hair root, together with extra scalp moisture, shine, stronger-looking strands and softer, smoother hair.',
-    ingredients:['Yogurt Extract','Calcium','Phosphorus','Zinc','Iron','Vitamins'],
+    desc:'Yogurt Hair Tonic diformulasikan dengan ekstrak yogurt serta bahan seperti kalsium, fosforus, zink, zat besi dan vitamin untuk fokus kelembapan kulit kepala dan rambut yang lebih lembut serta berkilau.',
+    ingredients:['Ekstrak Yogurt','Calcium','Phosphorus','Zinc','Iron','Vitamins'],
     details:[
       ['💧','Extra moisture','Adds moisture to the scalp'],
       ['✨','Shine support','Supports shining, lustrous-looking hair'],
@@ -2536,9 +3477,9 @@ const products={
   },
   amino:{
     name:'Amino Peptide Hair Tonic',
-    img:'assets/Amino-Peptide%20Hair-Tonic-thumbnail.png',
-    kicker:'Healthy Hair/Scalp & Anti-Aging for Scalp',
-    desc:'Amino Peptide Hair Tonic is formulated with a rich blending of 15 types of amino acids. The supplied product material says the nutrients help slow scalp aging, support melanin cells and promote strong, thick hair shafts while keeping hair and scalp healthy.',
+    img:'assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=28',
+    kicker:'Penjagaan Rambut & Kulit Kepala',
+    desc:'Amino Peptide Hair Tonic diformulasikan dengan campuran 15 jenis asid amino untuk penjagaan rambut dan kulit kepala. The supplied product material says the nutrients help slow scalp aging, support melanin cells and promote strong, thick hair shafts while keeping hair and scalp healthy.',
     ingredients:['15 types of amino acids','Amino peptides','Nutrient blend'],
     details:[
       ['🧬','Amino acid blend','Rich blending of 15 types of amino acids'],
@@ -2548,11 +3489,11 @@ const products={
     ]
   },
   protein:{
-    name:'Hydrolyzed Protein Hair Tonic',
-    img:'assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png',
-    kicker:'Reduce Dandruff & Strengthen Hair Root',
-    desc:'Hydrolyzed Protein Hair Tonic is enriched with soluble protein from Natural Soy. The supplied product material highlights nourishment for healthy lustrous hair, stronger hair roots, reduced excessive hair loss, scalp freshness and dandruff care with Zizyphus Joazeiro Bark Extract.',
-    ingredients:['Natural Soy Protein','Hydrolyzed Protein','Zizyphus Joazeiro Bark Extract'],
+    name:'Protein Terhidrolisis Hair Tonic',
+    img:'assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=28',
+    kicker:'Penjagaan Kelemumur & Akar Rambut',
+    desc:'Protein Terhidrolisis Hair Tonic is enriched with soluble protein from Natural Soy. The supplied product material highlights nourishment for healthy lustrous hair, stronger hair roots, reduced excessive hair loss, scalp freshness and dandruff care with Zizyphus Joazeiro Bark Extract.',
+    ingredients:['Natural Soy Protein','Protein Terhidrolisis','Zizyphus Joazeiro Bark Extract'],
     details:[
       ['🌾','Protein nourishment','Soluble protein from Natural Soy'],
       ['💪','Root strength','Supports stronger-looking hair roots'],
@@ -2564,26 +3505,10 @@ const products={
 };
 
 const productImages={
-  amino:[
-    'assets/Amino-Peptide%20Hair-Tonic-thumbnail.png',
-    'assets/Amino-Peptide%20Hair-Tonic.png?v=18',
-    'assets/Amino-Peptide%20Hair-Tonic-2.png?v=18'
-  ],
-  ginseng:[
-    'assets/Ginseng-Hair-Tonic-thumbnail.png',
-    'assets/Ginseng-Hair-Tonic.png?v=18',
-    'assets/Ginseng-Hair-Tonic-2.png?v=18'
-  ],
-  yogurt:[
-    'assets/Yogurt-Hair-Tonic-thumbnail.png',
-    'assets/Yogurt-Hair-Tonic.png?v=18',
-    'assets/Yogurt-Hair-Tonic-2.png?v=18'
-  ],
-  protein:[
-    'assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png',
-    'assets/Hydrolyzed-Protein-Hair-Tonic.png?v=18',
-    'assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=18'
-  ]
+  amino:['assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=28', 'assets/Amino-Peptide%20Hair-Tonic.png?v=28', 'assets/Amino-Peptide%20Hair-Tonic-2.png?v=28'],
+  ginseng:['assets/Ginseng-Hair-Tonic-thumbnail.png?v=28', 'assets/Ginseng-Hair-Tonic.png?v=28', 'assets/Ginseng-Hair-Tonic-2.png?v=28'],
+  yogurt:['assets/Yogurt-Hair-Tonic-thumbnail.png?v=28', 'assets/Yogurt-Hair-Tonic.png?v=28', 'assets/Yogurt-Hair-Tonic-2.png?v=28'],
+  protein:['assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=28', 'assets/Hydrolyzed-Protein-Hair-Tonic.png?v=28', 'assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=28']
 };
 
 let currentModalImageIndex=0;
@@ -2610,13 +3535,13 @@ document.querySelectorAll('[data-gallery]').forEach(gallery=>{
   const prev=document.createElement('button');
   prev.type='button';
   prev.className='gallery-arrow prev';
-  prev.setAttribute('aria-label','Previous product image');
+  prev.setAttribute('aria-label','Imej produk sebelumnya');
   prev.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>';
 
   const next=document.createElement('button');
   next.type='button';
   next.className='gallery-arrow next';
-  next.setAttribute('aria-label','Next product image');
+  next.setAttribute('aria-label','Imej produk seterusnya');
   next.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>';
 
   const dashes=document.createElement('div');
@@ -2631,7 +3556,7 @@ document.querySelectorAll('[data-gallery]').forEach(gallery=>{
     slides.forEach((_,i)=>{
       const dot=document.createElement('button');
       dot.type='button';
-      dot.setAttribute('aria-label',`Show product image ${i+1}`);
+      dot.setAttribute('aria-label',`Lihat imej produk ${i+1}`);
       dot.className=i===index?'active':'';
       dot.addEventListener('click',e=>{e.stopPropagation();show(i);});
       dashes.appendChild(dot);
@@ -2961,7 +3886,7 @@ function renderCart(){
   cartCount.textContent=ids.reduce((s,id)=>s+cart[id],0);
 
   if(!ids.length){
-    cartItems.innerHTML='<div class="empty-cart">Your cart is empty.<br>Add a tonic to start your order.</div>';
+    cartItems.innerHTML='<div class="empty-cart">Troli anda masih kosong.<br>Add a tonic to start your order.</div>';
     return;
   }
 
@@ -2979,7 +3904,7 @@ function renderCart(){
             <button onclick="changeQty('${id}',1)">+</button>
           </div>
         </div>
-        <button class="remove" onclick="removeItem('${id}')">Remove</button>
+        <button class="remove" onclick="removeItem('${id}')">Buang</button>
       </div>
     `;
   }).join('');
@@ -2989,7 +3914,7 @@ document.getElementById('checkoutWhatsapp').addEventListener('click',()=>{
   const ids=Object.keys(cart);
 
   if(!ids.length){
-    alert('Your cart is empty.');
+    alert('Troli anda masih kosong.');
     return;
   }
 
@@ -3145,6 +4070,93 @@ if(window.innerWidth<=640){
   reset();
 })();
 
+
+/* ===== V24 formula finder ===== */
+(function(){
+  const data={
+    amino:{
+      num:'01',
+      img:'assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=28',
+      eyebrow:'Rambut & Kulit Kepala Sihat',
+      title:'Amino Peptide Hair Tonic',
+      text:'Penjagaan berasaskan asid amino untuk membantu rambut dan kulit kepala kelihatan lebih sihat.'
+    },
+    ginseng:{
+      num:'02',
+      img:'assets/Ginseng-Hair-Tonic-thumbnail.png?v=28',
+      eyebrow:'Penjagaan Akar Rambut',
+      title:'Ginseng Hair Tonic',
+      text:'Penjagaan berfokuskan Ekstrak Panax Ginseng untuk akar rambut dan kulit kepala yang kelihatan sihat.'
+    },
+    yogurt:{
+      num:'03',
+      img:'assets/Yogurt-Hair-Tonic-thumbnail.png?v=28',
+      eyebrow:'Kelembapan & Kilauan',
+      title:'Yogurt Hair Tonic',
+      text:'Penjagaan berfokuskan kelembapan untuk rambut yang terasa lebih lembut, licin dan kelihatan berkilau.'
+    },
+    protein:{
+      num:'04',
+      img:'assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=28',
+      eyebrow:'Kelemumur & Penjagaan Akar',
+      title:'Protein Terhidrolisis Hair Tonic',
+      text:'Penjagaan berasaskan protein untuk akar dan kulit kepala yang terasa lebih segar.'
+    }
+  };
+
+  const buttons=[...document.querySelectorAll('.finder-option')];
+  const img=document.getElementById('finderImage');
+  const eyebrow=document.getElementById('finderEyebrow');
+  const title=document.getElementById('finderTitle');
+  const text=document.getElementById('finderText');
+  const num=document.querySelector('.finder-number');
+  const view=document.getElementById('finderView');
+  let active='amino';
+
+  function select(id){
+    active=id;
+    const item=data[id];
+    buttons.forEach(b=>b.classList.toggle('active',b.dataset.find===id));
+
+    img.style.opacity='0';
+    img.style.transform='translateY(8px)';
+    setTimeout(()=>{
+      img.src=item.img;
+      img.alt=item.title;
+      eyebrow.textContent=item.eyebrow;
+      title.textContent=item.title;
+      text.textContent=item.text;
+      num.textContent=item.num;
+      img.style.opacity='1';
+      img.style.transform='translateY(0)';
+    },140);
+  }
+
+  buttons.forEach(b=>b.addEventListener('click',()=>select(b.dataset.find)));
+
+  const preview=document.getElementById('finderPreview');
+  if(preview){
+    preview.addEventListener('click',e=>{
+      if(e.target.closest('button')) return;
+      view.click();
+    });
+    preview.addEventListener('keydown',e=>{
+      if(e.key==='Enter' || e.key===' '){e.preventDefault();view.click();}
+    });
+  }
+
+  view.addEventListener('click',()=>{
+    const card=document.querySelector(`.product-card[data-id="${active}"]`);
+    if(card){
+      card.scrollIntoView({behavior:'smooth',block:'center',inline:'center'});
+      card.animate(
+        [{transform:'translateY(0)'},{transform:'translateY(-8px)'},{transform:'translateY(0)'}],
+        {duration:650,easing:'ease'}
+      );
+    }
+  });
+})();
+
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){
     closeModal();
@@ -3153,6 +4165,24 @@ document.addEventListener('keydown',e=>{
 });
 
 renderCart();
+
+/* V28 quick formula navigation */
+document.querySelectorAll('[data-jump-product]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const id=btn.dataset.jumpProduct;
+    const card=document.querySelector(`.product-card[data-id="${id}"]`);
+    if(card){
+      card.scrollIntoView({behavior:'smooth',block:'center',inline:'center'});
+      setTimeout(()=>{
+        card.animate(
+          [{transform:'translateY(0)'},{transform:'translateY(-7px)'},{transform:'translateY(0)'}],
+          {duration:600,easing:'ease'}
+        );
+      },500);
+    }
+  });
+});
+
 </script>
 
 </body>
