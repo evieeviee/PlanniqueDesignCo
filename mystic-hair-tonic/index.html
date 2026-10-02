@@ -179,8 +179,8 @@ p{line-height:1.68;color:var(--muted)}
 .ornament-shell::before{top:12px;left:16px}
 .ornament-shell::after{bottom:12px;right:16px}
 
-/*  */
-.{padding:0;overflow:hidden;border-bottom:1px solid rgba(73,49,23,.12)}
+/* hero */
+.hero{padding:0;overflow:hidden;border-bottom:1px solid rgba(73,49,23,.12)}
 .hero-media{
   position:relative;
   min-height:520px;
@@ -856,47 +856,34 @@ footer{
   .detail-chip:nth-child(even){padding-left:0;padding-right:0}
 }
 
+
+@media(max-width:640px){
+  .topbar{
+    background:
+      linear-gradient(rgba(58,35,16,.14),rgba(58,35,16,.14)),
+      url("assets/header-bg.png") center center / cover no-repeat;
+  }
+  .topbar-inner{
+    min-height:58px;
+    padding-top:6px;
+    padding-bottom:6px;
+  }
+  .topbar .icon-btn{
+    width:40px;
+    height:40px;
+  }
+  .hero-media{
+    height:clamp(260px,82vw,390px);
+  }
+  .hero-media img{
+    object-position:center;
+  }
+}
+
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   [data-reveal]{opacity:1;transform:none}
 }
-
-/* v10: compact header using the supplied Mystic artwork */
-.header-spacer{width:1px;height:1px}
-.topbar{
-  background:rgba(66,39,18,.90);
-  border-bottom:1px solid rgba(237,199,119,.20);
-}
-.topbar-inner{
-  min-height:54px;
-  justify-content:flex-end;
-}
-.topbar .actions{margin-left:auto}
-.topbar .icon-btn{
-  background:rgba(247,226,181,.14);
-  color:#f7e6bd;
-  border-color:rgba(247,226,181,.22);
-}
-.topbar .cart-count{
-  background:#d3a252;
-  color:#392315;
-}
-.hero-media{
-  min-height:0;
-  height:clamp(200px,31vw,410px);
-  background:#d49c4e;
-}
-.hero-media img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-}
-.hero-overlay{
-  background:linear-gradient(180deg,rgba(52,30,11,.03),rgba(52,30,11,.06));
-}
-.hero-note{display:none!important}
-
 
 /* v10: mobile ingredient cards - image on top, copy below */
 @media(max-width:640px){
@@ -984,6 +971,531 @@ footer{padding:26px 0}
   section{padding:52px 0}
 }
 
+
+/* v11: actual top header uses header-bg.png; hero remains separate */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:60;
+  background:
+    linear-gradient(rgba(58,35,16,.18),rgba(58,35,16,.18)),
+    url("assets/header-bg.png") center center / cover no-repeat;
+  border-bottom:1px solid rgba(74,46,20,.20);
+  box-shadow:0 5px 16px rgba(52,31,10,.10);
+}
+.topbar-inner{
+  min-height:74px;
+  justify-content:flex-end;
+  padding-top:8px;
+  padding-bottom:8px;
+}
+.header-spacer{
+  flex:1 1 auto;
+  min-width:0;
+}
+.topbar .actions{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+}
+.topbar .icon-btn{
+  background:rgba(248,229,186,.86);
+  color:#3d2818;
+  border:1px solid rgba(76,48,22,.18);
+  box-shadow:0 6px 16px rgba(45,25,6,.12);
+  backdrop-filter:blur(7px);
+}
+.topbar .icon-btn:hover{
+  background:#f7e3b5;
+}
+.topbar .cart-count{
+  background:#4a2d18;
+  color:#f8e6bb;
+}
+.hero-media{
+  min-height:0;
+  height:clamp(250px,36vw,500px);
+  background:#d6a052;
+}
+.hero-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+
+/* ===== Refined heritage header override ===== */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:60;
+  background:rgba(243,222,177,.97)!important;
+  border-bottom:1px solid rgba(76,48,22,.16)!important;
+  box-shadow:0 4px 14px rgba(54,32,10,.07)!important;
+  backdrop-filter:blur(12px);
+}
+.topbar::before{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:0;
+  height:3px;
+  background:linear-gradient(90deg,#4b2e19,#c99a4a,#4b2e19);
+}
+.topbar-inner{
+  min-height:66px!important;
+  display:flex;
+  align-items:center;
+  justify-content:space-between!important;
+  gap:18px;
+  padding-top:5px!important;
+  padding-bottom:5px!important;
+}
+.header-brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+.header-emblem{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  color:#4b2e19;
+  flex:0 0 auto;
+}
+.header-emblem svg{width:29px;height:29px}
+.header-copy{min-width:0}
+.header-title{
+  font-family:Georgia,"Times New Roman",serif;
+  color:#3c2818;
+  font-size:1.02rem;
+  font-weight:700;
+  line-height:1.1;
+}
+.header-company{
+  margin-top:3px;
+  color:#86613c;
+  font-size:.67rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.topbar .actions{margin-left:auto}
+.topbar .icon-btn{
+  background:transparent!important;
+  color:#422a19!important;
+  border:1px solid rgba(72,45,20,.18)!important;
+  box-shadow:none!important;
+}
+.topbar .icon-btn:hover{background:rgba(255,248,230,.72)!important}
+.topbar .cart-count{
+  background:#4b2e19!important;
+  color:#f8e7bd!important;
+}
+
+/* Hero remains separate from the header */
+.hero-media{
+  height:clamp(330px,38vw,540px)!important;
+  min-height:0!important;
+}
+.hero-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+/* Cleaner transition under hero */
+.trust-strip{
+  padding:12px 0!important;
+  background:#edd7aa!important;
+}
+.trust-grid{
+  grid-template-columns:repeat(4,1fr)!important;
+  gap:0!important;
+}
+.trust-card{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding:8px 18px!important;
+  position:relative;
+}
+.trust-card:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:18%;
+  bottom:18%;
+  width:1px;
+  background:rgba(77,49,23,.13);
+}
+.trust-card:hover{transform:none!important;box-shadow:none!important}
+.trust-icon{
+  width:32px!important;
+  height:32px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:#6b4524!important;
+}
+.trust-icon svg{width:18px!important;height:18px!important}
+.trust-card strong{color:#432b19!important;font-size:.84rem!important}
+.trust-card span{font-size:.68rem!important}
+
+/* tighter overall spacing */
+section{padding:50px 0!important}
+.section-head{margin-bottom:18px!important}
+.cta{padding-top:8px!important;padding-bottom:52px!important}
+footer{padding:24px 0!important}
+
+@media(max-width:640px){
+  .topbar-inner{min-height:58px!important}
+  .header-emblem{width:28px;height:28px}
+  .header-emblem svg{width:24px;height:24px}
+  .header-title{font-size:.90rem}
+  .header-company{font-size:.56rem}
+  .hero-media{height:clamp(300px,86vw,420px)!important}
+  .trust-grid{grid-template-columns:repeat(2,1fr)!important}
+  .trust-card:nth-child(2)::after{display:none}
+  .trust-card:nth-child(-n+2){border-bottom:1px solid rgba(77,49,23,.10)!important}
+  section{padding:40px 0!important}
+}
+
+
+/* ===== v13 hero: show the COMPLETE hero image on every screen ===== */
+.hero{
+  padding:0!important;
+  margin:0!important;
+  overflow:hidden;
+  background:transparent!important;
+  border:0!important;
+}
+.hero-media{
+  position:relative;
+  width:100%;
+  height:auto!important;
+  min-height:0!important;
+  display:block!important;
+  line-height:0;
+  background:transparent!important;
+}
+.hero-media img{
+  display:block;
+  width:100%!important;
+  height:auto!important;
+  max-width:none;
+  object-fit:contain!important;
+  object-position:center!important;
+  margin:0!important;
+  padding:0!important;
+}
+.hero-overlay{
+  display:none!important;
+}
+.hero-note{
+  display:none!important;
+}
+@media(max-width:640px){
+  .hero-media{
+    height:auto!important;
+    min-height:0!important;
+  }
+  .hero-media img{
+    width:100%!important;
+    height:auto!important;
+    object-fit:contain!important;
+    object-position:center!important;
+  }
+}
+
+
+/* ===== v13 product gallery controls ===== */
+.gallery{
+  touch-action:pan-y;
+}
+.gallery-nav{
+  display:none!important;
+}
+.gcount{
+  display:none!important;
+}
+.gallery-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:8;
+  width:36px;
+  height:44px;
+  border:0;
+  border-radius:8px;
+  display:grid;
+  place-items:center;
+  background:rgba(250,239,211,.88);
+  color:#4b2e19;
+  box-shadow:0 6px 18px rgba(54,31,7,.12);
+  cursor:pointer;
+  opacity:0;
+  transition:opacity .22s ease,transform .22s ease,background .22s ease;
+}
+.gallery:hover .gallery-arrow{
+  opacity:1;
+}
+.gallery-arrow:hover{
+  background:#f7e2b3;
+  transform:translateY(-50%) scale(1.04);
+}
+.gallery-arrow.prev{left:10px}
+.gallery-arrow.next{right:10px}
+.gallery-arrow svg{width:18px;height:18px}
+.gallery-dashes{
+  position:absolute;
+  z-index:8;
+  left:50%;
+  bottom:10px;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+.gallery-dashes button{
+  width:18px;
+  height:3px;
+  border:0;
+  border-radius:0;
+  padding:0;
+  background:rgba(70,43,19,.20);
+  cursor:pointer;
+  transition:.22s ease;
+}
+.gallery-dashes button.active{
+  width:30px;
+  background:#5a371d;
+}
+.gallery[data-single="true"] .gallery-arrow,
+.gallery[data-single="true"] .gallery-dashes{
+  display:none!important;
+}
+@media(max-width:640px){
+  .gallery-arrow{
+    opacity:1;
+    width:34px;
+    height:40px;
+    background:rgba(250,239,211,.84);
+  }
+  .gallery-arrow.prev{left:8px}
+  .gallery-arrow.next{right:8px}
+  .gallery-dashes{bottom:8px}
+}
+
+
+/* ===== v14 full hero image ===== */
+.hero,
+.hero-media{
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  padding:0!important;
+  margin:0!important;
+  background:transparent!important;
+}
+.hero-media{
+  display:block!important;
+  line-height:0!important;
+}
+.hero-media img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  margin:0!important;
+  padding:0!important;
+}
+.hero-overlay,
+.hero-note{
+  display:none!important;
+}
+
+
+.gallery-slide img{
+  max-width:100%;
+}
+
+
+/* ===== v15 product detail popup: real product gallery ===== */
+.modal-card{
+  width:min(1120px,calc(100% - 28px))!important;
+  max-height:min(860px,92vh)!important;
+  grid-template-columns:minmax(430px,.92fr) minmax(0,1.08fr)!important;
+  overflow:hidden!important;
+}
+.modal-art{
+  position:relative!important;
+  min-height:0!important;
+  height:100%!important;
+  padding:24px!important;
+  background:
+    radial-gradient(circle at 50% 38%,rgba(255,246,220,.92),rgba(229,185,110,.62) 50%,rgba(194,126,55,.86) 100%)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+}
+.modal-art img{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  filter:drop-shadow(0 18px 24px rgba(63,36,9,.18))!important;
+}
+.modal-art::after{
+  content:"";
+  position:absolute;
+  left:9%;
+  right:9%;
+  bottom:18px;
+  height:18px;
+  border-radius:50%;
+  background:radial-gradient(ellipse,rgba(76,43,10,.18),transparent 68%);
+  filter:blur(6px);
+  pointer-events:none;
+}
+.modal-copy{
+  padding:66px 42px 34px!important;
+  overflow:auto!important;
+  background:linear-gradient(180deg,#f8e8c3,#f2d7a4)!important;
+}
+.modal-copy h2{
+  color:#3b2717!important;
+}
+.modal-product-switcher{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0 0 18px;
+}
+.modal-product-switcher button{
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(76,48,22,.14);
+  background:rgba(255,247,226,.62);
+  color:#4b2f1b;
+  border-radius:8px;
+  cursor:pointer;
+}
+.modal-product-switcher button:hover{
+  background:#f6e1b0;
+}
+.modal-product-position{
+  font-size:.72rem;
+  font-weight:800;
+  color:#8a6037;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+@media(max-width:780px){
+  .modal-card{
+    width:min(96vw,760px)!important;
+    max-height:92vh!important;
+    grid-template-columns:1fr!important;
+    grid-template-rows:minmax(260px,42vh) minmax(0,1fr)!important;
+  }
+  .modal-art{
+    min-height:260px!important;
+    height:auto!important;
+    padding:16px!important;
+  }
+  .modal-art img{
+    width:100%!important;
+    height:100%!important;
+    max-height:38vh!important;
+    object-fit:contain!important;
+  }
+  .modal-copy{
+    padding:28px 18px 26px!important;
+  }
+  .close-modal{
+    top:10px!important;
+    right:10px!important;
+  }
+}
+
+
+/* ===== v15 product cards: full product image visibility ===== */
+.gallery{
+  height:320px!important;
+  background:linear-gradient(180deg,#f8e8c3,#edd09a)!important;
+}
+.gallery-slide{
+  padding:14px 18px!important;
+}
+.gallery-slide img{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+@media(max-width:640px){
+  .gallery{
+    height:285px!important;
+  }
+}
+
+
+.modal-image-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:8;
+  width:40px;
+  height:44px;
+  border:1px solid rgba(73,46,20,.14);
+  background:rgba(249,235,203,.88);
+  color:#4b2e19;
+  border-radius:8px;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(56,31,7,.10);
+}
+.modal-image-arrow.prev{left:14px}
+.modal-image-arrow.next{right:14px}
+.modal-image-arrow:hover{background:#f7dfaa}
+.modal-image-arrow[hidden]{display:none!important}
+.modal-image-dashes{
+  position:absolute;
+  left:50%;
+  bottom:14px;
+  transform:translateX(-50%);
+  z-index:8;
+  display:flex;
+  gap:5px;
+}
+.modal-image-dashes button{
+  width:22px;
+  height:3px;
+  border:0;
+  padding:0;
+  background:rgba(74,44,19,.20);
+  cursor:pointer;
+}
+.modal-image-dashes button.active{
+  width:34px;
+  background:#5a351c;
+}
+
 </style>
 </head>
 
@@ -991,7 +1503,20 @@ footer{padding:26px 0}
 
 <header class="topbar">
   <div class="container topbar-inner">
-    <div class="header-spacer" aria-hidden="true"></div>
+    <div class="header-brand">
+      <div class="header-emblem" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M32 7c5 9 12 13 21 14-6 5-9 12-9 21-7-4-14-4-24 0 1-9-2-16-9-21 10-1 17-5 21-14Z"/>
+          <path d="M32 16v31M20 27c8 2 16 2 24 0M22 37c7-2 13-2 20 0"/>
+        </svg>
+      </div>
+
+      <div class="header-copy">
+        <div class="header-title">Mystic Hair Tonic</div>
+        <div class="header-company">Mystic Care Sdn Bhd</div>
+      </div>
+    </div>
+
     <div class="actions">
       <button class="icon-btn" id="openCart" aria-label="Open cart">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -1069,12 +1594,10 @@ footer{padding:26px 0}
       <article class="product-card" data-id="amino" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Amino-Peptide Hair-Tonic.png" onerror="this.onerror=null;this.src='assets/Amino-Peptide-Hair-Tonic.png';" alt="Amino Peptide Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Amino-Peptide Hair-Tonic-2.png" onerror="this.onerror=null;this.src='assets/Amino-Peptide-Hair-Tonic-2.png';" alt="Amino Peptide Hair Tonic image 2"></div>
-            <div class="gallery-slide"><img src="assets/Amino-Peptide Hair-Tonic-3.png" onerror="this.onerror=null;this.src='assets/Amino-Peptide-Hair-Tonic-3.png';" alt="Amino Peptide Hair Tonic image 3"></div>
-            <div class="gallery-slide"><img src="assets/Amino-Peptide Hair-Tonic-4.png" onerror="this.onerror=null;this.src='assets/Amino-Peptide-Hair-Tonic-4.png';" alt="Amino Peptide Hair Tonic image 4"></div>
+            <div class="gallery-slide active"><img src="assets/Amino-Peptide-Hair-Tonic.png" alt="Amino Peptide Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Amino-Peptide-Hair-Tonic-2.png" alt="Amino Peptide Hair Tonic image 2"></div>
           </div>
-          <div class="gallery-nav"><div class="gcount">1 / 4</div></div>
+          
         </div>
         <div class="product-body">
           <small>Healthy Hair / Scalp</small>
@@ -1092,10 +1615,8 @@ footer{padding:26px 0}
           <div class="gallery-slides">
             <div class="gallery-slide active"><img src="assets/Ginseng-Hair-Tonic.png" alt="Ginseng Hair Tonic"></div>
             <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-2.png" alt="Ginseng Hair Tonic image 2"></div>
-            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-3.png" alt="Ginseng Hair Tonic image 3"></div>
-            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-4.png" alt="Ginseng Hair Tonic image 4"></div>
           </div>
-          <div class="gallery-nav"><div class="gcount">1 / 4</div></div>
+          
         </div>
         <div class="product-body">
           <small>Promote Hair Growth</small>
@@ -1113,10 +1634,8 @@ footer{padding:26px 0}
           <div class="gallery-slides">
             <div class="gallery-slide active"><img src="assets/Yogurt-Hair-Tonic.png" alt="Yogurt Hair Tonic"></div>
             <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-2.png" alt="Yogurt Hair Tonic image 2"></div>
-            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-3.png" alt="Yogurt Hair Tonic image 3"></div>
-            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-4.png" alt="Yogurt Hair Tonic image 4"></div>
           </div>
-          <div class="gallery-nav"><div class="gcount">1 / 4</div></div>
+          
         </div>
         <div class="product-body">
           <small>Extra Moisture & Shine</small>
@@ -1134,10 +1653,8 @@ footer{padding:26px 0}
           <div class="gallery-slides">
             <div class="gallery-slide active"><img src="assets/Hydrolyzed-Protein-Hair-Tonic.png" alt="Hydrolyzed Protein Hair Tonic"></div>
             <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-2.png" alt="Hydrolyzed Protein Hair Tonic image 2"></div>
-            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-3.png" alt="Hydrolyzed Protein Hair Tonic image 3"></div>
-            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-4.png" alt="Hydrolyzed Protein Hair Tonic image 4"></div>
           </div>
-          <div class="gallery-nav"><div class="gcount">1 / 4</div></div>
+          
         </div>
         <div class="product-body">
           <small>Dandruff & Root Care</small>
@@ -1168,28 +1685,28 @@ footer{padding:26px 0}
 
     <div class="ingredient-grid">
       <article class="ingredient-card" data-reveal>
-        <div class="ingredient-image"><img src="assets/ginseng-ingredients.png" onerror="this.onerror=null;this.src='assets/Ginseng-Hair-Tonic.png';" alt="Ginseng ingredients"></div>
+        <div class="ingredient-image"><img src="assets/ginseng-ingredients.png" alt="Ginseng ingredients"></div>
         <h3>Ginseng Extract</h3>
         <p>Panax Ginseng with Ginsenoside for root-focused care, scalp vitality and healthier, fuller-looking hair.</p>
         <div class="ingredient-meta"><b>Focus</b><span>Hair roots · scalp · volume</span><b>Key</b><span>Panax Ginseng · Ginsenoside</span></div>
       </article>
 
       <article class="ingredient-card" data-reveal>
-        <div class="ingredient-image"><img src="assets/yogurt-ingredients.png" onerror="this.onerror=null;this.src='assets/Yogurt-Hair-Tonic.png';" alt="Yogurt ingredients"></div>
+        <div class="ingredient-image"><img src="assets/yogurt-ingredients.png" alt="Yogurt ingredients"></div>
         <h3>Yogurt Extract</h3>
         <p>Moisture-rich care with calcium, phosphorus, zinc, iron and vitamins for softer, smoother, shinier-looking hair.</p>
         <div class="ingredient-meta"><b>Focus</b><span>Moisture · softness · shine</span><b>Key</b><span>Calcium · Zinc · Vitamins</span></div>
       </article>
 
       <article class="ingredient-card" data-reveal>
-        <div class="ingredient-image"><img src="assets/amino-ingredients.png" onerror="this.onerror=null;this.src='assets/Amino-Peptide-Hair-Tonic.png';" alt="Amino peptide ingredients"></div>
+        <div class="ingredient-image"><img src="assets/amino-ingredients.png" alt="Amino peptide ingredients"></div>
         <h3>Amino Peptides</h3>
         <p>A blend of 15 amino acids designed for scalp care, melanin support and stronger, thicker-looking hair.</p>
         <div class="ingredient-meta"><b>Focus</b><span>Scalp · strength · thickness</span><b>Key</b><span>15 amino acids · Peptides</span></div>
       </article>
 
       <article class="ingredient-card" data-reveal>
-        <div class="ingredient-image"><img src="assets/hydrolyzed-ingredients.png" onerror="this.onerror=null;this.src='assets/Hydrolyzed-Protein-Hair-Tonic.png';" alt="Hydrolyzed protein ingredients"></div>
+        <div class="ingredient-image"><img src="assets/hydrolyzed-ingredients.png" alt="Hydrolyzed protein ingredients"></div>
         <h3>Hydrolyzed Protein</h3>
         <p>Natural Soy protein with Zizyphus Joazeiro Bark Extract for nourishment, stronger roots and dandruff-focused scalp care.</p>
         <div class="ingredient-meta"><b>Focus</b><span>Roots · scalp freshness · lustre</span><b>Key</b><span>Soy Protein · Joazeiro Bark</span></div>
@@ -1388,7 +1905,12 @@ footer{padding:26px 0}
 <div class="modal" id="productModal" aria-hidden="true">
   <div class="modal-card">
     <button class="close-modal" id="closeModal" aria-label="Close product details">×</button>
-    <div class="modal-art"><img id="modalImg" src="" alt=""></div>
+    <div class="modal-art">
+      <button class="modal-image-arrow prev" id="modalImagePrev" type="button" aria-label="Previous product image">←</button>
+      <img id="modalImg" src="" alt="">
+      <button class="modal-image-arrow next" id="modalImageNext" type="button" aria-label="Next product image">→</button>
+      <div class="modal-image-dashes" id="modalImageDashes"></div>
+    </div>
 
     <div class="modal-copy">
       <div class="modal-topline"><div class="kicker" id="modalKicker"></div></div>
@@ -1404,6 +1926,53 @@ footer{padding:26px 0}
 </div>
 
 <script>
+
+/* ===== v14 robust asset path resolver =====
+   Works if this HTML is in the repo root (assets/file.png)
+   OR if the HTML was accidentally uploaded inside /assets (file.png). */
+(function(){
+  const tried = new WeakMap();
+
+  function alternatePath(src){
+    if(!src) return null;
+
+    // Normalize absolute URLs back to their pathname if needed.
+    let path = src;
+    try{
+      const u = new URL(src, window.location.href);
+      path = u.pathname.replace(/^\/+/, '');
+    }catch(e){}
+
+    // If path contains /assets/, try just the filename.
+    const assetsIndex = path.lastIndexOf('assets/');
+    if(assetsIndex !== -1){
+      return path.slice(assetsIndex + 7);
+    }
+
+    // If already a plain relative filename, try assets/filename.
+    if(!/^https?:/i.test(src) && !src.startsWith('data:') && !src.startsWith('blob:')){
+      return 'assets/' + src.replace(/^\.?\//,'');
+    }
+    return null;
+  }
+
+  document.addEventListener('error', function(e){
+    const img = e.target;
+    if(!(img instanceof HTMLImageElement)) return;
+
+    const count = tried.get(img) || 0;
+    if(count >= 1) return;
+
+    const current = img.getAttribute('src');
+    const alt = alternatePath(current);
+    if(!alt || alt === current) return;
+
+    tried.set(img, count + 1);
+    img.src = alt;
+  }, true);
+})();
+
+
 const fallbackImage='assets/Amino-Peptide-Hair-Tonic.png';
 const products={
   ginseng:{
@@ -1458,7 +2027,29 @@ const products={
       ['💧','Fresh scalp feel','Supports a fresh and hydrated scalp feel']
     ]
   }
+
 };
+
+const productImages={
+  amino:[
+    'assets/Amino-Peptide-Hair-Tonic.png',
+    'assets/Amino-Peptide-Hair-Tonic-2.png'
+  ],
+  ginseng:[
+    'assets/Ginseng-Hair-Tonic.png',
+    'assets/Ginseng-Hair-Tonic-2.png'
+  ],
+  yogurt:[
+    'assets/Yogurt-Hair-Tonic.png',
+    'assets/Yogurt-Hair-Tonic-2.png'
+  ],
+  protein:[
+    'assets/Hydrolyzed-Protein-Hair-Tonic.png',
+    'assets/Hydrolyzed-Protein-Hair-Tonic-2.png'
+  ]
+};
+
+let currentModalImageIndex=0;
 
 /* reveal */
 const io=new IntersectionObserver(entries=>{
@@ -1471,42 +2062,131 @@ const io=new IntersectionObserver(entries=>{
 },{threshold:.12});
 document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
 
-/* galleries */
+/* product image galleries: swipe + arrows + auto-rotate */
 document.querySelectorAll('[data-gallery]').forEach(gallery=>{
   let slides=[...gallery.querySelectorAll('.gallery-slide')];
-  const count=gallery.querySelector('.gcount');
   let index=0;
+  let timer=null;
+  let startX=0;
+  let mouseDown=false;
+  let mouseStartX=0;
 
-  function setup(){
+  const prev=document.createElement('button');
+  prev.type='button';
+  prev.className='gallery-arrow prev';
+  prev.setAttribute('aria-label','Previous product image');
+  prev.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>';
+
+  const next=document.createElement('button');
+  next.type='button';
+  next.className='gallery-arrow next';
+  next.setAttribute('aria-label','Next product image');
+  next.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>';
+
+  const dashes=document.createElement('div');
+  dashes.className='gallery-dashes';
+
+  gallery.append(prev,next,dashes);
+
+  function rebuild(){
     slides=[...gallery.querySelectorAll('.gallery-slide')];
-    if(!slides.length)return;
-    if(index>=slides.length)index=0;
-    slides.forEach((s,i)=>s.classList.toggle('active',i===index));
-    count.textContent=`${index+1} / ${slides.length}`;
+    gallery.dataset.single=slides.length<=1?'true':'false';
+    if(index>=slides.length) index=0;
+
+    dashes.innerHTML='';
+    slides.forEach((_,i)=>{
+      const dot=document.createElement('button');
+      dot.type='button';
+      dot.setAttribute('aria-label',`Show product image ${i+1}`);
+      dot.className=i===index?'active':'';
+      dot.addEventListener('click',e=>{
+        e.stopPropagation();
+        show(i);
+        restart();
+      });
+      dashes.appendChild(dot);
+    });
+
+    render();
+  }
+
+  function render(){
+    if(!slides.length) return;
+    slides.forEach((slide,i)=>slide.classList.toggle('active',i===index));
+    [...dashes.children].forEach((dot,i)=>dot.classList.toggle('active',i===index));
   }
 
   function show(i){
-    if(!slides.length)return;
+    if(slides.length<=1) return;
     index=(i+slides.length)%slides.length;
-    slides.forEach((s,j)=>s.classList.toggle('active',j===index));
-    count.textContent=`${index+1} / ${slides.length}`;
+    render();
+  }
+
+  function advance(){ show(index+1); }
+
+  function restart(){
+    clearInterval(timer);
+    if(slides.length>1) timer=setInterval(advance,4200);
   }
 
   slides.forEach(slide=>{
-    slide.querySelector('img').addEventListener('error',()=>{
-      slide.remove();
-      setup();
-    },{once:true});
+    const img=slide.querySelector('img');
+    let failures=0;
+    img.addEventListener('error',()=>{
+      failures++;
+      if(failures>1){
+        slide.remove();
+        rebuild();
+        restart();
+      }
+    });
   });
 
-  let startX=0;
-  gallery.addEventListener('touchstart',e=>startX=e.touches[0].clientX,{passive:true});
-  gallery.addEventListener('touchend',e=>{
-    const dx=e.changedTouches[0].clientX-startX;
-    if(Math.abs(dx)>35)show(index+(dx<0?1:-1));
+  prev.addEventListener('click',e=>{
+    e.preventDefault();
+    e.stopPropagation();
+    show(index-1);
+    restart();
+  });
+
+  next.addEventListener('click',e=>{
+    e.preventDefault();
+    e.stopPropagation();
+    show(index+1);
+    restart();
+  });
+
+  gallery.addEventListener('touchstart',e=>{
+    startX=e.touches[0].clientX;
+    clearInterval(timer);
   },{passive:true});
 
-  setup();
+  gallery.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-startX;
+    if(Math.abs(dx)>32) show(index+(dx<0?1:-1));
+    restart();
+  },{passive:true});
+
+  /* mouse drag inside the product image itself */
+  gallery.addEventListener('mousedown',e=>{
+    if(e.target.closest('button')) return;
+    mouseDown=true;
+    mouseStartX=e.clientX;
+    clearInterval(timer);
+  });
+  window.addEventListener('mouseup',e=>{
+    if(!mouseDown) return;
+    const dx=e.clientX-mouseStartX;
+    mouseDown=false;
+    if(Math.abs(dx)>38) show(index+(dx<0?1:-1));
+    restart();
+  });
+
+  gallery.addEventListener('mouseenter',()=>clearInterval(timer));
+  gallery.addEventListener('mouseleave',restart);
+
+  rebuild();
+  restart();
 });
 
 /* product carousel - swipe/drag ready for future products */
@@ -1644,25 +2324,21 @@ document.querySelectorAll('[data-details]').forEach(btn=>{
 });
 
 function openProduct(id){
-  productDrag=false;productMoved=false;track.classList.remove('is-dragging');
+  productDrag=false;
+  productMoved=false;
+  track.classList.remove('is-dragging');
+
   currentProduct=id;
+  currentModalImageIndex=0;
   const p=products[id];
 
-  const modalImg=document.getElementById('modalImg');
-  const card=document.querySelector(`.product-card[data-id="${id}"]`);
-  const cardImg=card ? card.querySelector('.gallery-slide.active img') : null;
-
-  modalImg.onerror=()=>{
-    modalImg.onerror=null;
-    modalImg.src=p.img;
-  };
-  modalImg.src=(cardImg && (cardImg.currentSrc || cardImg.src)) ? (cardImg.currentSrc || cardImg.src) : p.img;
-  modalImg.alt=p.name;
   document.getElementById('modalKicker').textContent=p.kicker;
   document.getElementById('modalTitle').textContent=p.name;
   document.getElementById('modalDesc').textContent=p.desc;
+
   document.getElementById('modalIngredients').innerHTML=
     p.ingredients.map(x=>`<span class="ingredient-badge">${x}</span>`).join('');
+
   document.getElementById('modalDetails').innerHTML=
     p.details.map(x=>`
       <div class="detail-chip">
@@ -1671,9 +2347,44 @@ function openProduct(id){
       </div>
     `).join('');
 
+  renderModalGallery();
+
   modal.classList.add('open');
   modal.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
+}
+
+function renderModalGallery(){
+  if(!currentProduct) return;
+
+  const images=productImages[currentProduct] || [products[currentProduct].img];
+  const modalImg=document.getElementById('modalImg');
+  const prev=document.getElementById('modalImagePrev');
+  const next=document.getElementById('modalImageNext');
+  const dashes=document.getElementById('modalImageDashes');
+
+  currentModalImageIndex=(currentModalImageIndex+images.length)%images.length;
+
+  modalImg.src=images[currentModalImageIndex];
+  modalImg.alt=products[currentProduct].name + ' image ' + (currentModalImageIndex+1);
+
+  prev.hidden=images.length<=1;
+  next.hidden=images.length<=1;
+
+  dashes.innerHTML='';
+  if(images.length>1){
+    images.forEach((_,i)=>{
+      const b=document.createElement('button');
+      b.type='button';
+      b.className=i===currentModalImageIndex?'active':'';
+      b.setAttribute('aria-label',`Show image ${i+1}`);
+      b.addEventListener('click',()=>{
+        currentModalImageIndex=i;
+        renderModalGallery();
+      });
+      dashes.appendChild(b);
+    });
+  }
 }
 
 function closeModal(){
@@ -1681,6 +2392,31 @@ function closeModal(){
   modal.setAttribute('aria-hidden','true');
   document.body.style.overflow='';
 }
+
+
+document.getElementById('modalImagePrev').addEventListener('click',()=>{
+  if(!currentProduct) return;
+  currentModalImageIndex--;
+  renderModalGallery();
+});
+document.getElementById('modalImageNext').addEventListener('click',()=>{
+  if(!currentProduct) return;
+  currentModalImageIndex++;
+  renderModalGallery();
+});
+
+let modalTouchStartX=0;
+document.querySelector('.modal-art').addEventListener('touchstart',e=>{
+  modalTouchStartX=e.touches[0].clientX;
+},{passive:true});
+document.querySelector('.modal-art').addEventListener('touchend',e=>{
+  if(!currentProduct) return;
+  const dx=e.changedTouches[0].clientX-modalTouchStartX;
+  if(Math.abs(dx)>35){
+    currentModalImageIndex += dx<0 ? 1 : -1;
+    renderModalGallery();
+  }
+},{passive:true});
 
 document.getElementById('closeModal').addEventListener('click',closeModal);
 modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
@@ -1748,7 +2484,7 @@ function renderCart(){
     const p=products[id];
     return `
       <div class="cart-item">
-        <img src="${p.img}" onerror="if('${id}'==='amino'){this.onerror=null;this.src='${fallbackImage}'}" alt="${p.name}">
+        <img src="${p.img}" alt="${p.name}">
         <div>
           <h4>${p.name}</h4>
           <small>Price to be confirmed</small>
