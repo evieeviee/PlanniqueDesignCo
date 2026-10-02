@@ -1683,7 +1683,7 @@ footer{padding:24px 0!important}
   .hero-picture img{
     width:100%;
     height:auto;
-    max-height:62vh;
+    max-height:none;
     object-fit:contain;
     object-position:center;
   }
@@ -1699,6 +1699,86 @@ footer{padding:24px 0!important}
 .hero-banner .hero-picture,
 .hero-media .hero-picture{
   height:auto!important;
+}
+
+
+/* ===== v21 MOBILE HERO + FULL PRODUCT IMAGE FIX ===== */
+
+/* Mobile hero: edge-to-edge, no side gutter, show the COMPLETE mobile artwork */
+@media (max-width:640px){
+  .hero-picture{
+    display:block!important;
+    width:100vw!important;
+    max-width:none!important;
+    margin-left:calc(50% - 50vw)!important;
+    margin-right:calc(50% - 50vw)!important;
+    padding:0!important;
+    overflow:hidden!important;
+    line-height:0!important;
+  }
+  .hero-picture img{
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    height:auto!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    object-fit:contain!important;
+    object-position:center!important;
+  }
+}
+
+/* Product gallery: image must fit INSIDE its media area instead of being cropped */
+.product-card .product-media,
+.product-card .product-image,
+.product-card [class*="product-media"],
+.product-card [class*="product-image"]{
+  overflow:hidden!important;
+}
+
+/* Target gallery images while leaving icons/buttons alone */
+.product-card .product-media img,
+.product-card .product-image img,
+.product-card .product-gallery img,
+.product-card .product-slider img,
+.product-card .product-carousel img,
+.product-card [data-product-gallery] img{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  transform:none!important;
+}
+
+/* Comfortable mobile product media size: complete bottle visible */
+@media (max-width:640px){
+  .product-card .product-media,
+  .product-card .product-image,
+  .product-card .product-gallery,
+  .product-card .product-slider,
+  .product-card .product-carousel,
+  .product-card [data-product-gallery]{
+    height:390px!important;
+    min-height:390px!important;
+    max-height:390px!important;
+  }
+
+  .product-card .product-media img,
+  .product-card .product-image img,
+  .product-card .product-gallery img,
+  .product-card .product-slider img,
+  .product-card .product-carousel img,
+  .product-card [data-product-gallery] img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    padding:18px 34px!important;
+    box-sizing:border-box!important;
+  }
 }
 
 </style>
