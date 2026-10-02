@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Mystic Hair Tonic</title>
+<meta name="description" content="Mystic Hair Tonic - four targeted formulas for scalp and hair care." />
+<link rel="icon" type="image/png" href="assets/logo.png" />
+
+<style>
+:root{
+  --parchment:#efd9a7;
+  --parchment-2:#e1b86f;
+  --parchment-3:#c98a43;
+  --cream:#f8edd0;
+  --cream-2:#fff8e8;
+  --ink:#3a2818;
+  --muted:#745a3f;
+  --green:#174f3b;
+  --green-2:#2e654b;
+  --green-3:#0f3a2b;
+  --gold:#c89843;
+  --gold-2:#e5bd70;
+  --brown:#70441f;
+  --line:rgba(75,48,22,.20);
+  --shadow:0 18px 48px rgba(66,40,10,.14);
+  --shadow-strong:0 28px 70px rgba(47,29,8,.20);
+  --max:1180px;
+  --radius:26px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 8% 4%,rgba(255,242,200,.50),transparent 26%),
+    radial-gradient(circle at 88% 16%,rgba(23,79,59,.08),transparent 28%),
+    linear-gradient(180deg,#c98d49 0%,#dfb66f 18%,#f1dba8 44%,#e0b46c 74%,#ba7439 100%);
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-2;
+  opacity:.26;
+  background-image:
+    radial-gradient(circle at 15% 25%,rgba(255,255,255,.65) 0 1.4px,transparent 1.8px),
+    radial-gradient(circle at 78% 20%,rgba(79,100,60,.16) 0 1.2px,transparent 1.6px),
+    linear-gradient(rgba(255,255,255,.02),rgba(255,255,255,.02));
+  background-size:150px 150px,220px 220px,100% 100%;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.05;
+  background-image:
+    repeating-linear-gradient(0deg,rgba(59,37,16,.45) 0 1px,transparent 1px 3px);
+  mix-blend-mode:multiply;
+}
+
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+section{padding:82px 0;position:relative}
+
+.kicker{
+  font-size:.75rem;
+  font-weight:800;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  color:#8a5a29;
+  margin-bottom:10px
+}
+h1,h2,h3,p{margin-top:0}
+h1,h2,h3{letter-spacing:-.02em}
+h1{font-size:clamp(2.8rem,6vw,5.4rem);line-height:.98;margin-bottom:18px;font-weight:600}
+h2{font-size:clamp(2rem,4vw,3.5rem);line-height:1.05;margin-bottom:12px;font-weight:600;color:var(--green)}
+h3{font-size:1.16rem;margin-bottom:8px;font-weight:700}
+p{line-height:1.68;color:var(--muted)}
+.section-head{max-width:760px;margin-bottom:30px}
+.section-head p{margin-bottom:0}
+
+.btn{
+  min-height:48px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:0 18px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  font-weight:760;
+  cursor:pointer;
+  background:rgba(255,248,229,.76);
+  color:var(--ink);
+  box-shadow:0 8px 20px rgba(66,40,7,.08);
+  transition:transform .25s ease,box-shadow .25s ease,background .25s ease
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(66,40,7,.13)}
+.btn-primary{
+  color:#fff8e8;
+  background:linear-gradient(135deg,var(--green),var(--green-2));
+  border-color:transparent
+}
+.btn-primary:hover{background:linear-gradient(135deg,var(--green-3),var(--green))}
+.btn svg{width:18px;height:18px}
+
+/* topbar */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:60;
+  background:rgba(241,219,168,.87);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(71,48,22,.12)
+}
+.topbar-inner{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px
+}
+.brand{display:flex;align-items:center;gap:11px}
+.brand img{
+  width:46px;height:46px;object-fit:cover;border-radius:13px;
+  box-shadow:0 7px 18px rgba(68,41,4,.12);
+  border:1px solid rgba(59,39,18,.12)
+}
+.brand strong{display:block;font-size:.98rem;font-weight:700;color:var(--green)}
+.brand small{display:block;color:#70563b;font-size:.76rem}
+.actions{display:flex;gap:9px}
+.icon-btn{
+  position:relative;width:44px;height:44px;border-radius:50%;
+  display:grid;place-items:center;border:1px solid rgba(63,43,20,.15);
+  background:rgba(255,247,227,.70);cursor:pointer;color:var(--green);
+  transition:.25s ease
+}
+.icon-btn:hover{transform:translateY(-2px);background:#fff7e5}
+.icon-btn svg{width:20px;height:20px}
+.cart-count{
+  position:absolute;top:-4px;right:-3px;min-width:19px;height:19px;padding:0 5px;border-radius:999px;
+  display:grid;place-items:center;background:var(--green);color:#fff8e8;font-size:.68rem;font-weight:900
+}
+
+/* ornamental frame */
+.ornament-shell{
+  position:relative;
+  border:1px solid rgba(70,45,21,.18);
+  border-radius:28px;
+  background:linear-gradient(145deg,rgba(248,236,205,.82),rgba(240,216,171,.70));
+  box-shadow:var(--shadow)
+}
+.ornament-shell::before,
+.ornament-shell::after{
+  content:"✦";
+  position:absolute;
+  color:rgba(23,79,59,.38);
+  font-size:1rem
+}
+.ornament-shell::before{top:12px;left:16px}
+.ornament-shell::after{bottom:12px;right:16px}
+
+/* hero */
+.hero{padding:0;overflow:hidden;border-bottom:1px solid rgba(73,49,23,.12)}
+.hero-media{
+  position:relative;
+  min-height:520px;
+  display:flex;
+  align-items:stretch;
+  background:#d8b270
+}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(239,218,173,.18) 0%,rgba(239,218,173,.05) 40%,transparent 66%),
+    radial-gradient(circle at 8% 50%,rgba(23,79,59,.10),transparent 28%);
+  pointer-events:none
+}
+.hero-note{
+  position:absolute;left:50%;bottom:22px;transform:translateX(-50%);
+  width:min(90%,820px);display:flex;justify-content:center;gap:10px;flex-wrap:wrap
+}
+.hero-pill{
+  padding:8px 12px;border-radius:999px;
+  background:rgba(247,235,205,.86);
+  backdrop-filter:blur(10px);
+  font-size:.76rem;font-weight:700;color:var(--green);
+  border:1px solid rgba(74,49,23,.14);
+  box-shadow:0 10px 24px rgba(81,47,8,.10);
+  transition:.25s ease
+}
+.hero-pill:hover{transform:translateY(-2px)}
+
+/* trust */
+.trust-strip{
+  padding:24px 0;
+  background:rgba(237,217,173,.72);
+  border-bottom:1px solid rgba(75,50,23,.10)
+}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.trust-card{
+  display:flex;align-items:center;gap:12px;padding:14px 16px;
+  border-radius:18px;background:rgba(249,238,211,.72);
+  border:1px solid rgba(83,54,25,.12);
+  transition:.28s ease
+}
+.trust-card:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(62,39,10,.10)}
+.trust-icon{
+  width:42px;height:42px;display:grid;place-items:center;border-radius:50%;
+  background:linear-gradient(135deg,#f7e9c2,#e0bd77);
+  color:var(--green);flex:0 0 auto;
+  border:1px solid rgba(65,44,21,.10)
+}
+.trust-icon svg{width:21px;height:21px}
+.trust-card strong{display:block;font-size:.92rem;color:var(--green)}
+.trust-card span{display:block;font-size:.76rem;color:var(--muted)}
+
+/* products */
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.product-card{
+  overflow:hidden;border-radius:24px;
+  background:linear-gradient(180deg,rgba(248,238,213,.88),rgba(244,226,188,.78));
+  border:1px solid rgba(79,52,24,.13);
+  box-shadow:var(--shadow);
+  transition:.32s ease
+}
+.product-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-strong)}
+.gallery{
+  position:relative;height:300px;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 30%,rgba(255,250,236,.92),rgba(232,196,126,.42) 48%,transparent 74%)
+}
+.gallery-slides{height:100%;position:relative}
+.gallery-slide{
+  position:absolute;inset:0;display:grid;place-items:center;padding:18px 12px 8px;
+  opacity:0;transform:scale(.985);transition:.32s ease
+}
+.gallery-slide.active{opacity:1;transform:scale(1)}
+.gallery-slide img{
+  max-height:276px;width:auto;object-fit:contain;
+  filter:drop-shadow(0 14px 11px rgba(52,28,0,.15));
+  transition:.4s ease
+}
+.product-card:hover .gallery-slide.active img{transform:scale(1.035)}
+.gallery-nav{
+  position:absolute;left:10px;right:10px;bottom:10px;
+  display:flex;align-items:center;justify-content:flex-end;z-index:3
+}
+.gcount{
+  padding:6px 9px;border-radius:999px;
+  background:rgba(247,235,205,.88);font-size:.72rem;font-weight:800;color:var(--green)
+}
+.product-body{padding:18px}
+.product-body small{
+  display:block;color:#8c5f2d;font-size:.71rem;font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;margin-bottom:7px
+}
+.product-body h3{font-size:1.10rem;color:var(--green)}
+.product-body p{font-size:.88rem;line-height:1.52;min-height:64px}
+.product-actions{display:grid;grid-template-columns:1fr auto;gap:8px}
+.product-actions .btn{width:100%}
+.details-btn{width:46px!important;padding:0;border-radius:50%}
+.mobile-carousel-dots{display:none;justify-content:center;gap:7px;margin-top:15px}
+.mobile-carousel-dots button{
+  width:8px;height:8px;border:0;border-radius:50%;padding:0;background:rgba(23,79,59,.20)
+}
+.mobile-carousel-dots button.active{background:var(--green);transform:scale(1.2)}
+
+/* ingredients */
+.ingredient-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ingredient-card{
+  position:relative;overflow:hidden;padding:18px;border-radius:24px;
+  background:linear-gradient(180deg,rgba(247,237,208,.88),rgba(239,219,177,.80));
+  border:1px solid rgba(83,54,25,.14);
+  box-shadow:0 12px 30px rgba(68,40,6,.08);
+  transition:.32s ease
+}
+.ingredient-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(68,40,6,.13)}
+.ingredient-card::after{
+  content:"";
+  position:absolute;width:120px;height:120px;border-radius:50%;
+  right:-35px;bottom:-35px;
+  background:radial-gradient(circle,rgba(23,79,59,.11),transparent 68%);
+  pointer-events:none
+}
+.ingredient-image{
+  width:100%;aspect-ratio:1.16/1;border-radius:18px;overflow:hidden;margin-bottom:15px;
+  background:#e8c885;border:1px solid rgba(77,50,22,.11)
+}
+.ingredient-image img{width:100%;height:100%;object-fit:cover;transition:.5s ease}
+.ingredient-card:hover .ingredient-image img{transform:scale(1.05)}
+.ingredient-card h3{font-size:1.05rem;color:var(--green)}
+.ingredient-card p{font-size:.86rem;margin-bottom:0}
+
+/* before after */
+.results-shell{
+  padding:24px;border-radius:28px;
+  background:linear-gradient(135deg,rgba(247,237,208,.88),rgba(235,209,160,.76));
+  border:1px solid rgba(83,55,25,.14);
+  box-shadow:var(--shadow)
+}
+.results-top{display:grid;grid-template-columns:.72fr 1.28fr;gap:22px;align-items:center}
+.results-copy p{margin-bottom:0}
+.before-track{
+  display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none
+}
+.before-track::-webkit-scrollbar{display:none}
+.before-card{
+  flex:0 0 78%;scroll-snap-align:center;border-radius:20px;overflow:hidden;
+  background:rgba(249,240,217,.88);border:1px solid rgba(83,54,25,.12);
+  box-shadow:0 10px 24px rgba(67,40,7,.08);transition:.28s ease
+}
+.before-card:hover{transform:translateY(-3px)}
+.before-card img{width:100%;aspect-ratio:1.55/1;object-fit:cover}
+.before-card .caption{padding:12px 14px;font-size:.87rem;font-weight:700;color:var(--green)}
+.results-note{margin-top:12px;font-size:.78rem;color:#806e5a}
+
+/* steps */
+.steps-wrap{
+  position:relative;padding:18px;border-radius:30px;
+  background:linear-gradient(145deg,rgba(248,237,210,.88),rgba(235,209,161,.74));
+  border:1px solid rgba(83,55,26,.14);box-shadow:var(--shadow)
+}
+.steps-progress{
+  position:relative;display:grid;grid-template-columns:repeat(3,1fr);
+  gap:10px;margin-bottom:18px
+}
+.steps-progress::before{
+  content:"";position:absolute;top:17px;left:16.5%;right:16.5%;
+  height:2px;background:rgba(23,79,59,.14)
+}
+.progress-item{
+  position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:7px;
+  color:#7b654d;font-size:.78rem;font-weight:700;cursor:pointer
+}
+.progress-dot{
+  width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  background:#f7e7c1;border:1px solid rgba(77,50,23,.16);color:var(--green);
+  transition:.3s ease
+}
+.progress-item.active .progress-dot{
+  color:#fff;background:linear-gradient(135deg,var(--green),var(--green-2));
+  transform:scale(1.08);box-shadow:0 9px 20px rgba(31,76,57,.18)
+}
+.progress-item.active{color:var(--green)}
+
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step-card{
+  position:relative;overflow:hidden;border-radius:22px;
+  background:rgba(248,239,215,.90);border:1px solid rgba(80,52,24,.13);
+  box-shadow:0 12px 30px rgba(70,43,8,.08);transition:.32s ease
+}
+.step-card:hover{transform:translateY(-5px)}
+.step-media{height:220px;overflow:hidden;background:#e7c98a}
+.step-media img{width:100%;height:100%;object-fit:cover;transition:.5s ease}
+.step-card:hover .step-media img{transform:scale(1.04)}
+.step-content{padding:18px}
+.step-meta{display:flex;gap:12px;align-items:flex-start}
+.step-no{
+  width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--green),var(--green-2));color:#fff;font-weight:900;flex:0 0 auto
+}
+.step-card h3{font-weight:700;margin:2px 0 5px;color:var(--green)}
+.step-card p{font-size:.89rem;margin-bottom:0}
+.step-mobile-controls{display:none}
+.step-arrow{
+  width:42px;height:42px;border-radius:50%;border:1px solid var(--line);
+  background:#f8ebcb;color:var(--green);display:grid;place-items:center;cursor:pointer;
+  box-shadow:0 8px 18px rgba(64,38,5,.08)
+}
+.step-arrow:disabled{opacity:.35;cursor:default}
+
+/* faq */
+.faq{display:grid;gap:10px}
+.faq-item{
+  border-radius:18px;background:rgba(248,238,212,.84);
+  border:1px solid rgba(79,51,23,.13);overflow:hidden
+}
+.faq-q{
+  width:100%;display:flex;justify-content:space-between;align-items:center;
+  padding:18px 20px;border:0;background:transparent;text-align:left;
+  font-weight:760;cursor:pointer;color:var(--green)
+}
+.faq-q span:last-child{font-size:1.2rem;color:#8d602b}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 20px}
+.faq-item.open .faq-a{max-height:220px;padding-bottom:18px}
+.faq-a p{margin:0;font-size:.9rem}
+
+/* CTA */
+.cta{padding-top:22px;padding-bottom:90px}
+.cta-box{
+  display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;
+  padding:34px;border-radius:28px;color:#fff6dc;
+  background:
+    radial-gradient(circle at 90% 18%,rgba(230,189,111,.18),transparent 28%),
+    linear-gradient(135deg,var(--green-3),var(--green));
+  box-shadow:0 22px 48px rgba(31,52,36,.22);
+  border:1px solid rgba(224,189,118,.18)
+}
+.cta-box h2{color:#f6e6bc}
+.cta-box p{color:#e4d4ad;margin:0}
+.cta-box .btn{background:#e9c676;color:#173d2f;border:0}
+
+/* footer */
+footer{
+  background:#143d2f;
+  color:#f6ead0;
+  padding:32px 0;
+  border-top:1px solid rgba(227,190,117,.14)
+}
+.footer-inner{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+.footer-brand{display:flex;align-items:center;gap:12px}
+.footer-brand img{width:48px;height:48px;border-radius:13px;object-fit:cover}
+.footer-brand small{color:#cdbd9d}
+.socials{display:flex;gap:10px}
+.social{
+  width:42px;height:42px;display:grid;place-items:center;border-radius:50%;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  transition:.25s ease
+}
+.social:hover{transform:translateY(-3px);background:rgba(255,255,255,.11)}
+.social svg{width:20px;height:20px}
+
+/* overlays */
+.backdrop{
+  position:fixed;inset:0;background:rgba(28,20,8,.48);backdrop-filter:blur(6px);
+  z-index:80;opacity:0;pointer-events:none;transition:.28s
+}
+.backdrop.open{opacity:1;pointer-events:auto}
+.cart-drawer{
+  position:fixed;top:0;right:0;bottom:0;width:min(430px,100%);
+  background:#f7e7c5;z-index:90;transform:translateX(100%);
+  transition:.32s;display:flex;flex-direction:column;
+  box-shadow:-22px 0 56px rgba(32,19,3,.18)
+}
+.cart-drawer.open{transform:none}
+.cart-head,.cart-foot{padding:18px 20px;border-bottom:1px solid var(--line)}
+.cart-head{display:flex;align-items:center;justify-content:space-between}
+.cart-head h3{margin:0;font-size:1.35rem;color:var(--green)}
+.close-cart,.close-modal{
+  border:0;background:#fff6de;width:38px;height:38px;border-radius:50%;
+  cursor:pointer;box-shadow:0 7px 16px rgba(0,0,0,.08)
+}
+.cart-items{padding:10px 20px 20px;overflow:auto;flex:1}
+.empty-cart{padding:44px 10px;text-align:center;color:var(--muted)}
+.cart-item{
+  display:grid;grid-template-columns:62px 1fr auto;gap:12px;align-items:center;
+  padding:12px 0;border-bottom:1px solid var(--line)
+}
+.cart-item img{width:62px;height:74px;object-fit:contain;background:#e6c47e;border-radius:12px}
+.cart-item h4{margin:0 0 4px;font-size:.92rem;color:var(--green)}
+.cart-item small{color:var(--muted)}
+.qty{display:flex;align-items:center;gap:8px;margin-top:7px}
+.qty button{
+  width:26px;height:26px;border-radius:50%;border:1px solid var(--line);
+  background:#fff6dc;cursor:pointer
+}
+.remove{border:0;background:transparent;color:#8c6b48;font-size:.78rem;cursor:pointer}
+.cart-foot{border-top:1px solid var(--line);border-bottom:0}
+.cart-foot p{font-size:.82rem;margin-bottom:10px}
+.cart-foot .btn{width:100%}
+
+.modal{
+  position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:16px;
+  background:rgba(31,20,8,.56);backdrop-filter:blur(8px)
+}
+.modal.open{display:grid}
+.modal-card{
+  position:relative;width:min(980px,100%);max-height:88vh;overflow:auto;
+  display:grid;grid-template-columns:.85fr 1.15fr;border-radius:26px;
+  background:#f7e6c3;box-shadow:0 30px 80px rgba(0,0,0,.24);
+  border:1px solid rgba(85,55,25,.14)
+}
+.modal-art{
+  min-height:460px;display:grid;place-items:center;
+  background:linear-gradient(180deg,#f2dba6,#c68e46);padding:20px
+}
+.modal-art img{max-height:430px;object-fit:contain;filter:drop-shadow(0 20px 14px rgba(48,25,0,.16))}
+.modal-copy{padding:34px}
+.modal-copy .summary{font-size:.95rem}
+.detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}
+.detail-chip{
+  display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:14px;
+  background:#f9edd0;border:1px solid var(--line)
+}
+.detail-chip .ico{font-size:1.1rem}
+.detail-chip strong{display:block;font-size:.84rem;color:var(--green)}
+.detail-chip span{font-size:.78rem;color:var(--muted)}
+.ingredient-list{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.ingredient-badge{
+  padding:7px 10px;border-radius:999px;background:#e3c37f;color:#174f3b;
+  font-size:.76rem;font-weight:800
+}
+
+.wa-float{
+  position:fixed;right:16px;bottom:16px;z-index:55;width:54px;height:54px;
+  border-radius:50%;display:grid;place-items:center;background:#1f9f56;color:#fff;
+  box-shadow:0 14px 34px rgba(0,0,0,.17);transition:.25s ease
+}
+.wa-float:hover{transform:translateY(-4px) scale(1.02)}
+.wa-float svg{width:26px;height:26px}
+
+/* reveal + decorative motion */
+[data-reveal]{
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .7s ease,transform .7s ease
+}
+[data-reveal].visible{opacity:1;transform:none}
+
+.floating-leaf{
+  position:absolute;
+  width:90px;
+  height:160px;
+  border-radius:80% 0 80% 0;
+  background:linear-gradient(180deg,rgba(23,79,59,.10),rgba(23,79,59,.03));
+  filter:blur(.2px);
+  pointer-events:none;
+  animation:leafFloat 7s ease-in-out infinite
+}
+.leaf-a{left:-20px;top:15%;transform:rotate(-18deg)}
+.leaf-b{right:-30px;bottom:10%;transform:rotate(22deg);animation-delay:1.5s}
+@keyframes leafFloat{
+  0%,100%{translate:0 0}
+  50%{translate:0 -12px}
+}
+
+@media(max-width:980px){
+  .product-grid,.ingredient-grid{grid-template-columns:repeat(2,1fr)}
+  .results-top,.modal-card,.cta-box{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:repeat(3,1fr)}
+  .step-media{height:185px}
+  .cta-box{text-align:center}
+  .cta-box .btn{justify-self:center}
+}
+
+@media(max-width:640px){
+  .container{width:min(var(--max),calc(100% - 24px))}
+  section{padding:58px 0}
+  h1{font-size:2.4rem}
+  h2{font-size:1.9rem}
+  .section-head{margin-bottom:24px}
+  .kicker{font-size:.69rem}
+
+  .topbar-inner{min-height:64px}
+  .brand img{width:40px;height:40px}
+  .brand strong{font-size:.9rem}
+  .brand small{font-size:.69rem}
+  .icon-btn{width:40px;height:40px}
+
+  .hero-media{min-height:330px}
+  .hero-media img{object-position:64% center}
+  .hero-note{bottom:10px;gap:5px;width:94%}
+  .hero-pill{font-size:.62rem;padding:6px 8px}
+
+  .trust-grid{grid-template-columns:repeat(2,1fr);gap:9px}
+  .trust-card{padding:10px}
+  .trust-icon{width:36px;height:36px}
+  .trust-card strong{font-size:.81rem}
+  .trust-card span{font-size:.67rem}
+
+  .product-grid{
+    display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+    scrollbar-width:none;padding:2px 2px 8px
+  }
+  .product-grid::-webkit-scrollbar{display:none}
+  .product-card{flex:0 0 88%;scroll-snap-align:center}
+  .mobile-carousel-dots{display:flex}
+  .gallery{height:275px}
+  .product-body p{min-height:auto}
+
+  .ingredient-grid{
+    display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+    scrollbar-width:none;padding-bottom:8px
+  }
+  .ingredient-grid::-webkit-scrollbar{display:none}
+  .ingredient-card{flex:0 0 82%;scroll-snap-align:center}
+  .ingredient-image{aspect-ratio:1.35/1}
+
+  .results-shell{padding:15px}
+  .before-card{flex-basis:92%}
+  .results-copy p{font-size:.89rem}
+
+  .steps-wrap{padding:14px;border-radius:24px}
+  .steps-progress{margin-bottom:14px}
+  .steps-progress::before{left:17%;right:17%;top:15px}
+  .progress-dot{width:32px;height:32px;font-size:.8rem}
+  .progress-item{font-size:.68rem}
+
+  .steps-grid{
+    display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+    scrollbar-width:none;padding:2px 1px 4px
+  }
+  .steps-grid::-webkit-scrollbar{display:none}
+  .step-card{flex:0 0 94%;scroll-snap-align:center;border-radius:20px}
+  .step-media{height:210px}
+  .step-content{padding:16px}
+  .step-card h3{font-size:1.02rem}
+  .step-card p{font-size:.86rem}
+
+  .step-mobile-controls{
+    display:flex;align-items:center;justify-content:space-between;margin-top:14px
+  }
+  .step-hint{color:#715b3f;font-size:.74rem;font-weight:650}
+
+  .faq-q{padding:16px;font-size:.9rem}
+  .faq-a{padding:0 16px}
+  .faq-item.open .faq-a{padding-bottom:16px}
+
+  .footer-inner{grid-template-columns:1fr;text-align:center}
+  .footer-brand,.socials{justify-content:center}
+
+  .modal{padding:10px}
+  .modal-card{border-radius:20px}
+  .modal-art{min-height:260px}
+  .modal-art img{max-height:250px}
+  .modal-copy{padding:24px 18px}
+  .detail-grid{grid-template-columns:1fr}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  [data-reveal]{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="brand">
+      <img src="assets/logo.png" alt="Mystic Hair Tonic logo">
+      <div>
+        <strong>Mystic Hair Tonic</strong>
+        <small>Professional Hair & Scalp Care</small>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="icon-btn" id="openCart" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L21 7H7"/>
+          <circle cx="10" cy="20" r="1.1"/>
+          <circle cx="18" cy="20" r="1.1"/>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-media">
+    <img src="assets/hero-banner.png" alt="Mystic Hair Tonic collection">
+    <div class="hero-overlay"></div>
+    <div class="hero-note">
+      <div class="hero-pill">4 targeted formulas</div>
+      <div class="hero-pill">100ml spray bottles</div>
+      <div class="hero-pill">Scalp & hair care</div>
+      <div class="hero-pill">Easy daily routine</div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="container trust-grid">
+    <div class="trust-card">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M12 21c5-3 8-7 8-12-4 0-7-2-8-5-1 3-4 5-8 5 0 5 3 9 8 12z"/>
+        </svg>
+      </div>
+      <div><strong>Gentle care</strong><span>For everyday scalp routines</span></div>
+    </div>
+
+    <div class="trust-card">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M7 3h10v4l-2 3v8a3 3 0 0 1-6 0v-8L7 7V3z"/>
+          <path d="M9 3h6"/>
+        </svg>
+      </div>
+      <div><strong>4 formulas</strong><span>Different hair-care focuses</span></div>
+    </div>
+
+    <div class="trust-card">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M5 12l4 4L19 6"/>
+        </svg>
+      </div>
+      <div><strong>Simple routine</strong><span>Spray, massage, continue</span></div>
+    </div>
+
+    <div class="trust-card">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M12 3l1.7 4.6L18 9.3l-4.3 1.7L12 15.6 10.3 11 6 9.3l4.3-1.7L12 3z"/>
+        </svg>
+      </div>
+      <div><strong>Hair-focused care</strong><span>Moisture, roots, scalp, shine</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="products">
+  <span class="floating-leaf leaf-a"></span>
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <div class="kicker">Our Products</div>
+      <h2>Four targeted formulas</h2>
+      <p>Choose the formula that best matches your scalp and hair-care preference.</p>
+    </div>
+
+    <div class="product-grid" id="productTrack">
+
+      <article class="product-card" data-id="amino" data-reveal>
+        <div class="gallery" data-gallery>
+          <div class="gallery-slides">
+            <div class="gallery-slide active"><img src="assets/Amino-Peptide-Hair-Tonic.png" alt="Amino Peptide Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Amino-Peptide-Hair-Tonic-2.png" alt="Amino Peptide Hair Tonic image 2"></div>
+            <div class="gallery-slide"><img src="assets/Amino-Peptide-Hair-Tonic-3.png" alt="Amino Peptide Hair Tonic image 3"></div>
+            <div class="gallery-slide"><img src="assets/Amino-Peptide-Hair-Tonic-4.png" alt="Amino Peptide Hair Tonic image 4"></div>
+          </div>
+          <div class="gallery-nav"><div class="gcount">1 / 4</div></div>
+        </div>
+        <div class="product-body">
+          <small>Healthy Hair / Scalp</small>
+          <h3>Amino Peptide Hair Tonic</h3>
+          <p>Healthy hair and scalp care with a rich blending of amino acids.</p>
+          <div class="product-actions">
+            <button class="btn btn-primary" data-details="amino">View Details</button>
+            <button class="btn details-btn" data-add="amino" aria-label="Add Amino Peptide Hair Tonic to cart">+</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="ginseng" data-reveal>
+        <div class="gallery" data-gallery>
+          <div class="gallery-slides">
+            <div class="gallery-slide active"><img src="assets/Ginseng-Hair-Tonic.png" alt="Ginseng Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-2.png" alt="Ginseng Hair Tonic image 2"></div>
+            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-3.png" alt="Ginseng Hair Tonic image 3"></div>
+            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-4.png" alt="Ginseng Hair Tonic image 4"></div>
+          </div>
+          <div class="gallery-nav"><div class="gcount">1 / 4</div></div>
+        </div>
+        <div class="product-body">
+          <small>Promote Hair Growth</small>
+          <h3>Ginseng Hair Tonic</h3>
+          <p>Panax Ginseng Extract-focused care for hair roots and a healthy-looking scalp.</p>
+          <div class="product-actions">
+            <button class="btn btn-primary" data-details="ginseng">View Details</button>
+            <button class="btn details-btn" data-add="ginseng" aria-label="Add Ginseng Hair Tonic to cart">+</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="yogurt" data-reveal>
+        <div class="gallery" data-gallery>
+          <div class="gallery-slides">
+            <div class="gallery-slide active"><img src="assets/Yogurt-Hair-Tonic.png" alt="Yogurt Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-2.png" alt="Yogurt Hair Tonic image 2"></div>
+            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-3.png" alt="Yogurt Hair Tonic image 3"></div>
+            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-4.png" alt="Yogurt Hair Tonic image 4"></div>
+          </div>
+          <div class="gallery-nav"><div class="gcount">1 / 4</div></div>
+        </div>
+        <div class="product-body">
+          <small>Extra Moisture & Shine</small>
+          <h3>Yogurt Hair Tonic</h3>
+          <p>Moisture-focused care for the scalp and softer, smoother, shinier-looking hair.</p>
+          <div class="product-actions">
+            <button class="btn btn-primary" data-details="yogurt">View Details</button>
+            <button class="btn details-btn" data-add="yogurt" aria-label="Add Yogurt Hair Tonic to cart">+</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" data-id="protein" data-reveal>
+        <div class="gallery" data-gallery>
+          <div class="gallery-slides">
+            <div class="gallery-slide active"><img src="assets/Hydrolyzed-Protein-Hair-Tonic.png" alt="Hydrolyzed Protein Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-2.png" alt="Hydrolyzed Protein Hair Tonic image 2"></div>
+            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-3.png" alt="Hydrolyzed Protein Hair Tonic image 3"></div>
+            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-4.png" alt="Hydrolyzed Protein Hair Tonic image 4"></div>
+          </div>
+          <div class="gallery-nav"><div class="gcount">1 / 4</div></div>
+        </div>
+        <div class="product-body">
+          <small>Dandruff & Root Care</small>
+          <h3>Hydrolyzed Protein Hair Tonic</h3>
+          <p>Soluble protein-focused care for nourishment, hair roots and scalp freshness.</p>
+          <div class="product-actions">
+            <button class="btn btn-primary" data-details="protein">View Details</button>
+            <button class="btn details-btn" data-add="protein" aria-label="Add Hydrolyzed Protein Hair Tonic to cart">+</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <div class="mobile-carousel-dots" id="mobileCarouselDots"></div>
+  </div>
+</section>
+
+<section>
+  <span class="floating-leaf leaf-b"></span>
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <div class="kicker">Key Ingredients</div>
+      <h2>Botanical and care-focused ingredients</h2>
+      <p>A closer look at the ingredient direction behind each formula.</p>
+    </div>
+
+    <div class="ingredient-grid">
+      <article class="ingredient-card" data-reveal>
+        <div class="ingredient-image"><img src="assets/ginseng-ingredients.png" alt="Ginseng ingredients"></div>
+        <h3>Ginseng Extract</h3>
+        <p>Used in the Ginseng formula for hair-root and scalp-focused care.</p>
+      </article>
+
+      <article class="ingredient-card" data-reveal>
+        <div class="ingredient-image"><img src="assets/yogurt-ingredients.png" alt="Yogurt ingredients"></div>
+        <h3>Yogurt Extract</h3>
+        <p>Moisture-focused care for softer, smoother and shinier-looking hair.</p>
+      </article>
+
+      <article class="ingredient-card" data-reveal>
+        <div class="ingredient-image"><img src="assets/amino-ingredients.png" alt="Amino peptide ingredients"></div>
+        <h3>Amino Peptides</h3>
+        <p>A nutrient-rich amino acid blend for healthy-looking hair and scalp.</p>
+      </article>
+
+      <article class="ingredient-card" data-reveal>
+        <div class="ingredient-image"><img src="assets/hydrolyzed-ingredients.png" alt="Hydrolyzed protein ingredients"></div>
+        <h3>Hydrolyzed Protein</h3>
+        <p>Protein-focused nourishment for stronger-looking, lustrous hair.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="results-shell ornament-shell" data-reveal>
+      <div class="results-top">
+        <div class="results-copy">
+          <div class="kicker">Before & After</div>
+          <h2>See the difference clearly</h2>
+          <p>Swipe through the supplied comparison images to view each result comfortably.</p>
+          <div class="results-note">Individual results may vary.</div>
+        </div>
+
+        <div class="before-track" id="beforeTrack">
+          <div class="before-card">
+            <img src="assets/before-after-1.jpeg" alt="Before and after comparison 1">
+            <div class="caption">Before / After 01</div>
+          </div>
+          <div class="before-card">
+            <img src="assets/before-after-2.jpeg" alt="Before and after comparison 2">
+            <div class="caption">Before / After 02</div>
+          </div>
+          <div class="before-card">
+            <img src="assets/before-after-3.jpeg" alt="Before and after comparison 3">
+            <div class="caption">Before / After 03</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <div class="kicker">How to Use</div>
+      <h2>3 simple steps</h2>
+      <p>A quick routine designed to stay clean, clear and easy to follow.</p>
+    </div>
+
+    <div class="steps-wrap ornament-shell" data-reveal>
+      <div class="steps-progress">
+        <div class="progress-item active" data-step-progress="0">
+          <div class="progress-dot">1</div><span>Towel Dry</span>
+        </div>
+        <div class="progress-item" data-step-progress="1">
+          <div class="progress-dot">2</div><span>Apply Tonic</span>
+        </div>
+        <div class="progress-item" data-step-progress="2">
+          <div class="progress-dot">3</div><span>Massage</span>
+        </div>
+      </div>
+
+      <div class="steps-grid" id="stepsTrack">
+        <article class="step-card">
+          <div class="step-media"><img src="assets/step-1.png" alt="Step 1 towel dry hair"></div>
+          <div class="step-content">
+            <div class="step-meta">
+              <div class="step-no">1</div>
+              <div><h3>Towel dry</h3><p>After shampooing, gently towel dry your hair.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="step-card">
+          <div class="step-media"><img src="assets/step-2.png" alt="Step 2 apply tonic"></div>
+          <div class="step-content">
+            <div class="step-meta">
+              <div class="step-no">2</div>
+              <div><h3>Apply tonic</h3><p>Spray the tonic directly onto the scalp.</p></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="step-card">
+          <div class="step-media"><img src="assets/step-3.png" alt="Step 3 massage scalp gently"></div>
+          <div class="step-content">
+            <div class="step-meta">
+              <div class="step-no">3</div>
+              <div><h3>Massage gently</h3><p>Massage for around 1–3 minutes to help spread the tonic evenly.</p></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="step-mobile-controls">
+        <button class="step-arrow" id="stepPrev" aria-label="Previous step">←</button>
+        <div class="step-hint" id="stepHint">Step 1 of 3 · Swipe to continue</div>
+        <button class="step-arrow" id="stepNext" aria-label="Next step">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <div class="kicker">Good to Know</div>
+      <h2>Common questions</h2>
+      <p>Quick answers before you choose your tonic.</p>
+    </div>
+
+    <div class="faq" data-reveal>
+      <div class="faq-item">
+        <button class="faq-q"><span>Which formula should I choose?</span><span>+</span></button>
+        <div class="faq-a"><p>Choose Ginseng for root-focused care, Yogurt for moisture and shine, Amino Peptide for healthy hair/scalp care, and Hydrolyzed Protein for protein-focused nourishment and dandruff/root care.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q"><span>How do I use the tonic?</span><span>+</span></button>
+        <div class="faq-a"><p>After shampooing, towel dry your hair, spray the tonic onto the scalp, then massage gently for about 1–3 minutes.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q"><span>Can I add more than one tonic to my order?</span><span>+</span></button>
+        <div class="faq-a"><p>Yes. Add any combination to the cart and the complete order list will be prepared for WhatsApp confirmation.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q"><span>How do I confirm price and availability?</span><span>+</span></button>
+        <div class="faq-a"><p>Use the cart and continue to WhatsApp. Milly can confirm the latest price, stock and order details.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-box" data-reveal>
+      <div>
+        <div class="kicker" style="color:#e5c171">Ready to Order</div>
+        <h2>Choose your tonic and confirm on WhatsApp</h2>
+        <p>Add your preferred formulas to the cart, adjust the quantity, then send the complete order list to Milly.</p>
+      </div>
+      <button class="btn" onclick="openCart()">Open Cart</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="Mystic Hair Tonic logo">
+      <div>
+        <strong>Mystic Hair Tonic</strong>
+        <small>Milly · 018-320 9081</small>
+      </div>
+    </div>
+
+    <div class="socials">
+      <a class="social" href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+
+      <a class="social" href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13.7 21v-7h2.35l.35-2.73h-2.7V9.53c0-.79.22-1.33 1.36-1.33h1.45V5.76c-.25-.03-1.11-.11-2.11-.11-2.09 0-3.52 1.28-3.52 3.62v2h-2.36V14h2.36v7h2.82z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float"
+   href="https://wa.me/60183209081?text=Hi%20Milly%2C%20I%20would%20like%20to%20know%20more%20about%20Mystic%20Hair%20Tonic."
+   target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor">
+    <path d="M19.11 17.36c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.14 4.55.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35zM16.04 3.2A12.65 12.65 0 0 0 5.2 22.36L3.5 28.8l6.58-1.73A12.69 12.69 0 1 0 16.04 3.2zm0 22.98c-2.02 0-4-.54-5.72-1.56l-.41-.24-3.9 1.02 1.04-3.8-.27-.42a10.3 10.3 0 1 1 9.26 5z"/>
+  </svg>
+</a>
+
+<div class="backdrop" id="backdrop"></div>
+
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="cart-head">
+    <h3>Your Cart</h3>
+    <button class="close-cart" id="closeCart" aria-label="Close cart">×</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <p>Price and availability can be confirmed with Milly before payment.</p>
+    <button class="btn btn-primary" id="checkoutWhatsapp">Continue to WhatsApp</button>
+  </div>
+</aside>
+
+<div class="modal" id="productModal" aria-hidden="true">
+  <div class="modal-card">
+    <button class="close-modal" id="closeModal" aria-label="Close product details">×</button>
+    <div class="modal-art"><img id="modalImg" src="" alt=""></div>
+
+    <div class="modal-copy">
+      <div class="kicker" id="modalKicker"></div>
+      <h2 id="modalTitle" style="font-size:2rem"></h2>
+      <p class="summary" id="modalDesc"></p>
+
+      <div class="ingredient-list" id="modalIngredients"></div>
+      <div class="detail-grid" id="modalDetails"></div>
+
+      <button class="btn btn-primary" id="modalAddCart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const products={
+  ginseng:{
+    name:'Ginseng Hair Tonic',
+    img:'assets/Ginseng-Hair-Tonic.png',
+    kicker:'Promote hair growth & prevent hair loss',
+    desc:'Ginseng Hair Tonic is empowered with Panax Ginseng Extract, an herbal extract rich in Ginsenoside. The supplied product material states that the active compound supports the hair root, stimulates hair cells and promotes hair growth, while daily usage is beneficial for a healthy, volumized hair look and preventing hair loss.',
+    ingredients:['Panax Ginseng Extract','Ginsenoside','Botanical extracts'],
+    details:[
+      ['🌱','Hair root care','Supports the hair root and healthy-looking scalp'],
+      ['🧬','Hair cell support','Positioned to stimulate hair cells'],
+      ['✨','Healthy volume','Supports a healthier, more volumized look'],
+      ['🛡️','Hair fall care','Positioned to help prevent hair loss']
+    ]
+  },
+  yogurt:{
+    name:'Yogurt Hair Tonic',
+    img:'assets/Yogurt-Hair-Tonic.png',
+    kicker:'Extra moisture & shining hair',
+    desc:'Yogurt Hair Tonic is formulated from Yogurt extract. The supplied product material highlights calcium, phosphorus, zinc, iron and various vitamins to support the hair root, together with extra scalp moisture, shine, stronger-looking strands and softer, smoother hair.',
+    ingredients:['Yogurt Extract','Calcium','Phosphorus','Zinc','Iron','Vitamins'],
+    details:[
+      ['💧','Extra moisture','Adds moisture to the scalp'],
+      ['✨','Shine support','Supports shining, lustrous-looking hair'],
+      ['🧴','Softer feel','Helps hair feel softer and smoother'],
+      ['🛡️','Root care','Supports healthier-looking hair roots']
+    ]
+  },
+  amino:{
+    name:'Amino Peptide Hair Tonic',
+    img:'assets/Amino-Peptide-Hair-Tonic.png',
+    kicker:'Healthy Hair/Scalp & Anti-Aging for Scalp',
+    desc:'Amino Peptide Hair Tonic is formulated with a rich blending of 15 types of amino acids. The supplied product material says the nutrients help slow scalp aging, support melanin cells and promote strong, thick hair shafts while keeping hair and scalp healthy.',
+    ingredients:['15 types of amino acids','Amino peptides','Nutrient blend'],
+    details:[
+      ['🧬','Amino acid blend','Rich blending of 15 types of amino acids'],
+      ['🌿','Scalp care','Supports a healthy-looking scalp'],
+      ['⚫','Melanin support','Positioned to nourish melanin cells'],
+      ['💪','Stronger-looking hair','Supports strong and thick-looking hair shafts']
+    ]
+  },
+  protein:{
+    name:'Hydrolyzed Protein Hair Tonic',
+    img:'assets/Hydrolyzed-Protein-Hair-Tonic.png',
+    kicker:'Reduce Dandruff & Strengthen Hair Root',
+    desc:'Hydrolyzed Protein Hair Tonic is enriched with soluble protein from Natural Soy. The supplied product material highlights nourishment for healthy lustrous hair, stronger hair roots, reduced excessive hair loss, scalp freshness and dandruff care with Zizyphus Joazeiro Bark Extract.',
+    ingredients:['Natural Soy Protein','Hydrolyzed Protein','Zizyphus Joazeiro Bark Extract'],
+    details:[
+      ['🌾','Protein nourishment','Soluble protein from Natural Soy'],
+      ['💪','Root strength','Supports stronger-looking hair roots'],
+      ['🫧','Dandruff care','Positioned to help reduce dandruff'],
+      ['💧','Fresh scalp feel','Supports a fresh and hydrated scalp feel']
+    ]
+  }
+};
+
+/* reveal */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+/* galleries */
+document.querySelectorAll('[data-gallery]').forEach(gallery=>{
+  let slides=[...gallery.querySelectorAll('.gallery-slide')];
+  const count=gallery.querySelector('.gcount');
+  let index=0;
+
+  function setup(){
+    slides=[...gallery.querySelectorAll('.gallery-slide')];
+    if(!slides.length)return;
+    if(index>=slides.length)index=0;
+    slides.forEach((s,i)=>s.classList.toggle('active',i===index));
+    count.textContent=`${index+1} / ${slides.length}`;
+  }
+
+  function show(i){
+    if(!slides.length)return;
+    index=(i+slides.length)%slides.length;
+    slides.forEach((s,j)=>s.classList.toggle('active',j===index));
+    count.textContent=`${index+1} / ${slides.length}`;
+  }
+
+  slides.forEach(slide=>{
+    slide.querySelector('img').addEventListener('error',()=>{
+      slide.remove();
+      setup();
+    },{once:true});
+  });
+
+  let startX=0;
+  gallery.addEventListener('touchstart',e=>startX=e.touches[0].clientX,{passive:true});
+  gallery.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-startX;
+    if(Math.abs(dx)>35)show(index+(dx<0?1:-1));
+  },{passive:true});
+
+  setup();
+});
+
+/* mobile products */
+const track=document.getElementById('productTrack');
+const cards=[...track.querySelectorAll('.product-card')];
+const mdots=document.getElementById('mobileCarouselDots');
+
+cards.forEach((_,i)=>{
+  const b=document.createElement('button');
+  b.className=i===0?'active':'';
+  b.setAttribute('aria-label','Product '+(i+1));
+  b.addEventListener('click',()=>{
+    cards[i].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+  });
+  mdots.appendChild(b);
+});
+
+function updateDots(){
+  if(innerWidth>640)return 0;
+  const center=track.scrollLeft+track.clientWidth/2;
+  let best=0,dist=Infinity;
+  cards.forEach((c,i)=>{
+    const cc=c.offsetLeft+c.clientWidth/2;
+    const d=Math.abs(cc-center);
+    if(d<dist){dist=d;best=i}
+  });
+  [...mdots.children].forEach((d,i)=>d.classList.toggle('active',i===best));
+  return best;
+}
+track.addEventListener('scroll',()=>requestAnimationFrame(updateDots));
+
+/* step interaction */
+const stepsTrack=document.getElementById('stepsTrack');
+const stepCards=[...stepsTrack.querySelectorAll('.step-card')];
+const progressItems=[...document.querySelectorAll('[data-step-progress]')];
+const stepPrev=document.getElementById('stepPrev');
+const stepNext=document.getElementById('stepNext');
+const stepHint=document.getElementById('stepHint');
+let activeStep=0;
+
+function setActiveStep(index,scroll=true){
+  activeStep=Math.max(0,Math.min(stepCards.length-1,index));
+  progressItems.forEach((item,i)=>item.classList.toggle('active',i===activeStep));
+
+  if(stepHint){
+    stepHint.textContent=`Step ${activeStep+1} of ${stepCards.length} · Swipe to continue`;
+  }
+
+  if(stepPrev)stepPrev.disabled=activeStep===0;
+  if(stepNext)stepNext.disabled=activeStep===stepCards.length-1;
+
+  if(scroll && innerWidth<=640){
+    const target=stepCards[activeStep];
+    stepsTrack.scrollTo({
+      left:target.offsetLeft-stepsTrack.offsetLeft,
+      behavior:'smooth'
+    });
+  }
+}
+function detectActiveStep(){
+  if(innerWidth>640)return;
+  const center=stepsTrack.scrollLeft+stepsTrack.clientWidth/2;
+  let best=0,dist=Infinity;
+  stepCards.forEach((card,i)=>{
+    const cardCenter=card.offsetLeft+card.clientWidth/2;
+    const d=Math.abs(cardCenter-center);
+    if(d<dist){dist=d;best=i}
+  });
+  if(best!==activeStep)setActiveStep(best,false);
+}
+stepsTrack.addEventListener('scroll',()=>requestAnimationFrame(detectActiveStep));
+stepPrev.addEventListener('click',()=>setActiveStep(activeStep-1));
+stepNext.addEventListener('click',()=>setActiveStep(activeStep+1));
+progressItems.forEach((item,i)=>item.addEventListener('click',()=>setActiveStep(i)));
+
+let stepStartX=0;
+stepsTrack.addEventListener('touchstart',e=>stepStartX=e.touches[0].clientX,{passive:true});
+stepsTrack.addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-stepStartX;
+  if(Math.abs(dx)>45)setActiveStep(activeStep+(dx<0?1:-1));
+},{passive:true});
+setActiveStep(0,false);
+
+/* product modal */
+const modal=document.getElementById('productModal');
+let currentProduct=null;
+
+document.querySelectorAll('[data-details]').forEach(btn=>{
+  btn.addEventListener('click',()=>openProduct(btn.dataset.details));
+});
+
+function openProduct(id){
+  currentProduct=id;
+  const p=products[id];
+
+  document.getElementById('modalImg').src=p.img;
+  document.getElementById('modalImg').alt=p.name;
+  document.getElementById('modalKicker').textContent=p.kicker;
+  document.getElementById('modalTitle').textContent=p.name;
+  document.getElementById('modalDesc').textContent=p.desc;
+  document.getElementById('modalIngredients').innerHTML=
+    p.ingredients.map(x=>`<span class="ingredient-badge">${x}</span>`).join('');
+  document.getElementById('modalDetails').innerHTML=
+    p.details.map(x=>`
+      <div class="detail-chip">
+        <div class="ico">${x[0]}</div>
+        <div><strong>${x[1]}</strong><span>${x[2]}</span></div>
+      </div>
+    `).join('');
+
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+
+function closeModal(){
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
+
+document.getElementById('closeModal').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+
+/* cart */
+const cart={};
+const drawer=document.getElementById('cartDrawer');
+const backdrop=document.getElementById('backdrop');
+const cartItems=document.getElementById('cartItems');
+const cartCount=document.getElementById('cartCount');
+
+function openCart(){
+  drawer.classList.add('open');
+  backdrop.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeCart(){
+  drawer.classList.remove('open');
+  backdrop.classList.remove('open');
+  document.body.style.overflow='';
+}
+window.openCart=openCart;
+
+document.getElementById('openCart').addEventListener('click',openCart);
+document.getElementById('closeCart').addEventListener('click',closeCart);
+backdrop.addEventListener('click',closeCart);
+
+function addItem(id){
+  cart[id]=(cart[id]||0)+1;
+  renderCart();
+  openCart();
+}
+document.querySelectorAll('[data-add]').forEach(btn=>{
+  btn.addEventListener('click',()=>addItem(btn.dataset.add));
+});
+document.getElementById('modalAddCart').addEventListener('click',()=>{
+  if(currentProduct){
+    closeModal();
+    addItem(currentProduct);
+  }
+});
+
+function changeQty(id,d){
+  cart[id]=(cart[id]||0)+d;
+  if(cart[id]<=0)delete cart[id];
+  renderCart();
+}
+function removeItem(id){
+  delete cart[id];
+  renderCart();
+}
+window.changeQty=changeQty;
+window.removeItem=removeItem;
+
+function renderCart(){
+  const ids=Object.keys(cart);
+  cartCount.textContent=ids.reduce((s,id)=>s+cart[id],0);
+
+  if(!ids.length){
+    cartItems.innerHTML='<div class="empty-cart">Your cart is empty.<br>Add a tonic to start your order.</div>';
+    return;
+  }
+
+  cartItems.innerHTML=ids.map(id=>{
+    const p=products[id];
+    return `
+      <div class="cart-item">
+        <img src="${p.img}" alt="${p.name}">
+        <div>
+          <h4>${p.name}</h4>
+          <small>Price to be confirmed</small>
+          <div class="qty">
+            <button onclick="changeQty('${id}',-1)">−</button>
+            <strong>${cart[id]}</strong>
+            <button onclick="changeQty('${id}',1)">+</button>
+          </div>
+        </div>
+        <button class="remove" onclick="removeItem('${id}')">Remove</button>
+      </div>
+    `;
+  }).join('');
+}
+
+document.getElementById('checkoutWhatsapp').addEventListener('click',()=>{
+  const ids=Object.keys(cart);
+
+  if(!ids.length){
+    alert('Your cart is empty.');
+    return;
+  }
+
+  const lines=['Hi Milly, I would like to confirm this Mystic Hair Tonic order:',''];
+  ids.forEach((id,i)=>{
+    lines.push(`${i+1}. ${products[id].name} x ${cart[id]}`);
+  });
+  lines.push('','Please confirm the price, stock and order details. Thank you.');
+
+  window.open(
+    'https://wa.me/60183209081?text='+encodeURIComponent(lines.join('\n')),
+    '_blank'
+  );
+});
+
+/* faq */
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    item.classList.toggle('open');
+    q.lastElementChild.textContent=item.classList.contains('open')?'−':'+';
+  });
+});
+
+/* subtle desktop parallax */
+window.addEventListener('pointermove',e=>{
+  if(innerWidth<900)return;
+  const x=(e.clientX/innerWidth-.5)*6;
+  const y=(e.clientY/innerHeight-.5)*4;
+  document.querySelectorAll('.floating-leaf').forEach((leaf,i)=>{
+    leaf.style.translate=`${x*(i?-.6:.6)}px ${y*(i?-.5:.5)}px`;
+  });
+});
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    closeModal();
+    closeCart();
+  }
+});
+
+renderCart();
+</script>
+
+</body>
+</html>
