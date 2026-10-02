@@ -2327,6 +2327,86 @@ section{padding:72px 0!important}
   }
 }
 
+
+/* ===== V25 PRODUCT THUMBNAIL / FULL-IMAGE FIX ===== */
+.gallery{
+  height:360px!important;
+  min-height:360px!important;
+  padding:22px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+}
+.gallery-stage{
+  width:100%!important;
+  height:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.gallery img,
+.gallery-stage img,
+.product-image{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  display:block!important;
+  margin:auto!important;
+  transform:none!important;
+}
+.gallery.landscape img,
+.gallery-stage.landscape img{
+  width:100%!important;
+  max-width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+}
+.gallery-nav{
+  z-index:5!important;
+}
+
+/* popup product media also shows the entire selected image */
+.modal-media,
+.modal-image-wrap{
+  overflow:hidden!important;
+}
+.modal-media img,
+.modal-image-wrap img,
+#modalImage{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+
+@media (max-width:760px){
+  .gallery{
+    height:310px!important;
+    min-height:310px!important;
+    padding:16px 18px!important;
+  }
+  .gallery img,
+  .gallery-stage img,
+  .product-image{
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+  }
+}
+@media (max-width:430px){
+  .gallery{
+    height:285px!important;
+    min-height:285px!important;
+    padding:14px 16px!important;
+  }
+}
+
 </style>
 </head>
 
@@ -2961,22 +3041,10 @@ const products={
 };
 
 const productImages={
-  amino:[
-    'assets/Amino-Peptide%20Hair-Tonic.png?v=18',
-    'assets/Amino-Peptide%20Hair-Tonic-2.png?v=18'
-  ],
-  ginseng:[
-    'assets/Ginseng-Hair-Tonic.png?v=18',
-    'assets/Ginseng-Hair-Tonic-2.png?v=18'
-  ],
-  yogurt:[
-    'assets/Yogurt-Hair-Tonic.png?v=18',
-    'assets/Yogurt-Hair-Tonic-2.png?v=18'
-  ],
-  protein:[
-    'assets/Hydrolyzed-Protein-Hair-Tonic.png?v=18',
-    'assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=18'
-  ]
+  amino:['assets/Amino-Peptide%20Hair-Tonic-thumbnail.png', 'assets/Amino-Peptide%20Hair-Tonic.png?v=18', 'assets/Amino-Peptide%20Hair-Tonic-2.png?v=18'],
+  ginseng:['assets/Ginseng-Hair-Tonic-thumbnail.png', 'assets/Ginseng-Hair-Tonic.png?v=18', 'assets/Ginseng-Hair-Tonic-2.png?v=18'],
+  yogurt:['assets/Yogurt-Hair-Tonic-thumbnail.png', 'assets/Yogurt-Hair-Tonic.png?v=18', 'assets/Yogurt-Hair-Tonic-2.png?v=18'],
+  protein:['assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png', 'assets/Hydrolyzed-Protein-Hair-Tonic.png?v=18', 'assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=18']
 };
 
 let currentModalImageIndex=0;
