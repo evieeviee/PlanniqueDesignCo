@@ -1891,6 +1891,109 @@ footer{padding:24px 0!important}
   }
 }
 
+
+/* ===== thumbnail-first + responsive image sizing ===== */
+.product-card .gallery{
+  height:340px!important;
+  min-height:340px!important;
+  overflow:hidden!important;
+  background:linear-gradient(180deg,#f8e9c5 0%,#efd5a2 100%)!important;
+}
+.product-card .gallery-slide{
+  position:absolute!important;
+  inset:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:18px 26px 28px!important;
+  overflow:hidden!important;
+}
+.product-card .gallery-slide img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:90%!important;
+  max-height:90%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  margin:auto!important;
+  padding:0!important;
+  transform:none!important;
+}
+.product-card .gallery-slide img.is-landscape{
+  width:100%!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:86%!important;
+}
+.product-card .gallery-slide img.is-portrait{
+  width:auto!important;
+  height:auto!important;
+  max-width:76%!important;
+  max-height:92%!important;
+}
+
+/* thumbnails should use the frame comfortably */
+.product-card .gallery-slide:first-child img{
+  width:100%!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:88%!important;
+  object-fit:contain!important;
+}
+
+/* popup also always shows complete image */
+.modal-art img{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  padding:18px!important;
+}
+
+@media(max-width:640px){
+  .product-card .gallery{
+    height:285px!important;
+    min-height:285px!important;
+    max-height:285px!important;
+  }
+  .product-card .gallery-slide{
+    padding:12px 18px 22px!important;
+  }
+  .product-card .gallery-slide img.is-landscape,
+  .product-card .gallery-slide:first-child img{
+    width:100%!important;
+    max-width:100%!important;
+    max-height:82%!important;
+  }
+  .product-card .gallery-slide img.is-portrait{
+    max-width:68%!important;
+    max-height:92%!important;
+  }
+
+  .modal-art{
+    padding:10px!important;
+  }
+  .modal-art img{
+    width:100%!important;
+    height:100%!important;
+    max-width:100%!important;
+    max-height:100%!important;
+    padding:10px!important;
+    object-fit:contain!important;
+  }
+}
+
+/* keep other content images balanced too */
+.ingredient-image img,
+.step-media img,
+.before-card img,
+.hero-picture img{
+  object-position:center!important;
+}
+
 </style>
 </head>
 
@@ -1992,7 +2095,8 @@ footer{padding:24px 0!important}
       <article class="product-card" data-id="amino" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Amino-Peptide%20Hair-Tonic.png?v=18" alt="Amino Peptide Hair Tonic"></div>
+            <div class="gallery-slide active"><img src="assets/Amino-Peptide%20Hair-Tonic-thumbnail.png" alt="Amino Peptide Hair Tonic thumbnail"></div>
+            <div class="gallery-slide"><img src="assets/Amino-Peptide%20Hair-Tonic.png?v=18" alt="Amino Peptide Hair Tonic"></div>
             <div class="gallery-slide"><img src="assets/Amino-Peptide%20Hair-Tonic-2.png?v=18" alt="Amino Peptide Hair Tonic image 2"></div>
           </div>
           
@@ -2011,7 +2115,8 @@ footer{padding:24px 0!important}
       <article class="product-card" data-id="ginseng" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Ginseng-Hair-Tonic.png?v=18" alt="Ginseng Hair Tonic"></div>
+            <div class="gallery-slide active"><img src="assets/Ginseng-Hair-Tonic-thumbnail.png" alt="Ginseng Hair Tonic thumbnail"></div>
+            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic.png?v=18" alt="Ginseng Hair Tonic"></div>
             <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-2.png?v=18" alt="Ginseng Hair Tonic image 2"></div>
           </div>
           
@@ -2030,7 +2135,8 @@ footer{padding:24px 0!important}
       <article class="product-card" data-id="yogurt" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Yogurt-Hair-Tonic.png?v=18" alt="Yogurt Hair Tonic"></div>
+            <div class="gallery-slide active"><img src="assets/Yogurt-Hair-Tonic-thumbnail.png" alt="Yogurt Hair Tonic thumbnail"></div>
+            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic.png?v=18" alt="Yogurt Hair Tonic"></div>
             <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-2.png?v=18" alt="Yogurt Hair Tonic image 2"></div>
           </div>
           
@@ -2049,7 +2155,8 @@ footer{padding:24px 0!important}
       <article class="product-card" data-id="protein" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Hydrolyzed-Protein-Hair-Tonic.png?v=18" alt="Hydrolyzed Protein Hair Tonic"></div>
+            <div class="gallery-slide active"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png" alt="Hydrolyzed Protein Hair Tonic thumbnail"></div>
+            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic.png?v=18" alt="Hydrolyzed Protein Hair Tonic"></div>
             <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=18" alt="Hydrolyzed Protein Hair Tonic image 2"></div>
           </div>
           
@@ -2403,7 +2510,7 @@ const fallbackImage='assets/Amino-Peptide%20Hair-Tonic.png?v=18';
 const products={
   ginseng:{
     name:'Ginseng Hair Tonic',
-    img:'assets/Ginseng-Hair-Tonic.png?v=18',
+    img:'assets/Ginseng-Hair-Tonic-thumbnail.png',
     kicker:'Promote hair growth & prevent hair loss',
     desc:'Ginseng Hair Tonic is empowered with Panax Ginseng Extract, an herbal extract rich in Ginsenoside. The supplied product material states that the active compound supports the hair root, stimulates hair cells and promotes hair growth, while daily usage is beneficial for a healthy, volumized hair look and preventing hair loss.',
     ingredients:['Panax Ginseng Extract','Ginsenoside','Botanical extracts'],
@@ -2416,7 +2523,7 @@ const products={
   },
   yogurt:{
     name:'Yogurt Hair Tonic',
-    img:'assets/Yogurt-Hair-Tonic.png?v=18',
+    img:'assets/Yogurt-Hair-Tonic-thumbnail.png',
     kicker:'Extra moisture & shining hair',
     desc:'Yogurt Hair Tonic is formulated from Yogurt extract. The supplied product material highlights calcium, phosphorus, zinc, iron and various vitamins to support the hair root, together with extra scalp moisture, shine, stronger-looking strands and softer, smoother hair.',
     ingredients:['Yogurt Extract','Calcium','Phosphorus','Zinc','Iron','Vitamins'],
@@ -2429,7 +2536,7 @@ const products={
   },
   amino:{
     name:'Amino Peptide Hair Tonic',
-    img:'assets/Amino-Peptide%20Hair-Tonic.png?v=18',
+    img:'assets/Amino-Peptide%20Hair-Tonic-thumbnail.png',
     kicker:'Healthy Hair/Scalp & Anti-Aging for Scalp',
     desc:'Amino Peptide Hair Tonic is formulated with a rich blending of 15 types of amino acids. The supplied product material says the nutrients help slow scalp aging, support melanin cells and promote strong, thick hair shafts while keeping hair and scalp healthy.',
     ingredients:['15 types of amino acids','Amino peptides','Nutrient blend'],
@@ -2442,7 +2549,7 @@ const products={
   },
   protein:{
     name:'Hydrolyzed Protein Hair Tonic',
-    img:'assets/Hydrolyzed-Protein-Hair-Tonic.png?v=18',
+    img:'assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png',
     kicker:'Reduce Dandruff & Strengthen Hair Root',
     desc:'Hydrolyzed Protein Hair Tonic is enriched with soluble protein from Natural Soy. The supplied product material highlights nourishment for healthy lustrous hair, stronger hair roots, reduced excessive hair loss, scalp freshness and dandruff care with Zizyphus Joazeiro Bark Extract.',
     ingredients:['Natural Soy Protein','Hydrolyzed Protein','Zizyphus Joazeiro Bark Extract'],
@@ -2458,18 +2565,22 @@ const products={
 
 const productImages={
   amino:[
+    'assets/Amino-Peptide%20Hair-Tonic-thumbnail.png',
     'assets/Amino-Peptide%20Hair-Tonic.png?v=18',
     'assets/Amino-Peptide%20Hair-Tonic-2.png?v=18'
   ],
   ginseng:[
+    'assets/Ginseng-Hair-Tonic-thumbnail.png',
     'assets/Ginseng-Hair-Tonic.png?v=18',
     'assets/Ginseng-Hair-Tonic-2.png?v=18'
   ],
   yogurt:[
+    'assets/Yogurt-Hair-Tonic-thumbnail.png',
     'assets/Yogurt-Hair-Tonic.png?v=18',
     'assets/Yogurt-Hair-Tonic-2.png?v=18'
   ],
   protein:[
+    'assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png',
     'assets/Hydrolyzed-Protein-Hair-Tonic.png?v=18',
     'assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=18'
   ]
@@ -3046,4 +3157,3 @@ renderCart();
 
 </body>
 </html>
-
