@@ -1781,6 +1781,83 @@ footer{padding:24px 0!important}
   }
 }
 
+
+/* ===== v22 FORCE FULL PRODUCT BOTTLE VISIBILITY ===== */
+/* The gallery is a viewing frame. Never let the product image fill/crop the frame. */
+.product-card .gallery{
+  position:relative!important;
+  overflow:hidden!important;
+  display:block!important;
+  background:linear-gradient(180deg,#f8e9c5 0%,#efd5a2 100%)!important;
+}
+
+.product-card .gallery-slides,
+.product-card .gallery-slide{
+  width:100%!important;
+  height:100%!important;
+}
+
+.product-card .gallery-slide{
+  position:absolute!important;
+  inset:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:18px 52px 24px!important;
+  overflow:hidden!important;
+}
+
+.product-card .gallery-slide img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:88%!important;
+  max-height:88%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  margin:auto!important;
+  padding:0!important;
+  transform:none!important;
+}
+
+/* Desktop product viewing frame */
+@media(min-width:641px){
+  .product-card .gallery{
+    height:330px!important;
+    min-height:330px!important;
+  }
+}
+
+/* Mobile product viewing frame — full bottle, compact enough for one screen */
+@media(max-width:640px){
+  .product-card .gallery{
+    height:320px!important;
+    min-height:320px!important;
+    max-height:320px!important;
+  }
+
+  .product-card .gallery-slide{
+    padding:14px 58px 22px!important;
+  }
+
+  .product-card .gallery-slide img{
+    width:auto!important;
+    height:auto!important;
+    max-width:82%!important;
+    max-height:92%!important;
+  }
+
+  /* arrows stay over the empty side space instead of covering the bottle */
+  .product-card .gallery-arrow{
+    top:50%!important;
+    transform:translateY(-50%)!important;
+    width:34px!important;
+    height:40px!important;
+  }
+  .product-card .gallery-arrow.prev{left:10px!important}
+  .product-card .gallery-arrow.next{right:10px!important}
+}
+
 </style>
 </head>
 
