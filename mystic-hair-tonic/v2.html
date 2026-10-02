@@ -1291,6 +1291,251 @@ footer{padding:24px 0!important}
   .gallery-dashes{bottom:8px}
 }
 
+
+/* ===== v14 full hero image ===== */
+.hero,
+.hero-media{
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  padding:0!important;
+  margin:0!important;
+  background:transparent!important;
+}
+.hero-media{
+  display:block!important;
+  line-height:0!important;
+}
+.hero-media img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  margin:0!important;
+  padding:0!important;
+}
+.hero-overlay,
+.hero-note{
+  display:none!important;
+}
+
+
+.gallery-slide img{
+  max-width:100%;
+}
+
+
+/* ===== v15 product detail popup: real product gallery ===== */
+.modal-card{
+  width:min(1120px,calc(100% - 28px))!important;
+  max-height:min(860px,92vh)!important;
+  grid-template-columns:minmax(430px,.92fr) minmax(0,1.08fr)!important;
+  overflow:hidden!important;
+}
+.modal-art{
+  position:relative!important;
+  min-height:0!important;
+  height:100%!important;
+  padding:24px!important;
+  background:
+    radial-gradient(circle at 50% 38%,rgba(255,246,220,.92),rgba(229,185,110,.62) 50%,rgba(194,126,55,.86) 100%)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+}
+.modal-art img{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  filter:drop-shadow(0 18px 24px rgba(63,36,9,.18))!important;
+}
+.modal-art::after{
+  content:"";
+  position:absolute;
+  left:9%;
+  right:9%;
+  bottom:18px;
+  height:18px;
+  border-radius:50%;
+  background:radial-gradient(ellipse,rgba(76,43,10,.18),transparent 68%);
+  filter:blur(6px);
+  pointer-events:none;
+}
+.modal-copy{
+  padding:66px 42px 34px!important;
+  overflow:auto!important;
+  background:linear-gradient(180deg,#f8e8c3,#f2d7a4)!important;
+}
+.modal-copy h2{
+  color:#3b2717!important;
+}
+.modal-product-switcher{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0 0 18px;
+}
+.modal-product-switcher button{
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(76,48,22,.14);
+  background:rgba(255,247,226,.62);
+  color:#4b2f1b;
+  border-radius:8px;
+  cursor:pointer;
+}
+.modal-product-switcher button:hover{
+  background:#f6e1b0;
+}
+.modal-product-position{
+  font-size:.72rem;
+  font-weight:800;
+  color:#8a6037;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+@media(max-width:780px){
+  .modal-card{
+    width:min(96vw,760px)!important;
+    max-height:92vh!important;
+    grid-template-columns:1fr!important;
+    grid-template-rows:minmax(260px,42vh) minmax(0,1fr)!important;
+  }
+  .modal-art{
+    min-height:260px!important;
+    height:auto!important;
+    padding:16px!important;
+  }
+  .modal-art img{
+    width:100%!important;
+    height:100%!important;
+    max-height:38vh!important;
+    object-fit:contain!important;
+  }
+  .modal-copy{
+    padding:28px 18px 26px!important;
+  }
+  .close-modal{
+    top:10px!important;
+    right:10px!important;
+  }
+}
+
+
+/* ===== v15 product cards: full product image visibility ===== */
+.gallery{
+  height:320px!important;
+  background:linear-gradient(180deg,#f8e8c3,#edd09a)!important;
+}
+.gallery-slide{
+  padding:14px 18px!important;
+}
+.gallery-slide img{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+@media(max-width:640px){
+  .gallery{
+    height:285px!important;
+  }
+}
+
+
+.modal-image-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:8;
+  width:40px;
+  height:44px;
+  border:1px solid rgba(73,46,20,.14);
+  background:rgba(249,235,203,.88);
+  color:#4b2e19;
+  border-radius:8px;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(56,31,7,.10);
+}
+.modal-image-arrow.prev{left:14px}
+.modal-image-arrow.next{right:14px}
+.modal-image-arrow:hover{background:#f7dfaa}
+.modal-image-arrow[hidden]{display:none!important}
+.modal-image-dashes{
+  position:absolute;
+  left:50%;
+  bottom:14px;
+  transform:translateX(-50%);
+  z-index:8;
+  display:flex;
+  gap:5px;
+}
+.modal-image-dashes button{
+  width:22px;
+  height:3px;
+  border:0;
+  padding:0;
+  background:rgba(74,44,19,.20);
+  cursor:pointer;
+}
+.modal-image-dashes button.active{
+  width:34px;
+  background:#5a351c;
+}
+
+
+/* ===== v16 manual product gallery only ===== */
+.gallery{
+  cursor:grab;
+}
+.gallery:active{
+  cursor:grabbing;
+}
+.gallery-arrow{
+  opacity:.88!important;
+}
+.gallery:hover .gallery-arrow{
+  opacity:1!important;
+}
+.gallery-dashes{
+  bottom:12px!important;
+}
+.gallery-dashes button{
+  height:3px!important;
+  background:rgba(74,44,19,.22)!important;
+}
+.gallery-dashes button.active{
+  background:#5a351c!important;
+}
+
+
+.footer-wa{
+  display:inline-grid;
+  place-items:center;
+  width:34px;
+  height:34px;
+  margin-top:6px;
+  color:#f3dfb5;
+  border:1px solid rgba(243,223,181,.18);
+  border-radius:50%;
+  transition:.2s ease;
+}
+.footer-wa:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.footer-wa svg{width:18px;height:18px}
+
 </style>
 </head>
 
@@ -1389,10 +1634,8 @@ footer{padding:24px 0!important}
       <article class="product-card" data-id="amino" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Amino-Peptide-Hair-Tonic.png" onerror="this.onerror=null;this.src='assets/Amino-Peptide Hair-Tonic.png';" alt="Amino Peptide Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Amino-Peptide-Hair-Tonic-2.png" onerror="this.onerror=null;this.src='assets/Amino-Peptide Hair-Tonic-2.png';" alt="Amino Peptide Hair Tonic image 2"></div>
-            <div class="gallery-slide"><img src="assets/Amino-Peptide-Hair-Tonic-3.png" onerror="this.onerror=null;this.src='assets/Amino-Peptide Hair-Tonic-3.png';" alt="Amino Peptide Hair Tonic image 3"></div>
-            <div class="gallery-slide"><img src="assets/Amino-Peptide-Hair-Tonic-4.png" onerror="this.onerror=null;this.src='assets/Amino-Peptide Hair-Tonic-4.png';" alt="Amino Peptide Hair Tonic image 4"></div>
+            <div class="gallery-slide active"><img src="assets/Amino-Peptide%20Hair-Tonic.png?v=18" alt="Amino Peptide Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Amino-Peptide%20Hair-Tonic-2.png?v=18" alt="Amino Peptide Hair Tonic image 2"></div>
           </div>
           
         </div>
@@ -1410,10 +1653,8 @@ footer{padding:24px 0!important}
       <article class="product-card" data-id="ginseng" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Ginseng-Hair-Tonic.png" alt="Ginseng Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-2.png" alt="Ginseng Hair Tonic image 2"></div>
-            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-3.png" alt="Ginseng Hair Tonic image 3"></div>
-            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-4.png" alt="Ginseng Hair Tonic image 4"></div>
+            <div class="gallery-slide active"><img src="assets/Ginseng-Hair-Tonic.png?v=18" alt="Ginseng Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-2.png?v=18" alt="Ginseng Hair Tonic image 2"></div>
           </div>
           
         </div>
@@ -1431,10 +1672,8 @@ footer{padding:24px 0!important}
       <article class="product-card" data-id="yogurt" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Yogurt-Hair-Tonic.png" alt="Yogurt Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-2.png" alt="Yogurt Hair Tonic image 2"></div>
-            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-3.png" alt="Yogurt Hair Tonic image 3"></div>
-            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-4.png" alt="Yogurt Hair Tonic image 4"></div>
+            <div class="gallery-slide active"><img src="assets/Yogurt-Hair-Tonic.png?v=18" alt="Yogurt Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-2.png?v=18" alt="Yogurt Hair Tonic image 2"></div>
           </div>
           
         </div>
@@ -1452,10 +1691,8 @@ footer{padding:24px 0!important}
       <article class="product-card" data-id="protein" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Hydrolyzed-Protein-Hair-Tonic.png" alt="Hydrolyzed Protein Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-2.png" alt="Hydrolyzed Protein Hair Tonic image 2"></div>
-            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-3.png" alt="Hydrolyzed Protein Hair Tonic image 3"></div>
-            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-4.png" alt="Hydrolyzed Protein Hair Tonic image 4"></div>
+            <div class="gallery-slide active"><img src="assets/Hydrolyzed-Protein-Hair-Tonic.png?v=18" alt="Hydrolyzed Protein Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=18" alt="Hydrolyzed Protein Hair Tonic image 2"></div>
           </div>
           
         </div>
@@ -1488,28 +1725,28 @@ footer{padding:24px 0!important}
 
     <div class="ingredient-grid">
       <article class="ingredient-card" data-reveal>
-        <div class="ingredient-image"><img src="assets/ginseng-ingredients.png" onerror="this.onerror=null;this.src='assets/Ginseng-Hair-Tonic.png';" alt="Ginseng ingredients"></div>
+        <div class="ingredient-image"><img src="assets/ginseng-ingredients.png" alt="Ginseng ingredients"></div>
         <h3>Ginseng Extract</h3>
         <p>Panax Ginseng with Ginsenoside for root-focused care, scalp vitality and healthier, fuller-looking hair.</p>
         <div class="ingredient-meta"><b>Focus</b><span>Hair roots · scalp · volume</span><b>Key</b><span>Panax Ginseng · Ginsenoside</span></div>
       </article>
 
       <article class="ingredient-card" data-reveal>
-        <div class="ingredient-image"><img src="assets/yogurt-ingredients.png" onerror="this.onerror=null;this.src='assets/Yogurt-Hair-Tonic.png';" alt="Yogurt ingredients"></div>
+        <div class="ingredient-image"><img src="assets/yogurt-ingredients.png" alt="Yogurt ingredients"></div>
         <h3>Yogurt Extract</h3>
         <p>Moisture-rich care with calcium, phosphorus, zinc, iron and vitamins for softer, smoother, shinier-looking hair.</p>
         <div class="ingredient-meta"><b>Focus</b><span>Moisture · softness · shine</span><b>Key</b><span>Calcium · Zinc · Vitamins</span></div>
       </article>
 
       <article class="ingredient-card" data-reveal>
-        <div class="ingredient-image"><img src="assets/amino-ingredients.png" onerror="this.onerror=null;this.src='assets/Amino-Peptide-Hair-Tonic.png';" alt="Amino peptide ingredients"></div>
+        <div class="ingredient-image"><img src="assets/amino-ingredients.png" alt="Amino peptide ingredients"></div>
         <h3>Amino Peptides</h3>
         <p>A blend of 15 amino acids designed for scalp care, melanin support and stronger, thicker-looking hair.</p>
         <div class="ingredient-meta"><b>Focus</b><span>Scalp · strength · thickness</span><b>Key</b><span>15 amino acids · Peptides</span></div>
       </article>
 
       <article class="ingredient-card" data-reveal>
-        <div class="ingredient-image"><img src="assets/hydrolyzed-ingredients.png" onerror="this.onerror=null;this.src='assets/Hydrolyzed-Protein-Hair-Tonic.png';" alt="Hydrolyzed protein ingredients"></div>
+        <div class="ingredient-image"><img src="assets/hydrolyzed-ingredients.png" alt="Hydrolyzed protein ingredients"></div>
         <h3>Hydrolyzed Protein</h3>
         <p>Natural Soy protein with Zizyphus Joazeiro Bark Extract for nourishment, stronger roots and dandruff-focused scalp care.</p>
         <div class="ingredient-meta"><b>Focus</b><span>Roots · scalp freshness · lustre</span><b>Key</b><span>Soy Protein · Joazeiro Bark</span></div>
@@ -1661,7 +1898,9 @@ footer{padding:24px 0!important}
       <img src="assets/logo.png" alt="Mystic Hair Tonic logo">
       <div>
         <strong>Mystic Hair Tonic</strong>
-        <small>Milly · 018-320 9081</small>
+        <a class="footer-wa" href="https://wa.me/60183209081" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.36c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.14 4.55.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35zM16.04 3.2A12.65 12.65 0 0 0 5.2 22.36L3.5 28.8l6.58-1.73A12.69 12.69 0 1 0 16.04 3.2zm0 22.98c-2.02 0-4-.54-5.72-1.56l-.41-.24-3.9 1.02 1.04-3.8-.27-.42a10.3 10.3 0 1 1 9.26 5z"/></svg>
+        </a>
       </div>
     </div>
 
@@ -1708,7 +1947,12 @@ footer{padding:24px 0!important}
 <div class="modal" id="productModal" aria-hidden="true">
   <div class="modal-card">
     <button class="close-modal" id="closeModal" aria-label="Close product details">×</button>
-    <div class="modal-art"><img id="modalImg" src="" alt=""></div>
+    <div class="modal-art">
+      <button class="modal-image-arrow prev" id="modalImagePrev" type="button" aria-label="Previous product image">←</button>
+      <img id="modalImg" src="" alt="">
+      <button class="modal-image-arrow next" id="modalImageNext" type="button" aria-label="Next product image">→</button>
+      <div class="modal-image-dashes" id="modalImageDashes"></div>
+    </div>
 
     <div class="modal-copy">
       <div class="modal-topline"><div class="kicker" id="modalKicker"></div></div>
@@ -1724,11 +1968,58 @@ footer{padding:24px 0!important}
 </div>
 
 <script>
-const fallbackImage='assets/Amino-Peptide-Hair-Tonic.png';
+
+/* ===== v14 robust asset path resolver =====
+   Works if this HTML is in the repo root (assets/file.png)
+   OR if the HTML was accidentally uploaded inside /assets (file.png). */
+(function(){
+  const tried = new WeakMap();
+
+  function alternatePath(src){
+    if(!src) return null;
+
+    // Normalize absolute URLs back to their pathname if needed.
+    let path = src;
+    try{
+      const u = new URL(src, window.location.href);
+      path = u.pathname.replace(/^\/+/, '');
+    }catch(e){}
+
+    // If path contains /assets/, try just the filename.
+    const assetsIndex = path.lastIndexOf('assets/');
+    if(assetsIndex !== -1){
+      return path.slice(assetsIndex + 7);
+    }
+
+    // If already a plain relative filename, try assets/filename.
+    if(!/^https?:/i.test(src) && !src.startsWith('data:') && !src.startsWith('blob:')){
+      return 'assets/' + src.replace(/^\.?\//,'');
+    }
+    return null;
+  }
+
+  document.addEventListener('error', function(e){
+    const img = e.target;
+    if(!(img instanceof HTMLImageElement)) return;
+
+    const count = tried.get(img) || 0;
+    if(count >= 1) return;
+
+    const current = img.getAttribute('src');
+    const alt = alternatePath(current);
+    if(!alt || alt === current) return;
+
+    tried.set(img, count + 1);
+    img.src = alt;
+  }, true);
+})();
+
+
+const fallbackImage='assets/Amino-Peptide%20Hair-Tonic.png?v=18';
 const products={
   ginseng:{
     name:'Ginseng Hair Tonic',
-    img:'assets/Ginseng-Hair-Tonic.png',
+    img:'assets/Ginseng-Hair-Tonic.png?v=18',
     kicker:'Promote hair growth & prevent hair loss',
     desc:'Ginseng Hair Tonic is empowered with Panax Ginseng Extract, an herbal extract rich in Ginsenoside. The supplied product material states that the active compound supports the hair root, stimulates hair cells and promotes hair growth, while daily usage is beneficial for a healthy, volumized hair look and preventing hair loss.',
     ingredients:['Panax Ginseng Extract','Ginsenoside','Botanical extracts'],
@@ -1741,7 +2032,7 @@ const products={
   },
   yogurt:{
     name:'Yogurt Hair Tonic',
-    img:'assets/Yogurt-Hair-Tonic.png',
+    img:'assets/Yogurt-Hair-Tonic.png?v=18',
     kicker:'Extra moisture & shining hair',
     desc:'Yogurt Hair Tonic is formulated from Yogurt extract. The supplied product material highlights calcium, phosphorus, zinc, iron and various vitamins to support the hair root, together with extra scalp moisture, shine, stronger-looking strands and softer, smoother hair.',
     ingredients:['Yogurt Extract','Calcium','Phosphorus','Zinc','Iron','Vitamins'],
@@ -1754,7 +2045,7 @@ const products={
   },
   amino:{
     name:'Amino Peptide Hair Tonic',
-    img:'assets/Amino-Peptide Hair-Tonic.png',
+    img:'assets/Amino-Peptide%20Hair-Tonic.png?v=18',
     kicker:'Healthy Hair/Scalp & Anti-Aging for Scalp',
     desc:'Amino Peptide Hair Tonic is formulated with a rich blending of 15 types of amino acids. The supplied product material says the nutrients help slow scalp aging, support melanin cells and promote strong, thick hair shafts while keeping hair and scalp healthy.',
     ingredients:['15 types of amino acids','Amino peptides','Nutrient blend'],
@@ -1767,7 +2058,7 @@ const products={
   },
   protein:{
     name:'Hydrolyzed Protein Hair Tonic',
-    img:'assets/Hydrolyzed-Protein-Hair-Tonic.png',
+    img:'assets/Hydrolyzed-Protein-Hair-Tonic.png?v=18',
     kicker:'Reduce Dandruff & Strengthen Hair Root',
     desc:'Hydrolyzed Protein Hair Tonic is enriched with soluble protein from Natural Soy. The supplied product material highlights nourishment for healthy lustrous hair, stronger hair roots, reduced excessive hair loss, scalp freshness and dandruff care with Zizyphus Joazeiro Bark Extract.',
     ingredients:['Natural Soy Protein','Hydrolyzed Protein','Zizyphus Joazeiro Bark Extract'],
@@ -1778,7 +2069,29 @@ const products={
       ['💧','Fresh scalp feel','Supports a fresh and hydrated scalp feel']
     ]
   }
+
 };
+
+const productImages={
+  amino:[
+    'assets/Amino-Peptide%20Hair-Tonic.png?v=18',
+    'assets/Amino-Peptide%20Hair-Tonic-2.png?v=18'
+  ],
+  ginseng:[
+    'assets/Ginseng-Hair-Tonic.png?v=18',
+    'assets/Ginseng-Hair-Tonic-2.png?v=18'
+  ],
+  yogurt:[
+    'assets/Yogurt-Hair-Tonic.png?v=18',
+    'assets/Yogurt-Hair-Tonic-2.png?v=18'
+  ],
+  protein:[
+    'assets/Hydrolyzed-Protein-Hair-Tonic.png?v=18',
+    'assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=18'
+  ]
+};
+
+let currentModalImageIndex=0;
 
 /* reveal */
 const io=new IntersectionObserver(entries=>{
@@ -1791,11 +2104,10 @@ const io=new IntersectionObserver(entries=>{
 },{threshold:.12});
 document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
 
-/* product image galleries: swipe + arrows + auto-rotate */
+/* product image galleries: MANUAL ONLY — no auto changing */
 document.querySelectorAll('[data-gallery]').forEach(gallery=>{
   let slides=[...gallery.querySelectorAll('.gallery-slide')];
   let index=0;
-  let timer=null;
   let startX=0;
   let mouseDown=false;
   let mouseStartX=0;
@@ -1814,33 +2126,25 @@ document.querySelectorAll('[data-gallery]').forEach(gallery=>{
 
   const dashes=document.createElement('div');
   dashes.className='gallery-dashes';
-
   gallery.append(prev,next,dashes);
 
   function rebuild(){
     slides=[...gallery.querySelectorAll('.gallery-slide')];
     gallery.dataset.single=slides.length<=1?'true':'false';
     if(index>=slides.length) index=0;
-
     dashes.innerHTML='';
     slides.forEach((_,i)=>{
       const dot=document.createElement('button');
       dot.type='button';
       dot.setAttribute('aria-label',`Show product image ${i+1}`);
       dot.className=i===index?'active':'';
-      dot.addEventListener('click',e=>{
-        e.stopPropagation();
-        show(i);
-        restart();
-      });
+      dot.addEventListener('click',e=>{e.stopPropagation();show(i);});
       dashes.appendChild(dot);
     });
-
     render();
   }
 
   function render(){
-    if(!slides.length) return;
     slides.forEach((slide,i)=>slide.classList.toggle('active',i===index));
     [...dashes.children].forEach((dot,i)=>dot.classList.toggle('active',i===index));
   }
@@ -1851,67 +2155,28 @@ document.querySelectorAll('[data-gallery]').forEach(gallery=>{
     render();
   }
 
-  function advance(){ show(index+1); }
+  prev.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();show(index-1);});
+  next.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();show(index+1);});
 
-  function restart(){
-    clearInterval(timer);
-    if(slides.length>1) timer=setInterval(advance,4200);
-  }
-
-  slides.forEach(slide=>{
-    const img=slide.querySelector('img');
-    img.addEventListener('error',()=>{
-      slide.remove();
-      rebuild();
-      restart();
-    },{once:true});
-  });
-
-  prev.addEventListener('click',e=>{
-    e.preventDefault();
-    e.stopPropagation();
-    show(index-1);
-    restart();
-  });
-
-  next.addEventListener('click',e=>{
-    e.preventDefault();
-    e.stopPropagation();
-    show(index+1);
-    restart();
-  });
-
-  gallery.addEventListener('touchstart',e=>{
-    startX=e.touches[0].clientX;
-    clearInterval(timer);
-  },{passive:true});
-
+  gallery.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;},{passive:true});
   gallery.addEventListener('touchend',e=>{
     const dx=e.changedTouches[0].clientX-startX;
     if(Math.abs(dx)>32) show(index+(dx<0?1:-1));
-    restart();
   },{passive:true});
 
-  /* mouse drag inside the product image itself */
   gallery.addEventListener('mousedown',e=>{
     if(e.target.closest('button')) return;
     mouseDown=true;
     mouseStartX=e.clientX;
-    clearInterval(timer);
   });
   window.addEventListener('mouseup',e=>{
     if(!mouseDown) return;
     const dx=e.clientX-mouseStartX;
     mouseDown=false;
     if(Math.abs(dx)>38) show(index+(dx<0?1:-1));
-    restart();
   });
 
-  gallery.addEventListener('mouseenter',()=>clearInterval(timer));
-  gallery.addEventListener('mouseleave',restart);
-
   rebuild();
-  restart();
 });
 
 /* product carousel - swipe/drag ready for future products */
@@ -2049,25 +2314,21 @@ document.querySelectorAll('[data-details]').forEach(btn=>{
 });
 
 function openProduct(id){
-  productDrag=false;productMoved=false;track.classList.remove('is-dragging');
+  productDrag=false;
+  productMoved=false;
+  track.classList.remove('is-dragging');
+
   currentProduct=id;
+  currentModalImageIndex=0;
   const p=products[id];
 
-  const modalImg=document.getElementById('modalImg');
-  const card=document.querySelector(`.product-card[data-id="${id}"]`);
-  const cardImg=card ? card.querySelector('.gallery-slide.active img') : null;
-
-  modalImg.onerror=()=>{
-    modalImg.onerror=null;
-    modalImg.src=p.img;
-  };
-  modalImg.src=(cardImg && (cardImg.currentSrc || cardImg.src)) ? (cardImg.currentSrc || cardImg.src) : p.img;
-  modalImg.alt=p.name;
   document.getElementById('modalKicker').textContent=p.kicker;
   document.getElementById('modalTitle').textContent=p.name;
   document.getElementById('modalDesc').textContent=p.desc;
+
   document.getElementById('modalIngredients').innerHTML=
     p.ingredients.map(x=>`<span class="ingredient-badge">${x}</span>`).join('');
+
   document.getElementById('modalDetails').innerHTML=
     p.details.map(x=>`
       <div class="detail-chip">
@@ -2076,9 +2337,44 @@ function openProduct(id){
       </div>
     `).join('');
 
+  renderModalGallery();
+
   modal.classList.add('open');
   modal.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
+}
+
+function renderModalGallery(){
+  if(!currentProduct) return;
+
+  const images=productImages[currentProduct] || [products[currentProduct].img];
+  const modalImg=document.getElementById('modalImg');
+  const prev=document.getElementById('modalImagePrev');
+  const next=document.getElementById('modalImageNext');
+  const dashes=document.getElementById('modalImageDashes');
+
+  currentModalImageIndex=(currentModalImageIndex+images.length)%images.length;
+
+  modalImg.src=images[currentModalImageIndex];
+  modalImg.alt=products[currentProduct].name + ' image ' + (currentModalImageIndex+1);
+
+  prev.hidden=images.length<=1;
+  next.hidden=images.length<=1;
+
+  dashes.innerHTML='';
+  if(images.length>1){
+    images.forEach((_,i)=>{
+      const b=document.createElement('button');
+      b.type='button';
+      b.className=i===currentModalImageIndex?'active':'';
+      b.setAttribute('aria-label',`Show image ${i+1}`);
+      b.addEventListener('click',()=>{
+        currentModalImageIndex=i;
+        renderModalGallery();
+      });
+      dashes.appendChild(b);
+    });
+  }
 }
 
 function closeModal(){
@@ -2086,6 +2382,31 @@ function closeModal(){
   modal.setAttribute('aria-hidden','true');
   document.body.style.overflow='';
 }
+
+
+document.getElementById('modalImagePrev').addEventListener('click',()=>{
+  if(!currentProduct) return;
+  currentModalImageIndex--;
+  renderModalGallery();
+});
+document.getElementById('modalImageNext').addEventListener('click',()=>{
+  if(!currentProduct) return;
+  currentModalImageIndex++;
+  renderModalGallery();
+});
+
+let modalTouchStartX=0;
+document.querySelector('.modal-art').addEventListener('touchstart',e=>{
+  modalTouchStartX=e.touches[0].clientX;
+},{passive:true});
+document.querySelector('.modal-art').addEventListener('touchend',e=>{
+  if(!currentProduct) return;
+  const dx=e.changedTouches[0].clientX-modalTouchStartX;
+  if(Math.abs(dx)>35){
+    currentModalImageIndex += dx<0 ? 1 : -1;
+    renderModalGallery();
+  }
+},{passive:true});
 
 document.getElementById('closeModal').addEventListener('click',closeModal);
 modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
@@ -2153,7 +2474,7 @@ function renderCart(){
     const p=products[id];
     return `
       <div class="cart-item">
-        <img src="${p.img}" onerror="if('${id}'==='amino'){this.onerror=null;this.src='${fallbackImage}'}" alt="${p.name}">
+        <img src="${p.img}" alt="${p.name}">
         <div>
           <h4>${p.name}</h4>
           <small>Price to be confirmed</small>
@@ -2274,7 +2595,6 @@ function createAutoScroller(container, itemSelector, interval){
   restart();
 }
 
-createAutoScroller(document.getElementById('productTrack'),'.product-card',4300);
 createAutoScroller(document.querySelector('.ingredient-grid'),'.ingredient-card',4700);
 createAutoScroller(document.getElementById('beforeTrack'),'.before-card',5000);
 if(window.innerWidth<=640){
