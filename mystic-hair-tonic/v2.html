@@ -1536,6 +1536,797 @@ footer{padding:24px 0!important}
 .footer-wa:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
 .footer-wa svg{width:18px;height:18px}
 
+
+/* ===== v19 mobile product refinement ===== */
+@media(max-width:640px){
+  .product-grid{
+    gap:12px!important;
+    padding:0 8px 10px!important;
+    scroll-padding-inline:8px;
+  }
+  .product-card{
+    flex:0 0 calc(100vw - 38px)!important;
+    max-width:420px!important;
+    border-radius:16px!important;
+  }
+  .gallery{
+    height:250px!important;
+    min-height:250px!important;
+  }
+  .gallery-slide{
+    padding:12px 16px!important;
+  }
+  .gallery-slide img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center!important;
+  }
+  .gallery-arrow{
+    width:34px!important;
+    height:40px!important;
+  }
+  .gallery-arrow.prev{left:8px!important}
+  .gallery-arrow.next{right:8px!important}
+  .product-body{
+    padding:15px 16px 16px!important;
+  }
+  .product-body small{
+    font-size:.67rem!important;
+    margin-bottom:5px!important;
+  }
+  .product-body h3{
+    font-size:1.02rem!important;
+    margin-bottom:7px!important;
+  }
+  .product-body p{
+    font-size:.82rem!important;
+    line-height:1.5!important;
+    margin-bottom:14px!important;
+  }
+  .product-actions{
+    gap:8px!important;
+  }
+  .product-actions .btn{
+    min-height:44px!important;
+    font-size:.88rem!important;
+  }
+  .details-btn{
+    width:44px!important;
+    height:44px!important;
+  }
+}
+
+
+/* ===== v19 ingredient Focus / Key editorial treatment ===== */
+.ingredient-meta{
+  margin-top:16px!important;
+  padding:14px 0 0!important;
+  border-top:1px solid rgba(78,49,21,.10)!important;
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  gap:18px!important;
+}
+.ingredient-meta div{
+  display:block!important;
+  padding:0!important;
+  margin:0!important;
+  min-width:0;
+}
+.ingredient-meta b{
+  display:block!important;
+  margin-bottom:5px!important;
+  color:#8a5a2c!important;
+  font-size:.64rem!important;
+  letter-spacing:.15em!important;
+  text-transform:uppercase!important;
+  font-weight:850!important;
+}
+.ingredient-meta span{
+  display:block!important;
+  padding:0!important;
+  color:#5e4934!important;
+  font-size:.82rem!important;
+  line-height:1.5!important;
+}
+.ingredient-meta span::before{
+  display:none!important;
+}
+
+@media(max-width:640px){
+  .ingredient-meta{
+    grid-template-columns:1fr 1fr!important;
+    gap:12px!important;
+    margin-top:12px!important;
+    padding-top:11px!important;
+  }
+  .ingredient-meta b{
+    font-size:.60rem!important;
+    margin-bottom:4px!important;
+  }
+  .ingredient-meta span{
+    font-size:.76rem!important;
+  }
+}
+
+
+/* ===== v20 responsive hero banners ===== */
+.hero-picture{
+  display:block;
+  width:100%;
+  line-height:0;
+  overflow:hidden;
+}
+.hero-picture img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  object-position:center;
+}
+
+/* Desktop: show the entire desktop artwork, never crop it */
+@media(min-width:641px){
+  .hero-picture img{
+    width:100%;
+    height:auto;
+    max-height:none;
+  }
+}
+
+/* Mobile: use separate artwork, full image but NOT full-screen tall */
+@media(max-width:640px){
+  .hero-picture{
+    width:100%;
+    background:transparent;
+  }
+  .hero-picture img{
+    width:100%;
+    height:auto;
+    max-height:none;
+    object-fit:contain;
+    object-position:center;
+  }
+}
+
+/* If the existing hero wrapper has forced heights/cropping, neutralize them */
+.hero,
+.hero-banner,
+.hero-media{
+  min-height:0!important;
+}
+.hero .hero-picture,
+.hero-banner .hero-picture,
+.hero-media .hero-picture{
+  height:auto!important;
+}
+
+
+/* ===== v21 MOBILE HERO + FULL PRODUCT IMAGE FIX ===== */
+
+/* Mobile hero: edge-to-edge, no side gutter, show the COMPLETE mobile artwork */
+@media (max-width:640px){
+  .hero-picture{
+    display:block!important;
+    width:100vw!important;
+    max-width:none!important;
+    margin-left:calc(50% - 50vw)!important;
+    margin-right:calc(50% - 50vw)!important;
+    padding:0!important;
+    overflow:hidden!important;
+    line-height:0!important;
+  }
+  .hero-picture img{
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    height:auto!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    object-fit:contain!important;
+    object-position:center!important;
+  }
+}
+
+/* Product gallery: image must fit INSIDE its media area instead of being cropped */
+.product-card .product-media,
+.product-card .product-image,
+.product-card [class*="product-media"],
+.product-card [class*="product-image"]{
+  overflow:hidden!important;
+}
+
+/* Target gallery images while leaving icons/buttons alone */
+.product-card .product-media img,
+.product-card .product-image img,
+.product-card .product-gallery img,
+.product-card .product-slider img,
+.product-card .product-carousel img,
+.product-card [data-product-gallery] img{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  transform:none!important;
+}
+
+/* Comfortable mobile product media size: complete bottle visible */
+@media (max-width:640px){
+  .product-card .product-media,
+  .product-card .product-image,
+  .product-card .product-gallery,
+  .product-card .product-slider,
+  .product-card .product-carousel,
+  .product-card [data-product-gallery]{
+    height:390px!important;
+    min-height:390px!important;
+    max-height:390px!important;
+  }
+
+  .product-card .product-media img,
+  .product-card .product-image img,
+  .product-card .product-gallery img,
+  .product-card .product-slider img,
+  .product-card .product-carousel img,
+  .product-card [data-product-gallery] img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    padding:18px 34px!important;
+    box-sizing:border-box!important;
+  }
+}
+
+
+/* ===== v22 FORCE FULL PRODUCT BOTTLE VISIBILITY ===== */
+/* The gallery is a viewing frame. Never let the product image fill/crop the frame. */
+.product-card .gallery{
+  position:relative!important;
+  overflow:hidden!important;
+  display:block!important;
+  background:linear-gradient(180deg,#f8e9c5 0%,#efd5a2 100%)!important;
+}
+
+.product-card .gallery-slides,
+.product-card .gallery-slide{
+  width:100%!important;
+  height:100%!important;
+}
+
+.product-card .gallery-slide{
+  position:absolute!important;
+  inset:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:18px 52px 24px!important;
+  overflow:hidden!important;
+}
+
+.product-card .gallery-slide img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:88%!important;
+  max-height:88%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  margin:auto!important;
+  padding:0!important;
+  transform:none!important;
+}
+
+/* Desktop product viewing frame */
+@media(min-width:641px){
+  .product-card .gallery{
+    height:330px!important;
+    min-height:330px!important;
+  }
+}
+
+/* Mobile product viewing frame — full bottle, compact enough for one screen */
+@media(max-width:640px){
+  .product-card .gallery{
+    height:320px!important;
+    min-height:320px!important;
+    max-height:320px!important;
+  }
+
+  .product-card .gallery-slide{
+    padding:14px 58px 22px!important;
+  }
+
+  .product-card .gallery-slide img{
+    width:auto!important;
+    height:auto!important;
+    max-width:82%!important;
+    max-height:92%!important;
+  }
+
+  /* arrows stay over the empty side space instead of covering the bottle */
+  .product-card .gallery-arrow{
+    top:50%!important;
+    transform:translateY(-50%)!important;
+    width:34px!important;
+    height:40px!important;
+  }
+  .product-card .gallery-arrow.prev{left:10px!important}
+  .product-card .gallery-arrow.next{right:10px!important}
+}
+
+
+/* ===== v23 LANDSCAPE PRODUCT IMAGE SIZE FIX ===== */
+/* Keep portrait bottle images contained, but let landscape/lifestyle images use the card width. */
+.product-card .gallery-slide img.is-landscape{
+  width:calc(100% - 12px)!important;
+  height:auto!important;
+  max-width:none!important;
+  max-height:82%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+
+@media(max-width:640px){
+  .product-card .gallery-slide{
+    padding:12px 18px 20px!important;
+  }
+
+  .product-card .gallery-slide img.is-landscape{
+    width:100%!important;
+    height:auto!important;
+    max-width:100%!important;
+    max-height:78%!important;
+  }
+
+  /* Portrait bottle still fits fully without becoming oversized */
+  .product-card .gallery-slide img.is-portrait{
+    width:auto!important;
+    height:auto!important;
+    max-width:72%!important;
+    max-height:92%!important;
+  }
+}
+
+
+/* =========================================================
+   V24 — MODERN HERITAGE / EDITORIAL APOTHECARY REDESIGN
+   Same warm gold / parchment / espresso palette,
+   but flatter, cleaner and more premium.
+   ========================================================= */
+
+:root{
+  --v24-paper:#f3dfb7;
+  --v24-paper-2:#ead09b;
+  --v24-cream:#fff7e5;
+  --v24-ink:#3a2517;
+  --v24-brown:#6d4424;
+  --v24-gold:#bf8a3e;
+  --v24-line:rgba(64,39,18,.14);
+}
+
+/* calmer page background */
+body{
+  background:
+    linear-gradient(180deg,#d4a15b 0%,#e8c98f 18%,#f0dbae 44%,#e6c487 73%,#d09a54 100%)!important;
+}
+body::after{opacity:.028!important}
+
+/* header becomes compact and editorial */
+.topbar{
+  background:rgba(247,231,197,.96)!important;
+  box-shadow:0 4px 18px rgba(51,29,6,.06)!important;
+}
+.header-title{
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-weight:600!important;
+  letter-spacing:0!important;
+}
+.header-company{letter-spacing:.18em!important}
+
+/* hero: image-first, no extra decoration */
+.hero{background:#e2bd78!important}
+.hero-picture,
+.hero-picture img{display:block!important;width:100%!important}
+
+/* trust strip becomes one continuous information rail */
+.trust-strip{
+  background:rgba(250,235,203,.86)!important;
+  padding:0!important;
+}
+.trust-grid{
+  display:grid!important;
+  grid-template-columns:repeat(4,1fr)!important;
+  gap:0!important;
+}
+.trust-card{
+  min-height:86px;
+  padding:18px 22px!important;
+  border-radius:0!important;
+  background:transparent!important;
+}
+.trust-card:not(:last-child){border-right:1px solid var(--v24-line)!important}
+.trust-icon{
+  width:28px!important;height:28px!important;
+  border-radius:0!important;background:transparent!important;
+}
+.trust-card strong{font-size:.82rem!important}
+.trust-card span{font-size:.68rem!important}
+
+/* section rhythm */
+section{padding:72px 0!important}
+.section-head{max-width:680px!important;margin-bottom:30px!important}
+.section-head h2{font-weight:520!important;letter-spacing:-.035em!important}
+.section-head p{font-size:.96rem!important}
+
+/* finder */
+.formula-finder{
+  padding:82px 0 54px!important;
+}
+.finder-shell{
+  display:grid;
+  grid-template-columns:.88fr 1.12fr;
+  min-height:560px;
+  background:rgba(250,236,205,.78);
+  border:1px solid var(--v24-line);
+  box-shadow:0 24px 60px rgba(55,31,6,.10);
+}
+.finder-copy{
+  padding:52px 48px;
+  border-right:1px solid var(--v24-line);
+}
+.finder-copy h2{
+  font-size:clamp(2.2rem,4vw,4rem);
+  font-weight:500;
+  color:var(--v24-ink);
+  line-height:1.02;
+  letter-spacing:-.045em;
+  max-width:520px;
+}
+.finder-copy>p{max-width:500px}
+.finder-options{
+  margin-top:34px;
+  display:grid;
+  gap:0;
+  border-top:1px solid var(--v24-line);
+}
+.finder-option{
+  width:100%;
+  display:grid;
+  grid-template-columns:42px 1fr;
+  gap:14px;
+  align-items:center;
+  text-align:left;
+  padding:16px 0;
+  border:0;
+  border-bottom:1px solid var(--v24-line);
+  background:transparent;
+  color:#76583d;
+  cursor:pointer;
+  transition:.25s ease;
+}
+.finder-option>span{
+  font-size:.66rem;
+  letter-spacing:.12em;
+  color:#a1743e;
+}
+.finder-option strong{
+  display:block;
+  font-size:.95rem;
+  font-weight:650;
+  color:#5c422e;
+}
+.finder-option small{
+  display:block;
+  margin-top:3px;
+  font-size:.72rem;
+  color:#917358;
+}
+.finder-option:hover,
+.finder-option.active{
+  padding-left:10px;
+}
+.finder-option.active strong{color:var(--v24-ink)}
+.finder-option.active>span{color:#693e1f;font-weight:900}
+
+.finder-preview{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(220px,.62fr);
+  align-items:end;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 45% 38%,rgba(255,249,231,.90),rgba(230,194,128,.42) 47%,transparent 70%);
+}
+.finder-number{
+  position:absolute;
+  right:20px;
+  top:12px;
+  font-family:Georgia,serif;
+  font-size:8rem;
+  line-height:1;
+  color:rgba(81,49,21,.05);
+  pointer-events:none;
+}
+.finder-preview-art{
+  align-self:stretch;
+  display:grid;
+  place-items:center;
+  padding:42px 18px 28px 34px;
+}
+.finder-preview-art img{
+  max-height:430px;
+  max-width:88%;
+  object-fit:contain;
+  filter:drop-shadow(0 24px 20px rgba(56,30,4,.16));
+  transition:opacity .25s ease,transform .35s ease;
+}
+.finder-preview-copy{
+  padding:40px 42px 42px 14px;
+  align-self:end;
+}
+.finder-preview-copy small{
+  display:block;
+  margin-bottom:8px;
+  font-size:.66rem;
+  font-weight:850;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:#94632e;
+}
+.finder-preview-copy h3{
+  font-size:1.45rem;
+  color:var(--v24-ink);
+}
+.finder-preview-copy p{font-size:.88rem}
+.finder-link{
+  margin-top:10px;
+  padding:0 0 5px;
+  border:0;
+  border-bottom:1px solid #6c4524;
+  background:transparent;
+  color:#4a2e1b;
+  font-weight:800;
+  cursor:pointer;
+}
+.finder-link span{margin-left:7px;transition:.2s ease}
+.finder-link:hover span{margin-left:12px}
+
+/* products: flatter editorial cards */
+#products{padding-top:62px!important}
+.product-grid{
+  gap:18px!important;
+}
+.product-card{
+  border-radius:8px!important;
+  border:1px solid rgba(63,38,17,.11)!important;
+  background:rgba(249,235,205,.82)!important;
+  box-shadow:0 14px 36px rgba(54,31,6,.08)!important;
+}
+.product-card:hover{
+  transform:translateY(-4px)!important;
+  box-shadow:0 22px 44px rgba(54,31,6,.12)!important;
+}
+.gallery{
+  border-radius:0!important;
+  background:
+    linear-gradient(180deg,rgba(255,248,229,.93),rgba(234,202,145,.62))!important;
+}
+.product-body{
+  border-top:1px solid var(--v24-line);
+}
+.product-actions{
+  grid-template-columns:1fr 46px!important;
+}
+.product-actions .btn-primary{
+  border-radius:6px!important;
+  box-shadow:none!important;
+}
+.details-btn{
+  border-radius:6px!important;
+}
+
+/* Ingredients: more editorial, less card-like */
+.ingredient-grid{
+  gap:18px!important;
+}
+.ingredient-card{
+  border-radius:6px!important;
+  box-shadow:none!important;
+  background:rgba(249,235,205,.56)!important;
+  border:1px solid rgba(65,40,18,.10)!important;
+}
+.ingredient-image{
+  border-radius:3px!important;
+}
+.ingredient-meta{
+  grid-template-columns:1fr 1fr!important;
+  border-top:1px solid var(--v24-line)!important;
+}
+
+/* brand story */
+.brand-story{
+  padding:58px 0!important;
+}
+.brand-story-grid{
+  display:grid;
+  grid-template-columns:90px 1fr .58fr;
+  gap:42px;
+  align-items:start;
+  padding:44px 0;
+  border-top:1px solid rgba(65,40,18,.18);
+  border-bottom:1px solid rgba(65,40,18,.18);
+}
+.brand-story-mark{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding-top:8px;
+}
+.heritage-line{height:1px;flex:1;background:#8f6337}
+.brand-story-mark span{
+  font-size:.68rem;
+  font-weight:850;
+  letter-spacing:.15em;
+  color:#81562c;
+}
+.brand-story-copy h2{
+  max-width:700px;
+  font-size:clamp(2rem,3.5vw,3.25rem);
+  font-weight:500;
+  line-height:1.04;
+  color:#3d2919;
+}
+.brand-story-copy p{
+  max-width:700px;
+  font-size:.94rem;
+}
+.brand-story-points{
+  display:grid;
+  gap:0;
+  border-top:1px solid var(--v24-line);
+}
+.brand-story-points div{
+  display:grid;
+  grid-template-columns:34px 1fr;
+  gap:12px;
+  padding:14px 0;
+  border-bottom:1px solid var(--v24-line);
+}
+.brand-story-points b{
+  color:#a07139;
+  font-size:.68rem;
+}
+.brand-story-points span{
+  color:#4b3322;
+  font-size:.86rem;
+  font-weight:650;
+}
+
+/* Results / steps: reduce card-on-card feeling */
+.results-shell,
+.steps-wrap{
+  border-radius:8px!important;
+  background:rgba(249,235,205,.58)!important;
+  box-shadow:none!important;
+}
+.before-card{
+  border-radius:4px!important;
+}
+.step-card{
+  border-radius:5px!important;
+  box-shadow:none!important;
+}
+.step-no{
+  border-radius:4px!important;
+}
+.progress-dot{
+  border-radius:4px!important;
+}
+
+/* faq becomes flat accordion */
+.faq{gap:0!important;border-top:1px solid var(--v24-line)}
+.faq-item{
+  border-radius:0!important;
+  border:0!important;
+  border-bottom:1px solid var(--v24-line)!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+
+/* CTA: strong but restrained */
+.cta-box{
+  border-radius:8px!important;
+  background:linear-gradient(135deg,#3c2415,#684123)!important;
+}
+
+/* modal: cleaner luxury */
+.modal-card{
+  border-radius:8px!important;
+}
+.close-modal{
+  border-radius:6px!important;
+}
+
+/* mobile */
+@media(max-width:760px){
+  section{padding:50px 0!important}
+  .formula-finder{padding-top:52px!important}
+  .finder-shell{
+    grid-template-columns:1fr;
+    min-height:0;
+  }
+  .finder-copy{
+    padding:30px 22px 22px;
+    border-right:0;
+    border-bottom:1px solid var(--v24-line);
+  }
+  .finder-copy h2{font-size:2.2rem}
+  .finder-options{
+    grid-template-columns:1fr 1fr;
+    margin-top:24px;
+  }
+  .finder-option{
+    grid-template-columns:28px 1fr;
+    padding:12px 8px 12px 0;
+  }
+  .finder-option:nth-child(odd){border-right:1px solid var(--v24-line)}
+  .finder-preview{
+    grid-template-columns:1fr;
+  }
+  .finder-preview-art{
+    min-height:300px;
+    padding:24px;
+  }
+  .finder-preview-art img{
+    max-height:270px;
+    max-width:76%;
+  }
+  .finder-preview-copy{
+    padding:0 22px 28px;
+  }
+  .finder-number{font-size:5rem}
+
+  .trust-grid{grid-template-columns:1fr 1fr!important}
+  .trust-card{
+    min-height:92px;
+    padding:14px 12px!important;
+  }
+
+  .brand-story-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:30px 0;
+  }
+  .brand-story-mark{width:90px}
+  .brand-story-points{
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    border-top:0;
+  }
+  .brand-story-points div{
+    grid-template-columns:1fr;
+    gap:4px;
+    border:0;
+    border-top:1px solid var(--v24-line);
+  }
+
+  .product-card{
+    border-radius:8px!important;
+  }
+  .product-actions .btn,
+  .details-btn{
+    border-radius:6px!important;
+  }
+
+  .ingredient-card{
+    border-radius:6px!important;
+  }
+}
+
 </style>
 </head>
 
@@ -1572,7 +2363,10 @@ footer{padding:24px 0!important}
 
 <section class="hero">
   <div class="hero-media">
-    <img src="assets/hero-banner.png" alt="Mystic Hair Tonic collection">
+    <picture class="hero-picture">
+  <source media="(max-width: 640px)" srcset="assets/hero-banner-mobile.png">
+  <img src="assets/hero-banner.png" alt="Mystic Hair Tonic collection">
+</picture>
     <div class="hero-overlay"></div>
     </div>
 </section>
@@ -1617,6 +2411,51 @@ footer{padding:24px 0!important}
     </div>
   </div>
 </div>
+
+
+<section class="formula-finder" id="formulaFinder">
+  <div class="container">
+    <div class="finder-shell">
+      <div class="finder-copy">
+        <div class="kicker">Find Your Formula</div>
+        <h2>Start with what your hair needs.</h2>
+        <p>Choose a concern and we’ll highlight the tonic designed around that care focus.</p>
+
+        <div class="finder-options" role="tablist" aria-label="Hair concerns">
+          <button class="finder-option active" data-find="amino">
+            <span>01</span>
+            <div><strong>Scalp vitality</strong><small>Amino Peptide</small></div>
+          </button>
+          <button class="finder-option" data-find="ginseng">
+            <span>02</span>
+            <div><strong>Hair roots</strong><small>Ginseng</small></div>
+          </button>
+          <button class="finder-option" data-find="yogurt">
+            <span>03</span>
+            <div><strong>Moisture & shine</strong><small>Yogurt</small></div>
+          </button>
+          <button class="finder-option" data-find="protein">
+            <span>04</span>
+            <div><strong>Dandruff & strength</strong><small>Hydrolyzed Protein</small></div>
+          </button>
+        </div>
+      </div>
+
+      <div class="finder-preview">
+        <div class="finder-number">01</div>
+        <div class="finder-preview-art">
+          <img id="finderImage" src="assets/Amino-Peptide%20Hair-Tonic.png" alt="Amino Peptide Hair Tonic">
+        </div>
+        <div class="finder-preview-copy">
+          <small id="finderEyebrow">Healthy Hair / Scalp</small>
+          <h3 id="finderTitle">Amino Peptide Hair Tonic</h3>
+          <p id="finderText">Amino-acid focused care for healthy-looking hair and scalp.</p>
+          <button class="finder-link" id="finderView">View this formula <span>→</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="products">
   <span class="floating-leaf leaf-a"></span>
@@ -1751,6 +2590,29 @@ footer{padding:24px 0!important}
         <p>Natural Soy protein with Zizyphus Joazeiro Bark Extract for nourishment, stronger roots and dandruff-focused scalp care.</p>
         <div class="ingredient-meta"><b>Focus</b><span>Roots · scalp freshness · lustre</span><b>Key</b><span>Soy Protein · Joazeiro Bark</span></div>
       </article>
+    </div>
+  </div>
+</section>
+
+
+<section class="brand-story">
+  <div class="container">
+    <div class="brand-story-grid">
+      <div class="brand-story-mark">
+        <div class="heritage-line"></div>
+        <span>01</span>
+        <div class="heritage-line"></div>
+      </div>
+      <div class="brand-story-copy">
+        <div class="kicker">The Mystic Approach</div>
+        <h2>Traditional inspiration, presented for modern daily care.</h2>
+        <p>The brand’s vintage botanical identity becomes a quieter design detail here — parchment texture, heritage typography and warm metallic tones — while the product experience stays clean and contemporary.</p>
+      </div>
+      <div class="brand-story-points">
+        <div><b>01</b><span>Targeted formulas</span></div>
+        <div><b>02</b><span>Simple daily routine</span></div>
+        <div><b>03</b><span>Scalp-first care</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1898,13 +2760,17 @@ footer{padding:24px 0!important}
       <img src="assets/logo.png" alt="Mystic Hair Tonic logo">
       <div>
         <strong>Mystic Hair Tonic</strong>
-        <a class="footer-wa" href="https://wa.me/60183209081" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.36c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.14 4.55.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35zM16.04 3.2A12.65 12.65 0 0 0 5.2 22.36L3.5 28.8l6.58-1.73A12.69 12.69 0 1 0 16.04 3.2zm0 22.98c-2.02 0-4-.54-5.72-1.56l-.41-.24-3.9 1.02 1.04-3.8-.27-.42a10.3 10.3 0 1 1 9.26 5z"/></svg>
-        </a>
+        
       </div>
     </div>
 
     <div class="socials">
+      <a class="social" href="https://wa.me/60183209081" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 32 32" fill="currentColor">
+          <path d="M19.11 17.36c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.14 4.55.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35zM16.04 3.2A12.65 12.65 0 0 0 5.2 22.36L3.5 28.8l6.58-1.73A12.69 12.69 0 1 0 16.04 3.2zm0 22.98c-2.02 0-4-.54-5.72-1.56l-.41-.24-3.9 1.02 1.04-3.8-.27-.42a10.3 10.3 0 1 1 9.26 5z"/>
+        </svg>
+      </a>
+
       <a class="social" href="#" aria-label="Instagram">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
           <rect x="3" y="3" width="18" height="18" rx="5"/>
@@ -1968,6 +2834,28 @@ footer{padding:24px 0!important}
 </div>
 
 <script>
+
+/* classify gallery images so landscape artwork can fill the frame properly */
+function classifyProductGalleryImages(){
+  document.querySelectorAll('.product-card .gallery-slide img').forEach(img=>{
+    const apply=()=>{
+      img.classList.remove('is-landscape','is-portrait');
+      if(img.naturalWidth > img.naturalHeight * 1.12){
+        img.classList.add('is-landscape');
+      }else{
+        img.classList.add('is-portrait');
+      }
+    };
+    if(img.complete && img.naturalWidth){
+      apply();
+    }else{
+      img.addEventListener('load',apply,{once:true});
+    }
+  });
+}
+classifyProductGalleryImages();
+
+
 
 /* ===== v14 robust asset path resolver =====
    Works if this HTML is in the repo root (assets/file.png)
@@ -2600,6 +3488,131 @@ createAutoScroller(document.getElementById('beforeTrack'),'.before-card',5000);
 if(window.innerWidth<=640){
   createAutoScroller(document.getElementById('stepsTrack'),'.step-card',4800);
 }
+
+
+/* auto-advance the PRODUCT CAROUSEL only; product images stay manual */
+(function(){
+  const container=document.getElementById('productTrack');
+  if(!container) return;
+  const items=()=>[...container.querySelectorAll('.product-card')];
+  let timer=null;
+  let paused=false;
+
+  function currentIndex(){
+    const list=items();
+    if(!list.length) return 0;
+    const center=container.scrollLeft+container.clientWidth/2;
+    let best=0,dist=Infinity;
+    list.forEach((item,i)=>{
+      const c=item.offsetLeft+item.clientWidth/2;
+      const d=Math.abs(c-center);
+      if(d<dist){dist=d;best=i;}
+    });
+    return best;
+  }
+
+  function advance(){
+    if(paused || document.hidden) return;
+    const list=items();
+    if(list.length<2) return;
+    const next=(currentIndex()+1)%list.length;
+    const target=list[next];
+    container.scrollTo({
+      left:Math.max(0,target.offsetLeft-(container.clientWidth-target.clientWidth)/2),
+      behavior:'smooth'
+    });
+  }
+
+  function reset(){
+    clearInterval(timer);
+    timer=setInterval(advance,5200);
+  }
+
+  ['pointerdown','touchstart','mouseenter','focusin'].forEach(evt=>{
+    container.addEventListener(evt,()=>{paused=true;});
+  });
+  ['pointerup','touchend','mouseleave','focusout'].forEach(evt=>{
+    container.addEventListener(evt,()=>{paused=false;reset();});
+  });
+
+  reset();
+})();
+
+
+/* ===== V24 formula finder ===== */
+(function(){
+  const data={
+    amino:{
+      num:'01',
+      img:'assets/Amino-Peptide%20Hair-Tonic.png',
+      eyebrow:'Healthy Hair / Scalp',
+      title:'Amino Peptide Hair Tonic',
+      text:'Amino-acid focused care for healthy-looking hair and scalp.'
+    },
+    ginseng:{
+      num:'02',
+      img:'assets/Ginseng-Hair-Tonic.png',
+      eyebrow:'Promote Hair Growth',
+      title:'Ginseng Hair Tonic',
+      text:'Panax Ginseng Extract-focused care for hair roots and a healthy-looking scalp.'
+    },
+    yogurt:{
+      num:'03',
+      img:'assets/Yogurt-Hair-Tonic.png',
+      eyebrow:'Extra Moisture & Shine',
+      title:'Yogurt Hair Tonic',
+      text:'Moisture-focused care for softer, smoother and shinier-looking hair.'
+    },
+    protein:{
+      num:'04',
+      img:'assets/Hydrolyzed-Protein-Hair-Tonic.png',
+      eyebrow:'Dandruff & Root Care',
+      title:'Hydrolyzed Protein Hair Tonic',
+      text:'Protein-focused nourishment for roots and a fresh-feeling scalp.'
+    }
+  };
+
+  const buttons=[...document.querySelectorAll('.finder-option')];
+  const img=document.getElementById('finderImage');
+  const eyebrow=document.getElementById('finderEyebrow');
+  const title=document.getElementById('finderTitle');
+  const text=document.getElementById('finderText');
+  const num=document.querySelector('.finder-number');
+  const view=document.getElementById('finderView');
+  let active='amino';
+
+  function select(id){
+    active=id;
+    const item=data[id];
+    buttons.forEach(b=>b.classList.toggle('active',b.dataset.find===id));
+
+    img.style.opacity='0';
+    img.style.transform='translateY(8px)';
+    setTimeout(()=>{
+      img.src=item.img;
+      img.alt=item.title;
+      eyebrow.textContent=item.eyebrow;
+      title.textContent=item.title;
+      text.textContent=item.text;
+      num.textContent=item.num;
+      img.style.opacity='1';
+      img.style.transform='translateY(0)';
+    },140);
+  }
+
+  buttons.forEach(b=>b.addEventListener('click',()=>select(b.dataset.find)));
+
+  view.addEventListener('click',()=>{
+    const card=document.querySelector(`.product-card[data-id="${active}"]`);
+    if(card){
+      card.scrollIntoView({behavior:'smooth',block:'center',inline:'center'});
+      card.animate(
+        [{transform:'translateY(0)'},{transform:'translateY(-8px)'},{transform:'translateY(0)'}],
+        {duration:650,easing:'ease'}
+      );
+    }
+  });
+})();
 
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){
