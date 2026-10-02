@@ -1858,6 +1858,39 @@ footer{padding:24px 0!important}
   .product-card .gallery-arrow.next{right:10px!important}
 }
 
+
+/* ===== v23 LANDSCAPE PRODUCT IMAGE SIZE FIX ===== */
+/* Keep portrait bottle images contained, but let landscape/lifestyle images use the card width. */
+.product-card .gallery-slide img.is-landscape{
+  width:calc(100% - 12px)!important;
+  height:auto!important;
+  max-width:none!important;
+  max-height:82%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+
+@media(max-width:640px){
+  .product-card .gallery-slide{
+    padding:12px 18px 20px!important;
+  }
+
+  .product-card .gallery-slide img.is-landscape{
+    width:100%!important;
+    height:auto!important;
+    max-width:100%!important;
+    max-height:78%!important;
+  }
+
+  /* Portrait bottle still fits fully without becoming oversized */
+  .product-card .gallery-slide img.is-portrait{
+    width:auto!important;
+    height:auto!important;
+    max-width:72%!important;
+    max-height:92%!important;
+  }
+}
+
 </style>
 </head>
 
@@ -2297,6 +2330,28 @@ footer{padding:24px 0!important}
 </div>
 
 <script>
+
+/* classify gallery images so landscape artwork can fill the frame properly */
+function classifyProductGalleryImages(){
+  document.querySelectorAll('.product-card .gallery-slide img').forEach(img=>{
+    const apply=()=>{
+      img.classList.remove('is-landscape','is-portrait');
+      if(img.naturalWidth > img.naturalHeight * 1.12){
+        img.classList.add('is-landscape');
+      }else{
+        img.classList.add('is-portrait');
+      }
+    };
+    if(img.complete && img.naturalWidth){
+      apply();
+    }else{
+      img.addEventListener('load',apply,{once:true});
+    }
+  });
+}
+classifyProductGalleryImages();
+
+
 
 /* ===== v14 robust asset path resolver =====
    Works if this HTML is in the repo root (assets/file.png)
