@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Mystic Hair Tonic</title>
-<meta name="description" content="Mystic Hair Tonic - four targeted formulas for scalp and hair care." />
+<meta name="description" content="Mystic Hair Tonic - empat formula untuk penjagaan rambut dan kulit kepala." />
 <link rel="icon" type="image/png" href="assets/logo.png" />
 
 <style>
@@ -2452,7 +2452,7 @@ section{padding:72px 0!important}
   cursor:pointer;
 }
 .finder-preview::after{
-  content:'View';
+  content:'Lihat';
   position:absolute;
   right:18px;
   bottom:18px;
@@ -3424,7 +3424,7 @@ section{padding:72px 0!important}
   line-height:1.35!important;
 }
 
-/* Remove old note space if any remains */
+/* Buang old note space if any remains */
 .combined-note{
   display:none!important;
 }
@@ -3595,7 +3595,7 @@ section{padding:72px 0!important}
 
 /* ===== V33 EQUAL PRODUCT CARDS + CLEANER MYSTIC SECTION ===== */
 
-/* Remove the now-unused first column from the Mystic Approach section */
+/* Buang the now-unused first column from the Mystic Approach section */
 .brand-story-grid{
   grid-template-columns:minmax(0,1.25fr) minmax(280px,.55fr)!important;
   gap:46px!important;
@@ -3715,7 +3715,7 @@ section{padding:72px 0!important}
   display:none!important;
 }
 
-/* Remove the empty decorative top row/space that belonged to the number */
+/* Buang the empty decorative top row/space that belonged to the number */
 .brand-story{
   padding-top:clamp(44px,5vw,76px)!important;
 }
@@ -3869,6 +3869,133 @@ section{padding:72px 0!important}
   }
 }
 
+
+/* ===== V37 BM POLISH + ELEGANT INTERACTIONS ===== */
+
+/* subtle trust strip for local ecommerce behaviour */
+.malay-trust-strip{
+  padding:0!important;
+  background:rgba(80,48,22,.92);
+}
+.malay-trust-inner{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+}
+.malay-trust-inner span{
+  padding:15px 18px;
+  text-align:center;
+}
+.malay-trust-inner span:not(:last-child){
+  border-right:1px solid rgba(255,241,211,.16);
+}
+.malay-trust-inner b{
+  display:block;
+  color:#fff0ca;
+  font-size:.78rem;
+  letter-spacing:.02em;
+}
+.malay-trust-inner small{
+  display:block;
+  margin-top:3px;
+  color:#d8c09d;
+  font-size:.67rem;
+}
+
+/* smoother reveal */
+[data-reveal]{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+}
+[data-reveal].show{
+  opacity:1;
+  transform:none;
+}
+
+/* elegant product hover */
+.product-card{
+  transition:transform .28s ease, box-shadow .28s ease!important;
+}
+.product-card:hover{
+  transform:translateY(-5px)!important;
+}
+.product-card .gallery img{
+  transition:transform .45s cubic-bezier(.2,.7,.2,1)!important;
+}
+.product-card:hover .gallery-slide.active img{
+  transform:scale(1.018)!important;
+}
+
+/* button shine, very subtle */
+.btn-primary,
+.product-actions .btn,
+.finder-link{
+  position:relative;
+  overflow:hidden;
+}
+.btn-primary::after,
+.product-actions .btn::after{
+  content:"";
+  position:absolute;
+  top:-120%;
+  left:-35%;
+  width:28%;
+  height:340%;
+  transform:rotate(18deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.20),transparent);
+  transition:left .65s ease;
+  pointer-events:none;
+}
+.btn-primary:hover::after,
+.product-actions .btn:hover::after{
+  left:120%;
+}
+
+/* formula choices feel tappable without looking like buttons */
+.finder-option{
+  transition:padding-left .22s ease, background .22s ease!important;
+}
+.finder-option:hover{
+  background:rgba(255,248,229,.25)!important;
+}
+
+/* mobile tap feedback */
+@media(max-width:760px){
+  .malay-trust-inner{
+    grid-template-columns:repeat(3,1fr);
+  }
+  .malay-trust-inner span{
+    padding:12px 8px;
+  }
+  .malay-trust-inner b{
+    font-size:.68rem;
+  }
+  .malay-trust-inner small{
+    font-size:.59rem;
+  }
+
+  .product-card:active,
+  .finder-option:active,
+  .combined-formulas button:active{
+    transform:scale(.988)!important;
+  }
+}
+
+/* respect reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+  [data-reveal]{
+    opacity:1!important;
+    transform:none!important;
+  }
+}
+
 </style>
 </head>
 
@@ -3986,7 +4113,7 @@ section{padding:72px 0!important}
       <div class="finder-preview" id="finderPreview" role="button" tabindex="0" aria-label="Lihat formula yang dipilih">
         <div class="finder-number">01</div>
         <div class="finder-preview-art">
-          <img id="finderImage" src="assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=36" alt="Amino Peptide Hair Tonic">
+          <img id="finderImage" src="assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=37" alt="Amino Peptide Hair Tonic">
         </div>
         <div class="finder-preview-copy">
           <small id="finderEyebrow">Rambut & Kulit Kepala Sihat</small>
@@ -4015,8 +4142,8 @@ section{padding:72px 0!important}
       <article class="product-card" data-id="amino" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=36" alt="Imej utama Amino Peptide Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Amino-Peptide%20Hair-Tonic-2.png?v=36" alt="Imej kedua Amino Peptide Hair Tonic"></div>
+            <div class="gallery-slide active"><img src="assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=37" alt="Imej utama Amino Peptide Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Amino-Peptide%20Hair-Tonic-2.png?v=37" alt="Imej kedua Amino Peptide Hair Tonic"></div>
           </div>
           
         </div>
@@ -4034,8 +4161,8 @@ section{padding:72px 0!important}
       <article class="product-card" data-id="ginseng" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Ginseng-Hair-Tonic-thumbnail.png?v=36" alt="Imej utama Ginseng Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-2.png?v=36" alt="Imej kedua Ginseng Hair Tonic"></div>
+            <div class="gallery-slide active"><img src="assets/Ginseng-Hair-Tonic-thumbnail.png?v=37" alt="Imej utama Ginseng Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-2.png?v=37" alt="Imej kedua Ginseng Hair Tonic"></div>
           </div>
           
         </div>
@@ -4053,8 +4180,8 @@ section{padding:72px 0!important}
       <article class="product-card" data-id="yogurt" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Yogurt-Hair-Tonic-thumbnail.png?v=36" alt="Imej utama Yogurt Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-2.png?v=36" alt="Imej kedua Yogurt Hair Tonic"></div>
+            <div class="gallery-slide active"><img src="assets/Yogurt-Hair-Tonic-thumbnail.png?v=37" alt="Imej utama Yogurt Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-2.png?v=37" alt="Imej kedua Yogurt Hair Tonic"></div>
           </div>
           
         </div>
@@ -4072,8 +4199,8 @@ section{padding:72px 0!important}
       <article class="product-card" data-id="protein" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=36" alt="Imej utama Protein Terhidrolisis Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=36" alt="Imej kedua Protein Terhidrolisis Hair Tonic"></div>
+            <div class="gallery-slide active"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=37" alt="Imej utama Protein Terhidrolisis Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=37" alt="Imej kedua Protein Terhidrolisis Hair Tonic"></div>
           </div>
           
         </div>
@@ -4148,7 +4275,7 @@ section{padding:72px 0!important}
 </div>
 
       <div class="combined-care-image">
-        <img src="assets/mystic-benefits-showcase.png?v=36" alt="Mystic Hair Tonic - manfaat utama dan empat formula">
+        <img src="assets/mystic-benefits-showcase.png?v=37" alt="Mystic Hair Tonic - manfaat utama dan empat formula">
       </div>
     </div>
   </div>
@@ -4172,7 +4299,7 @@ section{padding:72px 0!important}
         <div class="ingredient-image"><img src="assets/ginseng-ingredients.png" alt="Bahan Ginseng"></div>
         <h3>Ekstrak Ginseng</h3>
         <p>Panax Ginseng dengan Ginsenoside untuk penjagaan akar, kesegaran kulit kepala dan rambut yang kelihatan lebih penuh serta terurus.</p>
-        <div class="ingredient-meta"><b>Fokus</b><span>Penjagaan akar rambut · scalp · volume</span><b>Utama</b><span>Panax Ginseng · Ginsenoside</span></div>
+        <div class="ingredient-meta"><b>Fokus</b><span>Penjagaan akar rambut · kulit kepala · volum</span><b>Utama</b><span>Panax Ginseng · Ginsenoside</span></div>
       </article>
 
       <article class="ingredient-card" data-reveal>
@@ -4193,7 +4320,7 @@ section{padding:72px 0!important}
         <div class="ingredient-image"><img src="assets/hydrolyzed-ingredients.png" alt="Bahan Protein Terhidrolisis"></div>
         <h3>Protein Terhidrolisis</h3>
         <p>Protein Soya dengan Ekstrak Kulit Zizyphus Joazeiro untuk nutrisi, penjagaan akar dan kulit kepala yang mudah berkelemumur.</p>
-        <div class="ingredient-meta"><b>Fokus</b><span>Akar · kesegaran kulit kepala · kilauan</span><b>Utama</b><span>Soy Protein · Joazeiro Bark</span></div>
+        <div class="ingredient-meta"><b>Fokus</b><span>Akar · kesegaran kulit kepala · kilauan</span><b>Utama</b><span>Protein Soya · Kulit Joazeiro</span></div>
       </article>
     </div>
   </div>
@@ -4297,7 +4424,7 @@ section{padding:72px 0!important}
           <div class="step-content">
             <div class="step-meta">
               <div class="step-no">3</div>
-              <div><h3>Urut gently</h3><p>Urut for around 1–3 minutes to help spread the tonic evenly.</p></div>
+              <div><h3>Urut perlahan</h3><p>Urut perlahan selama kira-kira 1–3 minit supaya tonik tersebar dengan sekata.</p></div>
             </div>
           </div>
         </article>
@@ -4323,7 +4450,7 @@ section{padding:72px 0!important}
     <div class="faq" data-reveal>
       <div class="faq-item">
         <button class="faq-q"><span>Formula mana yang sesuai untuk saya?</span><span>+</span></button>
-        <div class="faq-a"><p>Choose Ginseng for root-focused care, Yogurt for moisture and shine, Amino Peptide for healthy hair/scalp care, and Protein Terhidrolisis for protein-focused nourishment and dandruff/root care.</p></div>
+        <div class="faq-a"><p>Pilih Ginseng untuk fokus penjagaan akar rambut, Yogurt untuk kelembapan dan kilauan, Amino Peptide untuk penjagaan rambut serta kulit kepala, dan Protein Terhidrolisis untuk nutrisi berasaskan protein serta penjagaan kelemumur dan akar.</p></div>
       </div>
 
       <div class="faq-item">
@@ -4404,18 +4531,18 @@ section{padding:72px 0!important}
 <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
   <div class="cart-head">
     <h3>Troli Anda</h3>
-    <button class="close-cart" id="closeCart" aria-label="Tutup cart">×</button>
+    <button class="close-cart" id="closeCart" aria-label="Tutup troli">×</button>
   </div>
   <div class="cart-items" id="cartItems"></div>
   <div class="cart-foot">
-    <p>Price and availability can be confirmed with Milly before payment.</p>
+    <p>Harga dan ketersediaan stok boleh disahkan melalui WhatsApp sebelum membuat pembayaran.</p>
     <button class="btn btn-primary" id="checkoutWhatsapp">Teruskan ke WhatsApp</button>
   </div>
 </aside>
 
 <div class="modal" id="productModal" aria-hidden="true">
   <div class="modal-card">
-    <button class="close-modal" id="closeModal" aria-label="Tutup product details">×</button>
+    <button class="close-modal" id="closeModal" aria-label="Tutup butiran produk">×</button>
     <div class="modal-art">
       <button class="modal-image-arrow prev" id="modalImagePrev" type="button" aria-label="Imej produk sebelumnya">←</button>
       <img id="modalImg" src="" alt="">
@@ -4506,50 +4633,47 @@ classifyProductGalleryImages();
 })();
 
 
-const fallbackImage='assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=36';
+const fallbackImage='assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=37';
 const products={
   ginseng:{
     name:'Ginseng Hair Tonic',
-    img:'assets/Ginseng-Hair-Tonic-thumbnail.png?v=36',
-    kicker:'Promote hair growth & prevent hair loss',
-    desc:'Ginseng Hair Tonic is empowered with Panax Ekstrak Ginseng, an herbal extract rich in Ginsenoside. The supplied product material states that the active compound supports the hair root, stimulates hair cells and promotes hair growth, while daily usage is beneficial for a healthy, volumized hair look and preventing hair loss.',
-    ingredients:['Panax Ekstrak Ginseng','Ginsenoside','Botanical extracts'],
-    details:[
-      ['🌱','Hair root care','Supports the hair root and healthy-looking scalp'],
-      ['🧬','Hair cell support','Positioned to stimulate hair cells'],
-      ['✨','Healthy volume','Supports a healthier, more volumized look'],
-      ['🛡️','Hair fall care','Positioned to help prevent hair loss']
+    kicker:'Penjagaan akar rambut',
+    desc:'Ginseng Hair Tonic menggunakan Ekstrak Panax Ginseng dengan Ginsenoside untuk membantu menyokong penjagaan akar rambut dan kulit kepala. Sesuai dimasukkan dalam rutin harian untuk rambut yang kelihatan lebih terurus dan bervolum.',
+    ingredients:['Ekstrak Panax Ginseng','Ginsenoside','Ekstrak Botani'],
+    features:[
+      ['🌱','Penjagaan akar rambut','Menyokong rutin penjagaan akar rambut dan kulit kepala'],
+      ['🧬','Sokongan rambut','Membantu mengekalkan rambut yang kelihatan terurus'],
+      ['✨','Volum lebih terjaga','Membantu rambut kelihatan lebih penuh dan kemas'],
+      ['🛡️','Penjagaan rambut gugur','Sesuai untuk rutin penjagaan rambut yang mudah gugur']
     ]
   },
   yogurt:{
     name:'Yogurt Hair Tonic',
-    img:'assets/Yogurt-Hair-Tonic-thumbnail.png?v=36',
-    kicker:'Extra moisture & shining hair',
-    desc:'Yogurt Hair Tonic diformulasikan dengan ekstrak yogurt serta bahan seperti kalsium, fosforus, zink, zat besi dan vitamin untuk fokus kelembapan kulit kepala dan rambut yang lebih lembut serta berkilau.',
-    ingredients:['Ekstrak Yogurt','Calcium','Phosphorus','Zinc','Iron','Vitamins'],
-    details:[
-      ['💧','Extra moisture','Adds moisture to the scalp'],
-      ['✨','Shine support','Supports shining, lustrous-looking hair'],
-      ['🧴','Softer feel','Helps hair feel softer and smoother'],
-      ['🛡️','Root care','Supports healthier-looking hair roots']
+    kicker:'Kelembapan & kilauan',
+    desc:'Yogurt Hair Tonic diformulasikan untuk fokus kelembapan kulit kepala serta membantu rambut terasa lebih lembut, licin dan kelihatan berkilau.',
+    ingredients:['Ekstrak Yogurt','Kalsium','Fosforus','Zink','Zat Besi','Vitamin'],
+    features:[
+      ['💧','Kelembapan tambahan','Membantu mengekalkan kelembapan kulit kepala'],
+      ['✨','Sokongan kilauan','Membantu rambut kelihatan lebih berkilau'],
+      ['🌸','Rambut lebih lembut','Membantu rambut terasa lebih lembut dan terurus'],
+      ['🛡️','Penjagaan akar','Menyokong rutin penjagaan akar rambut']
     ]
   },
   amino:{
     name:'Amino Peptide Hair Tonic',
-    img:'assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=36',
-    kicker:'Penjagaan Rambut & Kulit Kepala',
-    desc:'Amino Peptide Hair Tonic diformulasikan dengan campuran 15 jenis asid amino untuk penjagaan rambut dan kulit kepala. The supplied product material says the nutrients help slow scalp aging, support melanin cells and promote strong, thick hair shafts while keeping hair and scalp healthy.',
-    ingredients:['15 types of amino acids','Amino peptides','Nutrient blend'],
-    details:[
-      ['🧬','Amino acid blend','Rich blending of 15 types of amino acids'],
-      ['🌿','Scalp care','Supports a healthy-looking scalp'],
-      ['⚫','Melanin support','Positioned to nourish melanin cells'],
-      ['💪','Stronger-looking hair','Supports strong and thick-looking hair shafts']
+    kicker:'Rambut & kulit kepala sihat',
+    desc:'Amino Peptide Hair Tonic diformulasikan dengan campuran 15 jenis asid amino untuk penjagaan rambut dan kulit kepala. Sesuai untuk rutin yang memberi fokus kepada kesegaran kulit kepala dan rambut yang kelihatan lebih kuat serta tebal.',
+    ingredients:['15 jenis asid amino','Amino Peptide','Campuran Nutrien'],
+    features:[
+      ['🧬','Campuran asid amino','Campuran 15 jenis asid amino'],
+      ['🌿','Penjagaan kulit kepala','Menyokong rutin kulit kepala yang sihat'],
+      ['⚫','Sokongan melanin','Diformulasikan untuk membantu menyokong penjagaan melanin rambut'],
+      ['💪','Rambut lebih kuat','Membantu rambut kelihatan lebih kuat dan tebal']
     ]
   },
   protein:{
     name:'Protein Terhidrolisis Hair Tonic',
-    img:'assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=36',
+    img:'assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=37',
     kicker:'Penjagaan Kelemumur & Akar Rambut',
     desc:'Protein Terhidrolisis Hair Tonic is enriched with soluble protein from Natural Soy. The supplied product material highlights nourishment for healthy lustrous hair, stronger hair roots, reduced excessive hair loss, scalp freshness and dandruff care with Zizyphus Joazeiro Bark Extract.',
     ingredients:['Natural Soy Protein','Protein Terhidrolisis','Zizyphus Joazeiro Bark Extract'],
@@ -4564,10 +4688,10 @@ const products={
 };
 
 const productImages={
-  amino:['assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=36', 'assets/Amino-Peptide%20Hair-Tonic.png?v=36', 'assets/Amino-Peptide%20Hair-Tonic-2.png?v=36'],
-  ginseng:['assets/Ginseng-Hair-Tonic-thumbnail.png?v=36', 'assets/Ginseng-Hair-Tonic.png?v=36', 'assets/Ginseng-Hair-Tonic-2.png?v=36'],
-  yogurt:['assets/Yogurt-Hair-Tonic-thumbnail.png?v=36', 'assets/Yogurt-Hair-Tonic.png?v=36', 'assets/Yogurt-Hair-Tonic-2.png?v=36'],
-  protein:['assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=36', 'assets/Hydrolyzed-Protein-Hair-Tonic.png?v=36', 'assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=36']
+  amino:['assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=37', 'assets/Amino-Peptide%20Hair-Tonic.png?v=37', 'assets/Amino-Peptide%20Hair-Tonic-2.png?v=37'],
+  ginseng:['assets/Ginseng-Hair-Tonic-thumbnail.png?v=37', 'assets/Ginseng-Hair-Tonic.png?v=37', 'assets/Ginseng-Hair-Tonic-2.png?v=37'],
+  yogurt:['assets/Yogurt-Hair-Tonic-thumbnail.png?v=37', 'assets/Yogurt-Hair-Tonic.png?v=37', 'assets/Yogurt-Hair-Tonic-2.png?v=37'],
+  protein:['assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=37', 'assets/Hydrolyzed-Protein-Hair-Tonic.png?v=37', 'assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=37']
 };
 
 let currentModalImageIndex=0;
@@ -5135,28 +5259,28 @@ if(window.innerWidth<=640){
   const data={
     amino:{
       num:'01',
-      img:'assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=36',
+      img:'assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=37',
       eyebrow:'Rambut & Kulit Kepala Sihat',
       title:'Amino Peptide Hair Tonic',
       text:'Penjagaan berasaskan asid amino untuk membantu rambut dan kulit kepala kelihatan lebih sihat.'
     },
     ginseng:{
       num:'02',
-      img:'assets/Ginseng-Hair-Tonic-thumbnail.png?v=36',
+      img:'assets/Ginseng-Hair-Tonic-thumbnail.png?v=37',
       eyebrow:'Penjagaan Akar Rambut',
       title:'Ginseng Hair Tonic',
       text:'Penjagaan berfokuskan Ekstrak Panax Ginseng untuk akar rambut dan kulit kepala yang kelihatan sihat.'
     },
     yogurt:{
       num:'03',
-      img:'assets/Yogurt-Hair-Tonic-thumbnail.png?v=36',
+      img:'assets/Yogurt-Hair-Tonic-thumbnail.png?v=37',
       eyebrow:'Kelembapan & Kilauan',
       title:'Yogurt Hair Tonic',
       text:'Penjagaan berfokuskan kelembapan untuk rambut yang terasa lebih lembut, licin dan kelihatan berkilau.'
     },
     protein:{
       num:'04',
-      img:'assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=36',
+      img:'assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=37',
       eyebrow:'Kelemumur & Penjagaan Akar',
       title:'Protein Terhidrolisis Hair Tonic',
       text:'Penjagaan berasaskan protein untuk akar dan kulit kepala yang terasa lebih segar.'
