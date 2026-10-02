@@ -30,7 +30,7 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;max-width:100%;overflow-x:clip}
 body{
   margin:0;
   color:var(--ink);
@@ -39,7 +39,9 @@ body{
     radial-gradient(circle at 8% 4%,rgba(255,242,200,.50),transparent 26%),
     radial-gradient(circle at 88% 16%,rgba(59,36,22,.08),transparent 28%),
     linear-gradient(180deg,#c98d49 0%,#dfb66f 18%,#f1dba8 44%,#e0b46c 74%,#ba7439 100%);
-  overflow-x:hidden;
+  overflow-x:clip;
+  width:100%;
+  max-width:100%;
 }
 
 body::before{
@@ -72,7 +74,9 @@ a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 button{font:inherit}
 button,a{-webkit-tap-highlight-color:transparent}
-.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+.container{width:min(var(--max),calc(100% - 40px));margin:auto;min-width:0}
+section,header,footer{max-width:100%;overflow-x:clip}
+.product-grid,.ingredient-grid,.steps-grid,.results-top{min-width:0}
 section{padding:82px 0;position:relative}
 
 .kicker{
@@ -232,7 +236,7 @@ p{line-height:1.68;color:var(--muted)}
 /* products */
 .product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .product-card{
-  overflow:hidden;border-radius:24px;
+  position:relative;overflow:hidden;border-radius:24px;
   background:linear-gradient(180deg,rgba(248,238,213,.88),rgba(244,226,188,.78));
   border:1px solid rgba(79,52,24,.13);
   box-shadow:var(--shadow);
@@ -281,9 +285,10 @@ p{line-height:1.68;color:var(--muted)}
 .mobile-carousel-dots button.active{background:var(--green);transform:scale(1.2)}
 
 /* ingredients */
-.ingredient-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ingredients-section{padding:62px 0}
+.ingredient-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .ingredient-card{
-  position:relative;overflow:hidden;padding:18px;border-radius:24px;
+  position:relative;overflow:hidden;padding:14px;border-radius:22px;
   background:linear-gradient(180deg,rgba(247,237,208,.88),rgba(239,219,177,.80));
   border:1px solid rgba(83,54,25,.14);
   box-shadow:0 12px 30px rgba(68,40,6,.08);
@@ -298,11 +303,15 @@ p{line-height:1.68;color:var(--muted)}
   pointer-events:none
 }
 .ingredient-image{
-  width:100%;aspect-ratio:1.16/1;border-radius:18px;overflow:hidden;margin-bottom:15px;
-  background:#e8c885;border:1px solid rgba(77,50,22,.11)
+  width:100%;height:210px;border-radius:16px;overflow:hidden;margin-bottom:11px;
+  background:linear-gradient(145deg,#edd39a,#d7ad62);border:1px solid rgba(77,50,22,.11);
+  display:grid;place-items:center
 }
-.ingredient-image img{width:100%;height:100%;object-fit:cover;transition:.5s ease}
+.ingredient-image img{width:100%;height:100%;object-fit:contain;object-position:center;padding:5px;transition:.5s ease}
 .ingredient-card:hover .ingredient-image img{transform:scale(1.05)}
+.product-card,.ingredient-card,.step-card{isolation:isolate}
+.product-card::before,.ingredient-card::before,.step-card::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(115deg,transparent 20%,rgba(255,248,221,.28) 45%,transparent 68%);transform:translateX(-130%);transition:transform .75s ease}
+.product-card:hover::before,.ingredient-card:hover::before,.step-card:hover::before{transform:translateX(130%)}
 .ingredient-card h3{font-size:1.05rem;color:var(--green)}
 .ingredient-card p{font-size:.86rem;margin-bottom:0}
 
@@ -475,35 +484,54 @@ footer{
 .cart-foot .btn{width:100%}
 
 .modal{
-  position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:16px;
-  background:rgba(31,20,8,.56);backdrop-filter:blur(8px)
+  position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:18px;
+  background:rgba(31,20,8,.58);backdrop-filter:blur(10px)
 }
 .modal.open{display:grid}
 .modal-card{
-  position:relative;width:min(980px,100%);max-height:88vh;overflow:auto;
-  display:grid;grid-template-columns:.85fr 1.15fr;border-radius:26px;
-  background:#f3dfb8;box-shadow:0 30px 80px rgba(0,0,0,.24);
-  border:1px solid rgba(85,55,25,.14)
+  position:relative;width:min(1040px,100%);height:min(760px,90vh);overflow:hidden;
+  display:grid;grid-template-columns:minmax(320px,.9fr) minmax(0,1.1fr);
+  border-radius:18px;background:#f3dfb8;
+  box-shadow:0 34px 90px rgba(0,0,0,.26);border:1px solid rgba(90,59,27,.16)
 }
 .modal-art{
-  min-height:460px;display:grid;place-items:center;
-  background:linear-gradient(180deg,#efd49a,#b8793c);padding:20px
+  min-height:0;display:grid;place-items:center;padding:34px;
+  background:linear-gradient(180deg,#ecd3a0 0%,#c78945 100%);
+  border-right:1px solid rgba(77,47,20,.14);overflow:hidden
 }
-.modal-art img{max-height:430px;object-fit:contain;filter:drop-shadow(0 20px 14px rgba(48,25,0,.16))}
-.modal-copy{padding:34px}
-.modal-copy .summary{font-size:.95rem}
-.detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}
+.modal-art img{
+  width:min(72%,360px);height:min(78%,560px);max-width:360px;max-height:560px;
+  object-fit:contain;filter:drop-shadow(0 24px 18px rgba(48,25,0,.18))
+}
+.modal-copy{
+  min-width:0;overflow:auto;padding:72px 38px 34px;
+  scrollbar-width:thin;scrollbar-color:rgba(91,53,20,.35) transparent
+}
+.modal-copy::-webkit-scrollbar{width:8px}
+.modal-copy::-webkit-scrollbar-thumb{background:rgba(91,53,20,.28);border-radius:8px}
+.modal-copy .summary{font-size:.96rem;max-width:680px}
+.modal-topline{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:6px}
+.detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}
 .detail-chip{
-  display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:14px;
-  background:#f9edd0;border:1px solid var(--line)
+  display:grid;grid-template-columns:38px minmax(0,1fr);gap:10px;align-items:start;
+  padding:14px 15px;border-radius:10px;background:rgba(255,248,230,.72);
+  border:1px solid rgba(82,53,24,.14)
 }
-.detail-chip .ico{font-size:1.1rem}
-.detail-chip strong{display:block;font-size:.84rem;color:var(--green)}
-.detail-chip span{font-size:.78rem;color:var(--muted)}
-.ingredient-list{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.detail-chip .ico{
+  width:38px;height:38px;display:grid;place-items:center;font-size:1.05rem;
+  background:#ead1a0;border-radius:9px
+}
+.detail-chip strong{display:block;font-size:.86rem;line-height:1.25;color:#3f2a18}
+.detail-chip span{display:block;margin-top:4px;font-size:.79rem;line-height:1.45;color:var(--muted)}
+.ingredient-list{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
 .ingredient-badge{
-  padding:7px 10px;border-radius:999px;background:#d7ad62;color:#3b2416;
-  font-size:.76rem;font-weight:800
+  padding:7px 10px;border-radius:8px;background:#d7ad62;color:#3b2416;
+  font-size:.75rem;font-weight:800;border:1px solid rgba(100,61,25,.12)
+}
+.close-modal{
+  position:absolute;top:14px;right:14px;z-index:8;width:42px;height:42px;
+  border-radius:10px!important;background:#f9edd0!important;border:1px solid rgba(80,50,22,.15)!important;
+  box-shadow:0 8px 18px rgba(0,0,0,.12)!important;font-size:1.2rem;display:grid;place-items:center
 }
 
 .wa-float{
@@ -541,7 +569,7 @@ footer{
 
 @media(max-width:980px){
   .product-grid,.ingredient-grid{grid-template-columns:repeat(2,1fr)}
-  .results-top,.modal-card,.cta-box{grid-template-columns:1fr}
+  .results-top,.cta-box{grid-template-columns:1fr}
   .steps-grid{grid-template-columns:repeat(3,1fr)}
   .step-media{height:185px}
   .cta-box{text-align:center}
@@ -584,13 +612,14 @@ footer{
   .product-body p{min-height:auto}
 
   .ingredient-grid{
-    display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
-    scrollbar-width:none;padding-bottom:8px
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;overflow:visible;padding-bottom:0
   }
-  .ingredient-grid::-webkit-scrollbar{display:none}
-  .ingredient-card{flex:0 0 82%;scroll-snap-align:center}
-  .ingredient-image{aspect-ratio:1.35/1}
+  .ingredient-card{min-width:0;padding:10px;border-radius:18px}
+  .ingredient-image{height:145px;margin-bottom:9px;border-radius:14px}
+  .ingredient-card h3{font-size:.92rem;margin-bottom:5px}
+  .ingredient-card p{font-size:.76rem;line-height:1.45}
 
+  .ingredients-section{padding:48px 0}
   .results-shell{padding:15px}
   .before-card{flex-basis:92%}
   .results-copy p{font-size:.89rem}
@@ -624,12 +653,24 @@ footer{
   .footer-inner{grid-template-columns:1fr;text-align:center}
   .footer-brand,.socials{justify-content:center}
 
-  .modal{padding:10px}
-  .modal-card{border-radius:20px}
-  .modal-art{min-height:260px}
-  .modal-art img{max-height:250px}
-  .modal-copy{padding:24px 18px}
+  .modal{padding:8px;align-items:stretch}
+  .modal-card{width:100%;height:calc(100vh - 16px);max-height:none;border-radius:14px;grid-template-columns:1fr;grid-template-rows:240px minmax(0,1fr)}
+  .modal-art{min-height:0;border-right:0;border-bottom:1px solid rgba(77,47,20,.14);padding:16px}
+  .modal-art img{width:auto;height:210px;max-width:76%;max-height:210px}
+  .modal-copy{padding:58px 16px 22px}
+  .detail-grid{grid-template-columns:1fr 1fr;gap:9px}
+  .detail-chip{grid-template-columns:34px minmax(0,1fr);padding:11px}
+  .detail-chip .ico{width:34px;height:34px;border-radius:8px}
+  .ingredient-badge{font-size:.7rem;padding:6px 8px}
+  .close-modal{top:10px;right:10px;width:40px;height:40px}
+}
+
+@media(max-width:420px){
+  .modal-card{grid-template-rows:210px minmax(0,1fr)}
+  .modal-art img{height:182px;max-height:182px}
+  .modal-copy{padding:56px 13px 18px}
   .detail-grid{grid-template-columns:1fr}
+  .modal-copy h2{font-size:1.5rem!important}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -732,10 +773,10 @@ footer{
       <article class="product-card" data-id="amino" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Amino-Peptide-Hair-Tonic.png" alt="Amino Peptide Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Amino-Peptide-Hair-Tonic-2.png" alt="Amino Peptide Hair Tonic image 2"></div>
-            <div class="gallery-slide"><img src="assets/Amino-Peptide-Hair-Tonic-3.png" alt="Amino Peptide Hair Tonic image 3"></div>
-            <div class="gallery-slide"><img src="assets/Amino-Peptide-Hair-Tonic-4.png" alt="Amino Peptide Hair Tonic image 4"></div>
+            <div class="gallery-slide active"><img src="assets/Amino-Peptide Hair-Tonic.png" onerror="this.onerror=null;this.src='assets/Amino-Peptide-Hair-Tonic.png';" alt="Amino Peptide Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Amino-Peptide Hair-Tonic-2.png" onerror="this.onerror=null;this.src='assets/Amino-Peptide-Hair-Tonic-2.png';" alt="Amino Peptide Hair Tonic image 2"></div>
+            <div class="gallery-slide"><img src="assets/Amino-Peptide Hair-Tonic-3.png" onerror="this.onerror=null;this.src='assets/Amino-Peptide-Hair-Tonic-3.png';" alt="Amino Peptide Hair Tonic image 3"></div>
+            <div class="gallery-slide"><img src="assets/Amino-Peptide Hair-Tonic-4.png" onerror="this.onerror=null;this.src='assets/Amino-Peptide-Hair-Tonic-4.png';" alt="Amino Peptide Hair Tonic image 4"></div>
           </div>
           <div class="gallery-nav"><div class="gcount">1 / 4</div></div>
         </div>
@@ -818,7 +859,7 @@ footer{
   </div>
 </section>
 
-<section>
+<section class="ingredients-section">
   <span class="floating-leaf leaf-b"></span>
   <div class="container">
     <div class="section-head" data-reveal>
@@ -1048,7 +1089,7 @@ footer{
     <div class="modal-art"><img id="modalImg" src="" alt=""></div>
 
     <div class="modal-copy">
-      <div class="kicker" id="modalKicker"></div>
+      <div class="modal-topline"><div class="kicker" id="modalKicker"></div></div>
       <h2 id="modalTitle" style="font-size:2rem"></h2>
       <p class="summary" id="modalDesc"></p>
 
@@ -1061,6 +1102,7 @@ footer{
 </div>
 
 <script>
+const fallbackImage='assets/Amino-Peptide-Hair-Tonic.png';
 const products={
   ginseng:{
     name:'Ginseng Hair Tonic',
@@ -1090,7 +1132,7 @@ const products={
   },
   amino:{
     name:'Amino Peptide Hair Tonic',
-    img:'assets/Amino-Peptide-Hair-Tonic.png',
+    img:'assets/Amino-Peptide Hair-Tonic.png',
     kicker:'Healthy Hair/Scalp & Anti-Aging for Scalp',
     desc:'Amino Peptide Hair Tonic is formulated with a rich blending of 15 types of amino acids. The supplied product material says the nutrients help slow scalp aging, support melanin cells and promote strong, thick hair shafts while keeping hair and scalp healthy.',
     ingredients:['15 types of amino acids','Amino peptides','Nutrient blend'],
@@ -1258,8 +1300,10 @@ function openProduct(id){
   currentProduct=id;
   const p=products[id];
 
-  document.getElementById('modalImg').src=p.img;
-  document.getElementById('modalImg').alt=p.name;
+  const modalImg=document.getElementById('modalImg');
+  modalImg.onerror=()=>{modalImg.onerror=null; if(id==='amino') modalImg.src=fallbackImage;};
+  modalImg.src=p.img;
+  modalImg.alt=p.name;
   document.getElementById('modalKicker').textContent=p.kicker;
   document.getElementById('modalTitle').textContent=p.name;
   document.getElementById('modalDesc').textContent=p.desc;
@@ -1350,7 +1394,7 @@ function renderCart(){
     const p=products[id];
     return `
       <div class="cart-item">
-        <img src="${p.img}" alt="${p.name}">
+        <img src="${p.img}" onerror="if('${id}'==='amino'){this.onerror=null;this.src='${fallbackImage}'}" alt="${p.name}">
         <div>
           <h4>${p.name}</h4>
           <small>Price to be confirmed</small>
@@ -1404,6 +1448,19 @@ window.addEventListener('pointermove',e=>{
     leaf.style.translate=`${x*(i?-.6:.6)}px ${y*(i?-.5:.5)}px`;
   });
 });
+
+/* subtle premium tilt on desktop only */
+if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+  document.querySelectorAll('.product-card,.ingredient-card,.step-card').forEach(card=>{
+    card.addEventListener('pointermove',e=>{
+      const r=card.getBoundingClientRect();
+      const rx=((e.clientY-r.top)/r.height-.5)*-4;
+      const ry=((e.clientX-r.left)/r.width-.5)*5;
+      card.style.transform=`translateY(-4px) perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+    card.addEventListener('pointerleave',()=>{card.style.transform='';});
+  });
+}
 
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){
