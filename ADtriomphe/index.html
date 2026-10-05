@@ -116,6 +116,70 @@ p{line-height:1.75;color:var(--muted);margin:0}.eyebrow{font-size:11px;text-tran
   #page-home .section>.wrap.two{gap:24px}
 }
 
+/* Home expertise rows */
+#page-home .section.dark .tile{
+  display:grid;
+  grid-template-columns:64px minmax(0,1fr) 44px;
+  gap:22px;
+  align-items:center;
+  width:100%;
+  padding:24px 4px;
+  border-top:1px solid rgba(255,255,255,.16);
+  cursor:pointer;
+  transition:padding .28s ease,color .28s ease,border-color .28s ease,background .28s ease;
+}
+#page-home .section.dark .tile:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+#page-home .section.dark .tile>span:first-child{
+  font-size:12px;
+  letter-spacing:.14em;
+  font-weight:800;
+  color:rgba(255,255,255,.56);
+}
+#page-home .section.dark .tile h3{
+  margin:0;
+  font-size:clamp(28px,3vw,42px);
+  line-height:1.08;
+  color:#fff;
+}
+#page-home .section.dark .tile>span:last-child{
+  justify-self:end;
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:50%;
+  font-size:18px;
+  color:#fff;
+  transition:transform .28s ease,background .28s ease,border-color .28s ease,color .28s ease;
+}
+@media(hover:hover) and (pointer:fine){
+  #page-home .section.dark .tile:hover{
+    padding-left:14px;
+    padding-right:10px;
+    color:var(--gold);
+    border-color:rgba(228,189,67,.34);
+    background:linear-gradient(90deg,rgba(255,255,255,.035),transparent 70%);
+  }
+  #page-home .section.dark .tile:hover h3{color:var(--gold)}
+  #page-home .section.dark .tile:hover>span:last-child{
+    transform:translateX(4px);
+    background:var(--gold);
+    color:var(--navy);
+    border-color:var(--gold);
+  }
+}
+@media(max-width:620px){
+  #page-home .section.dark .tile{
+    grid-template-columns:34px minmax(0,1fr) 36px;
+    gap:12px;
+    padding:18px 0;
+  }
+  #page-home .section.dark .tile h3{font-size:24px}
+  #page-home .section.dark .tile>span:first-child{font-size:10px}
+  #page-home .section.dark .tile>span:last-child{width:34px;height:34px;font-size:16px}
+}
+
 /* subtle motion */
 .reveal{opacity:0;transform:translateY(20px);transition:.7s}.reveal.on{opacity:1;transform:none}
 
@@ -265,42 +329,31 @@ html,body{width:100%;overflow-x:clip}
 <section class="page active" id="page-home">
   <section class="pageHero">
     <div class="wrap heroGrid">
-      <div class="heroCopy reveal">
-        <div class="eyebrow">Training · HR Consulting · Malaysia</div>
-        <h1 style="margin-top:12px">Better people.<br><span style="color:var(--orange)">Stronger organisations.</span></h1>
-        <p>ADtriomphe Asia supports organisations with practical professional training and HR consulting solutions designed around real workplace needs, compliance and business performance.</p>
-        <div class="heroActions"><button class="btn primary" data-page="training">Explore Training →</button><button class="btn" data-page="consulting">Explore HR Consulting</button></div>
-        <div class="statrow">
-          <div class="stat"><b>10+</b><span>Training categories</span></div>
-          <div class="stat"><b>In-House</b><span>Customised programmes</span></div>
-          <div class="stat"><b>Practical</b><span>Workplace-focused support</span></div>
-        </div>
+      <div class="reveal">
+        <div class="eyebrow">HR Advisory · Training · Malaysia</div>
+        <h1>Better people.<br><span style="color:var(--orange)">Stronger organisations.</span></h1>
+        <p style="font-size:18px;max-width:650px">ADtriomphe Asia supports organisations through corporate training, HR advisory, outsourcing, employee relations guidance and payroll solutions designed for real workplace needs.</p>
+        <div class="heroActions"><button class="btn primary" data-page="consulting">Explore Our Solutions →</button><button class="btn" data-page="training">View Programmes</button></div>
+        <div class="statrow"><div class="stat"><b>HRD Corp</b><span>Claimable programmes</span></div><div class="stat"><b>In-House</b><span>Tailored learning</span></div><div class="stat"><b>Practical</b><span>Workplace-ready support</span></div></div>
       </div>
-      <div class="heroImg reveal"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85" alt="Professional team discussion"></div>
+      <div class="heroImg reveal"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85" alt="Professional HR discussion"></div>
     </div>
   </section>
-
-  <section class="section dark">
-    <div class="wrap">
-      <div class="eyebrow">What We Do</div><h2 style="margin-top:10px">Two focused areas. One professional partner.</h2>
-      <div class="two" style="margin-top:34px">
-        <article class="card reveal"><div class="eyebrow">Training</div><h3 style="margin-top:14px">Build capability across every level.</h3><p style="margin-top:12px">A broad programme portfolio covering HR, leadership, digital skills, finance, wellness, sales, operations, safety and governance.</p><button class="btn light" data-page="training" style="margin-top:22px">View Training Categories →</button></article>
-        <article class="card reveal"><div class="eyebrow">HR Consulting</div><h3 style="margin-top:14px">Strengthen your HR operations.</h3><p style="margin-top:12px">Flexible HR advisory, payroll outsourcing, workforce support and employee / industrial relations guidance.</p><button class="btn light" data-page="consulting" style="margin-top:22px">View Consulting Services →</button></article>
-      </div>
+  <section class="section dark"><div class="wrap"><div class="eyebrow">Our Expertise</div><h2>One partner. Four core solutions.</h2>
+    <div style="margin-top:35px">
+      <div class="tile" data-page="training"><span>01</span><h3>Training & Coaching</h3><span>→</span></div>
+      <div class="tile" data-consult="advisory"><span>02</span><h3>HR Advisory</h3><span>→</span></div>
+      <div class="tile" data-consult="irer"><span>03</span><h3>ER / IR Advisory</h3><span>→</span></div>
+      <div class="tile" data-consult="payroll"><span>04</span><h3>Payroll Management</h3><span>→</span></div>
     </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap two">
-      <div class="media reveal"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&q=85" alt="Corporate training workshop"></div>
-      <div class="reveal"><div class="eyebrow">Professional Development</div><h2 style="margin-top:10px">Learning built for the workplace.</h2><p style="margin-top:16px">Practical programmes for current business challenges, with customised in-house options available for your organisation.</p><div class="pills"><span class="pill">Leadership</span><span class="pill">HR</span><span class="pill">AI & Digital</span><span class="pill">Finance</span><span class="pill">Operations</span></div></div>
-    </div>
-  </section>
+  </div></section>
+  <section class="section"><div class="wrap two"><div class="media reveal"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&q=85" alt="Corporate training"></div><div class="reveal"><div class="eyebrow">People Development</div><h2>Build capability, not just attendance.</h2><p>From practical HR knowledge for managers to leadership development and customised in-house programmes, the focus is on learning people can apply immediately at work.</p><button class="btn" data-page="training">Discover Training →</button></div></div></section>
 </section>
 
 <section class="page" id="page-about">
-  <section class="pageHero dark"><div class="wrap heroGrid"><div class="heroCopy"><div class="eyebrow">About ADtriomphe Asia</div><h1 style="margin-top:12px">Practical expertise for people and organisations.</h1><p>ADtriomphe Asia combines professional training with hands-on HR support so organisations can build capability, improve people practices and operate with greater confidence.</p></div><div class="heroImg"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=85" alt="HR consultants meeting"></div></div></section>
-  <section class="section"><div class="wrap two"><div><div class="eyebrow">Our Approach</div><h2 style="margin-top:10px">Clear, relevant and business-focused.</h2></div><div><p>We focus on solutions that are useful in the workplace — from learning programmes that strengthen individual capability to HR consulting support that helps organisations manage people matters more consistently.</p><div class="list"><div><b>Practical</b><span>Content and advice designed for day-to-day workplace use.</span></div><div><b>Tailored</b><span>Flexible support based on organisational context and priorities.</span></div><div><b>Professional</b><span>Structured delivery with a focus on clarity, compliance and business relevance.</span></div></div></div></div></section>
+  <section class="pageHero dark"><div class="wrap two"><div><div class="eyebrow">About ADtriomphe Asia</div><h1>Practical HR expertise for growing organisations.</h1><p>ADtriomphe Asia is positioned around people development, professional HR guidance and practical workplace solutions.</p></div><div class="heroImg"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=85" alt="HR consultants meeting"></div></div></section>
+  <section class="section"><div class="wrap two"><div><div class="eyebrow">What We Believe</div><h2>People solutions should make business easier.</h2></div><div><p>Strong HR practices create clarity for managers, confidence for employees and stronger foundations for growth. ADtriomphe combines professional guidance with practical execution so organisations can move from policy to real workplace impact.</p><div class="list"><div><b>Practical</b><span>Focused on real workplace application.</span></div><div><b>Tailored</b><span>Designed around the organisation, not a generic template.</span></div><div><b>Professional</b><span>Structured HR guidance with business context.</span></div></div></div></div></section>
+  <section class="section soft"><div class="wrap"><div class="eyebrow">How We Work</div><h2>Advisory + capability + execution.</h2><div class="three"><div class="card"><span class="num">01</span><h3>Understand</h3><p>Clarify the organisation’s challenges, people priorities and business context.</p></div><div class="card"><span class="num">02</span><h3>Design</h3><p>Shape the right training, HR process or support model around those needs.</p></div><div class="card"><span class="num">03</span><h3>Apply</h3><p>Translate recommendations into practical actions, learning and ongoing support.</p></div></div></div></section>
 </section>
 
 <section class="page" id="page-training">
