@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ADtriomphe Asia | Training & HR Consulting</title>
+<meta name="description" content="ADtriomphe Asia — professional corporate training, HR advisory, payroll outsourcing, workforce solutions and IR/ER support in Malaysia.">
+<style>
+:root{
+  --navy:#071827;--navy2:#0d2739;--ink:#15222d;--paper:#fbfaf7;--cream:#f2eee6;
+  --orange:#ef5b2a;--gold:#e4bd43;--line:rgba(21,34,45,.12);--muted:#69747d;--white:#fff;
+  --shadow:0 20px 55px rgba(7,24,39,.10);--radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;max-width:100%;overflow-x:hidden}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--paper);color:var(--ink)}
+body.menu-open,body.modal-open{overflow:hidden}
+a{color:inherit;text-decoration:none} img{display:block;max-width:100%} button,input,select,textarea{font:inherit}
+button{color:inherit}.wrap{width:min(1180px,calc(100% - 44px));margin:auto}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.04em;margin:0}
+h1{font-size:clamp(50px,5.5vw,82px);line-height:.98} h2{font-size:clamp(34px,4vw,58px);line-height:1.05} h3{font-size:27px;line-height:1.15}
+p{line-height:1.75;color:var(--muted);margin:0}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:800;color:var(--orange)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border-radius:999px;border:1px solid var(--ink);font-size:13px;font-weight:800;background:transparent;cursor:pointer;transition:.25s}
+.btn:hover{transform:translateY(-2px);background:var(--ink);color:#fff}.btn.primary{background:var(--orange);border-color:var(--orange);color:#fff}.btn.primary:hover{background:#d94a1d}.btn.light{border-color:#fff;color:#fff}.btn.light:hover{background:#fff;color:var(--navy)}
+.section{padding:94px 0}.soft{background:var(--cream)}.dark{background:var(--navy);color:#fff}.dark p{color:#bac5cd}.two{display:grid;grid-template-columns:1fr 1fr;gap:58px;align-items:center}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.four{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 1px 0 rgba(255,255,255,.65) inset;transition:.3s}.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.dark .card{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.12)}
+
+/* Header */
+.topbar{position:fixed;inset:0 0 auto 0;height:76px;z-index:500;background:rgba(251,250,247,.93);backdrop-filter:blur(18px);border-bottom:1px solid rgba(21,34,45,.08)}
+.topin{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{width:190px}.brandBtn{border:0;background:none;padding:0;cursor:pointer}
+.nav{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:800}.navItem{position:relative}.nav button{border:0;background:none;cursor:pointer;padding:16px 13px;border-radius:10px;opacity:.76}.nav button:hover,.nav button.active{opacity:1;color:var(--orange);background:rgba(239,91,42,.055)}
+.chev{display:inline-block;width:7px;height:7px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg) translateY(-2px);margin-left:7px}
+.dropdown{position:absolute;top:100%;left:0;min-width:280px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:10px;box-shadow:0 22px 55px rgba(7,24,39,.15);opacity:0;visibility:hidden;transform:translateY(10px);transition:.2s;max-height:70vh;overflow:auto}
+.navItem:hover .dropdown,.navItem:focus-within .dropdown{opacity:1;visibility:visible;transform:none}.navItem.suppressDropdown .dropdown{opacity:0!important;visibility:hidden!important;pointer-events:none!important}.dropdown button{width:100%;display:flex;align-items:center;text-align:left;padding:11px 12px;font-size:12px;border-radius:9px;color:var(--ink);background:transparent}.dropdown button:hover{background:#f7f3ed;color:var(--orange)}.dropdown small{color:#9aa1a7;font-size:10px}
+.menuBtn{display:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;position:relative}.menuBtn span,.menuBtn:before,.menuBtn:after{content:"";position:absolute;width:17px;height:1.6px;background:var(--ink);left:12px;transition:.25s}.menuBtn span{top:20px}.menuBtn:before{top:15px}.menuBtn:after{top:25px}.menuBtn.open span{opacity:0}.menuBtn.open:before{transform:translateY(5px) rotate(45deg)}.menuBtn.open:after{transform:translateY(-5px) rotate(-45deg)}
+.mobileNav{display:none;position:fixed;z-index:490;top:70px;left:12px;right:12px;background:var(--paper);border:1px solid var(--line);box-shadow:0 20px 50px rgba(7,24,39,.16);padding:10px;border-radius:16px;max-height:calc(100vh - 88px);overflow:auto}.mobileNav.open{display:block}.mobileNav>button{width:100%;background:none;border:0;padding:13px 12px;text-align:left;font-weight:800;border-bottom:1px solid var(--line)}.mobileGroupRow{display:grid;grid-template-columns:1fr 44px;align-items:center;border-bottom:1px solid var(--line)}.mobileGroupMain{background:none;border:0;padding:13px 12px;text-align:left;font-weight:800;cursor:pointer}.mobileGroupToggle{width:44px;height:44px;border:0;background:none;display:grid;place-items:center;cursor:pointer;font-size:20px;font-weight:500}.mobileSub{display:none;padding:4px 0 8px 12px}.mobileSub.open{display:grid}.mobileSub button{background:transparent;border:0;border-left:2px solid #eee7df;padding:10px 12px;text-align:left;font-size:12px;color:#56616b}.mobileSub button:hover{color:var(--orange);border-left-color:var(--orange)}
+
+/* shell */
+.shell{padding-top:76px;min-height:100vh}.page{display:none;opacity:0;transform:translateY(14px)}.page.active{display:block;animation:pageIn .45s ease forwards}@keyframes pageIn{to{opacity:1;transform:none}}
+.pageHero{padding:88px 0 70px;position:relative;overflow:hidden}.pageHero.dark{background:var(--navy);color:#fff}.pageHero.dark p{color:#bdc8d0}.pageHero:after{content:"";position:absolute;width:430px;height:430px;border:1px solid rgba(228,189,67,.18);border-radius:50%;right:-175px;top:-170px;box-shadow:0 0 0 70px rgba(228,189,67,.035),0 0 0 140px rgba(228,189,67,.018)}
+.heroGrid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}.heroCopy p{font-size:17px;max-width:670px;margin-top:22px}.heroActions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.heroImg{height:525px;border-radius:160px 24px 24px 24px;overflow:hidden;position:relative}.heroImg img{width:100%;height:100%;object-fit:cover}.heroImg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(7,24,39,.3))}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}.pill{font-size:11px;font-weight:800;padding:9px 12px;border-radius:999px;background:#fff;border:1px solid var(--line)}.dark .pill{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.14);color:#fff}
+.statrow{display:grid;grid-template-columns:repeat(3,1fr);margin-top:38px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{padding:22px 16px}.stat+.stat{border-left:1px solid var(--line)}.stat b{font-family:Georgia,serif;font-size:26px;display:block}.stat span{font-size:11px;color:var(--muted)}
+.media{min-height:440px;border-radius:22px;overflow:hidden}.media img{width:100%;height:100%;object-fit:cover}.list{display:grid;gap:0;margin-top:22px}.list div{padding:15px 0;border-bottom:1px solid var(--line)}.list b{display:block;margin-bottom:4px}.list span{font-size:13px;color:var(--muted)}
+
+.catalogBack{display:inline-flex;align-items:center;gap:7px;border:0;background:transparent;padding:0;margin:0 0 22px;color:var(--ink);font-size:13px;font-weight:800;cursor:pointer}.catalogBack:hover{color:var(--orange)}
+
+/* category presentation */
+.categoryGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}.categoryCard{position:relative;min-height:170px;padding:24px;background:#fff;border:1px solid var(--line);border-radius:18px;cursor:pointer;transition:.28s;overflow:hidden}.categoryCard:after{content:"↗";position:absolute;right:20px;top:18px;font-size:20px;color:#aab1b7;transition:.25s}.categoryCard:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(239,91,42,.35)}.categoryCard:hover:after{color:var(--orange);transform:translate(2px,-2px)}.categoryCard .num{font-size:10px;letter-spacing:.16em;font-weight:800;color:var(--orange)}.categoryCard h3{font-size:24px;margin-top:26px}.categoryCard p{font-size:13px;margin-top:9px;line-height:1.55}
+
+/* training details */
+.catalogHero{padding:78px 0 46px}.catalogLayout{display:grid;grid-template-columns:280px 1fr;gap:34px;align-items:start}.catalogSide{position:sticky;top:100px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px}.catalogSide button{width:100%;border:0;background:transparent;text-align:left;padding:11px 12px;border-radius:9px;font-size:12px;font-weight:750;cursor:pointer;color:#5e6972}.catalogSide button:hover,.catalogSide button.active{background:#f7f2eb;color:var(--orange)}
+.catalogContent{min-width:0}.catalogHeader{display:flex;justify-content:space-between;gap:25px;align-items:end;padding-bottom:24px;border-bottom:1px solid var(--line)}.catalogHeader p{max-width:650px;margin-top:12px}.courseCount{white-space:nowrap;font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.courseSearch{display:flex;gap:10px;margin:24px 0 16px}.courseSearch input{flex:1;border:1px solid var(--line);background:#fff;padding:13px 15px;border-radius:12px;outline:0}.courseSearch input:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(239,91,42,.08)}
+.courseList{display:grid;gap:10px}.courseItem{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px 18px;transition:.23s}.courseItem:hover{border-color:rgba(239,91,42,.35);box-shadow:0 10px 30px rgba(7,24,39,.06)}.courseTitle{font-size:14px;font-weight:750;line-height:1.45}.courseMeta{font-size:11px;color:var(--muted);margin-top:4px}.miniBtn{border:1px solid var(--line);background:#fff;padding:9px 12px;border-radius:999px;font-size:11px;font-weight:800;cursor:pointer;white-space:nowrap}.miniBtn:hover{border-color:var(--orange);color:var(--orange)}
+.emptyState{display:none;padding:32px;border:1px dashed var(--line);border-radius:16px;text-align:center;color:var(--muted);font-size:13px}
+.noteBox{margin-top:22px;border-radius:16px;padding:18px 20px;background:#fff8ef;border:1px solid rgba(239,91,42,.2);font-size:12px;color:#6b5a4c;line-height:1.65}
+
+/* consulting */
+.consultGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:36px}.consultCard{padding:28px;background:#fff;border:1px solid var(--line);border-radius:20px;transition:.28s;cursor:pointer}.consultCard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.consultIcon{width:44px;height:44px;border-radius:13px;background:#f7ede6;display:grid;place-items:center;margin-bottom:22px}.consultIcon svg{width:21px;height:21px;stroke:var(--orange);fill:none;stroke-width:1.8}.consultCard h3{font-size:28px}.consultCard p{font-size:14px;margin-top:12px}.consultCard ul{padding-left:18px;color:#66737d;line-height:1.8;font-size:13px;margin:18px 0 0}
+.serviceLink{margin-top:18px;padding:0;border:0;background:none;color:var(--orange);font:inherit;font-size:13px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:8px}.serviceLink span{transition:.2s}.consultCard:hover .serviceLink span{transform:translateX(3px)}
+
+/* enquiry */
+.enquiryBand{padding:78px 0;background:linear-gradient(120deg,#ef5b2a,#f1a41d);color:#fff}.enquiryBand p{color:#fff4eb}.enquiryGrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}.enquiryForm{background:#fff;border-radius:20px;padding:28px;color:var(--ink);box-shadow:0 18px 45px rgba(93,43,10,.14)}.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:11px;font-weight:800;color:#5f6971}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);padding:12px 13px;border-radius:11px;background:#fff;outline:0;font-size:13px}.field textarea{min-height:100px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(239,91,42,.08)}
+
+/* contact/footer */
+.contactCards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}.contactCard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}.contactCard b{display:block;margin-bottom:7px}.contactCard a{color:var(--orange);font-size:14px}.footer{background:#05121c;color:#d6dfe5;padding:46px 0 28px}.footgrid{display:grid;grid-template-columns:1fr auto;gap:30px}.footlogo{width:180px}.footer p{max-width:560px;font-size:13px;color:#8998a4;margin-top:14px}.socials{display:flex;gap:10px}.social{width:42px;height:42px;border:1px solid #33434f;border-radius:50%;display:grid;place-items:center}.social svg{width:18px;height:18px;fill:currentColor}.copy{border-top:1px solid #263641;margin-top:34px;padding-top:22px;font-size:11px;color:#6d7d88}
+
+/* course modal */
+.modal{position:fixed;inset:0;z-index:900;background:rgba(3,11,18,.72);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:.28s}.modal.open{opacity:1;visibility:visible}.modalPanel{position:absolute;left:50%;top:50%;width:min(760px,calc(100% - 30px));max-height:88vh;overflow:auto;transform:translate(-50%,-46%) scale(.98);background:var(--paper);border-radius:22px;padding:34px;transition:.32s}.modal.open .modalPanel{transform:translate(-50%,-50%) scale(1)}.modalClose{position:absolute;right:18px;top:18px;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:#fff;cursor:pointer;transition:.2s}.modalClose:hover{transform:rotate(6deg);border-color:rgba(239,91,42,.35);color:var(--orange)}.modal h2{font-size:40px;padding-right:48px;margin-top:10px}.modalLead{margin-top:15px;font-size:15px;line-height:1.75}.modalTag{font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;color:var(--orange)}.courseDetailGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-top:24px}.courseDetailBlock{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}.courseDetailBlock h3{font-family:Inter,system-ui,sans-serif;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px;color:var(--ink)}.courseDetailBlock ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}.courseDetailBlock li{position:relative;padding-left:18px;font-size:13px;line-height:1.55;color:#5f6c76}.courseDetailBlock li:before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--orange)}.courseAudience{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.6;color:#5f6c76}.courseAudienceIcon{flex:0 0 34px;width:34px;height:34px;border-radius:10px;background:#f8eee8;display:grid;place-items:center;color:var(--orange);font-weight:900}.courseNote{margin-top:13px;font-size:11px;line-height:1.55;color:#8a949c}.modalActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+
+
+/* opening loader */
+.preloader{position:fixed;inset:0;z-index:1500;background:var(--paper);display:grid;place-items:center;transition:opacity .55s ease,visibility .55s ease}
+.preloader.hide{opacity:0;visibility:hidden;pointer-events:none}
+.preInner{position:relative;text-align:center;padding:28px}
+.preLogo{width:min(292px,70vw);margin:auto;animation:loaderLogo .65s ease both}
+.preLine{height:2px;width:0;margin:19px auto 14px;background:linear-gradient(90deg,var(--orange),var(--gold));animation:loaderLine .9s .22s ease forwards}
+.preText{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#7a858d;opacity:0;animation:loaderText .45s .55s ease forwards}
+.preRing{position:absolute;width:225px;height:225px;border:1px solid rgba(228,189,67,.25);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);animation:loaderRing 1.5s ease-out both;pointer-events:none}
+@keyframes loaderLogo{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes loaderLine{to{width:170px}}
+@keyframes loaderText{to{opacity:1}}
+@keyframes loaderRing{0%{opacity:0;transform:translate(-50%,-50%) scale(.65)}30%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) scale(1.55)}}
+
+/* refined desktop dropdown navigation */
+@media(min-width:981px){
+  .dropdown{min-width:340px;padding:0;overflow:hidden;border-radius:18px;box-shadow:0 24px 64px rgba(7,24,39,.15);border:1px solid rgba(21,34,45,.10);transform:translateY(12px);transition:opacity .22s ease,transform .22s ease,visibility .22s ease}
+  #trainingDropdown{width:540px;left:50%;transform:translate(-38%,12px)}
+  .navItem:hover #trainingDropdown,.navItem:focus-within #trainingDropdown{transform:translate(-38%,0)}
+  #consultingDropdown{width:390px}
+  .dropdownIntro{padding:17px 18px 14px;background:#f7f3ed;border-bottom:1px solid var(--line)}
+  .dropdownIntro b{display:block;font-size:12px;color:var(--ink);margin-bottom:3px}
+  .dropdownIntro span{display:block;font-size:11px;line-height:1.5;color:var(--muted);font-weight:500}
+  .dropdownGrid{display:grid;padding:8px;background:#fff}
+  #trainingDropdown .dropdownGrid{grid-template-columns:1fr 1fr;gap:2px 6px}
+  .dropdown button{position:relative;min-height:42px;padding:10px 32px 10px 12px;border-radius:10px;font-size:12px;font-weight:700;line-height:1.35}
+  .dropdown button:after{content:'→';position:absolute;right:12px;top:50%;transform:translateY(-50%) translateX(-3px);opacity:0;color:var(--orange);transition:.2s}
+  .dropdown button:hover{background:#f8f5f0;color:var(--ink);padding-left:15px}
+  .dropdown button:hover:after{opacity:1;transform:translateY(-50%) translateX(0)}
+}
+
+/* HR detail: let users read the service scope before deciding on the CTA. */
+.consultDetailGrid{align-items:center}
+.consultDetailActions{margin-top:26px}
+
+/* Remove empty image height on stacked/mobile content. */
+@media(max-width:980px){
+  .media{min-height:0;height:auto;aspect-ratio:16/10}
+  .media img{width:100%;height:100%;object-fit:cover}
+  #page-home .section>.wrap.two{gap:28px}
+}
+@media(max-width:620px){
+  .media{aspect-ratio:16/10;border-radius:18px}
+  #page-home .section>.wrap.two{gap:24px}
+}
+
+/* subtle motion */
+.reveal{opacity:0;transform:translateY(20px);transition:.7s}.reveal.on{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .topbar{height:70px}.brand{width:162px}.nav{display:none}.menuBtn{display:block}.shell{padding-top:70px}
+  .heroGrid,.two,.enquiryGrid{grid-template-columns:1fr}.heroImg{height:430px}.pageHero{padding:74px 0 58px}.section{padding:78px 0}
+  .categoryGrid{grid-template-columns:1fr 1fr}.catalogLayout{grid-template-columns:1fr}.catalogLayout:before{content:"";display:none}.catalogSide{position:relative;top:auto;display:flex;overflow-x:auto;overflow-y:hidden;gap:26px;padding:0 34px 10px 0;background:transparent;border:0;border-radius:0;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}.catalogSide::-webkit-scrollbar{display:none}.catalogSide button{flex:0 0 auto;width:auto;white-space:nowrap;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;padding:9px 0 8px;font-size:12px;color:#6b747c;scroll-snap-align:start}.catalogSide button:hover{background:transparent;color:var(--ink)}.catalogSide button.active{background:transparent;border-bottom-color:var(--orange);color:var(--ink);font-weight:800}.catalogNavWrap{position:relative}.catalogNavWrap:after{content:"›";position:absolute;right:-2px;top:0;width:34px;height:40px;display:grid;place-items:center;font-size:24px;color:var(--orange);background:linear-gradient(90deg,rgba(251,250,247,0),var(--paper) 45%);pointer-events:none}
+  .three,.four{grid-template-columns:1fr 1fr}.consultGrid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .wrap{width:calc(100% - 28px)}h1{font-size:42px}h2{font-size:34px}h3{font-size:24px}p{line-height:1.68}
+  .pageHero{padding:58px 0 48px}.pageHero:after{width:300px;height:300px;right:-150px;top:-130px}.heroGrid{gap:30px}.heroCopy p{font-size:15px;margin-top:16px}.heroImg{height:320px;border-radius:92px 18px 18px 18px}.heroActions{display:grid}.btn{width:100%;padding:12px 16px}.pills{margin-top:20px}.pill{font-size:10px;padding:8px 10px}
+  .statrow{grid-template-columns:1fr}.stat+.stat{border-left:0;border-top:1px solid var(--line)}.stat{padding:17px 10px}.section{padding:62px 0}
+  .three,.four,.categoryGrid,.consultGrid,.contactCards{grid-template-columns:1fr}.categoryCard{min-height:145px}.categoryCard h3{font-size:22px;margin-top:18px}.categoryCard p{font-size:12px}
+  .catalogHero{padding:42px 0 28px}.catalogHero .btn{width:auto;justify-content:flex-start;border:0;padding:4px 0;border-radius:0;font-size:12px;background:transparent}.catalogHero .btn:hover{transform:none;background:transparent;color:var(--orange)}.catalogHero .btn[style]{margin-bottom:18px!important}.catalogHeader{display:block}.courseCount{margin-top:12px}.courseSearch{margin-top:18px}.courseItem{grid-template-columns:1fr;padding:15px}.miniBtn{width:max-content}.courseTitle{font-size:13px}.courseMeta{font-size:10px}
+  .consultCard{padding:21px}.consultCard h3{font-size:24px}.consultCard p{margin-top:10px}.serviceLink{margin-top:14px}.enquiryBand{padding:60px 0}.formGrid{grid-template-columns:1fr}.enquiryForm{padding:20px}.field.full{grid-column:auto}
+  .footgrid{grid-template-columns:1fr}.modalPanel{padding:26px 20px}.modal h2{font-size:29px;line-height:1.08}.courseDetailGrid{grid-template-columns:1fr;gap:10px;margin-top:20px}.courseDetailBlock{padding:17px}.modalActions{display:grid}.modalActions .btn{width:100%}
+}
+/* Mobile overflow hardening: keep catalogue fully inside the viewport */
+html,body{width:100%;overflow-x:clip}
+.shell,.page,.section,.wrap,.catalogLayout,.catalogNavWrap,.catalogContent,.courseList,.courseItem,.courseItem>div{min-width:0;max-width:100%}
+.courseSearch,.courseSearch input{min-width:0;max-width:100%;width:100%}
+.courseItem{overflow:hidden}
+.courseTitle{max-width:100%;overflow-wrap:anywhere;word-break:normal}
+
+@media(max-width:620px){
+  .wrap{max-width:calc(100% - 28px)}
+  .catalogLayout{width:100%;max-width:100%;gap:24px;overflow:hidden}
+  .catalogNavWrap{width:100%;max-width:100%;overflow:hidden}
+  .catalogSide{width:100%;max-width:100%;min-width:0}
+  .catalogContent{width:100%;max-width:100%;overflow:hidden}
+  .courseList{width:100%;max-width:100%}
+  .courseItem{width:100%;max-width:100%;min-width:0;grid-template-columns:minmax(0,1fr);gap:12px}
+  .courseItem>div{width:100%;min-width:0}
+  .courseTitle{width:100%;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+  .miniBtn{max-width:100%;width:max-content}
+}
+
+
+/* HR consulting detail page */
+.consultDetailHero{padding:78px 0 48px;background:var(--cream)}
+.consultDetailGrid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:34px;align-items:start}
+.consultDetailCard{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px}
+.consultDetailCard h3{font-size:23px;margin-bottom:14px}
+.consultDetailCard ul{margin:0;padding-left:18px;color:#62707a;line-height:1.8;font-size:13px}
+.consultDetailActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+
+@media(max-width:980px){
+  .consultDetailGrid{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  /* Give the training catalogue a little more breathing room on small screens. */
+  #page-catalog .catalogHero>.wrap,#page-catalog .section>.wrap{width:calc(100% - 36px);max-width:calc(100% - 36px)}
+  #page-catalog .catalogLayout{gap:22px}
+  #page-catalog .catalogNavWrap{padding:0 2px}
+  #page-catalog .catalogContent{padding:0 2px}
+  #page-catalog .catalogSide{padding-left:2px;padding-right:38px}
+  .consultDetailHero{padding:44px 0 30px}
+  .consultDetailCard{padding:20px}
+  .consultDetailActions{display:grid}
+  .consultDetailActions .btn{width:100%}
+}
+
+
+/* Refined course list + HR consulting detail layout */
+.courseItem{position:relative;padding:18px 20px;min-height:72px;transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease,background .24s ease}
+.courseItem:before{content:"";position:absolute;left:0;top:16px;bottom:16px;width:3px;border-radius:0 3px 3px 0;background:var(--orange);transform:scaleY(0);transform-origin:center;transition:transform .24s ease}
+.courseItem:hover{transform:translateY(-2px);border-color:rgba(239,91,42,.30);box-shadow:0 12px 32px rgba(7,24,39,.07)}
+.courseItem:hover:before{transform:scaleY(1)}
+.courseTitle{font-size:14px;line-height:1.5}
+.courseMeta{display:none!important}
+.miniBtn{transition:transform .2s ease,border-color .2s ease,color .2s ease,background .2s ease}
+.courseItem:hover .miniBtn{border-color:rgba(239,91,42,.45);color:var(--orange)}
+
+.consultDetailSection{padding:56px 0 64px}
+.consultDetailGrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,390px);gap:72px;align-items:center}
+.consultDetailCopy{min-width:0}
+.consultDetailDesc{font-size:16px;max-width:720px;line-height:1.8}
+.consultDetailActions{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.consultDetailCard{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 30px;overflow:hidden;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+.consultDetailCard:before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--orange),var(--gold));transform:scaleX(.28);transform-origin:left;transition:transform .35s ease}
+.consultDetailCard:hover{transform:translateY(-4px);border-color:rgba(239,91,42,.26);box-shadow:0 18px 45px rgba(7,24,39,.08)}
+.consultDetailCard:hover:before{transform:scaleX(1)}
+.consultDetailCard h3{font-size:24px;margin:10px 0 15px}
+.consultDetailCard ul{list-style:none;margin:0;padding:0;color:#62707a;font-size:13px}
+.consultDetailCard li{position:relative;padding:6px 0 6px 20px;line-height:1.55;transition:transform .2s ease,color .2s ease}
+.consultDetailCard li:before{content:"";position:absolute;left:1px;top:14px;width:5px;height:5px;border-radius:50%;background:var(--orange);opacity:.72}
+.consultDetailCard li:hover{transform:translateX(4px);color:var(--ink)}
+
+@media(max-width:980px){
+  .consultDetailSection{padding:46px 0 56px}
+  .consultDetailGrid{grid-template-columns:1fr;gap:26px;align-items:start}
+  .consultDetailActions{margin-top:24px}
+  .consultDetailCard{max-width:none}
+}
+@media(max-width:620px){
+  .consultDetailSection{padding:34px 0 44px}
+  .consultDetailGrid{gap:22px}
+  .consultDetailDesc{font-size:14px}
+  .consultDetailCard{padding:22px}
+  .consultDetailActions{display:grid;gap:9px}
+  .consultDetailGrid{display:flex;flex-direction:column;gap:18px}
+  .consultDetailCopy{display:contents}
+  .consultDetailDesc{order:1}
+  .consultDetailCard{order:2;width:100%}
+  .consultDetailActions{order:3;width:100%;margin-top:2px}
+  .consultDetailActions .btn{width:100%}
+  .courseItem{padding:16px 16px;min-height:0}
+}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="preloader" id="preloader" aria-hidden="true"><div class="preInner"><div class="preRing"></div><img class="preLogo" id="preLogo" alt=""><div class="preLine"></div><div class="preText">People · Performance · Progress</div></div></div>
+<header class="topbar">
+  <div class="wrap topin">
+    <button class="brandBtn" data-page="home" aria-label="Home"><img class="brand" id="brandLogo" alt="ADtriomphe Asia"></button>
+    <nav class="nav" aria-label="Primary navigation">
+      <div class="navItem"><button data-page="home" class="active">Home</button></div>
+      <div class="navItem"><button data-page="about">About</button></div>
+      <div class="navItem">
+        <button data-page="training">Training <span class="chev"></span></button>
+        <div class="dropdown" id="trainingDropdown"></div>
+      </div>
+      <div class="navItem">
+        <button data-page="consulting">HR Consulting <span class="chev"></span></button>
+        <div class="dropdown" id="consultingDropdown"></div>
+      </div>
+      <div class="navItem"><button data-page="contact">Contact Us</button></div>
+    </nav>
+    <button class="menuBtn" id="menuBtn" aria-label="Open menu"><span></span></button>
+  </div>
+</header>
+
+<div class="mobileNav" id="mobileNav">
+  <button data-page="home">Home</button>
+  <button data-page="about">About</button>
+  <div class="mobileGroupRow"><button class="mobileGroupMain" data-page="training">Training</button><button class="mobileGroupToggle" data-mobile-toggle="training" aria-label="Show training categories" aria-expanded="false">+</button></div>
+  <div class="mobileSub" id="mobileTraining"></div>
+  <div class="mobileGroupRow"><button class="mobileGroupMain" data-page="consulting">HR Consulting</button><button class="mobileGroupToggle" data-mobile-toggle="consulting" aria-label="Show HR consulting services" aria-expanded="false">+</button></div>
+  <div class="mobileSub" id="mobileConsulting"></div>
+  <button data-page="contact">Contact Us</button>
+</div>
+
+<main class="shell">
+<section class="page active" id="page-home">
+  <section class="pageHero">
+    <div class="wrap heroGrid">
+      <div class="heroCopy reveal">
+        <div class="eyebrow">Training · HR Consulting · Malaysia</div>
+        <h1 style="margin-top:12px">Better people.<br><span style="color:var(--orange)">Stronger organisations.</span></h1>
+        <p>ADtriomphe Asia supports organisations with practical professional training and HR consulting solutions designed around real workplace needs, compliance and business performance.</p>
+        <div class="heroActions"><button class="btn primary" data-page="training">Explore Training →</button><button class="btn" data-page="consulting">Explore HR Consulting</button></div>
+        <div class="statrow">
+          <div class="stat"><b>10+</b><span>Training categories</span></div>
+          <div class="stat"><b>In-House</b><span>Customised programmes</span></div>
+          <div class="stat"><b>Practical</b><span>Workplace-focused support</span></div>
+        </div>
+      </div>
+      <div class="heroImg reveal"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85" alt="Professional team discussion"></div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="wrap">
+      <div class="eyebrow">What We Do</div><h2 style="margin-top:10px">Two focused areas. One professional partner.</h2>
+      <div class="two" style="margin-top:34px">
+        <article class="card reveal"><div class="eyebrow">Training</div><h3 style="margin-top:14px">Build capability across every level.</h3><p style="margin-top:12px">A broad programme portfolio covering HR, leadership, digital skills, finance, wellness, sales, operations, safety and governance.</p><button class="btn light" data-page="training" style="margin-top:22px">View Training Categories →</button></article>
+        <article class="card reveal"><div class="eyebrow">HR Consulting</div><h3 style="margin-top:14px">Strengthen your HR operations.</h3><p style="margin-top:12px">Flexible HR advisory, payroll outsourcing, workforce support and employee / industrial relations guidance.</p><button class="btn light" data-page="consulting" style="margin-top:22px">View Consulting Services →</button></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap two">
+      <div class="media reveal"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&q=85" alt="Corporate training workshop"></div>
+      <div class="reveal"><div class="eyebrow">Professional Development</div><h2 style="margin-top:10px">Learning built for the workplace.</h2><p style="margin-top:16px">Practical programmes for current business challenges, with customised in-house options available for your organisation.</p><div class="pills"><span class="pill">Leadership</span><span class="pill">HR</span><span class="pill">AI & Digital</span><span class="pill">Finance</span><span class="pill">Operations</span></div></div>
+    </div>
+  </section>
+</section>
+
+<section class="page" id="page-about">
+  <section class="pageHero dark"><div class="wrap heroGrid"><div class="heroCopy"><div class="eyebrow">About ADtriomphe Asia</div><h1 style="margin-top:12px">Practical expertise for people and organisations.</h1><p>ADtriomphe Asia combines professional training with hands-on HR support so organisations can build capability, improve people practices and operate with greater confidence.</p></div><div class="heroImg"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=85" alt="HR consultants meeting"></div></div></section>
+  <section class="section"><div class="wrap two"><div><div class="eyebrow">Our Approach</div><h2 style="margin-top:10px">Clear, relevant and business-focused.</h2></div><div><p>We focus on solutions that are useful in the workplace — from learning programmes that strengthen individual capability to HR consulting support that helps organisations manage people matters more consistently.</p><div class="list"><div><b>Practical</b><span>Content and advice designed for day-to-day workplace use.</span></div><div><b>Tailored</b><span>Flexible support based on organisational context and priorities.</span></div><div><b>Professional</b><span>Structured delivery with a focus on clarity, compliance and business relevance.</span></div></div></div></div></section>
+</section>
+
+<section class="page" id="page-training">
+  <section class="pageHero dark">
+    <div class="wrap heroGrid"><div class="heroCopy"><div class="eyebrow">Corporate Training</div><h1 style="margin-top:12px">Develop the skills your organisation needs next.</h1><p>Browse the training areas below and open any category to view the available courses. Each course can be enquired about directly from the catalogue.</p><div class="heroActions"><button class="btn light" onclick="document.getElementById('trainingCategories').scrollIntoView({behavior:'smooth'})">Browse Categories ↓</button><button class="btn primary" data-page="contact">Talk to Us</button></div></div><div class="heroImg"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&q=85" alt="Professional training session"></div></div>
+  </section>
+  <section class="section" id="trainingCategories"><div class="wrap"><div class="eyebrow">Training Categories</div><h2 style="margin-top:10px">Choose an area to explore.</h2><p style="max-width:720px;margin-top:14px">The programme portfolio covers core people, business, digital, operational and compliance capabilities.</p><div class="categoryGrid" id="categoryGrid"></div></div></section>
+</section>
+
+<section class="page" id="page-catalog">
+  <section class="catalogHero soft"><div class="wrap"><button class="catalogBack" data-page="training" aria-label="Back to Training">← Back to Training</button><div class="eyebrow">Training Catalogue</div><h1 id="catalogTitle" style="font-size:clamp(40px,5vw,68px);margin-top:10px">Human Resources</h1></div></section>
+  <section class="section" style="padding-top:38px"><div class="wrap catalogLayout"><div class="catalogNavWrap"><aside class="catalogSide" id="catalogSide"></aside></div><div class="catalogContent"><div class="catalogHeader"><div><p id="catalogDescription"></p></div><div class="courseCount" id="courseCount"></div></div><div class="courseSearch"><input id="courseSearch" type="search" placeholder="Search within this category…" aria-label="Search courses"></div><div class="courseList" id="courseList"></div><div class="emptyState" id="emptyState">No matching course found in this category.</div><div class="noteBox" id="catalogNote" style="display:none"></div></div></div></section>
+</section>
+
+<section class="page" id="page-consulting">
+  <section class="pageHero"><div class="wrap heroGrid"><div class="heroCopy"><div class="eyebrow">HR Consulting</div><h1 style="margin-top:12px">Flexible HR support for growing organisations.</h1><p>From strategic HR guidance to payroll operations and employee relations support, choose the service closest to your current business need.</p><div class="heroActions"><button class="btn primary" onclick="document.getElementById('consultServices').scrollIntoView({behavior:'smooth'})">Explore Services ↓</button><button class="btn" data-page="contact">Contact Us</button></div></div><div class="heroImg"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=85" alt="HR consulting discussion"></div></div></section>
+  <section class="section soft" id="consultServices"><div class="wrap"><div class="eyebrow">Consulting Services</div><h2 style="margin-top:10px">Support where your HR team needs it most.</h2><div class="consultGrid" id="consultGrid"></div></div></section>
+</section>
+
+<section class="page" id="page-consult-detail">
+  <section class="consultDetailHero">
+    <div class="wrap">
+      <button class="catalogBack" data-page="consulting" aria-label="Back to HR Consulting">← Back to HR Consulting</button>
+      <div class="eyebrow">HR Consulting</div>
+      <h1 id="consultDetailTitle" style="font-size:clamp(40px,5vw,68px);margin-top:10px">HR Advisory</h1>
+    </div>
+  </section>
+  <section class="section consultDetailSection">
+    <div class="wrap consultDetailGrid">
+      <div class="consultDetailCopy reveal">
+        <p id="consultDetailDesc" class="consultDetailDesc"></p>
+        <div class="consultDetailActions">
+          <button class="btn primary" id="consultDetailEnquire">Enquire About This Service →</button>
+          <button class="btn" data-page="consulting">View All HR Services</button>
+        </div>
+      </div>
+      <aside class="consultDetailCard reveal">
+        <div class="eyebrow">Service Scope</div>
+        <h3>How we can help</h3>
+        <ul id="consultDetailList"></ul>
+      </aside>
+    </div>
+  </section>
+</section>
+
+<section class="page" id="page-contact">
+  <section class="pageHero"><div class="wrap"><div class="eyebrow">Contact Us</div><h1 style="max-width:760px;margin-top:12px">Let’s discuss your training or HR priorities.</h1><p style="max-width:720px;margin-top:18px">Tell us what your organisation needs and we can recommend the most relevant programme or HR support approach.</p><div class="contactCards"><div class="contactCard"><b>Call / WhatsApp</b><a href="https://wa.me/60149607981" target="_blank" rel="noopener">+60 14-960 7981</a></div><div class="contactCard"><b>Email</b><a href="mailto:training@adtriomphe.com">training@adtriomphe.com</a></div><div class="contactCard"><b>Instagram</b><a href="https://www.instagram.com/adtriomphe/" target="_blank" rel="noopener">@adtriomphe</a></div></div></div></section>
+  <section class="section soft"><div class="wrap two"><div><div class="eyebrow">Quick Enquiry</div><h2 style="margin-top:10px">Prefer a direct conversation?</h2><p style="margin-top:16px">Use the enquiry form below or start a WhatsApp conversation. If you came from a course or consulting service, the form can be pre-filled automatically.</p></div><div class="card"><h3>Common enquiry areas</h3><div class="list"><div><b>Corporate Training</b><span>Public or customised in-house programmes.</span></div><div><b>HR Advisory</b><span>Policies, HR practices, management guidance and people matters.</span></div><div><b>Payroll & Workforce Support</b><span>Operational support for recurring HR processes.</span></div><div><b>IR / ER</b><span>Guidance for employee and industrial relations matters.</span></div></div></div></div></section>
+</section>
+
+<section class="enquiryBand" id="enquiry">
+  <div class="wrap enquiryGrid">
+    <div><div class="eyebrow" style="color:#fff7d7">Enquiry</div><h2 style="margin-top:10px">Tell us what you need.</h2><p style="margin-top:14px">Select your enquiry type and include any relevant course, team size or HR requirement. The form will open WhatsApp with your details ready to send.</p></div>
+    <form class="enquiryForm" id="enquiryForm">
+      <div class="formGrid">
+        <div class="field"><label for="name">Name</label><input id="name" required placeholder="Your name"></div>
+        <div class="field"><label for="company">Company</label><input id="company" placeholder="Company name"></div>
+        <div class="field"><label for="phone">Contact Number</label><input id="phone" placeholder="e.g. +60..."></div>
+        <div class="field"><label for="enquiryType">Enquiry Type</label><select id="enquiryType"><option>Training</option><option>HR Consulting</option></select></div>
+        <div class="field full"><label for="interest">Course / Service</label><input id="interest" placeholder="Select a course/service or type here"></div>
+        <div class="field full"><label for="message">Message</label><textarea id="message" placeholder="Tell us your requirement, preferred date, number of participants, or other details."></textarea></div>
+        <div class="field full"><button class="btn primary" type="submit">Send Enquiry via WhatsApp →</button></div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="footer"><div class="wrap"><div class="footgrid"><div><img class="footlogo" id="footLogo" alt="ADtriomphe Asia"><p>Professional corporate training and HR consulting support for organisations in Malaysia.</p></div><div class="socials"><a class="social" href="https://www.instagram.com/adtriomphe/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg></a><a class="social" href="mailto:training@adtriomphe.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7H4zm16 10V9.85l-8 5-8-5V17h16z"/></svg></a></div></div><div class="copy">© 2026 ADtriomphe Asia</div></div></footer>
+</main>
+
+<div class="modal" id="courseModal" aria-hidden="true"><div class="modalPanel"><button class="modalClose" id="modalClose" aria-label="Close">×</button><div class="modalTag" id="modalTag">Training Course</div><h2 id="modalTitle"></h2><p class="modalLead" id="modalText"></p><div class="courseDetailGrid"><div class="courseDetailBlock"><h3>Typical programme focus</h3><ul id="modalFocus"></ul></div><div class="courseDetailBlock"><h3>Suitable for</h3><div class="courseAudience"><div class="courseAudienceIcon">✓</div><div id="modalAudience"></div></div></div></div><div class="courseNote">Programme emphasis can be tailored for in-house requirements, participant level and organisational priorities.</div><div class="modalActions"><button class="btn primary" id="modalEnquire">Enquire About This Course →</button><button class="btn" id="modalWhatsapp">WhatsApp Directly</button></div></div></div>
+
+<script>
+const logoSvg="data:image/svg+xml;charset=UTF-8,"+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120"><defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#f12c23"/><stop offset=".55" stop-color="#ff6b21"/><stop offset="1" stop-color="#f5b72e"/></linearGradient></defs><text x="8" y="82" font-family="Arial,sans-serif" font-size="66" font-weight="700" fill="url(#g)">AD</text><path d="M128 79V57a35 35 0 0 1 70 0v22h-18V57a17 17 0 0 0-34 0v22z" fill="#ffd900"/><text x="195" y="82" font-family="Arial,sans-serif" font-size="66" font-weight="700" fill="url(#g)">triomphe</text></svg>`);
+document.querySelectorAll('#brandLogo,#footLogo,#preLogo').forEach(x=>x.src=logoSvg);
+window.addEventListener('load',()=>setTimeout(()=>document.getElementById('preloader')?.classList.add('hide'),900));
+
+const trainingData={
+  hr:{label:'HR',title:'Human Resources',desc:'Core HR knowledge for HR professionals, managers and organisations — covering employment practices, performance, hiring, compliance, policies and people management.',courses:[
+    'HR Foundations: Essential Practices for New HR Professionals','Mastering Payroll, Employment Tax & Employment Act (EA) Compliance','Managing Probationers, Underperformance and Performance Improvement Plan (PIP)','Termination & Dismissal Management','Domestic Inquiry Management','Training Needs Analysis (TNA)','Next-Generation Hiring: Behavioral Interviewing & AI-Talent Selection','Designing Effective Employee Handbooks & Workplace Policies','PDPA Compliance & Data Protection','HR for Non-HR Managers','The Strategic HR Playbook: From Executor to Business Partner','Strategic Workforce & Talent Management','Employee Engagement & Workplace Culture','Performance Management & KPI Setting','HR Audit & Compliance','Total Rewards Management','AI for HR: Transforming HR through Artificial Intelligence','Handling Misconduct & Disciplinary Issues','Managing Employee Grievances','Navigating The Employment Act 1955'
+  ]},
+  leadership:{label:'Leadership',title:'Leadership & Management',desc:'Practical leadership and people-management programmes for supervisors, managers and senior leaders to strengthen communication, coaching, change leadership and team performance.',courses:[
+    'Essential Supervisory Skills for New Supervisors (Bahasa Malaysia version available)','LEAD 360: Holistic Leadership Excellence','Bridging Generations: Fostering Understanding, Collaboration & Inclusion','Emotional Intelligence for Future Leaders','Digital Transformation Strategy: Harnessing AI & Data for Business Leaders','Leading Diverse Personalities Through DISC Profiling','Transformational Change Management for Leadership','Building Coaching Culture for High Performing Teams','Strategic Leadership for Senior Managers','High Performance Leadership For Corporate Leaders - 7 High Key Performance Indicators','NLP Coaching Skills for Managers','People-First Leadership — Leadership Coaching'
+  ]},
+  wellness:{label:'Workplace Wellness',title:'Workplace Wellness',desc:'Workplace wellbeing programmes that support focus, healthier habits, ergonomics, financial confidence and sustainable employee performance.',courses:[
+    'Mental Health Awareness in the Workplace','Resetting Focus: Overcoming Digital Burnout','Nutrition & Healthy Habits for Workplace Wellbeing','Ergonomics for Preventing Pain and Improving Productivity','Financial Wellness for Employees by Building Financial Confidence','Workplace Wellness Strategy: From Employee Wellbeing to Business Performance'
+  ]},
+  finance:{label:'Accounts & Finance',title:'Accounts & Finance',desc:'Essential financial skills for finance teams and non-finance professionals, covering reporting, tax, budgeting, accounts and financial decision-making.',courses:[
+    'E-Invoicing for Professionals','Credit Control & Debt Collection','Withholding Tax','Finance for Non-Finance Professionals & Managers','Handling Full Set of Accounts','Budgeting & Cost Management','Tax Planning for Malaysian SMEs','Management Reporting & Analysis'
+  ]},
+  digital:{label:'AI & Digital',title:'AI & Digital Skills',desc:'Digital productivity, data, design and AI programmes that help employees work smarter and organisations adopt modern tools with greater confidence.',courses:[
+    'Microsoft Excel Basic to Advanced','Microsoft PowerPoint Basic to Advanced','Microsoft Word Basic to Advanced','Excel Advanced for Payroll','AI-Ready Workplace: Thriving in the Future of Work','Microsoft Project Basic to Advanced','Data Visualization and Storytelling','Data Analytics with Power BI (Business Intelligence)','Data Analysis and Dynamic Dashboard Reporting','CANVA Content Creation and Graphic Designs','Canva AI for Business: Create Professional Designs Faster & Smarter','Generative AI (Artificial Intelligence) for Office Productivity','Power Pivot in Excel & Power BI','Generative AI for Business Writing','Mastering AI & Digital Productivity Tools For Administrative Professionals','Power Query & Power Pivot','Adobe Illustrator','Microsoft 360 Copilot','Digital Marketing with Generative AI','AI & Automation in Accounting and Finance','Digital Transformation in Manufacturing'
+  ]},
+  sales:{label:'Sales & Marketing',title:'Sales & Marketing',desc:'Customer, sales and marketing programmes designed to strengthen service quality, communication, storytelling and commercial performance.',courses:[
+    'Managing High-Performance Sales Teams with NLP','Excellent Customer Experience & Service','Handling Difficult Customers with Emotional Intelligence','Telephone Etiquette & Customer Service','Storytelling for Sales & Marketing','Marketing Strategy & Brand Management'
+  ]},
+  personal:{label:'Personal Development',title:'Personal Development',desc:'Professional skills for stronger communication, critical thinking, time management, presentation and workplace presence.',courses:[
+    'Business English Communication & Presentation Skills','Problem Solving & Critical Thinking for Decision Making','Conflict Management & Workplace Relationships','Communication Skills for Difficult Conversations','Time Management & Productivity','Presentation & Public Speaking','Corporate Grooming & Professional Presence'
+  ]},
+  manufacturing:{label:'Manufacturing & Operational',title:'Manufacturing & Operational',desc:'Operational excellence programmes for supply chain, procurement, project management, quality, production planning and process improvement.',courses:[
+    'Supply Chain Management Excellence: From Outsourcing, Planning to Delivery','Logistic & Supply Chain Management','Negotiation Skills for Procurement Professionals','Mastering Incoterms 2020 for Import & Export Professionals','Effective Filing and Records Management','Strategic Project Management','Technical Report Writing','Effective Inventory Control & Stock Management','Lean Six Sigma','ISO 9001 Quality Management Excellence (QMS)','Supplier Quality Management','Production & Operations Management','Production Planning & Scheduling Excellence','Manufacturing Process Improvement','Maintenance KPI & Performance Management'
+  ]},
+  safety:{label:'Safety & Health',title:'Safety & Health',desc:'Practical workplace safety and health programmes covering first aid, protective equipment, emergency readiness and operational safety practices.',courses:[
+    'Basic Occupational First Aid, CPR & AED','Good Manufacturing Practices (GMP)','Personal Protective Equipment (PPE)','Emergency Response Planning','Food Safety Management System'
+  ]},
+  governance:{label:'Governance/Audit/OSHA',title:'Governance / Audit / OSHA',desc:'Governance, audit, compliance and occupational safety programmes to support stronger control, risk awareness and regulatory readiness.',courses:[
+    'Governance, Risk & Compliance (GRC)','ESG Governance & Sustainability','Fraud Risk Management & Fraud Prevention','Internal Audit Fundamentals','Audit Committee Effectiveness','Workplace Inspection & Safety Auditing','Occupational Safety & Health Act 1994 (OSHA) & Regulatory Updates','Safety & Health Committee Training','Hazard Identification, Risk Assessment & Risk Control (HIRARC) Management','Scheduled Waste Management','Safe Use of Chemicals at Workplace'
+  ]},
+  teambuilding:{label:'Teambuilding',title:'Teambuilding',desc:'Customised team-building experiences can be discussed based on your team objectives, group size, preferred format and desired outcomes.',courses:[]}
+};
+
+const consultingData={
+  advisory:{title:'HR Advisory',desc:'Professional HR guidance to help organisations strengthen policies, people practices, management decisions and day-to-day HR governance.',bullets:['HR policies and procedures','HR documentation and process review','Management guidance','People-practice improvement','Ongoing HR support']},
+  payroll:{title:'Payroll Outsourcing',desc:'Reliable monthly payroll support designed to reduce administrative workload and create a more consistent payroll process.',bullets:['Monthly payroll administration','Payroll processing support','Employee data coordination','Payroll workflow support','Confidential operational handling']},
+  workforce:{title:'Workforce Solutions',desc:'Flexible support for organisations that need additional HR capability, operational coordination or structured people-process support.',bullets:['Outsourced HR support','HR operations coordination','People process support','Workforce administration','Scalable support based on business needs']},
+  irer:{title:'IR / ER',desc:'Structured guidance for employee and industrial relations matters, helping managers approach sensitive situations professionally and consistently.',bullets:['Employee relations guidance','Industrial relations support','Performance and disciplinary matters','Grievance and workplace issues','Manager support for difficult conversations']}
+};
+
+const icons={advisory:'<svg viewBox="0 0 24 24"><path d="M4 19h16M6 16V8m6 8V5m6 11v-6"/></svg>',payroll:'<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5M8 17h3"/></svg>',workforce:'<svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-4 2-7 5-7s5 3 5 7M11 20c0-4 2-7 5-7s5 3 5 7"/></svg>',irer:'<svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M7 7l-3 6h6L7 7zm10 0-3 6h6l-3-6z"/></svg>'};
+
+const trainingKeys=Object.keys(trainingData);
+function renderMenus(){
+  trainingDropdown.innerHTML=`<div class="dropdownIntro"><b>Training Categories</b><span>Choose an area to view its available programmes.</span></div><div class="dropdownGrid">${trainingKeys.map(k=>`<button data-training="${k}"><span>${trainingData[k].label}</span></button>`).join('')}</div>`;
+  mobileTraining.innerHTML=trainingKeys.map(k=>`<button data-training="${k}">${trainingData[k].label}</button>`).join('');
+  consultingDropdown.innerHTML=`<div class="dropdownIntro"><b>HR Consulting</b><span>Select a service to see the relevant support and enquiry options.</span></div><div class="dropdownGrid">${Object.entries(consultingData).map(([k,v])=>`<button data-consult="${k}"><span>${v.title}</span></button>`).join('')}</div>`;
+  mobileConsulting.innerHTML=Object.entries(consultingData).map(([k,v])=>`<button data-consult="${k}">${v.title}</button>`).join('');
+}
+
+function renderCategories(){
+  categoryGrid.innerHTML=trainingKeys.map((k,i)=>{const d=trainingData[k];return `<article class="categoryCard reveal" data-training="${k}"><span class="num">${String(i+1).padStart(2,'0')}</span><h3>${d.title}</h3><p>${d.desc}</p></article>`}).join('');
+}
+function renderConsulting(){
+  consultGrid.innerHTML=Object.entries(consultingData).map(([k,v])=>`<article class="consultCard reveal" data-consult="${k}"><div class="consultIcon">${icons[k]}</div><h3>${v.title}</h3><p>${({advisory:'Practical guidance for stronger HR policies, processes and management decisions.',payroll:'Reliable payroll support for smoother, more consistent monthly operations.',workforce:'Flexible HR and workforce support that scales with your organisation.',irer:'Professional guidance for employee and industrial relations matters.'})[k]}</p><button class="serviceLink" type="button">View Service <span>→</span></button></article>`).join('');
+}
+renderMenus();renderCategories();renderConsulting();
+
+const menuBtn=document.getElementById('menuBtn'),mobileNav=document.getElementById('mobileNav');
+menuBtn.onclick=()=>{menuBtn.classList.toggle('open');mobileNav.classList.toggle('open');document.body.classList.toggle('menu-open',mobileNav.classList.contains('open'))};
+document.querySelectorAll('[data-mobile-toggle]').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const target=document.getElementById(btn.dataset.mobileToggle==='training'?'mobileTraining':'mobileConsulting');const isOpen=target.classList.toggle('open');btn.textContent=isOpen?'−':'+';btn.setAttribute('aria-expanded',isOpen?'true':'false');}));
+
+function switchPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const target=document.getElementById('page-'+name);if(target)target.classList.add('active');
+  document.querySelectorAll('.nav [data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===name));
+  mobileNav.classList.remove('open');menuBtn.classList.remove('open');document.body.classList.remove('menu-open');
+  if(document.activeElement && typeof document.activeElement.blur==='function')document.activeElement.blur();
+  document.querySelectorAll('.dropdown').forEach(d=>{d.style.pointerEvents='none';requestAnimationFrame(()=>requestAnimationFrame(()=>d.style.pointerEvents=''));});
+  window.scrollTo({top:0,behavior:'instant'});setTimeout(initReveal,30);
+}
+document.addEventListener('click',e=>{const btn=e.target.closest('[data-page]');if(btn){e.preventDefault();switchPage(btn.dataset.page)}});
+// Keep a clicked desktop dropdown closed until the pointer leaves that menu item.
+document.querySelectorAll('.navItem').forEach(item=>{item.addEventListener('mouseleave',()=>item.classList.remove('suppressDropdown'));const main=item.querySelector(':scope > button[data-page]');if(main)main.addEventListener('click',()=>item.classList.add('suppressDropdown'));});
+
+let activeCategory='hr';
+function openCategory(key){
+  activeCategory=key;const d=trainingData[key];
+  catalogTitle.textContent=d.title;catalogDescription.textContent=d.desc;
+  catalogSide.innerHTML=trainingKeys.map(k=>`<button data-side-category="${k}" class="${k===key?'active':''}">${trainingData[k].label}</button>`).join('');
+  courseSearch.value='';renderCourses();switchPage('catalog');
+}
+function renderCourses(){
+  const d=trainingData[activeCategory],q=courseSearch.value.trim().toLowerCase();const filtered=d.courses.filter(c=>c.toLowerCase().includes(q));
+  courseCount.textContent=d.courses.length?`${d.courses.length} course${d.courses.length===1?'':'s'}`:'Customised programme';
+  catalogNote.style.display=activeCategory==='teambuilding'?'block':'none';
+  if(activeCategory==='teambuilding')catalogNote.textContent='The supplied training programme document does not list specific teambuilding course titles. This section is kept as a client-requested category and can be updated once the final teambuilding programme names are confirmed.';
+  courseList.innerHTML=filtered.map(c=>`<article class="courseItem"><div><div class="courseTitle">${c}</div></div><button class="miniBtn" data-course="${encodeURIComponent(c)}">View & Enquire</button></article>`).join('');
+  emptyState.style.display=(d.courses.length && filtered.length===0)?'block':'none';
+}
+document.addEventListener('click',e=>{const t=e.target.closest('[data-training]');if(t){e.preventDefault();if(document.activeElement)document.activeElement.blur();openCategory(t.dataset.training)}const s=e.target.closest('[data-side-category]');if(s){activeCategory=s.dataset.sideCategory;openCategory(activeCategory)}});
+courseSearch.addEventListener('input',renderCourses);
+
+let activeConsult='advisory';
+function openConsult(key){
+  activeConsult=key;
+  const d=consultingData[key];
+  consultDetailTitle.textContent=d.title;
+  consultDetailDesc.textContent=d.desc;
+  consultDetailList.innerHTML=d.bullets.map(x=>`<li>${x}</li>`).join('');
+  switchPage('consult-detail');
+}
+document.addEventListener('click',e=>{const c=e.target.closest('[data-consult]');if(c){e.preventDefault();if(document.activeElement)document.activeElement.blur();openConsult(c.dataset.consult)}});
+
+const modal=document.getElementById('courseModal');let selectedCourse='';
+function getCourseDetails(title,key){
+  const t=title.toLowerCase();
+  const categoryDefaults={
+    hr:{lead:'Build practical HR capability around current workplace responsibilities and people-management decisions.',focus:['Apply the core process confidently in day-to-day HR situations','Recognise common compliance, documentation and people risks','Use practical tools and structured approaches at work'],audience:'HR executives, HR managers, people managers and team leaders who handle employee matters.'},
+    leadership:{lead:'Strengthen leadership capability with practical approaches that can be applied to teams, communication and performance.',focus:['Lead with greater clarity and confidence','Improve communication, coaching and people decisions','Translate leadership concepts into workplace action'],audience:'Supervisors, managers, team leaders and emerging or experienced leaders.'},
+    wellness:{lead:'Support healthier and more sustainable workplace performance through practical wellbeing knowledge and habits.',focus:['Recognise workplace wellbeing risks and pressure points','Build practical habits that support focus and resilience','Connect employee wellbeing with sustainable performance'],audience:'Employees, people managers, HR teams and organisations building stronger wellbeing practices.'},
+    finance:{lead:'Develop practical financial understanding for more accurate work, stronger controls and better business decisions.',focus:['Understand the key concepts behind the topic','Apply practical methods to common workplace scenarios','Improve accuracy, control and decision-making'],audience:'Finance teams, executives, managers and relevant non-finance professionals.'},
+    digital:{lead:'Build practical digital capability so participants can work more efficiently, analyse information and use modern tools with confidence.',focus:['Use the relevant tools and features more effectively','Apply digital techniques to real workplace tasks','Improve productivity, accuracy and quality of output'],audience:'Executives, administrators, analysts, managers and teams using digital tools in their daily work.'},
+    sales:{lead:'Develop practical customer, sales and marketing capability that supports stronger communication and commercial outcomes.',focus:['Improve customer and stakeholder communication','Apply practical sales or marketing techniques','Handle common commercial situations with greater confidence'],audience:'Sales teams, marketing teams, customer-facing employees, supervisors and managers.'},
+    personal:{lead:'Strengthen practical professional skills that improve communication, productivity and confidence at work.',focus:['Apply the skill in common workplace situations','Build clearer, more confident professional habits','Improve personal effectiveness and collaboration'],audience:'Employees, executives, supervisors and managers across functions.'},
+    manufacturing:{lead:'Build practical operational capability for safer, more consistent and efficient workplace execution.',focus:['Understand the process and its operational impact','Apply structured methods to improve consistency and control','Reduce avoidable errors, delays and operational risk'],audience:'Operations, production, logistics, procurement, quality and technical teams.'},
+    safety:{lead:'Build practical safety awareness and response capability for healthier, safer workplace operations.',focus:['Recognise common workplace hazards and responsibilities','Apply the relevant preventive or response practices','Support stronger safety awareness and workplace readiness'],audience:'Employees, supervisors, safety representatives and operational teams.'},
+    governance:{lead:'Strengthen governance, audit and compliance capability through practical risk, control and regulatory understanding.',focus:['Understand key governance, risk and compliance responsibilities','Recognise control gaps and common organisational risks','Apply structured review, audit or compliance practices'],audience:'Management, governance teams, auditors, compliance personnel, safety representatives and relevant process owners.'}
+  };
+  let d={...(categoryDefaults[key]||categoryDefaults.personal)};
+  const set=(lead,focus,audience)=>{d={lead,focus,audience}};
+  if(t.includes('payroll')&&t.includes('employment')) set('Build confidence in payroll administration while connecting payroll decisions with Employment Act and employment-tax requirements.',['Key payroll components, statutory considerations and common processing checkpoints','Employment Act considerations that affect payroll and employee administration','Practical compliance checks to reduce payroll errors and documentation gaps'],'Payroll, HR, finance and administration personnel involved in employee pay and statutory processing.');
+  else if(t.includes('probation')||t.includes('underperformance')||t.includes('performance improvement')) set('Handle probation and underperformance matters more consistently with clear expectations, documentation and improvement steps.',['Setting expectations and reviewing probation fairly','Identifying performance gaps and documenting concerns','Structuring a practical Performance Improvement Plan (PIP) and follow-up process'],'HR practitioners, supervisors and managers responsible for employee performance.');
+  else if(t.includes('termination')||t.includes('dismissal')) set('Understand a structured and careful approach to employee termination and dismissal decisions.',['Common termination and dismissal scenarios','Process, documentation and communication considerations','Reducing avoidable procedural and employee-relations risks'],'HR practitioners, managers and decision-makers involved in employee exits or disciplinary matters.');
+  else if(t.includes('domestic inquiry')) set('Build practical understanding of how a domestic inquiry should be prepared and managed in a fair, structured manner.',['When a domestic inquiry may be relevant','Roles, preparation, evidence and documentation','Conducting the inquiry and recording outcomes professionally'],'HR practitioners, managers and personnel involved in misconduct or disciplinary processes.');
+  else if(t.includes('training needs analysis')) set('Identify real capability gaps and translate them into more focused learning priorities.',['Identifying performance and capability gaps','Collecting and prioritising training needs','Connecting learning plans with role and business requirements'],'HR, L&D professionals, managers and department heads involved in people development.');
+  else if(t.includes('behavioral interviewing')||t.includes('talent selection')) set('Improve hiring quality through structured behavioural interviewing and responsible use of AI-supported talent selection approaches.',['Building role-relevant behavioural questions','Evaluating evidence and reducing inconsistent interview decisions','Using AI-supported selection tools with appropriate human judgement'],'HR, recruiters, hiring managers and business leaders involved in talent selection.');
+  else if(t.includes('handbook')||t.includes('workplace policies')) set('Develop clearer employee handbooks and workplace policies that are practical for employees and managers to use.',['Structuring policies for clarity and consistency','Writing practical rules, responsibilities and procedures','Reviewing policy communication, acknowledgement and implementation'],'HR practitioners and managers responsible for policies, handbooks and people processes.');
+  else if(t.includes('pdpa')||t.includes('data protection')) set('Strengthen workplace handling of personal data through practical PDPA awareness and data-protection practices.',['Key personal-data responsibilities in the workplace','Common HR and operational data-handling risks','Practical controls for collection, access, storage and disclosure'],'HR, administration, managers and employees who handle personal or employee information.');
+  else if(t.includes('hr for non-hr')) set('Give managers the practical HR knowledge they need to handle everyday people matters with greater confidence.',['Manager responsibilities across the employee lifecycle','Handling performance, leave, conduct and employee conversations','Knowing when to document, escalate or involve HR'],'Line managers, supervisors, team leaders and business managers without formal HR training.');
+  else if(t.includes('employment act 1955')) set('Build practical understanding of the Employment Act 1955 and how it connects with everyday people-management decisions.',['Core employment standards and employer responsibilities','Common HR situations affected by the Act','Practical documentation and compliance considerations'],'HR practitioners, managers, payroll personnel and business owners involved in employment matters.');
+  else if(t.includes('misconduct')||t.includes('disciplinary')) set('Manage employee misconduct and disciplinary matters with greater structure, consistency and professionalism.',['Distinguishing conduct issues and gathering relevant facts','Progressive disciplinary steps and documentation','Conducting difficult conversations while maintaining procedural fairness'],'HR practitioners, supervisors and managers who handle employee conduct matters.');
+  else if(t.includes('grievance')) set('Handle employee grievances in a more structured way that supports fair review, clear communication and appropriate follow-up.',['Receiving and clarifying employee concerns','Fact-finding, documentation and escalation','Communicating outcomes and rebuilding working relationships'],'HR practitioners and managers involved in employee relations and grievance handling.');
+  else if(t.includes('excel')) set('Use Microsoft Excel more confidently for practical workplace analysis, reporting and day-to-day productivity.',['Core formulas, data organisation and efficient worksheet practices','Analysis and reporting techniques relevant to the course level','Reducing manual work through smarter Excel features and workflows'],'Executives, administrators, analysts, finance, HR and operations users who work with spreadsheets.');
+  else if(t.includes('power bi')) set('Turn workplace data into clearer analysis and decision-ready reporting with Power BI.',['Preparing and organising data for analysis','Building meaningful visuals, measures and dashboards','Communicating insights clearly to business users'],'Analysts, executives, managers and teams responsible for reporting or business intelligence.');
+  else if(t.includes('generative ai')||t.includes('copilot')||t.includes('ai-ready workplace')) set('Use generative AI more productively and responsibly for common workplace tasks while keeping human judgement central.',['Prompting and task framing for better AI output','Applying AI to writing, analysis, ideation or productivity workflows','Reviewing accuracy, confidentiality and responsible-use considerations'],'Executives, managers, administrators and knowledge workers adopting AI tools at work.');
+  else if(t.includes('first aid')||t.includes('cpr')||t.includes('aed')) set('Build practical awareness and response confidence for common workplace first-aid and emergency situations.',['Initial response priorities and scene awareness','Core first-aid, CPR and AED response principles','Escalation, emergency communication and workplace readiness'],'Employees, safety representatives, supervisors and designated workplace responders.');
+  else if(t.includes('hirarc')) set('Apply a structured approach to identifying workplace hazards, assessing risk and selecting appropriate controls.',['Hazard identification across workplace activities','Risk assessment and prioritisation','Selecting and documenting practical risk controls'],'Safety personnel, supervisors, managers and operational teams involved in workplace risk management.');
+  else if(t.includes('osha')||t.includes('occupational safety')) set('Understand key workplace safety and health responsibilities and translate regulatory awareness into practical action.',['Core responsibilities and organisational safety duties','Common compliance and workplace-risk considerations','Practical actions for stronger safety governance and readiness'],'Management, safety personnel, supervisors and employees with safety responsibilities.');
+  else if(t.includes('lead 360')) set('Develop a more rounded leadership approach by strengthening self-awareness, communication, people leadership and execution.',['Leadership mindset and self-awareness','Communication, influence and team alignment','Turning leadership intent into consistent daily behaviours'],'Managers, team leaders and emerging leaders preparing for broader leadership responsibility.');
+  else if(t.includes('emotional intelligence')) set('Use emotional intelligence to improve self-management, communication and relationships in demanding workplace situations.',['Recognising emotional triggers and response patterns','Reading situations and communicating with greater awareness','Applying empathy and self-management to leadership or customer interactions'],'Leaders, managers, sales teams and employees working in people-intensive roles.');
+  else if(t.includes('disc')) set('Use DISC as a practical framework to understand behavioural preferences and adapt communication across different personalities.',['Recognising common behavioural styles','Adapting communication and delegation approaches','Reducing friction and improving team collaboration'],'Managers, team leaders, HR professionals and teams working across different personalities.');
+  else if(t.includes('customer')) set('Strengthen customer-handling skills so employees can communicate clearly, manage difficult situations and create a more consistent service experience.',['Understanding customer expectations and service moments','Handling objections, difficult behaviour and service recovery','Using clear, professional communication across customer interactions'],'Customer service, sales, front-line employees and supervisors.');
+  else if(t.includes('presentation')||t.includes('public speaking')) set('Build clearer, more confident communication for presentations, meetings and professional speaking situations.',['Structuring messages for clarity and audience relevance','Delivering with confidence, presence and better visual support','Handling questions and maintaining audience engagement'],'Executives, professionals, managers and employees who present or speak in workplace settings.');
+  else if(t.includes('time management')||t.includes('productivity')) set('Improve personal productivity by prioritising work more clearly, managing attention and building practical execution habits.',['Prioritising tasks around impact and urgency','Managing interruptions, workload and competing deadlines','Building practical routines for focus and follow-through'],'Employees, executives, supervisors and managers balancing multiple priorities.');
+  else if(t.includes('lean six sigma')) set('Use Lean Six Sigma thinking to identify waste, reduce variation and improve process performance.',['Recognising waste and process inefficiency','Using structured problem-solving and improvement logic','Measuring improvements and sustaining better process performance'],'Operations, quality, process-improvement and manufacturing personnel.');
+  else if(t.includes('iso 9001')) set('Strengthen practical understanding of quality-management principles and how ISO 9001 supports consistent organisational processes.',['Core QMS principles and process thinking','Roles, documentation and continual-improvement practices','Preparing teams to support stronger quality consistency and audit readiness'],'Quality, operations, process owners, supervisors and managers involved in QMS implementation.');
+  else if(t.includes('incoterms')) set('Understand how Incoterms 2020 allocate responsibilities, cost and risk in international trade transactions.',['Purpose and structure of Incoterms 2020','Buyer and seller responsibilities across common terms','Applying the right term to practical import and export scenarios'],'Procurement, logistics, supply-chain, import/export and commercial professionals.');
+  return d;
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-course]');if(!b)return;selectedCourse=decodeURIComponent(b.dataset.course);const detail=getCourseDetails(selectedCourse,activeCategory);modalTag.textContent=trainingData[activeCategory].title;modalTitle.textContent=selectedCourse;modalText.textContent=detail.lead;modalFocus.innerHTML=detail.focus.map(x=>`<li>${x}</li>`).join('');modalAudience.textContent=detail.audience;modal.classList.add('open');document.body.classList.add('modal-open')});
+function closeModal(){modal.classList.remove('open');document.body.classList.remove('modal-open')}modalClose.onclick=closeModal;modal.onclick=e=>{if(e.target===modal)closeModal()};
+modalEnquire.onclick=()=>{closeModal();prefillEnquiry('Training',selectedCourse,`I would like to enquire about “${selectedCourse}”.`);document.getElementById('enquiry').scrollIntoView({behavior:'smooth'})};
+modalWhatsapp.onclick=()=>{window.open('https://wa.me/60149607981?text='+encodeURIComponent(`Hi ADtriomphe, I would like to enquire about the training course: ${selectedCourse}.`),'_blank')};
+
+function prefillEnquiry(type,interestValue,messageValue=''){enquiryType.value=type;interest.value=interestValue;message.value=messageValue}
+document.addEventListener('click',e=>{
+  const card=e.target.closest('.consultCard');
+  if(card){e.preventDefault();openConsult(card.dataset.consult)}
+});
+
+consultDetailEnquire.onclick=()=>{
+  const d=consultingData[activeConsult];
+  prefillEnquiry('HR Consulting',d.title,`I would like to enquire about ${d.title}.`);
+  document.getElementById('enquiry').scrollIntoView({behavior:'smooth'});
+};
+
+enquiryForm.addEventListener('submit',e=>{e.preventDefault();const txt=`Hi ADtriomphe, I would like to make an enquiry.\n\nName: ${name.value}\nCompany: ${company.value||'-'}\nContact: ${phone.value||'-'}\nEnquiry Type: ${enquiryType.value}\nCourse / Service: ${interest.value||'-'}\nMessage: ${message.value||'-'}`;window.open('https://wa.me/60149607981?text='+encodeURIComponent(txt),'_blank')});
+
+let io;function initReveal(){if(io)io.disconnect();io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.1});document.querySelectorAll('.page.active .reveal').forEach(x=>io.observe(x))}initReveal();
+</script>
+</body>
+</html>
