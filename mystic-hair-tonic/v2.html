@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Mystic Hair Tonic</title>
-<meta name="description" content="Mystic Hair Tonic - four targeted formulas for scalp and hair care." />
+<meta name="description" content="Mystic Hair Tonic - empat formula untuk penjagaan rambut dan kulit kepala." />
 <link rel="icon" type="image/png" href="assets/logo.png" />
 
 <style>
@@ -2452,7 +2452,7 @@ section{padding:72px 0!important}
   cursor:pointer;
 }
 .finder-preview::after{
-  content:'View';
+  content:'Lihat';
   position:absolute;
   right:18px;
   bottom:18px;
@@ -3424,7 +3424,7 @@ section{padding:72px 0!important}
   line-height:1.35!important;
 }
 
-/* Remove old note space if any remains */
+/* Buang old note space if any remains */
 .combined-note{
   display:none!important;
 }
@@ -3459,6 +3459,923 @@ section{padding:72px 0!important}
     border:1px solid rgba(76,47,20,.10)!important;
   }
 }
+
+
+/* ===== V32 PRODUCT GALLERY: FIXED SQUARE SIZE EVERYWHERE ===== */
+
+/*
+   All current product artwork is square, so every product media area now:
+   - uses an exact 1:1 square
+   - has identical dimensions across all cards
+   - has no blank top/bottom/side space
+   - keeps the card from moving when the image changes
+   - behaves the same on desktop and mobile
+*/
+.product-card .gallery{
+  position:relative!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  aspect-ratio:1 / 1!important;
+  padding:0!important;
+  margin:0!important;
+  overflow:hidden!important;
+  background:#e7c47f!important;
+}
+
+.product-card .gallery-slides,
+.product-card .gallery-slide{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  padding:0!important;
+  margin:0!important;
+  overflow:hidden!important;
+}
+
+.product-card .gallery-slide{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+/* Every product image fills the square frame completely */
+.product-card .gallery-slide img,
+.product-card .gallery-slide:first-child img,
+.product-card .gallery-slide:not(:first-child) img,
+.product-card .gallery-slide img.is-landscape,
+.product-card .gallery-slide img.is-portrait{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:100%!important;
+  min-height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  padding:0!important;
+  margin:0!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  transform:none!important;
+}
+
+/* Keep navigation inside the square image frame */
+.product-card .gallery-arrow{
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  z-index:12!important;
+}
+.product-card .gallery-arrow.prev{left:12px!important}
+.product-card .gallery-arrow.next{right:12px!important}
+
+.product-card .gallery-dashes{
+  left:50%!important;
+  bottom:12px!important;
+  transform:translateX(-50%)!important;
+  z-index:12!important;
+}
+
+/* Cards remain equal and aligned */
+.product-card{
+  height:100%!important;
+  display:flex!important;
+  flex-direction:column!important;
+}
+.product-body{
+  flex:1 1 auto!important;
+  display:flex!important;
+  flex-direction:column!important;
+}
+.product-actions{
+  margin-top:auto!important;
+}
+
+/* Desktop: all product cards use the same proportions */
+@media(min-width:761px){
+  .product-card .gallery{
+    width:100%!important;
+    aspect-ratio:1 / 1!important;
+  }
+}
+
+/* Mobile: still EXACTLY square, no extra tall image area */
+@media(max-width:760px){
+  .product-card .gallery{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:1 / 1!important;
+  }
+
+  .product-card .gallery-slide img,
+  .product-card .gallery-slide:first-child img,
+  .product-card .gallery-slide:not(:first-child) img{
+    width:100%!important;
+    height:100%!important;
+    min-width:100%!important;
+    min-height:100%!important;
+    max-width:none!important;
+    max-height:none!important;
+    object-fit:cover!important;
+    object-position:center!important;
+    padding:0!important;
+  }
+
+  .product-card .gallery-arrow{
+    width:38px!important;
+    height:42px!important;
+  }
+  .product-card .gallery-arrow.prev{left:10px!important}
+  .product-card .gallery-arrow.next{right:10px!important}
+}
+
+
+/* ===== V33 EQUAL PRODUCT CARDS + CLEANER MYSTIC SECTION ===== */
+
+/* Buang the now-unused first column from the Mystic Approach section */
+.brand-story-grid{
+  grid-template-columns:minmax(0,1.25fr) minmax(280px,.55fr)!important;
+  gap:46px!important;
+  align-items:start!important;
+}
+.brand-story-mark{
+  display:none!important;
+}
+
+/* Equal-height product cards regardless of description length */
+.product-grid{
+  align-items:stretch!important;
+}
+.product-card{
+  height:100%!important;
+  min-height:100%!important;
+  display:flex!important;
+  flex-direction:column!important;
+}
+.product-body{
+  flex:1 1 auto!important;
+  display:grid!important;
+  grid-template-rows:auto auto 1fr auto!important;
+  align-content:start!important;
+  min-height:255px!important;
+}
+
+/* Keep product headings and descriptions visually aligned */
+.product-body small{
+  min-height:18px!important;
+  display:flex!important;
+  align-items:flex-end!important;
+}
+.product-body h3{
+  min-height:54px!important;
+  display:flex!important;
+  align-items:flex-start!important;
+  margin-bottom:8px!important;
+}
+.product-body p{
+  min-height:96px!important;
+  margin-bottom:18px!important;
+}
+.product-actions{
+  align-self:end!important;
+  margin-top:auto!important;
+}
+
+/* Small refinement for cleaner cards */
+.product-card{
+  border-radius:8px!important;
+  overflow:hidden!important;
+  box-shadow:0 12px 28px rgba(58,33,8,.07)!important;
+}
+.product-card:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:0 18px 34px rgba(58,33,8,.11)!important;
+}
+.product-body{
+  padding:20px 20px 18px!important;
+}
+.product-actions{
+  gap:10px!important;
+}
+.product-actions .btn{
+  min-height:50px!important;
+}
+.details-btn{
+  width:50px!important;
+  height:50px!important;
+  border-radius:8px!important;
+}
+
+/* Keep the four cards the same visual height on desktop */
+@media(min-width:761px){
+  .product-card{
+    min-height:655px!important;
+  }
+}
+
+/* Mobile: one card at a time, still consistent and compact */
+@media(max-width:760px){
+  .product-card{
+    min-height:0!important;
+  }
+  .product-body{
+    min-height:250px!important;
+    padding:18px 18px 16px!important;
+  }
+  .product-body small{
+    min-height:17px!important;
+  }
+  .product-body h3{
+    min-height:48px!important;
+    font-size:1.04rem!important;
+  }
+  .product-body p{
+    min-height:88px!important;
+    font-size:.84rem!important;
+    line-height:1.55!important;
+  }
+  .brand-story-grid{
+    grid-template-columns:1fr!important;
+    gap:22px!important;
+  }
+}
+
+
+/* ===== V34 REMOVE DECORATIVE "01" ABOVE PENDEKATAN MYSTIC ===== */
+.brand-story .section-number,
+.brand-story .story-number,
+.brand-story .brand-story-number,
+.brand-story .brand-story-index,
+.brand-story .brand-story-mark,
+.brand-story .section-index,
+.brand-story .story-index{
+  display:none!important;
+}
+
+/* Buang the empty decorative top row/space that belonged to the number */
+.brand-story{
+  padding-top:clamp(44px,5vw,76px)!important;
+}
+.brand-story-grid{
+  margin-top:0!important;
+  padding-top:0!important;
+}
+
+
+/* ===== V35: REMOVE ENTIRE EMPTY "01" INTRO ROW ===== */
+.story-kicker-row,
+.story-meta,
+.story-topline,
+.story-intro-number,
+.brand-story-top,
+.brand-story-meta,
+.brand-story-headerline,
+.brand-story .chapter-row,
+.brand-story .chapter-number,
+.brand-story .section-number,
+.brand-story .story-number,
+.brand-story .section-index,
+.brand-story .story-index {
+  display:none !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+}
+
+/* Pull the actual content up after removing that row */
+.brand-story,
+.story-section {
+  padding-top: clamp(36px, 4vw, 64px) !important;
+}
+
+
+/* ===== V36 CLEAN PENDEKATAN MYSTIC SECTION ===== */
+
+/* completely remove all old decorative chapter/01 structures */
+.brand-story-clean .brand-story-mark,
+.brand-story-clean .heritage-line,
+.brand-story-clean .section-number,
+.brand-story-clean .story-number,
+.brand-story-clean .chapter-number{
+  display:none!important;
+}
+
+/* no empty chapter row or oversized top gap */
+.brand-story-clean{
+  padding:54px 0!important;
+  margin:0!important;
+}
+.brand-story-clean-inner{
+  display:block!important;
+  padding:0!important;
+  margin:0!important;
+  border:0!important;
+}
+
+/* heading remains exactly as requested */
+.brand-story-clean .brand-story-copy{
+  max-width:1120px!important;
+  margin:0!important;
+  padding:0 0 28px!important;
+}
+.brand-story-clean .brand-story-copy .kicker{
+  margin:0 0 14px!important;
+}
+.brand-story-clean .brand-story-copy h2{
+  max-width:980px!important;
+  margin:0!important;
+  font-size:clamp(2.25rem,4.7vw,4.7rem)!important;
+  line-height:1.02!important;
+  letter-spacing:-.045em!important;
+  font-weight:500!important;
+  color:#3d2818!important;
+}
+.brand-story-clean .brand-story-copy p{
+  max-width:1080px!important;
+  margin:18px 0 0!important;
+  font-size:.96rem!important;
+  line-height:1.75!important;
+  color:#74593f!important;
+}
+
+/* keep the three requested points, but clean and compact */
+.brand-story-clean .brand-story-points{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  gap:0!important;
+  width:100%!important;
+  margin:0!important;
+  padding:0!important;
+  border-top:1px solid rgba(78,47,20,.13)!important;
+}
+.brand-story-clean .brand-story-points>div{
+  display:grid!important;
+  grid-template-columns:58px 1fr!important;
+  align-items:center!important;
+  gap:16px!important;
+  min-height:72px!important;
+  padding:15px 0!important;
+  margin:0!important;
+  border:0!important;
+  border-bottom:1px solid rgba(78,47,20,.13)!important;
+  background:transparent!important;
+}
+.brand-story-clean .brand-story-points b{
+  font-size:.7rem!important;
+  letter-spacing:.12em!important;
+  color:#9a6a36!important;
+  font-weight:800!important;
+}
+.brand-story-clean .brand-story-points span{
+  font-size:.93rem!important;
+  line-height:1.4!important;
+  color:#482f1e!important;
+  font-weight:700!important;
+}
+
+/* mobile: same content, reduced spacing and no wasted area */
+@media(max-width:760px){
+  .brand-story-clean{
+    padding:38px 0!important;
+  }
+  .brand-story-clean .brand-story-copy{
+    padding-bottom:22px!important;
+  }
+  .brand-story-clean .brand-story-copy .kicker{
+    margin-bottom:10px!important;
+  }
+  .brand-story-clean .brand-story-copy h2{
+    font-size:2.35rem!important;
+    line-height:1.04!important;
+  }
+  .brand-story-clean .brand-story-copy p{
+    margin-top:14px!important;
+    font-size:.86rem!important;
+    line-height:1.65!important;
+  }
+  .brand-story-clean .brand-story-points>div{
+    grid-template-columns:42px 1fr!important;
+    gap:10px!important;
+    min-height:60px!important;
+    padding:12px 0!important;
+  }
+  .brand-story-clean .brand-story-points span{
+    font-size:.84rem!important;
+  }
+}
+
+
+/* ===== V37 BM POLISH + ELEGANT INTERACTIONS ===== */
+
+/* subtle trust strip for local ecommerce behaviour */
+.malay-trust-strip{
+  padding:0!important;
+  background:rgba(80,48,22,.92);
+}
+.malay-trust-inner{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+}
+.malay-trust-inner span{
+  padding:15px 18px;
+  text-align:center;
+}
+.malay-trust-inner span:not(:last-child){
+  border-right:1px solid rgba(255,241,211,.16);
+}
+.malay-trust-inner b{
+  display:block;
+  color:#fff0ca;
+  font-size:.78rem;
+  letter-spacing:.02em;
+}
+.malay-trust-inner small{
+  display:block;
+  margin-top:3px;
+  color:#d8c09d;
+  font-size:.67rem;
+}
+
+/* smoother reveal */
+[data-reveal]{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+}
+[data-reveal].show{
+  opacity:1;
+  transform:none;
+}
+
+/* elegant product hover */
+.product-card{
+  transition:transform .28s ease, box-shadow .28s ease!important;
+}
+.product-card:hover{
+  transform:translateY(-5px)!important;
+}
+.product-card .gallery img{
+  transition:transform .45s cubic-bezier(.2,.7,.2,1)!important;
+}
+.product-card:hover .gallery-slide.active img{
+  transform:scale(1.018)!important;
+}
+
+/* button shine, very subtle */
+.btn-primary,
+.product-actions .btn,
+.finder-link{
+  position:relative;
+  overflow:hidden;
+}
+.btn-primary::after,
+.product-actions .btn::after{
+  content:"";
+  position:absolute;
+  top:-120%;
+  left:-35%;
+  width:28%;
+  height:340%;
+  transform:rotate(18deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.20),transparent);
+  transition:left .65s ease;
+  pointer-events:none;
+}
+.btn-primary:hover::after,
+.product-actions .btn:hover::after{
+  left:120%;
+}
+
+/* formula choices feel tappable without looking like buttons */
+.finder-option{
+  transition:padding-left .22s ease, background .22s ease!important;
+}
+.finder-option:hover{
+  background:rgba(255,248,229,.25)!important;
+}
+
+/* mobile tap feedback */
+@media(max-width:760px){
+  .malay-trust-inner{
+    grid-template-columns:repeat(3,1fr);
+  }
+  .malay-trust-inner span{
+    padding:12px 8px;
+  }
+  .malay-trust-inner b{
+    font-size:.68rem;
+  }
+  .malay-trust-inner small{
+    font-size:.59rem;
+  }
+
+  .product-card:active,
+  .finder-option:active,
+  .combined-formulas button:active{
+    transform:scale(.988)!important;
+  }
+}
+
+/* respect reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+  [data-reveal]{
+    opacity:1!important;
+    transform:none!important;
+  }
+}
+
+
+/* ===== V38 PRODUCT UX FIX ===== */
+
+/* Product card image = one clean thumbnail.
+   The image gallery is available after opening product details. */
+.product-card .gallery-arrow,
+.product-card .gallery-dashes,
+.product-card .gallery-nav,
+.product-card .gcount{
+  display:none!important;
+}
+
+/* Remove old excessive equal-height rules, while keeping all cards aligned. */
+.product-grid{
+  align-items:stretch!important;
+}
+.product-card{
+  min-height:0!important;
+  height:auto!important;
+  display:flex!important;
+  flex-direction:column!important;
+}
+.product-body{
+  flex:1 1 auto!important;
+  display:flex!important;
+  flex-direction:column!important;
+  min-height:0!important;
+  padding:18px 18px 16px!important;
+}
+.product-body small{
+  min-height:18px!important;
+  margin-bottom:7px!important;
+}
+.product-body h3{
+  min-height:48px!important;
+  margin:0 0 8px!important;
+  line-height:1.25!important;
+}
+.product-body p{
+  min-height:82px!important;
+  margin:0 0 16px!important;
+  line-height:1.5!important;
+}
+.product-actions{
+  margin-top:auto!important;
+}
+
+/* Desktop: remove the oversized blank body area */
+@media(min-width:761px){
+  .product-card{
+    min-height:0!important;
+  }
+  .product-body{
+    min-height:220px!important;
+  }
+}
+
+/* Mobile:
+   1) show a visible piece of the NEXT card, so horizontal swiping is obvious
+   2) keep dots as a secondary visual cue
+   3) no words such as "swipe left/right"
+*/
+@media(max-width:760px){
+  .product-shell{
+    overflow:visible!important;
+  }
+
+  .product-grid{
+    gap:12px!important;
+    padding:2px 12vw 10px 18px!important;
+    scroll-padding-left:18px!important;
+    scroll-snap-type:x mandatory!important;
+  }
+
+  .product-card{
+    flex:0 0 84%!important;
+    scroll-snap-align:start!important;
+  }
+
+  .mobile-carousel-dots{
+    display:flex!important;
+    margin-top:12px!important;
+    gap:6px!important;
+  }
+  .mobile-carousel-dots button{
+    width:7px!important;
+    height:7px!important;
+    transition:width .22s ease,background .22s ease,transform .22s ease!important;
+  }
+  .mobile-carousel-dots button.active{
+    width:22px!important;
+    border-radius:999px!important;
+    transform:none!important;
+  }
+
+  /* subtle animated edge cue, not wording */
+  .product-shell::after{
+    content:"›";
+    position:absolute;
+    right:2px;
+    top:42%;
+    z-index:7;
+    width:34px;
+    height:34px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:rgba(255,244,216,.88);
+    border:1px solid rgba(80,48,22,.12);
+    color:#5b351d;
+    box-shadow:0 8px 18px rgba(62,36,9,.10);
+    font-size:1.5rem;
+    line-height:1;
+    pointer-events:none;
+    animation:productCue 1.8s ease-in-out infinite;
+  }
+
+  @keyframes productCue{
+    0%,100%{transform:translateX(0);opacity:.72}
+    50%{transform:translateX(-6px);opacity:1}
+  }
+
+  .product-body{
+    min-height:235px!important;
+    padding:18px 18px 16px!important;
+  }
+  .product-body h3{
+    min-height:46px!important;
+  }
+  .product-body p{
+    min-height:84px!important;
+  }
+}
+
+/* Once the user has interacted, the cue can be visually quieter. */
+.product-shell.is-touched::after{
+  opacity:.28!important;
+  animation:none!important;
+}
+
+
+/* ===== V39 TESTIMONIALS ===== */
+.testimonial-section{
+  padding:62px 0!important;
+}
+.testimonial-heading{
+  max-width:760px!important;
+}
+.testimonial-shell{
+  position:relative;
+  overflow:hidden;
+}
+.testimonial-track{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  padding:6px 2px 18px;
+}
+.testimonial-track::-webkit-scrollbar{display:none}
+.testimonial-card{
+  flex:0 0 calc((100% - 36px)/3);
+  scroll-snap-align:start;
+  min-height:285px;
+  padding:24px 22px 20px;
+  background:linear-gradient(180deg,rgba(255,247,226,.92),rgba(244,222,180,.90));
+  border:1px solid rgba(78,47,20,.10);
+  box-shadow:0 14px 30px rgba(62,37,10,.07);
+  transition:transform .28s ease,box-shadow .28s ease;
+}
+.testimonial-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 38px rgba(62,37,10,.11);
+}
+.review-top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.review-avatar{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#5a3923;
+  color:#f9e9c5;
+  font-weight:800;
+  font-size:.78rem;
+  letter-spacing:.05em;
+  flex:0 0 auto;
+}
+.review-top strong{
+  display:block;
+  color:#3d2718;
+  font-size:.9rem;
+}
+.review-top small{
+  display:block;
+  margin-top:2px;
+  color:#8b6d52;
+  font-size:.68rem;
+}
+.review-stars{
+  margin-top:18px;
+  color:#b87620;
+  letter-spacing:.12em;
+  font-size:.83rem;
+}
+.testimonial-card p{
+  margin:14px 0 18px;
+  color:#664b35;
+  font-size:.89rem;
+  line-height:1.7;
+}
+.review-tag{
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(107,71,35,.08);
+  color:#6d4929;
+  font-size:.67rem;
+  font-weight:750;
+}
+.testimonial-dots{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:7px;
+  margin-top:14px;
+}
+.testimonial-dots button{
+  width:7px;
+  height:7px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:rgba(77,48,24,.24);
+  cursor:pointer;
+  transition:width .25s ease,background .25s ease,transform .25s ease;
+}
+.testimonial-dots button.active{
+  width:24px;
+  border-radius:999px;
+  background:#5b361f;
+}
+.testimonial-shell::before,
+.testimonial-shell::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:44px;
+  width:40px;
+  z-index:3;
+  pointer-events:none;
+}
+.testimonial-shell::before{
+  left:0;
+  background:linear-gradient(90deg,rgba(237,211,158,.88),transparent);
+}
+.testimonial-shell::after{
+  right:0;
+  background:linear-gradient(270deg,rgba(237,211,158,.88),transparent);
+}
+
+@media(max-width:900px){
+  .testimonial-card{
+    flex-basis:calc((100% - 18px)/2);
+  }
+}
+@media(max-width:640px){
+  .testimonial-section{
+    padding:46px 0!important;
+  }
+  .testimonial-track{
+    gap:12px;
+    padding:4px 14vw 14px 2px;
+  }
+  .testimonial-card{
+    flex:0 0 84%;
+    min-height:260px;
+    padding:20px 18px 18px;
+  }
+  .testimonial-shell::before{
+    display:none;
+  }
+  .testimonial-shell::after{
+    width:28px;
+  }
+  .testimonial-dots{
+    margin-top:10px;
+  }
+  .testimonial-dots button{
+    width:6px;
+    height:6px;
+  }
+  .testimonial-dots button.active{
+    width:20px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .testimonial-track{scroll-behavior:auto!important}
+}
+
+
+/* ===== V40 AUTO-SCROLL SAFETY ===== */
+.testimonial-section,
+.testimonial-shell,
+.testimonial-track,
+.product-shell,
+.product-grid{
+  overflow-anchor:none!important;
+}
+
+.testimonial-track{
+  overscroll-behavior-x:contain;
+  overscroll-behavior-y:none;
+}
+
+
+/* ===== V41 MALAY FB-AD STYLE SALES OPENING ===== */
+.sales-intro{padding:42px 0 26px;position:relative;overflow:hidden}
+.sales-card{position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(145deg,#3a2114 0%,#5d3319 48%,#9b5a20 100%);box-shadow:0 24px 60px rgba(55,31,12,.22);color:#fff;padding:46px 48px 36px;border:1px solid rgba(255,231,180,.11)}
+.sales-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 92% 10%,rgba(247,207,111,.30),transparent 28%),linear-gradient(120deg,rgba(255,255,255,.025),transparent 40%);pointer-events:none}
+.sales-eyebrow{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;color:#f5d98d;font-size:11px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+.sales-eyebrow::before{content:"";width:30px;height:2px;background:#d8a64f;display:block}
+.sales-card h1{position:relative;z-index:1;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(38px,4.8vw,66px);line-height:1.01;letter-spacing:-.04em;max-width:870px;margin:0 0 16px;color:#fff;font-weight:600}
+.sales-card h1 em{font-style:normal;color:#f2c96e}
+.sales-lead{position:relative;z-index:1;max-width:780px;font-size:17px;line-height:1.72;color:rgba(255,255,255,.84);margin:0 0 28px}
+.problem-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px;max-width:850px;margin:0 0 30px}
+.problem-card{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:start;padding:15px 16px;background:rgba(255,249,238,.97);border:1px solid rgba(255,255,255,.28);border-radius:14px;box-shadow:0 8px 20px rgba(25,12,3,.11)}
+.problem-icon{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#f1d497;color:#4d2b17;font-weight:950;font-size:18px}
+.problem-card strong{display:block;color:#3f2919;font-size:14px;line-height:1.25;margin-bottom:4px}
+.problem-card small{display:block;color:#80664e;font-size:11.5px;line-height:1.45}
+.sales-hook{position:relative;z-index:1;display:flex;align-items:center;gap:10px;margin:2px 0 20px;color:#f7e3b2;font-size:14px;font-weight:800}
+.sales-hook span{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#f0c96e;color:#3a2114;font-size:15px}
+.sales-actions{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.sales-cta{border:0;border-radius:10px;padding:15px 20px;font:inherit;font-weight:900;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:.25s ease}
+.sales-cta.primary{background:#f0c96e;color:#352114;box-shadow:0 8px 20px rgba(20,10,3,.14)}
+.sales-cta.secondary{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.28)}
+.sales-cta:hover{transform:translateY(-2px)}
+.sales-proof{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16);max-width:820px}
+.sales-proof div{padding:0 18px}.sales-proof div:first-child{padding-left:0}.sales-proof div:not(:last-child){border-right:1px solid rgba(255,255,255,.14)}
+.sales-proof strong{display:block;font-size:18px;color:#f3cf7c}.sales-proof span{display:block;margin-top:3px;font-size:11px;color:rgba(255,255,255,.68);line-height:1.4}
+.formula-finder{padding-top:34px!important}.formula-finder .finder-shell{box-shadow:0 22px 60px rgba(58,36,22,.14)!important}.formula-finder .finder-copy h2{font-size:clamp(34px,4vw,54px)!important;line-height:1.04!important;letter-spacing:-.035em!important}.formula-finder .finder-copy>p{font-size:16px!important;line-height:1.7!important;max-width:590px}
+.guarantee-band{padding:28px 0 64px}.guarantee-inner{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:28px 32px;border-radius:22px;background:#fff8e8;border:1px solid rgba(112,68,31,.18);box-shadow:0 16px 44px rgba(58,36,22,.10)}
+.guarantee-badge{width:86px;height:86px;border-radius:50%;display:grid;place-items:center;background:#3b2416;color:#f1cb72;text-align:center;font-weight:900;line-height:1}.guarantee-badge b{font-size:28px}.guarantee-badge small{font-size:10px;letter-spacing:.08em}.guarantee-copy small{font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#9b692f}.guarantee-copy h3{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:30px;margin:5px 0 7px;color:#3a2818}.guarantee-copy p{margin:0;color:#745a3f;line-height:1.6;font-size:14px}.guarantee-link{white-space:nowrap;border-radius:8px;padding:13px 18px;background:#3b2416;color:#fff;text-decoration:none;font-weight:850;font-size:13px}
+@media(max-width:760px){.sales-intro{padding:20px 0 16px}.sales-card{padding:28px 20px 24px;border-radius:20px}.sales-card h1{font-size:38px;line-height:1.02}.sales-lead{font-size:14px;line-height:1.65;margin-bottom:22px}.problem-grid{grid-template-columns:1fr 1fr;gap:8px}.problem-card{grid-template-columns:32px 1fr;gap:9px;padding:11px;border-radius:12px}.problem-icon{width:30px;height:30px;border-radius:9px;font-size:14px}.problem-card strong{font-size:12px}.problem-card small{font-size:10px}.sales-hook{font-size:12px;line-height:1.45}.sales-actions{display:grid;grid-template-columns:1fr}.sales-cta{width:100%}.sales-proof{grid-template-columns:repeat(3,1fr);gap:0}.sales-proof div{padding:0 8px}.sales-proof strong{font-size:15px}.sales-proof span{font-size:9.5px}.guarantee-inner{grid-template-columns:auto 1fr;padding:22px 18px}.guarantee-badge{width:68px;height:68px}.guarantee-badge b{font-size:22px}.guarantee-copy h3{font-size:23px}.guarantee-link{grid-column:1/-1;text-align:center}.formula-finder{padding-top:24px!important}}
+@media(max-width:420px){.problem-grid{grid-template-columns:1fr}.sales-card h1{font-size:34px}}
+
+
+/* ===== V42 PROFESSIONAL MALAY SALES EXPERIENCE ===== */
+:root{--ui-font:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body,button,input,textarea,select,.sales-card h1,.guarantee-copy h3,.section-head h2,.finder-copy h2,.combined-care-copy h2,.results-copy h2,.cta-box h2{font-family:var(--ui-font)!important}
+.sales-card h1,.section-head h2,.finder-copy h2,.combined-care-copy h2,.results-copy h2,.cta-box h2{font-weight:900!important;letter-spacing:-.035em!important}
+.sales-card{isolation:isolate;background:linear-gradient(128deg,#2e190f 0%,#5a3019 48%,#9a5b25 100%);padding:50px 52px 38px}
+.sales-card::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-180px;top:-210px;background:radial-gradient(circle,rgba(255,215,116,.28),rgba(255,215,116,0) 68%);animation:salesGlow 6s ease-in-out infinite;pointer-events:none}
+@keyframes salesGlow{50%{transform:translate(-24px,28px) scale(1.12);opacity:.72}}
+.sales-card h1{max-width:930px;line-height:1.02}
+.sales-card h1 em{display:block;margin-top:4px;background:linear-gradient(90deg,#ffd979,#e8ad48);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sales-lead{max-width:890px}
+.problem-grid{max-width:none;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:4px}
+.problem-card{appearance:none;text-align:left;width:100%;font-family:var(--ui-font);cursor:pointer;grid-template-columns:42px 1fr;min-height:150px;padding:18px 16px;border-radius:18px;transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s,border-color .28s;background:linear-gradient(180deg,#fffaf0,#f8e8c7);border:1px solid rgba(255,224,161,.35);box-shadow:0 10px 26px rgba(18,8,2,.14)}
+.problem-card:hover{transform:translateY(-7px);box-shadow:0 18px 38px rgba(18,8,2,.22);border-color:#efc66c}
+.problem-icon{font-size:11px;letter-spacing:.05em;border-radius:50%;background:#4a2918;color:#f3ce79;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.problem-card strong{font-size:15px}.problem-card small{font-size:11.5px}.problem-card b{display:block;margin-top:10px;font-size:10.5px;color:#9a5a22;letter-spacing:.02em}
+.sales-cta{position:relative;overflow:hidden;border-radius:999px;padding:15px 24px}.sales-cta.primary::after{content:"";position:absolute;inset:-50% auto -50% -35%;width:28%;transform:rotate(18deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.65),transparent);animation:ctaShine 3.8s ease-in-out infinite}
+@keyframes ctaShine{0%,58%{left:-35%}85%,100%{left:125%}}
+.sales-proof{max-width:none}.sales-proof strong{font-size:20px}
+.trust-card{transition:transform .25s ease,box-shadow .25s ease}.trust-card:hover{transform:translateY(-4px)}
+.product-card,.ingredient-card,.step-card,.testimonial-card{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease!important}
+[data-reveal]{transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)!important}
+.problem-card.reveal-pop{animation:problemPop .55s both}@keyframes problemPop{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@media(max-width:1000px){.problem-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.problem-card{min-height:130px}}
+@media(max-width:640px){.sales-card{padding:30px 18px 25px}.sales-card h1{font-size:36px!important;line-height:1.04!important}.sales-card h1 em{margin-top:7px}.sales-lead{font-size:14px!important}.problem-grid{grid-template-columns:1fr 1fr!important;gap:9px!important}.problem-card{display:block!important;min-height:155px;padding:13px!important}.problem-icon{width:30px!important;height:30px!important;margin-bottom:10px}.problem-card strong{font-size:12.5px!important}.problem-card small{font-size:10.5px!important}.problem-card b{font-size:9.5px}.sales-proof{overflow-x:auto;grid-template-columns:repeat(3,minmax(105px,1fr));scrollbar-width:none}.sales-proof::-webkit-scrollbar{display:none}}
+@media(prefers-reduced-motion:reduce){.sales-card::after,.sales-cta.primary::after{animation:none!important}.problem-card{transition:none!important}}
 
 </style>
 </head>
@@ -3502,6 +4419,36 @@ section{padding:72px 0!important}
 </picture>
     <div class="hero-overlay"></div>
     </div>
+</section>
+
+<section class="sales-intro" aria-label="Kenali Mystic Hair Tonic">
+  <div class="container">
+    <div class="sales-card" data-reveal>
+      <div class="sales-eyebrow">Masalah rambut yang ramai orang alami</div>
+      <h1>Rambut makin banyak gugur? <em>Jangan biar sampai makin nipis.</em></h1>
+      <p class="sales-lead">Rambut banyak atas bantal? Gugur masa mandi atau menyikat? Kulit kepala pula mudah berkelemumur? <strong>Jangan pilih tonik secara teka-teki.</strong> Kenal pasti keperluan rambut anda dahulu, kemudian pilih formula Mystic yang lebih sesuai untuk rutin harian anda.</p>
+
+      <div class="problem-grid" aria-label="Masalah rambut biasa">
+        <button class="problem-card" type="button" data-problem-target="ginseng"><span class="problem-icon">01</span><div><strong>Rambut mudah gugur</strong><small>Banyak rambut tertinggal selepas mandi, menyikat atau di atas bantal.</small><b>Lihat formula →</b></div></button>
+        <button class="problem-card" type="button" data-problem-target="amino"><span class="problem-icon">02</span><div><strong>Rambut makin nipis</strong><small>Rambut nampak kurang penuh dan anda mahu rutin penjagaan lebih terarah.</small><b>Lihat formula →</b></div></button>
+        <button class="problem-card" type="button" data-problem-target="protein"><span class="problem-icon">03</span><div><strong>Kelemumur & kulit kepala</strong><small>Untuk kulit kepala yang memerlukan penjagaan tambahan dan rutin lebih konsisten.</small><b>Lihat formula →</b></div></button>
+        <button class="problem-card" type="button" data-problem-target="yogurt"><span class="problem-icon">04</span><div><strong>Rambut kering & kusam</strong><small>Rambut terasa kasar, sukar diurus atau kelihatan kurang berseri.</small><b>Lihat formula →</b></div></button>
+      </div>
+
+      <div class="sales-hook"><span>✓</span> 4 formula, 4 fokus penjagaan — pilih ikut masalah rambut anda.</div>
+
+      <div class="sales-actions">
+        <a class="sales-cta primary" href="#formulaFinder">Cari Mystic Saya <span>→</span></a>
+        <a class="sales-cta secondary" href="#results">Lihat sebelum & selepas</a>
+      </div>
+
+      <div class="sales-proof">
+        <div><strong>4 Formula</strong><span>Setiap satu dengan fokus penjagaan berbeza</span></div>
+        <div><strong>3 Langkah</strong><span>Sembur, urut dan teruskan rutin</span></div>
+        <div><strong>60 Hari</strong><span>Jaminan wang dikembalikan*</span></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <div class="trust-strip">
@@ -3550,9 +4497,9 @@ section{padding:72px 0!important}
   <div class="container">
     <div class="finder-shell">
       <div class="finder-copy">
-        <div class="kicker">Cari Formula Anda</div>
-        <h2>Mulakan dengan keperluan rambut anda.</h2>
-        <p>Pilih keperluan utama anda dan kami akan paparkan tonik yang sesuai dengan fokus penjagaan tersebut.</p>
+        <div class="kicker">4 formula · 4 fokus penjagaan</div>
+        <h2>Masalah rambut tak sama. Pilih formula ikut keperluan anda.</h2>
+        <p>Tekan pada masalah yang paling dekat dengan keadaan rambut anda sekarang untuk lihat formula Mystic yang sesuai sebagai rutin penjagaan.</p>
 
         <div class="finder-options" role="tablist" aria-label="Keperluan rambut">
           <button type="button" class="finder-option active" data-find="amino" aria-label="Pilih formula Amino Peptide">
@@ -3577,7 +4524,7 @@ section{padding:72px 0!important}
       <div class="finder-preview" id="finderPreview" role="button" tabindex="0" aria-label="Lihat formula yang dipilih">
         <div class="finder-number">01</div>
         <div class="finder-preview-art">
-          <img id="finderImage" src="assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=31" alt="Amino Peptide Hair Tonic">
+          <img id="finderImage" src="assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=40" alt="Amino Peptide Hair Tonic">
         </div>
         <div class="finder-preview-copy">
           <small id="finderEyebrow">Rambut & Kulit Kepala Sihat</small>
@@ -3606,8 +4553,8 @@ section{padding:72px 0!important}
       <article class="product-card" data-id="amino" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=31" alt="Imej utama Amino Peptide Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Amino-Peptide%20Hair-Tonic-2.png?v=31" alt="Imej kedua Amino Peptide Hair Tonic"></div>
+            <div class="gallery-slide active"><img src="assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=40" alt="Imej utama Amino Peptide Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Amino-Peptide%20Hair-Tonic-2.png?v=40" alt="Imej kedua Amino Peptide Hair Tonic"></div>
           </div>
           
         </div>
@@ -3625,8 +4572,8 @@ section{padding:72px 0!important}
       <article class="product-card" data-id="ginseng" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Ginseng-Hair-Tonic-thumbnail.png?v=31" alt="Imej utama Ginseng Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-2.png?v=31" alt="Imej kedua Ginseng Hair Tonic"></div>
+            <div class="gallery-slide active"><img src="assets/Ginseng-Hair-Tonic-thumbnail.png?v=40" alt="Imej utama Ginseng Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Ginseng-Hair-Tonic-2.png?v=40" alt="Imej kedua Ginseng Hair Tonic"></div>
           </div>
           
         </div>
@@ -3644,8 +4591,8 @@ section{padding:72px 0!important}
       <article class="product-card" data-id="yogurt" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Yogurt-Hair-Tonic-thumbnail.png?v=31" alt="Imej utama Yogurt Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-2.png?v=31" alt="Imej kedua Yogurt Hair Tonic"></div>
+            <div class="gallery-slide active"><img src="assets/Yogurt-Hair-Tonic-thumbnail.png?v=40" alt="Imej utama Yogurt Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Yogurt-Hair-Tonic-2.png?v=40" alt="Imej kedua Yogurt Hair Tonic"></div>
           </div>
           
         </div>
@@ -3663,8 +4610,8 @@ section{padding:72px 0!important}
       <article class="product-card" data-id="protein" data-reveal>
         <div class="gallery" data-gallery>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=31" alt="Imej utama Protein Terhidrolisis Hair Tonic"></div>
-            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=31" alt="Imej kedua Protein Terhidrolisis Hair Tonic"></div>
+            <div class="gallery-slide active"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=40" alt="Imej utama Protein Terhidrolisis Hair Tonic"></div>
+            <div class="gallery-slide"><img src="assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=40" alt="Imej kedua Protein Terhidrolisis Hair Tonic"></div>
           </div>
           
         </div>
@@ -3739,7 +4686,7 @@ section{padding:72px 0!important}
 </div>
 
       <div class="combined-care-image">
-        <img src="assets/mystic-benefits-showcase.png?v=31" alt="Mystic Hair Tonic - manfaat utama dan empat formula">
+        <img src="assets/mystic-benefits-showcase.png?v=40" alt="Mystic Hair Tonic - manfaat utama dan empat formula">
       </div>
     </div>
   </div>
@@ -3763,7 +4710,7 @@ section{padding:72px 0!important}
         <div class="ingredient-image"><img src="assets/ginseng-ingredients.png" alt="Bahan Ginseng"></div>
         <h3>Ekstrak Ginseng</h3>
         <p>Panax Ginseng dengan Ginsenoside untuk penjagaan akar, kesegaran kulit kepala dan rambut yang kelihatan lebih penuh serta terurus.</p>
-        <div class="ingredient-meta"><b>Fokus</b><span>Penjagaan akar rambut · scalp · volume</span><b>Utama</b><span>Panax Ginseng · Ginsenoside</span></div>
+        <div class="ingredient-meta"><b>Fokus</b><span>Penjagaan akar rambut · kulit kepala · volum</span><b>Utama</b><span>Panax Ginseng · Ginsenoside</span></div>
       </article>
 
       <article class="ingredient-card" data-reveal>
@@ -3784,26 +4731,23 @@ section{padding:72px 0!important}
         <div class="ingredient-image"><img src="assets/hydrolyzed-ingredients.png" alt="Bahan Protein Terhidrolisis"></div>
         <h3>Protein Terhidrolisis</h3>
         <p>Protein Soya dengan Ekstrak Kulit Zizyphus Joazeiro untuk nutrisi, penjagaan akar dan kulit kepala yang mudah berkelemumur.</p>
-        <div class="ingredient-meta"><b>Fokus</b><span>Akar · kesegaran kulit kepala · kilauan</span><b>Utama</b><span>Soy Protein · Joazeiro Bark</span></div>
+        <div class="ingredient-meta"><b>Fokus</b><span>Akar · kesegaran kulit kepala · kilauan</span><b>Utama</b><span>Protein Soya · Kulit Joazeiro</span></div>
       </article>
     </div>
   </div>
 </section>
 
 
-<section class="brand-story">
+
+<section class="brand-story brand-story-clean">
   <div class="container">
-    <div class="brand-story-grid">
-      <div class="brand-story-mark">
-        <div class="heritage-line"></div>
-        <span>01</span>
-        <div class="heritage-line"></div>
-      </div>
+    <div class="brand-story-clean-inner" data-reveal>
       <div class="brand-story-copy">
         <div class="kicker">Pendekatan Mystic</div>
-        <h2>Inspirasi tradisional untuk rutin penjagaan moden.</h2>
+        <h2>Inspirasi tradisional untuk penjagaan rambut moden.</h2>
         <p>Identiti botani klasik Mystic diterapkan melalui tona hangat, elemen warisan dan gaya semula jadi, sambil mengekalkan pengalaman produk yang kemas, moden dan mudah digunakan.</p>
       </div>
+
       <div class="brand-story-points">
         <div><b>01</b><span>Formula mengikut keperluan</span></div>
         <div><b>02</b><span>Rutin harian yang mudah</span></div>
@@ -3813,7 +4757,8 @@ section{padding:72px 0!important}
   </div>
 </section>
 
-<section>
+
+<section id="results">
   <div class="container">
     <div class="results-shell ornament-shell" data-reveal>
       <div class="results-top">
@@ -3839,6 +4784,123 @@ section{padding:72px 0!important}
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="testimonial-section" id="reviews">
+  <div class="container">
+    <div class="section-head testimonial-heading" data-reveal>
+      <div class="kicker">Ulasan Pelanggan</div>
+      <h2>Pengalaman yang dikongsi selepas mencuba rutin Mystic</h2>
+      <p>Ringkas, mudah dibaca dan sesuai untuk pelanggan yang mahu melihat pengalaman penggunaan sebelum membuat pilihan.</p>
+    </div>
+
+    <div class="testimonial-shell" data-reveal>
+      <div class="testimonial-track" id="testimonialTrack" aria-label="Ulasan pelanggan">
+        <article class="testimonial-card">
+          <div class="review-top">
+            <div class="review-avatar">NR</div>
+            <div><strong>Nadia R.</strong><small>Pengguna Mystic</small></div>
+          </div>
+          <div class="review-stars" aria-label="5 bintang">★★★★★</div>
+          <p>“Saya suka sebab cara guna sangat mudah. Lepas syampu cuma sembur dan urut, tak rasa leceh untuk jadikan rutin harian.”</p>
+          <div class="review-tag">Rutin mudah</div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="review-top">
+            <div class="review-avatar">AF</div>
+            <div><strong>Aina F.</strong><small>Pengguna Mystic</small></div>
+          </div>
+          <div class="review-stars" aria-label="5 bintang">★★★★★</div>
+          <p>“Saya pilih Yogurt sebab rambut saya cepat kering. Rambut rasa lebih senang diurus dan nampak lebih kemas selepas beberapa kali guna.”</p>
+          <div class="review-tag">Kelembapan</div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="review-top">
+            <div class="review-avatar">SM</div>
+            <div><strong>Syafiq M.</strong><small>Pengguna Mystic</small></div>
+          </div>
+          <div class="review-stars" aria-label="5 bintang">★★★★★</div>
+          <p>“Saya suka pilihan formula dia jelas. Tak perlu pening nak pilih sebab setiap botol memang ada fokus yang berbeza.”</p>
+          <div class="review-tag">Pilihan jelas</div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="review-top">
+            <div class="review-avatar">HA</div>
+            <div><strong>Hani A.</strong><small>Pengguna Mystic</small></div>
+          </div>
+          <div class="review-stars" aria-label="5 bintang">★★★★★</div>
+          <p>“Tekstur ringan dan cepat meresap. Saya paling suka sebab kulit kepala tak rasa berat selepas pakai.”</p>
+          <div class="review-tag">Ringan</div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="review-top">
+            <div class="review-avatar">IZ</div>
+            <div><strong>Izzat Z.</strong><small>Pengguna Mystic</small></div>
+          </div>
+          <div class="review-stars" aria-label="5 bintang">★★★★★</div>
+          <p>“Ginseng jadi pilihan saya sebab saya memang nak fokus pada akar rambut. Bau pun selesa dan senang dipakai sebelum keluar kerja.”</p>
+          <div class="review-tag">Penjagaan akar</div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="review-top">
+            <div class="review-avatar">MF</div>
+            <div><strong>Mira F.</strong><small>Pengguna Mystic</small></div>
+          </div>
+          <div class="review-stars" aria-label="5 bintang">★★★★★</div>
+          <p>“Design botol cantik, tapi yang penting senang nak sembur terus pada kulit kepala. Saya suka sebab tak berminyak sangat.”</p>
+          <div class="review-tag">Mudah digunakan</div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="review-top">
+            <div class="review-avatar">RA</div>
+            <div><strong>Rina A.</strong><small>Pengguna Mystic</small></div>
+          </div>
+          <div class="review-stars" aria-label="5 bintang">★★★★★</div>
+          <p>“Amino Peptide rasa sesuai dengan rutin saya. Saya suka fokusnya pada kulit kepala dan rambut, jadi rasa lebih lengkap.”</p>
+          <div class="review-tag">Kulit kepala</div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="review-top">
+            <div class="review-avatar">NA</div>
+            <div><strong>Naz A.</strong><small>Pengguna Mystic</small></div>
+          </div>
+          <div class="review-stars" aria-label="5 bintang">★★★★★</div>
+          <p>“Saya guna selepas mandi malam. Tak ambil masa lama dan rambut rasa lebih terurus bila bangun pagi.”</p>
+          <div class="review-tag">Rutin malam</div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="review-top">
+            <div class="review-avatar">LY</div>
+            <div><strong>Liyana Y.</strong><small>Pengguna Mystic</small></div>
+          </div>
+          <div class="review-stars" aria-label="5 bintang">★★★★★</div>
+          <p>“Paling membantu bila ada 4 pilihan formula. Saya terus tahu nak pilih yang mana ikut keadaan rambut saya.”</p>
+          <div class="review-tag">4 formula</div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="review-top">
+            <div class="review-avatar">FS</div>
+            <div><strong>Farah S.</strong><small>Pengguna Mystic</small></div>
+          </div>
+          <div class="review-stars" aria-label="5 bintang">★★★★★</div>
+          <p>“Saya suka keseluruhan konsep dia — nampak premium, cara guna mudah dan boleh terus tanya melalui WhatsApp kalau tak pasti formula.”</p>
+          <div class="review-tag">Mudah pilih</div>
+        </article>
+      </div>
+
+      <div class="testimonial-dots" id="testimonialDots" aria-label="Navigasi ulasan"></div>
     </div>
   </div>
 </section>
@@ -3890,7 +4952,7 @@ section{padding:72px 0!important}
           <div class="step-content">
             <div class="step-meta">
               <div class="step-no">3</div>
-              <div><h3>Urut gently</h3><p>Urut for around 1–3 minutes to help spread the tonic evenly.</p></div>
+              <div><h3>Urut perlahan</h3><p>Urut perlahan selama kira-kira 1–3 minit supaya tonik tersebar dengan sekata.</p></div>
             </div>
           </div>
         </article>
@@ -3916,7 +4978,7 @@ section{padding:72px 0!important}
     <div class="faq" data-reveal>
       <div class="faq-item">
         <button class="faq-q"><span>Formula mana yang sesuai untuk saya?</span><span>+</span></button>
-        <div class="faq-a"><p>Choose Ginseng for root-focused care, Yogurt for moisture and shine, Amino Peptide for healthy hair/scalp care, and Protein Terhidrolisis for protein-focused nourishment and dandruff/root care.</p></div>
+        <div class="faq-a"><p>Pilih Ginseng untuk fokus penjagaan akar rambut, Yogurt untuk kelembapan dan kilauan, Amino Peptide untuk penjagaan rambut serta kulit kepala, dan Protein Terhidrolisis untuk nutrisi berasaskan protein serta penjagaan kelemumur dan akar.</p></div>
       </div>
 
       <div class="faq-item">
@@ -3946,6 +5008,20 @@ section{padding:72px 0!important}
         <p>Tambah formula pilihan anda ke dalam troli, laraskan kuantiti dan hantar senarai pesanan lengkap melalui WhatsApp.</p>
       </div>
       <button class="btn" onclick="openCart()">Buka Troli</button>
+    </div>
+  </div>
+</section>
+
+<section class="guarantee-band">
+  <div class="container">
+    <div class="guarantee-inner" data-reveal>
+      <div class="guarantee-badge"><div><b>60</b><br><small>HARI</small></div></div>
+      <div class="guarantee-copy">
+        <small>Beli dengan lebih yakin</small>
+        <h3>Jaminan wang dikembalikan sehingga 60 hari*</h3>
+        <p>Cuba Mystic sebagai sebahagian daripada rutin anda. Terma dan syarat jaminan adalah tertakluk kepada polisi penjual.</p>
+      </div>
+      <a class="guarantee-link" href="https://wa.me/60183209081?text=Hi%20Milly%2C%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20jaminan%2060%20hari%20Mystic%20Hair%20Tonic." target="_blank" rel="noopener">Tanya tentang jaminan</a>
     </div>
   </div>
 </section>
@@ -3997,18 +5073,18 @@ section{padding:72px 0!important}
 <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
   <div class="cart-head">
     <h3>Troli Anda</h3>
-    <button class="close-cart" id="closeCart" aria-label="Tutup cart">×</button>
+    <button class="close-cart" id="closeCart" aria-label="Tutup troli">×</button>
   </div>
   <div class="cart-items" id="cartItems"></div>
   <div class="cart-foot">
-    <p>Price and availability can be confirmed with Milly before payment.</p>
+    <p>Harga dan ketersediaan stok boleh disahkan melalui WhatsApp sebelum membuat pembayaran.</p>
     <button class="btn btn-primary" id="checkoutWhatsapp">Teruskan ke WhatsApp</button>
   </div>
 </aside>
 
 <div class="modal" id="productModal" aria-hidden="true">
   <div class="modal-card">
-    <button class="close-modal" id="closeModal" aria-label="Tutup product details">×</button>
+    <button class="close-modal" id="closeModal" aria-label="Tutup butiran produk">×</button>
     <div class="modal-art">
       <button class="modal-image-arrow prev" id="modalImagePrev" type="button" aria-label="Imej produk sebelumnya">←</button>
       <img id="modalImg" src="" alt="">
@@ -4099,68 +5175,65 @@ classifyProductGalleryImages();
 })();
 
 
-const fallbackImage='assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=31';
+const fallbackImage='assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=40';
 const products={
   ginseng:{
     name:'Ginseng Hair Tonic',
-    img:'assets/Ginseng-Hair-Tonic-thumbnail.png?v=31',
-    kicker:'Promote hair growth & prevent hair loss',
-    desc:'Ginseng Hair Tonic is empowered with Panax Ekstrak Ginseng, an herbal extract rich in Ginsenoside. The supplied product material states that the active compound supports the hair root, stimulates hair cells and promotes hair growth, while daily usage is beneficial for a healthy, volumized hair look and preventing hair loss.',
-    ingredients:['Panax Ekstrak Ginseng','Ginsenoside','Botanical extracts'],
-    details:[
-      ['🌱','Hair root care','Supports the hair root and healthy-looking scalp'],
-      ['🧬','Hair cell support','Positioned to stimulate hair cells'],
-      ['✨','Healthy volume','Supports a healthier, more volumized look'],
-      ['🛡️','Hair fall care','Positioned to help prevent hair loss']
+    kicker:'Penjagaan akar rambut',
+    desc:'Ginseng Hair Tonic menggunakan Ekstrak Panax Ginseng dengan Ginsenoside untuk membantu menyokong penjagaan akar rambut dan kulit kepala. Sesuai dimasukkan dalam rutin harian untuk rambut yang kelihatan lebih terurus dan bervolum.',
+    ingredients:['Ekstrak Panax Ginseng','Ginsenoside','Ekstrak Botani'],
+    features:[
+      ['🌱','Penjagaan akar rambut','Menyokong rutin penjagaan akar rambut dan kulit kepala'],
+      ['🧬','Sokongan rambut','Membantu mengekalkan rambut yang kelihatan terurus'],
+      ['✨','Volum lebih terjaga','Membantu rambut kelihatan lebih penuh dan kemas'],
+      ['🛡️','Penjagaan rambut gugur','Sesuai untuk rutin penjagaan rambut yang mudah gugur']
     ]
   },
   yogurt:{
     name:'Yogurt Hair Tonic',
-    img:'assets/Yogurt-Hair-Tonic-thumbnail.png?v=31',
-    kicker:'Extra moisture & shining hair',
-    desc:'Yogurt Hair Tonic diformulasikan dengan ekstrak yogurt serta bahan seperti kalsium, fosforus, zink, zat besi dan vitamin untuk fokus kelembapan kulit kepala dan rambut yang lebih lembut serta berkilau.',
-    ingredients:['Ekstrak Yogurt','Calcium','Phosphorus','Zinc','Iron','Vitamins'],
-    details:[
-      ['💧','Extra moisture','Adds moisture to the scalp'],
-      ['✨','Shine support','Supports shining, lustrous-looking hair'],
-      ['🧴','Softer feel','Helps hair feel softer and smoother'],
-      ['🛡️','Root care','Supports healthier-looking hair roots']
+    kicker:'Kelembapan & kilauan',
+    desc:'Yogurt Hair Tonic diformulasikan untuk fokus kelembapan kulit kepala serta membantu rambut terasa lebih lembut, licin dan kelihatan berkilau.',
+    ingredients:['Ekstrak Yogurt','Kalsium','Fosforus','Zink','Zat Besi','Vitamin'],
+    features:[
+      ['💧','Kelembapan tambahan','Membantu mengekalkan kelembapan kulit kepala'],
+      ['✨','Sokongan kilauan','Membantu rambut kelihatan lebih berkilau'],
+      ['🌸','Rambut lebih lembut','Membantu rambut terasa lebih lembut dan terurus'],
+      ['🛡️','Penjagaan akar','Menyokong rutin penjagaan akar rambut']
     ]
   },
   amino:{
     name:'Amino Peptide Hair Tonic',
-    img:'assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=31',
-    kicker:'Penjagaan Rambut & Kulit Kepala',
-    desc:'Amino Peptide Hair Tonic diformulasikan dengan campuran 15 jenis asid amino untuk penjagaan rambut dan kulit kepala. The supplied product material says the nutrients help slow scalp aging, support melanin cells and promote strong, thick hair shafts while keeping hair and scalp healthy.',
-    ingredients:['15 types of amino acids','Amino peptides','Nutrient blend'],
-    details:[
-      ['🧬','Amino acid blend','Rich blending of 15 types of amino acids'],
-      ['🌿','Scalp care','Supports a healthy-looking scalp'],
-      ['⚫','Melanin support','Positioned to nourish melanin cells'],
-      ['💪','Stronger-looking hair','Supports strong and thick-looking hair shafts']
+    kicker:'Rambut & kulit kepala sihat',
+    desc:'Amino Peptide Hair Tonic diformulasikan dengan campuran 15 jenis asid amino untuk penjagaan rambut dan kulit kepala. Sesuai untuk rutin yang memberi fokus kepada kesegaran kulit kepala dan rambut yang kelihatan lebih kuat serta tebal.',
+    ingredients:['15 jenis asid amino','Amino Peptide','Campuran Nutrien'],
+    features:[
+      ['🧬','Campuran asid amino','Campuran 15 jenis asid amino'],
+      ['🌿','Penjagaan kulit kepala','Menyokong rutin kulit kepala yang sihat'],
+      ['⚫','Sokongan melanin','Diformulasikan untuk membantu menyokong penjagaan melanin rambut'],
+      ['💪','Rambut lebih kuat','Membantu rambut kelihatan lebih kuat dan tebal']
     ]
   },
   protein:{
     name:'Protein Terhidrolisis Hair Tonic',
-    img:'assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=31',
-    kicker:'Penjagaan Kelemumur & Akar Rambut',
-    desc:'Protein Terhidrolisis Hair Tonic is enriched with soluble protein from Natural Soy. The supplied product material highlights nourishment for healthy lustrous hair, stronger hair roots, reduced excessive hair loss, scalp freshness and dandruff care with Zizyphus Joazeiro Bark Extract.',
-    ingredients:['Natural Soy Protein','Protein Terhidrolisis','Zizyphus Joazeiro Bark Extract'],
+    img:'assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=40',
+    kicker:'Kelemumur & Penjagaan Akar',
+    desc:'Protein Terhidrolisis Hair Tonic menggunakan protein larut daripada Soya bersama Ekstrak Kulit Zizyphus Joazeiro untuk fokus nutrisi rambut, penjagaan akar dan kesegaran kulit kepala.',
+    ingredients:['Protein Soya','Protein Terhidrolisis','Ekstrak Kulit Zizyphus Joazeiro'],
     details:[
-      ['🌾','Protein nourishment','Soluble protein from Natural Soy'],
-      ['💪','Root strength','Supports stronger-looking hair roots'],
-      ['🫧','Dandruff care','Positioned to help reduce dandruff'],
-      ['💧','Fresh scalp feel','Supports a fresh and hydrated scalp feel']
+      ['🌾','Nutrisi berasaskan protein','Membantu menyokong penjagaan rambut yang memerlukan nutrisi tambahan'],
+      ['💪','Penjagaan akar','Menyokong rutin penjagaan akar rambut'],
+      ['🫧','Penjagaan kelemumur','Sesuai untuk kulit kepala yang mudah berkelemumur'],
+      ['💧','Kulit kepala lebih segar','Membantu mengekalkan rasa kulit kepala yang lebih segar']
     ]
   }
 
 };
 
 const productImages={
-  amino:['assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=31', 'assets/Amino-Peptide%20Hair-Tonic.png?v=31', 'assets/Amino-Peptide%20Hair-Tonic-2.png?v=31'],
-  ginseng:['assets/Ginseng-Hair-Tonic-thumbnail.png?v=31', 'assets/Ginseng-Hair-Tonic.png?v=31', 'assets/Ginseng-Hair-Tonic-2.png?v=31'],
-  yogurt:['assets/Yogurt-Hair-Tonic-thumbnail.png?v=31', 'assets/Yogurt-Hair-Tonic.png?v=31', 'assets/Yogurt-Hair-Tonic-2.png?v=31'],
-  protein:['assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=31', 'assets/Hydrolyzed-Protein-Hair-Tonic.png?v=31', 'assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=31']
+  amino:['assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=40', 'assets/Amino-Peptide%20Hair-Tonic.png?v=40', 'assets/Amino-Peptide%20Hair-Tonic-2.png?v=40'],
+  ginseng:['assets/Ginseng-Hair-Tonic-thumbnail.png?v=40', 'assets/Ginseng-Hair-Tonic.png?v=40', 'assets/Ginseng-Hair-Tonic-2.png?v=40'],
+  yogurt:['assets/Yogurt-Hair-Tonic-thumbnail.png?v=40', 'assets/Yogurt-Hair-Tonic.png?v=40', 'assets/Yogurt-Hair-Tonic-2.png?v=40'],
+  protein:['assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=40', 'assets/Hydrolyzed-Protein-Hair-Tonic.png?v=40', 'assets/Hydrolyzed-Protein-Hair-Tonic-2.png?v=40']
 };
 
 let currentModalImageIndex=0;
@@ -4179,6 +5252,13 @@ document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
 /* product image galleries: MANUAL ONLY — no auto changing */
 document.querySelectorAll('[data-gallery]').forEach(gallery=>{
   let slides=[...gallery.querySelectorAll('.gallery-slide')];
+
+  /* Product cards show one clear thumbnail only.
+     Additional images are available inside the product popup. */
+  slides.forEach((slide,i)=>slide.classList.toggle('active',i===0));
+  gallery.setAttribute('data-card-static','true');
+  return;
+
   let index=0;
   let startX=0;
   let mouseDown=false;
@@ -4261,7 +5341,7 @@ const productNext=document.getElementById('productNext');
 cards.forEach((_,i)=>{
   const b=document.createElement('button');
   b.className=i===0?'active':'';
-  b.setAttribute('aria-label','Product '+(i+1));
+  b.setAttribute('aria-label','Produk '+(i+1));
   b.addEventListener('click',()=>cards[i].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'}));
   mdots.appendChild(b);
 });
@@ -4339,7 +5419,7 @@ function setActiveStep(index,scroll=true){
   progressItems.forEach((item,i)=>item.classList.toggle('active',i===activeStep));
 
   if(stepHint){
-    stepHint.textContent=`Step ${activeStep+1} of ${stepCards.length}`;
+    stepHint.textContent=`Langkah ${activeStep+1} daripada ${stepCards.length}`;
   }
 
   if(stepPrev)stepPrev.disabled=activeStep===0;
@@ -4401,8 +5481,9 @@ function openProduct(id){
   document.getElementById('modalIngredients').innerHTML=
     p.ingredients.map(x=>`<span class="ingredient-badge">${x}</span>`).join('');
 
+  const detailItems = p.details || p.features || [];
   document.getElementById('modalDetails').innerHTML=
-    p.details.map(x=>`
+    detailItems.map(x=>`
       <div class="detail-chip">
         <div class="ico">${x[0]}</div>
         <div><strong>${x[1]}</strong><span>${x[2]}</span></div>
@@ -4439,7 +5520,7 @@ function renderModalGallery(){
       const b=document.createElement('button');
       b.type='button';
       b.className=i===currentModalImageIndex?'active':'';
-      b.setAttribute('aria-label',`Show image ${i+1}`);
+      b.setAttribute('aria-label',`Lihat imej ${i+1}`);
       b.addEventListener('click',()=>{
         currentModalImageIndex=i;
         renderModalGallery();
@@ -4728,28 +5809,28 @@ if(window.innerWidth<=640){
   const data={
     amino:{
       num:'01',
-      img:'assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=31',
+      img:'assets/Amino-Peptide%20Hair-Tonic-thumbnail.png?v=40',
       eyebrow:'Rambut & Kulit Kepala Sihat',
       title:'Amino Peptide Hair Tonic',
       text:'Penjagaan berasaskan asid amino untuk membantu rambut dan kulit kepala kelihatan lebih sihat.'
     },
     ginseng:{
       num:'02',
-      img:'assets/Ginseng-Hair-Tonic-thumbnail.png?v=31',
+      img:'assets/Ginseng-Hair-Tonic-thumbnail.png?v=40',
       eyebrow:'Penjagaan Akar Rambut',
       title:'Ginseng Hair Tonic',
       text:'Penjagaan berfokuskan Ekstrak Panax Ginseng untuk akar rambut dan kulit kepala yang kelihatan sihat.'
     },
     yogurt:{
       num:'03',
-      img:'assets/Yogurt-Hair-Tonic-thumbnail.png?v=31',
+      img:'assets/Yogurt-Hair-Tonic-thumbnail.png?v=40',
       eyebrow:'Kelembapan & Kilauan',
       title:'Yogurt Hair Tonic',
       text:'Penjagaan berfokuskan kelembapan untuk rambut yang terasa lebih lembut, licin dan kelihatan berkilau.'
     },
     protein:{
       num:'04',
-      img:'assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=31',
+      img:'assets/Hydrolyzed-Protein-Hair-Tonic-thumbnail.png?v=40',
       eyebrow:'Kelemumur & Penjagaan Akar',
       title:'Protein Terhidrolisis Hair Tonic',
       text:'Penjagaan berasaskan protein untuk akar dan kulit kepala yang terasa lebih segar.'
@@ -4835,6 +5916,162 @@ document.querySelectorAll('[data-jump-product]').forEach(btn=>{
   });
 });
 
+
+/* Mobile product carousel interaction cue */
+(function(){
+  const shell=document.querySelector('.product-shell');
+  const track=document.getElementById('productTrack');
+  if(!shell || !track) return;
+  const calm=()=>shell.classList.add('is-touched');
+  track.addEventListener('touchstart',calm,{passive:true,once:true});
+  track.addEventListener('scroll',()=>{
+    if(Math.abs(track.scrollLeft)>8) calm();
+  },{passive:true});
+})();
+
+
+/* ===== Testimonial carousel - horizontal only, never moves the page vertically ===== */
+(function(){
+  const track=document.getElementById('testimonialTrack');
+  const dotsWrap=document.getElementById('testimonialDots');
+  if(!track || !dotsWrap) return;
+
+  const cards=[...track.querySelectorAll('.testimonial-card')];
+  let timer=null;
+  let paused=false;
+
+  function visibleCount(){
+    if(window.innerWidth<=640) return 1;
+    if(window.innerWidth<=900) return 2;
+    return 3;
+  }
+
+  function pageCount(){
+    return Math.max(1, cards.length-visibleCount()+1);
+  }
+
+  function nearestIndex(){
+    const left=track.scrollLeft;
+    let idx=0,dist=Infinity;
+    cards.forEach((c,i)=>{
+      const d=Math.abs(c.offsetLeft-left);
+      if(d<dist){dist=d;idx=i}
+    });
+    return idx;
+  }
+
+  function scrollToCard(index, smooth=true){
+    const card=cards[index];
+    if(!card) return;
+
+    /* Important:
+       use the testimonial track's own horizontal scroll only.
+       Do NOT use scrollIntoView because that can pull the whole page
+       vertically down to the testimonial section. */
+    track.scrollTo({
+      left:card.offsetLeft,
+      top:0,
+      behavior:smooth ? 'smooth' : 'auto'
+    });
+  }
+
+  function buildDots(){
+    dotsWrap.innerHTML='';
+    for(let i=0;i<pageCount();i++){
+      const b=document.createElement('button');
+      b.type='button';
+      b.setAttribute('aria-label',`Ulasan ${i+1}`);
+      b.addEventListener('click',()=>{
+        paused=true;
+        stop();
+        scrollToCard(i,true);
+        setTimeout(()=>{
+          paused=false;
+          start();
+        },1200);
+      });
+      dotsWrap.appendChild(b);
+    }
+    updateDots();
+  }
+
+  function updateDots(){
+    const idx=Math.min(nearestIndex(),pageCount()-1);
+    [...dotsWrap.children].forEach((d,i)=>d.classList.toggle('active',i===idx));
+  }
+
+  function next(){
+    if(paused || !cards.length) return;
+    let idx=nearestIndex()+1;
+    if(idx>pageCount()-1) idx=0;
+    scrollToCard(idx,true);
+  }
+
+  function start(){
+    stop();
+    timer=setInterval(next,4200);
+  }
+
+  function stop(){
+    if(timer){
+      clearInterval(timer);
+      timer=null;
+    }
+  }
+
+  track.addEventListener('scroll',()=>{
+    clearTimeout(track._reviewScrollTimer);
+    track._reviewScrollTimer=setTimeout(updateDots,90);
+  },{passive:true});
+
+  track.addEventListener('mouseenter',()=>{paused=true;stop()});
+  track.addEventListener('mouseleave',()=>{paused=false;start()});
+
+  track.addEventListener('touchstart',()=>{paused=true;stop()},{passive:true});
+  track.addEventListener('touchend',()=>{
+    setTimeout(()=>{
+      paused=false;
+      start();
+    },1200);
+  },{passive:true});
+
+  track.addEventListener('pointerdown',()=>{paused=true;stop()},{passive:true});
+  track.addEventListener('pointerup',()=>{
+    setTimeout(()=>{
+      paused=false;
+      start();
+    },1200);
+  },{passive:true});
+
+  window.addEventListener('resize',()=>{
+    clearTimeout(window._reviewResize);
+    window._reviewResize=setTimeout(()=>{
+      buildDots();
+      start();
+    },180);
+  });
+
+  buildDots();
+  start();
+})();
+
+</script>
+
+
+<script>
+(function(){
+  const cards=[...document.querySelectorAll('[data-problem-target]')];
+  cards.forEach((card,i)=>{
+    card.style.animationDelay=(i*90)+'ms';
+    card.classList.add('reveal-pop');
+    card.addEventListener('click',()=>{
+      const id=card.dataset.problemTarget;
+      const option=document.querySelector('.finder-option[data-find="'+id+'"]');
+      document.getElementById('formulaFinder')?.scrollIntoView({behavior:'smooth',block:'start'});
+      setTimeout(()=>option?.click(),420);
+    });
+  });
+})();
 </script>
 
 </body>
