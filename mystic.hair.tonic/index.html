@@ -6,34 +6,29 @@
 
 <title>Mystic Hair Tonic | Rambut Sihat Bermula Dari Akar</title>
 
-<meta name="description" content="Mystic Hair Tonic dengan gabungan Salicylic Acid, Safflower Oil, Hydrolyzed Protein dan ekstrak botani untuk melengkapkan rutin penjagaan rambut dan kulit kepala.">
+<meta name="description" content="Mystic Hair Tonic dengan gabungan Hydrolyzed Soy Protein, Salicylic Acid, Safflower Seed Oil, Olive Fruit Oil dan bahan penjagaan kulit kepala untuk rutin rambut harian.">
 
 <style>
-
-/* =========================================================
-   ROOT
-========================================================= */
 
 :root{
     --green:#063c2b;
     --green-dark:#032c20;
     --green-mid:#0c6543;
-    --green-light:#eaf2eb;
 
     --gold:#b58a32;
     --gold-light:#ead081;
 
     --cream:#fffaf0;
-    --cream-2:#f5ecd4;
-    --cream-3:#eee1bd;
+    --cream2:#f5ecd4;
+    --cream3:#eee1bd;
 
     --yellow:#ffeb8b;
 
     --text:#26352e;
     --muted:#6e756f;
-
     --border:#e4dbc4;
-    --white:#ffffff;
+
+    --white:#fff;
 }
 
 *{
@@ -75,7 +70,7 @@ a{
 
 
 /* =========================================================
-   MAIN
+   MAIN FUNNEL
 ========================================================= */
 
 .page{
@@ -85,7 +80,9 @@ a{
 .funnel{
     width:100%;
     max-width:760px;
+
     margin:0 auto;
+
     background:#fff;
 
     box-shadow:
@@ -95,7 +92,7 @@ a{
 
 
 /* =========================================================
-   POSTERS 1 / 2 / 3
+   POSTERS
 ========================================================= */
 
 .poster{
@@ -126,7 +123,6 @@ a{
     text-align:center;
 
     font-size:11px;
-    line-height:1.3;
     font-weight:800;
     letter-spacing:2px;
 
@@ -161,23 +157,6 @@ a{
     line-height:1.7;
 }
 
-.gold-line{
-    width:70px;
-    height:3px;
-
-    margin:17px auto 0;
-
-    border-radius:10px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #b78d38,
-            #edd993,
-            #b78d38
-        );
-}
-
 
 /* =========================================================
    SALES BRIDGE
@@ -198,34 +177,6 @@ a{
     color:#fff;
 
     text-align:center;
-}
-
-.sales-bridge:before,
-.sales-bridge:after{
-    content:"";
-
-    position:absolute;
-
-    left:32px;
-    right:32px;
-
-    height:1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(236,208,124,.72),
-            transparent
-        );
-}
-
-.sales-bridge:before{
-    top:13px;
-}
-
-.sales-bridge:after{
-    bottom:13px;
 }
 
 .sales-bridge small{
@@ -284,7 +235,7 @@ a{
 
 
 /* =========================================================
-   PROBLEM
+   PROBLEM SECTION
 ========================================================= */
 
 .problem{
@@ -310,7 +261,7 @@ a{
     line-height:1.1;
 }
 
-.problem-head h2 strong{
+.problem-head strong{
     color:#9e6d1e;
 }
 
@@ -378,17 +329,17 @@ a{
 
 
 /* =========================================================
-   INGREDIENT EDUCATION
+   INGREDIENTS
 ========================================================= */
 
 .ingredients{
     background:#fffdf8;
 }
 
-.ingredient-intro{
-    margin-bottom:29px;
+.ingredients-intro{
+    margin-bottom:28px;
 
-    padding:19px 20px;
+    padding:20px;
 
     border:1px solid #dfd1ab;
     border-radius:11px;
@@ -401,19 +352,19 @@ a{
         );
 }
 
-.ingredient-intro strong{
+.ingredients-intro strong{
     display:block;
 
-    margin-bottom:5px;
+    margin-bottom:6px;
 
     color:#143d2c;
 
-    font-family:Georgia, serif;
+    font-family:Georgia,serif;
 
-    font-size:20px;
+    font-size:21px;
 }
 
-.ingredient-intro p{
+.ingredients-intro p{
     margin:0;
 
     color:#666e68;
@@ -422,10 +373,12 @@ a{
     line-height:1.65;
 }
 
-.ingredient-stack{
+.ingredient-grid{
     display:grid;
 
-    gap:13px;
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
 }
 
 .ingredient-card{
@@ -435,18 +388,15 @@ a{
     border-radius:12px;
 
     background:#fff;
-}
 
-.ingredient-main{
-    display:grid;
-
-    grid-template-columns:180px 1fr;
-
-    min-height:190px;
+    box-shadow:
+        0 5px 16px rgba(45,50,40,.04);
 }
 
 .ingredient-photo{
-    min-height:190px;
+    aspect-ratio:1.25/1;
+
+    overflow:hidden;
 
     background:#eee;
 }
@@ -458,110 +408,67 @@ a{
     object-fit:cover;
 }
 
-.ingredient-copy{
-    padding:21px;
+.ingredient-content{
+    padding:16px;
 }
 
-.ingredient-no{
+.ingredient-number{
     margin-bottom:4px;
 
     color:#a77925;
 
     font-size:9px;
     font-weight:900;
-    letter-spacing:1.7px;
+    letter-spacing:1.4px;
 }
 
-.ingredient-copy h3{
-    margin:0 0 5px;
+.ingredient-content h3{
+    margin:0 0 6px;
 
     color:#163e2e;
 
-    font-family:Georgia, serif;
+    font-family:Georgia,serif;
 
-    font-size:23px;
+    font-size:20px;
 }
 
-.ingredient-tag{
+.ingredient-content p{
+    margin:0;
+
+    color:#666e69;
+
+    font-size:11px;
+    line-height:1.65;
+}
+
+.ingredient-benefit{
     display:inline-block;
 
-    margin-bottom:10px;
+    margin-top:10px;
 
-    padding:4px 8px;
+    padding:5px 8px;
 
     border-radius:20px;
 
-    background:#eef3e9;
+    background:#edf3e9;
 
-    color:#14603f;
+    color:#176342;
 
     font-size:9px;
     font-weight:800;
 }
 
-.ingredient-copy p{
-    margin:0;
-
-    color:#666e69;
-
-    font-size:12px;
-    line-height:1.65;
-}
-
-.ingredient-benefits{
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    border-top:1px solid #ebe4d4;
-
-    background:#faf7ee;
-}
-
-.ingredient-benefit{
-    padding:13px 9px;
-
-    border-right:1px solid #ebe4d4;
-
-    text-align:center;
-}
-
-.ingredient-benefit:last-child{
-    border-right:0;
-}
-
-.ingredient-benefit strong{
-    display:block;
-
-    margin-bottom:2px;
-
-    color:#174531;
-
-    font-size:10px;
-}
-
-.ingredient-benefit span{
-    display:block;
-
-    color:#747b75;
-
-    font-size:9px;
-    line-height:1.4;
-}
-
 
 /* =========================================================
-   SCALP EDUCATION
+   INGREDIENT EXPLAINER
 ========================================================= */
 
-.scalp-box{
-    margin-top:23px;
+.ingredient-story{
+    margin-top:24px;
 
-    padding:25px 21px;
+    padding:24px 22px;
 
     border-radius:13px;
-
-    color:#fff;
 
     background:
         radial-gradient(
@@ -569,37 +476,37 @@ a{
             #176847,
             #053828 62%
         );
+
+    color:#fff;
 }
 
-.scalp-box small{
-    display:block;
+.ingredient-story small{
+    color:#e5cb79;
 
-    color:#e4ca75;
-
-    font-size:10px;
+    font-size:9px;
     font-weight:900;
-    letter-spacing:1.6px;
+    letter-spacing:1.5px;
 }
 
-.scalp-box h3{
-    margin:6px 0 10px;
+.ingredient-story h3{
+    margin:6px 0 9px;
 
-    font-family:Georgia, serif;
+    font-family:Georgia,serif;
 
     font-size:25px;
     line-height:1.15;
 }
 
-.scalp-box > p{
+.ingredient-story p{
     margin:0;
 
-    color:#dbe8e1;
+    color:#d9e5df;
 
-    font-size:13px;
+    font-size:12px;
     line-height:1.7;
 }
 
-.scalp-grid{
+.story-grid{
     display:grid;
 
     grid-template-columns:1fr 1fr;
@@ -609,130 +516,65 @@ a{
     margin-top:17px;
 }
 
-.scalp-point{
+.story-point{
     padding:11px;
 
     border:1px solid rgba(255,255,255,.13);
-    border-radius:7px;
+    border-radius:8px;
 
-    background:rgba(255,255,255,.055);
+    background:rgba(255,255,255,.05);
 }
 
-.scalp-point strong{
+.story-point strong{
     display:block;
 
-    margin-bottom:2px;
-
-    color:#f0d883;
-
-    font-size:11px;
-}
-
-.scalp-point span{
-    color:#d1ddd7;
+    color:#eed685;
 
     font-size:10px;
+
+    margin-bottom:2px;
+}
+
+.story-point span{
+    color:#d3dfd8;
+
+    font-size:9px;
     line-height:1.4;
 }
 
 
 /* =========================================================
-   BENEFITS
-========================================================= */
-
-.main-benefits{
-    background:#eee3c4;
-}
-
-.benefit-list{
-    display:grid;
-
-    gap:10px;
-}
-
-.benefit{
-    display:grid;
-
-    grid-template-columns:48px 1fr;
-
-    gap:14px;
-
-    align-items:center;
-
-    padding:15px;
-
-    border:1px solid #ded2b0;
-    border-radius:10px;
-
-    background:#fffdf7;
-}
-
-.benefit-icon{
-    width:48px;
-    height:48px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:var(--green);
-
-    color:#e7cb75;
-
-    font-size:19px;
-}
-
-.benefit strong{
-    display:block;
-
-    margin-bottom:2px;
-
-    color:#163e2d;
-
-    font-size:14px;
-}
-
-.benefit span{
-    display:block;
-
-    color:#6c746e;
-
-    font-size:12px;
-    line-height:1.5;
-}
-
-
-/* =========================================================
-   REAL RESULTS
+   RESULT
 ========================================================= */
 
 .results{
     background:#fffdf8;
 }
 
-.results-grid{
-    display:grid;
+.results-image{
+    width:100%;
 
-    gap:10px;
+    overflow:hidden;
+
+    border-radius:9px;
 }
 
-.results-grid img{
-    border-radius:8px;
+.results-image img{
+    width:100%;
+    height:auto;
 }
 
 
 /* =========================================================
-   CUSTOMER REVIEWS
+   REVIEWS
 ========================================================= */
 
 .testimonials{
     background:
         linear-gradient(
             180deg,
-            #f5ecd5 0%,
-            #fbf7eb 100%
+            #f5ecd5,
+            #fbf7eb
         );
 }
 
@@ -765,7 +607,7 @@ a{
 .review-score > strong{
     color:#113f2c;
 
-    font-family:Georgia, serif;
+    font-family:Georgia,serif;
 
     font-size:42px;
     line-height:1;
@@ -791,16 +633,13 @@ a{
 .review-summary-text{
     max-width:295px;
 
-    color:#686f69;
-
     text-align:right;
 
+    color:#686f69;
+
     font-size:11px;
-    line-height:1.55;
+    line-height:1.5;
 }
-
-
-/* TRACK */
 
 .customer-review-track{
     display:flex;
@@ -820,9 +659,6 @@ a{
     display:none;
 }
 
-
-/* CARD */
-
 .customer-review-card{
     min-width:47%;
 
@@ -834,9 +670,6 @@ a{
     border-radius:13px;
 
     background:#fff;
-
-    box-shadow:
-        0 6px 18px rgba(45,50,40,.05);
 }
 
 .customer-review-top{
@@ -865,7 +698,6 @@ a{
     flex:none;
 
     display:flex;
-
     align-items:center;
     justify-content:center;
 
@@ -881,8 +713,6 @@ a{
 
 .review-customer strong{
     display:block;
-
-    color:#26372e;
 
     font-size:13px;
 }
@@ -903,7 +733,6 @@ a{
     white-space:nowrap;
 
     font-size:12px;
-    letter-spacing:1px;
 }
 
 .customer-review-card p{
@@ -954,8 +783,6 @@ a{
     border-radius:20px;
 
     background:#bdb7a8;
-
-    transition:.25s;
 }
 
 .customer-dot.active{
@@ -1010,16 +837,13 @@ a{
 }
 
 .trust-card h2{
-    max-width:560px;
-
     margin:0 auto 10px;
 
     color:var(--green);
 
-    font-family:Georgia, serif;
+    font-family:Georgia,serif;
 
     font-size:31px;
-    line-height:1.16;
 }
 
 .trust-card > p{
@@ -1030,7 +854,6 @@ a{
     color:#686e69;
 
     font-size:13px;
-    line-height:1.6;
 }
 
 .trust-points{
@@ -1068,7 +891,6 @@ a{
     color:#666c67;
 
     font-size:11px;
-    line-height:1.45;
 }
 
 .pharmacy-message{
@@ -1085,8 +907,6 @@ a{
 
 .pharmacy-message strong{
     display:block;
-
-    margin-bottom:2px;
 
     color:#efd481;
 
@@ -1107,15 +927,12 @@ a{
 .moneyback{
     width:100%;
 
-    padding:0;
     margin:0;
-
-    background:#fff;
+    padding:0;
 }
 
 .moneyback img{
     width:100%;
-    height:auto;
 }
 
 
@@ -1150,7 +967,6 @@ a{
 
     font-size:9px;
     font-weight:bold;
-    letter-spacing:1px;
 }
 
 .order-heading h2{
@@ -1158,7 +974,7 @@ a{
 
     color:#163b2c;
 
-    font-family:Georgia, serif;
+    font-family:Georgia,serif;
 
     font-size:36px;
 }
@@ -1180,9 +996,6 @@ a{
     border-radius:15px;
 
     background:#fff;
-
-    box-shadow:
-        0 5px 20px rgba(118,88,20,.06);
 }
 
 
@@ -1218,14 +1031,10 @@ a{
 .step strong{
     display:block;
 
-    color:#272b2e;
-
     font-size:14px;
 }
 
 .step span{
-    display:block;
-
     color:#92969a;
 
     font-size:11px;
@@ -1249,21 +1058,12 @@ a{
 
     border:1px solid #e5e5e5;
     border-radius:13px;
-
-    transition:.2s;
-}
-
-.product:last-child{
-    margin-bottom:0;
 }
 
 .product.active{
     border-color:#188528;
 
     background:#fbfff9;
-
-    box-shadow:
-        0 0 0 2px rgba(24,133,40,.06);
 }
 
 .product img{
@@ -1272,17 +1072,13 @@ a{
 
     object-fit:cover;
 
-    border:1px solid #eee;
     border-radius:7px;
 }
 
 .product-info h3{
     margin:0 0 3px;
 
-    color:#2c2f32;
-
     font-size:13px;
-    line-height:1.3;
 }
 
 .product-price{
@@ -1331,8 +1127,6 @@ a{
 
     background:#fff;
 
-    color:#6e716f;
-
     font-size:18px;
 }
 
@@ -1346,8 +1140,6 @@ a{
 
 .qty-value{
     width:18px;
-
-    color:#25282a;
 
     text-align:center;
 
@@ -1386,15 +1178,6 @@ a{
     border-radius:9px;
 
     outline:none;
-
-    background:#fff;
-}
-
-.form-control:focus{
-    border-color:#158524;
-
-    box-shadow:
-        0 0 0 3px rgba(21,133,36,.08);
 }
 
 textarea.form-control{
@@ -1423,7 +1206,6 @@ textarea.form-control{
     color:#91691f;
 
     font-size:10px;
-    line-height:1.5;
 }
 
 
@@ -1441,8 +1223,6 @@ textarea.form-control{
 }
 
 .total strong{
-    color:#292c2f;
-
     font-size:13px;
 }
 
@@ -1463,7 +1243,6 @@ textarea.form-control{
     text-align:center;
 
     font-size:9px;
-    line-height:1.55;
 }
 
 .terms a{
@@ -1485,9 +1264,6 @@ textarea.form-control{
 
     font-size:15px;
     font-weight:bold;
-
-    box-shadow:
-        0 8px 18px rgba(20,130,29,.18);
 }
 
 
@@ -1507,7 +1283,6 @@ textarea.form-control{
     width:100%;
 
     display:flex;
-
     align-items:center;
     justify-content:space-between;
 
@@ -1529,8 +1304,6 @@ textarea.form-control{
 
 .faq-plus{
     font-size:19px;
-
-    transition:.2s;
 }
 
 .faq-answer{
@@ -1547,7 +1320,7 @@ textarea.form-control{
 }
 
 .faq-item.active .faq-answer{
-    max-height:280px;
+    max-height:300px;
 
     padding-bottom:17px;
 }
@@ -1603,17 +1376,12 @@ footer p{
 
 
 /* =========================================================
-   MOBILE CTA
+   MOBILE
 ========================================================= */
 
 .mobile-order{
     display:none;
 }
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
 
 @media(max-width:600px){
 
@@ -1638,13 +1406,8 @@ footer p{
     }
 
     .desc{
-        margin-bottom:23px;
-
         font-size:12px;
     }
-
-
-    /* BRIDGE */
 
     .sales-bridge{
         padding:30px 18px;
@@ -1657,9 +1420,6 @@ footer p{
     .gold-btn{
         width:100%;
     }
-
-
-    /* PROBLEMS */
 
     .problem-head h2{
         font-size:28px;
@@ -1676,44 +1436,29 @@ footer p{
 
     /* INGREDIENT */
 
-    .ingredient-main{
-        grid-template-columns:115px 1fr;
+    .ingredient-grid{
+        grid-template-columns:1fr 1fr;
 
-        min-height:170px;
+        gap:8px;
     }
 
-    .ingredient-photo{
-        min-height:170px;
+    .ingredient-content{
+        padding:12px;
     }
 
-    .ingredient-copy{
-        padding:14px 13px;
+    .ingredient-content h3{
+        font-size:16px;
     }
 
-    .ingredient-copy h3{
-        font-size:18px;
-    }
-
-    .ingredient-copy p{
-        font-size:11px;
+    .ingredient-content p{
+        font-size:10px;
     }
 
     .ingredient-benefit{
-        padding:11px 5px;
-    }
-
-    .ingredient-benefit strong{
-        font-size:9px;
-    }
-
-    .ingredient-benefit span{
         font-size:8px;
     }
 
-
-    /* SCALP */
-
-    .scalp-box h3{
+    .ingredient-story h3{
         font-size:22px;
     }
 
@@ -1722,8 +1467,6 @@ footer p{
 
     .review-summary{
         display:block;
-
-        padding:16px;
     }
 
     .review-summary-text{
@@ -1737,20 +1480,12 @@ footer p{
         text-align:left;
     }
 
-    .review-score > strong{
-        font-size:36px;
-    }
-
     .customer-review-card{
         min-width:87%;
-
-        padding:18px;
     }
 
     .customer-review-card p{
         min-height:auto;
-
-        font-size:12px;
     }
 
 
@@ -1758,10 +1493,6 @@ footer p{
 
     .trust-card{
         padding:25px 15px;
-    }
-
-    .health-lane-logo{
-        max-width:320px;
     }
 
     .trust-card h2{
@@ -1775,20 +1506,12 @@ footer p{
         padding:40px 9px 50px;
     }
 
-    .order-heading h2{
-        font-size:31px;
-    }
-
     .order-box{
         padding:20px 14px;
     }
 
     .product{
         grid-template-columns:66px 1fr;
-
-        gap:10px;
-
-        padding:12px;
     }
 
     .product img{
@@ -1797,7 +1520,7 @@ footer p{
     }
 
     .qty{
-        grid-column:1 / -1;
+        grid-column:1/-1;
 
         justify-content:flex-end;
 
@@ -1808,12 +1531,10 @@ footer p{
 
     .form-row{
         grid-template-columns:1fr;
-
-        gap:0;
     }
 
 
-    /* STICKY */
+    /* STICKY CTA */
 
     .mobile-order{
         position:fixed;
@@ -1838,7 +1559,6 @@ footer p{
         min-height:49px;
 
         display:flex;
-
         align-items:center;
         justify-content:center;
 
@@ -1871,7 +1591,7 @@ footer p{
 
     <img
         src="assets/mystic-page-1.jpg"
-        alt="Mystic Hair Tonic Rambut Lebih Kuat"
+        alt="Mystic Hair Tonic"
     >
 
 </section>
@@ -1885,7 +1605,7 @@ footer p{
 
     <img
         src="assets/mystic-page-2.jpg"
-        alt="Mystic Hair Tonic Masalah Keguguran Rambut"
+        alt="Mystic Hair Tonic Keguguran Rambut"
     >
 
 </section>
@@ -1917,13 +1637,13 @@ footer p{
 
     <h2>
         Rambut Gugur Bukan Sekadar
-        Masalah Pada Rambut.
+        Masalah Pada Rambut
     </h2>
 
     <p>
-        Kulit kepala berminyak, sel kulit mati, sisa produk
-        dan batang rambut yang kering juga boleh membuatkan
-        rambut nampak kurang sihat dan sukar diurus.
+        Kulit kepala, kelembapan dan kekuatan batang rambut
+        juga memainkan peranan dalam rutin penjagaan rambut
+        yang lebih menyeluruh.
     </p>
 
     <a href="#order" class="gold-btn">
@@ -1948,9 +1668,8 @@ footer p{
         </h2>
 
         <p>
-            Penjagaan rambut bukan hanya tentang apa yang kita nampak.
-            Kulit kepala dan keadaan batang rambut juga memainkan
-            peranan dalam rutin penjagaan harian.
+            Kenali apa yang rambut dan kulit kepala anda perlukan
+            sebelum memilih rutin penjagaan yang sesuai.
         </p>
 
     </div>
@@ -1970,7 +1689,7 @@ footer p{
             </strong>
 
             <span>
-                Rambut banyak kelihatan pada sikat,
+                Banyak rambut kelihatan pada sikat,
                 bantal atau ketika mandi.
             </span>
 
@@ -1988,8 +1707,8 @@ footer p{
             </strong>
 
             <span>
-                Rambut terasa kurang penuh
-                dan semakin sukar untuk digayakan.
+                Rambut kelihatan kurang penuh
+                dan kurang bermaya.
             </span>
 
         </div>
@@ -2002,7 +1721,7 @@ footer p{
             </div>
 
             <strong>
-                Kulit Kepala Berminyak
+                Kulit Kepala Kurang Terjaga
             </strong>
 
             <span>
@@ -2024,8 +1743,8 @@ footer p{
             </strong>
 
             <span>
-                Batang rambut terasa kasar,
-                mudah kusut dan mudah patah.
+                Rambut terasa kasar,
+                kusut dan mudah patah.
             </span>
 
         </div>
@@ -2037,100 +1756,74 @@ footer p{
 
 
 <!-- =====================================================
-     INGREDIENTS
+     8 INGREDIENTS
 ====================================================== -->
 
 <section class="section ingredients">
 
     <div class="kicker">
-        APA YANG ADA DALAM MYSTIC?
+        8 BAHAN PILIHAN
     </div>
 
     <h2 class="title">
-        Kenali Bahan Yang Menjaga
-        Rambut & Kulit Kepala Anda
+        Kenali Kandungan Dalam Mystic
     </h2>
 
     <p class="desc">
-        Setiap bahan mempunyai fungsi yang berbeza untuk melengkapkan
-        rutin penjagaan rambut secara lebih menyeluruh.
+        Gabungan bahan penjagaan rambut dan kulit kepala
+        yang bekerja dalam formulasi Mystic Hair Tonic.
     </p>
 
 
-    <div class="ingredient-intro">
+    <div class="ingredients-intro">
 
         <strong>
-            Bukan Sekadar Pakai Hair Tonic
+            Bukan Hanya Tentang Rambut
         </strong>
 
         <p>
-            Bila kita faham fungsi setiap bahan, lebih mudah untuk tahu
-            mengapa penjagaan kulit kepala, kelembapan dan kekuatan
-            batang rambut penting dalam rutin harian.
+            Mystic menggabungkan bahan untuk penjagaan batang rambut,
+            kelembapan dan kulit kepala supaya rutin rambut terasa
+            lebih lengkap dan mudah diamalkan.
         </p>
 
     </div>
 
 
-    <div class="ingredient-stack">
+    <div class="ingredient-grid">
 
 
-        <!-- SALICYLIC ACID -->
+        <!-- 1 -->
 
         <article class="ingredient-card">
 
-            <div class="ingredient-main">
+            <div class="ingredient-photo">
 
-                <div class="ingredient-photo">
-
-                    <img
-                        src="assets/ingredient-salicylic.jpg"
-                        alt="Salicylic Acid"
-                    >
-
-                </div>
-
-
-                <div class="ingredient-copy">
-
-                    <div class="ingredient-no">
-                        BAHAN UTAMA 01
-                    </div>
-
-                    <h3>
-                        Salicylic Acid
-                    </h3>
-
-                    <div class="ingredient-tag">
-                        PENJAGAAN KULIT KEPALA
-                    </div>
-
-                    <p>
-                        Membantu proses eksfoliasi kulit kepala dengan
-                        menanggalkan sel kulit mati, lebihan minyak dan
-                        sisa produk yang terkumpul.
-                    </p>
-
-                </div>
+                <img
+                    src="assets/ingredient-protein.jpg"
+                    alt="Hydrolyzed Soy Protein"
+                >
 
             </div>
 
 
-            <div class="ingredient-benefits">
+            <div class="ingredient-content">
 
-                <div class="ingredient-benefit">
-                    <strong>Kulit Kepala</strong>
-                    <span>Membantu membersihkan permukaan kulit kepala</span>
+                <div class="ingredient-number">
+                    BAHAN 01
                 </div>
 
-                <div class="ingredient-benefit">
-                    <strong>Lebihan Minyak</strong>
-                    <span>Membantu membersihkan minyak berlebihan</span>
-                </div>
+                <h3>
+                    Hydrolyzed Soy Protein
+                </h3>
+
+                <p>
+                    Membantu melapisi dan menjaga batang rambut
+                    supaya terasa lebih kuat, licin dan mudah diurus.
+                </p>
 
                 <div class="ingredient-benefit">
-                    <strong>Product Buildup</strong>
-                    <span>Membantu menanggalkan sisa produk</span>
+                    Kekuatan Rambut
                 </div>
 
             </div>
@@ -2138,62 +1831,38 @@ footer p{
         </article>
 
 
-        <!-- SAFFLOWER -->
+        <!-- 2 -->
 
         <article class="ingredient-card">
 
-            <div class="ingredient-main">
+            <div class="ingredient-photo">
 
-                <div class="ingredient-photo">
-
-                    <img
-                        src="assets/ingredient-safflower.jpg"
-                        alt="Safflower Oil"
-                    >
-
-                </div>
-
-
-                <div class="ingredient-copy">
-
-                    <div class="ingredient-no">
-                        BAHAN UTAMA 02
-                    </div>
-
-                    <h3>
-                        Safflower Oil
-                    </h3>
-
-                    <div class="ingredient-tag">
-                        KELEMBAPAN RAMBUT
-                    </div>
-
-                    <p>
-                        Minyak ringan yang kaya dengan fatty acids untuk
-                        membantu memberikan kelembapan kepada rambut
-                        tanpa membuatkannya terasa terlalu berat.
-                    </p>
-
-                </div>
+                <img
+                    src="assets/ingredient-salicylic.jpg"
+                    alt="Salicylic Acid"
+                >
 
             </div>
 
 
-            <div class="ingredient-benefits">
+            <div class="ingredient-content">
 
-                <div class="ingredient-benefit">
-                    <strong>Kelembapan</strong>
-                    <span>Membantu rambut terasa kurang kering</span>
+                <div class="ingredient-number">
+                    BAHAN 02
                 </div>
 
-                <div class="ingredient-benefit">
-                    <strong>Batang Rambut</strong>
-                    <span>Membantu rambut terasa lebih lembut</span>
-                </div>
+                <h3>
+                    Salicylic Acid
+                </h3>
+
+                <p>
+                    Membantu proses eksfoliasi dengan menanggalkan
+                    sel kulit mati, lebihan minyak dan sisa produk
+                    pada kulit kepala.
+                </p>
 
                 <div class="ingredient-benefit">
-                    <strong>Ringan</strong>
-                    <span>Penjagaan tanpa rasa terlalu berat</span>
+                    Scalp Cleansing
                 </div>
 
             </div>
@@ -2201,62 +1870,37 @@ footer p{
         </article>
 
 
-        <!-- PROTEIN -->
+        <!-- 3 -->
 
         <article class="ingredient-card">
 
-            <div class="ingredient-main">
+            <div class="ingredient-photo">
 
-                <div class="ingredient-photo">
-
-                    <img
-                        src="assets/ingredient-protein.jpg"
-                        alt="Hydrolyzed Protein"
-                    >
-
-                </div>
-
-
-                <div class="ingredient-copy">
-
-                    <div class="ingredient-no">
-                        BAHAN UTAMA 03
-                    </div>
-
-                    <h3>
-                        Hydrolyzed Protein
-                    </h3>
-
-                    <div class="ingredient-tag">
-                        RAMBUT LEBIH KUAT
-                    </div>
-
-                    <p>
-                        Membantu melapisi dan menjaga batang rambut
-                        supaya terasa lebih kuat, lebih licin dan
-                        lebih mudah diurus.
-                    </p>
-
-                </div>
+                <img
+                    src="assets/ingredient-safflower.jpg"
+                    alt="Safflower Seed Oil"
+                >
 
             </div>
 
 
-            <div class="ingredient-benefits">
+            <div class="ingredient-content">
 
-                <div class="ingredient-benefit">
-                    <strong>Lebih Kuat</strong>
-                    <span>Membantu rambut terasa kurang rapuh</span>
+                <div class="ingredient-number">
+                    BAHAN 03
                 </div>
 
-                <div class="ingredient-benefit">
-                    <strong>Tekstur</strong>
-                    <span>Membantu rambut terasa lebih licin</span>
-                </div>
+                <h3>
+                    Safflower Seed Oil
+                </h3>
+
+                <p>
+                    Minyak ringan yang membantu memberi kelembapan
+                    kepada rambut tanpa rasa terlalu berat.
+                </p>
 
                 <div class="ingredient-benefit">
-                    <strong>Mudah Diurus</strong>
-                    <span>Membantu rambut terasa kurang kusut</span>
+                    Kelembapan
                 </div>
 
             </div>
@@ -2264,62 +1908,190 @@ footer p{
         </article>
 
 
-        <!-- GINSENG -->
+        <!-- 4 -->
 
         <article class="ingredient-card">
 
-            <div class="ingredient-main">
+            <div class="ingredient-photo">
 
-                <div class="ingredient-photo">
-
-                    <img
-                        src="assets/ingredient-ginseng.jpg"
-                        alt="Ginseng dan Ekstrak Botani"
-                    >
-
-                </div>
-
-
-                <div class="ingredient-copy">
-
-                    <div class="ingredient-no">
-                        BAHAN UTAMA 04
-                    </div>
-
-                    <h3>
-                        Ginseng & Ekstrak Botani
-                    </h3>
-
-                    <div class="ingredient-tag">
-                        PENJAGAAN BOTANI
-                    </div>
-
-                    <p>
-                        Gabungan ekstrak botani untuk melengkapkan rutin
-                        penjagaan rambut dan membantu rambut kelihatan
-                        lebih segar, sihat dan bermaya.
-                    </p>
-
-                </div>
+                <img
+                    src="assets/ingredient-olive-oil.jpg"
+                    alt="Olive Fruit Oil"
+                >
 
             </div>
 
 
-            <div class="ingredient-benefits">
+            <div class="ingredient-content">
 
-                <div class="ingredient-benefit">
-                    <strong>Penjagaan</strong>
-                    <span>Melengkapkan rutin rambut harian</span>
+                <div class="ingredient-number">
+                    BAHAN 04
                 </div>
 
-                <div class="ingredient-benefit">
-                    <strong>Penampilan</strong>
-                    <span>Rambut kelihatan lebih bermaya</span>
-                </div>
+                <h3>
+                    Olive Fruit Oil
+                </h3>
+
+                <p>
+                    Membantu menjaga kelembapan batang rambut
+                    supaya terasa lebih lembut, licin dan terurus.
+                </p>
 
                 <div class="ingredient-benefit">
-                    <strong>Botani</strong>
-                    <span>Gabungan ekstrak tumbuhan pilihan</span>
+                    Rambut Lebih Lembut
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- 5 -->
+
+        <article class="ingredient-card">
+
+            <div class="ingredient-photo">
+
+                <img
+                    src="assets/ingredient-zizyphus.jpg"
+                    alt="Zizyphus Joazeiro Bark Extract"
+                >
+
+            </div>
+
+
+            <div class="ingredient-content">
+
+                <div class="ingredient-number">
+                    BAHAN 05
+                </div>
+
+                <h3>
+                    Zizyphus Joazeiro Bark Extract
+                </h3>
+
+                <p>
+                    Ekstrak botani yang digunakan untuk melengkapkan
+                    penjagaan kulit kepala dan rutin rambut.
+                </p>
+
+                <div class="ingredient-benefit">
+                    Botanical Scalp Care
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- 6 -->
+
+        <article class="ingredient-card">
+
+            <div class="ingredient-photo">
+
+                <img
+                    src="assets/ingredient-allantoin.jpg"
+                    alt="Allantoin"
+                >
+
+            </div>
+
+
+            <div class="ingredient-content">
+
+                <div class="ingredient-number">
+                    BAHAN 06
+                </div>
+
+                <h3>
+                    Allantoin
+                </h3>
+
+                <p>
+                    Membantu menjaga keselesaan kulit kepala
+                    sebagai sebahagian daripada rutin penjagaan harian.
+                </p>
+
+                <div class="ingredient-benefit">
+                    Scalp Comfort
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- 7 -->
+
+        <article class="ingredient-card">
+
+            <div class="ingredient-photo">
+
+                <img
+                    src="assets/ingredient-menthol.jpg"
+                    alt="Menthol"
+                >
+
+            </div>
+
+
+            <div class="ingredient-content">
+
+                <div class="ingredient-number">
+                    BAHAN 07
+                </div>
+
+                <h3>
+                    Menthol
+                </h3>
+
+                <p>
+                    Memberikan sensasi sejuk dan menyegarkan
+                    ketika digunakan pada kulit kepala.
+                </p>
+
+                <div class="ingredient-benefit">
+                    Sensasi Segar
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- 8 -->
+
+        <article class="ingredient-card">
+
+            <div class="ingredient-photo">
+
+                <img
+                    src="assets/ingredient-propanediol.jpg"
+                    alt="Propanediol"
+                >
+
+            </div>
+
+
+            <div class="ingredient-content">
+
+                <div class="ingredient-number">
+                    BAHAN 08
+                </div>
+
+                <h3>
+                    Propanediol
+                </h3>
+
+                <p>
+                    Digunakan dalam formulasi untuk membantu
+                    mengekalkan kelembapan dan pengalaman penggunaan
+                    yang lebih selesa.
+                </p>
+
+                <div class="ingredient-benefit">
+                    Moisture Support
                 </div>
 
             </div>
@@ -2330,75 +2102,72 @@ footer p{
     </div>
 
 
-    <!-- SCALP EDUCATION -->
-
-    <div class="scalp-box">
+    <div class="ingredient-story">
 
         <small>
-            RAMBUT SIHAT BERMULA DARI KULIT KEPALA
+            8 BAHAN • SATU RUTIN
         </small>
 
         <h3>
-            Kulit Kepala Terjaga,
-            Rambut Pun Lebih Mudah Dijaga.
+            Dari Kulit Kepala Hingga Ke Batang Rambut
         </h3>
 
         <p>
-            Sebab itu Mystic bukan sekadar fokus kepada batang rambut.
-            Penjagaan kulit kepala juga menjadi sebahagian penting
-            dalam rutin rambut yang lebih menyeluruh.
+            Formulasi Mystic menggabungkan penjagaan kulit kepala,
+            kelembapan dan kekuatan rambut dalam satu rutin
+            yang mudah digunakan.
         </p>
 
 
-        <div class="scalp-grid">
+        <div class="story-grid">
 
-            <div class="scalp-point">
+            <div class="story-point">
 
                 <strong>
-                    Sel Kulit Mati
+                    Kulit Kepala
                 </strong>
 
                 <span>
-                    Membantu menjaga kebersihan kulit kepala.
+                    Membantu menjaga kebersihan dan keselesaan.
                 </span>
 
             </div>
 
 
-            <div class="scalp-point">
+            <div class="story-point">
 
                 <strong>
-                    Lebihan Minyak
+                    Kelembapan
                 </strong>
 
                 <span>
-                    Membantu kulit kepala terasa lebih segar.
+                    Membantu rambut terasa lebih lembut.
                 </span>
 
             </div>
 
 
-            <div class="scalp-point">
+            <div class="story-point">
 
                 <strong>
-                    Product Buildup
+                    Batang Rambut
                 </strong>
 
                 <span>
-                    Membantu membersihkan sisa styling.
+                    Membantu rambut terasa lebih kuat dan terurus.
                 </span>
 
             </div>
 
 
-            <div class="scalp-point">
+            <div class="story-point">
 
                 <strong>
-                    Rambut Kering
+                    Sensasi Segar
                 </strong>
 
                 <span>
-                    Membantu mengekalkan kelembapan rambut.
+                    Memberikan pengalaman penggunaan yang menyegarkan.
                 </span>
 
             </div>
@@ -2411,123 +2180,7 @@ footer p{
 
 
 <!-- =====================================================
-     BENEFITS
-====================================================== -->
-
-<section class="section main-benefits">
-
-    <div class="kicker">
-        KENAPA MYSTIC?
-    </div>
-
-    <h2 class="title">
-        Satu Rutin.
-        Penjagaan Lebih Menyeluruh.
-    </h2>
-
-    <p class="desc">
-        Dari kulit kepala sehingga ke batang rambut.
-    </p>
-
-
-    <div class="benefit-list">
-
-
-        <div class="benefit">
-
-            <div class="benefit-icon">
-                ↓
-            </div>
-
-            <div>
-
-                <strong>
-                    Membantu Mengurangkan Rambut Gugur
-                </strong>
-
-                <span>
-                    Membantu menjaga rambut supaya terasa lebih kuat
-                    dan kurang mudah rapuh.
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="benefit">
-
-            <div class="benefit-icon">
-                ↑
-            </div>
-
-            <div>
-
-                <strong>
-                    Menyokong Penjagaan Rambut
-                </strong>
-
-                <span>
-                    Membantu melengkapkan rutin rambut
-                    secara lebih konsisten.
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="benefit">
-
-            <div class="benefit-icon">
-                ◉
-            </div>
-
-            <div>
-
-                <strong>
-                    Menjaga Kebersihan Kulit Kepala
-                </strong>
-
-                <span>
-                    Membantu membersihkan lebihan minyak,
-                    sel kulit mati dan sisa produk.
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="benefit">
-
-            <div class="benefit-icon">
-                ✦
-            </div>
-
-            <div>
-
-                <strong>
-                    Rambut Kelihatan Lebih Sihat
-                </strong>
-
-                <span>
-                    Membantu rambut terasa lebih lembut,
-                    terurus dan kelihatan berseri.
-                </span>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     REAL RESULTS
+     RESULT - ONE IMAGE ONLY
 ====================================================== -->
 
 <section class="section results">
@@ -2546,16 +2199,11 @@ footer p{
     </p>
 
 
-    <div class="results-grid">
+    <div class="results-image">
 
         <img
             src="assets/mystic-real-result-1.jpg"
             alt="Mystic Hair Tonic Sebelum dan Selepas"
-        >
-
-        <img
-            src="assets/mystic-real-result-2.jpg"
-            alt="Mystic Hair Tonic Before and After"
         >
 
     </div>
@@ -2607,7 +2255,7 @@ footer p{
 
 
         <div class="review-summary-text">
-            Rambut lebih terurus • Mudah digunakan •
+            Mudah digunakan • Rambut lebih terurus •
             Sesuai untuk rutin harian
         </div>
 
@@ -2619,8 +2267,6 @@ footer p{
         id="customerReviewTrack"
     >
 
-
-        <!-- REVIEW 1 -->
 
         <article class="customer-review-card">
 
@@ -2639,20 +2285,17 @@ footer p{
 
                 </div>
 
-
                 <div class="customer-stars">
                     ★★★★★
                 </div>
 
             </div>
 
-
             <p>
-                “Dulu setiap kali mandi memang nampak banyak rambut
-                gugur. Lepas konsisten jaga rambut dengan Mystic,
+                “Dulu setiap kali mandi memang nampak banyak rambut gugur.
+                Lepas konsisten jaga rambut dengan Mystic,
                 rambut rasa lebih terurus dan saya lebih yakin.”
             </p>
-
 
             <div class="review-highlight">
                 Rambut rasa lebih terurus
@@ -2660,8 +2303,6 @@ footer p{
 
         </article>
 
-
-        <!-- REVIEW 2 -->
 
         <article class="customer-review-card">
 
@@ -2680,20 +2321,17 @@ footer p{
 
                 </div>
 
-
                 <div class="customer-stars">
                     ★★★★★
                 </div>
 
             </div>
 
-
             <p>
                 “Saya suka sebab senang sangat nak pakai.
-                Tak perlu rutin yang complicated. Kulit kepala
-                rasa lebih selesa dan rambut pun nampak lebih kemas.”
+                Tak perlu rutin complicated. Rambut rasa
+                lebih mudah diurus dan nampak lebih kemas.”
             </p>
-
 
             <div class="review-highlight">
                 Senang digunakan setiap hari
@@ -2701,8 +2339,6 @@ footer p{
 
         </article>
 
-
-        <!-- REVIEW 3 -->
 
         <article class="customer-review-card">
 
@@ -2721,13 +2357,11 @@ footer p{
 
                 </div>
 
-
                 <div class="customer-stars">
                     ★★★★★
                 </div>
 
             </div>
-
 
             <p>
                 “Rambut saya memang jenis kering dan mudah kusut.
@@ -2735,15 +2369,12 @@ footer p{
                 dan lebih senang nak manage.”
             </p>
 
-
             <div class="review-highlight">
                 Rambut terasa lebih lembut
             </div>
 
         </article>
 
-
-        <!-- REVIEW 4 -->
 
         <article class="customer-review-card">
 
@@ -2762,20 +2393,17 @@ footer p{
 
                 </div>
 
-
                 <div class="customer-stars">
                     ★★★★★
                 </div>
 
             </div>
 
-
             <p>
                 “Honestly, I like how easy it is to use.
                 My hair feels less dry and much easier to manage.
-                I normally use it as part of my daily hair routine.”
+                I use it as part of my daily hair routine.”
             </p>
-
 
             <div class="review-highlight">
                 Easy daily hair routine
@@ -2783,8 +2411,6 @@ footer p{
 
         </article>
 
-
-        <!-- REVIEW 5 -->
 
         <article class="customer-review-card">
 
@@ -2803,70 +2429,24 @@ footer p{
 
                 </div>
 
-
                 <div class="customer-stars">
                     ★★★★★
                 </div>
 
             </div>
 
-
             <p>
-                “Paling saya suka kulit kepala tak rasa terlalu
-                berminyak macam sebelum ni. Rambut pun rasa
-                lebih ringan dan senang diurus.”
+                “Saya suka sebab tak renyah.
+                Rambut rasa lebih ringan dan lebih senang
+                nak urus setiap hari.”
             </p>
 
-
             <div class="review-highlight">
-                Kulit kepala terasa lebih segar
+                Simple & mudah diurus
             </div>
 
         </article>
 
-
-        <!-- REVIEW 6 -->
-
-        <article class="customer-review-card">
-
-            <div class="customer-review-top">
-
-                <div class="review-customer">
-
-                    <div class="customer-avatar">
-                        MM
-                    </div>
-
-                    <div>
-                        <strong>Mira M.</strong>
-                        <span>Pelanggan Mystic</span>
-                    </div>
-
-                </div>
-
-
-                <div class="customer-stars">
-                    ★★★★★
-                </div>
-
-            </div>
-
-
-            <p>
-                “Saya dah cuba macam-macam untuk rambut.
-                Mystic ni saya suka sebab simple, tak renyah
-                dan boleh terus masukkan dalam rutin harian.”
-            </p>
-
-
-            <div class="review-highlight">
-                Simple & tidak renyah
-            </div>
-
-        </article>
-
-
-        <!-- REVIEW 7 -->
 
         <article class="customer-review-card">
 
@@ -2885,64 +2465,20 @@ footer p{
 
                 </div>
 
-
                 <div class="customer-stars">
                     ★★★★★
                 </div>
 
             </div>
 
-
             <p>
-                “I bought it because my hair was getting harder
-                to manage. After adding Mystic to my routine,
-                my hair feels softer and looks healthier.”
+                “After adding Mystic to my routine,
+                my hair feels softer and much easier to manage.
+                Very simple to use every day.”
             </p>
 
-
             <div class="review-highlight">
-                Hair feels easier to manage
-            </div>
-
-        </article>
-
-
-        <!-- REVIEW 8 -->
-
-        <article class="customer-review-card">
-
-            <div class="customer-review-top">
-
-                <div class="review-customer">
-
-                    <div class="customer-avatar">
-                        NR
-                    </div>
-
-                    <div>
-                        <strong>Nadia R.</strong>
-                        <span>Pelanggan Mystic</span>
-                    </div>
-
-                </div>
-
-
-                <div class="customer-stars">
-                    ★★★★★
-                </div>
-
-            </div>
-
-
-            <p>
-                “Selepas jadikan Mystic rutin harian,
-                rambut rasa lebih senang nak sikat dan
-                tak terlalu kasar macam sebelum ni.”
-            </p>
-
-
-            <div class="review-highlight">
-                Lebih mudah diurus
+                Softer, manageable hair
             </div>
 
         </article>
@@ -2953,29 +2489,9 @@ footer p{
 
     <div class="customer-review-dots">
 
-        <button
-            class="customer-dot active"
-            type="button"
-            aria-label="Review 1"
-        ></button>
-
-        <button
-            class="customer-dot"
-            type="button"
-            aria-label="Review 2"
-        ></button>
-
-        <button
-            class="customer-dot"
-            type="button"
-            aria-label="Review 3"
-        ></button>
-
-        <button
-            class="customer-dot"
-            type="button"
-            aria-label="Review 4"
-        ></button>
+        <button class="customer-dot active" type="button"></button>
+        <button class="customer-dot" type="button"></button>
+        <button class="customer-dot" type="button"></button>
 
     </div>
 
@@ -3016,7 +2532,6 @@ footer p{
 
         <div class="trust-points">
 
-
             <div class="trust-point">
 
                 <strong>
@@ -3046,7 +2561,6 @@ footer p{
 
             </div>
 
-
         </div>
 
 
@@ -3075,14 +2589,14 @@ footer p{
 
     <img
         src="assets/mystic-money-back.jpg"
-        alt="30 Hari Money Back Guarantee Mystic Hair Tonic"
+        alt="30 Hari Money Back Guarantee"
     >
 
 </section>
 
 
 <!-- =====================================================
-     ORDER FORM
+     ORDER
 ====================================================== -->
 
 <section class="order" id="order">
@@ -3098,7 +2612,7 @@ footer p{
         </h2>
 
         <p>
-            Pilih pakej, masukkan maklumat dan hantar pesanan.
+            Pilih pakej, isi maklumat dan hantar pesanan.
         </p>
 
     </div>
@@ -3129,9 +2643,9 @@ footer p{
         </div>
 
 
-        <!-- PRODUCT 1 -->
+        <!-- 1 BOTOL -->
 
-        <div class="product" data-price="79">
+        <div class="product" data-price="89">
 
             <img
                 src="assets/package-1.jpg"
@@ -3145,7 +2659,7 @@ footer p{
                 </h3>
 
                 <div class="product-price">
-                    RM 79.00
+                    RM 89.00
                 </div>
 
             </div>
@@ -3156,7 +2670,6 @@ footer p{
                 <button
                     type="button"
                     class="minus"
-                    aria-label="Kurangkan kuantiti"
                 >
                     −
                 </button>
@@ -3168,7 +2681,6 @@ footer p{
                 <button
                     type="button"
                     class="plus"
-                    aria-label="Tambah kuantiti"
                 >
                     +
                 </button>
@@ -3178,13 +2690,13 @@ footer p{
         </div>
 
 
-        <!-- PRODUCT 2 -->
+        <!-- 2 BOTOL -->
 
-        <div class="product" data-price="139">
+        <div class="product" data-price="160">
 
             <img
                 src="assets/package-2.jpg"
-                alt="Mystic Hair Tonic Pakej Duo"
+                alt="Mystic Hair Tonic 2 Botol"
             >
 
             <div class="product-info">
@@ -3198,7 +2710,7 @@ footer p{
                 </div>
 
                 <div class="product-price">
-                    RM 139.00
+                    RM 160.00
                 </div>
 
             </div>
@@ -3229,13 +2741,13 @@ footer p{
         </div>
 
 
-        <!-- PRODUCT 3 -->
+        <!-- 3 BOTOL -->
 
-        <div class="product" data-price="189">
+        <div class="product" data-price="220">
 
             <img
                 src="assets/package-3.jpg"
-                alt="Mystic Hair Tonic Pakej Lengkap"
+                alt="Mystic Hair Tonic 3 Botol"
             >
 
             <div class="product-info">
@@ -3249,7 +2761,7 @@ footer p{
                 </div>
 
                 <div class="product-price">
-                    RM 189.00
+                    RM 220.00
                 </div>
 
             </div>
@@ -3280,13 +2792,13 @@ footer p{
         </div>
 
 
-        <!-- PRODUCT 4 -->
+        <!-- 4 BOTOL -->
 
-        <div class="product" data-price="229">
+        <div class="product" data-price="280">
 
             <img
                 src="assets/package-4.jpg"
-                alt="Mystic Hair Tonic Pakej Super"
+                alt="Mystic Hair Tonic 4 Botol"
             >
 
             <div class="product-info">
@@ -3300,7 +2812,7 @@ footer p{
                 </div>
 
                 <div class="product-price">
-                    RM 229.00
+                    RM 280.00
                 </div>
 
             </div>
@@ -3329,7 +2841,6 @@ footer p{
             </div>
 
         </div>
-
 
     </div>
 
@@ -3392,13 +2903,12 @@ footer p{
 
 
         <div class="form-note">
-            Sila masukkan nombor telefon yang aktif supaya pihak kami
+            Sila masukkan nombor telefon aktif supaya pihak kami
             boleh menghubungi anda berkaitan pesanan.
         </div>
 
 
         <div class="form-row">
-
 
             <div class="form-group">
 
@@ -3433,7 +2943,6 @@ footer p{
 
             </div>
 
-
         </div>
 
 
@@ -3454,7 +2963,6 @@ footer p{
 
 
         <div class="form-row">
-
 
             <div class="form-group">
 
@@ -3508,7 +3016,6 @@ footer p{
 
             </div>
 
-
         </div>
 
 
@@ -3525,7 +3032,6 @@ footer p{
             ></textarea>
 
         </div>
-
 
     </div>
 
@@ -3598,7 +3104,6 @@ footer p{
         Hantar Pesanan
     </button>
 
-
 </section>
 
 
@@ -3626,7 +3131,7 @@ footer p{
         <button class="faq-btn">
 
             <span>
-                Apa fungsi Salicylic Acid pada kulit kepala?
+                Apa fungsi Hydrolyzed Soy Protein?
             </span>
 
             <span class="faq-plus">
@@ -3635,34 +3140,8 @@ footer p{
 
         </button>
 
-
         <div class="faq-answer">
-            Salicylic Acid biasa digunakan dalam penjagaan kulit
-            sebagai bahan eksfoliasi. Ia membantu menanggalkan
-            sel kulit mati, lebihan minyak dan sisa produk
-            daripada permukaan kulit kepala.
-        </div>
-
-    </div>
-
-
-    <div class="faq-item">
-
-        <button class="faq-btn">
-
-            <span>
-                Apa fungsi Hydrolyzed Protein untuk rambut?
-            </span>
-
-            <span class="faq-plus">
-                +
-            </span>
-
-        </button>
-
-
-        <div class="faq-answer">
-            Hydrolyzed Protein membantu melapisi dan menjaga
+            Hydrolyzed Soy Protein membantu melapisi dan menjaga
             batang rambut supaya rambut terasa lebih kuat,
             lebih licin dan lebih mudah diurus.
         </div>
@@ -3675,7 +3154,7 @@ footer p{
         <button class="faq-btn">
 
             <span>
-                Apa fungsi Safflower Oil?
+                Apa fungsi Salicylic Acid?
             </span>
 
             <span class="faq-plus">
@@ -3684,11 +3163,10 @@ footer p{
 
         </button>
 
-
         <div class="faq-answer">
-            Safflower Oil ialah minyak ringan yang membantu
-            memberikan kelembapan kepada rambut supaya terasa
-            lebih lembut tanpa terlalu berat.
+            Salicylic Acid digunakan sebagai bahan eksfoliasi
+            untuk membantu menanggalkan sel kulit mati,
+            lebihan minyak dan sisa produk pada kulit kepala.
         </div>
 
     </div>
@@ -3699,7 +3177,7 @@ footer p{
         <button class="faq-btn">
 
             <span>
-                Berapa lama sebelum nampak perubahan?
+                Apa fungsi Safflower Seed Oil dan Olive Fruit Oil?
             </span>
 
             <span class="faq-plus">
@@ -3708,11 +3186,31 @@ footer p{
 
         </button>
 
+        <div class="faq-answer">
+            Kedua-duanya membantu melengkapkan penjagaan kelembapan
+            supaya rambut terasa lebih lembut, licin dan mudah diurus.
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <button class="faq-btn">
+
+            <span>
+                Mengapa ada Menthol dalam formulasi?
+            </span>
+
+            <span class="faq-plus">
+                +
+            </span>
+
+        </button>
 
         <div class="faq-answer">
-            Pengalaman setiap individu mungkin berbeza.
-            Keadaan rambut, kulit kepala, gaya hidup dan
-            konsistensi penggunaan boleh mempengaruhi pengalaman.
+            Menthol memberikan sensasi sejuk dan menyegarkan
+            ketika digunakan pada kulit kepala.
         </div>
 
     </div>
@@ -3732,14 +3230,35 @@ footer p{
 
         </button>
 
-
         <div class="faq-answer">
-            Gunakan mengikut arahan penggunaan rasmi yang
-            tertera pada label Mystic Hair Tonic.
+            Sapukan pada kulit kepala yang bersih atau rambut kering,
+            urut perlahan sekitar 2 hingga 3 minit dan gunakan mengikut
+            arahan rasmi pada label produk.
         </div>
 
     </div>
 
+
+    <div class="faq-item">
+
+        <button class="faq-btn">
+
+            <span>
+                Berapa kerap Mystic boleh digunakan?
+            </span>
+
+            <span class="faq-plus">
+                +
+            </span>
+
+        </button>
+
+        <div class="faq-answer">
+            Rujuk arahan penggunaan pada label produk rasmi.
+            Label yang diberikan menyatakan penggunaan 2 hingga 3 kali seminggu.
+        </div>
+
+    </div>
 
 </section>
 
@@ -3791,7 +3310,7 @@ footer p{
 
 
 <!-- =====================================================
-     MOBILE ORDER BUTTON
+     MOBILE CTA
 ====================================================== -->
 
 <div class="mobile-order">
@@ -3806,7 +3325,7 @@ footer p{
 <script>
 
 /* =========================================================
-   PRODUCT QUANTITY + TOTAL
+   PRODUCT TOTAL
 ========================================================= */
 
 const products =
@@ -3826,7 +3345,7 @@ function calculateTotal(){
         const price =
             Number(product.dataset.price);
 
-        const quantity =
+        const qty =
             Number(
                 product
                 .querySelector(".qty-value")
@@ -3834,12 +3353,13 @@ function calculateTotal(){
             );
 
 
-        total += price * quantity;
+        total +=
+            price * qty;
 
 
         product.classList.toggle(
             "active",
-            quantity > 0
+            qty > 0
         );
 
     });
@@ -3919,19 +3439,13 @@ document
             .forEach(other => {
 
                 if(other !== item){
-
-                    other
-                    .classList
-                    .remove("active");
-
+                    other.classList.remove("active");
                 }
 
             });
 
 
-            item
-            .classList
-            .toggle("active");
+            item.classList.toggle("active");
 
         }
     );
@@ -3940,78 +3454,71 @@ document
 
 
 /* =========================================================
-   CUSTOMER REVIEW AUTO SWIPE
+   REVIEW AUTO SWIPE
 ========================================================= */
 
-const customerReviewTrack =
+const reviewTrack =
     document.getElementById(
         "customerReviewTrack"
     );
 
-const customerReviews =
+const reviews =
     document.querySelectorAll(
         ".customer-review-card"
     );
 
-const customerDots =
+const reviewDots =
     document.querySelectorAll(
         ".customer-dot"
     );
 
-let customerReviewIndex = 0;
+let reviewIndex = 0;
 
-let reviewAutoTimer;
-
-
-/* NUMBER OF CARDS PER DOT TARGET */
-
-function reviewStep(){
-
-    if(window.innerWidth <= 600){
-        return 1;
-    }
-
-    return 2;
-
-}
+let reviewTimer;
 
 
-function updateCustomerReviewByDot(dotIndex){
+function updateReview(index){
 
-    if(!customerReviews.length){
+    if(!reviews.length){
         return;
     }
 
 
-    customerReviewIndex =
-        dotIndex * reviewStep();
+    reviewIndex = index;
 
 
-    if(customerReviewIndex >= customerReviews.length){
-
-        customerReviewIndex = 0;
-
+    if(reviewIndex >= reviews.length){
+        reviewIndex = 0;
     }
 
 
     const card =
-        customerReviews[
-            customerReviewIndex
-        ];
+        reviews[reviewIndex];
 
 
-    customerReviewTrack.scrollTo({
+    reviewTrack.scrollTo({
 
         left:
             card.offsetLeft
-            - customerReviewTrack.offsetLeft,
+            - reviewTrack.offsetLeft,
 
         behavior:"smooth"
 
     });
 
 
-    customerDots.forEach(
+    let dotIndex =
+        Math.floor(
+            reviewIndex / 2
+        );
+
+
+    if(dotIndex >= reviewDots.length){
+        dotIndex = reviewDots.length - 1;
+    }
+
+
+    reviewDots.forEach(
         (dot,index) => {
 
             dot.classList.toggle(
@@ -4025,113 +3532,37 @@ function updateCustomerReviewByDot(dotIndex){
 }
 
 
-function moveToNextReview(){
+function nextReview(){
 
-    let currentDot = 0;
-
-
-    customerDots.forEach(
-        (dot,index) => {
-
-            if(
-                dot.classList.contains(
-                    "active"
-                )
-            ){
-
-                currentDot = index;
-
-            }
-
-        }
-    );
-
-
-    let nextDot =
-        currentDot + 1;
-
-
-    if(
-        nextDot >=
-        customerDots.length
-    ){
-
-        nextDot = 0;
-
-    }
-
-
-    updateCustomerReviewByDot(
-        nextDot
+    updateReview(
+        reviewIndex + 1
     );
 
 }
 
 
-function startReviewAutoSlide(){
+function startReviews(){
 
     clearInterval(
-        reviewAutoTimer
+        reviewTimer
     );
 
 
-    reviewAutoTimer =
+    reviewTimer =
         setInterval(
-            moveToNextReview,
+            nextReview,
             4500
         );
 
 }
 
 
-customerDots.forEach(
-    (dot,index) => {
-
-        dot.addEventListener(
-            "click",
-            function(){
-
-                updateCustomerReviewByDot(
-                    index
-                );
-
-                startReviewAutoSlide();
-
-            }
-        );
-
-    }
-);
-
-
-customerReviewTrack.addEventListener(
-    "pointerdown",
-    function(){
-
-        clearInterval(
-            reviewAutoTimer
-        );
-
-    }
-);
-
-
-customerReviewTrack.addEventListener(
-    "pointerup",
-    function(){
-
-        startReviewAutoSlide();
-
-    }
-);
-
-
-customerReviewTrack.addEventListener(
+reviewTrack.addEventListener(
     "touchstart",
     function(){
 
         clearInterval(
-            reviewAutoTimer
+            reviewTimer
         );
 
     },
@@ -4141,11 +3572,11 @@ customerReviewTrack.addEventListener(
 );
 
 
-customerReviewTrack.addEventListener(
+reviewTrack.addEventListener(
     "touchend",
     function(){
 
-        startReviewAutoSlide();
+        startReviews();
 
     },
     {
@@ -4154,7 +3585,7 @@ customerReviewTrack.addEventListener(
 );
 
 
-startReviewAutoSlide();
+startReviews();
 
 
 /* =========================================================
@@ -4168,7 +3599,7 @@ document
 function(){
 
 
-    let orderItems = [];
+    let items = [];
 
     let total = 0;
 
@@ -4196,13 +3627,13 @@ function(){
 
         if(qty > 0){
 
-            orderItems.push(
+            items.push(
 
-                productName
-                + " x "
-                + qty
-                + " = RM "
-                + (price * qty)
+                productName +
+                " x " +
+                qty +
+                " = RM " +
+                (price * qty)
                 .toFixed(2)
 
             );
@@ -4216,7 +3647,7 @@ function(){
     });
 
 
-    if(orderItems.length === 0){
+    if(items.length === 0){
 
         alert(
             "Sila pilih sekurang-kurangnya satu pakej."
@@ -4301,7 +3732,7 @@ No. Telefon:
 ${phone}
 
 Pesanan:
-${orderItems.join("\n")}
+${items.join("\n")}
 
 Jumlah Keseluruhan:
 RM ${total.toFixed(2)}
@@ -4322,12 +3753,9 @@ Nota:
 ${note || "-"}`;
 
 
-    /* =====================================================
+    /* =====================================
        CHANGE WHATSAPP NUMBER HERE
-
-       Example Malaysia:
-       60123456789
-    ===================================================== */
+    ===================================== */
 
 
     const whatsappNumber =
@@ -4338,9 +3766,7 @@ ${note || "-"}`;
         "https://wa.me/"
         + whatsappNumber
         + "?text="
-        + encodeURIComponent(
-            message
-        );
+        + encodeURIComponent(message);
 
 
     window.open(
