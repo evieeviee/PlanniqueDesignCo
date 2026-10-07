@@ -1,0 +1,2866 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mystic Hair Tonic | Rambut Sihat Bermula Dari Akar</title>
+
+<meta name="description" content="Mystic Hair Tonic membantu menjaga rambut dan kulit kepala untuk rambut yang kelihatan lebih kuat, sihat dan bermaya.">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --green:#073d2a;
+    --green-dark:#032c1e;
+    --green-light:#0c6945;
+    --gold:#b68a33;
+    --gold-light:#e0c77c;
+    --cream:#fff9e8;
+    --cream-2:#f7efd6;
+    --cream-3:#efe4c2;
+    --yellow:#ffe98c;
+    --text:#26332d;
+    --muted:#727973;
+    --border:#e4ddca;
+    --white:#ffffff;
+    --red:#bc312a;
+    --shadow:0 14px 45px rgba(24,39,30,.12);
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#e9e4d8;
+    color:var(--text);
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.5;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================================================
+   MAIN FUNNEL
+========================================================= */
+
+.site{
+    width:100%;
+}
+
+.funnel{
+    width:100%;
+    max-width:760px;
+    margin:0 auto;
+    background:#fff;
+    box-shadow:
+        0 0 0 1px rgba(0,0,0,.04),
+        0 20px 60px rgba(35,43,35,.13);
+}
+
+
+/* =========================================================
+   SALES POSTERS
+========================================================= */
+
+.poster-page{
+    width:100%;
+    margin:0;
+    padding:0;
+    background:#fff;
+    overflow:hidden;
+}
+
+.poster-page img{
+    display:block;
+    width:100%;
+    height:auto;
+    margin:0;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.section{
+    padding:50px 34px;
+}
+
+.section-kicker{
+    text-align:center;
+    color:#997021;
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-weight:800;
+    margin-bottom:8px;
+}
+
+.section-title{
+    margin:0 auto 12px;
+    max-width:620px;
+    text-align:center;
+    font-family:Georgia, "Times New Roman", serif;
+    color:var(--green);
+    font-size:38px;
+    line-height:1.08;
+}
+
+.section-desc{
+    max-width:600px;
+    margin:0 auto 28px;
+    text-align:center;
+    color:#70766f;
+    font-size:15px;
+    line-height:1.7;
+}
+
+.gold-line{
+    width:74px;
+    height:3px;
+    background:linear-gradient(90deg,#c89f46,#ead69b,#c89f46);
+    margin:18px auto 0;
+    border-radius:10px;
+}
+
+
+/* =========================================================
+   BRIDGE / QUICK CTA
+========================================================= */
+
+.bridge{
+    padding:28px 34px;
+    background:linear-gradient(180deg,#073e2b,#052f21);
+    color:#fff;
+    text-align:center;
+}
+
+.bridge strong{
+    display:block;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:26px;
+    margin-bottom:7px;
+}
+
+.bridge p{
+    margin:0 auto 17px;
+    max-width:540px;
+    color:#d9e4dd;
+    font-size:14px;
+}
+
+.bridge-btn{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    min-height:48px;
+    padding:0 23px;
+    background:#e8c96f;
+    color:#173c2d;
+    border-radius:7px;
+    font-weight:800;
+    font-size:14px;
+}
+
+
+/* =========================================================
+   4 INGREDIENTS
+========================================================= */
+
+.ingredients{
+    background:#fffdf7;
+}
+
+.ingredient-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.ingredient-card{
+    border:1px solid #e9dfc5;
+    background:#f8f2e2;
+    overflow:hidden;
+    border-radius:11px;
+}
+
+.ingredient-image{
+    aspect-ratio:1.35/1;
+    overflow:hidden;
+    background:#e7dfcb;
+}
+
+.ingredient-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.ingredient-content{
+    padding:18px;
+}
+
+.ingredient-no{
+    font-size:10px;
+    letter-spacing:1.7px;
+    font-weight:800;
+    color:#9b7427;
+    margin-bottom:5px;
+}
+
+.ingredient-content h3{
+    margin:0 0 6px;
+    color:#163f2e;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:21px;
+}
+
+.ingredient-content p{
+    margin:0;
+    color:#6c716d;
+    font-size:13px;
+    line-height:1.65;
+}
+
+
+/* =========================================================
+   BENEFIT STRIP
+========================================================= */
+
+.benefits{
+    background:#eee3c4;
+}
+
+.benefit-list{
+    display:grid;
+    gap:10px;
+}
+
+.benefit-item{
+    display:grid;
+    grid-template-columns:48px 1fr;
+    align-items:center;
+    gap:14px;
+    padding:14px 15px;
+    background:#fffdf7;
+    border:1px solid #e4d7b5;
+    border-radius:10px;
+}
+
+.benefit-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:var(--green);
+    color:#e5cb72;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.benefit-copy strong{
+    display:block;
+    color:#173e2e;
+    margin-bottom:2px;
+    font-size:15px;
+}
+
+.benefit-copy span{
+    color:#6e736e;
+    font-size:13px;
+}
+
+
+/* =========================================================
+   TESTIMONIALS
+========================================================= */
+
+.testimonials{
+    background:#fff;
+}
+
+.review-slider{
+    overflow:hidden;
+    margin-top:25px;
+}
+
+.review-track{
+    display:flex;
+    gap:14px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    padding:2px 2px 12px;
+}
+
+.review-track::-webkit-scrollbar{
+    display:none;
+}
+
+.review-card{
+    min-width:82%;
+    scroll-snap-align:center;
+    background:#faf7ed;
+    border:1px solid #e5ddca;
+    border-radius:13px;
+    padding:20px;
+}
+
+.review-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+}
+
+.review-stars{
+    color:#d3a32c;
+    letter-spacing:1px;
+    font-size:16px;
+}
+
+.review-verified{
+    font-size:10px;
+    color:#188047;
+    font-weight:700;
+}
+
+.review-card p{
+    margin:0 0 17px;
+    font-size:14px;
+    color:#565e59;
+    line-height:1.75;
+}
+
+.review-person{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.review-avatar{
+    width:44px;
+    height:44px;
+    flex:none;
+    border-radius:50%;
+    object-fit:cover;
+    background:#ddd;
+}
+
+.review-person strong{
+    display:block;
+    font-size:14px;
+    color:#26342d;
+}
+
+.review-person small{
+    color:#8a8f8b;
+    font-size:11px;
+}
+
+.dots{
+    display:flex;
+    justify-content:center;
+    gap:5px;
+    margin-top:10px;
+}
+
+.dot{
+    width:7px;
+    height:7px;
+    background:#d1ccbd;
+    border-radius:20px;
+    transition:.25s;
+}
+
+.dot.active{
+    width:23px;
+    background:var(--green);
+}
+
+
+/* =========================================================
+   BEFORE AFTER EXTRA
+========================================================= */
+
+.before-after{
+    padding:0;
+    background:#fff;
+}
+
+.before-after img{
+    width:100%;
+}
+
+
+/* =========================================================
+   HEALTH LANE / TRUST
+========================================================= */
+
+.trust{
+    background:#f5ecd3;
+}
+
+.trust-card{
+    text-align:center;
+    padding:30px 24px;
+    border:2px solid #c6a04c;
+    background:#fffdf6;
+    border-radius:12px;
+    box-shadow:0 8px 26px rgba(70,56,22,.06);
+}
+
+.trust-logo{
+    width:100%;
+    max-width:350px;
+    max-height:130px;
+    object-fit:contain;
+    margin:0 auto 22px;
+}
+
+.trust-card h2{
+    font-family:Georgia, "Times New Roman", serif;
+    color:var(--green);
+    font-size:32px;
+    line-height:1.15;
+    margin:0 0 10px;
+}
+
+.trust-card > p{
+    margin:0 auto;
+    max-width:500px;
+    color:#696f6a;
+    font-size:14px;
+}
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:11px;
+    margin-top:24px;
+}
+
+.trust-item{
+    background:#f3ead0;
+    padding:18px 12px;
+    border-radius:8px;
+}
+
+.trust-item strong{
+    display:block;
+    font-size:25px;
+    color:#0a623d;
+    margin-bottom:2px;
+}
+
+.trust-item span{
+    color:#5f655f;
+    font-size:12px;
+    line-height:1.45;
+}
+
+.trust-note{
+    margin-top:16px;
+    padding-top:14px;
+    border-top:1px solid #e4d7b7;
+    color:#85847d;
+    font-size:10px;
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   MONEY BACK GUARANTEE
+========================================================= */
+
+.guarantee{
+    background:#fff;
+}
+
+.guarantee-card{
+    background:
+        linear-gradient(135deg,#fff9dd,#f7e7a9);
+    border:2px dashed #b98c32;
+    border-radius:14px;
+    padding:28px 22px;
+    text-align:center;
+}
+
+.guarantee-badge{
+    width:135px;
+    height:135px;
+    margin:0 auto 18px;
+    border-radius:50%;
+    background:#b52c27;
+    border:7px double #f0d16f;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    transform:rotate(-4deg);
+    box-shadow:0 9px 22px rgba(90,31,20,.18);
+}
+
+.guarantee-badge small{
+    font-size:11px;
+    letter-spacing:1px;
+    font-weight:bold;
+}
+
+.guarantee-badge strong{
+    font-size:38px;
+    line-height:1;
+}
+
+.guarantee-card h2{
+    margin:8px 0;
+    color:#153e2e;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:31px;
+}
+
+.guarantee-card p{
+    margin:0 auto;
+    max-width:530px;
+    color:#68645b;
+    font-size:13px;
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   ORDER AREA
+========================================================= */
+
+.order-section{
+    background:#ffea8c;
+    padding:45px 20px 55px;
+}
+
+.order-header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.order-header small{
+    display:inline-block;
+    margin-bottom:8px;
+    background:#0e713a;
+    color:#fff;
+    padding:6px 11px;
+    border-radius:20px;
+    font-size:10px;
+    letter-spacing:1px;
+    font-weight:bold;
+}
+
+.order-header h2{
+    margin:0 0 7px;
+    color:#163a2b;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:36px;
+}
+
+.order-header p{
+    margin:0;
+    color:#746b4f;
+    font-size:13px;
+}
+
+.order-box{
+    background:#fff;
+    border:1px solid rgba(0,0,0,.09);
+    border-radius:16px;
+    padding:27px;
+    margin-bottom:15px;
+    box-shadow:0 7px 25px rgba(118,87,13,.07);
+}
+
+.step{
+    display:flex;
+    align-items:flex-start;
+    gap:11px;
+    margin-bottom:22px;
+}
+
+.step-circle{
+    flex:none;
+    width:29px;
+    height:29px;
+    border-radius:50%;
+    background:#168320;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:13px;
+}
+
+.step strong{
+    display:block;
+    color:#262a2e;
+    font-size:15px;
+}
+
+.step span{
+    display:block;
+    color:#92979a;
+    font-size:12px;
+    margin-top:1px;
+}
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.product-option{
+    border:1px solid #e6e6e6;
+    border-radius:13px;
+    padding:15px;
+    display:grid;
+    grid-template-columns:76px 1fr auto;
+    gap:14px;
+    align-items:center;
+    margin-bottom:11px;
+    transition:.2s ease;
+}
+
+.product-option.active{
+    border-color:#1b8d29;
+    background:#fbfff9;
+    box-shadow:0 0 0 2px rgba(27,141,41,.06);
+}
+
+.product-option:last-child{
+    margin-bottom:0;
+}
+
+.product-thumb{
+    width:76px;
+    height:76px;
+    object-fit:cover;
+    border-radius:8px;
+    border:1px solid #eee;
+}
+
+.product-info h3{
+    margin:0 0 4px;
+    font-size:13px;
+    line-height:1.35;
+    color:#292d30;
+}
+
+.product-price{
+    font-size:13px;
+    color:#42a467;
+    font-weight:600;
+}
+
+.package-tag{
+    display:inline-block;
+    margin:5px 0 1px;
+    padding:3px 8px;
+    background:#fff0b5;
+    color:#835d10;
+    border-radius:20px;
+    font-size:9px;
+    font-weight:bold;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.qty-btn{
+    width:30px;
+    height:30px;
+    border:1px solid #e1e4e2;
+    background:#fff;
+    color:#696e6b;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    line-height:1;
+}
+
+.qty-btn.plus{
+    background:#168320;
+    border-color:#168320;
+    color:#fff;
+}
+
+.qty-value{
+    min-width:17px;
+    text-align:center;
+    color:#222;
+    font-size:13px;
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:11px;
+}
+
+.form-group{
+    margin-bottom:14px;
+}
+
+.form-group:last-child{
+    margin-bottom:0;
+}
+
+.form-label{
+    display:block;
+    color:#7b8084;
+    font-size:11px;
+    margin-bottom:5px;
+}
+
+.required{
+    color:#df4e48;
+}
+
+.form-control{
+    width:100%;
+    min-height:47px;
+    border:1px solid #d9dade;
+    border-radius:9px;
+    padding:12px 13px;
+    background:#fff;
+    color:#303438;
+    outline:none;
+}
+
+textarea.form-control{
+    min-height:88px;
+    resize:vertical;
+}
+
+.form-control:focus{
+    border-color:#1b8d29;
+    box-shadow:0 0 0 3px rgba(27,141,41,.08);
+}
+
+.info-box{
+    padding:9px 11px;
+    border-radius:7px;
+    background:#fff6da;
+    color:#8b6218;
+    margin-bottom:13px;
+    font-size:11px;
+    line-height:1.55;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.summary-line{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:17px;
+    border-top:1px solid #ebebeb;
+}
+
+.summary-line strong{
+    color:#272b2f;
+    font-size:14px;
+}
+
+.grand-total{
+    color:#168320;
+    font-size:21px;
+    font-weight:800;
+}
+
+.terms{
+    max-width:550px;
+    text-align:center;
+    margin:18px auto;
+    color:#8f8b79;
+    font-size:10px;
+    line-height:1.55;
+}
+
+.terms a{
+    color:#198029;
+    font-weight:bold;
+}
+
+.order-btn{
+    width:100%;
+    min-height:59px;
+    border:0;
+    border-radius:13px;
+    background:#14821d;
+    color:#fff;
+    font-size:16px;
+    font-weight:800;
+    box-shadow:0 9px 20px rgba(20,130,29,.2);
+}
+
+.order-btn:hover{
+    background:#0d7515;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq{
+    background:#fffdf7;
+}
+
+.faq-item{
+    border-bottom:1px solid #e4ddc9;
+}
+
+.faq-button{
+    width:100%;
+    padding:18px 2px;
+    border:0;
+    background:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:14px;
+    text-align:left;
+    color:#173e2e;
+    font-weight:700;
+    font-size:14px;
+}
+
+.faq-plus{
+    font-size:20px;
+    font-weight:normal;
+    transition:.2s;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+    color:#6c726d;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.faq-item.active .faq-answer{
+    max-height:250px;
+    padding:0 0 17px;
+}
+
+.faq-item.active .faq-plus{
+    transform:rotate(45deg);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:#032d1f;
+    text-align:center;
+    color:#d2ddd7;
+    padding:34px 28px 90px;
+}
+
+.footer-logo{
+    width:180px;
+    max-height:90px;
+    object-fit:contain;
+    margin:0 auto 14px;
+}
+
+footer p{
+    max-width:530px;
+    margin:0 auto;
+    font-size:11px;
+    line-height:1.65;
+    color:#b9c7c0;
+}
+
+.footer-links{
+    margin:16px 0 10px;
+}
+
+.footer-links a{
+    margin:0 7px;
+    font-size:10px;
+    color:#fff;
+}
+
+
+/* =========================================================
+   MOBILE STICKY
+========================================================= */
+
+.mobile-order{
+    display:none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    body{
+        background:#fff;
+        padding-bottom:68px;
+    }
+
+    .funnel{
+        max-width:none;
+        box-shadow:none;
+    }
+
+    .section{
+        padding:39px 18px;
+    }
+
+    .section-title{
+        font-size:29px;
+    }
+
+    .section-desc{
+        font-size:13px;
+        line-height:1.65;
+        margin-bottom:23px;
+    }
+
+    .bridge{
+        padding:25px 18px;
+    }
+
+    .bridge strong{
+        font-size:23px;
+    }
+
+    .bridge-btn{
+        width:100%;
+    }
+
+    .ingredient-grid{
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+
+    .ingredient-card{
+        display:grid;
+        grid-template-columns:115px 1fr;
+        min-height:145px;
+    }
+
+    .ingredient-image{
+        height:100%;
+        aspect-ratio:auto;
+    }
+
+    .ingredient-content{
+        padding:15px;
+    }
+
+    .ingredient-content h3{
+        font-size:18px;
+    }
+
+    .ingredient-content p{
+        font-size:12px;
+    }
+
+    .benefit-item{
+        grid-template-columns:43px 1fr;
+    }
+
+    .benefit-icon{
+        width:43px;
+        height:43px;
+    }
+
+    .review-card{
+        min-width:88%;
+    }
+
+    .trust-card{
+        padding:25px 16px;
+    }
+
+    .trust-logo{
+        max-width:290px;
+    }
+
+    .trust-card h2{
+        font-size:27px;
+    }
+
+    .trust-grid{
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+    }
+
+    .trust-item{
+        padding:15px 8px;
+    }
+
+    .trust-item strong{
+        font-size:22px;
+    }
+
+    .guarantee-card{
+        padding:24px 15px;
+    }
+
+    .guarantee-card h2{
+        font-size:27px;
+    }
+
+    .order-section{
+        padding:38px 9px 50px;
+    }
+
+    .order-header h2{
+        font-size:31px;
+    }
+
+    .order-box{
+        border-radius:14px;
+        padding:20px 14px;
+    }
+
+    .product-option{
+        grid-template-columns:66px 1fr;
+        padding:12px;
+        gap:10px;
+    }
+
+    .product-thumb{
+        width:66px;
+        height:66px;
+    }
+
+    .quantity{
+        grid-column:1/-1;
+        justify-content:flex-end;
+        border-top:1px solid #eee;
+        padding-top:9px;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .mobile-order{
+        display:block;
+        position:fixed;
+        left:0;
+        right:0;
+        bottom:0;
+        z-index:999;
+        padding:9px 11px;
+        background:#fff;
+        border-top:1px solid #ddd;
+    }
+
+    .mobile-order a{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width:100%;
+        min-height:49px;
+        background:#14821d;
+        color:#fff;
+        border-radius:8px;
+        font-size:13px;
+        font-weight:800;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP BACKGROUND
+========================================================= */
+
+@media(min-width:761px){
+
+    body{
+        background:
+            radial-gradient(circle at top,#f5f1e5 0,#e6e1d4 55%,#ddd7ca 100%);
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="site">
+
+<div class="funnel">
+
+
+<!-- =====================================================
+     PAGE 1
+====================================================== -->
+
+<section class="poster-page">
+    <img
+        src="assets/mystic-page-1.jpg"
+        alt="Mystic Hair Tonic - Rambut Lebih Kuat"
+    >
+</section>
+
+
+<!-- =====================================================
+     PAGE 2
+====================================================== -->
+
+<section class="poster-page">
+    <img
+        src="assets/mystic-page-2.jpg"
+        alt="Mystic Hair Tonic - Masalah Keguguran Rambut"
+    >
+</section>
+
+
+<!-- =====================================================
+     PAGE 3
+====================================================== -->
+
+<section class="poster-page">
+    <img
+        src="assets/mystic-page-3.jpg"
+        alt="Mystic Hair Tonic - Before After"
+    >
+</section>
+
+
+<!-- =====================================================
+     CTA AFTER 3 POSTERS
+====================================================== -->
+
+<section class="bridge">
+
+    <strong>
+        Rambut Sihat Bermula Dari Akar
+    </strong>
+
+    <p>
+        Kenali kandungan utama Mystic Hair Tonic dan pilih pakej
+        yang sesuai untuk rutin penjagaan rambut anda.
+    </p>
+
+    <a href="#order" class="bridge-btn">
+        TEMPAH MYSTIC SEKARANG
+    </a>
+
+</section>
+
+
+<!-- =====================================================
+     INGREDIENTS
+====================================================== -->
+
+<section class="section ingredients">
+
+    <div class="section-kicker">
+        FORMULASI MYSTIC
+    </div>
+
+    <h2 class="section-title">
+        4 Bahan Utama & Kebaikannya
+    </h2>
+
+    <p class="section-desc">
+        Gabungan bahan pilihan yang digunakan dalam rutin penjagaan
+        rambut dan kulit kepala.
+    </p>
+
+    <div class="gold-line"></div>
+
+    <br><br>
+
+    <div class="ingredient-grid">
+
+
+        <!-- 1 -->
+        <div class="ingredient-card">
+
+            <div class="ingredient-image">
+                <img
+                    src="assets/ingredient-ginseng.jpg"
+                    alt="Ginseng"
+                >
+            </div>
+
+            <div class="ingredient-content">
+
+                <div class="ingredient-no">
+                    BAHAN 01
+                </div>
+
+                <h3>
+                    Ginseng
+                </h3>
+
+                <p>
+                    Membantu menjaga rambut supaya kelihatan lebih kuat,
+                    sihat dan bermaya sebagai sebahagian daripada rutin
+                    penjagaan rambut.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2 -->
+        <div class="ingredient-card">
+
+            <div class="ingredient-image">
+                <img
+                    src="assets/ingredient-protein.jpg"
+                    alt="Hydrolyzed Protein"
+                >
+            </div>
+
+            <div class="ingredient-content">
+
+                <div class="ingredient-no">
+                    BAHAN 02
+                </div>
+
+                <h3>
+                    Hydrolyzed Protein
+                </h3>
+
+                <p>
+                    Membantu menjaga struktur rambut supaya terasa
+                    lebih lembut, terurus dan kurang mudah rapuh.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- 3 -->
+        <div class="ingredient-card">
+
+            <div class="ingredient-image">
+                <img
+                    src="assets/ingredient-botanical.jpg"
+                    alt="Ekstrak Botani"
+                >
+            </div>
+
+            <div class="ingredient-content">
+
+                <div class="ingredient-no">
+                    BAHAN 03
+                </div>
+
+                <h3>
+                    Ekstrak Botani
+                </h3>
+
+                <p>
+                    Ekstrak berasaskan tumbuhan untuk melengkapkan
+                    penjagaan rambut serta kulit kepala secara harian.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- 4 -->
+        <div class="ingredient-card">
+
+            <div class="ingredient-image">
+                <img
+                    src="assets/ingredient-peptide.jpg"
+                    alt="Peptide"
+                >
+            </div>
+
+            <div class="ingredient-content">
+
+                <div class="ingredient-no">
+                    BAHAN 04
+                </div>
+
+                <h3>
+                    Peptide
+                </h3>
+
+                <p>
+                    Membantu menyokong penjagaan rambut supaya
+                    rambut kelihatan lebih sihat, teratur dan bermaya.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BENEFITS
+====================================================== -->
+
+<section class="section benefits">
+
+    <div class="section-kicker">
+        PENJAGAAN MENYELURUH
+    </div>
+
+    <h2 class="section-title">
+        Kenapa Pilih Mystic?
+    </h2>
+
+    <p class="section-desc">
+        Direka untuk melengkapkan rutin penjagaan rambut dan kulit kepala.
+    </p>
+
+
+    <div class="benefit-list">
+
+        <div class="benefit-item">
+
+            <div class="benefit-icon">
+                ↓
+            </div>
+
+            <div class="benefit-copy">
+                <strong>
+                    Membantu Mengurangkan Rambut Gugur
+                </strong>
+
+                <span>
+                    Membantu menjaga rambut supaya terasa lebih kuat dari akar.
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="benefit-item">
+
+            <div class="benefit-icon">
+                ↑
+            </div>
+
+            <div class="benefit-copy">
+                <strong>
+                    Menyokong Penjagaan Pertumbuhan Rambut
+                </strong>
+
+                <span>
+                    Membantu memberikan penjagaan yang lebih menyeluruh kepada rambut.
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="benefit-item">
+
+            <div class="benefit-icon">
+                ◉
+            </div>
+
+            <div class="benefit-copy">
+                <strong>
+                    Menjaga Kulit Kepala
+                </strong>
+
+                <span>
+                    Membantu mengekalkan keadaan kulit kepala supaya lebih terjaga.
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="benefit-item">
+
+            <div class="benefit-icon">
+                ✦
+            </div>
+
+            <div class="benefit-copy">
+                <strong>
+                    Rambut Kelihatan Lebih Sihat
+                </strong>
+
+                <span>
+                    Membantu rambut kelihatan lebih lembut, terurus dan berseri.
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TESTIMONIAL
+====================================================== -->
+
+<section class="section testimonials">
+
+    <div class="section-kicker">
+        PENGALAMAN PENGGUNA
+    </div>
+
+    <h2 class="section-title">
+        Apa Kata Pengguna Mystic?
+    </h2>
+
+    <p class="section-desc">
+        Pengalaman penggunaan mungkin berbeza bagi setiap individu.
+    </p>
+
+
+    <div class="review-slider">
+
+        <div class="review-track" id="reviewTrack">
+
+
+            <article class="review-card">
+
+                <div class="review-top">
+                    <div class="review-stars">
+                        ★★★★★
+                    </div>
+
+                    <div class="review-verified">
+                        Pengguna Mystic
+                    </div>
+                </div>
+
+                <p>
+                    “Saya suka sebab senang nak masukkan dalam rutin harian.
+                    Rambut pun rasa lebih mudah diurus dan tidak terlalu kering.”
+                </p>
+
+                <div class="review-person">
+
+                    <img
+                        src="assets/review-1.jpg"
+                        class="review-avatar"
+                        alt=""
+                    >
+
+                    <div>
+                        <strong>
+                            Nur A.
+                        </strong>
+
+                        <small>
+                            Kuala Lumpur
+                        </small>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="review-card">
+
+                <div class="review-top">
+                    <div class="review-stars">
+                        ★★★★★
+                    </div>
+
+                    <div class="review-verified">
+                        Pengguna Mystic
+                    </div>
+                </div>
+
+                <p>
+                    “Saya pakai secara konsisten selepas mandi.
+                    Rasa rambut lebih terurus dan kulit kepala pun rasa lebih selesa.”
+                </p>
+
+                <div class="review-person">
+
+                    <img
+                        src="assets/review-2.jpg"
+                        class="review-avatar"
+                        alt=""
+                    >
+
+                    <div>
+                        <strong>
+                            Farah M.
+                        </strong>
+
+                        <small>
+                            Selangor
+                        </small>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="review-card">
+
+                <div class="review-top">
+                    <div class="review-stars">
+                        ★★★★★
+                    </div>
+
+                    <div class="review-verified">
+                        Pengguna Mystic
+                    </div>
+                </div>
+
+                <p>
+                    “Produk senang digunakan dan tidak terlalu rumit.
+                    Sesuai untuk saya yang nak rutin penjagaan rambut yang simple.”
+                </p>
+
+                <div class="review-person">
+
+                    <img
+                        src="assets/review-3.jpg"
+                        class="review-avatar"
+                        alt=""
+                    >
+
+                    <div>
+                        <strong>
+                            Azlina R.
+                        </strong>
+
+                        <small>
+                            Johor
+                        </small>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="review-card">
+
+                <div class="review-top">
+                    <div class="review-stars">
+                        ★★★★★
+                    </div>
+
+                    <div class="review-verified">
+                        Pengguna Mystic
+                    </div>
+                </div>
+
+                <p>
+                    “Saya memang cari produk untuk jaga rambut yang makin
+                    mudah gugur. Mystic mudah nak pakai setiap hari.”
+                </p>
+
+                <div class="review-person">
+
+                    <img
+                        src="assets/review-4.jpg"
+                        class="review-avatar"
+                        alt=""
+                    >
+
+                    <div>
+                        <strong>
+                            Siti N.
+                        </strong>
+
+                        <small>
+                            Perak
+                        </small>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <div class="dots">
+
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OPTIONAL REAL BEFORE AFTER
+====================================================== -->
+
+<section class="before-after">
+
+    <img
+        src="assets/mystic-real-result.jpg"
+        alt="Mystic Hair Tonic pengalaman pengguna"
+    >
+
+</section>
+
+
+<!-- =====================================================
+     HEALTH LANE / KKM
+====================================================== -->
+
+<section class="section trust">
+
+    <div class="trust-card">
+
+        <img
+            src="assets/health-lane-logo.png"
+            class="trust-logo"
+            alt="Health Lane Family Pharmacy"
+        >
+
+        <div class="section-kicker">
+            LEBIH MUDAH DIDAPATI
+        </div>
+
+        <h2>
+            Kini Boleh Didapati Di Health Lane
+        </h2>
+
+        <p>
+            Mystic Hair Tonic boleh didapati melalui saluran jualan terpilih.
+        </p>
+
+
+        <div class="trust-grid">
+
+
+            <div class="trust-item">
+
+                <strong>
+                    200+
+                </strong>
+
+                <span>
+                    Outlet Health Lane
+                    <br>
+                    di seluruh Malaysia
+                </span>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <strong>
+                    KKM
+                </strong>
+
+                <span>
+                    Maklumat pendaftaran
+                    produk
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="trust-note">
+            * Pastikan pihak Mystic mengesahkan kenyataan jumlah outlet,
+            penggunaan logo Health Lane dan maklumat pendaftaran KKM sebelum diterbitkan.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MONEY BACK
+====================================================== -->
+
+<section class="section guarantee">
+
+    <div class="guarantee-card">
+
+        <div class="guarantee-badge">
+
+            <small>
+                MONEY BACK
+            </small>
+
+            <strong>
+                60
+            </strong>
+
+            <small>
+                HARI
+            </small>
+
+        </div>
+
+
+        <h2>
+            Jaminan Wang Dikembalikan 60 Hari
+        </h2>
+
+        <p>
+            Cuba Mystic dengan lebih yakin. Sekiranya promosi rasmi
+            menyediakan jaminan wang dikembalikan 60 hari, pelanggan
+            boleh membuat tuntutan tertakluk kepada terma dan syarat
+            yang ditetapkan.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ORDER
+====================================================== -->
+
+<section class="order-section" id="order">
+
+    <div class="order-header">
+
+        <small>
+            TEMPAHAN MYSTIC
+        </small>
+
+        <h2>
+            Buat Pesanan Anda
+        </h2>
+
+        <p>
+            Pilih pakej, isi maklumat dan hantar pesanan.
+        </p>
+
+    </div>
+
+
+    <!-- ========================
+         STEP 1
+    ========================= -->
+
+    <div class="order-box">
+
+        <div class="step">
+
+            <div class="step-circle">
+                1
+            </div>
+
+            <div>
+                <strong>
+                    Buat pesanan anda
+                </strong>
+
+                <span>
+                    Pilih item yang ingin dipesan
+                </span>
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product-option" data-price="79">
+
+            <img
+                src="assets/package-1.jpg"
+                class="product-thumb"
+                alt="Mystic Hair Tonic"
+            >
+
+            <div class="product-info">
+
+                <h3>
+                    Mystic Hair Tonic — 1 Botol
+                </h3>
+
+                <div class="product-price">
+                    RM 79.00
+                </div>
+
+            </div>
+
+
+            <div class="quantity">
+
+                <button
+                    type="button"
+                    class="qty-btn minus"
+                    aria-label="Kurangkan"
+                >
+                    −
+                </button>
+
+                <span class="qty-value">
+                    0
+                </span>
+
+                <button
+                    type="button"
+                    class="qty-btn plus"
+                    aria-label="Tambah"
+                >
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product-option" data-price="139">
+
+            <img
+                src="assets/package-2.jpg"
+                class="product-thumb"
+                alt="Mystic Hair Tonic 2 botol"
+            >
+
+            <div class="product-info">
+
+                <h3>
+                    Pakej Duo — 2 Botol
+                </h3>
+
+                <div class="package-tag">
+                    PILIHAN POPULAR
+                </div>
+
+                <div class="product-price">
+                    RM 139.00
+                </div>
+
+            </div>
+
+
+            <div class="quantity">
+
+                <button
+                    type="button"
+                    class="qty-btn minus"
+                >
+                    −
+                </button>
+
+                <span class="qty-value">
+                    0
+                </span>
+
+                <button
+                    type="button"
+                    class="qty-btn plus"
+                >
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-option" data-price="189">
+
+            <img
+                src="assets/package-3.jpg"
+                class="product-thumb"
+                alt="Mystic Hair Tonic 3 botol"
+            >
+
+            <div class="product-info">
+
+                <h3>
+                    Pakej Lengkap — 3 Botol
+                </h3>
+
+                <div class="package-tag">
+                    LEBIH BERBALOI
+                </div>
+
+                <div class="product-price">
+                    RM 189.00
+                </div>
+
+            </div>
+
+
+            <div class="quantity">
+
+                <button
+                    type="button"
+                    class="qty-btn minus"
+                >
+                    −
+                </button>
+
+                <span class="qty-value">
+                    0
+                </span>
+
+                <button
+                    type="button"
+                    class="qty-btn plus"
+                >
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product-option" data-price="229">
+
+            <img
+                src="assets/package-4.jpg"
+                class="product-thumb"
+                alt="Mystic Hair Tonic 4 botol"
+            >
+
+            <div class="product-info">
+
+                <h3>
+                    Pakej Super — 4 Botol
+                </h3>
+
+                <div class="package-tag">
+                    NILAI TERBAIK
+                </div>
+
+                <div class="product-price">
+                    RM 229.00
+                </div>
+
+            </div>
+
+
+            <div class="quantity">
+
+                <button
+                    type="button"
+                    class="qty-btn minus"
+                >
+                    −
+                </button>
+
+                <span class="qty-value">
+                    0
+                </span>
+
+                <button
+                    type="button"
+                    class="qty-btn plus"
+                >
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ========================
+         STEP 2
+    ========================= -->
+
+    <div class="order-box">
+
+        <div class="step">
+
+            <div class="step-circle">
+                2
+            </div>
+
+            <div>
+                <strong>
+                    Maklumat anda
+                </strong>
+
+                <span>
+                    Supaya kami dapat memproses pesanan anda
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Kaedah penghantaran
+            </label>
+
+            <select
+                class="form-control"
+                id="shipping"
+            >
+
+                <option value="">
+                    -- Pilih --
+                </option>
+
+                <option>
+                    Semenanjung Malaysia
+                </option>
+
+                <option>
+                    Sabah / Sarawak
+                </option>
+
+                <option>
+                    Self Pickup
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="info-box">
+            Sila isi nombor telefon yang aktif supaya pihak kami boleh
+            menghubungi anda sekiranya diperlukan.
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+
+                <label class="form-label">
+                    No. Tel
+                    <span class="required">*</span>
+                </label>
+
+                <input
+                    class="form-control"
+                    id="phone"
+                    type="tel"
+                    placeholder="01X XXXXXXX"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label class="form-label">
+                    Nama
+                    <span class="required">*</span>
+                </label>
+
+                <input
+                    class="form-control"
+                    id="name"
+                    type="text"
+                    placeholder="Nama penuh"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Alamat penghantaran
+                <span class="required">*</span>
+            </label>
+
+            <textarea
+                class="form-control"
+                id="address"
+                placeholder="Alamat penuh"
+            ></textarea>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+
+                <label class="form-label">
+                    Poskod
+                </label>
+
+                <input
+                    class="form-control"
+                    id="postcode"
+                    type="text"
+                    placeholder="Contoh: 50000"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label class="form-label">
+                    Negeri
+                </label>
+
+                <select
+                    class="form-control"
+                    id="state"
+                >
+
+                    <option value="">
+                        -- Pilih negeri --
+                    </option>
+
+                    <option>Johor</option>
+                    <option>Kedah</option>
+                    <option>Kelantan</option>
+                    <option>Melaka</option>
+                    <option>Negeri Sembilan</option>
+                    <option>Pahang</option>
+                    <option>Perak</option>
+                    <option>Perlis</option>
+                    <option>Pulau Pinang</option>
+                    <option>Sabah</option>
+                    <option>Sarawak</option>
+                    <option>Selangor</option>
+                    <option>Terengganu</option>
+                    <option>W.P. Kuala Lumpur</option>
+                    <option>W.P. Putrajaya</option>
+                    <option>W.P. Labuan</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Nota kepada penjual
+            </label>
+
+            <textarea
+                class="form-control"
+                id="note"
+                placeholder="Jika ada..."
+            ></textarea>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================
+         STEP 3
+    ========================= -->
+
+    <div class="order-box">
+
+        <div class="step">
+
+            <div class="step-circle">
+                3
+            </div>
+
+            <div>
+                <strong>
+                    Semak & buat pesanan
+                </strong>
+
+                <span>
+                    Semak pesanan sebelum meneruskan
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="summary-line">
+
+            <strong>
+                Jumlah Keseluruhan
+            </strong>
+
+            <div
+                class="grand-total"
+                id="grandTotal"
+            >
+                RM 0.00
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="terms">
+        Dengan menekan butang di bawah, anda bersetuju dengan
+        <a href="#">Privacy Policy</a>
+        dan
+        <a href="#">Terms & Conditions</a>.
+    </div>
+
+
+    <button
+        type="button"
+        class="order-btn"
+        id="submitOrder"
+    >
+        Hantar Pesanan
+    </button>
+
+</section>
+
+
+<!-- =====================================================
+     FAQ
+====================================================== -->
+
+<section class="section faq">
+
+    <div class="section-kicker">
+        SOALAN LAZIM
+    </div>
+
+    <h2 class="section-title">
+        Ada Pertanyaan?
+    </h2>
+
+    <p class="section-desc">
+        Beberapa maklumat ringkas sebelum membuat pesanan.
+    </p>
+
+
+    <div class="faq-item">
+
+        <button class="faq-button">
+
+            <span>
+                Bagaimana cara menggunakan Mystic Hair Tonic?
+            </span>
+
+            <span class="faq-plus">
+                +
+            </span>
+
+        </button>
+
+        <div class="faq-answer">
+            Gunakan mengikut arahan rasmi pada label produk.
+            Sapukan mengikut keperluan dan gunakan secara konsisten
+            sebagai sebahagian daripada rutin penjagaan rambut.
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <button class="faq-button">
+
+            <span>
+                Adakah Mystic sesuai untuk lelaki dan wanita?
+            </span>
+
+            <span class="faq-plus">
+                +
+            </span>
+
+        </button>
+
+        <div class="faq-answer">
+            Sila rujuk panduan penggunaan rasmi pada label produk
+            atau maklumat yang diberikan oleh pihak Mystic.
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <button class="faq-button">
+
+            <span>
+                Berapa lama sebelum nampak perubahan?
+            </span>
+
+            <span class="faq-plus">
+                +
+            </span>
+
+        </button>
+
+        <div class="faq-answer">
+            Pengalaman setiap individu mungkin berbeza bergantung
+            kepada keadaan rambut, kulit kepala, rutin dan konsistensi penggunaan.
+        </div>
+
+    </div>
+
+
+    <div class="faq-item">
+
+        <button class="faq-button">
+
+            <span>
+                Bagaimana proses penghantaran dibuat?
+            </span>
+
+            <span class="faq-plus">
+                +
+            </span>
+
+        </button>
+
+        <div class="faq-answer">
+            Selepas pesanan diterima, pihak penjual boleh menghubungi
+            pelanggan untuk pengesahan sebelum proses penghantaran dibuat.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <img
+        src="assets/mystic-logo-white.png"
+        class="footer-logo"
+        alt="Mystic Hair Tonic"
+    >
+
+    <p>
+        Maklumat di laman ini disediakan untuk penerangan produk dan
+        bukan pengganti nasihat profesional. Pengalaman penggunaan
+        mungkin berbeza antara individu.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="#">
+            Privacy Policy
+        </a>
+
+        <a href="#">
+            Terms & Conditions
+        </a>
+
+        <a href="#">
+            Return Policy
+        </a>
+
+    </div>
+
+    <p>
+        © 2026 Mystic Hair Tonic. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</div>
+</div>
+
+
+<!-- =====================================================
+     MOBILE STICKY ORDER
+====================================================== -->
+
+<div class="mobile-order">
+
+    <a href="#order">
+        TEMPAH MYSTIC SEKARANG
+    </a>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   PRODUCT QUANTITY
+========================================================= */
+
+const productOptions =
+    document.querySelectorAll(".product-option");
+
+const grandTotal =
+    document.getElementById("grandTotal");
+
+
+function calculateTotal(){
+
+    let total = 0;
+
+    productOptions.forEach(product => {
+
+        const price =
+            Number(product.dataset.price);
+
+        const quantity =
+            Number(
+                product
+                .querySelector(".qty-value")
+                .textContent
+            );
+
+        total +=
+            price * quantity;
+
+
+        if(quantity > 0){
+
+            product.classList.add("active");
+
+        } else {
+
+            product.classList.remove("active");
+
+        }
+
+    });
+
+
+    grandTotal.textContent =
+        "RM " + total.toFixed(2);
+
+}
+
+
+productOptions.forEach(product => {
+
+    const minus =
+        product.querySelector(".minus");
+
+    const plus =
+        product.querySelector(".plus");
+
+    const quantity =
+        product.querySelector(".qty-value");
+
+
+    plus.addEventListener("click", function(){
+
+        let value =
+            Number(quantity.textContent);
+
+        value++;
+
+        quantity.textContent =
+            value;
+
+        calculateTotal();
+
+    });
+
+
+    minus.addEventListener("click", function(){
+
+        let value =
+            Number(quantity.textContent);
+
+        if(value > 0){
+
+            value--;
+
+        }
+
+        quantity.textContent =
+            value;
+
+        calculateTotal();
+
+    });
+
+});
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+document
+.querySelectorAll(".faq-button")
+.forEach(button => {
+
+    button.addEventListener("click", function(){
+
+        const item =
+            this.closest(".faq-item");
+
+
+        document
+        .querySelectorAll(".faq-item")
+        .forEach(otherItem => {
+
+            if(otherItem !== item){
+
+                otherItem.classList.remove("active");
+
+            }
+
+        });
+
+
+        item.classList.toggle("active");
+
+    });
+
+});
+
+
+/* =========================================================
+   TESTIMONIAL AUTO SLIDE
+========================================================= */
+
+const reviewTrack =
+    document.getElementById("reviewTrack");
+
+const reviews =
+    reviewTrack.querySelectorAll(".review-card");
+
+const dots =
+    document.querySelectorAll(".dot");
+
+let reviewIndex = 0;
+
+
+function updateDots(){
+
+    dots.forEach((dot,index) => {
+
+        dot.classList.toggle(
+            "active",
+            index === reviewIndex
+        );
+
+    });
+
+}
+
+
+function moveReview(){
+
+    if(window.innerWidth > 760){
+        return;
+    }
+
+    reviewIndex++;
+
+    if(reviewIndex >= reviews.length){
+
+        reviewIndex = 0;
+
+    }
+
+
+    const target =
+        reviews[reviewIndex];
+
+
+    reviewTrack.scrollTo({
+
+        left:
+            target.offsetLeft
+            - reviewTrack.offsetLeft,
+
+        behavior:"smooth"
+
+    });
+
+
+    updateDots();
+
+}
+
+
+setInterval(
+    moveReview,
+    4500
+);
+
+
+/* =========================================================
+   ORDER SUBMIT
+========================================================= */
+
+document
+.getElementById("submitOrder")
+.addEventListener("click", function(){
+
+
+    let orderItems = [];
+
+    let total = 0;
+
+
+    productOptions.forEach(product => {
+
+        const qty =
+            Number(
+                product
+                .querySelector(".qty-value")
+                .textContent
+            );
+
+        const price =
+            Number(
+                product.dataset.price
+            );
+
+        const name =
+            product
+            .querySelector(".product-info h3")
+            .textContent
+            .trim();
+
+
+        if(qty > 0){
+
+            orderItems.push(
+                name +
+                " x " +
+                qty +
+                " = RM " +
+                (price * qty).toFixed(2)
+            );
+
+            total +=
+                price * qty;
+
+        }
+
+    });
+
+
+    if(orderItems.length === 0){
+
+        alert(
+            "Sila pilih sekurang-kurangnya satu produk."
+        );
+
+        return;
+
+    }
+
+
+    const customerName =
+        document
+        .getElementById("name")
+        .value
+        .trim();
+
+
+    const phone =
+        document
+        .getElementById("phone")
+        .value
+        .trim();
+
+
+    const address =
+        document
+        .getElementById("address")
+        .value
+        .trim();
+
+
+    const postcode =
+        document
+        .getElementById("postcode")
+        .value
+        .trim();
+
+
+    const state =
+        document
+        .getElementById("state")
+        .value;
+
+
+    const shipping =
+        document
+        .getElementById("shipping")
+        .value;
+
+
+    const note =
+        document
+        .getElementById("note")
+        .value
+        .trim();
+
+
+    if(
+        customerName === "" ||
+        phone === "" ||
+        address === ""
+    ){
+
+        alert(
+            "Sila lengkapkan nama, nombor telefon dan alamat."
+        );
+
+        return;
+
+    }
+
+
+    const message =
+`TEMPAHAN MYSTIC HAIR TONIC
+
+Nama:
+${customerName}
+
+No. Telefon:
+${phone}
+
+Pesanan:
+${orderItems.join("\n")}
+
+Jumlah Keseluruhan:
+RM ${total.toFixed(2)}
+
+Kaedah Penghantaran:
+${shipping || "-"}
+
+Alamat:
+${address}
+
+Poskod:
+${postcode || "-"}
+
+Negeri:
+${state || "-"}
+
+Nota:
+${note || "-"}`;
+
+
+    /*
+    ==================================
+    CHANGE WHATSAPP NUMBER HERE
+
+    Example:
+    60123456789
+    ==================================
+    */
+
+    const whatsappNumber =
+        "60123456789";
+
+
+    const whatsappURL =
+        "https://wa.me/"
+        + whatsappNumber
+        + "?text="
+        + encodeURIComponent(message);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+});
+
+</script>
+
+</body>
+</html>
