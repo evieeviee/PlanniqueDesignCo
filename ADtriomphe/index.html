@@ -782,6 +782,1160 @@ html,body{width:100%;overflow-x:clip}
   }
 }
 
+
+/* Refined Training navigation */
+.trainingChoiceSection{padding-top:74px;padding-bottom:88px}
+.trainingModesRefined{margin-top:34px}
+.trainingModeLink{cursor:pointer}
+.trainingModeLink:focus-visible{
+  outline:3px solid rgba(239,91,42,.22);
+  outline-offset:4px;
+}
+.trainingBackBtn{
+  color:inherit;
+  margin-bottom:24px;
+  opacity:.88;
+  transition:opacity .2s ease,transform .2s ease,color .2s ease;
+}
+.pageHero.dark .trainingBackBtn{color:#fff}
+.trainingBackBtn:hover{
+  opacity:1;
+  transform:translateX(-3px);
+  color:var(--orange);
+}
+.sectionLeadRow{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:28px;
+  margin-bottom:8px;
+}
+.textNavBtn{
+  flex:0 0 auto;
+  border:0;
+  background:transparent;
+  padding:10px 0;
+  color:var(--orange);
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.textNavBtn span{transition:transform .2s ease}
+.textNavBtn:hover span{transform:translateX(4px)}
+
+#page-inhouse .pageHero .wrap,
+#page-public-training .pageHero .wrap{
+  position:relative;
+  z-index:1;
+}
+
+@media(max-width:620px){
+  .trainingChoiceSection{padding-top:52px;padding-bottom:62px}
+  .trainingBackBtn{
+    font-size:12px;
+    margin-bottom:20px;
+  }
+  .sectionLeadRow{
+    display:block;
+  }
+  .textNavBtn{
+    margin-top:12px;
+  }
+}
+
+
+/* ===== Refined desktop mega menu ===== */
+@media(min-width:981px){
+  .nav{gap:2px}
+  .navItem>button{
+    position:relative;
+    padding:17px 14px;
+    border-radius:10px;
+    transition:color .2s ease,background .2s ease;
+  }
+  .navItem>button:after{
+    content:"";
+    position:absolute;
+    left:14px;
+    right:14px;
+    bottom:8px;
+    height:2px;
+    border-radius:999px;
+    background:var(--orange);
+    transform:scaleX(0);
+    transform-origin:center;
+    transition:transform .22s ease;
+  }
+  .navItem>button:hover:after,
+  .navItem>button.active:after{
+    transform:scaleX(1);
+  }
+
+  #trainingDropdown{
+    width:620px;
+    left:50%;
+    transform:translate(-43%,14px);
+    padding:0;
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid rgba(21,34,45,.10);
+    box-shadow:0 26px 70px rgba(7,24,39,.16);
+    background:#fff;
+  }
+  .navItem:hover #trainingDropdown,
+  .navItem:focus-within #trainingDropdown{
+    transform:translate(-43%,0);
+  }
+
+  #trainingDropdown .dropdownIntro{
+    padding:18px 20px 16px;
+    background:linear-gradient(180deg,#fbfaf7,#f7f3ed);
+    border-bottom:1px solid var(--line);
+  }
+  #trainingDropdown .dropdownIntro b{
+    font-size:13px;
+    letter-spacing:.01em;
+    margin-bottom:4px;
+  }
+  #trainingDropdown .dropdownIntro span{
+    font-size:11px;
+    color:#7c858d;
+  }
+
+  #trainingDropdown .dropdownGrid{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:0;
+    padding:0;
+    background:#fff;
+  }
+
+  #trainingDropdown .dropdownPrimary{
+    padding:14px;
+    border-right:1px solid var(--line);
+    background:#fbfaf7;
+    display:grid;
+    align-content:start;
+    gap:8px;
+  }
+
+  #trainingDropdown .dropdownPrimary button{
+    min-height:58px;
+    padding:12px 40px 12px 14px;
+    border:1px solid rgba(21,34,45,.09);
+    border-radius:12px;
+    background:#fff;
+    font-size:12px;
+    font-weight:800;
+  }
+  #trainingDropdown .dropdownPrimary button:hover{
+    background:#fff7f2;
+    border-color:rgba(239,91,42,.25);
+    color:var(--orange);
+    padding-left:14px;
+  }
+  #trainingDropdown .dropdownPrimary button:after{
+    opacity:1;
+    right:14px;
+    color:var(--orange);
+  }
+
+  #trainingDropdown .dropdownCategories{
+    padding:14px 14px 16px;
+  }
+  #trainingDropdown .dropdownSectionLabel{
+    padding:4px 8px 10px;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:#a0a8ae;
+  }
+  #trainingDropdown .dropdownCategoryGrid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px 6px;
+  }
+  #trainingDropdown .dropdownCategoryGrid button{
+    min-height:40px;
+    padding:10px 28px 10px 10px;
+    border-radius:9px;
+    color:#58636c;
+    font-size:11px;
+    font-weight:750;
+  }
+  #trainingDropdown .dropdownCategoryGrid button:hover{
+    background:#f8f5f0;
+    color:var(--ink);
+    padding-left:12px;
+  }
+  #trainingDropdown .dropdownCategoryGrid button:after{
+    right:10px;
+  }
+}
+
+/* Mobile menu polish */
+@media(max-width:980px){
+  .mobileNav{
+    top:76px;
+    left:14px;
+    right:14px;
+    padding:8px;
+    border-radius:18px;
+    box-shadow:0 24px 60px rgba(7,24,39,.18);
+  }
+  .mobileNav>button,
+  .mobileGroupRow{
+    border-bottom:1px solid rgba(21,34,45,.08);
+  }
+  .mobileNav>button,
+  .mobileGroupMain{
+    min-height:50px;
+    font-size:13px;
+  }
+  .mobileGroupToggle{
+    width:48px;
+    height:48px;
+    border-radius:10px;
+  }
+  .mobileSub{
+    padding:6px 8px 10px 12px;
+    background:#fbfaf7;
+    border-radius:0 0 12px 12px;
+  }
+  .mobileSub button{
+    border-left:0;
+    border-bottom:1px solid rgba(21,34,45,.06);
+    padding:11px 10px;
+    font-size:12px;
+  }
+  .mobileSub button:last-child{border-bottom:0}
+}
+
+
+/* =========================================
+   Professional Training navigation v2
+   ========================================= */
+
+/* Desktop */
+@media(min-width:981px){
+  #trainingDropdown{
+    width:720px;
+    left:50%;
+    transform:translate(-48%,14px);
+    border-radius:22px;
+    background:#fff;
+    overflow:hidden;
+    border:1px solid rgba(21,34,45,.10);
+    box-shadow:0 28px 80px rgba(7,24,39,.17);
+  }
+
+  .navItem:hover #trainingDropdown,
+  .navItem:focus-within #trainingDropdown{
+    transform:translate(-48%,0);
+  }
+
+  #trainingDropdown .dropdownIntro{
+    padding:20px 22px 17px;
+    background:
+      linear-gradient(135deg,rgba(239,91,42,.05),transparent 42%),
+      #fbfaf7;
+    border-bottom:1px solid var(--line);
+  }
+
+  #trainingDropdown .dropdownIntro b{
+    font-size:14px;
+    color:var(--ink);
+    letter-spacing:-.01em;
+  }
+
+  #trainingDropdown .dropdownIntro span{
+    margin-top:4px;
+    font-size:11px;
+    line-height:1.5;
+    color:#7b858d;
+    font-weight:500;
+  }
+
+  .trainingMega{
+    display:grid;
+    grid-template-columns:280px minmax(0,1fr);
+    min-height:310px;
+  }
+
+  .trainingMegaPrimary{
+    padding:17px;
+    background:#fbfaf7;
+    border-right:1px solid var(--line);
+  }
+
+  .trainingMegaAreas{
+    padding:17px 16px 18px;
+    background:#fff;
+  }
+
+  #trainingDropdown .dropdownSectionLabel{
+    padding:3px 4px 11px;
+    font-size:9px;
+    letter-spacing:.17em;
+    text-transform:uppercase;
+    font-weight:900;
+    color:#9aa3aa;
+  }
+
+  .megaPrimaryCard{
+    width:100%;
+    min-height:82px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:14px!important;
+    padding:14px!important;
+    margin-bottom:9px;
+    border:1px solid rgba(21,34,45,.10)!important;
+    border-radius:14px!important;
+    background:#fff!important;
+    color:var(--ink)!important;
+    text-align:left!important;
+    transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease!important;
+  }
+
+  .megaPrimaryCard:after{display:none!important}
+
+  .megaPrimaryText{
+    display:block;
+    min-width:0;
+  }
+
+  .megaPrimaryText b{
+    display:block;
+    font-size:12px;
+    line-height:1.35;
+    color:var(--ink);
+  }
+
+  .megaPrimaryText small{
+    display:block;
+    margin-top:5px;
+    font-size:10px;
+    line-height:1.45;
+    color:#7c858c;
+    font-weight:500;
+  }
+
+  .megaArrow{
+    flex:0 0 34px;
+    width:34px;
+    height:34px;
+    border-radius:10px;
+    border:1px solid var(--line);
+    display:grid;
+    place-items:center;
+    color:var(--orange);
+    transition:.22s ease;
+  }
+
+  .megaPrimaryCard:hover{
+    transform:translateY(-2px);
+    border-color:rgba(239,91,42,.28)!important;
+    box-shadow:0 10px 26px rgba(7,24,39,.07);
+    background:#fffdfb!important;
+    padding-left:14px!important;
+  }
+
+  .megaPrimaryCard:hover .megaArrow{
+    background:var(--orange);
+    color:#fff;
+    border-color:var(--orange);
+    transform:translateX(2px);
+  }
+
+  #trainingDropdown .dropdownCategoryGrid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:4px 8px;
+  }
+
+  #trainingDropdown .dropdownCategoryGrid button{
+    position:relative;
+    min-height:42px;
+    padding:10px 28px 10px 11px;
+    border:0;
+    border-radius:10px;
+    background:transparent;
+    color:#59646d;
+    font-size:11px;
+    font-weight:750;
+    text-align:left;
+    transition:background .2s ease,color .2s ease,padding .2s ease;
+  }
+
+  #trainingDropdown .dropdownCategoryGrid button:after{
+    content:"→";
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform:translateY(-50%) translateX(-4px);
+    opacity:0;
+    color:var(--orange);
+    transition:.2s ease;
+  }
+
+  #trainingDropdown .dropdownCategoryGrid button:hover{
+    background:#f8f5f0;
+    color:var(--ink);
+    padding-left:14px;
+  }
+
+  #trainingDropdown .dropdownCategoryGrid button:hover:after{
+    opacity:1;
+    transform:translateY(-50%) translateX(0);
+  }
+}
+
+/* Mobile navigation — redesign the Training section rather than a flat list */
+@media(max-width:980px){
+  .mobileNav{
+    top:70px;
+    left:12px;
+    right:12px;
+    padding:8px;
+    border-radius:18px;
+    max-height:calc(100vh - 84px);
+    overflow:auto;
+    background:rgba(251,250,247,.98);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(21,34,45,.10);
+    box-shadow:0 24px 70px rgba(7,24,39,.18);
+  }
+
+  .mobileNav>button,
+  .mobileGroupRow{
+    border-bottom:1px solid rgba(21,34,45,.075);
+  }
+
+  .mobileNav>button,
+  .mobileGroupMain{
+    min-height:50px;
+    font-size:13px;
+    font-weight:800;
+    padding:13px 12px;
+  }
+
+  .mobileGroupToggle{
+    width:48px;
+    height:48px;
+    font-size:20px;
+    border-radius:10px;
+    color:var(--ink);
+  }
+
+  .mobileSub{
+    padding:0;
+    margin:0;
+    background:transparent;
+  }
+
+  #mobileTraining.mobileSub.open{
+    display:block;
+    padding:13px 8px 15px;
+    background:#f7f3ed;
+    border-radius:0 0 14px 14px;
+    border-bottom:1px solid rgba(21,34,45,.07);
+  }
+
+  .mobileTrainingPrimary{
+    display:grid;
+    gap:8px;
+  }
+
+  .mobileTrainingCard{
+    width:100%;
+    min-height:68px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:12px 13px!important;
+    border:1px solid rgba(21,34,45,.10)!important;
+    border-radius:13px!important;
+    background:#fff!important;
+    text-align:left!important;
+    color:var(--ink)!important;
+  }
+
+  .mobileTrainingCard span{
+    min-width:0;
+  }
+
+  .mobileTrainingCard b{
+    display:block;
+    font-size:12px;
+    line-height:1.35;
+  }
+
+  .mobileTrainingCard small{
+    display:block;
+    margin-top:4px;
+    color:#7b858d;
+    font-size:10px;
+    line-height:1.35;
+    font-weight:500;
+  }
+
+  .mobileTrainingCard i{
+    flex:0 0 32px;
+    width:32px;
+    height:32px;
+    border-radius:9px;
+    display:grid;
+    place-items:center;
+    background:#fff6f1;
+    color:var(--orange);
+    font-style:normal;
+    font-weight:800;
+  }
+
+  .mobileSubLabel{
+    margin:15px 4px 8px;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+    font-weight:900;
+    color:#959ea5;
+  }
+
+  .mobileTrainingGrid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+  }
+
+  .mobileTrainingGrid button{
+    min-width:0;
+    min-height:44px;
+    padding:10px 11px!important;
+    border:1px solid rgba(21,34,45,.08)!important;
+    border-radius:10px!important;
+    background:rgba(255,255,255,.72)!important;
+    color:#59646d!important;
+    text-align:left!important;
+    font-size:10.5px!important;
+    line-height:1.3!important;
+    font-weight:700!important;
+  }
+
+  .mobileTrainingGrid button:active,
+  .mobileTrainingCard:active{
+    transform:scale(.985);
+  }
+
+  /* Consulting submenu: keep clean and compact */
+  #mobileConsulting.mobileSub.open{
+    display:grid;
+    gap:4px;
+    padding:8px 8px 12px;
+    background:#f7f3ed;
+    border-radius:0 0 14px 14px;
+  }
+
+  #mobileConsulting button{
+    min-height:44px;
+    padding:10px 11px;
+    border:0;
+    border-radius:9px;
+    background:transparent;
+    text-align:left;
+    font-size:11px;
+    color:#59646d;
+  }
+}
+
+@media(max-width:420px){
+  .mobileTrainingGrid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* ===================================================
+   Clean elegant Training navigation — desktop + mobile
+   =================================================== */
+@media(min-width:981px){
+  #trainingDropdown{
+    width:690px;
+    left:50%;
+    transform:translate(-47%,14px);
+    padding:0;
+    border-radius:20px;
+    overflow:hidden;
+    background:#fff;
+    border:1px solid rgba(21,34,45,.10);
+    box-shadow:0 30px 75px rgba(7,24,39,.15);
+  }
+  .navItem:hover #trainingDropdown,
+  .navItem:focus-within #trainingDropdown{
+    transform:translate(-47%,0);
+  }
+
+  #trainingDropdown .cleanMenuIntro{
+    padding:17px 20px 15px;
+    background:#fbfaf7;
+    border-bottom:1px solid var(--line);
+  }
+  #trainingDropdown .cleanMenuIntro b{
+    font-size:13px;
+    color:var(--ink);
+    letter-spacing:-.01em;
+  }
+
+  .trainingMegaClean{
+    display:grid;
+    grid-template-columns:255px minmax(0,1fr);
+    min-height:300px;
+  }
+
+  .trainingRoutesClean{
+    padding:15px;
+    border-right:1px solid var(--line);
+    background:#fbfaf7;
+  }
+
+  .routeRowClean{
+    width:100%;
+    min-height:74px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:12px!important;
+    padding:13px 12px!important;
+    margin-bottom:8px;
+    border:1px solid rgba(21,34,45,.09)!important;
+    border-radius:12px!important;
+    background:#fff!important;
+    text-align:left!important;
+    color:var(--ink)!important;
+    transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease!important;
+  }
+  .routeRowClean:after{display:none!important}
+  .routeRowClean span{min-width:0}
+  .routeRowClean b{
+    display:block;
+    font-size:11.5px;
+    line-height:1.35;
+  }
+  .routeRowClean small{
+    display:block;
+    margin-top:4px;
+    font-size:9.5px;
+    line-height:1.35;
+    color:#7c858d;
+    font-weight:500;
+  }
+  .routeRowClean i{
+    flex:0 0 auto;
+    font-style:normal;
+    font-size:15px;
+    color:var(--orange);
+    transition:transform .2s ease;
+  }
+  .routeRowClean:hover{
+    background:#fffdfb!important;
+    border-color:rgba(239,91,42,.25)!important;
+    transform:translateY(-1px);
+    box-shadow:0 8px 22px rgba(7,24,39,.055);
+    padding-left:12px!important;
+  }
+  .routeRowClean:hover i{transform:translateX(3px)}
+
+  .programmeAreasClean{
+    padding:17px 16px 18px;
+    background:#fff;
+  }
+  .programmeAreasTitle{
+    padding:2px 8px 10px;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:#a0a8ae;
+  }
+  .programmeAreaList{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3px 8px;
+  }
+  .programmeAreaList button{
+    position:relative;
+    min-height:40px;
+    padding:9px 30px 9px 10px!important;
+    border:0!important;
+    border-radius:9px!important;
+    background:transparent!important;
+    text-align:left!important;
+    color:#59646d!important;
+    font-size:10.5px!important;
+    font-weight:750!important;
+  }
+  .programmeAreaList button:after{display:none!important}
+  .programmeAreaList button i{
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform:translateY(-50%) translateX(-4px);
+    opacity:0;
+    font-style:normal;
+    color:var(--orange);
+    transition:.2s ease;
+  }
+  .programmeAreaList button:hover{
+    background:#f8f5f0!important;
+    color:var(--ink)!important;
+    padding-left:12px!important;
+  }
+  .programmeAreaList button:hover i{
+    opacity:1;
+    transform:translateY(-50%) translateX(0);
+  }
+}
+
+/* Mobile: route first, programme areas collapsed by default */
+@media(max-width:980px){
+  #mobileTraining.mobileSub.open{
+    display:block;
+    padding:12px 8px 14px;
+    background:#f7f3ed;
+    border-radius:0 0 14px 14px;
+  }
+
+  .mobileTrainingRoutesClean{
+    display:grid;
+    gap:7px;
+  }
+
+  .mobileRouteClean{
+    width:100%;
+    min-height:62px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:11px 12px!important;
+    border:1px solid rgba(21,34,45,.09)!important;
+    border-radius:12px!important;
+    background:#fff!important;
+    text-align:left!important;
+    color:var(--ink)!important;
+  }
+  .mobileRouteClean span{min-width:0}
+  .mobileRouteClean b{
+    display:block;
+    font-size:12px;
+    line-height:1.3;
+  }
+  .mobileRouteClean small{
+    display:block;
+    margin-top:3px;
+    font-size:10px;
+    line-height:1.3;
+    color:#7a858d;
+    font-weight:500;
+  }
+  .mobileRouteClean i{
+    flex:0 0 auto;
+    width:30px;
+    height:30px;
+    display:grid;
+    place-items:center;
+    border-radius:9px;
+    background:#fff5ef;
+    color:var(--orange);
+    font-style:normal;
+    font-weight:800;
+  }
+
+  .mobileAreasToggle{
+    width:100%;
+    min-height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-top:10px;
+    padding:10px 4px!important;
+    border:0!important;
+    border-top:1px solid rgba(21,34,45,.08)!important;
+    background:transparent!important;
+    color:#59646d!important;
+    text-align:left!important;
+    font-size:11px!important;
+    font-weight:800!important;
+  }
+  .mobileAreasToggle i{
+    width:28px;
+    height:28px;
+    display:grid;
+    place-items:center;
+    font-style:normal;
+    font-size:16px;
+    color:var(--ink);
+    transition:transform .2s ease;
+  }
+
+  .mobileAreasPanel{
+    display:none;
+    padding-top:2px;
+  }
+  .mobileAreasPanel.open{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px 10px;
+  }
+  .mobileAreasPanel button{
+    min-width:0;
+    min-height:42px;
+    padding:9px 4px!important;
+    border:0!important;
+    border-bottom:1px solid rgba(21,34,45,.07)!important;
+    border-radius:0!important;
+    background:transparent!important;
+    color:#59646d!important;
+    text-align:left!important;
+    font-size:10.5px!important;
+    line-height:1.25!important;
+    font-weight:700!important;
+  }
+}
+
+@media(max-width:420px){
+  .mobileAreasPanel.open{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* ====================================================
+   Group programme areas under In-House Programmes
+   ==================================================== */
+
+/* Desktop */
+@media(min-width:981px){
+  #trainingDropdown{
+    width:650px;
+    left:50%;
+    transform:translate(-45%,14px);
+    padding:0;
+    border-radius:20px;
+    overflow:hidden;
+    background:#fff;
+    border:1px solid rgba(21,34,45,.10);
+    box-shadow:0 28px 72px rgba(7,24,39,.15);
+  }
+  .navItem:hover #trainingDropdown,
+  .navItem:focus-within #trainingDropdown{
+    transform:translate(-45%,0);
+  }
+
+  #trainingDropdown .cleanMenuIntro{
+    padding:16px 20px 14px;
+    background:#fbfaf7;
+    border-bottom:1px solid var(--line);
+  }
+  #trainingDropdown .cleanMenuIntro b{
+    font-size:13px;
+    color:var(--ink);
+  }
+
+  .trainingGroupedDesktop{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 210px;
+    gap:14px;
+    padding:16px;
+    background:#fff;
+  }
+
+  .desktopTrainingGroup{
+    border:1px solid rgba(21,34,45,.09);
+    border-radius:14px;
+    overflow:hidden;
+    background:#fbfaf7;
+  }
+
+  .desktopGroupHead{
+    width:100%;
+    min-height:72px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:12px!important;
+    padding:14px 15px!important;
+    border:0!important;
+    border-bottom:1px solid rgba(21,34,45,.08)!important;
+    border-radius:0!important;
+    background:#fff!important;
+    text-align:left!important;
+    color:var(--ink)!important;
+  }
+  .desktopGroupHead:after{display:none!important}
+  .desktopGroupHead span{min-width:0}
+  .desktopGroupHead b{
+    display:block;
+    font-size:12px;
+    line-height:1.35;
+  }
+  .desktopGroupHead small{
+    display:block;
+    margin-top:4px;
+    font-size:9.5px;
+    line-height:1.35;
+    color:#7b858d;
+    font-weight:500;
+  }
+  .desktopGroupHead i{
+    font-style:normal;
+    color:var(--orange);
+    font-size:15px;
+    transition:transform .2s ease;
+  }
+  .desktopGroupHead:hover i{transform:translateX(3px)}
+
+  .desktopInhouseAreas{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px 8px;
+    padding:10px 10px 12px;
+  }
+  .desktopInhouseAreas button{
+    min-height:38px;
+    padding:8px 9px!important;
+    border:0!important;
+    border-radius:8px!important;
+    background:transparent!important;
+    color:#59646d!important;
+    text-align:left!important;
+    font-size:10.5px!important;
+    line-height:1.3!important;
+    font-weight:700!important;
+  }
+  .desktopInhouseAreas button:after{display:none!important}
+  .desktopInhouseAreas button:hover{
+    background:#fff!important;
+    color:var(--ink)!important;
+    padding-left:11px!important;
+  }
+
+  .desktopPublicCard{
+    align-self:start;
+    min-height:110px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    justify-content:space-between!important;
+    gap:18px!important;
+    padding:15px!important;
+    border:1px solid rgba(21,34,45,.09)!important;
+    border-radius:14px!important;
+    background:#fff!important;
+    color:var(--ink)!important;
+    text-align:left!important;
+  }
+  .desktopPublicCard:after{display:none!important}
+  .desktopPublicCard b{
+    display:block;
+    font-size:12px;
+    line-height:1.35;
+  }
+  .desktopPublicCard small{
+    display:block;
+    margin-top:4px;
+    font-size:9.5px;
+    line-height:1.35;
+    color:#7b858d;
+    font-weight:500;
+  }
+  .desktopPublicCard i{
+    width:32px;
+    height:32px;
+    display:grid;
+    place-items:center;
+    border-radius:9px;
+    background:#fff5ef;
+    color:var(--orange);
+    font-style:normal;
+    align-self:flex-end;
+    transition:.2s ease;
+  }
+  .desktopPublicCard:hover{
+    border-color:rgba(239,91,42,.24)!important;
+    box-shadow:0 8px 22px rgba(7,24,39,.05);
+  }
+  .desktopPublicCard:hover i{
+    background:var(--orange);
+    color:#fff;
+    transform:translateX(2px);
+  }
+}
+
+/* Mobile */
+@media(max-width:980px){
+  #mobileTraining.mobileSub.open{
+    display:block;
+    padding:10px 8px 12px;
+    background:#f7f3ed;
+    border-radius:0 0 14px 14px;
+  }
+
+  .mobileGroupedTraining{
+    display:grid;
+    gap:8px;
+  }
+
+  .mobileInhouseGroup{
+    border:1px solid rgba(21,34,45,.09);
+    border-radius:13px;
+    overflow:hidden;
+    background:#fff;
+  }
+
+  .mobileInhouseHead{
+    background:#fff;
+  }
+
+  .mobileInhouseMain{
+    width:100%;
+    min-height:62px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:11px 12px!important;
+    border:0!important;
+    background:#fff!important;
+    text-align:left!important;
+    color:var(--ink)!important;
+  }
+  .mobileInhouseMain span{min-width:0}
+  .mobileInhouseMain b{
+    display:block;
+    font-size:12px;
+    line-height:1.3;
+  }
+  .mobileInhouseMain small{
+    display:block;
+    margin-top:3px;
+    font-size:10px;
+    line-height:1.3;
+    color:#7a858d;
+    font-weight:500;
+  }
+  .mobileInhouseMain i{
+    width:30px;
+    height:30px;
+    display:grid;
+    place-items:center;
+    border-radius:9px;
+    background:#fff5ef;
+    color:var(--orange);
+    font-style:normal;
+    font-weight:800;
+  }
+
+  .mobileInhouseToggle{
+    width:100%;
+    min-height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:9px 12px!important;
+    border:0!important;
+    border-top:1px solid rgba(21,34,45,.07)!important;
+    background:#fbfaf7!important;
+    color:#69747d!important;
+    text-align:left!important;
+    font-size:10px!important;
+    font-weight:800!important;
+  }
+  .mobileInhouseToggle i{
+    font-style:normal;
+    color:var(--ink);
+    font-size:15px;
+  }
+
+  .mobileInhousePanel{
+    display:none;
+    padding:4px 10px 10px;
+    background:#fbfaf7;
+  }
+  .mobileInhousePanel.open{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px 10px;
+  }
+  .mobileInhousePanel button{
+    min-width:0;
+    min-height:40px;
+    padding:8px 3px!important;
+    border:0!important;
+    border-bottom:1px solid rgba(21,34,45,.06)!important;
+    border-radius:0!important;
+    background:transparent!important;
+    color:#59646d!important;
+    text-align:left!important;
+    font-size:10.5px!important;
+    line-height:1.25!important;
+    font-weight:700!important;
+  }
+
+  .mobilePublicClean{
+    width:100%;
+    min-height:62px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:11px 12px!important;
+    border:1px solid rgba(21,34,45,.09)!important;
+    border-radius:13px!important;
+    background:#fff!important;
+    text-align:left!important;
+    color:var(--ink)!important;
+  }
+  .mobilePublicClean span{min-width:0}
+  .mobilePublicClean b{
+    display:block;
+    font-size:12px;
+    line-height:1.3;
+  }
+  .mobilePublicClean small{
+    display:block;
+    margin-top:3px;
+    font-size:10px;
+    line-height:1.3;
+    color:#7a858d;
+    font-weight:500;
+  }
+  .mobilePublicClean i{
+    width:30px;
+    height:30px;
+    display:grid;
+    place-items:center;
+    border-radius:9px;
+    background:#fff5ef;
+    color:var(--orange);
+    font-style:normal;
+    font-weight:800;
+  }
+}
+
+@media(max-width:420px){
+  .mobileInhousePanel.open{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -847,20 +2001,76 @@ html,body{width:100%;overflow-x:clip}
   <section class="section soft"><div class="wrap"><div class="eyebrow">How We Work</div><h2>Advisory + capability + execution.</h2><div class="three"><div class="card"><span class="num">01</span><h3>Understand</h3><p>Clarify the organisation’s challenges, people priorities and business context.</p></div><div class="card"><span class="num">02</span><h3>Design</h3><p>Shape the right training, HR process or support model around those needs.</p></div><div class="card"><span class="num">03</span><h3>Apply</h3><p>Translate recommendations into practical actions, learning and ongoing support.</p></div></div></div></section>
 </section>
 
+
 <section class="page" id="page-training">
   <section class="pageHero dark">
-    <div class="wrap heroGrid"><div class="heroCopy"><div class="eyebrow">Corporate Training</div><h1 style="margin-top:12px">Develop the skills your organisation needs next.</h1><p>Browse the training areas below and open any category to view the available courses. Each course can be enquired about directly from the catalogue.</p><div class="heroActions"><button class="btn light" onclick="document.getElementById('trainingCategories').scrollIntoView({behavior:'smooth'})">Browse Categories ↓</button><button class="btn primary" data-page="contact">Talk to Us</button></div></div><div class="heroImg"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&q=85" alt="Professional training session"></div></div>
+    <div class="wrap">
+      <div class="heroCopy">
+        <div class="eyebrow">Corporate Training</div>
+        <h1 style="margin-top:12px">Choose the training route that fits your needs.</h1>
+        <p>Explore tailored in-house programmes for your organisation, or browse scheduled public training sessions open for registration.</p>
+      </div>
+    </div>
   </section>
-  <section class="section" id="trainingCategories"><div class="wrap"><div class="eyebrow">Training Options</div><h2 style="margin-top:10px">Choose how you would like to train.</h2><p style="max-width:760px;margin-top:14px">Explore tailored in-house programmes for your organisation, or browse upcoming public training dates open for registration.</p><div class="trainingModes"><article class="trainingMode reveal" onclick="document.getElementById('inHouseCategories').scrollIntoView({behavior:'smooth'})"><div class="modeLabel">For Organisations</div><h3>In-House Programmes</h3><p>Explore our full programme portfolio and enquire about a customised session for your team.</p><div class="modeLink">Browse Programmes →</div></article><article class="trainingMode reveal" data-page="public-training"><div class="modeLabel">Scheduled Courses</div><h3>Public Training</h3><p>View upcoming scheduled courses, dates, locations and registration availability.</p><div class="modeLink">View Upcoming Training →</div></article></div></div></section><section class="section soft" id="inHouseCategories"><div class="wrap"><div class="eyebrow">In-House Programmes</div><h2 style="margin-top:10px">Choose an area to explore.</h2><p style="max-width:720px;margin-top:14px">The programme portfolio covers core people, business, digital, operational and compliance capabilities.</p><div class="categoryGrid" id="categoryGrid"></div></div></section>
+
+  <section class="section trainingChoiceSection">
+    <div class="wrap">
+      <div class="eyebrow">Training Options</div>
+      <h2 style="margin-top:10px">How would you like to train?</h2>
+      <p style="max-width:720px;margin-top:14px">Choose one path below. You can return to this page anytime from the Training menu.</p>
+
+      <div class="trainingModes trainingModesRefined">
+        <article class="trainingMode trainingModeLink reveal" data-page="inhouse" tabindex="0" role="button" aria-label="Open In-House Programmes">
+          <div class="modeLabel">For Organisations</div>
+          <h3>In-House Programmes</h3>
+          <p>Browse the full programme portfolio and enquire about a customised session for your team.</p>
+          <div class="modeLink">Explore In-House Programmes</div>
+        </article>
+
+        <article class="trainingMode trainingModeLink reveal" data-page="public-training" tabindex="0" role="button" aria-label="Open Public Training">
+          <div class="modeLabel">Scheduled Courses</div>
+          <h3>Public Training</h3>
+          <p>View upcoming courses, dates, locations and registration availability from the live schedule.</p>
+          <div class="modeLink">View Public Training</div>
+        </article>
+      </div>
+    </div>
+  </section>
 </section>
 
-<section class="page" id="page-public-training"><section class="pageHero dark"><div class="wrap heroGrid"><div class="heroCopy"><div class="eyebrow">Public Training</div><h1 style="margin-top:12px">Upcoming programmes, ready to join.</h1><p>Browse scheduled public training by month and category. Course dates, locations and availability are synchronised from the live training calendar.</p><div class="heroActions"><button class="btn light" onclick="document.getElementById('publicSchedule').scrollIntoView({behavior:'smooth'})">Browse Upcoming Courses ↓</button><button class="btn primary" data-page="training">View In-House Programmes</button></div></div></div></section><section class="section" id="publicSchedule"><div class="wrap"><div class="eyebrow">Training Schedule</div><h2 style="margin-top:10px">Find your next programme.</h2><div class="publicFinderTop">
+<section class="page" id="page-inhouse">
+  <section class="pageHero dark">
+    <div class="wrap">
+      <button class="catalogBack trainingBackBtn" data-page="training" aria-label="Back to Training">← Back to Training</button>
+      <div class="heroCopy">
+        <div class="eyebrow">In-House Programmes</div>
+        <h1 style="margin-top:12px">Training built around your organisation.</h1>
+        <p>Explore programme areas below, then open any category to view available courses and enquire about a tailored in-house session.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="inHouseCategories">
+    <div class="wrap">
+      <div class="sectionLeadRow">
+        <div>
+          <div class="eyebrow">Programme Areas</div>
+          <h2 style="margin-top:10px">Choose an area to explore.</h2>
+          <p style="max-width:720px;margin-top:14px">Core people, business, digital, operational and compliance capabilities in one clear catalogue.</p>
+        </div>
+        <button class="textNavBtn" data-page="training">Training Options <span>→</span></button>
+      </div>
+      <div class="categoryGrid" id="categoryGrid"></div>
+    </div>
+  </section>
+</section>
+<section class="page" id="page-public-training"><section class="pageHero dark"><div class="wrap"><button class="catalogBack trainingBackBtn" data-page="training" aria-label="Back to Training">← Back to Training</button><div class="heroCopy"><div class="eyebrow">Public Training</div><h1 style="margin-top:12px">Upcoming programmes, ready to join.</h1><p>Browse scheduled public training by month and category. Course dates, locations and availability are synchronised from the live training calendar.</p><div class="heroActions"><button class="btn light" onclick="document.getElementById('publicSchedule').scrollIntoView({behavior:'smooth'})">Browse Upcoming Courses ↓</button><button class="btn primary" data-page="training">View In-House Programmes</button></div></div></section><section class="section" id="publicSchedule"><div class="wrap"><div class="eyebrow">Training Schedule</div><h2 style="margin-top:10px">Find your next programme.</h2><div class="publicFinderTop">
   <div class="publicSearchWrap"><input id="publicSearch" type="search" placeholder="Search upcoming courses…" aria-label="Search upcoming public training"></div>
   <div class="publicCount" id="publicCount"></div>
 </div><div class="publicToolbar"><div class="publicFilters"><select id="publicCategory"><option value="all">All categories</option></select><select id="publicMonth"><option value="all">All months</option></select></div><div class="viewSwitch"><button id="gridView" class="active" aria-label="Grid view">▦</button><button id="listView" aria-label="List view">☷</button></div></div><div class="publicCourses" id="publicCourses"></div><div class="publicEmpty" id="publicEmpty">No scheduled courses match these filters.</div></div></section></section>
 
 <section class="page" id="page-catalog">
-  <section class="catalogHero soft"><div class="wrap"><button class="catalogBack" data-page="training" aria-label="Back to Training">← Back to Training</button><div class="eyebrow">Training Catalogue</div><h1 id="catalogTitle" style="font-size:clamp(40px,5vw,68px);margin-top:10px">Human Resources</h1></div></section>
+  <section class="catalogHero soft"><div class="wrap"><button class="catalogBack" data-page="inhouse" aria-label="Back to In-House Programmes">← Back to In-House Programmes</button><div class="eyebrow">Training Catalogue</div><h1 id="catalogTitle" style="font-size:clamp(40px,5vw,68px);margin-top:10px">Human Resources</h1></div></section>
   <section class="section" style="padding-top:38px"><div class="wrap catalogLayout"><div class="catalogNavWrap"><aside class="catalogSide" id="catalogSide"></aside></div><div class="catalogContent"><div class="catalogHeader"><div><p id="catalogDescription"></p></div><div class="courseCount" id="courseCount"></div></div><div class="courseSearch"><input id="courseSearch" type="search" placeholder="Search within this category…" aria-label="Search courses"></div><div class="courseList" id="courseList"></div><div class="emptyState" id="emptyState">No matching course found in this category.</div><div class="noteBox" id="catalogNote" style="display:none"></div></div></div></section>
 </section>
 
@@ -972,10 +2182,90 @@ const icons={advisory:'<svg viewBox="0 0 24 24"><path d="M4 19h16M6 16V8m6 8V5m6
 
 const trainingKeys=Object.keys(trainingData);
 function renderMenus(){
-  trainingDropdown.innerHTML=`<div class="dropdownIntro"><b>Training</b><span>Choose in-house programmes or view scheduled public training.</span></div><div class="dropdownGrid"><button data-page="training"><span>In-House Programmes</span></button><button data-page="public-training"><span>Public Training</span></button>${trainingKeys.map(k=>`<button data-training="${k}"><span>${trainingData[k].label}</span></button>`).join('')}</div>`;
-  mobileTraining.innerHTML=`<button data-page="training">In-House Programmes</button><button data-page="public-training">Public Training</button>`+trainingKeys.map(k=>`<button data-training="${k}">${trainingData[k].label}</button>`).join('');
-  consultingDropdown.innerHTML=`<div class="dropdownIntro"><b>HR Consulting</b><span>Select a service to see the relevant support and enquiry options.</span></div><div class="dropdownGrid">${Object.entries(consultingData).map(([k,v])=>`<button data-consult="${k}"><span>${v.title}</span></button>`).join('')}</div>`;
-  mobileConsulting.innerHTML=Object.entries(consultingData).map(([k,v])=>`<button data-consult="${k}">${v.title}</button>`).join('');
+  trainingDropdown.innerHTML=`
+    <div class="dropdownIntro cleanMenuIntro">
+      <b>Training</b>
+    </div>
+
+    <div class="trainingGroupedDesktop">
+      <section class="desktopTrainingGroup desktopTrainingGroupInhouse">
+        <button class="desktopGroupHead" data-page="inhouse">
+          <span>
+            <b>In-House Programmes</b>
+            <small>Tailored training for organisations</small>
+          </span>
+          <i>→</i>
+        </button>
+
+        <div class="desktopInhouseAreas">
+          ${trainingKeys.map(k=>`<button data-training="${k}">${trainingData[k].label}</button>`).join('')}
+        </div>
+      </section>
+
+      <button class="desktopPublicCard" data-page="public-training">
+        <span>
+          <b>Public Training</b>
+          <small>Upcoming scheduled courses</small>
+        </span>
+        <i>→</i>
+      </button>
+    </div>`;
+
+  mobileTraining.innerHTML=`
+    <div class="mobileGroupedTraining">
+      <section class="mobileInhouseGroup">
+        <div class="mobileInhouseHead">
+          <button class="mobileInhouseMain" data-page="inhouse">
+            <span>
+              <b>In-House Programmes</b>
+              <small>Tailored for your organisation</small>
+            </span>
+            <i>→</i>
+          </button>
+
+          <button class="mobileInhouseToggle" type="button" aria-expanded="false" aria-label="Show In-House programme areas">
+            <span>Programme Areas</span>
+            <i>+</i>
+          </button>
+        </div>
+
+        <div class="mobileInhousePanel">
+          ${trainingKeys.map(k=>`<button data-training="${k}">${trainingData[k].label}</button>`).join('')}
+        </div>
+      </section>
+
+      <button class="mobilePublicClean" data-page="public-training">
+        <span>
+          <b>Public Training</b>
+          <small>Upcoming scheduled courses</small>
+        </span>
+        <i>→</i>
+      </button>
+    </div>`;
+
+  consultingDropdown.innerHTML=`
+    <div class="dropdownIntro"><b>HR Consulting</b></div>
+    <div class="dropdownGrid">
+      ${Object.entries(consultingData).map(([k,v])=>`<button data-consult="${k}"><span>${v.title}</span></button>`).join('')}
+    </div>`;
+
+  mobileConsulting.innerHTML=Object.entries(consultingData)
+    .map(([k,v])=>`<button data-consult="${k}">${v.title}</button>`)
+    .join('');
+
+  const toggle=mobileTraining.querySelector('.mobileInhouseToggle');
+  const panel=mobileTraining.querySelector('.mobileInhousePanel');
+  if(toggle && panel){
+    toggle.addEventListener('click',e=>{
+      e.preventDefault();
+      e.stopPropagation();
+      const open=panel.classList.toggle('open');
+      toggle.classList.toggle('open',open);
+      toggle.setAttribute('aria-expanded',open?'true':'false');
+      const icon=toggle.querySelector('i');
+      if(icon) icon.textContent=open?'−':'+';
+    });
+  }
 }
 
 function renderCategories(){
@@ -1137,6 +2427,14 @@ function switchPage(name){
   window.scrollTo({top:0,behavior:'instant'});setTimeout(initReveal,30);
 }
 document.addEventListener('click',e=>{const btn=e.target.closest('[data-page]');if(btn){e.preventDefault();switchPage(btn.dataset.page)}});
+document.addEventListener('keydown',e=>{
+  const card=e.target.closest?.('.trainingModeLink[data-page]');
+  if(!card)return;
+  if(e.key==='Enter'||e.key===' '){
+    e.preventDefault();
+    switchPage(card.dataset.page);
+  }
+});
 // Keep a clicked desktop dropdown closed until the pointer leaves that menu item.
 document.querySelectorAll('.navItem').forEach(item=>{item.addEventListener('mouseleave',()=>item.classList.remove('suppressDropdown'));const main=item.querySelector(':scope > button[data-page]');if(main)main.addEventListener('click',()=>item.classList.add('suppressDropdown'));});
 
