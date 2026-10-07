@@ -1936,6 +1936,19 @@ html,body{width:100%;overflow-x:clip}
   }
 }
 
+
+/* Contact page: desktop two-column layout; mobile remains unchanged */
+@media(min-width:981px){
+  #page-contact .contactDesktopGrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(390px,.78fr);gap:72px;align-items:center}
+  #page-contact .contactDesktopHero{padding-bottom:76px}
+  #page-contact .contactQuickCard{max-width:none;width:100%;padding:30px}
+  #page-contact .contactQuickCard h2{margin-top:7px}
+  #page-contact .contactQuickCard p{margin:4px 0 18px}
+}
+@media(max-width:980px){
+  #page-contact .contactQuickCard{margin-top:46px}
+}
+
 </style>
 </head>
 <body>
@@ -2106,8 +2119,7 @@ html,body{width:100%;overflow-x:clip}
 </section>
 
 <section class="page" id="page-contact">
-  <section class="pageHero"><div class="wrap"><div class="heroCopy"><div class="eyebrow">Contact ADtriomphe</div><h1>Let’s talk about your people priorities.</h1><p>Whether you are planning a training programme, reviewing HR processes or looking for outsourced support, start with a conversation.</p><div class="list"><div><b>Call / WhatsApp</b><a href="https://wa.me/60149607981" target="_blank" rel="noopener">+60 14-960 7981</a></div><div><b>Email</b><a href="mailto:training@adtriomphe.com">training@adtriomphe.com</a></div><div><b>Instagram</b><a href="https://www.instagram.com/adtriomphe/" target="_blank" rel="noopener">@adtriomphe</a></div></div></div></div></section>
-  <section class="section" style="padding-top:46px"><div class="wrap"><div class="card" style="max-width:760px"><div class="eyebrow">Quick Enquiry</div><h2 style="font-size:38px">How can we help?</h2><p>Choose the area closest to your current need.</p><div style="display:grid;gap:12px"><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20corporate%20training." target="_blank" class="btn primary">Corporate Training →</a><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20HR%20consultancy%20or%20outsourcing." target="_blank" class="btn">HR Consultancy / Outsource →</a><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20ER%20%2F%20IR%20advisory." target="_blank" class="btn">ER / IR Advisory →</a><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20payroll%20support." target="_blank" class="btn">Payroll Support →</a></div></div></div></section>
+  <section class="pageHero contactDesktopHero"><div class="wrap contactDesktopGrid"><div class="heroCopy"><div class="eyebrow">Contact ADtriomphe</div><h1>Let’s talk about your people priorities.</h1><p>Whether you are planning a training programme, reviewing HR processes or looking for outsourced support, start with a conversation.</p><div class="list"><div><b>Call / WhatsApp</b><a href="https://wa.me/60149607981" target="_blank" rel="noopener">+60 14-960 7981</a></div><div><b>Email</b><a href="mailto:training@adtriomphe.com">training@adtriomphe.com</a></div><div><b>Instagram</b><a href="https://www.instagram.com/adtriomphe/" target="_blank" rel="noopener">@adtriomphe</a></div></div></div><div class="card contactQuickCard"><div class="eyebrow">Quick Enquiry</div><h2 style="font-size:38px">How can we help?</h2><p>Choose the area closest to your current need.</p><div style="display:grid;gap:12px"><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20corporate%20training." target="_blank" class="btn primary">Corporate Training →</a><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20HR%20consultancy%20or%20outsourcing." target="_blank" class="btn">HR Consultancy / Outsource →</a><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20ER%20%2F%20IR%20advisory." target="_blank" class="btn">ER / IR Advisory →</a><a href="https://wa.me/60149607981?text=Hi%20ADtriomphe%2C%20I%27d%20like%20to%20enquire%20about%20payroll%20support." target="_blank" class="btn">Payroll Support →</a></div></div></div></section>
 </section>
 
 <section class="enquiryBand" id="enquiry">
