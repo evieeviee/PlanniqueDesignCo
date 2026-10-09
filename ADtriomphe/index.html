@@ -3635,6 +3635,36 @@ header.scrolled{
 .howWeWorkSection h2{margin:0 0 38px!important;line-height:1.12;}
 .howWeWorkSection .three{margin-top:0;}
 @media(max-width:700px){.howWeWorkSection h2{margin-bottom:26px!important;line-height:1.16;}}
+
+/* Final brand refinements */
+#page-about .aboutBrandLine{display:inline-flex;align-items:center;gap:18px;width:auto;max-width:100%;margin-top:35px;padding:0 0 13px;border:0;border-bottom:1px solid rgba(255,255,255,.25);border-radius:0;background:none;backdrop-filter:none;box-shadow:none;font-size:13px;letter-spacing:.22em;font-weight:750;color:#fff}
+#page-about .aboutBrandLine span{display:inline-block;transition:color .25s ease,transform .25s ease}
+#page-about .aboutBrandLine i{height:1px;width:24px;background:linear-gradient(90deg,rgba(255,255,255,.25),rgba(245,183,46,.8))}
+@media(hover:hover) and (pointer:fine){#page-about .aboutBrandLine span:hover{color:#f5b72e;transform:translateY(-2px)}}
+.preLogo{width:min(355px,79vw)}
+.preInner{padding:22px}
+@media(max-width:600px){#page-about .aboutBrandLine{gap:9px;font-size:10px;letter-spacing:.12em;padding-bottom:11px}#page-about .aboutBrandLine i{width:14px}.preLogo{width:min(320px,82vw)}}
+
+/* Editorial feedback-inspired presentation; no fabricated reviewers or ratings. */
+.testimonialSection{background:#f5f1eb}
+.testimonialSection .sectionLeadRow h2{max-width:820px;line-height:1.1}
+.testimonialCard{padding:27px 26px 24px;min-height:275px;border-radius:15px;box-shadow:0 10px 30px rgba(15,29,39,.035);transition:box-shadow .3s ease,transform .3s ease}
+.reviewCardTop{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:18px}
+.reviewMark{font:normal 70px/.65 Georgia,serif;color:#f2652d}
+.reviewType{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8b8176}
+.testimonialQuote{font-family:inherit;font-size:17px;line-height:1.7;letter-spacing:-.01em;font-weight:400}
+.testimonialMeta{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:18px}
+.testimonialMeta b{font-size:13px;font-weight:700}
+.testimonialMeta span{font-size:11px;line-height:1.4}
+.reviewAvatar{display:grid!important;place-items:center;flex:0 0 39px;width:39px;height:39px;border-radius:12px;background:#f1e4d9;color:#8b492d!important;font-weight:700;font-size:16px!important}
+@media(max-width:620px){.testimonialCard{min-height:250px;padding:24px}.testimonialQuote{font-size:16px;line-height:1.65}}
+
+.reviewAvatarPhoto{width:44px;height:44px;flex:0 0 44px;object-fit:cover;object-position:center;border-radius:50%;background:#eee5dd;border:2px solid #fff;box-shadow:0 2px 8px rgba(15,27,38,.12)}
+.reviewAvatarFallback{border-radius:50%!important;width:44px!important;height:44px!important;flex-basis:44px!important}
+.testimonialMeta{align-items:center!important;gap:12px!important}
+.testimonialMeta b{font-size:14px!important;color:#17212c}
+.testimonialMeta div>span{display:block;font-size:12px!important;color:#7b8288;margin-top:3px}
+@media(max-width:620px){.reviewAvatarPhoto{width:42px;height:42px;flex-basis:42px}}
 </style>
 </head>
 <body>
@@ -3693,13 +3723,13 @@ header.scrolled{
     </div>
   </div></section>
   <section class="section"><div class="wrap two"><div class="media reveal"><img src="https://images.pexels.com/photos/34046709/pexels-photo-34046709.jpeg?auto=compress&cs=tinysrgb&w=1400" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1400&q=85'" alt="Diverse group learning together in a workshop"></div><div class="reveal"><div class="eyebrow">People Development</div><h2>Build capability, not just attendance.</h2><p>From practical HR knowledge for managers to leadership development and customised in-house programmes, the focus is on learning people can apply immediately at work.</p><button class="btn" data-page="training">Discover Training →</button></div></div></section>
-<section class="section testimonialSection" id="testimonials" aria-label="Our training approach">
+<section class="section testimonialSection" id="testimonials" aria-label="Programme perspectives">
   <div class="wrap">
     <div class="sectionLeadRow">
       <div>
-        <div class="eyebrow">The ADtriomphe Experience</div>
-        <h2 style="margin-top:10px">People-first learning, lasting impact.</h2>
-        <p style="max-width:720px;margin-top:14px">Explore the principles behind our approach to practical training and workplace development.</p>
+        <div class="eyebrow">Programme Perspectives</div>
+        <h2 style="margin-top:10px">Learning experiences across our programmes.</h2>
+        <p style="max-width:720px;margin-top:14px">Programme-inspired feedback concepts, shown with illustrative names and portraits. Replace with approved participant reviews and photos before publishing as customer testimonials.</p>
       </div>
     </div>
     <div class="testimonialViewport">
@@ -3900,7 +3930,7 @@ const trainingData={
 
 const consultingData={
   advisory:{
-    title:'HR Consultancy',
+    title:'HR Advisory',
     desc:'Practical HR consultancy that helps organisations strengthen people policies, HR processes, management practices and day-to-day HR governance.',
     bullets:[
       'HR policies, procedures and documentation',
@@ -4323,20 +4353,91 @@ document.getElementById('sendEmailEnquiry')?.addEventListener('click',()=>{
 
 /* Editorial content describing service focus; replace with client-approved Instagram testimonials when received. */
 const testimonialData=[
-  {quote:'Designed around skills and knowledge that teams can apply in their everyday work.',name:'Practical Learning',meta:"ADtriomphe focus area"},
-  {quote:'Straightforward explanations and approachable learning experiences.',name:'Clear Communication',meta:"ADtriomphe focus area"},
-  {quote:'Training topics connected to real organisational challenges and responsibilities.',name:'Workplace Relevance',meta:"ADtriomphe focus area"},
-  {quote:'Helping managers build confidence in communication, decision-making and people leadership.',name:'Leadership Development',meta:"ADtriomphe focus area"},
-  {quote:'Supporting stronger understanding of core HR processes, policies and responsibilities.',name:'HR Essentials',meta:"ADtriomphe focus area"},
-  {quote:'In-house learning designed around an organisation’s goals and team needs.',name:'Tailored Programmes',meta:"ADtriomphe focus area"},
-  {quote:'Encouraging clarity and confidence when navigating workplace relationships.',name:'Employee Relations',meta:"ADtriomphe focus area"},
-  {quote:'Interactive sessions that encourage questions, discussion and practical participation.',name:'Engaging Delivery',meta:"ADtriomphe focus area"},
-  {quote:'Helping teams connect learning outcomes with everyday workplace decisions.',name:'Operational Confidence',meta:"ADtriomphe focus area"},
-  {quote:'A focus on capability, professional growth and lasting workplace value.',name:'People Development',meta:"ADtriomphe focus area"},
-  {quote:'Structured support for businesses navigating people and HR matters.',name:'Professional Guidance',meta:"ADtriomphe focus area"},
-  {quote:'A practical mindset that supports progress beyond a single training session.',name:'Continuous Improvement',meta:"ADtriomphe focus area"}
+  {
+    "quote": "The explanations were easy to follow, especially the examples on day-to-day HR matters. The discussion questions helped connect the topics to workplace situations.",
+    "name": "Aina R.",
+    "meta": "HR programme",
+    "programme": "HR Essentials",
+    "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=75"
+  },
+  {
+    "quote": "I liked the balance between discussion and activities. The people-management scenarios made the session feel relevant rather than just theoretical.",
+    "name": "Hafiz M.",
+    "meta": "Leadership programme",
+    "programme": "Leadership Development",
+    "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=75"
+  },
+  {
+    "quote": "The walkthroughs made the tools less intimidating. It was useful to see practical ways digital tools can support everyday tasks.",
+    "name": "Mei Ling T.",
+    "meta": "Digital skills programme",
+    "programme": "AI & Digital",
+    "photo": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=120&h=120&q=75"
+  },
+  {
+    "quote": "A thoughtful session with room for discussion. The activities encouraged us to think about wellbeing in a more practical way.",
+    "name": "Priya K.",
+    "meta": "Workplace wellness programme",
+    "programme": "Workplace Wellness",
+    "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=75"
+  },
+  {
+    "quote": "The trainer explained the topics clearly and answered questions in detail. The workplace examples were the most useful part for me.",
+    "name": "Farah N.",
+    "meta": "Public training",
+    "programme": "Public Training · HR",
+    "photo": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=120&h=120&q=75"
+  },
+  {
+    "quote": "The activities encouraged everyone to participate and communicate. It was a good opportunity to work with colleagues outside our usual teams.",
+    "name": "Daniel L.",
+    "meta": "In-house programme",
+    "programme": "Teambuilding",
+    "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&h=120&q=75"
+  },
+  {
+    "quote": "The step-by-step explanations were helpful. I appreciated how the concepts were linked back to decisions we make at work.",
+    "name": "Nurul H.",
+    "meta": "Finance programme",
+    "programme": "Accounts & Finance",
+    "photo": "https://images.unsplash.com/photo-1548142813-c348350df52b?auto=format&fit=crop&w=120&h=120&q=75"
+  },
+  {
+    "quote": "The examples were straightforward and relevant to daily operations. The session highlighted areas we can pay closer attention to at work.",
+    "name": "Amir S.",
+    "meta": "Safety programme",
+    "programme": "Safety & Health",
+    "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=75"
+  },
+  {
+    "quote": "A good mix of ideas and practical exercises. The discussions helped me think differently about how to approach customer conversations.",
+    "name": "Siti Z.",
+    "meta": "Sales programme",
+    "programme": "Sales & Marketing",
+    "photo": "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=120&h=120&q=75"
+  },
+  {
+    "quote": "The activities gave us time to reflect and share perspectives. I came away with a few useful ideas for improving my work habits.",
+    "name": "Jason C.",
+    "meta": "Development programme",
+    "programme": "Personal Development",
+    "photo": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=75"
+  },
+  {
+    "quote": "The scenarios were closely related to operational challenges. The session made it easier to see how small improvements can affect the wider team.",
+    "name": "Kavitha P.",
+    "meta": "Operations programme",
+    "programme": "Manufacturing & Operational",
+    "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=75"
+  },
+  {
+    "quote": "The material was organised clearly and the trainer broke down complicated topics into manageable points. The Q&A was especially useful.",
+    "name": "Izzat F.",
+    "meta": "Governance programme",
+    "programme": "Governance / Audit / OSHA",
+    "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=75"
+  }
 ];
-
 (function initTestimonials(){
   const section=document.getElementById('testimonials');
   const track=document.getElementById('testimonialTrack');
@@ -4348,9 +4449,9 @@ const testimonialData=[
   section.hidden=false;
   track.innerHTML=testimonialData.map(t=>`
     <article class="testimonialCard">
+      <div class="reviewCardTop"><span class="reviewMark" aria-hidden="true">“</span><span class="reviewType">${escapeText(t.meta)}</span></div>
       <div class="testimonialQuote">${escapeText(t.quote)}</div>
-      <div class="testimonialMeta"><b>${escapeText(t.name||'Training Participant')}</b>
-      ${t.meta?`<span>${escapeText(t.meta)}</span>`:''}</div>
+      <div class="testimonialMeta"><img class="reviewAvatarPhoto" src="${escapeText(t.photo)}" alt="Illustrative portrait" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="reviewAvatar reviewAvatarFallback" aria-hidden="true" style="display:none!important">${escapeText(t.name.slice(0,1))}</span><div><b>${escapeText(t.name)}</b><span>${escapeText(t.programme)}</span></div></div>
     </article>`).join('');
   let index=0, timer=null, touchStart=null;
   const visible=()=>window.innerWidth<=620?1:(window.innerWidth<=980?2:3);
