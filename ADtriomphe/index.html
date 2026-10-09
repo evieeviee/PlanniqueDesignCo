@@ -3627,6 +3627,11 @@ header.scrolled{
 @media(max-width:980px){.testimonialCard{flex-basis:calc((100% - 16px)/2)}}
 @media(max-width:620px){.testimonialCard{flex-basis:100%;min-height:190px}.testimonialSection{overflow:hidden}}
 @media(prefers-reduced-motion:reduce){.testimonialTrack{transition:none}}
+
+.emailChoiceDialog{border:0;border-radius:18px;padding:0;width:min(490px,calc(100% - 30px));max-height:90vh;box-shadow:0 28px 90px rgba(10,25,36,.24);color:#14222c}
+.emailChoiceDialog::backdrop{background:rgba(8,20,30,.6);backdrop-filter:blur(3px)}
+.emailChoiceInner{padding:32px;position:relative}.emailChoiceInner h2{font-size:30px;line-height:1.12;margin:12px 0}.emailChoiceInner p{font-size:15px;line-height:1.6;color:#5b6770;margin-bottom:22px}.emailChoiceInner small{display:block;color:#68737b;font-size:12px;line-height:1.5;margin-top:16px}.emailChoiceClose{position:absolute;right:18px;top:16px;background:transparent;border:0;font-size:28px;cursor:pointer;color:#26343e}.emailChoiceActions{display:grid;gap:9px}.emailChoiceAction{display:flex;align-items:center;justify-content:space-between;width:100%;background:#f7f7f5;color:#15232d;text-decoration:none;border:1px solid #e6e6e2;border-radius:10px;padding:14px 16px;font:600 15px inherit;cursor:pointer;text-align:left}.emailChoiceAction:hover,.emailChoiceAction:focus-visible{border-color:#ef6a25;background:#fff6ef}.emailChoiceAction span{color:#ed6425}
+@media(max-width:540px){.emailChoiceInner{padding:26px 20px}.emailChoiceInner h2{font-size:26px}}
 </style>
 </head>
 <body>
@@ -4301,7 +4306,25 @@ document.addEventListener('click',e=>{
 
 enquiryForm.addEventListener('submit',e=>{e.preventDefault();const txt=`Hi ADtriomphe, I would like to make an enquiry.\n\nName: ${name.value}\nCompany: ${company.value||'-'}\nContact: ${phone.value||'-'}\nEnquiry Type: ${enquiryType.value}\nCourse / Service: ${interest.value||'-'}\nMessage: ${message.value||'-'}`;window.open('https://wa.me/60149607981?text='+encodeURIComponent(txt),'_blank')});
 
-document.getElementById('sendEmailEnquiry')?.addEventListener('click',()=>{if(!name.value.trim()){name.focus();return;}const subject=`ADtriomphe Enquiry - ${enquiryType.value}`;const body=`Hi ADtriomphe, I would like to make an enquiry.\n\nName: ${name.value}\nCompany: ${company.value||'-'}\nContact: ${phone.value||'-'}\nEnquiry Type: ${enquiryType.value}\nCourse / Service: ${interest.value||'-'}\nMessage: ${message.value||'-'}`;window.location.href='mailto:training@adtriomphe.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);});
+document.getElementById('sendEmailEnquiry')?.addEventListener('click',()=>{
+  if(!enquiryForm.reportValidity())return;
+  const subject=`ADtriomphe Enquiry - ${enquiryType.value}`;
+  const body=`Hi ADtriomphe, I would like to make an enquiry.\n\nName: ${name.value}\nCompany: ${company.value||'-'}\nContact: ${phone.value||'-'}\nEnquiry Type: ${enquiryType.value}\nCourse / Service: ${interest.value||'-'}\nMessage: ${message.value||'-'}`;
+  const recipient='training@adtriomphe.com';
+  const gmail='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(recipient)+'&su='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  const outlook='https://outlook.office.com/mail/deeplink/compose?to='+encodeURIComponent(recipient)+'&subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  const mailto='mailto:'+recipient+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  const dialog=document.getElementById('emailChoiceDialog');
+  dialog.querySelector('[data-email="gmail"]').href=gmail;
+  dialog.querySelector('[data-email="outlook"]').href=outlook;
+  dialog.querySelector('[data-email="app"]').href=mailto;
+  dialog.querySelector('[data-email="copy"]').onclick=async()=>{
+    const text='To: '+recipient+'\nSubject: '+subject+'\n\n'+body;
+    try{await navigator.clipboard.writeText(text);dialog.querySelector('[data-email="copy"]').textContent='Copied!';}
+    catch(e){window.prompt('Copy your enquiry:',text);}
+  };
+  if(typeof dialog.showModal==='function')dialog.showModal();else dialog.hidden=false;
+});
 
 
 /* Editorial content describing service focus; replace with client-approved Instagram testimonials when received. */
@@ -4510,5 +4533,21 @@ let io;function initReveal(){if(io)io.disconnect();io=new IntersectionObserver(e
 })();
 
 </script>
+
+<dialog id="emailChoiceDialog" class="emailChoiceDialog" aria-labelledby="emailChoiceTitle">
+  <div class="emailChoiceInner">
+    <button type="button" class="emailChoiceClose" aria-label="Close" onclick="document.getElementById('emailChoiceDialog').close()">×</button>
+    <div class="eyebrow">EMAIL ENQUIRY</div>
+    <h2 id="emailChoiceTitle">Choose how to email us</h2>
+    <p>Your enquiry is ready. Select your email service to review and send it to ADtriomphe.</p>
+    <div class="emailChoiceActions">
+      <a data-email="gmail" target="_blank" rel="noopener" class="emailChoiceAction" href="#">Open in Gmail <span>↗</span></a>
+      <a data-email="outlook" target="_blank" rel="noopener" class="emailChoiceAction" href="#">Open in Outlook <span>↗</span></a>
+      <a data-email="app" class="emailChoiceAction" href="#">Use default email app <span>↗</span></a>
+      <button data-email="copy" type="button" class="emailChoiceAction">Copy enquiry details <span>⧉</span></button>
+    </div>
+    <small>You'll need to press Send in your email service. The website does not send emails automatically.</small>
+  </div>
+</dialog>
 </body>
 </html>
