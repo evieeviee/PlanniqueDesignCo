@@ -3628,10 +3628,13 @@ header.scrolled{
 @media(max-width:620px){.testimonialCard{flex-basis:100%;min-height:190px}.testimonialSection{overflow:hidden}}
 @media(prefers-reduced-motion:reduce){.testimonialTrack{transition:none}}
 
-.emailChoiceDialog{border:0;border-radius:18px;padding:0;width:min(490px,calc(100% - 30px));max-height:90vh;box-shadow:0 28px 90px rgba(10,25,36,.24);color:#14222c}
-.emailChoiceDialog::backdrop{background:rgba(8,20,30,.6);backdrop-filter:blur(3px)}
-.emailChoiceInner{padding:32px;position:relative}.emailChoiceInner h2{font-size:30px;line-height:1.12;margin:12px 0}.emailChoiceInner p{font-size:15px;line-height:1.6;color:#5b6770;margin-bottom:22px}.emailChoiceInner small{display:block;color:#68737b;font-size:12px;line-height:1.5;margin-top:16px}.emailChoiceClose{position:absolute;right:18px;top:16px;background:transparent;border:0;font-size:28px;cursor:pointer;color:#26343e}.emailChoiceActions{display:grid;gap:9px}.emailChoiceAction{display:flex;align-items:center;justify-content:space-between;width:100%;background:#f7f7f5;color:#15232d;text-decoration:none;border:1px solid #e6e6e2;border-radius:10px;padding:14px 16px;font:600 15px inherit;cursor:pointer;text-align:left}.emailChoiceAction:hover,.emailChoiceAction:focus-visible{border-color:#ef6a25;background:#fff6ef}.emailChoiceAction span{color:#ed6425}
-@media(max-width:540px){.emailChoiceInner{padding:26px 20px}.emailChoiceInner h2{font-size:26px}}
+.emailChoiceInner h2{font-size:26px}}
+
+/* How We Work: deliberate breathing room between heading and cards */
+.howWeWorkSection .eyebrow{margin-bottom:16px;}
+.howWeWorkSection h2{margin:0 0 38px!important;line-height:1.12;}
+.howWeWorkSection .three{margin-top:0;}
+@media(max-width:700px){.howWeWorkSection h2{margin-bottom:26px!important;line-height:1.16;}}
 </style>
 </head>
 <body>
@@ -3714,7 +3717,7 @@ header.scrolled{
 <section class="page" id="page-about">
   <section class="pageHero dark"><div class="wrap"><div class="heroCopy"><div class="eyebrow">About ADtriomphe</div><h1>Practical HR expertise for growing organisations.</h1><p>ADtriomphe is positioned around people development, professional HR guidance and practical workplace solutions.</p><div class="aboutBrandLine" aria-label="ADtriomphe brand promise"><span>ADAPT</span><i></i><span>ACHIEVE</span><i></i><span>ASPIRE</span></div></div></div></section>
   <section class="section"><div class="wrap two"><div><div class="eyebrow">What We Believe</div><h2>People solutions should make business easier.</h2></div><div><p>Strong HR practices create clarity for managers, confidence for employees and stronger foundations for growth. ADtriomphe combines professional guidance with practical execution so organisations can move from policy to real workplace impact.</p><div class="list"><div><b>Practical</b><span>Focused on real workplace application.</span></div><div><b>Tailored</b><span>Designed around the organisation, not a generic template.</span></div><div><b>Professional</b><span>Structured HR guidance with business context.</span></div></div></div></div></section>
-  <section class="section soft"><div class="wrap"><div class="eyebrow">How We Work</div><h2>Advisory + capability + execution.</h2><div class="three"><div class="card"><span class="num">01</span><h3>Understand</h3><p>Clarify the organisation’s challenges, people priorities and business context.</p></div><div class="card"><span class="num">02</span><h3>Design</h3><p>Shape the right training, HR process or support model around those needs.</p></div><div class="card"><span class="num">03</span><h3>Apply</h3><p>Translate recommendations into practical actions, learning and ongoing support.</p></div></div></div></section>
+  <section class="section soft howWeWorkSection"><div class="wrap"><div class="eyebrow">How We Work</div><h2>Advisory + capability + execution.</h2><div class="three"><div class="card"><span class="num">01</span><h3>Understand</h3><p>Clarify the organisation’s challenges, people priorities and business context.</p></div><div class="card"><span class="num">02</span><h3>Design</h3><p>Shape the right training, HR process or support model around those needs.</p></div><div class="card"><span class="num">03</span><h3>Apply</h3><p>Translate recommendations into practical actions, learning and ongoing support.</p></div></div></div></section>
 </section>
 
 
@@ -3845,7 +3848,7 @@ header.scrolled{
         <div class="field"><label for="enquiryType">Enquiry Type</label><select id="enquiryType"><option>Training</option><option>HR Consultancy</option><option>Payroll Management</option><option>Workforce Solutions</option><option>IR / ER</option></select></div>
         <div class="field full"><label for="interest">Course / Service</label><input id="interest" placeholder="Select a course/service or type here"></div>
         <div class="field full"><label for="message">Message</label><textarea id="message" placeholder="Tell us your requirement, number of participants, or any other details."></textarea></div>
-        <div class="field full"><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn primary" type="submit">Send via WhatsApp →</button><button class="btn" type="button" id="sendEmailEnquiry">Send via Email →</button></div></div>
+        <div class="field full"><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn primary" type="submit">Send via WhatsApp →</button><button class="btn" type="button" id="sendEmailEnquiry">Send via Email ↗</button></div></div>
       </div>
     </form>
   </div>
@@ -4304,26 +4307,17 @@ document.addEventListener('click',e=>{
   setTimeout(()=>document.getElementById('name')?.focus({preventScroll:true}),500);
 });
 
-enquiryForm.addEventListener('submit',e=>{e.preventDefault();const txt=`Hi ADtriomphe, I would like to make an enquiry.\n\nName: ${name.value}\nCompany: ${company.value||'-'}\nContact: ${phone.value||'-'}\nEnquiry Type: ${enquiryType.value}\nCourse / Service: ${interest.value||'-'}\nMessage: ${message.value||'-'}`;window.open('https://wa.me/60149607981?text='+encodeURIComponent(txt),'_blank')});
+enquiryForm.addEventListener('submit',e=>{e.preventDefault();const txt=`Hi ADtriomphe, I would like to make an enquiry.\n\nName: ${document.getElementById('name').value.trim()}\nCompany: ${company.value||'-'}\nContact: ${phone.value||'-'}\nEnquiry Type: ${enquiryType.value}\nCourse / Service: ${interest.value||'-'}\nMessage: ${message.value||'-'}`;window.open('https://wa.me/60149607981?text='+encodeURIComponent(txt),'_blank')});
 
 document.getElementById('sendEmailEnquiry')?.addEventListener('click',()=>{
   if(!enquiryForm.reportValidity())return;
+  const fullName=document.getElementById('name').value.trim();
   const subject=`ADtriomphe Enquiry - ${enquiryType.value}`;
-  const body=`Hi ADtriomphe, I would like to make an enquiry.\n\nName: ${name.value}\nCompany: ${company.value||'-'}\nContact: ${phone.value||'-'}\nEnquiry Type: ${enquiryType.value}\nCourse / Service: ${interest.value||'-'}\nMessage: ${message.value||'-'}`;
+  const body=`Hi ADtriomphe, I would like to make an enquiry.\n\nName: ${fullName}\nCompany: ${company.value.trim()||'-'}\nContact: ${phone.value.trim()||'-'}\nEnquiry Type: ${enquiryType.value}\nCourse / Service: ${interest.value.trim()||'-'}\nMessage: ${message.value.trim()||'-'}`;
   const recipient='training@adtriomphe.com';
   const gmail='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(recipient)+'&su='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-  const outlook='https://outlook.office.com/mail/deeplink/compose?to='+encodeURIComponent(recipient)+'&subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-  const mailto='mailto:'+recipient+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-  const dialog=document.getElementById('emailChoiceDialog');
-  dialog.querySelector('[data-email="gmail"]').href=gmail;
-  dialog.querySelector('[data-email="outlook"]').href=outlook;
-  dialog.querySelector('[data-email="app"]').href=mailto;
-  dialog.querySelector('[data-email="copy"]').onclick=async()=>{
-    const text='To: '+recipient+'\nSubject: '+subject+'\n\n'+body;
-    try{await navigator.clipboard.writeText(text);dialog.querySelector('[data-email="copy"]').textContent='Copied!';}
-    catch(e){window.prompt('Copy your enquiry:',text);}
-  };
-  if(typeof dialog.showModal==='function')dialog.showModal();else dialog.hidden=false;
+  const opened=window.open(gmail,'_blank','noopener,noreferrer');
+  if(!opened){window.location.href='mailto:'+recipient+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);}
 });
 
 
@@ -4534,20 +4528,6 @@ let io;function initReveal(){if(io)io.disconnect();io=new IntersectionObserver(e
 
 </script>
 
-<dialog id="emailChoiceDialog" class="emailChoiceDialog" aria-labelledby="emailChoiceTitle">
-  <div class="emailChoiceInner">
-    <button type="button" class="emailChoiceClose" aria-label="Close" onclick="document.getElementById('emailChoiceDialog').close()">×</button>
-    <div class="eyebrow">EMAIL ENQUIRY</div>
-    <h2 id="emailChoiceTitle">Choose how to email us</h2>
-    <p>Your enquiry is ready. Select your email service to review and send it to ADtriomphe.</p>
-    <div class="emailChoiceActions">
-      <a data-email="gmail" target="_blank" rel="noopener" class="emailChoiceAction" href="#">Open in Gmail <span>↗</span></a>
-      <a data-email="outlook" target="_blank" rel="noopener" class="emailChoiceAction" href="#">Open in Outlook <span>↗</span></a>
-      <a data-email="app" class="emailChoiceAction" href="#">Use default email app <span>↗</span></a>
-      <button data-email="copy" type="button" class="emailChoiceAction">Copy enquiry details <span>⧉</span></button>
-    </div>
-    <small>You'll need to press Send in your email service. The website does not send emails automatically.</small>
-  </div>
-</dialog>
+
 </body>
 </html>
