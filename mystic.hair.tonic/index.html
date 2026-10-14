@@ -1574,6 +1574,31 @@ footer p{
 
 }
 
+
+/* Client requested sales content */
+.mystic-pitch{padding:46px 30px;background:#fffaf0;text-align:center}
+.mystic-pitch h2{font:700 clamp(28px,5vw,40px)/1.14 Georgia,serif;color:#073d2b;margin:0 auto 16px;max-width:620px}
+.mystic-pitch .pitch-intro{max-width:610px;margin:0 auto 22px;color:#525e55;font-size:16px;line-height:1.7}
+.pitch-benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 auto 23px;max-width:660px}
+.pitch-benefit{background:#fff;border:1px solid #e7dcc1;border-radius:12px;padding:18px 12px;font-size:14px;font-weight:700;color:#184631;line-height:1.5}
+.pitch-benefit svg{display:block;width:26px;height:26px;margin:0 auto 9px;color:#ae822a}
+.pitch-close{color:#0b4b34;font-size:17px;font-weight:800;margin:0 0 7px}
+.pitch-tagline{font:700 20px/1.35 Georgia,serif;color:#997329;margin:0 auto 22px;max-width:590px}
+.result-gallery{display:grid;gap:18px}
+.result-gallery figure{margin:0}
+.result-gallery img{width:100%;height:auto;border-radius:10px;display:block}
+.result-gallery figcaption{text-align:center;color:#68736c;font-size:12px;margin-top:8px}
+.testimonial-feature{margin:0 0 25px;text-align:center}
+.testimonial-feature img{width:100%;height:auto;border-radius:10px;display:block}
+.testimonial-feature p{font-size:12px;color:#5c6c61;margin:10px 0 0}
+.mystic-doubt{background:#fffaf0;text-align:center;padding:48px 25px 30px}
+.mystic-doubt h2{font:700 clamp(36px,7vw,54px)/1.1 Georgia,serif;color:#073d2b;margin:0 0 15px}
+.mystic-doubt h2 em{color:#ae822a;font-style:normal}
+.mystic-doubt h3{font:700 clamp(21px,4vw,30px)/1.2 Georgia,serif;color:#0a4d34;margin:0 0 15px}
+.mystic-doubt p{font-size:16px;line-height:1.75;max-width:620px;margin:0 auto;color:#46594e}
+.mystic-doubt .guarantee-note{font-size:12px;color:#6b756d;margin-top:14px}
+@media(max-width:600px){.mystic-pitch{padding:38px 18px}.mystic-pitch .pitch-intro{font-size:15px}.pitch-benefits{grid-template-columns:1fr;gap:9px}.pitch-benefit{display:flex;align-items:center;text-align:left;gap:13px;padding:13px 15px}.pitch-benefit svg{flex:none;margin:0}.mystic-doubt{padding:38px 18px 25px}.mystic-doubt p{font-size:15px}}
+
 </style>
 </head>
 
@@ -1624,6 +1649,23 @@ footer p{
 
 </section>
 
+
+
+<!-- CLIENT SALES MESSAGE -->
+<section class="mystic-pitch" aria-labelledby="pitchTitle">
+  <div class="kicker">PENJAGAAN RAMBUT HARIAN</div>
+  <h2 id="pitchTitle">RAMBUT MENIPIS? RAMBUT KURANG BERKILAU?</h2>
+  <p class="pitch-intro">Mengapa perlu berbelanja beribu-ribu ringgit untuk rawatan rambut yang mahal? Kini, jadikan <strong>MYSTIC HAIR TONIC</strong> sebahagian daripada rutin penjagaan rambut anda!</p>
+  <div class="pitch-benefits">
+    <div class="pitch-benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3c-4 3-7 7-7 11a7 7 0 0 0 14 0c0-4-3-8-7-11Z"/><path d="M9 15c1 2 4 2 6 0"/></svg><span>Membantu rambut kelihatan lebih tebal</span></div>
+    <div class="pitch-benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m12 2 2.3 7.7L22 12l-7.7 2.3L12 22l-2.3-7.7L2 12l7.7-2.3Z"/></svg><span>Menyerlahkan kilauan rambut</span></div>
+    <div class="pitch-benefit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 4C9 4 4 9 4 15a5 5 0 0 0 5 5c6 0 11-5 11-16Z"/><path d="M5 19c3-5 7-8 12-11"/></svg><span>Membantu rambut kelihatan lebih sihat dan terjaga</span></div>
+  </div>
+  <p class="pitch-close">JANGAN BIARKAN RAMBUT ANDA KEHILANGAN SERI!</p>
+  <p class="pitch-intro">Pilih MYSTIC HAIR TONIC — penjagaan rambut anda, mahkota kebanggaan anda!</p>
+  <p class="pitch-tagline">MYSTIC HAIR TONIC — RAMBUT MENAWAN, KEYAKINAN MENYERLAH!</p>
+  <a href="#order" class="gold-btn">SAYA NAK CUBA MYSTIC</a>
+</section>
 
 <!-- =====================================================
      SALES BRIDGE
@@ -2199,13 +2241,9 @@ footer p{
     </p>
 
 
-    <div class="results-image">
-
-        <img
-            src="assets/mystic-real-result-1.jpg"
-            alt="Mystic Hair Tonic Sebelum dan Selepas"
-        >
-
+    <div class="result-gallery">
+      <figure><img src="assets/mystic-real-result-1.jpg" alt="Perbandingan sebelum dan selepas penggunaan Mystic Hair Tonic" loading="lazy"><figcaption>Pengalaman pengguna Mystic</figcaption></figure>
+      <figure><img src="assets/mystic-real-result-2.jpg" alt="Satu lagi gambar hasil penggunaan Mystic Hair Tonic" loading="lazy"><figcaption>Hasil individu mungkin berbeza</figcaption></figure>
     </div>
 
 </section>
@@ -2230,6 +2268,11 @@ footer p{
         daripada rutin penjagaan rambut.
     </p>
 
+
+    <div class="testimonial-feature">
+      <img src="assets/testimonial.jpg" alt="Poster testimoni pelanggan Mystic Hair Tonic" loading="lazy">
+      <p>Testimoni dan pengalaman yang dikongsi oleh pengguna.</p>
+    </div>
 
     <div class="review-summary">
 
@@ -2585,11 +2628,18 @@ footer p{
      MONEY BACK
 ====================================================== -->
 
+<section class="mystic-doubt" aria-labelledby="doubtTitle">
+  <h2 id="doubtTitle">MASIH <em>RAGU?</em></h2>
+  <h3>Jaminan Wang Dikembalikan 60 Hari</h3>
+  <p>Kami menawarkan jaminan wang dikembalikan selama 60 hari untuk anda menilai hasil penggunaan Mystic Hair Tonic. Jika produk tidak memberikan hasil seperti yang diharapkan, anda boleh memohon pemulangan wang tertakluk pada syarat jaminan yang ditetapkan.</p>
+  <p class="guarantee-note">Sila rujuk syarat dan proses tuntutan jaminan sebelum membuat pembelian.</p>
+</section>
+
 <section class="moneyback">
 
     <img
         src="assets/mystic-money-back.jpg"
-        alt="30 Hari Money Back Guarantee"
+        alt="Jaminan Wang Dikembalikan 60 Hari"
     >
 
 </section>
