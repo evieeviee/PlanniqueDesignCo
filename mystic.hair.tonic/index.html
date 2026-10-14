@@ -1599,6 +1599,26 @@ footer p{
 .mystic-doubt .guarantee-note{font-size:12px;color:#6b756d;margin-top:14px}
 @media(max-width:600px){.mystic-pitch{padding:38px 18px}.mystic-pitch .pitch-intro{font-size:15px}.pitch-benefits{grid-template-columns:1fr;gap:9px}.pitch-benefit{display:flex;align-items:center;text-align:left;gap:13px;padding:13px 15px}.pitch-benefit svg{flex:none;margin:0}.mystic-doubt{padding:38px 18px 25px}.mystic-doubt p{font-size:15px}}
 
+
+/* Combined sales-focused FAQ, matching Mystic green and gold */
+.faq-conversion{background:linear-gradient(180deg,#fffaf0,#f7f0df);padding-top:48px;padding-bottom:48px}
+.faq-conversion .faq-title{font-family:Georgia,serif;font-size:clamp(34px,6vw,48px);line-height:1.12;text-align:center;color:#073d2b;margin:0 0 12px}
+.faq-conversion .faq-title span{color:#a77b29}
+.faq-conversion .faq-list{display:grid;gap:11px;max-width:650px;margin:25px auto 0}
+.faq-conversion .faq-item{border:1px solid #e5dac0;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 5px 18px rgba(40,48,30,.045)}
+.faq-conversion .faq-btn{padding:18px 19px;gap:12px;background:#fff;color:#173f2e;font-size:15px;line-height:1.45;cursor:pointer}
+.faq-conversion .faq-item.active .faq-btn{background:#f4ebd8}
+.faq-conversion .faq-btn:focus-visible{outline:3px solid #b58a32;outline-offset:-3px}
+.faq-conversion .faq-question-icon{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;flex:none;border-radius:7px;background:#0a5438;color:#f1d587;font-weight:800;font-size:14px}
+.faq-conversion .faq-question-text{flex:1}
+.faq-conversion .faq-plus{flex:none;color:#a47b2e;transition:transform .2s}
+.faq-conversion .faq-answer{padding:0 19px;max-height:0;opacity:0;transition:max-height .3s ease,opacity .2s ease,padding .2s ease;font-size:13px;line-height:1.75;color:#536158}
+.faq-conversion .faq-item.active .faq-answer{max-height:550px;opacity:1;padding:15px 19px 19px}
+.faq-conversion .faq-item.active .faq-plus{transform:rotate(45deg)}
+.faq-conversion .faq-cta{text-align:center;margin-top:24px}
+.faq-conversion .faq-cta .gold-btn{min-width:230px}
+@media(max-width:600px){.faq-conversion .faq-btn{font-size:14px;padding:15px 13px}.faq-conversion .faq-answer{font-size:12px}.faq-conversion .faq-item.active .faq-answer{padding:13px 14px 17px}.faq-conversion .faq-title{font-size:35px}}
+
 </style>
 </head>
 
@@ -2628,6 +2648,46 @@ footer p{
      MONEY BACK
 ====================================================== -->
 
+<!-- =====================================================
+     MASIH RAGU? - COMBINED FAQ
+====================================================== -->
+<section class="section faq faq-conversion" id="soalan-lazim" aria-labelledby="faqTitle">
+  <div class="kicker">SOALAN LAZIM MYSTIC</div>
+  <h2 class="faq-title" id="faqTitle">MASIH <span>RAGU?</span></h2>
+  <p class="desc">Kami faham anda mahu membuat pilihan yang tepat. Ini jawapan kepada persoalan yang sering ditanya sebelum mencuba Mystic.</p>
+  <div class="faq-list">
+    <div class="faq-item active">
+      <button class="faq-btn" type="button" aria-expanded="true"><span class="faq-question-icon">?</span><span class="faq-question-text">Mystic Hair Tonic sesuai untuk siapa?</span><span class="faq-plus" aria-hidden="true">+</span></button>
+      <div class="faq-answer">Mystic direka sebagai sebahagian daripada rutin penjagaan rambut dan kulit kepala, khususnya untuk mereka yang mahu menjaga kelembapan, keselesaan kulit kepala dan penampilan rambut. Kesesuaian mungkin berbeza mengikut individu.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button" aria-expanded="false"><span class="faq-question-icon">?</span><span class="faq-question-text">Berapa lama untuk nampak perubahan?</span><span class="faq-plus" aria-hidden="true">+</span></button>
+      <div class="faq-answer">Pengalaman setiap pengguna tidak sama dan hasil tidak boleh dijamin dalam tempoh tertentu. Gunakan Mystic secara konsisten mengikut arahan pada label produk.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button" aria-expanded="false"><span class="faq-question-icon">?</span><span class="faq-question-text">Betul ke ada jaminan wang dikembalikan 60 hari?</span><span class="faq-plus" aria-hidden="true">+</span></button>
+      <div class="faq-answer">Pihak penjual menawarkan jaminan wang dikembalikan selama 60 hari, tertakluk pada syarat kelayakan dan proses tuntutan yang ditetapkan. Sila dapatkan syarat penuh daripada pihak penjual sebelum membeli.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button" aria-expanded="false"><span class="faq-question-icon">?</span><span class="faq-question-text">Bagaimana cara menggunakan Mystic?</span><span class="faq-plus" aria-hidden="true">+</span></button>
+      <div class="faq-answer">Sapukan pada kulit kepala yang bersih atau rambut kering, urut perlahan sekitar 2 hingga 3 minit dan ikut arahan rasmi pada label produk.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button" aria-expanded="false"><span class="faq-question-icon">?</span><span class="faq-question-text">Berapa kerap Mystic boleh digunakan?</span><span class="faq-plus" aria-hidden="true">+</span></button>
+      <div class="faq-answer">Label produk yang dirujuk menyatakan penggunaan 2 hingga 3 kali seminggu. Sentiasa utamakan arahan penggunaan pada label rasmi produk anda.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button" aria-expanded="false"><span class="faq-question-icon">?</span><span class="faq-question-text">Apakah fungsi bahan utama dalam Mystic?</span><span class="faq-plus" aria-hidden="true">+</span></button>
+      <div class="faq-answer">Hydrolyzed Soy Protein membantu menjaga batang rambut; Salicylic Acid membantu eksfoliasi kulit kepala; Safflower Seed Oil dan Olive Fruit Oil membantu kelembapan; Menthol pula memberikan sensasi sejuk. Anda boleh lihat penerangan semua 8 bahan dalam bahagian kandungan di atas.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn" type="button" aria-expanded="false"><span class="faq-question-icon">?</span><span class="faq-question-text">Bagaimana nak buat pesanan Mystic?</span><span class="faq-plus" aria-hidden="true">+</span></button>
+      <div class="faq-answer">Pilih pakej 1, 2, 3 atau 4 botol pada bahagian tempahan, lengkapkan maklumat anda dan tekan Hantar Pesanan untuk meneruskan melalui WhatsApp.</div>
+    </div>
+  </div>
+  <div class="faq-cta"><a href="#order" class="gold-btn">PILIH PAKEJ MYSTIC</a></div>
+</section>
+
 <section class="mystic-doubt" aria-labelledby="doubtTitle">
   <h2 id="doubtTitle">MASIH <em>RAGU?</em></h2>
   <h3>Jaminan Wang Dikembalikan 60 Hari</h3>
@@ -3157,160 +3217,7 @@ footer p{
 </section>
 
 
-<!-- =====================================================
-     FAQ
-====================================================== -->
 
-<section class="section faq">
-
-    <div class="kicker">
-        SOALAN LAZIM
-    </div>
-
-    <h2 class="title">
-        Sebelum Anda Cuba Mystic
-    </h2>
-
-    <p class="desc">
-        Beberapa perkara yang mungkin anda ingin tahu.
-    </p>
-
-
-    <div class="faq-item">
-
-        <button class="faq-btn">
-
-            <span>
-                Apa fungsi Hydrolyzed Soy Protein?
-            </span>
-
-            <span class="faq-plus">
-                +
-            </span>
-
-        </button>
-
-        <div class="faq-answer">
-            Hydrolyzed Soy Protein membantu melapisi dan menjaga
-            batang rambut supaya rambut terasa lebih kuat,
-            lebih licin dan lebih mudah diurus.
-        </div>
-
-    </div>
-
-
-    <div class="faq-item">
-
-        <button class="faq-btn">
-
-            <span>
-                Apa fungsi Salicylic Acid?
-            </span>
-
-            <span class="faq-plus">
-                +
-            </span>
-
-        </button>
-
-        <div class="faq-answer">
-            Salicylic Acid digunakan sebagai bahan eksfoliasi
-            untuk membantu menanggalkan sel kulit mati,
-            lebihan minyak dan sisa produk pada kulit kepala.
-        </div>
-
-    </div>
-
-
-    <div class="faq-item">
-
-        <button class="faq-btn">
-
-            <span>
-                Apa fungsi Safflower Seed Oil dan Olive Fruit Oil?
-            </span>
-
-            <span class="faq-plus">
-                +
-            </span>
-
-        </button>
-
-        <div class="faq-answer">
-            Kedua-duanya membantu melengkapkan penjagaan kelembapan
-            supaya rambut terasa lebih lembut, licin dan mudah diurus.
-        </div>
-
-    </div>
-
-
-    <div class="faq-item">
-
-        <button class="faq-btn">
-
-            <span>
-                Mengapa ada Menthol dalam formulasi?
-            </span>
-
-            <span class="faq-plus">
-                +
-            </span>
-
-        </button>
-
-        <div class="faq-answer">
-            Menthol memberikan sensasi sejuk dan menyegarkan
-            ketika digunakan pada kulit kepala.
-        </div>
-
-    </div>
-
-
-    <div class="faq-item">
-
-        <button class="faq-btn">
-
-            <span>
-                Bagaimana cara menggunakan Mystic?
-            </span>
-
-            <span class="faq-plus">
-                +
-            </span>
-
-        </button>
-
-        <div class="faq-answer">
-            Sapukan pada kulit kepala yang bersih atau rambut kering,
-            urut perlahan sekitar 2 hingga 3 minit dan gunakan mengikut
-            arahan rasmi pada label produk.
-        </div>
-
-    </div>
-
-
-    <div class="faq-item">
-
-        <button class="faq-btn">
-
-            <span>
-                Berapa kerap Mystic boleh digunakan?
-            </span>
-
-            <span class="faq-plus">
-                +
-            </span>
-
-        </button>
-
-        <div class="faq-answer">
-            Rujuk arahan penggunaan pada label produk rasmi.
-            Label yang diberikan menyatakan penggunaan 2 hingga 3 kali seminggu.
-        </div>
-
-    </div>
-
-</section>
 
 
 <!-- =====================================================
@@ -3496,6 +3403,9 @@ document
 
 
             item.classList.toggle("active");
+            document.querySelectorAll(".faq-btn").forEach(btn => {
+                btn.setAttribute("aria-expanded", String(btn.closest(".faq-item").classList.contains("active")));
+            });
 
         }
     );
