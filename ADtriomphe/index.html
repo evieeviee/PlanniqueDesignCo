@@ -3965,6 +3965,15 @@ header.scrolled{
   #page-home .section.dark .tile>span:last-child{width:30px;height:30px;font-size:14px}
 }
 
+
+/* Client update: impact, claimability and compact testimonials */
+.aboutImpact{background:#fff}.impactIntro{margin-top:14px}.impactGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:34px}.impactStat{padding:30px 24px;background:#f8f5f0;border:1px solid var(--line);border-radius:16px;transition:transform .25s,box-shadow .25s}.impactStat:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.impactCount{display:block;font-size:clamp(38px,5vw,65px);line-height:1.2;letter-spacing:-.05em;color:var(--orange);font-variant-numeric:tabular-nums}.impactStat span{display:block;margin-top:10px;font-size:13px;color:var(--muted)}.impactNote{font-size:11px;margin-top:16px}.hrdNotice{display:flex;flex-direction:column;gap:8px;background:#fff7ee;border-left:4px solid var(--orange);border-radius:12px;padding:20px 24px;margin-bottom:36px}.hrdNotice strong{font-size:18px;color:var(--ink)}.hrdNotice span{font-size:13px;line-height:1.6;color:var(--muted)}@media(max-width:620px){.impactGrid{grid-template-columns:1fr;gap:10px}.impactStat{padding:20px}.hrdNotice{padding:17px;margin-bottom:27px}.hrdNotice strong{font-size:16px}}
+.testimonialRoleOnly{display:flex;align-items:center;font-size:12px;font-weight:750;color:var(--orange)}
+/* Footer: registration under brand, copyright stays on one line */
+.footerCompany{margin-top:16px;font-size:12px;font-weight:650;color:#d6dfe5;line-height:1.5}
+.footerCompany span{color:#a1adb6;font-weight:400}
+.footer .copy{text-align:center;white-space:nowrap;font-size:11px}
+@media(max-width:620px){.footer .copy{font-size:clamp(8px,2.35vw,11px);letter-spacing:-.02em;padding-left:0;padding-right:0}.footerCompany{font-size:11px}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
 body,button,input,select,textarea,h1,h2,h3,.stat b,.testimonialQuote,.courseDetailBlock h3{font-family:'Poppins',Arial,sans-serif!important}
@@ -4422,6 +4431,25 @@ button,a,input,select{touch-action:manipulation}button:focus-visible,a:focus-vis
 .mobileInhousePanel{grid-template-columns:minmax(0,1fr)!important}
 }
 </style>
+<style>
+/* Enquiry type: consistent custom dropdown instead of browser-native dark popup */
+.enquiryTypeWrap{position:relative;min-width:0}
+.enquiryTypeWrap #enquiryType{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
+.enquiryTypeButton{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:47px;padding:12px 14px;background:#fff;border:1px solid rgba(21,34,45,.15);border-radius:11px;color:var(--ink);font-size:13px;text-align:left;cursor:pointer}
+.enquiryTypeButton:focus-visible,.enquiryTypeButton[aria-expanded="true"]{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(239,91,42,.12)}
+.enquiryTypeButton:after{content:"";width:8px;height:8px;flex:0 0 8px;border-right:1.7px solid currentColor;border-bottom:1.7px solid currentColor;transform:rotate(45deg) translateY(-2px)}
+.enquiryTypeMenu{display:none;position:absolute;z-index:100;top:calc(100% + 6px);left:0;right:0;padding:6px;background:#fff;border:1px solid #dce1e5;border-radius:12px;box-shadow:0 14px 34px rgba(7,24,39,.16);max-height:245px;overflow:auto}
+.enquiryTypeMenu.open{display:grid;gap:2px}
+.enquiryTypeMenu button{display:block;width:100%;padding:11px 12px;border:0;border-radius:8px;background:transparent;color:var(--ink);font-size:13px;text-align:left;cursor:pointer}
+.enquiryTypeMenu button:hover,.enquiryTypeMenu button:focus-visible,.enquiryTypeMenu button[aria-selected="true"]{background:#fff2eb;color:#c94720;outline:none}
+</style>
+<style id="hrd-notice-refinement">
+/* Compact, title-only HRD highlight */
+#page-training .hrdNotice{display:flex;flex-direction:row;align-items:center;gap:15px;margin:0 0 32px;padding:18px 22px;background:linear-gradient(110deg,#fff5e9 0%,#fffaf4 100%);border:1px solid rgba(239,91,42,.13);border-left:3px solid var(--orange);border-radius:12px;box-shadow:none}
+#page-training .hrdNoticeMark{display:grid;place-items:center;flex:0 0 32px;width:32px;height:32px;border-radius:9px;background:var(--orange);color:#fff;font:800 17px/1 Arial,sans-serif}
+#page-training .hrdNotice strong{display:block;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:clamp(15px,1.65vw,20px);font-weight:800;line-height:1.4;letter-spacing:-.025em;color:var(--ink)}
+@media(max-width:620px){#page-training .hrdNotice{gap:11px;padding:13px 14px;margin-bottom:25px;border-radius:10px}#page-training .hrdNoticeMark{width:28px;height:28px;flex-basis:28px;font-size:15px}#page-training .hrdNotice strong{font-size:15px;line-height:1.35}}
+</style>
 </head>
 <body>
 <div class="preloader" id="preloader" aria-hidden="true"><div class="preInner"><div class="preRing"></div><img class="preLogo" id="preLogo" alt=""><div class="preLine"></div></div></div>
@@ -4462,7 +4490,7 @@ button,a,input,select{touch-action:manipulation}button:focus-visible,a:focus-vis
       <div class="reveal">
         <div class="eyebrow">HR Consulting · Training · Malaysia</div>
         <h1>People-first training.<br><span class="heroAccent">Practical HR solutions.</span></h1>
-        <p class="homeHeroLead">Develop confident teams and build stronger workplaces with professional training, HR Consulting, payroll management, Talent Solutions and IR / ER support.</p>
+        <p class="homeHeroLead">Develop confident teams and build stronger workplaces with professional training, HR Consulting, payroll management, Talent Solutions and IR/ER Advisory support.</p>
         <div class="heroActions"><button class="btn primary" data-page="consulting">Explore Our Solutions <span class="uiArrow" aria-hidden="true">→</span></button><button class="btn" data-page="training">View Programmes</button></div>
         
       </div>
@@ -4475,7 +4503,7 @@ button,a,input,select{touch-action:manipulation}button:focus-visible,a:focus-vis
       <div class="tile" data-consult="advisory"><span>02</span><h3>HR Consulting</h3><span>→</span></div>
       <div class="tile" data-consult="payroll"><span>03</span><h3>Payroll Management</h3><span>→</span></div>
       <div class="tile" data-consult="workforce"><span>04</span><h3>Talent Solutions</h3><span>→</span></div>
-      <div class="tile" data-consult="irer"><span>05</span><h3>IR / ER</h3><span>→</span></div>
+      <div class="tile" data-consult="irer"><span>05</span><h3>IR/ER Advisory</h3><span>→</span></div>
     </div>
   </div></section>
   <section class="section peopleHeroSection" aria-label="People Development"><div class="peopleHeroArt" role="img" aria-label="Professionals learning together in a workshop"></div><div class="wrap peopleHeroInner"><div class="peopleHeroCopy reveal"><div class="eyebrow">People Development</div><h2>Build capability, not just attendance.</h2><p>From practical HR knowledge for managers to leadership development and customised in-house programmes, the focus is on learning people can apply immediately at work.</p><button class="btn" data-page="training">Discover Training <span class="uiArrow" aria-hidden="true">→</span></button></div></div></section>
@@ -4502,6 +4530,7 @@ button,a,input,select{touch-action:manipulation}button:focus-visible,a:focus-vis
 <section class="page" id="page-about">
   <section class="pageHero dark"><div class="wrap"><div class="heroCopy"><div class="eyebrow">About ADtriomphe</div><h1>Practical HR expertise for growing organisations.</h1><p>ADtriomphe is positioned around people development, professional HR guidance and practical workplace solutions.</p><div class="aboutBrandLine" aria-label="ADtriomphe brand promise"><span>ADAPT</span><i></i><span>ACHIEVE</span><i></i><span>ASPIRE</span></div></div></div></section>
   <section class="section"><div class="wrap two"><div><div class="eyebrow">What We Believe</div><h2>People solutions should make business easier.</h2></div><div><p>Strong HR practices create clarity for managers, confidence for employees and stronger foundations for growth. ADtriomphe combines professional guidance with practical execution so organisations can move from policy to real workplace impact.</p><div class="list"><div><b>Practical</b><span>Focused on real workplace application.</span></div><div><b>Tailored</b><span>Designed around the organisation, not a generic template.</span></div><div><b>Professional</b><span>Structured HR guidance with business context.</span></div></div></div></div></section>
+  <section class="section aboutImpact" aria-label="Our impact"><div class="wrap"><div class="eyebrow">Our Growing Impact</div><h2 style="margin-top:12px">Growing with every partnership.</h2><p class="impactIntro">A snapshot of our journey in training and HR consulting.</p><div class="impactGrid"><div class="impactStat"><strong class="impactCount" data-count="12">0</strong><span>Organisations supported</span></div><div class="impactStat"><strong class="impactCount" data-count="250">0</strong><span>Participants engaged</span></div><div class="impactStat"><strong class="impactCount" data-count="35">0</strong><span>Training sessions delivered</span></div></div></div></section>
   <section class="section soft howWeWorkSection"><div class="wrap"><div class="eyebrow">How We Work</div><h2>Advisory + capability + execution.</h2><div class="three"><div class="card"><span class="num">01</span><h3>Understand</h3><p>Clarify the organisation’s challenges, people priorities and business context.</p></div><div class="card"><span class="num">02</span><h3>Design</h3><p>Shape the right training, HR process or support model around those needs.</p></div><div class="card"><span class="num">03</span><h3>Apply</h3><p>Translate recommendations into practical actions, learning and ongoing support.</p></div></div></div></section>
 </section>
 
@@ -4519,7 +4548,7 @@ button,a,input,select{touch-action:manipulation}button:focus-visible,a:focus-vis
 
   <section class="section trainingChoiceSection">
     <div class="wrap">
-      <div class="eyebrow">Training Options</div>
+      <div class="hrdNotice" aria-label="100% HRD Corp Claimable Programmes"><span class="hrdNoticeMark" aria-hidden="true">✓</span><strong>100% HRD Corp Claimable Programmes</strong></div><div class="eyebrow">Training Options</div>
       <h2 style="margin-top:10px">How would you like to train?</h2>
       <p style="max-width:720px;margin-top:14px">Choose one path below. You can return to this page anytime from the Training menu.</p>
 
@@ -4580,7 +4609,7 @@ button,a,input,select{touch-action:manipulation}button:focus-visible,a:focus-vis
 </section>
 
 <section class="page" id="page-consulting">
-  <section class="pageHero"><div class="wrap heroGrid"><div class="heroCopy"><div class="eyebrow">HR Consulting</div><h1 style="margin-top:12px">Flexible HR support for growing organisations.</h1><p>From HR Consulting and payroll management to Talent Solutions and IR / ER support, choose the service closest to your current business need.</p><div class="heroActions"><button class="btn primary" onclick="document.getElementById('consultServices').scrollIntoView({behavior:'smooth'})">Explore Services ↓</button><button class="btn" data-page="contact">Contact Us</button></div></div></div></section>
+  <section class="pageHero"><div class="wrap heroGrid"><div class="heroCopy"><div class="eyebrow">HR Consulting</div><h1 style="margin-top:12px">Flexible HR support for growing organisations.</h1><p>From HR Consulting and payroll management to Talent Solutions and IR/ER Advisory support, choose the service closest to your current business need.</p><div class="heroActions"><button class="btn primary" onclick="document.getElementById('consultServices').scrollIntoView({behavior:'smooth'})">Explore Services ↓</button><button class="btn" data-page="contact">Contact Us</button></div></div></div></section>
   <section class="section soft" id="consultServices"><div class="wrap"><div class="eyebrow">Consulting Services</div><h2 style="margin-top:10px">Support where your HR team needs it most.</h2><div class="consultGrid" id="consultGrid"></div></div></section>
 </section>
 
@@ -4616,7 +4645,7 @@ button,a,input,select{touch-action:manipulation}button:focus-visible,a:focus-vis
   <button class="btn quickEnquiryBtn" type="button" data-quick-type="HR Consulting" data-quick-interest="HR Consulting">HR Consulting →</button>
   <button class="btn quickEnquiryBtn" type="button" data-quick-type="Payroll Management" data-quick-interest="Payroll Management">Payroll Management →</button>
   <button class="btn quickEnquiryBtn" type="button" data-quick-type="Talent Solutions" data-quick-interest="Talent Solutions">Talent Solutions →</button>
-  <button class="btn quickEnquiryBtn" type="button" data-quick-type="IR / ER" data-quick-interest="IR / ER">IR / ER →</button>
+  <button class="btn quickEnquiryBtn" type="button" data-quick-type="IR/ER Advisory" data-quick-interest="IR/ER Advisory">IR/ER Advisory →</button>
 </div></div></div></section>
 </section>
 
@@ -4631,9 +4660,11 @@ button,a,input,select{touch-action:manipulation}button:focus-visible,a:focus-vis
     <form class="enquiryForm" id="enquiryForm">
       <div class="formGrid">
         <div class="field"><label for="name">Name</label><input id="name" required placeholder="Your name"></div>
+        <div class="field"><label for="jobTitle">Job Title / Position</label><input id="jobTitle" placeholder="Your position"></div>
+        <div class="field"><label for="emailAddress">Email Address</label><input id="emailAddress" type="email" placeholder="name@company.com" required></div>
         <div class="field"><label for="company">Company</label><input id="company" placeholder="Company name"></div>
         <div class="field"><label for="phone">Contact Number</label><input id="phone" placeholder="e.g. +60..."></div>
-        <div class="field"><label for="enquiryType">Enquiry Type</label><select id="enquiryType"><option>Training</option><option>HR Consulting</option><option>Payroll Management</option><option>Talent Solutions</option><option>IR / ER</option></select></div>
+        <div class="field"><label for="enquiryType">Enquiry Type</label><div class="enquiryTypeWrap"><select id="enquiryType"><option>Training</option><option>HR Consulting</option><option>Payroll Management</option><option>Talent Solutions</option><option>IR/ER Advisory</option></select><button type="button" class="enquiryTypeButton" id="enquiryTypeButton" aria-haspopup="listbox" aria-expanded="false">Training</button><div class="enquiryTypeMenu" id="enquiryTypeMenu" role="listbox" aria-label="Enquiry Type"></div></div></div>
         <div class="field full"><label for="interest">Course / Service</label><input id="interest" placeholder="Select a course/service or type here"></div>
         <div class="field full"><label for="message">Message</label><textarea id="message" placeholder="Tell us your requirement, number of participants, or any other details."></textarea></div>
         <div class="field full"><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn primary" type="submit">Send via WhatsApp →</button><button class="btn" type="button" id="sendEmailEnquiry">Send via Email <svg class="emailArrowIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></div>
@@ -4642,7 +4673,7 @@ button,a,input,select{touch-action:manipulation}button:focus-visible,a:focus-vis
   </div>
 </section>
 
-<footer class="footer"><div class="wrap"><div class="footgrid"><div><img class="footlogo" id="footLogo" alt="ADtriomphe"><p>Corporate training, HR Consulting, payroll management, Talent Solutions and IR / ER support for organisations in Malaysia.</p><div class="footerBrandLine">ADAPT · ACHIEVE · ASPIRE</div></div><div class="socials"><a class="social" href="https://www.instagram.com/adtriomphe/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg></a><a class="social" href="https://www.facebook.com/adtriomphetraining" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-9h3l.45-3.5H13.5V7.25c0-1.01.28-1.7 1.74-1.7H17.1V2.42c-.32-.04-1.42-.14-2.7-.14-2.67 0-4.5 1.63-4.5 4.62v2.6H7v3.5h2.9v9h3.6z"/></svg></a><a class="social" href="https://www.linkedin.com/company/adtriomphe-asia/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M5.3 7.8H2.2V22h3.1V7.8zM3.75 2A1.8 1.8 0 1 0 3.75 5.6 1.8 1.8 0 0 0 3.75 2zM22 13.9c0-4.28-2.28-6.27-5.33-6.27-2.46 0-3.56 1.35-4.17 2.3V7.8H9.4V22h3.1v-7.03c0-1.85.35-3.65 2.65-3.65 2.27 0 2.3 2.12 2.3 3.77V22H22v-8.1z"/></svg></a><a class="social" href="mailto:training@adtriomphe.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7H4zm16 10V9.85l-8 5-8-5V17h16z"/></svg></a></div></div><div class="copy">© 2026 ADtriomphe</div></div></footer>
+<footer class="footer"><div class="wrap"><div class="footgrid"><div><img class="footlogo" id="footLogo" alt="ADtriomphe"><p>Corporate training, HR Consulting, payroll management, Talent Solutions and IR/ER Advisory support for organisations in Malaysia.</p><div class="footerBrandLine">ADAPT · ACHIEVE · ASPIRE</div><div class="footerCompany">ADtriomphe Asia Sdn Bhd <span>(1640354-X)</span></div></div><div class="socials"><a class="social" href="https://www.instagram.com/adtriomphe/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg></a><a class="social" href="https://www.facebook.com/adtriomphetraining" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-9h3l.45-3.5H13.5V7.25c0-1.01.28-1.7 1.74-1.7H17.1V2.42c-.32-.04-1.42-.14-2.7-.14-2.67 0-4.5 1.63-4.5 4.62v2.6H7v3.5h2.9v9h3.6z"/></svg></a><a class="social" href="https://www.linkedin.com/company/adtriomphe-asia/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M5.3 7.8H2.2V22h3.1V7.8zM3.75 2A1.8 1.8 0 1 0 3.75 5.6 1.8 1.8 0 0 0 3.75 2zM22 13.9c0-4.28-2.28-6.27-5.33-6.27-2.46 0-3.56 1.35-4.17 2.3V7.8H9.4V22h3.1v-7.03c0-1.85.35-3.65 2.65-3.65 2.27 0 2.3 2.12 2.3 3.77V22H22v-8.1z"/></svg></a><a class="social" href="mailto:training@adtriomphe.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7H4zm16 10V9.85l-8 5-8-5V17h16z"/></svg></a></div></div><div class="copy">Copyright © 2026 ADtriomphe Asia Sdn Bhd. All rights reserved.</div></div></footer>
 </main>
 
 <div class="modal" id="publicBookingModal" aria-hidden="true"><div class="modalPanel publicBookingPanel" role="dialog" aria-modal="true" aria-labelledby="bookingCourseTitle"><button type="button" class="modalClose" id="closePublicBooking" aria-label="Close enquiry">×</button><div class="modalTag">PUBLIC TRAINING ENQUIRY</div><h2 id="bookingCourseTitle"></h2><p id="bookingCourseDetails"></p><div class="bookingCourseOverview"><div class="bookingSectionHeading">Programme overview</div><p id="bookingOverview"></p><div class="bookingInfoGrid"><div><strong>Areas of focus</strong><ul id="bookingTopics"></ul></div><div><strong>Who should attend</strong><p id="bookingAudience"></p></div></div><p class="bookingDisclaimer">Overview is a guide based on the programme title. Request the official syllabus and registration details from ADtriomphe.</p></div><p class="bookingIntro">Interested in attending? Enquire about the syllabus, registration and availability.</p><div class="bookingActions"><button type="button" class="btn primary" id="bookingWhatsApp">Enquire via WhatsApp</button><button type="button" class="btn" id="bookingEmail">Enquire via Email</button></div><button type="button" id="bookingFullForm" class="bookingFormLink">Or complete the detailed enquiry form →</button></div></div>
@@ -4722,7 +4753,7 @@ const consultingData={
     ]
   },
   irer:{
-    title:'IR / ER',
+    title:'IR/ER Advisory',
     desc:'Structured support for industrial and employee relations matters, helping organisations handle workplace issues consistently and professionally.',
     bullets:[
       'Employee relations matters',
@@ -5113,13 +5144,13 @@ document.addEventListener('click',e=>{
   setTimeout(()=>document.getElementById('name')?.focus({preventScroll:true}),500);
 });
 
-enquiryForm.addEventListener('submit',e=>{e.preventDefault();const txt=`Hi ADtriomphe, I would like to make an enquiry.\n\nName: ${document.getElementById('name').value.trim()}\nCompany: ${company.value||'-'}\nContact: ${phone.value||'-'}\nEnquiry Type: ${enquiryType.value}\nCourse / Service: ${interest.value||'-'}\nMessage: ${message.value||'-'}`;window.open('https://wa.me/60149607981?text='+encodeURIComponent(txt),'_blank')});
+enquiryForm.addEventListener('submit',e=>{e.preventDefault();const txt=`Hi ADtriomphe, I would like to make an enquiry.\n\nName: ${document.getElementById('name').value.trim()}\nJob Title / Position: ${document.getElementById('jobTitle').value.trim()||'-'}\nEmail Address: ${document.getElementById('emailAddress').value.trim()||'-'}\nCompany: ${company.value||'-'}\nContact: ${phone.value||'-'}\nEnquiry Type: ${enquiryType.value}\nCourse / Service: ${interest.value||'-'}\nMessage: ${message.value||'-'}`;window.open('https://wa.me/60149607981?text='+encodeURIComponent(txt),'_blank')});
 
 document.getElementById('sendEmailEnquiry')?.addEventListener('click',()=>{
   if(!enquiryForm.reportValidity())return;
   const fullName=document.getElementById('name').value.trim();
   const subject=`ADtriomphe Enquiry - ${enquiryType.value}`;
-  const body=`Hi ADtriomphe, I would like to make an enquiry.\n\nName: ${fullName}\nCompany: ${company.value.trim()||'-'}\nContact: ${phone.value.trim()||'-'}\nEnquiry Type: ${enquiryType.value}\nCourse / Service: ${interest.value.trim()||'-'}\nMessage: ${message.value.trim()||'-'}`;
+  const body=`Hi ADtriomphe, I would like to make an enquiry.\n\nName: ${fullName}\nJob Title / Position: ${document.getElementById('jobTitle').value.trim()||'-'}\nEmail Address: ${document.getElementById('emailAddress').value.trim()||'-'}\nCompany: ${company.value.trim()||'-'}\nContact: ${phone.value.trim()||'-'}\nEnquiry Type: ${enquiryType.value}\nCourse / Service: ${interest.value.trim()||'-'}\nMessage: ${message.value.trim()||'-'}`;
   const recipient='training@adtriomphe.com';
   const gmail='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(recipient)+'&su='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   const opened=window.open(gmail,'_blank','noopener,noreferrer');
@@ -5131,6 +5162,7 @@ document.getElementById('sendEmailEnquiry')?.addEventListener('click',()=>{
 const testimonialData=[
   {
     "quote": "The explanations were easy to follow, especially the examples on day-to-day HR matters. The discussion questions helped connect the topics to workplace situations.",
+    "role": "HR Executive",
     "name": "Aina R.",
     "meta": "HR programme",
     "programme": "HR Essentials",
@@ -5138,6 +5170,7 @@ const testimonialData=[
   },
   {
     "quote": "I liked the balance between discussion and activities. The people-management scenarios made the session feel relevant rather than just theoretical.",
+    "role": "Learning & Development Manager",
     "name": "Hafiz M.",
     "meta": "Leadership programme",
     "programme": "Leadership Development",
@@ -5145,6 +5178,7 @@ const testimonialData=[
   },
   {
     "quote": "The walkthroughs made the tools less intimidating. It was useful to see practical ways digital tools can support everyday tasks.",
+    "role": "Digital Transformation Executive",
     "name": "Mei Ling T.",
     "meta": "Digital skills programme",
     "programme": "AI & Digital",
@@ -5152,6 +5186,7 @@ const testimonialData=[
   },
   {
     "quote": "A thoughtful session with room for discussion. The activities encouraged us to think about wellbeing in a more practical way.",
+    "role": "HR Manager",
     "name": "Priya K.",
     "meta": "Workplace wellness programme",
     "programme": "Workplace Wellness",
@@ -5159,6 +5194,7 @@ const testimonialData=[
   },
   {
     "quote": "The trainer explained the topics clearly and answered questions in detail. The workplace examples were the most useful part for me.",
+    "role": "Human Resources Officer",
     "name": "Farah N.",
     "meta": "Public training",
     "programme": "Public Training · HR",
@@ -5166,6 +5202,7 @@ const testimonialData=[
   },
   {
     "quote": "The activities encouraged everyone to participate and communicate. It was a good opportunity to work with colleagues outside our usual teams.",
+    "role": "Operations Supervisor",
     "name": "Daniel L.",
     "meta": "In-house programme",
     "programme": "Teambuilding",
@@ -5173,6 +5210,7 @@ const testimonialData=[
   },
   {
     "quote": "The step-by-step explanations were helpful. I appreciated how the concepts were linked back to decisions we make at work.",
+    "role": "Finance Executive",
     "name": "Nurul H.",
     "meta": "Finance programme",
     "programme": "Accounts & Finance",
@@ -5180,6 +5218,7 @@ const testimonialData=[
   },
   {
     "quote": "The examples were straightforward and relevant to daily operations. The session highlighted areas we can pay closer attention to at work.",
+    "role": "Safety & Health Officer",
     "name": "Amir S.",
     "meta": "Safety programme",
     "programme": "Safety & Health",
@@ -5187,6 +5226,7 @@ const testimonialData=[
   },
   {
     "quote": "A good mix of ideas and practical exercises. The discussions helped me think differently about how to approach customer conversations.",
+    "role": "Sales Manager",
     "name": "Siti Z.",
     "meta": "Sales programme",
     "programme": "Sales & Marketing",
@@ -5194,6 +5234,7 @@ const testimonialData=[
   },
   {
     "quote": "The activities gave us time to reflect and share perspectives. I came away with a few useful ideas for improving my work habits.",
+    "role": "Administrative Executive",
     "name": "Jason C.",
     "meta": "Development programme",
     "programme": "Personal Development",
@@ -5201,6 +5242,7 @@ const testimonialData=[
   },
   {
     "quote": "The scenarios were closely related to operational challenges. The session made it easier to see how small improvements can affect the wider team.",
+    "role": "Operations Manager",
     "name": "Kavitha P.",
     "meta": "Operations programme",
     "programme": "Manufacturing & Operational",
@@ -5208,6 +5250,7 @@ const testimonialData=[
   },
   {
     "quote": "The material was organised clearly and the trainer broke down complicated topics into manageable points. The Q&A was especially useful.",
+    "role": "Compliance Executive",
     "name": "Izzat F.",
     "meta": "Governance programme",
     "programme": "Governance / Audit / OSHA",
@@ -5225,9 +5268,9 @@ const testimonialData=[
   section.hidden=false;
   track.innerHTML=testimonialData.map(t=>`
     <article class="testimonialCard">
-      <div class="reviewCardTop"><span class="reviewMark" aria-hidden="true">“</span><span class="reviewType">${escapeText(t.meta)}</span></div>
+      <div class="reviewCardTop"><span class="reviewMark" aria-hidden="true">“</span><span class="reviewType">${escapeText(t.programme||'Training programme')}</span></div>
       <div class="testimonialQuote">${escapeText(t.quote)}</div>
-      <div class="testimonialMeta"><img class="reviewAvatarPhoto" src="${escapeText(t.photo)}" alt="Illustrative portrait" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="reviewAvatar reviewAvatarFallback" aria-hidden="true" style="display:none!important">${escapeText(t.name.slice(0,1))}</span><div><b>${escapeText(t.name)}</b><span>${escapeText(t.programme)}</span></div></div>
+      <div class="testimonialMeta testimonialRoleOnly"><span>${escapeText(t.role||'Participant')}</span></div>
     </article>`).join('');
   let index=0, timer=null, touchStart=null;
   const visible=()=>window.innerWidth<=620?1:(window.innerWidth<=980?2:3);
@@ -5420,33 +5463,28 @@ let io;function initReveal(){if(io)io.disconnect();io=new IntersectionObserver(e
  backdrop.addEventListener('click',close);document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});window.addEventListener('resize',close);window.addEventListener('scroll',()=>{if(current&&innerWidth>620)close()},{passive:true});
  sync();
 })();
-</script><script>
-/* Desktop Training: hover AND click; intercept navigation on the capture phase. */
-(function(){
- const trigger=document.querySelector('.navItem > button[data-page="training"]');
- const menu=document.getElementById('trainingDropdown');
- if(!trigger||!menu)return;
- const item=trigger.closest('.navItem');
- trigger.setAttribute('aria-haspopup','true');
- trigger.setAttribute('aria-controls','trainingDropdown');
- trigger.setAttribute('aria-expanded','false');
- const desktop=()=>window.matchMedia('(min-width:981px)').matches;
- const close=()=>{item.classList.remove('trainingClickOpen');trigger.setAttribute('aria-expanded','false');};
- trigger.addEventListener('click',function(e){
-  if(!desktop())return;
-  e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
-  const next=!item.classList.contains('trainingClickOpen');
-  item.classList.remove('suppressDropdown');
-  item.classList.toggle('trainingClickOpen',next);
-  trigger.setAttribute('aria-expanded',String(next));
- },true);
- item.addEventListener('mouseenter',()=>{if(desktop()){item.classList.remove('suppressDropdown');trigger.setAttribute('aria-expanded','true');}});
- item.addEventListener('mouseleave',()=>{if(desktop()&&!item.classList.contains('trainingClickOpen'))trigger.setAttribute('aria-expanded','false');});
- document.addEventListener('click',e=>{if(!item.contains(e.target))close();});
- menu.addEventListener('click',e=>{if(e.target.closest('.desktopPreviousInhouse'))return;if(e.target.closest('button'))close();});
- document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
- window.addEventListener('resize',()=>{if(!desktop())close();});
-})();
 </script><script id="signature-dots-repair">(function(){const rail=document.getElementById('signatureCarousel'),dots=document.getElementById('signatureDots');if(!rail||!dots)return;const cards=[...rail.querySelectorAll('.signatureCard')];cards.forEach((card,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Show '+card.querySelector('h3').textContent);b.addEventListener('click',()=>card.scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'}));dots.appendChild(b)});function update(){let nearest=0,dist=Infinity;cards.forEach((card,i)=>{const d=Math.abs(card.offsetLeft-cards[0].offsetLeft-rail.scrollLeft);if(d<dist){dist=d;nearest=i}});[...dots.children].forEach((b,i)=>b.classList.toggle('active',i===nearest))}rail.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);update()})();</script>
+<script>
+// Animate About-page counters when they enter the viewport.
+(function(){const nodes=document.querySelectorAll('.impactCount');if(!nodes.length)return;const animate=(el)=>{if(el.dataset.done)return;el.dataset.done='1';const target=Number(el.dataset.count)||0;if(matchMedia('(prefers-reduced-motion: reduce)').matches||!target){el.textContent=target.toLocaleString('en-MY');return}const start=performance.now(),duration=1500;function frame(t){const k=Math.min(1,(t-start)/duration);el.textContent=Math.round(target*(1-Math.pow(1-k,3))).toLocaleString('en-MY');if(k<1)requestAnimationFrame(frame)}requestAnimationFrame(frame)};if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){animate(e.target);observer.unobserve(e.target)}}),{threshold:.3});nodes.forEach(n=>observer.observe(n))}else nodes.forEach(animate)})();
+</script>
+<script>
+(function(){
+ const select=document.getElementById('enquiryType'),button=document.getElementById('enquiryTypeButton'),menu=document.getElementById('enquiryTypeMenu');
+ if(!select||!button||!menu)return;
+ const close=()=>{menu.classList.remove('open');button.setAttribute('aria-expanded','false')};
+ const sync=()=>{button.firstChild.textContent=select.options[select.selectedIndex]?.textContent||'Training';menu.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.value===select.value)))};
+ Array.from(select.options).forEach(opt=>{const item=document.createElement('button');item.type='button';item.dataset.value=opt.value;item.textContent=opt.textContent;item.setAttribute('role','option');item.addEventListener('click',()=>{select.value=opt.value;select.dispatchEvent(new Event('change',{bubbles:true}));sync();close();button.focus()});menu.appendChild(item)});
+ button.addEventListener('click',()=>{const open=!menu.classList.contains('open');close();if(open){menu.classList.add('open');button.setAttribute('aria-expanded','true')}});
+ button.addEventListener('keydown',e=>{if(e.key==='ArrowDown'||e.key==='Enter'||e.key===' '){e.preventDefault();menu.classList.add('open');button.setAttribute('aria-expanded','true');menu.querySelector('button')?.focus()}});
+ menu.addEventListener('keydown',e=>{if(e.key==='Escape'){close();button.focus()}else if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();const items=[...menu.querySelectorAll('button')];items[(items.indexOf(document.activeElement)+(e.key==='ArrowDown'?1:items.length-1))%items.length]?.focus()}});
+ document.addEventListener('click',e=>{if(!button.parentElement.contains(e.target))close()});
+ select.addEventListener('change',sync);
+ new MutationObserver(sync).observe(select,{attributes:true,attributeFilter:['value']});
+ const original=window.prefillEnquiry;
+ if(typeof original==='function')window.prefillEnquiry=function(...args){const result=original.apply(this,args);sync();return result};
+ sync();
+})();
+</script>
 </body>
 </html>
