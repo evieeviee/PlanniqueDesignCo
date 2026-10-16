@@ -1,0 +1,36 @@
+
+/* Mobile menu: three clean lines transform to a visible close icon. */
+@media(max-width:900px){
+ .site-header .menu-toggle{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:5px!important;width:46px!important;height:46px!important;padding:0!important;position:relative!important;z-index:200050!important;overflow:visible!important;flex-shrink:0!important}
+ .site-header .menu-toggle .burger-line{display:block!important;position:static!important;width:22px!important;height:2px!important;min-height:2px!important;border-radius:4px!important;background:#fff!important;opacity:1!important;transform:none!important;transition:transform .25s ease,opacity .2s ease!important;pointer-events:none!important}
+ .site-header .menu-toggle[aria-expanded="true"]{gap:0!important}
+ .site-header .menu-toggle[aria-expanded="true"] .burger-line:nth-child(1){transform:translateY(2px) rotate(45deg)!important}
+ .site-header .menu-toggle[aria-expanded="true"] .burger-line:nth-child(2){opacity:0!important;height:0!important;min-height:0!important}
+ .site-header .menu-toggle[aria-expanded="true"] .burger-line:nth-child(3){transform:rotate(-45deg)!important}
+ .site-header .primary-nav.open{z-index:200040!important}
+}
+/* Desktop hero: soft, wide feathering into a matching dark green field, without cropping the photo. */
+@media(min-width:641px){
+ .home-page .story-fixed,.home-page .story-images,.home-page .story-shot{background:#10271d!important}
+ .home-page .story-shot picture{
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.10) 3%,rgba(0,0,0,.35) 9%,rgba(0,0,0,.70) 16%,#000 28%,#000 72%,rgba(0,0,0,.70) 84%,rgba(0,0,0,.35) 91%,rgba(0,0,0,.10) 97%,transparent 100%)!important;
+  mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.10) 3%,rgba(0,0,0,.35) 9%,rgba(0,0,0,.70) 16%,#000 28%,#000 72%,rgba(0,0,0,.70) 84%,rgba(0,0,0,.35) 91%,rgba(0,0,0,.10) 97%,transparent 100%)!important;
+ }
+}
+
+/* October 2026: consistent dark-edge blend across desktop aspect ratios.
+   The photo remains fully contained; edge fade matches the surrounding field. */
+@media (min-width: 901px) {
+ .home-page .story-fixed,
+ .home-page .story-images,
+ .home-page .story-shot {background-color:#10271d!important;}
+ .home-page .story-shot picture {
+   -webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.04) 3%,rgba(0,0,0,.22) 9%,rgba(0,0,0,.55) 17%,rgba(0,0,0,.86) 26%,#000 38%,#000 62%,rgba(0,0,0,.86) 74%,rgba(0,0,0,.55) 83%,rgba(0,0,0,.22) 91%,rgba(0,0,0,.04) 97%,transparent 100%)!important;
+   mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.04) 3%,rgba(0,0,0,.22) 9%,rgba(0,0,0,.55) 17%,rgba(0,0,0,.86) 26%,#000 38%,#000 62%,rgba(0,0,0,.86) 74%,rgba(0,0,0,.55) 83%,rgba(0,0,0,.22) 91%,rgba(0,0,0,.04) 97%,transparent 100%)!important;
+ }
+ /* Fade image top and bottom without creating a hard rectangular edge. */
+ .home-page .story-shot picture::after {
+   content:"";position:absolute;inset:0;pointer-events:none;z-index:2;
+   background:linear-gradient(to bottom,#10271d 0%,rgba(16,39,29,.70) 3%,transparent 16%,transparent 83%,rgba(16,39,29,.56) 96%,#10271d 100%);
+ }
+}
