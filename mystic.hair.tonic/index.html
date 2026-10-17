@@ -1619,6 +1619,26 @@ footer p{
 .faq-conversion .faq-cta .gold-btn{min-width:230px}
 @media(max-width:600px){.faq-conversion .faq-btn{font-size:14px;padding:15px 13px}.faq-conversion .faq-answer{font-size:12px}.faq-conversion .faq-item.active .faq-answer{padding:13px 14px 17px}.faq-conversion .faq-title{font-size:35px}}
 
+
+/* Client media additions */
+.media-section{padding:34px 24px;background:#fffaf0;text-align:center}
+.media-section.alt{background:#f3eedf}
+.media-section h2{font:normal clamp(25px,4vw,34px)/1.18 Georgia,serif;color:#063c2b;margin:0 auto 12px;max-width:620px}
+.media-section p{font-size:13px;color:#667269;max-width:570px;margin:0 auto 18px;line-height:1.7}
+.media-section img{display:block;width:100%;height:auto;border-radius:10px}
+.media-section .poster-frame{max-width:650px;margin:auto}
+.film-shell{position:relative;width:100%;overflow:hidden;border-radius:0;background:transparent;box-shadow:none}
+.film-shell video{display:block;width:100%;height:auto;max-height:none;object-fit:contain;background:transparent}
+.media-note{font-size:11px!important;margin-top:12px!important}
+@media(max-width:600px){.media-section{padding:30px 15px}.media-section h2{font-size:27px}}
+.mystic-video{padding:0!important;background:#fff}.mystic-video .kicker,.mystic-video h2,.mystic-video>p{display:none}.mystic-video .film-shell{margin:0}.mystic-video video{width:100%;height:auto;aspect-ratio:auto}
+.mystic-video{padding:0!important;background:#fff}.mystic-video .kicker,.mystic-video h2,.mystic-video>p{display:none}
+
+.film-shell{position:relative!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:hidden!important}
+.film-shell video{display:block;width:100%;height:auto;border:0;border-radius:0;box-shadow:none}
+.film-sound{position:absolute;right:14px;bottom:60px;z-index:5;border:1px solid rgba(255,255,255,.65);border-radius:7px;background:rgba(3,44,32,.88);color:#fff;padding:11px 15px;font-size:13px;font-weight:700;cursor:pointer;backdrop-filter:blur(6px)}
+.film-sound[hidden]{display:none}
+@media(max-width:600px){.film-sound{right:10px;bottom:55px;padding:10px 12px;font-size:12px}}
 </style>
 </head>
 
@@ -1640,6 +1660,13 @@ footer p{
     >
 
 </section>
+<section class="media-section mystic-video" aria-labelledby="mysticVideoTitle">
+ <div class="kicker">KENALI MYSTIC</div>
+ <h2 id="mysticVideoTitle">Rambut Sihat Bermula dengan Penjagaan yang Tepat</h2>
+ <p>Gabungan ramuan tradisional dan moden dalam rutin penjagaan rambut Mystic.</p>
+ <div class="film-shell"><video id="mysticHeroVideo" controls autoplay muted loop playsinline preload="auto" poster="assets/video-cover.webp" aria-label="Video pengenalan Mystic Hair Tonic"><source src="assets/mystic-film.mp4" type="video/mp4">Pelayar anda tidak menyokong video ini.</video><button class="film-sound" id="filmSound" type="button" aria-label="Aktifkan bunyi video">Aktifkan Bunyi <span aria-hidden="true">♪</span></button></div>
+</section>
+
 
 
 <!-- =====================================================
@@ -1813,6 +1840,9 @@ footer p{
 
 </section>
 
+
+
+<section class="media-section alt" aria-label="Kenapa Pilih Mystic?"><h2>Kenapa Pilih Mystic?</h2><p>Perbandingan ciri-ciri produk Mystic Hair Tonic.</p><div class="poster-frame"><img src="assets/comparison.webp" alt="Kenapa Pilih Mystic?" loading="lazy" decoding="async"></div></section>
 
 <!-- =====================================================
      8 INGREDIENTS
@@ -2238,6 +2268,9 @@ footer p{
 </section>
 
 
+
+<section class="media-section alt" aria-label="Analisis Kulit Kepala"><h2>Analisis Kulit Kepala</h2><p>Gambaran keadaan kulit kepala dan penjagaan rambut.</p><div class="poster-frame"><img src="assets/scalp.webp" alt="Analisis Kulit Kepala" loading="lazy" decoding="async"></div></section>
+
 <!-- =====================================================
      RESULT - ONE IMAGE ONLY
 ====================================================== -->
@@ -2266,6 +2299,9 @@ footer p{
 </section>
 
 
+
+<section class="media-section alt" aria-label="Kenali Ramuan Utama"><h2>Kenali Ramuan Utama</h2><p>Maklumat ramuan yang digunakan dalam formulasi Mystic.</p><div class="poster-frame"><img src="assets/ingredients.webp" alt="Kenali Ramuan Utama" loading="lazy" decoding="async"></div></section>
+
 <!-- =====================================================
      REVIEWS
 ====================================================== -->
@@ -2276,6 +2312,9 @@ footer p{
   </div>
 </section>
 
+
+
+<section class="media-section alt" aria-label="Maklumat Notifikasi Produk"><h2>Maklumat Notifikasi Produk</h2><p>Rujuk butiran notifikasi kosmetik dan maklumat produk pada poster.</p><div class="poster-frame"><img src="assets/notification.webp" alt="Maklumat Notifikasi Produk" loading="lazy" decoding="async"></div></section>
 
 <!-- =====================================================
      HEALTH LANE
@@ -3173,7 +3212,7 @@ function updateReview(index){
         reviews[reviewIndex];
 
 
-    reviewTrack.scrollTo({
+    reviewTrack?.scrollTo({
 
         left:
             card.offsetLeft
@@ -3234,7 +3273,7 @@ function startReviews(){
 }
 
 
-reviewTrack.addEventListener(
+reviewTrack?.addEventListener(
     "touchstart",
     function(){
 
@@ -3249,7 +3288,7 @@ reviewTrack.addEventListener(
 );
 
 
-reviewTrack.addEventListener(
+reviewTrack?.addEventListener(
     "touchend",
     function(){
 
@@ -3453,6 +3492,18 @@ ${note || "-"}`;
 
 });
 
+
+(function(){
+ const video=document.getElementById('mysticHeroVideo');
+ const sound=document.getElementById('filmSound');
+ if(!video||!sound)return;
+ const update=()=>{sound.hidden=!video.muted;sound.textContent='Aktifkan Bunyi';};
+ sound.addEventListener('click',()=>{video.muted=false;video.volume=1;video.play().catch(()=>{});update();});
+ video.addEventListener('volumechange',update);
+ video.addEventListener('loadedmetadata',update);
+ video.play().catch(()=>{});
+ update();
+})();
 </script>
 
 </body>
