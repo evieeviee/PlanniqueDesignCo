@@ -1746,6 +1746,22 @@ html{overflow-x:hidden}body{overflow-x:hidden}
 .mystic-testimonial-poster figcaption{font-size:11px;line-height:1.6;color:#69746b;text-align:center;margin-top:10px}
 .testimonials .title{font-size:clamp(27px,4.2vw,36px)}
 @media(max-width:600px){.mystic-image-story img{max-width:100%}.mystic-testimonial-poster{margin-bottom:18px}.testimonials{padding-left:16px;padding-right:16px}}
+
+/* Final page-wide refinements */
+.mystic-feature-photo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);align-items:center;gap:22px;padding:18px;background:#fffdf7;border:1px solid #e4d7bc;border-radius:12px;max-width:660px;margin:0 auto}
+.mystic-feature-photo>img{width:100%;height:320px;object-fit:cover;object-position:center 24%;border-radius:8px}
+.mystic-feature-photo>div{text-align:left}
+.mystic-feature-photo .kicker{text-align:left}
+.mystic-feature-photo h3{font:400 clamp(23px,3.6vw,31px)/1.18 Georgia,serif;color:#073d2b;margin:4px 0 12px;text-wrap:balance}
+.mystic-feature-photo p{font-size:14px;line-height:1.7;color:#59665c;margin:0 0 20px}
+.mystic-feature-photo .gold-btn{font-size:12px}
+.mystic-image-story img{height:auto;aspect-ratio:auto;object-fit:contain;background:transparent}
+.mystic-image-story h2,.title,.problem-head h2{letter-spacing:-.025em;text-wrap:balance}
+.mystic-image-story p,.desc{max-width:540px}
+.media-section p{margin-bottom:15px}
+.media-section,.section{scroll-margin-top:20px}
+.product:focus-within,.faq-btn:focus-visible,.submit:focus-visible{outline:2px solid #b58a32;outline-offset:3px}
+@media(max-width:600px){.mystic-feature-photo{grid-template-columns:1fr;padding:12px;gap:17px}.mystic-feature-photo>img{height:auto;max-height:430px;object-fit:contain;background:#f4efe5}.mystic-feature-photo>div{padding:3px 8px 10px}.mystic-feature-photo .gold-btn{width:100%}.mystic-image-story{padding-top:30px;padding-bottom:30px}.mystic-image-story h2{font-size:clamp(25px,6.5vw,30px)}}
 </style>
 </head>
 
@@ -1931,9 +1947,9 @@ html{overflow-x:hidden}body{overflow-x:hidden}
 
 
 
-<section class="mystic-image-story" aria-label="Rambut memerlukan perhatian"><h2>Adakah Rambut Anda Semakin Menipis?</h2><p>Rambut yang kurang bermaya dan kulit kepala yang tidak selesa boleh menjejaskan keyakinan. Mulakan rutin penjagaan yang sesuai dengan keperluan anda.</p><img src="assets/mystic-hair-concern.webp" alt="Wanita memeriksa keadaan rambut di hadapan cermin" loading="lazy" decoding="async" width="853" height="1280"></section>
+<section class="mystic-image-story" aria-label="Rambut memerlukan perhatian"><h2>Rambut Semakin Menipis?</h2><p>Kenali keperluan rambut dan kulit kepala anda. Rutin penjagaan yang sesuai bermula dengan perhatian yang konsisten.</p><img src="assets/mystic-hair-concern.webp" alt="Wanita memeriksa keadaan rambut di hadapan cermin" loading="lazy" decoding="async" width="853" height="1280"></section>
 
-<section class="media-section alt" aria-label="Kenapa Pilih Mystic?"><h2>Kenapa Pilih Mystic?</h2><p>Perbandingan ciri-ciri produk Mystic Hair Tonic.</p><div class="poster-frame"><img src="assets/comparison.webp" alt="Kenapa Pilih Mystic?" loading="lazy" decoding="async"></div></section>
+<section class="media-section alt" aria-label="Kenapa Pilih Mystic?"><h2>Kenapa Pilih Mystic?</h2><p>Ketahui ciri penjagaan rambut Mystic dengan lebih jelas.</p><div class="poster-frame"><img src="assets/comparison.webp" alt="Kenapa Pilih Mystic?" loading="lazy" decoding="async"></div></section>
 
 <!-- =====================================================
      8 INGREDIENTS
@@ -2362,7 +2378,7 @@ html{overflow-x:hidden}body{overflow-x:hidden}
 
 <section class="mystic-image-story dark" aria-label="Penjagaan kulit kepala dan kelemumur"><h2>Penjagaan Kulit Kepala &amp; Kelemumur</h2><p>Kenali ramuan dalam Mystic dan bagaimana penjagaan kulit kepala menjadi sebahagian daripada rutin rambut anda. Gambar perbandingan ialah ilustrasi promosi, bukan bukti hasil individu.</p><img src="assets/mystic-dandruff-poster.webp" alt="Poster Mystic tentang kelemumur dan bahan penjagaan kulit kepala" loading="lazy" decoding="async" width="1248" height="1248"></section>
 
-<section class="media-section alt" aria-label="Analisis Kulit Kepala"><h2>Analisis Kulit Kepala</h2><p>Gambaran keadaan kulit kepala dan penjagaan rambut.</p><div class="poster-frame"><img src="assets/scalp.webp" alt="Analisis Kulit Kepala" loading="lazy" decoding="async"></div></section>
+<section class="media-section alt" aria-label="Analisis Kulit Kepala"><h2>Analisis Kulit Kepala</h2><p>Ketahui lebih lanjut tentang penjagaan kulit kepala.</p><div class="poster-frame"><img src="assets/scalp.webp" alt="Analisis Kulit Kepala" loading="lazy" decoding="async"></div></section>
 
 <!-- =====================================================
      RESULT - ONE IMAGE ONLY
@@ -2380,7 +2396,7 @@ html{overflow-x:hidden}body{overflow-x:hidden}
     </h2>
 
     <p class="desc">
-        Foto yang dikongsi sebagai rujukan visual. Hasil penggunaan setiap individu mungkin berbeza.
+        Imej perbandingan untuk rujukan. Hasil individu mungkin berbeza.
     </p>
 
 
@@ -2399,11 +2415,17 @@ html{overflow-x:hidden}body{overflow-x:hidden}
      REVIEWS
 ====================================================== -->
 
-<section class="section testimonials" aria-label="Pengalaman pengguna Mystic Hair Tonic"><div class="kicker">PENGALAMAN PENGGUNA</div><h2 class="title">Cerita Penjagaan Rambut</h2><p class="desc">Paparan contoh susun atur testimoni. Nama dan ulasan perlu diganti dengan testimoni pelanggan sebenar yang mendapat kebenaran untuk diterbitkan.</p><figure class="mystic-testimonial-poster"><img src="assets/testimonial.webp" alt="Poster perkongsian pelanggan Mystic Hair Tonic" loading="lazy" decoding="async"><figcaption>Perkongsian pelanggan yang dipaparkan dalam poster. Sila sahkan kesahihan dan kebenaran penggunaan sebelum penerbitan.</figcaption></figure><div class="mystic-sample-review"><img src="assets/mystic-testimonial-sample.webp" alt="Gambar contoh individu memegang produk Mystic" loading="lazy" decoding="async" width="724" height="1280"><div><div class="sample-kicker">CONTOH TESTIMONI</div><h3>Daniel Lim</h3><blockquote>“Saya suka rasa segar selepas menggunakan Mystic Hair Tonic. Ia mudah dijadikan sebahagian daripada rutin penjagaan rambut mingguan saya.”</blockquote><p class="sample-note">Nama dan petikan ini ialah contoh rekaan untuk semakan reka bentuk, bukan ulasan pelanggan yang disahkan.</p></div></div></section>
+<section class="section testimonials" aria-label="Galeri Mystic Hair Tonic">
+  <div class="kicker">PERKONGSIAN MYSTIC</div>
+  <h2 class="title">Kenali Pengalaman Mystic</h2>
+  <p class="desc">Lihat perkongsian dan suasana penjagaan rambut bersama Mystic.</p>
+  <figure class="mystic-testimonial-poster"><img src="assets/testimonial.webp" alt="Poster perkongsian pengguna Mystic Hair Tonic" loading="lazy" decoding="async"></figure>
+  <div class="mystic-feature-photo"><img src="assets/mystic-testimonial-sample.webp" alt="Individu memperkenalkan botol Mystic Hair Tonic" loading="lazy" decoding="async" width="724" height="1280"><div><span class="kicker">MYSTIC HAIR TONIC</span><h3>Penjagaan Rambut, Lebih Mudah</h3><p>Lengkapkan rutin penjagaan rambut dan kulit kepala anda dengan Mystic Hair Tonic.</p><a class="gold-btn" href="#order">LIHAT PILIHAN PAKEJ</a></div></div>
+</section>
 
 
 
-<section class="media-section alt" aria-label="Maklumat Notifikasi Produk"><h2>Maklumat Notifikasi Produk</h2><p>Rujuk butiran notifikasi kosmetik dan maklumat produk pada poster.</p><div class="poster-frame"><img src="assets/notification.webp" alt="Maklumat Notifikasi Produk" loading="lazy" decoding="async"></div></section>
+<section class="media-section alt" aria-label="Maklumat Notifikasi Produk"><h2>Maklumat Notifikasi Produk</h2><p>Semak maklumat produk dan butiran notifikasi yang dipaparkan.</p><div class="poster-frame"><img src="assets/notification.webp" alt="Maklumat Notifikasi Produk" loading="lazy" decoding="async"></div></section>
 
 <!-- =====================================================
      HEALTH LANE
