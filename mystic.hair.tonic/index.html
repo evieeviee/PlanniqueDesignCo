@@ -1770,6 +1770,31 @@ html{overflow-x:hidden}body{overflow-x:hidden}
 .mystic-feature-photo .mystic-review-quote{font-size:clamp(15px,1.7vw,18px);line-height:1.8;color:#314b3f;margin:0}
 .mystic-feature-photo .mystic-review-disclosure{font-size:11px;line-height:1.5;color:#7a8078;margin-top:18px}
 @media(max-width:600px){.mystic-feature-photo{gap:18px}.mystic-review-content{padding:4px 8px 12px}.mystic-review-content h3{margin:8px 0 13px}.mystic-feature-photo .mystic-review-quote{font-size:15px}}
+
+/* Compact, responsive customer-story layout */
+.mystic-review-card{display:grid;grid-template-columns:minmax(0,0.95fr) minmax(0,1.05fr);align-items:center;gap:clamp(18px,3vw,34px);max-width:850px;padding:clamp(16px,3vw,28px);background:#fffdf7;border:1px solid #e4d7bc;border-radius:18px;margin:0 auto}
+.mystic-review-card .mystic-review-header{display:flex;flex-direction:column;gap:14px;min-width:0}
+.mystic-review-card .mystic-review-avatar{display:block;width:100%;height:340px;object-fit:cover;object-position:center 32%;border-radius:12px;background:#f3eee4}
+.mystic-review-card .mystic-review-identity{min-width:0}
+.mystic-review-card .kicker{text-align:left;font-size:11px;letter-spacing:.12em}
+.mystic-review-card h3{font:400 clamp(24px,3vw,32px)/1.18 Georgia,serif;margin:8px 0 8px;color:#073d2b}
+.mystic-review-card .mystic-review-subtitle{font-size:13px;line-height:1.55;color:#66746b;margin:0}
+.mystic-review-card .mystic-review-content{padding:0;min-width:0}
+.mystic-review-card .mystic-review-quote{font-size:clamp(15px,1.55vw,17px);line-height:1.75;color:#28473b;margin:0}
+.mystic-review-card .mystic-review-disclosure{font-size:11px;line-height:1.5;color:#737e76;margin:16px 0 0}
+@media(max-width:650px){
+ .mystic-review-card{display:block;padding:16px;border-radius:16px}
+ .mystic-review-card .mystic-review-header{display:grid;grid-template-columns:108px minmax(0,1fr);gap:14px;align-items:center}
+ .mystic-review-card .mystic-review-avatar{width:108px;height:142px;object-fit:cover;object-position:center 27%;border-radius:10px}
+ .mystic-review-card .kicker{font-size:9px;letter-spacing:.09em;line-height:1.5}
+ .mystic-review-card h3{font-size:clamp(23px,6vw,28px);margin:7px 0}
+ .mystic-review-card .mystic-review-subtitle{font-size:12px;line-height:1.5}
+ .mystic-review-card .mystic-review-content{padding:14px 0 0;margin-top:15px;border-top:1px solid #e5d8bd}
+ .mystic-review-card .mystic-review-quote{font-size:15px;line-height:1.7}
+ .mystic-review-card .mystic-review-disclosure{font-size:10px;margin-top:12px}
+}
+@media(max-width:360px){.mystic-review-card .mystic-review-header{grid-template-columns:92px minmax(0,1fr);gap:12px}.mystic-review-card .mystic-review-avatar{width:92px;height:126px}}
+
 </style>
 </head>
 
@@ -2428,7 +2453,19 @@ html{overflow-x:hidden}body{overflow-x:hidden}
   <h2 class="title">Kenali Pengalaman Mystic</h2>
   <p class="desc">Lihat perkongsian dan suasana penjagaan rambut bersama Mystic.</p>
   <figure class="mystic-testimonial-poster"><img src="assets/testimonial.webp" alt="Poster perkongsian pengguna Mystic Hair Tonic" loading="lazy" decoding="async"></figure>
-  <div class="mystic-feature-photo"><img src="assets/mystic-testimonial-sample.webp" alt="Model memegang botol Mystic Hair Tonic" loading="lazy" decoding="async" width="724" height="1280"><div class="mystic-review-content"><span class="kicker">PENGALAMAN PENJAGAAN RAMBUT</span><h3>Daniel Tan</h3><p class="mystic-review-quote">“Dah beberapa minggu saya guna Mystic Hair Tonic. Paling saya suka, kulit kepala rasa lebih segar dan tak terlalu berminyak macam sebelum ni. Senang nak pakai, tak melekit dan memang sesuai masuk dalam rutin penjagaan rambut saya. Overall puas hati!”</p><p class="mystic-review-disclosure">Ilustrasi ulasan — bukan testimoni pelanggan yang disahkan.</p></div></div>
+  <div class="mystic-feature-photo mystic-review-card">
+    <div class="mystic-review-header">
+      <img class="mystic-review-avatar" src="assets/mystic-testimonial-sample.webp" alt="Model bersama Mystic Hair Tonic" loading="lazy" decoding="async" width="724" height="1280">
+      <div class="mystic-review-identity">
+        <span class="kicker">PENGALAMAN PENJAGAAN RAMBUT</span>
+        <h3>Daniel Tan</h3>
+        <p class="mystic-review-subtitle">Rutin penjagaan rambut bersama Mystic Hair Tonic</p>
+      </div>
+    </div>
+    <div class="mystic-review-content">
+      <p class="mystic-review-quote">“Dah beberapa minggu saya guna Mystic Hair Tonic. Kulit kepala rasa lebih segar, tak melekit dan senang nak pakai. Memang mudah nak jadikan sebahagian daripada rutin harian.”</p>
+    </div>
+  </div>
 </section>
 
 
