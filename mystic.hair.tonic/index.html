@@ -1807,6 +1807,18 @@ html{overflow-x:hidden}body{overflow-x:hidden}
 .mystic-review-card .mystic-review-disclosure{font-size:10px;margin-top:12px}
 @media(max-width:360px){.mystic-review-card .mystic-review-header{grid-template-columns:92px minmax(0,1fr);gap:12px}.mystic-review-card .mystic-review-avatar{width:92px;height:126px}}
 
+
+/* New client poster — responsive product introduction */
+.mystic-new-poster{background:#f8f3e8;padding:clamp(28px,5vw,58px) 18px}
+.mystic-new-poster-inner{max-width:950px;margin:0 auto;display:grid;grid-template-columns:minmax(0,0.82fr) minmax(0,1fr);align-items:center;gap:clamp(24px,5vw,62px)}
+.mystic-new-poster-visual{margin:0;display:flex;justify-content:center}
+.mystic-new-poster-visual img{display:block;width:100%;max-width:365px;height:auto;object-fit:contain;border-radius:14px;box-shadow:0 12px 35px rgba(5,46,32,.12)}
+.mystic-new-poster-copy{min-width:0}
+.mystic-new-poster-copy .eyebrow{font-size:11px;letter-spacing:.18em;font-weight:700;color:#997326;margin:0 0 12px}
+.mystic-new-poster-copy h2{font:normal clamp(29px,3.7vw,44px)/1.16 Georgia,serif;color:#063c2b;letter-spacing:-.02em;margin:0 0 16px;text-wrap:balance}
+.mystic-new-poster-copy p:last-child{font-size:clamp(14px,1.55vw,17px);line-height:1.8;color:#52645a;margin:0;max-width:480px}
+@media(max-width:650px){.mystic-new-poster{padding:30px 18px 38px}.mystic-new-poster-inner{grid-template-columns:1fr;gap:23px}.mystic-new-poster-visual img{max-width:350px;width:min(100%,350px)}.mystic-new-poster-copy{text-align:center}.mystic-new-poster-copy h2{font-size:clamp(26px,7vw,33px)}.mystic-new-poster-copy p:last-child{margin:0 auto;font-size:14px}}
+
 </style>
 </head>
 
@@ -1993,6 +2005,19 @@ html{overflow-x:hidden}body{overflow-x:hidden}
 
 
 <section class="mystic-image-story" aria-label="Rambut memerlukan perhatian"><h2>Rambut Semakin Menipis?</h2><p>Kenali keperluan rambut dan kulit kepala anda. Rutin penjagaan yang sesuai bermula dengan perhatian yang konsisten.</p><img src="assets/mystic-hair-concern.webp" alt="Wanita memeriksa keadaan rambut di hadapan cermin" loading="lazy" decoding="async" width="853" height="1280"></section>
+
+<section class="mystic-new-poster" aria-label="Kenali Mystic Hair Tonic">
+  <div class="mystic-new-poster-inner">
+    <figure class="mystic-new-poster-visual">
+      <img src="assets/mystic-hair-fall-care.webp" alt="Model memegang kotak Mystic Hydrolyzed Protein Tonic" loading="lazy" decoding="async" width="491" height="850">
+    </figure>
+    <div class="mystic-new-poster-copy">
+      <p class="eyebrow">MYSTIC HAIR TONIC</p>
+      <h2>Penjagaan Rambut Bermula Dengan Mystic</h2>
+      <p>Lengkapkan rutin penjagaan rambut dan kulit kepala anda dengan Mystic Hydrolyzed Protein Tonic, gabungan ramuan tradisional dan moden untuk penjagaan harian.</p>
+    </div>
+  </div>
+</section>
 
 <section class="media-section alt" aria-label="Kenapa Pilih Mystic?"><h2>Kenapa Pilih Mystic?</h2><p>Ketahui ciri penjagaan rambut Mystic dengan lebih jelas.</p><div class="poster-frame"><img src="assets/comparison.webp" alt="Kenapa Pilih Mystic?" loading="lazy" decoding="async"></div></section>
 
