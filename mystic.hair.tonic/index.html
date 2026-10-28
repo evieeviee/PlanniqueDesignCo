@@ -1837,7 +1837,15 @@ html{overflow-x:hidden}body{overflow-x:hidden}
 @media(prefers-reduced-motion:reduce){.mystic-ingredients-showcase-image img,.mystic-ingredients-link{transition:none}}
 
 </style>
-</head>
+<style>
+/* Client-requested image-only ingredients display */
+.mystic-ingredients-full{background:#f8f3e8;padding:clamp(24px,4vw,56px) 16px;display:flex;justify-content:center}
+.mystic-ingredients-full img{display:block;width:100%;max-width:900px;height:auto;object-fit:contain;border-radius:16px;box-shadow:0 14px 38px rgba(8,45,31,.10)}
+/* Portrait in original testimonials gallery; preserve all existing testimonials */
+.mystic-woman-testimonial{margin:0 auto 26px;max-width:430px;text-align:center}
+.mystic-woman-testimonial img{display:block;width:100%;height:auto;object-fit:contain;border-radius:15px;box-shadow:0 12px 28px rgba(8,45,31,.10)}
+@media(max-width:600px){.mystic-ingredients-full{padding:22px 12px}.mystic-ingredients-full img{border-radius:10px}.mystic-woman-testimonial{max-width:350px;margin-bottom:20px}.mystic-woman-testimonial img{border-radius:12px}}
+</style></head>
 <body>
 <div class="page">
 <div class="funnel">
@@ -1952,34 +1960,8 @@ html{overflow-x:hidden}body{overflow-x:hidden}
 </section>
 <section aria-label="Rambut memerlukan perhatian" class="mystic-image-story"><h2>Rambut Semakin Menipis?</h2><p>Kenali keperluan rambut dan kulit kepala anda. Rutin penjagaan yang sesuai bermula dengan perhatian yang konsisten.</p><img alt="Wanita memeriksa keadaan rambut di hadapan cermin" decoding="async" height="1280" loading="lazy" src="assets/mystic-hair-concern.webp" width="853"/></section>
 <section aria-label="Kenapa Pilih Mystic?" class="media-section alt"><h2>Kenapa Pilih Mystic?</h2><p>Ketahui ciri penjagaan rambut Mystic dengan lebih jelas.</p><div class="poster-frame"><img alt="Kenapa Pilih Mystic?" decoding="async" loading="lazy" src="assets/comparison.webp"/></div></section>
-<section aria-label="Kenali Mystic Hair Tonic" class="mystic-new-poster">
-<div class="mystic-new-poster-inner">
-<figure class="mystic-new-poster-visual">
-<img alt="Model memegang kotak Mystic Hydrolyzed Protein Tonic" decoding="async" height="850" loading="lazy" src="assets/mystic-hair-fall-care.webp" width="491"/>
-</figure>
-<div class="mystic-new-poster-copy">
-<p class="eyebrow">MYSTIC HAIR TONIC</p>
-<h2>Penjagaan Rambut Bermula Dengan Mystic</h2>
-<p>Lengkapkan rutin penjagaan rambut dan kulit kepala anda dengan Mystic Hydrolyzed Protein Tonic, gabungan ramuan tradisional dan moden untuk penjagaan harian.</p>
-</div>
-</div>
-</section>
-<section aria-labelledby="mystic-ingredients-title" class="mystic-ingredients-showcase">
-<div class="mystic-ingredients-showcase-inner">
-<div class="mystic-ingredients-showcase-copy">
-<span class="mystic-ingredients-eyebrow">FORMULASI MYSTIC</span>
-<h2 id="mystic-ingredients-title">Ramuan Pilihan,<br/><em>Penjagaan Menyeluruh</em></h2>
-<p>Kenali gabungan ramuan tradisional dan bahan moden yang melengkapkan rutin penjagaan rambut serta kulit kepala anda.</p>
-<a class="mystic-ingredients-link" href="#bahan-mystic">Kenali setiap ramuan <span aria-hidden="true">↗</span></a>
-</div>
-<figure class="mystic-ingredients-showcase-image">
-<a aria-label="Buka poster ramuan Mystic dalam saiz penuh" href="assets/mystic-ingredients-benefits.webp" rel="noopener" target="_blank">
-<img alt="Poster Mystic Hair Tonic memaparkan botol produk dan ramuan pilihan" decoding="async" height="1536" loading="lazy" src="assets/mystic-ingredients-benefits.webp" width="1024"/>
-<span class="mystic-ingredients-zoom">Lihat poster penuh ↗</span>
-</a>
-</figure>
-</div>
-</section>
+
+<section aria-label="Poster ramuan Mystic Hair Tonic" class="mystic-ingredients-full"><img alt="Poster ramuan dan manfaat Mystic Hair Tonic" decoding="async" height="1536" loading="lazy" src="assets/mystic-ingredients-benefits.webp" width="1024"/></section>
 <!-- =====================================================
      8 INGREDIENTS
 ====================================================== -->
@@ -2229,7 +2211,6 @@ html{overflow-x:hidden}body{overflow-x:hidden}
 <!-- =====================================================
      RESULT - ONE IMAGE ONLY
 ====================================================== -->
-
 <!-- =====================================================
      REVIEWS
 ====================================================== -->
@@ -2237,7 +2218,7 @@ html{overflow-x:hidden}body{overflow-x:hidden}
 <div class="kicker">PERKONGSIAN MYSTIC</div>
 <h2 class="title">Kenali Pengalaman Mystic</h2>
 <p class="desc">Lihat perkongsian dan suasana penjagaan rambut bersama Mystic.</p>
-<figure class="mystic-testimonial-poster"><img alt="Poster perkongsian pengguna Mystic Hair Tonic" decoding="async" loading="lazy" src="assets/testimonial.webp"/></figure>
+<figure class="mystic-woman-testimonial"><img alt="Model memegang produk Mystic Hair Tonic" decoding="async" height="850" loading="lazy" src="assets/mystic-hair-fall-care.webp" width="491"/></figure><figure class="mystic-testimonial-poster"><img alt="Poster perkongsian pengguna Mystic Hair Tonic" decoding="async" loading="lazy" src="assets/testimonial.webp"/></figure>
 <div class="mystic-feature-photo mystic-review-card">
 <div class="mystic-review-header">
 <img alt="Model bersama Mystic Hair Tonic" class="mystic-review-avatar" decoding="async" height="1280" loading="lazy" src="assets/mystic-testimonial-sample.webp" width="724"/>
