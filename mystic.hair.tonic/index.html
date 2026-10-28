@@ -1819,6 +1819,25 @@ html{overflow-x:hidden}body{overflow-x:hidden}
 .mystic-new-poster-copy p:last-child{font-size:clamp(14px,1.55vw,17px);line-height:1.8;color:#52645a;margin:0;max-width:480px}
 @media(max-width:650px){.mystic-new-poster{padding:30px 18px 38px}.mystic-new-poster-inner{grid-template-columns:1fr;gap:23px}.mystic-new-poster-visual img{max-width:350px;width:min(100%,350px)}.mystic-new-poster-copy{text-align:center}.mystic-new-poster-copy h2{font-size:clamp(26px,7vw,33px)}.mystic-new-poster-copy p:last-child{margin:0 auto;font-size:14px}}
 
+
+/* Ingredient showcase — emerald/cream editorial layout */
+.mystic-ingredients-showcase{padding:clamp(38px,6vw,76px) 20px;background:linear-gradient(145deg,#f9f5ea 0%,#f2ead7 100%)}
+.mystic-ingredients-showcase-inner{max-width:1080px;margin:auto;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:clamp(26px,5vw,74px);align-items:center}
+.mystic-ingredients-showcase-copy{min-width:0}
+.mystic-ingredients-eyebrow{display:block;color:#987126;font-size:11px;font-weight:750;letter-spacing:.19em;margin-bottom:18px}
+.mystic-ingredients-showcase h2{font:normal clamp(30px,3.5vw,47px)/1.18 Georgia,serif;color:#093e2d;letter-spacing:-.025em;margin:0 0 20px;text-wrap:balance}
+.mystic-ingredients-showcase h2 em{font-weight:normal;font-style:normal;color:#9b792f}
+.mystic-ingredients-showcase-copy p{font-size:clamp(15px,1.45vw,17px);line-height:1.8;color:#52665b;max-width:440px;margin:0 0 25px}
+.mystic-ingredients-link{display:inline-flex;gap:10px;align-items:center;color:#073e2b;font-weight:700;font-size:14px;text-decoration:none;border-bottom:1px solid #b69a59;padding-bottom:8px;transition:color .2s,border-color .2s}
+.mystic-ingredients-link:hover,.mystic-ingredients-link:focus-visible{color:#9b792f;border-color:#9b792f}
+.mystic-ingredients-showcase-image{margin:0;min-width:0}
+.mystic-ingredients-showcase-image a{display:block;position:relative;max-width:510px;margin:auto;overflow:hidden;border-radius:17px;box-shadow:0 20px 48px rgba(14,47,34,.16);outline-offset:4px}
+.mystic-ingredients-showcase-image img{width:100%;height:auto;display:block;transition:transform .5s ease}
+.mystic-ingredients-showcase-image a:hover img{transform:scale(1.025)}
+.mystic-ingredients-zoom{position:absolute;right:12px;bottom:12px;background:rgba(4,49,34,.92);color:#fff7e3;padding:10px 14px;border-radius:100px;font-size:12px;font-weight:650}
+@media(max-width:700px){.mystic-ingredients-showcase{padding:40px 17px 46px}.mystic-ingredients-showcase-inner{grid-template-columns:1fr;gap:24px}.mystic-ingredients-showcase-copy{text-align:center}.mystic-ingredients-showcase h2{font-size:clamp(28px,7.2vw,37px)}.mystic-ingredients-showcase-copy p{margin:0 auto 16px;font-size:14px}.mystic-ingredients-showcase-image a{max-width:410px}.mystic-ingredients-zoom{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.mystic-ingredients-showcase-image img,.mystic-ingredients-link{transition:none}}
+
 </style>
 </head>
 
@@ -2006,6 +2025,8 @@ html{overflow-x:hidden}body{overflow-x:hidden}
 
 <section class="mystic-image-story" aria-label="Rambut memerlukan perhatian"><h2>Rambut Semakin Menipis?</h2><p>Kenali keperluan rambut dan kulit kepala anda. Rutin penjagaan yang sesuai bermula dengan perhatian yang konsisten.</p><img src="assets/mystic-hair-concern.webp" alt="Wanita memeriksa keadaan rambut di hadapan cermin" loading="lazy" decoding="async" width="853" height="1280"></section>
 
+<section class="media-section alt" aria-label="Kenapa Pilih Mystic?"><h2>Kenapa Pilih Mystic?</h2><p>Ketahui ciri penjagaan rambut Mystic dengan lebih jelas.</p><div class="poster-frame"><img src="assets/comparison.webp" alt="Kenapa Pilih Mystic?" loading="lazy" decoding="async"></div></section>
+
 <section class="mystic-new-poster" aria-label="Kenali Mystic Hair Tonic">
   <div class="mystic-new-poster-inner">
     <figure class="mystic-new-poster-visual">
@@ -2019,7 +2040,24 @@ html{overflow-x:hidden}body{overflow-x:hidden}
   </div>
 </section>
 
-<section class="media-section alt" aria-label="Kenapa Pilih Mystic?"><h2>Kenapa Pilih Mystic?</h2><p>Ketahui ciri penjagaan rambut Mystic dengan lebih jelas.</p><div class="poster-frame"><img src="assets/comparison.webp" alt="Kenapa Pilih Mystic?" loading="lazy" decoding="async"></div></section>
+
+
+<section class="mystic-ingredients-showcase" aria-labelledby="mystic-ingredients-title">
+  <div class="mystic-ingredients-showcase-inner">
+    <div class="mystic-ingredients-showcase-copy">
+      <span class="mystic-ingredients-eyebrow">FORMULASI MYSTIC</span>
+      <h2 id="mystic-ingredients-title">Ramuan Pilihan,<br><em>Penjagaan Menyeluruh</em></h2>
+      <p>Kenali gabungan ramuan tradisional dan bahan moden yang melengkapkan rutin penjagaan rambut serta kulit kepala anda.</p>
+      <a class="mystic-ingredients-link" href="#bahan-mystic">Kenali setiap ramuan <span aria-hidden="true">↗</span></a>
+    </div>
+    <figure class="mystic-ingredients-showcase-image">
+      <a href="assets/mystic-ingredients-benefits.webp" target="_blank" rel="noopener" aria-label="Buka poster ramuan Mystic dalam saiz penuh">
+        <img src="assets/mystic-ingredients-benefits.webp" alt="Poster Mystic Hair Tonic memaparkan botol produk dan ramuan pilihan" width="1024" height="1536" loading="lazy" decoding="async">
+        <span class="mystic-ingredients-zoom">Lihat poster penuh ↗</span>
+      </a>
+    </figure>
+  </div>
+</section>
 
 <!-- =====================================================
      8 INGREDIENTS
